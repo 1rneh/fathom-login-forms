@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html xml:lang="en" class="m_ul" dir="ltr" style="" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; media-src 'self' data:; style-src 'self' data: 'unsafe-inline'; font-src 'self' data:; frame-src 'self' data:">
+    <link rel="preconnect" href="https://acctcdn.msauth.net/" crossorigin="">
+<link rel="preconnect" href="https://acctcdn.msauth.net/" crossorigin="">
+<meta http-equiv="x-dns-prefetch-control" content="on">
+<link rel="dns-prefetch" href="https://wut.smartscreen.microsoft.com/">
+<link rel="dns-prefetch" href="https://acctcdn.msauth.net/">
+<link rel="dns-prefetch" href="https://acctcdnmsftuswe2.azureedge.net/">
+<link rel="dns-prefetch" href="https://acctcdnvzeuno.azureedge.net/">
+
+    <title>Create account</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=yes"><meta name="format-detection" content="telephone=no">
+    <link rel="icon" href="resources/fp56/1.bin" type="image/x-icon" data-original-href="https://acctcdn.msauth.net/images/favicon.ico?v=2">
+    
+
+    
+    <style type="text/css">body{display:none;}</style>
+    <style type="text/css">body{display:block !important;}</style>
+     <!-- We should NEVER skip burning this to the page -->
+
+    
+    <!-- Base -->
+    
+    <!-- This NEEDS to be defined as early as possible otherwise you WILL miss JS errors 
+        as this will trigger the WatsonLoader to finish initializing -->
+    
+
+    <link crossorigin="anonymous" href="resources/fp56/2.css" rel="stylesheet" data-original-href="https://acctcdn.msauth.net/converged_ux_v2_SR0O_YBP4tGOSSaK2TP8GQ2.css?v=1">
+
+        
+
+
+    
+    <meta name="PageId" content="i6209">
+    <meta name="mswebdialog-title" content="Microsoft account">
+    <meta name="mswebdialog-newwindowurl" content="*">
+    
+    
+
+    
+
+    
+    
+
+    
+
+
+    
+
+        
+
+    
+
+
+    
+    
+    
+  </head>
+
+  <body style="" class="ltr  Firefox _Win _M67 _D0 Full Win81 RE_Gecko" lang="en-US">
+        <div class="App" id="iPageElt">
+    
+
+        <div id="c_base" class="c_base">
+        <div id="c_content">
+            
+     
+<!--background -->
+<div class="background " role="presentation">
+    
+    <div class="blur" style="background-image:url(resources/fp56/3.jpg)" data-original-style="background-image:url(https://acctcdn.msauth.net/images/convergedbg_small_v2_Z9GCPpM7FVE8hxRSZUez6g2.jpg)"></div>
+    <div class="backgroundImage" style="background-image:url(resources/fp56/4.jpg)" data-original-style="background-image:url(https://acctcdn.msauth.net/images/convergedbg_v2_pdvUOT_2pyXH5ith335y8A2.jpg)"></div>
+    
+</div>
+
+<!-- environment banner -->
+
+
+<!--lightbox -->
+<div class="outer">
+    
+    <div class="middle ">
+        
+        <div id="inner" class="inner ">
+            <div>
+                
+                <div id="progressBarLightbox" style="display:none;"></div>
+                <img class="logo" src="resources/fp56/5.svg" alt="Microsoft" data-original-src="https://acctcdn.msauth.net/images/microsoft_logo_7lyNn7YkjJOP0NwZNw6QvQ2.svg">
+                <div id="pageContent" class="pagination-view">
+                    
+            
+            <div role="main" id="maincontent">
+                
+    <div id="identityBanner" data-bind="component:
+        {
+            name: 'convergedBanner',
+            params: {
+                memberName: memberName,
+                isBackButtonVisible: isBackButtonVisible,
+                strings: strings,
+                arrowImg: arrowImg,
+                showIdentityBanner: showIdentityBanner
+            }
+        }"><div class="identityBanner" data-bind="if: memberName &amp;&amp; showIdentityBanner, visible: memberName &amp;&amp; showIdentityBanner" style="display: none;"></div></div>
+
+    <!-- HIP content -->
+    <div class="hide" id="hipScript"></div>
+    <div class="hide" id="hipContent"></div>
+    <div class="hide" id="hipTemplate"></div>
+
+    <div id="pageControlHost">
+    <div style="opacity: 1;"><form id="pageDialogForm_0" action="https://signup.live.com/signup?lcid=1033&amp;wa=wsignin1.0&amp;rpsnv=13&amp;ct=1551172667&amp;rver=7.0.6737.0&amp;wp=MBI_SSL&amp;wreply=https%3a%2f%2foutlook.live.com%2fowa%2f%3fnlp%3d1%26signup%3d1%26RpsCsrfState%3d054a9732-c95c-1794-2c47-9707c1e81eda&amp;id=292841&amp;CBCXT=out&amp;lw=1&amp;fl=dob%2cflname%2cwld&amp;cobrandid=90015&amp;lic=1&amp;uaid=64d239e0e017434087d7dd98d4d29e50#" novalidate="novalidate"><div id="Credentials">
+        <div data-bind="visible: showCredentialsView">
+            <div id="CredentialsInputPane" data-bind="visible: !showSuggestions()">
+                <div id="CredentialsPageTitle" class="row text-title" role="heading" aria-level="1" data-bind="text: strings.pageTitle">Create account</div>
+                <!-- ko if: config.unsafe_convergedCobrandingSignupDescription --><!-- /ko -->
+                <!-- ko if: config.showDesc !== 0 --><!-- /ko -->
+                <!-- ko if: showPaginatedUsernamePrefill --><!-- /ko -->
+                <fieldset data-bind="attr: { 'disabled': memberName.isValidating() &amp;&amp; $B.IE === 1 }">
+                    <!-- ko ifnot: showPaginatedUsernamePrefill -->
+                    <div class="row">
+                        <!-- ko if: showError(memberName) --><!-- /ko -->
+                        <!-- ko if: config.supportsPhone !== 0 && (showError(memberName) || memberNameExistsMessage()) --><!-- /ko -->
+                        <div data-bind="css: { 'form-group col-xs-24': config.showInlinePhoneCountryCode !== 0 }" class="form-group col-xs-24">
+                            <!-- ko if: config.supportsPhone !== 0 -->
+                            <div data-bind="visible: memberNameType() === 'Phone', css: { 'form-group col-xs-24': config.showInlinePhoneCountryCode === 0, 'phoneCountryBox col-xs-5': config.showInlinePhoneCountryCode !== 0 }" style="display: none;" class="phoneCountryBox col-xs-5">
+                                <!-- ko if: config.showInlinePhoneCountryCode !== 0 -->
+                                <label for="PhoneCountry" class="phoneCountryCode" aria-hidden="true" data-bind="text: '\u200E+' + memberNamePhoneCountryObj().code, css: { 'hasFocus': isCountryCodeDropDownFocused }">‎+1</label>
+                                <img class="downArrow" role="presentation" data-bind="attr: { src: dropdownCaretImg }" src="resources/fp56/6.svg" data-original-src="https://acctcdn.msauth.net/images/dropdown_caret_KXSZjGsyILZaoTf0sI9X-A2.svg">
+                                <!-- /ko -->
+                                <select class="form-control phoneCountry" id="PhoneCountry" name="PhoneCountry" aria-describedby="CredentialsPageTitle MemberNameError" data-bind="options: memberNamePhoneCountries,
+                                        optionsText: 'displayValue',
+                                        value: memberNamePhoneCountryObj,
+                                        hasFocus: isCountryCodeDropDownFocused,
+                                        attr: { 'aria-label': strings.ariaLblCountryDropdown },
+                                        optionsAfterRender: setOptionData,
+                                        css: { 'phoneCountry': config.showInlinePhoneCountryCode !== 0 }" aria-label="Country code"><option value="" data-value="AF">Afghanistan ‏(‎+93)</option><option value="" data-value="AL">Albania ‏(‎+355)</option><option value="" data-value="DZ">Algeria ‏(‎+213)</option><option value="" data-value="AD">Andorra ‏(‎+376)</option><option value="" data-value="AO">Angola ‏(‎+244)</option><option value="" data-value="AQ">Antarctica ‏(‎+672)</option><option value="" data-value="AG">Antigua and Barbuda ‏(‎+1)</option><option value="" data-value="AR">Argentina ‏(‎+54)</option><option value="" data-value="AM">Armenia ‏(‎+374)</option><option value="" data-value="AW">Aruba ‏(‎+297)</option><option value="" data-value="AC">Ascension Island ‏(‎+247)</option><option value="" data-value="AU">Australia ‏(‎+61)</option><option value="" data-value="AT">Austria ‏(‎+43)</option><option value="" data-value="AZ">Azerbaijan ‏(‎+994)</option><option value="" data-value="BS">Bahamas ‏(‎+1)</option><option value="" data-value="BH">Bahrain ‏(‎+973)</option><option value="" data-value="BD">Bangladesh ‏(‎+880)</option><option value="" data-value="BB">Barbados ‏(‎+1)</option><option value="" data-value="BY">Belarus ‏(‎+375)</option><option value="" data-value="BE">Belgium ‏(‎+32)</option><option value="" data-value="BZ">Belize ‏(‎+501)</option><option value="" data-value="BJ">Benin ‏(‎+229)</option><option value="" data-value="BM">Bermuda ‏(‎+1)</option><option value="" data-value="BT">Bhutan ‏(‎+975)</option><option value="" data-value="BO">Bolivia ‏(‎+591)</option><option value="" data-value="BQ">Bonaire ‏(‎+599)</option><option value="" data-value="BA">Bosnia and Herzegovina ‏(‎+387)</option><option value="" data-value="BW">Botswana ‏(‎+267)</option><option value="" data-value="BV">Bouvet Island ‏(‎+47)</option><option value="" data-value="BR">Brazil ‏(‎+55)</option><option value="" data-value="IO">British Indian Ocean Territory ‏(‎+44)</option><option value="" data-value="VG">British Virgin Islands ‏(‎+1)</option><option value="" data-value="BN">Brunei ‏(‎+673)</option><option value="" data-value="BG">Bulgaria ‏(‎+359)</option><option value="" data-value="BF">Burkina Faso ‏(‎+226)</option><option value="" data-value="BI">Burundi ‏(‎+257)</option><option value="" data-value="CV">Cabo Verde ‏(‎+238)</option><option value="" data-value="KH">Cambodia ‏(‎+855)</option><option value="" data-value="CM">Cameroon ‏(‎+237)</option><option value="" data-value="CA">Canada ‏(‎+1)</option><option value="" data-value="KY">Cayman Islands ‏(‎+1)</option><option value="" data-value="CF">Central African Republic ‏(‎+236)</option><option value="" data-value="TD">Chad ‏(‎+235)</option><option value="" data-value="CL">Chile ‏(‎+56)</option><option value="" data-value="CN">China ‏(‎+86)</option><option value="" data-value="CX">Christmas Island ‏(‎+61)</option><option value="" data-value="CC">Cocos (Keeling) Islands ‏(‎+61)</option><option value="" data-value="CO">Colombia ‏(‎+57)</option><option value="" data-value="KM">Comoros ‏(‎+269)</option><option value="" data-value="CG">Congo ‏(‎+242)</option><option value="" data-value="CD">Congo (DRC) ‏(‎+243)</option><option value="" data-value="CK">Cook Islands ‏(‎+682)</option><option value="" data-value="CR">Costa Rica ‏(‎+506)</option><option value="" data-value="CI">Côte d'Ivoire ‏(‎+225)</option><option value="" data-value="HR">Croatia ‏(‎+385)</option><option value="" data-value="CU">Cuba ‏(‎+53)</option><option value="" data-value="CW">Curaçao ‏(‎+599)</option><option value="" data-value="CY">Cyprus ‏(‎+357)</option><option value="" data-value="CZ">Czechia ‏(‎+420)</option><option value="" data-value="DK">Denmark ‏(‎+45)</option><option value="" data-value="DJ">Djibouti ‏(‎+253)</option><option value="" data-value="DM">Dominica ‏(‎+1)</option><option value="" data-value="DO">Dominican Republic ‏(‎+1)</option><option value="" data-value="EC">Ecuador ‏(‎+593)</option><option value="" data-value="EG">Egypt ‏(‎+20)</option><option value="" data-value="SV">El Salvador ‏(‎+503)</option><option value="" data-value="GQ">Equatorial Guinea ‏(‎+240)</option><option value="" data-value="ER">Eritrea ‏(‎+291)</option><option value="" data-value="EE">Estonia ‏(‎+372)</option><option value="" data-value="ET">Ethiopia ‏(‎+251)</option><option value="" data-value="FK">Falkland Islands ‏(‎+500)</option><option value="" data-value="FO">Faroe Islands ‏(‎+298)</option><option value="" data-value="FJ">Fiji ‏(‎+679)</option><option value="" data-value="FI">Finland ‏(‎+358)</option><option value="" data-value="FR">France ‏(‎+33)</option><option value="" data-value="GF">French Guiana ‏(‎+594)</option><option value="" data-value="PF">French Polynesia ‏(‎+689)</option><option value="" data-value="GA">Gabon ‏(‎+241)</option><option value="" data-value="GM">Gambia ‏(‎+220)</option><option value="" data-value="GE">Georgia ‏(‎+995)</option><option value="" data-value="DE">Germany ‏(‎+49)</option><option value="" data-value="GH">Ghana ‏(‎+233)</option><option value="" data-value="GI">Gibraltar ‏(‎+350)</option><option value="" data-value="GR">Greece ‏(‎+30)</option><option value="" data-value="GL">Greenland ‏(‎+299)</option><option value="" data-value="GD">Grenada ‏(‎+1)</option><option value="" data-value="GP">Guadeloupe ‏(‎+590)</option><option value="" data-value="GU">Guam ‏(‎+1)</option><option value="" data-value="GT">Guatemala ‏(‎+502)</option><option value="" data-value="GG">Guernsey ‏(‎+44)</option><option value="" data-value="GN">Guinea ‏(‎+224)</option><option value="" data-value="GW">Guinea-Bissau ‏(‎+245)</option><option value="" data-value="GY">Guyana ‏(‎+592)</option><option value="" data-value="HT">Haiti ‏(‎+509)</option><option value="" data-value="HN">Honduras ‏(‎+504)</option><option value="" data-value="HK">Hong Kong SAR ‏(‎+852)</option><option value="" data-value="HU">Hungary ‏(‎+36)</option><option value="" data-value="IS">Iceland ‏(‎+354)</option><option value="" data-value="IN">India ‏(‎+91)</option><option value="" data-value="ID">Indonesia ‏(‎+62)</option><option value="" data-value="IR">Iran ‏(‎+98)</option><option value="" data-value="IQ">Iraq ‏(‎+964)</option><option value="" data-value="IE">Ireland ‏(‎+353)</option><option value="" data-value="IM">Isle of Man ‏(‎+44)</option><option value="" data-value="IL">Israel ‏(‎+972)</option><option value="" data-value="IT">Italy ‏(‎+39)</option><option value="" data-value="JM">Jamaica ‏(‎+1)</option><option value="" data-value="XJ">Jan Mayen ‏(‎+47)</option><option value="" data-value="JP">Japan ‏(‎+81)</option><option value="" data-value="JE">Jersey ‏(‎+44)</option><option value="" data-value="JO">Jordan ‏(‎+962)</option><option value="" data-value="KZ">Kazakhstan ‏(‎+7)</option><option value="" data-value="KE">Kenya ‏(‎+254)</option><option value="" data-value="KI">Kiribati ‏(‎+686)</option><option value="" data-value="KR">Korea ‏(‎+82)</option><option value="" data-value="XK">Kosovo ‏(‎+383)</option><option value="" data-value="KW">Kuwait ‏(‎+965)</option><option value="" data-value="KG">Kyrgyzstan ‏(‎+996)</option><option value="" data-value="LA">Laos ‏(‎+856)</option><option value="" data-value="LV">Latvia ‏(‎+371)</option><option value="" data-value="LB">Lebanon ‏(‎+961)</option><option value="" data-value="LS">Lesotho ‏(‎+266)</option><option value="" data-value="LR">Liberia ‏(‎+231)</option><option value="" data-value="LY">Libya ‏(‎+218)</option><option value="" data-value="LI">Liechtenstein ‏(‎+423)</option><option value="" data-value="LT">Lithuania ‏(‎+370)</option><option value="" data-value="LU">Luxembourg ‏(‎+352)</option><option value="" data-value="MO">Macao SAR ‏(‎+853)</option><option value="" data-value="MK">Macedonia, Former Yugoslav Republic of ‏(‎+389)</option><option value="" data-value="MG">Madagascar ‏(‎+261)</option><option value="" data-value="MW">Malawi ‏(‎+265)</option><option value="" data-value="MY">Malaysia ‏(‎+60)</option><option value="" data-value="MV">Maldives ‏(‎+960)</option><option value="" data-value="ML">Mali ‏(‎+223)</option><option value="" data-value="MT">Malta ‏(‎+356)</option><option value="" data-value="MH">Marshall Islands ‏(‎+692)</option><option value="" data-value="MQ">Martinique ‏(‎+596)</option><option value="" data-value="MR">Mauritania ‏(‎+222)</option><option value="" data-value="MU">Mauritius ‏(‎+230)</option><option value="" data-value="YT">Mayotte ‏(‎+262)</option><option value="" data-value="MX">Mexico ‏(‎+52)</option><option value="" data-value="FM">Micronesia ‏(‎+691)</option><option value="" data-value="MD">Moldova ‏(‎+373)</option><option value="" data-value="MC">Monaco ‏(‎+377)</option><option value="" data-value="MN">Mongolia ‏(‎+976)</option><option value="" data-value="ME">Montenegro ‏(‎+382)</option><option value="" data-value="MS">Montserrat ‏(‎+1)</option><option value="" data-value="MA">Morocco ‏(‎+212)</option><option value="" data-value="MZ">Mozambique ‏(‎+258)</option><option value="" data-value="MM">Myanmar ‏(‎+95)</option><option value="" data-value="NA">Namibia ‏(‎+264)</option><option value="" data-value="NR">Nauru ‏(‎+674)</option><option value="" data-value="NP">Nepal ‏(‎+977)</option><option value="" data-value="NL">Netherlands ‏(‎+31)</option><option value="" data-value="AN">Netherlands Antilles (Former) ‏(‎+599)</option><option value="" data-value="NC">New Caledonia ‏(‎+687)</option><option value="" data-value="NZ">New Zealand ‏(‎+64)</option><option value="" data-value="NI">Nicaragua ‏(‎+505)</option><option value="" data-value="NE">Niger ‏(‎+227)</option><option value="" data-value="NG">Nigeria ‏(‎+234)</option><option value="" data-value="NU">Niue ‏(‎+683)</option><option value="" data-value="KP">North Korea ‏(‎+850)</option><option value="" data-value="MP">Northern Mariana Islands ‏(‎+1)</option><option value="" data-value="NO">Norway ‏(‎+47)</option><option value="" data-value="OM">Oman ‏(‎+968)</option><option value="" data-value="PK">Pakistan ‏(‎+92)</option><option value="" data-value="PW">Palau ‏(‎+680)</option><option value="" data-value="PS">Palestinian Authority ‏(‎+970)</option><option value="" data-value="PA">Panama ‏(‎+507)</option><option value="" data-value="PG">Papua New Guinea ‏(‎+675)</option><option value="" data-value="PY">Paraguay ‏(‎+595)</option><option value="" data-value="PE">Peru ‏(‎+51)</option><option value="" data-value="PH">Philippines ‏(‎+63)</option><option value="" data-value="PL">Poland ‏(‎+48)</option><option value="" data-value="PT">Portugal ‏(‎+351)</option><option value="" data-value="QA">Qatar ‏(‎+974)</option><option value="" data-value="RE">Réunion ‏(‎+262)</option><option value="" data-value="RO">Romania ‏(‎+40)</option><option value="" data-value="RU">Russia ‏(‎+7)</option><option value="" data-value="RW">Rwanda ‏(‎+250)</option><option value="" data-value="XS">Saba ‏(‎+599)</option><option value="" data-value="KN">Saint Kitts and Nevis ‏(‎+1)</option><option value="" data-value="LC">Saint Lucia ‏(‎+1)</option><option value="" data-value="PM">Saint Pierre and Miquelon ‏(‎+508)</option><option value="" data-value="VC">Saint Vincent and the Grenadines ‏(‎+1)</option><option value="" data-value="WS">Samoa ‏(‎+685)</option><option value="" data-value="SM">San Marino ‏(‎+378)</option><option value="" data-value="ST">São Tomé and Príncipe ‏(‎+239)</option><option value="" data-value="SA">Saudi Arabia ‏(‎+966)</option><option value="" data-value="SN">Senegal ‏(‎+221)</option><option value="" data-value="RS">Serbia ‏(‎+381)</option><option value="" data-value="SC">Seychelles ‏(‎+248)</option><option value="" data-value="SL">Sierra Leone ‏(‎+232)</option><option value="" data-value="SG">Singapore ‏(‎+65)</option><option value="" data-value="XE">Sint Eustatius ‏(‎+599)</option><option value="" data-value="SK">Slovakia ‏(‎+421)</option><option value="" data-value="SI">Slovenia ‏(‎+386)</option><option value="" data-value="SB">Solomon Islands ‏(‎+677)</option><option value="" data-value="SO">Somalia ‏(‎+252)</option><option value="" data-value="ZA">South Africa ‏(‎+27)</option><option value="" data-value="SS">South Sudan ‏(‎+211)</option><option value="" data-value="ES">Spain ‏(‎+34)</option><option value="" data-value="LK">Sri Lanka ‏(‎+94)</option><option value="" data-value="SH">St Helena, Ascension, and Tristan da Cunha ‏(‎+290)</option><option value="" data-value="SD">Sudan ‏(‎+249)</option><option value="" data-value="SR">Suriname ‏(‎+597)</option><option value="" data-value="SJ">Svalbard ‏(‎+47)</option><option value="" data-value="SZ">Swaziland ‏(‎+268)</option><option value="" data-value="SE">Sweden ‏(‎+46)</option><option value="" data-value="CH">Switzerland ‏(‎+41)</option><option value="" data-value="SY">Syria ‏(‎+963)</option><option value="" data-value="TW">Taiwan ‏(‎+886)</option><option value="" data-value="TJ">Tajikistan ‏(‎+992)</option><option value="" data-value="TZ">Tanzania ‏(‎+255)</option><option value="" data-value="TH">Thailand ‏(‎+66)</option><option value="" data-value="TL">Timor-Leste ‏(‎+670)</option><option value="" data-value="TG">Togo ‏(‎+228)</option><option value="" data-value="TK">Tokelau ‏(‎+690)</option><option value="" data-value="TO">Tonga ‏(‎+676)</option><option value="" data-value="TT">Trinidad and Tobago ‏(‎+1)</option><option value="" data-value="TA">Tristan da Cunha ‏(‎+290)</option><option value="" data-value="TN">Tunisia ‏(‎+216)</option><option value="" data-value="TR">Turkey ‏(‎+90)</option><option value="" data-value="TM">Turkmenistan ‏(‎+993)</option><option value="" data-value="TC">Turks and Caicos Islands ‏(‎+1)</option><option value="" data-value="TV">Tuvalu ‏(‎+688)</option><option value="" data-value="UM">U.S. Outlying Islands ‏(‎+1)</option><option value="" data-value="VI">U.S. Virgin Islands ‏(‎+1)</option><option value="" data-value="UG">Uganda ‏(‎+256)</option><option value="" data-value="UA">Ukraine ‏(‎+380)</option><option value="" data-value="AE">United Arab Emirates ‏(‎+971)</option><option value="" data-value="UK">United Kingdom ‏(‎+44)</option><option value="" data-value="US">United States ‏(‎+1)</option><option value="" data-value="UY">Uruguay ‏(‎+598)</option><option value="" data-value="UZ">Uzbekistan ‏(‎+998)</option><option value="" data-value="VU">Vanuatu ‏(‎+678)</option><option value="" data-value="VA">Vatican City ‏(‎+379)</option><option value="" data-value="VE">Venezuela ‏(‎+58)</option><option value="" data-value="VN">Vietnam ‏(‎+84)</option><option value="" data-value="WF">Wallis and Futuna ‏(‎+681)</option><option value="" data-value="YE">Yemen ‏(‎+967)</option><option value="" data-value="ZM">Zambia ‏(‎+260)</option><option value="" data-value="ZW">Zimbabwe ‏(‎+263)</option></select>
+                            </div>
+                            <!-- /ko -->
+                            <div data-bind="css: { 'form-group col-xs-24': config.showInlinePhoneCountryCode === 0, 'phoneNumber col-xs-19': config.showInlinePhoneCountryCode !== 0 &amp;&amp; memberNameType() === 'Phone' }">
+                                <div class="ltr_override input-group" data-bind="css: { 'input-group': memberNameType() === 'Live' || (memberNamePrefill() &amp;&amp; memberNamePrefill().length > 1) }">
+                                    <input class="form-control ltr_override noRightBorder" id="MemberName" name="MemberName" autocomplete="off" aria-describedby="CredentialsPageTitle MemberNameError" data-bind="css:
+                                           {
+                                               'has-error': showError(memberName),
+                                               'noRightBorder': memberNameType() === 'Live'
+                                           },
+                                           value: memberNameInput,
+                                           hasFocus: memberName.focused,
+                                           attr:
+                                           {
+                                               placeholder: placeholder,
+                                               'aria-label': memberNameAriaLabel,
+                                               type: memberNameInputType(),
+                                               readonly: $B.Edge &amp;&amp; memberName.isValidating()
+                                           },
+                                           disable: !$B.Edge &amp;&amp; memberName.isValidating()" placeholder="New email" aria-label="New email" type="text">
+                                    <label class="input-group-addon noLeftBorder outlookEmailLabel focus-border-color" data-bind="css:
+                                           {
+                                               'focus-border-color': memberName.focused,
+                                               'readonly-border-color': $B.Edge &amp;&amp; memberName.isValidating(),
+                                               'has-error': showError(memberName),
+                                               'outlookEmailLabel': config.isConvergedUXV2 !== 0
+                                           },
+                                           text: '@' + domain(),
+                                           visible: memberNameType() === 'Live'">@outlook.com</label>
+                                    <div class="input-group-btn focus-border-color" data-bind="css:
+                                             {
+                                                 'focus-border-color': memberName.focused,
+                                                 'has-error': showError(memberName)
+                                             },
+                                             visible: memberNameType() !== 'Live' &amp;&amp; memberNamePrefill() &amp;&amp; memberNamePrefill().length > 1" style="display: none;">
+                                        <button id="memberNameLabel" class="btn dropdown-toggle membernamePrefillSelect" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span></button>
+                                        <ul id="MemberNamePrefill" class="dropdown-menu pull-right" role="menu" aria-labelledby="memberNameLabel" data-bind="foreach: memberNamePrefill"></ul>
+                                    </div>
+                                    <div class="input-group-btn dropdown focus-border-color" data-bind="css:
+                                            {
+                                                'focus-border-color': memberName.focused,
+                                                'has-error': showError(memberName)
+                                            },
+                                            visible: memberNameType() === 'Live' &amp;&amp; domains.length > 1">
+                                        <button id="domainLabel" name="domainLabel" class="btn dropdown-toggle membernamePrefillSelect" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Show email domain options" data-bind="css:
+                                                    {
+                                                        'has-error': showError(memberName)
+                                                    }">
+                                            <!-- ko ifnot: config.isConvergedUXV2 --><!-- /ko -->
+                                            <!-- ko if: config.isConvergedUXV2 -->
+                                            <img role="presentation" data-bind="attr: { src: dropdownCaretImg }" src="resources/fp56/6.svg" data-original-src="https://acctcdn.msauth.net/images/dropdown_caret_KXSZjGsyILZaoTf0sI9X-A2.svg">
+                                            <!-- /ko -->
+                                        </button>
+                                        <ul id="DomainPicker" class="dropdown-menu pull-right" role="list" data-bind="attr: { 'aria-label': emailDomainOptionsMenuAriaLabel }, foreach: domains" aria-label="Email domain options">
+                                            <li role="presentation">
+                                                <a role="listitem" href="https://signup.live.com/signup?lcid=1033&amp;wa=wsignin1.0&amp;rpsnv=13&amp;ct=1551172667&amp;rver=7.0.6737.0&amp;wp=MBI_SSL&amp;wreply=https%3a%2f%2foutlook.live.com%2fowa%2f%3fnlp%3d1%26signup%3d1%26RpsCsrfState%3d054a9732-c95c-1794-2c47-9707c1e81eda&amp;id=292841&amp;CBCXT=out&amp;lw=1&amp;fl=dob%2cflname%2cwld&amp;cobrandid=90015&amp;lic=1&amp;uaid=64d239e0e017434087d7dd98d4d29e50#" data-bind="attr:
+                                                       {
+                                                           'id': 'domain' + $index(),
+                                                           'aria-posinset': $index() + 1,
+                                                           'aria-setsize': $parent.domains.length
+                                                       },
+                                                       text: $data,
+                                                       click: function () { $parent.domainSelected($data); }" id="domain0" aria-posinset="1" aria-setsize="2">outlook.com</a>
+                                            </li>
+                                        
+                                            <li role="presentation">
+                                                <a role="listitem" href="https://signup.live.com/signup?lcid=1033&amp;wa=wsignin1.0&amp;rpsnv=13&amp;ct=1551172667&amp;rver=7.0.6737.0&amp;wp=MBI_SSL&amp;wreply=https%3a%2f%2foutlook.live.com%2fowa%2f%3fnlp%3d1%26signup%3d1%26RpsCsrfState%3d054a9732-c95c-1794-2c47-9707c1e81eda&amp;id=292841&amp;CBCXT=out&amp;lw=1&amp;fl=dob%2cflname%2cwld&amp;cobrandid=90015&amp;lic=1&amp;uaid=64d239e0e017434087d7dd98d4d29e50#" data-bind="attr:
+                                                       {
+                                                           'id': 'domain' + $index(),
+                                                           'aria-posinset': $index() + 1,
+                                                           'aria-setsize': $parent.domains.length
+                                                       },
+                                                       text: $data,
+                                                       click: function () { $parent.domainSelected($data); }" id="domain1" aria-posinset="2" aria-setsize="2">hotmail.com</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                <input style="position: absolute; top: -100em;" type="text" name="LastName" tabindex="-1" aria-hidden="true"><input style="position: absolute; top: -100em;" type="text" name="Surname" tabindex="-1" aria-hidden="true"><input style="position: absolute; top: -100em;" type="text" name="SecondName" tabindex="-1" aria-hidden="true"><input style="position: absolute; top: -100em;" type="text" name="LName" tabindex="-1" aria-hidden="true"><input style="position: absolute; top: -100em;" type="text" name="Last" tabindex="-1" aria-hidden="true"><input style="position: absolute; top: -100em;" type="text" name="Last Name" tabindex="-1" aria-hidden="true"><input style="position: absolute; top: -100em;" type="text" name="bt_rand0518" tabindex="-1" aria-hidden="true"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /ko -->
+                    <!-- ko ifnot: (config.pwdless !== 0 && memberNameType() === "Phone") || (config.pwdlessemail !== 0 && memberNameType() === "EASI") || config.isPaginated --><!-- /ko -->
+               
+                    <!-- ko if: !config.isPaginated && config.showOptinEmail !== 0 --><!-- /ko -->
+                    <!-- ko ifnot: config.isConvergedUXV2 --><!-- /ko -->
+                    <!-- ko if: config.showSwitch !== 0 && !showPaginatedUsernamePrefill --><!-- /ko -->
+                    
+                    <!-- ko if: showLegalText --><!-- /ko -->
+                    <!-- ko if: config.isPaginated && config.pwdless !== 0 && memberNameType() == "Phone" --><!-- /ko -->
+                    <!-- ko if: config.isConvergedUXV2 -->
+                    <div class="position-buttons" data-bind="component:
+                         {
+                             name: 'signupButtons',
+                             params:
+                             {
+                                 showBackButtonOnV2: true,
+                                 isBottomMostElement: false
+                             }
+                         }"><div class="row">    <div data-bind="css: {'no-margin-bottom': isBottomMostElement, 'col-xs-24 form-group no-padding-left-right': config.isConvergedUXV2 === 0, 'button-container': config.isConvergedUXV2 !== 0 }" class="button-container">        <div class="col-xs-24" data-bind="visible: buttons.consentCreateButton.visible()" style="display: none;">            <input type="submit" id="iConsentAction" class="btn btn-block btn-primary" data-bind="attr: { disabled: buttons.nextButton.disabled() }, visible: buttons.nextButton.visible(), value: strings.createBtnText" value="">        </div>        <!-- ko if: !config.isConvergedUXV2 || showBackButtonOnV2 -->        <div data-bind="css: { 'inline-block': config.isConvergedUXV2, 'col-xs-12': buttons.nextButton.visible() &amp;&amp; !buttons.consentCreateButton.visible() &amp;&amp; !config.isConvergedUXV2, 'col-xs-24': !buttons.nextButton.visible() || buttons.consentCreateButton.visible() }, visible: buttons.backButton.visible()" class="inline-block" style="display: none;">            <input type="button" id="iSignupCancel" class="btn btn-block" data-bind="attr: { disabled: buttons.backButton.disabled() }, value: strings.backButton" value="Back">        </div>        <!-- /ko -->        <div data-bind="css: { 'inline-block': config.isConvergedUXV2 !== 0, 'col-xs-12': buttons.backButton.visible() &amp;&amp; config.isConvergedUXV2 === 0, 'col-xs-24': !buttons.backButton.visible() &amp;&amp; config.isConvergedUXV2 === 0 }, visible: buttons.nextButton.visible() &amp;&amp; !buttons.consentCreateButton.visible()" class="inline-block">            <input type="submit" id="iSignupAction" class="btn btn-block btn-primary" data-bind="attr: { disabled: buttons.nextButton.disabled() }, visible: buttons.nextButton.visible(), value: strings.nextButton" value="Next">        </div>    </div></div></div>
+                    <!-- /ko -->
+                </fieldset>
+            </div>
+            <div id="CredentialsSuggestionsPane" data-bind="visible: showSuggestions()" style="display: none;">
+                <div id="SuggestionsTitle" class="row text-title" role="heading" aria-level="1" data-bind="text: strings.suggPageTitle">Choose an address</div>
+                <div id="Suggestions" data-bind="foreach: memberNameSuggestions"></div>
+                <div class="row text-body">
+                    <input type="button" role="button" id="iSuggCancel" class="btn btn-block" data-bind="value: strings.backButton,
+                               click: onSuggestionsClose,
+                               attr: { 'title': strings.backButton }" value="Back" title="Back">
+                </div>
+            </div>
+        </div>
+    </div><input aria-hidden="true" id="pageDialogForm_0_submit" type="submit" tabindex="-1" style="position: absolute; height: 0px; width: 0px; border: none; padding: 0px; min-width: 0px; min-height: 0px;"></form></div></div>
+
+            </div>
+            
+            <div role="main" class="c_inmiddle_area" id="dynamiccontent" style="display:none" aria-hidden="true">
+                
+    <div id="signupTemplates">
+        
+        
+        
+        
+        
+        
+        
+        
+        <!-- ko if: config.collectFLName !== 0 -->
+        
+        <!-- /ko -->
+        <!-- ko if: config.collectDob !== 0 -->
+        
+        <!-- /ko -->
+        
+        
+        
+        
+    </div>
+
+            </div>
+        
+                    
+                    <!--tou/privacy-->
+                    <div id="iHostInline" class="Hide">
+                        
+                        <div class="btn-group">
+                            <div class="col-xs-24">
+                                <input type="button" autofocus="" class="btn btn-block btn-primary" id="iHostInlineCancel" value="Back">
+                            </div>
+                        </div>
+                        
+                        <pre id="iPriv" class="text-block-body pre-wrap-format" style="display: none">                            Please wait
+                        </pre>
+                        <pre id="iTOU" class="text-block-body pre-wrap-format" style="display: none">                            Please wait
+                        </pre>
+                        <div id="iImpressum" class="text-block-body" style="display: none">
+                            Please wait
+                        </div>
+                        
+                        <div class="btn-group">
+                            <div class="col-xs-24">
+                                <input type="button" class="btn btn-block btn-primary" id="iHostInlineCancel2" value="Back">
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- footer -->
+        <div id="footer" class="footer default" role="contentinfo">
+            <div class="footerNode text-secondary">
+                
+                <span>© 2019 Microsoft</span>
+                <a target="_blank" rel="noreferrer noopener" id="terms" href="https://www.microsoft.com/en-us/servicesagreement/default.aspx">Terms of Use</a> <a target="_blank" rel="noreferrer noopener" id="privacy" href="https://go.microsoft.com/fwlink/?LinkID=521839">Privacy &amp; Cookies</a>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+            
+        </div>
+    </div></div>
+    
+    
+
+
+
+
+    
+    <div style="display: none" id="PageId">
+        i6209</div>
+
+    
+    
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+  
+</body></html>

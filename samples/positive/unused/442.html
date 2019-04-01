@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; media-src 'self' data:; style-src 'self' data: 'unsafe-inline'; font-src 'self' data:; frame-src 'self' data:">
+    
+    <title>Sign in | EmotivID</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="resources/442/1.ico" data-original-href="https://id.emotivcloud.com/static/img/favicon.ico">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    
+    <link href="resources/442/2.css" rel="stylesheet" data-original-href="https://id.emotivcloud.com/static/bootstrap/css/bootstrap.min.css">
+    <link href="resources/442/3.css" rel="stylesheet" data-original-href="https://id.emotivcloud.com/static/css/base.css">
+    
+    <link href="resources/442/4.css" rel="stylesheet" data-original-href="https://id.emotivcloud.com/static/css/bootstrap-social.css">
+    <link rel="stylesheet" href="resources/442/5.css " data-original-href="https://id.emotivcloud.com/static/font-awesome/css/font-awesome.min.css ">
+
+    
+    
+    
+    
+    
+    
+
+    <style>
+        
+
+        @font-face {
+           font-family: Myriad Pro;
+           src: url("resources/442/6.bin");
+        }
+        @font-face {
+           font-family: Myriad Pro Bold;
+           src: url("resources/442/7.bin");
+        }
+        
+label {
+    line-height: 30px;
+}
+@media (max-width: 399px){
+    .control-label{
+        display: none;
+    }
+    #div_id_username > div.input-group,
+    #div_id_password > div.input-group {
+        width: 100%;
+    }
+}
+@media (min-width: 400px){
+    span.input-group-addon{
+        display: none;
+    }
+    .input-group input.form-control{
+        border-radius: 4px !important;
+    }
+    .control-label{
+        padding-left: 0;
+    }
+}
+@media (max-width: 479px){
+    div.social_logins > div.col-xs-4{
+        width: 100%;
+        padding: 4px 0px !important;
+    }
+    <!--div.social_logins > div > a.btn-social:before{-->
+        <!--content: "Login with ";-->
+    <!--}-->
+
+}
+#emotivid_login{
+    max-width: 320px;
+    margin-top: 4px;
+    background: transparent;
+}
+
+    </style>
+    
+</head>
+
+<body>
+<nav class="nav navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+            <a href="http://www.emotiv.com/" class="navbar-brand">
+                <img src="resources/442/8.png" data-original-src="https://id.emotivcloud.com/static/img/logo.png">
+            </a>
+        <div class="pull-right" id="navbar-collapse">
+            
+            <ul class="nav pull-right user-menu">
+                
+                
+                    <li class="dropdown navbar-dropdown">
+                        <a href="https://id.emotivcloud.com/eoidc/api-auth/login/?next=/eoidc/oidc/authorize/%3Fstate%3Demotiv5c9a4da8a56da%26redirect_uri%3Dhttps%253A%252F%252Fwww.emotiv.com%252Foauth.php%26response_type%3Dcode%26client_id%3DyCJg9mB9Gh2mVSEJ8NkTdU4ff4xXNO3BzXSPnNRo%26scope%3Dwrite%2Bopenid%2Bprofile%2Baddress%2Bread%2Bfull_profile%2Bphone%2Bemail%26login-prompt%3Dno#" class="dropdown-toggle pull-right navbar-text" data-toggle="dropdown" role="button" aria-expanded="false">
+                            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                            <li><a href="https://id.emotivcloud.com/eoidc/api-auth/login/">Login</a></li>
+                            <li><a href="https://id.emotivcloud.com/eoidc/account/registration/">Registration</a></li>
+                        </ul>
+                    </li>
+                
+            
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+
+    <div class="container-fluid" style="margin-top: 20px">
+        
+
+        <div class="row-fluid">
+            <div class="well" style="max-width: 480px; margin-left: auto; margin-right: auto">
+                <div class="row-fluid">
+                    <div class="col-xs-12 center">
+                        
+                        <h3 style="font-size:21px; white-space: nowrap;">
+                            Sign in with your EmotivID
+                        </h3>
+                        
+                    </div>
+                </div><!-- /row fluid -->
+    
+                <div class="row-fluid">
+                    <form action="https://id.emotivcloud.com/eoidc/api-auth/login/" class="form" method="post">
+                        <input type="hidden" name="csrfmiddlewaretoken" value="MWJvSbTLOwCYHYr44n5C51TCl9DEZYe4">
+                        <div id="emotivid_login" class="center-block">
+                            <div id="div_id_username" class="clearfix form-group">
+                                <div class="col-xs-3">
+                                    <label class="control-label">EmotivID</label>
+                                </div>
+                                <div class="col-xs-9 input-group">
+                                    <span class="input-group-addon" title="EmotivID">
+                                        <i class="fa fa-user fa-fw"></i>
+                                    </span>
+                                    <input class="form-control" style="height: 30px; width: 100%; padding: 3px 9px;" type="text" name="username" maxlength="50" autocapitalize="off" autocorrect="off" autocomplete="off" id="id_username" required="" autofocus="" placeholder="EmotivID" data-fathom="username">
+                                </div>
+                            </div>
+                            <div id="div_id_password" class="clearfix form-group">
+                                <div class="col-xs-3">
+                                    <label class="control-label">Password</label>
+                                </div>
+                                <div class="col-xs-9 input-group">
+                                    <span class="input-group-addon" title="Password">
+                                        <i class="fa fa-key fa-fw"></i>
+                                    </span>
+                                    <input class="form-control" style="height: 30px; width: 100%; padding: 3px 9px;" type="password" name="password" maxlength="128" autocapitalize="off" autocorrect="off" autocomplete="off" id="id_password" required="" placeholder="Password" data-fathom="password">
+                                </div>
+                            </div>
+                            
+                            
+                            
+                            
+                            <input type="hidden" name="next" value="/eoidc/oidc/authorize/?state=emotiv5c9a4da8a56da&amp;redirect_uri=https%3A%2F%2Fwww.emotiv.com%2Foauth.php&amp;response_type=code&amp;client_id=yCJg9mB9Gh2mVSEJ8NkTdU4ff4xXNO3BzXSPnNRo&amp;scope=write+openid+profile+address+read+full_profile+phone+email&amp;login-prompt=no">
+                            <input type="hidden" name="account_type" value="None">
+
+                            <div class="clearfix row form-group">
+                                <div id="div_id_remember_me" class="pull-left inlineblock">
+                                    <input style="margin: 2px 0px 6px 0px; " type="checkbox" id="id-remember_me" name="remember_me" checked="" value="yes">
+                                    <label style="margin-left: 4px;">
+                                        Keep me logged in
+                                    </label>
+                                </div>
+                            </div>
+                            
+                           <div class="register_div row form-group">
+                                <div class="pull-right">
+                                    <input type="submit" name="submit" role="button" value="Log in" class="btn btn-black" id="submit-id-submit" data-fathom="next">
+                                </div>
+                                <a href="https://id.emotivcloud.com/eoidc/account/registration/" role="button" class="btn btn-white pull-left">
+                                        Register
+                                </a>
+                            </div>    
+                            <div class="misc_links clearfix row form-group">
+                                <a href="https://id.emotivcloud.com/eoidc/account/password/forgot/" style="text-align: center; color: black;">
+                                    Forgot your password?</a>
+                            </div>
+                        </div> <!-- emotiv id login-->
+                        <!--social buttons -->
+                        <div class="row">
+                            <div class="divider col-xs-5"></div>
+                            <div class="col-xs-2 text-center"><strong>or</strong></div>
+                            <div class="divider col-xs-5"></div>
+                        </div>
+                        <div class="social_logins row">
+                            <!--
+                            <div class="col-xs-4" style="padding: 0 10px 0 0;">
+                                <a href="/eoidc/social/google/login/?process=login&next=%2Feoidc%2Foidc%2Fauthorize%2F%3Fstate%3Demotiv5c9a4da8a56da%26redirect_uri%3Dhttps%253A%252F%252Fwww.emotiv.com%252Foauth.php%26response_type%3Dcode%26client_id%3DyCJg9mB9Gh2mVSEJ8NkTdU4ff4xXNO3BzXSPnNRo%26scope%3Dwrite%2Bopenid%2Bprofile%2Baddress%2Bread%2Bfull_profile%2Bphone%2Bemail%26login-prompt%3Dno"
+                                        class="btn btn-social btn-google btn-block" role="button">
+                                    <i class="fa fa-google"></i>
+                                    Google
+                                </a>
+                            </div>
+                            -->
+                            <div class="text-center" style="padding: 0 5px;">
+                                <a href="https://id.emotivcloud.com/eoidc/social/facebook/login/?process=login&amp;next=%2Feoidc%2Foidc%2Fauthorize%2F%3Fstate%3Demotiv5c9a4da8a56da%26redirect_uri%3Dhttps%253A%252F%252Fwww.emotiv.com%252Foauth.php%26response_type%3Dcode%26client_id%3DyCJg9mB9Gh2mVSEJ8NkTdU4ff4xXNO3BzXSPnNRo%26scope%3Dwrite%2Bopenid%2Bprofile%2Baddress%2Bread%2Bfull_profile%2Bphone%2Bemail%26login-prompt%3Dno" class="btn btn-social btn-facebook" role="button">
+                                    <i class="fa fa-facebook"></i>
+                                    Login with Facebook
+                                </a>
+                            </div>
+                            <!--
+                            <div class="col-xs-4" style="padding: 0 0 0 10px;">
+                                <a href="/eoidc/social/twitter/login/?process=login&next=%2Feoidc%2Foidc%2Fauthorize%2F%3Fstate%3Demotiv5c9a4da8a56da%26redirect_uri%3Dhttps%253A%252F%252Fwww.emotiv.com%252Foauth.php%26response_type%3Dcode%26client_id%3DyCJg9mB9Gh2mVSEJ8NkTdU4ff4xXNO3BzXSPnNRo%26scope%3Dwrite%2Bopenid%2Bprofile%2Baddress%2Bread%2Bfull_profile%2Bphone%2Bemail%26login-prompt%3Dno"
+                                        class="btn btn-social btn-twitter btn-block" role="button">
+                                    <i class="fa fa-twitter"></i>
+                                    Twitter
+                                </a>
+                            </div>
+                            -->
+                        </div>
+                        <!--social buttons -->
+
+                    </form>
+                </div><!-- /.row-fluid -->
+            </div><!--/.well-->
+            <div style="margin: 0 0 20px; text-align: center; color: #A30000;" id="form_messages">
+                
+                
+                <!--   -->
+            </div>
+        </div><!-- /.row-fluid -->      
+    </div><!-- /.container-fluid -->
+
+
+
+
+
+
+
+</body></html>

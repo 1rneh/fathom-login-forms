@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<!--[if lte IE 10 ]><html class="ielt10"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html class="web default"><!--<![endif]--><head><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; media-src 'self' data:; style-src 'self' data: 'unsafe-inline'; font-src 'self' data:; frame-src 'self' data:">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <meta name="viewport" content="width=device-width">
+
+    <title>Rockstar Games Social Club</title>
+
+    <style>
+        body {
+            background-color: #000000;
+            font-family: -apple-system, BlinkMacSystemFont, Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+        }
+
+        .Master__logo {
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .Master__info {
+            color: #999;
+        }
+
+    </style>
+
+    <link rel="shortcut icon" href="resources/92/1.ico" data-original-href="https://signin-s.rsg.sc/rockstar.ico">
+
+
+
+    <link rel="prefetch" href="https://signin-s.rsg.sc/js/20190218eai/build/intl-en.0919f72b2c46505c7b45.bundle.js">
+    <link rel="prefetch" href="https://signin-s.rsg.sc/js/20190218eai/build/locale-en-US.c8d6e9c2b0c96354461a.bundle.js">
+
+<style type="text/css">
+/*
+
+    ==============
+    VISUAL CAPTCHA
+    ==============
+
+*/
+
+.visualCaptcha {
+
+	font-family: Arial, Helvetica, sans-serif;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 4px;
+    margin: 10px 0;
+    padding: 10px;
+    text-align: center;
+
+}
+
+.visualCaptcha * {
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+}
+
+.visualCaptcha .audioField {
+
+    font-size: 15px;
+    color: #495e62;
+    font-weight: 100;
+    padding: 5px;
+    border: 1px solid #ff9900;
+    height: 40px;
+    width: 100%;
+    border-radius: 4px;
+
+}
+
+.accessibility-description,
+.visualCaptcha-explanation,
+.status.valid {
+
+    padding: 0 0 10px;
+    text-align: center;
+    color: #000 !important;
+    float: none;
+
+}
+
+.visualCaptcha-possibilities,
+.visualCaptcha-refresh-button,
+.visualCaptcha-accessibility-button,
+.visualCaptcha-button-group {
+
+    display: inline-block;
+    vertical-align: top;
+
+}
+
+.visualCaptcha-possibilities .img {
+
+    padding: 5px;
+    margin-right: 6px;
+    display: inline-block;
+    border-radius: 50px;
+
+}
+
+.visualCaptcha-possibilities .img:hover {
+
+    background-color: #fcaf17;
+    cursor: pointer;
+
+}
+
+.visualCaptcha-possibilities img {
+
+    height: 25px;
+    -webkit-transition: all 200ms;
+    transition: all 200ms;
+    width: 25px;
+    z-index: 5;
+
+}
+
+.visualCaptcha-possibilities img:hover {
+
+    cursor: pointer;
+
+}
+
+.visualCaptcha-possibilities .visualCaptcha-selected {
+
+    background: #ccc;
+    border-radius: 35px;
+    padding: 5px;
+
+}
+
+.visualCaptcha-refresh-button {
+
+    margin-left: 15px;
+    padding: 9px;
+	background-color: #ccc;
+	border: 0;
+	border-radius: 35px;
+	color: #999;
+	height: 35px;
+	width: 35px;
+
+}
+
+.visualCaptcha-refresh-button img {
+
+	opacity: .7;
+
+}
+
+.visualCaptcha-refresh-button hover {
+    background-color: #fcaf17;
+}
+
+.visualCaptcha-refresh-button img {
+
+    width: 16px;
+    height: 16px;
+
+}
+
+.visualCaptcha-refresh-button:hover {
+
+    cursor: pointer;
+
+}
+
+.visualCaptcha-accessibility-button {
+
+    border: 1px solid #000;
+    border-radius: 100px;
+    padding: 9px 10px 7px;
+
+}
+
+.visualCaptcha-accessibility-button img {
+
+     height: 16px;
+     width: 16px;
+
+}
+
+.visualCaptcha-accessibility-button:hover {
+
+    cursor: pointer;
+
+}
+
+@-webkit-keyframes fadeIn {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+@-webkit-keyframes fadeOut {
+
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+
+}
+
+@keyframes fadeOut {
+
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+
+}
+
+div.visualCaptcha .visualCaptcha-show {
+
+     -webkit-animation: fadeIn 300ms;
+     animation: fadeIn 300ms;
+
+}
+
+div.visualCaptcha .visualCaptcha-hide {
+
+     display: none !important;
+     -webkit-animation: fadeOut 300ms;
+     animation: fadeOut 300ms;
+
+}
+
+.visualCaptcha-error {
+
+    color: #b94a48;
+
+}
+
+.visualCaptchaRetry-error {
+
+    color: #b94a48 !important;
+
+}</style></head>
+<body>
+
+    <div id="app-root"><div class="Master__wrap"><div class="Master__content"><div id="app-page" class="Master__main"><div class="Master__logo"><span></span></div><div class=""><div class="Container__container"><h1 class="Heading__heading"><span>Sign in with Social&nbsp;Club</span></h1><div><div><form class="loginform__form"><fieldset data-ui-name="emailInputFieldset" class="Fieldset__fieldset"><span class="UI__TextInput__input"><input autocomplete="on" class="UI__TextInput__field" maxlength="60" name="email" placeholder="" tabindex="1" type="email" value="" data-fathom="username"><label class="UI__TextInput__label"><span><span>Email</span></span></label></span></fieldset><fieldset data-ui-name="passwordInputFieldset" class="Fieldset__fieldset"><span class="UI__PasswordInput__inputContainer UI__PasswordInput__hasReveal"><span class="UI__TextInput__input UI__PasswordInput__passwordInput"><input autocomplete="on" class="UI__TextInput__field" name="password" placeholder="" tabindex="1" type="password" value="" maxlength="30" data-fathom="password"><label class="UI__TextInput__label"><span><span>Password</span></span></label></span><span class="UI__PasswordInput__passwordReveal"><div><svg xmlns="http://www.w3.org/2000/svg" viewBox="1 0.8 32 32" height="16" width="16" class="UI__Icon__icon"><path d="M14.1 8.8c.8-.3 1.6-.4 2.4-.4 4 0 7.2 3.2 7.2 7.2 0 .8-.1 1.7-.4 2.4l4.4 4.4c3.5-3.1 4.8-6.8 4.8-6.8S28 4.7 16.5 4.7c-2.1 0-3.9.3-5.5.9l3.1 3.2zm11.4 15.3l-3.6-3.6-2-2-6.2-6.2-2-2-3.4-3.4-4.4-4.4-2 2 4 4C2.1 11.6.5 15.6.5 15.6s3.9 11 16 11c2.4 0 4.5-.4 6.4-1.2l5 5 2-2-4.4-4.3zm-9-1.2c-4 0-7.2-3.2-7.2-7.2 0-1.1.2-2.1.7-3.1l2.2 2.2c-.1.3-.1.6-.1.9 0 2.4 2 4.4 4.4 4.4.3 0 .6 0 .9-.1l2.2 2.2c-.9.4-2 .7-3.1.7zm4.4-7.4c-.1-2.3-1.9-4.2-4.2-4.2l4.2 4.2z"></path></svg></div></span></span><span class="loginform__checkbox UI__CheckBox__wrapper"><input type="checkbox" id="box" name="keepMeSignedIn" class="checkbox" tabindex="1" value=""><label for="box"><span>Keep me signed in</span></label></span></fieldset><fieldset class="loginform__submitField"><div class="loginform__submitActions"><p><a class="loginform__link forgotPassword" tabindex="1" href="https://signin.rockstargames.com/forgotten-password?cid=rsg"><span>Forgot your password?</span></a></p><button class="UI__Button__btn UI__Button__primary UI__Button__medium loginform__submit" style="" tabindex="1" type="submit" data-fathom="next"><div><span>Sign in</span></div></button></div></fieldset><fieldset class="loginform__captchaField Fieldset__fieldset"><div id="sc-captcha-login"><div class="grecaptcha-badge" data-style="bottomleft" style="width: 256px; height: 60px; transition: left 0.3s ease 0s; position: fixed; bottom: 14px; left: -186px; box-shadow: gray 0px 0px 5px;"><div class="grecaptcha-logo"><iframe src="resources/92/2.html" role="presentation" name="a-cda0htrx1hq" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" data-original-src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LdYkh8UAAAAAF_3aM1rasLDyDPaA-7wPPPW8HgC&amp;co=aHR0cHM6Ly9zaWduaW4ucm9ja3N0YXJnYW1lcy5jb206NDQz&amp;hl=en&amp;v=v1550471573786&amp;size=invisible&amp;badge=bottomleft&amp;cb=ly02hyte5gr2" width="256" height="60" frameborder="0"></iframe></div><div class="grecaptcha-error"></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div></div></fieldset></form></div></div></div><div class="Container__container"><fieldset class="LoginMaster__thirdParty Fieldset__fieldset"><div class="UI__ThirdPartyAuth__wrap"><p class="UI__ThirdPartyAuth__label"><span>Sign in using</span></p><div class="UI__ThirdPartyAuth__services"><a href="https://signin.rockstargames.com/tpa/np/login?cid=rsg&amp;returnUrl=%2F" class="UI__ThirdPartyAuthProvider__link" target="_self" tabindex="1"><span class="UI__ServiceIcon__np UI__ServiceIcon__icon" style="width: 100%; height: 100%;">np</span></a><a href="https://signin.rockstargames.com/tpa/xbox/login?cid=rsg&amp;returnUrl=%2F" class="UI__ThirdPartyAuthProvider__link" target="_self" tabindex="1"><span class="UI__ServiceIcon__xbl UI__ServiceIcon__icon" style="width: 100%; height: 100%;">xbl</span></a><a href="https://signin.rockstargames.com/tpa/facebook/login?cid=rsg&amp;returnUrl=%2F" class="UI__ThirdPartyAuthProvider__link" target="_self" tabindex="1"><span class="UI__ServiceIcon__facebook UI__ServiceIcon__icon" style="width: 100%; height: 100%;">facebook</span></a><a href="https://signin.rockstargames.com/tpa/google/login?cid=rsg&amp;returnUrl=%2F" class="UI__ThirdPartyAuthProvider__link" target="_self" tabindex="1"><span class="UI__ServiceIcon__google UI__ServiceIcon__icon" style="width: 100%; height: 100%;">google</span></a><a href="https://signin.rockstargames.com/tpa/twitter/login?cid=rsg&amp;returnUrl=%2F" class="UI__ThirdPartyAuthProvider__link" target="_self" tabindex="1"><span class="UI__ServiceIcon__twitter UI__ServiceIcon__icon" style="width: 100%; height: 100%;">twitter</span></a></div></div></fieldset></div><p class="LoginMaster__createLink"><span>Not a member?</span> <a href="https://signin.rockstargames.com/create?cid=rsg"><span>Create a new account</span></a></p></div></div><div class="Master__footer"><ul class="Master__infoList"><li class="Master__info"><span>© 2019 Rockstar&nbsp;Games</span></li></ul></div></div></div></div>
+
+    
+    <link rel="stylesheet" href="resources/92/3.css" data-original-href="https://signin-s.rsg.sc/js/20190218eai/build/app.ed5d2658410a4df7bc7671d93f306704.css">    
+
+
+
+<div style="visibility: hidden; position: absolute; width: 100%; top: -10000px; left: 0px; right: 0px; transition: visibility 0s linear 0.3s, opacity 0.3s linear 0s; opacity: 0;"><div style="width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; z-index: 2000000000; background-color: rgb(255, 255, 255); opacity: 0.5;"></div><div style="margin: 0px auto; top: 0px; left: 0px; right: 0px; position: absolute; border: 1px solid rgb(204, 204, 204); z-index: 2000000000; background-color: rgb(255, 255, 255); overflow: hidden;"><iframe title="recaptcha challenge" src="resources/92/4.html" style="width: 100%; height: 100%;" name="c-cda0htrx1hq" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" data-original-src="https://www.google.com/recaptcha/api2/bframe?hl=en&amp;v=v1550471573786&amp;k=6LdYkh8UAAAAAF_3aM1rasLDyDPaA-7wPPPW8HgC&amp;cb=j7ijs0cp7v4o" frameborder="0"></iframe></div></div></body></html>

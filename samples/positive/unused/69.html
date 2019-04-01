@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html class=" a-js a-audio a-video a-canvas a-svg a-drag-drop a-geolocation a-history a-webworker a-autofocus a-input-placeholder a-textarea-placeholder a-local-storage a-gradients a-transform3d a-touch-scrolling a-text-shadow a-text-stroke a-box-shadow a-border-radius a-border-image a-opacity a-transform a-transition" data-aui-build-date="3.18.5-2018-04-12" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; media-src 'self' data:; style-src 'self' data: 'unsafe-inline'; font-src 'self' data:; frame-src 'self' data:">
+    <title>Amazon Web Services Sign-In</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="csrf_token" content="ykpJmPUiDu5s7iU1hrEPfhslliNUvZRJKZFqjTmVfj7toWCHqQMtnde2MMkNZdCYFliBl2noQAxIvxJN9edufMflHKNuB0qCaEE3Z9dIRmgJhlNrO04o1vbk9X50qABkIKV70ZgHCB4Jd66VFNuXfq6cTV6KKujB0PY4PghfOn4UFqbzirZU6Q5OK0z4IleYOsV9VrqQnZuAQrkMNxNZEotnMrBsX8BtRtlHh4rXPmps2bwdgGXCrb78KV6qFjsE">
+    <meta name="session_id" content="4ncxQREECxUp0a1ziu4j8A0CLODe6eTr">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+     
+
+    
+
+    
+
+    
+    
+    
+    
+
+    
+    <link rel="stylesheet" href="resources/69/1.css" type="text/css" data-original-href="https://aws-signin-website-assets.s3.amazonaws.com/css/components.css">
+    <link rel="stylesheet" href="resources/69/2.css" type="text/css" data-original-href="https://aws-signin-website-assets.s3.amazonaws.com/css/grid.css">
+    <link rel="stylesheet" href="resources/69/3.css" type="text/css" data-original-href="https://aws-signin-website-assets.s3.amazonaws.com/css/utilities.css">
+    <style>
+        .aws-signin-main-box{margin:0 auto}
+.fixed-width{width:940px}
+.aws-signin-logo-header-box{margin-top:30px;margin-bottom:40px}
+#logo_container>h1.background-left{background-repeat:no-repeat;background-size:contain;color:rgba(0,0,0,0);height:50px;padding:0;width:84px;border-bottom:0;background-image:url("resources/69/4.png")}
+#logo_container>h1.background-mid{background-repeat:no-repeat;background-size:contain;color:rgba(0,0,0,0);margin:auto;height:50px;padding:0;width:84px;border-bottom:0;background-image:url("resources/69/4.png")}
+a#logo_link{color:transparent;width:84px;height:50px;display:block;font-size:12px}
+.main-table:before,.main-table:after{content:" ";display:table}
+.main-table:after{clear:both}
+.awsui{color:#444;font-family:"Helvetica Neue",Roboto,Arial,sans-serif;font-size:14px;line-height:21px}
+.aws-signin-ui span{overflow-wrap:break-word}
+.aws-signin-ui b{overflow-wrap:break-word}
+.aws-signin-alert-box{padding:15px 0 20px 40px}
+.aws-signin-alert-exclamation-mark{top:0;left:9px}
+.aws-signin-new-account-box{margin-top:30px}
+.signin-break-wrapper::before{background-color:#cbcbcb;bottom:0;content:"";height:1px;left:0;margin:auto;position:absolute;top:0;width:100%}
+.signin-break-wrapper{background:#fff none repeat scroll 0 0;color:#555;margin-top:20px;position:relative;text-align:center}
+.signin-break-wrapper span{background:inherit;padding:0 10px;position:relative}
+.aws-signin-login-general-box{width:370px;min-height:450px;padding-right:60px;box-sizing:border-box}
+.aws-signin-login-general-box-full-width{width:100%;min-height:450px;padding-right:60px;box-sizing:border-box}
+.aws-signin-troubleshoot-mfa-section{display:table;margin-bottom:20px;margin-top:20px}
+.aws-signin-troubleshoot-mfa-section-hr{opacity:.2;margin-top:20px;margin-bottom:20px}
+.aws-signin-troubleshoot-mfa-section-text{width:80%;float:left}
+.aws-signin-troubleshoot-mfa-section-message{margin-top:5px;margin-bottom:5px}
+.aws-signin-troubleshoot-mfa-section-button{float:left;margin-top:10px;width:100%}
+.aws-signin-resync-mfa-container{width:82%}
+.aws-signin-resync-mfa-container-mobile{width:100%}
+.aws-signin-login-header-box{margin-bottom:30px}
+.aws-signin-general-alert-box{margin-top:10px;margin-bottom:10px}
+.aws-signin-general-header-box{margin-bottom:30px}
+.aws-signin-captcha-box{display:inline-block;height:70px;width:200px;margin-right:5px}
+.aws-signin-general-button-box{margin-top:20px;margin-bottom:20px}
+.aws-signin-general-label-box{margin-bottom:7px}
+.aws-signin-general-link-box{margin-top:15px;margin-bottom:15px}
+.aws-signin-general-link-box span:hover{color:#38d;text-decoration:underline}
+.aws-signin-general-link-box span{color:#16b;cursor:pointer}
+.aws-signin-general-link-box-no-margin span:hover{color:#38d;text-decoration:underline}
+.aws-signin-general-link-box-no-margin span{color:#16b;cursor:pointer}
+.aws-signin-general-paragraph{margin-bottom:25px}
+.aws-signin-general-input-box{margin-bottom:20px}
+.aws-signin-general-input-box .error{border-color:#c00;box-shadow:0 0 0 3px rgba(221,0,0,0.1)}
+.aws-signin-span-word-break{word-wrap:break-word}
+.aws-signin-text-biggest{font-size:28px;line-height:34px;color:#444;font-family:"Helvetica Neue",Roboto,Arial,sans-serif}
+.aws-signin-text-bigger{font-size:22px;line-height:28px;color:#444;font-family:"Helvetica Neue",Roboto,Arial,sans-serif}
+.aws-signin-text-big{font-size:18px;line-height:24px;color:#444;font-family:"Helvetica Neue",Roboto,Arial,sans-serif}
+.aws-signin-text-normal{color:#444;font-family:"Helvetica Neue",Roboto,Arial,sans-serif;font-size:14px;line-height:21px}
+.aws-signin-text-small{color:#444;font-family:"Helvetica Neue",Roboto,Arial,sans-serif;font-size:12px;line-height:18px}
+.aws-signin-text-smaller{color:#444;font-family:"Helvetica Neue",Roboto,Arial,sans-serif;font-size:10px;line-height:12px}
+.aws-signin-link-normal{color:#00f;font-family:"Helvetica Neue",Roboto,Arial,sans-serif;font-size:14px;line-height:21px}
+.aws-signin-link-small{color:#00f;font-family:"Helvetica Neue",Roboto,Arial,sans-serif;font-size:12px;line-height:18px}
+.aws-signin-text-align-left{text-align:left}
+.aws-signin-text-align-center{text-align:center}
+.aws-signin-text-align-right{text-align:right}
+.aws-signin-button{-moz-appearance:none;border-radius:4px;color:#444;cursor:pointer;display:inline-block;font-size:14px;font-weight:bold;line-height:21px;padding:4px 14px;text-align:center;font-weight:bold;text-decoration:none;text-transform:none;overflow:visible;white-space:nowrap}
+.aws-signin-button span{font-family:"Helvetica Neue",Roboto,Arial,sans-serif;font-weight:bold}
+.aws-signin-button::-moz-focus-inner{border:0}
+.aws-signin-button .aws-signin-button-icon::before{vertical-align:text-bottom}
+.aws-signin-icon:empty::before{margin-right:0}
+.aws-signin-icon:before{height:18px;margin-right:5px;vertical-align:middle;width:18px;background-position:0 0;background-repeat:no-repeat;background-size:cover;content:"";display:inline-block}
+.aws-signin-icon-right{margin-left:5px;margin-right:-4px}
+.aws-signin-arrow-down::before{background-image:url("data:image/svg+xml;charset=utf8;base64,PHN2ZyB3aWR0aD0iMjA0OCIgaGVpZ2h0PSIyMDQ4IiB2aWV3Qm94PSIwIDAgMjA0OCAyMDQ4IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGZpbGw9IiM0NDQiICBkPSJNMTUzNiA4MzJxMCAyNi0xOSA0NWwtNDQ4IDQ0OHEtMTkgMTktNDUgMTl0LTQ1LTE5TDUzMSA4NzdxLTE5LTE5LTE5LTQ1dDE5LTQ1IDQ1LTE5aDg5NnEyNiAwIDQ1IDE5dDE5IDQ1eiIvPjwvc3ZnPg==")}
+.aws-signin-button-size-small{font-size:12px;line-height:18px;padding:2px 12px}
+.aws-signin-button-size-normal{font-size:14px;line-height:21px;padding:4px 14px}
+.aws-signin-button-width-full{width:100%;white-space:normal}
+.aws-signin-button-variant-normal{-moz-border-bottom-colors:none;-moz-border-left-colors:none;-moz-border-right-colors:none;-moz-border-top-colors:none;background-color:#dedede;background-image:linear-gradient(white,#dedede);border-color:#dedede #b8b8b8 #b8b8b8;border-image:none;border-style:solid;border-width:1px;color:#444;text-shadow:0 1px 1px rgba(255,255,255,0.75)}
+.aws-signin-button-variant-normal:hover{background-image:linear-gradient(#dedede,#c5c5c5)}
+.aws-signin-button-variant-normal:active{background-image:linear-gradient(#dedede,white);outline:0}
+.aws-signin-button-variant-primary{-moz-border-bottom-colors:none;-moz-border-left-colors:none;-moz-border-right-colors:none;-moz-border-top-colors:none;background-color:#16b;background-image:linear-gradient(#2d8cec,#16b);border-color:#16b #0b4075 #0b4075;border-image:none;border-style:solid;border-width:1px;color:white;text-shadow:0 1px 1px rgba(0,0,0,0.75)}
+.aws-signin-button-variant-primary:hover{background-image:linear-gradient(#16b,#0d4d8c)}
+.aws-signin-button-variant-primary:active{background-image:linear-gradient(#16b,#2d8cec)}
+.aws-signin-button.aws-signin-button-variant-primary.aws-signin-button-disabled{background-color:#88b3dd;background-image:linear-gradient(#acc9e7,#88b3dd);border:1px solid #88b3dd;text-shadow:none;cursor:default}
+.aws-signin-textfield{border:1px solid #ccc;border-radius:4px;box-sizing:border-box;font-size:14px;padding:7px 10px;width:100%}
+.aws-signin-textfield:focus{border-color:#38d;box-shadow:0 0 8px rgba(51,136,221,0.5);outline:0 none}
+.aws-signin-warning{color:#c00}
+.aws-signin-alert{border-radius:4px;padding:20px 25px;margin:0 auto 10px}
+.aws-signin-alert-otp{border-radius:4px;padding:10px 25px;margin:0 auto 10px}
+.aws-signin-alert-type-error{background-color:#fef9f9;border:1px solid #c00}
+.aws-signin-alert-type-success{background-color:#f7fdf7;border:1px solid #093}
+.aws-signin-alert-type-normal{background-color:#f0f9ff;border:1px solid #16b}
+.aws-signin-main-container-margin{margin:40px 0}
+.aws-signin-update-info-container{margin:0 auto;width:400px}
+.aws-signin-update-info-box-hidden{margin:0 auto;width:400px;border:1px solid #ddd;display:none}
+.aws-signin-update-info-box-showing{margin:0 auto;width:400px;border:1px solid #ddd;display:block}
+.aws-signin-info-header-box{padding:30px 30px 20px 30px;border-bottom:1px solid #ddd}
+.aws-signin-info-done-box{padding-top:20px;padding-bottom:30px}
+.aws-signin-info-one-row-box-border-bottom{padding:20px 0;border-bottom:1px solid #ddd}
+.aws-signin-info-one-row-box{padding:20px 0}
+.aws-signin-info-footer-box{padding:30px 30px 30px 20px}
+.aws-signin-general-box-padding-showing{margin:0 auto;width:400px;padding:30px;border:1px solid #ddd;display:block;box-sizing:border-box}
+.aws-signin-general-box{margin:0 auto;width:400px;display:block;box-sizing:border-box}
+.aws-signin-general-box-padding-hidden{margin:0 auto;width:400px;padding:30px;display:none;border:1px solid #ddd;box-sizing:border-box}
+@-webkit-keyframes aws-signin-spin{from{-webkit-transform:rotate(0deg)}
+to{-webkit-transform:rotate(360deg)}
+}
+@keyframes aws-signin-spin{from{transform:rotate(0deg)}
+to{transform:rotate(360deg)}
+}
+.aws-signin-spinner.aws-signin-spinner-bigger::before{height:96px;width:96px}
+.aws-signin-spinner::before{animation-duration:1100ms;animation-iteration-count:infinite;animation-name:aws-signin-spin;animation-timing-function:linear;background-position:0 0;background-repeat:no-repeat;background-size:cover;content:"";display:inline-block;height:18px;margin-right:5px;vertical-align:text-top;width:18px}
+.aws-signin-spinner::before{background-image:url("data:image/svg+xml;charset=utf8;base64,PHN2ZyB3aWR0aD0iMjA0OCIgaGVpZ2h0PSIyMDQ4IiB2aWV3Qm94PSIwIDAgMjA0OCAyMDQ4IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0xNzY3IDExODRxMCA1LTEgNy02NCAyNjgtMjY4IDQzNC41VDEwMjAgMTc5MnEtMTQ2IDAtMjgyLjUtNTVUNDk0IDE1ODBsLTEyOSAxMjlxLTE5IDE5LTQ1IDE5dC00NS0xOS0xOS00NXYtNDQ4cTAtMjYgMTktNDV0NDUtMTloNDQ4cTI2IDAgNDUgMTl0MTkgNDUtMTkgNDVsLTEzNyAxMzdxNzEgNjYgMTYxIDEwMnQxODcgMzZxMTM0IDAgMjUwLTY1dDE4Ni0xNzlxMTEtMTcgNTMtMTE3IDgtMjMgMzAtMjNoMTkycTEzIDAgMjIuNSA5LjV0OS41IDIyLjV6bTI1LTgwMHY0NDhxMCAyNi0xOSA0NXQtNDUgMTloLTQ0OHEtMjYgMC00NS0xOXQtMTktNDUgMTktNDVsMTM4LTEzOHEtMTQ4LTEzNy0zNDktMTM3LTEzNCAwLTI1MCA2NVQ1ODggNzU2cS0xMSAxNy01MyAxMTctOCAyMy0zMCAyM0gzMDZxLTEzIDAtMjIuNS05LjVUMjc0IDg2NHYtN3E2NS0yNjggMjcwLTQzNC41VDEwMjQgMjU2cTE0NiAwIDI4NCA1NS41VDE1NTMgNDY4bDEzMC0xMjlxMTktMTkgNDUtMTl0NDUgMTkgMTkgNDV6IiBmaWxsPSIjNDQ0Ii8+PC9zdmc+")}
+.aws-signin-spinner-white::before{animation-duration:1100ms;animation-iteration-count:infinite;animation-name:aws-signin-spin;animation-timing-function:linear;background-position:0 0;background-repeat:no-repeat;background-size:cover;content:"";display:inline-block;height:18px;margin-right:5px;vertical-align:text-top;width:18px}
+.aws-signin-spinner-white::before{background-image:url("data:image/svg+xml;charset=utf8;base64,PHN2ZyB3aWR0aD0iMjA0OCIgaGVpZ2h0PSIyMDQ4IiB2aWV3Qm94PSIwIDAgMjA0OCAyMDQ4IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGZpbGw9IiNGRkYiICBkPSJNMTc2NyAxMTg0cTAgNS0xIDctNjQgMjY4LTI2OCA0MzQuNVQxMDIwIDE3OTJxLTE0NiAwLTI4Mi41LTU1VDQ5NCAxNTgwbC0xMjkgMTI5cS0xOSAxOS00NSAxOXQtNDUtMTktMTktNDV2LTQ0OHEwLTI2IDE5LTQ1dDQ1LTE5aDQ0OHEyNiAwIDQ1IDE5dDE5IDQ1LTE5IDQ1bC0xMzcgMTM3cTcxIDY2IDE2MSAxMDJ0MTg3IDM2cTEzNCAwIDI1MC02NXQxODYtMTc5cTExLTE3IDUzLTExNyA4LTIzIDMwLTIzaDE5MnExMyAwIDIyLjUgOS41dDkuNSAyMi41em0yNS04MDB2NDQ4cTAgMjYtMTkgNDV0LTQ1IDE5aC00NDhxLTI2IDAtNDUtMTl0LTE5LTQ1IDE5LTQ1bDEzOC0xMzhxLTE0OC0xMzctMzQ5LTEzNy0xMzQgMC0yNTAgNjVUNTg4IDc1NnEtMTEgMTctNTMgMTE3LTggMjMtMzAgMjNIMzA2cS0xMyAwLTIyLjUtOS41VDI3NCA4NjR2LTdxNjUtMjY4IDI3MC00MzQuNVQxMDI0IDI1NnExNDYgMCAyODQgNTUuNVQxNTUzIDQ2OGwxMzAtMTI5cTE5LTE5IDQ1LTE5dDQ1IDE5IDE5IDQ1eiIvPjwvc3ZnPg==")}
+.aws-signin-spinner-box{margin-top:60px;margin-bottom:40px}
+.aws-signin-float-left{float:left}
+.aws-signin-float-right{float:right}
+.aws-signin-display-block{display:block}
+.aws-signin-display-none{display:none}
+.aws-signin-button-dropup{position:absolute;width:auto}
+.aws-signin-button-dropup-content{background-color:#444;border-radius:4px;bottom:100%;box-sizing:border-box;padding:0;position:absolute;width:115px;margin-bottom:31px}
+.aws-signin-button-dropup-item{list-style:outside none none;margin:0;white-space:nowrap}
+.aws-signin-button-dropup-item-content{line-height:21px;display:block;overflow:hidden;padding:4px 15px;text-overflow:ellipsis}
+.aws-signin-button-dropup li{color:white;cursor:pointer;text-decoration:none}
+.aws-signin-button-dropup li:hover{background-color:#222;color:#e07700;text-decoration:none}
+.aws-signin-color-darkest-gray{color:#222}
+.aws-signin-color-dark-gray{color:#444}
+.aws-signin-color-mid-dark-gray{color:#666}
+.aws-signin-color-mid-gray{color:#999}
+.aws-signin-color-mid-light-gray{color:#ccc}
+.aws-signin-color-light-gray{color:#e0e0e0}
+.aws-signin-color-lighter-gray{color:#eee}
+.aws-signin-color-lightest-gray{color:#f6f6f6}
+.aws-signin-color-white{color:#fff}
+.aws-signin-color-red{color:#c00}
+.aws-signin-color-orange{color:#e07700}
+.aws-signin-color-green{color:#093}
+.aws-signin-color-blue{color:#16b}
+.aws-signin-color-brand-orange{color:#f90}
+.aws-signin-color-lightest-red{color:#fef9f9}
+.aws-signin-color-lightest-yellow{color:#fffcec}
+.aws-signin-color-lightest-green{color:#f7fdf7}
+.aws-signin-color-lighter-blue{color:#e6f3ff}
+.aws-signin-color-lightest-blue{color:#f0f9ff}
+.aws-signin-password-tooltip-box-container{position:relative;top:10px}
+.aws-signin-password-tooltip-box{background-color:white;position:absolute;width:100%;display:block;z-index:1010;border:1px solid rgba(0,0,0,0.2);-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;-webkit-box-shadow:0 2px 4px rgba(0,0,0,0.13);-moz-box-shadow:0 2px 4px rgba(0,0,0,0.13);box-shadow:0 2px 4px rgba(0,0,0,0.13);background-color:white;box-sizing:border-box;padding:20px}
+.aws-signin-password-tooltip-box:before{border-color:transparent transparent rgba(0,0,0,0.2);border-style:solid;border-width:8px;content:"";height:0;left:50%;margin-left:-8px;position:absolute;top:-15px;width:0;z-index:1011}
+.aws-signin-password-tooltip-box:after{border-color:transparent transparent #fff;border-style:solid;border-width:8px;content:"";height:0;left:50%;margin-left:-8px;position:absolute;top:-14px;width:0;z-index:1012}
+.aws-signin-icon-alert-check-circle{background-image:url("data:image/svg+xml;charset=utf8;base64,PHN2ZyB3aWR0aD0iMjA0OCIgaGVpZ2h0PSIyMDQ4IiB2aWV3Qm94PSIwIDAgMjA0OCAyMDQ4IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0xNTQwIDg2MnEwLTI4LTE4LTQ2bC05MS05MHEtMTktMTktNDUtMTl0LTQ1IDE5bC00MDggNDA3LTIyNi0yMjZxLTE5LTE5LTQ1LTE5dC00NSAxOWwtOTEgOTBxLTE4IDE4LTE4IDQ2IDAgMjcgMTggNDVsMzYyIDM2MnExOSAxOSA0NSAxOSAyNyAwIDQ2LTE5bDU0My01NDNxMTgtMTggMTgtNDV6bTI1MiAxNjJxMCAyMDktMTAzIDM4NS41VDE0MDkuNSAxNjg5IDEwMjQgMTc5MnQtMzg1LjUtMTAzVDM1OSAxNDA5LjUgMjU2IDEwMjR0MTAzLTM4NS41VDYzOC41IDM1OSAxMDI0IDI1NnQzODUuNSAxMDNUMTY4OSA2MzguNXQxMDMgMzg1LjV6IiBmaWxsPSIjMDkzIi8+PC9zdmc+");height:18px;margin-left:-23px;margin-top:-2px;vertical-align:middle;width:18px;background-position:0 0;background-repeat:no-repeat;background-size:cover;content:"";display:inline-block}
+.aws-signin-icon-alert-exclamation-circle{background-image:url("data:image/svg+xml;charset=utf8;base64,PHN2ZyB3aWR0aD0iMjA0OCIgaGVpZ2h0PSIyMDQ4IiB2aWV3Qm94PSIwIDAgMjA0OCAyMDQ4IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0xMDI0IDI1NnEyMDkgMCAzODUuNSAxMDNUMTY4OSA2MzguNXQxMDMgMzg1LjUtMTAzIDM4NS41LTI3OS41IDI3OS41LTM4NS41IDEwMy0zODUuNS0xMDNUMzU5IDE0MDkuNSAyNTYgMTAyNHQxMDMtMzg1LjVUNjM4LjUgMzU5IDEwMjQgMjU2em0xMjggMTI0N3YtMTkwcTAtMTQtOS0yMy41dC0yMi05LjVIOTI5cS0xMyAwLTIzIDEwdC0xMCAyM3YxOTBxMCAxMyAxMCAyM3QyMyAxMGgxOTJxMTMgMCAyMi05LjV0OS0yMy41em0tMi0zNDRsMTgtNjIxcTAtMTItMTAtMTgtMTAtOC0yNC04SDkxNHEtMTQgMC0yNCA4LTEwIDYtMTAgMThsMTcgNjIxcTAgMTAgMTAgMTcuNXQyNCA3LjVoMTg1cTE0IDAgMjMuNS03LjV0MTAuNS0xNy41eiIgZmlsbD0iI0MwMCIvPjwvc3ZnPg==");height:18px;margin-left:-23px;margin-top:-2px;vertical-align:middle;width:18px;background-position:0 0;background-repeat:no-repeat;background-size:cover;content:"";display:inline-block}
+.aws-signin-password-policy-div{margin-left:23px;margin-bottom:5px}
+.aws-signin-tool-tip{display:inline-block;position:relative}
+.aws-signin-tooltip-text::before{-moz-border-bottom-colors:none;-moz-border-left-colors:none;-moz-border-right-colors:none;-moz-border-top-colors:none;border-color:transparent #444 transparent transparent;border-image:none;border-style:solid;border-width:9px;bottom:0;content:" ";height:0;left:-15px;position:absolute;right:0;top:50%;transform:translateY(-50%);width:0}
+.aws-signin-tooltip-text{background-color:#444;border-radius:4px;color:white;display:none;font-size:12px;line-height:18px;margin-left:5px;padding:10px 20px;position:absolute;top:50%;left:100%;transform:translateY(-50%);z-index:1}
+.aws-signin-tool-tip:hover .aws-signin-tooltip-text{display:inline-block}
+.aws-signin-tooltip-size-small{width:210px}
+.aws-signin-tooltip-size-medium{width:310px}
+.aws-signin-tooltip-size-large{width:460px}
+.aws-signin-login-general-box-mobile{margin:0 auto;max-width:370px;min-width:270px;padding:30px;box-sizing:border-box}
+.aws-signin-logo-header-box-mobile{margin-top:20px}
+.aws-signin-selector-mobile{position:relative;border:0 none;background:transparent none repeat scroll 0 0;-moz-appearance:none;-webkit-appearance:none;z-index:1;width:85px;left:10px}
+.aws-signin-selector-arrow-mobile{position:relative;top:-2px;z-index:-1;left:-10px}
+#message_main_box{height:250px;padding-top:100px;text-align:center;margin:auto;width:550px}
+        .u2f-container{width:22rem}
+.u2fWarning{background-color:#fffcec;border:.09rem solid #e07700;border-radius:.4rem;padding:.8rem .9rem .09rem .9rem}
+.u2f-header-text{font-size:14px;line-height:19px}
+.u2f-text-padding{margin-bottom:.9rem}
+.u2f-image-padding{margin-bottom:.3rem}
+.u2f-header{margin-bottom:.3rem}
+.u2f-padding{margin-top:1rem;margin-bottom:1rem}
+.u2f-border{border-bottom:.09rem dotted #DDDD;border-top:.09rem dotted #DDDD;width:21rem}
+.u2f-incompatible-border{padding-bottom:.5rem;padding-top:.2rem}
+.u2f-text{line-height:.5rem}
+.buttoninput{margin-top:1rem;clear:both}
+.u2f-button{margin-top:1rem;font-size:.9rem;font-style:normal;color:#16b;display:block;line-height:.5rem;cursor:pointer}
+.u2f-mobile-link,.u2f-mobile-link:hover{font-size:.9rem}
+.mainWarningWithBorderMobile{background-color:#fffcec;border:.05rem solid #e07700;border-radius:4px;padding-top:13px;padding-left:20px}
+.mainWarningWithBorder{background-color:#fffcec;border:.05rem solid #e07700;border-radius:.3rem;padding-top:.75rem;padding-left:1rem}
+.u2f_loading:after{overflow:hidden;display:inline-block;vertical-align:bottom;-webkit-animation:ellipsis steps(4,end) 900ms infinite;animation:ellipsis steps(4,end) 900ms infinite;content:"\2026";width:0rem}
+@keyframes ellipsis{to{width:1.25rem}
+}
+@-webkit-keyframes ellipsis{to{width:1.25rem}
+}
+    </style>
+</head>
+<body class="awsui aws-signin-ui" style="margin-top: 30px; margin-right:40px; margin-bottom:20px; margin-left:40px;">
+<div id="signin-main-box" class="aws-signin-main-box fixed-width">
+    <div id="logo_container" class="aws-signin-logo-header-box">
+        <h1 id="logo_head" class="background-left">
+            <a id="logo_link" class="aws-signin-text-small" href="http://aws.amazon.com/">Amazon Web Services Login</a>
+        </h1>
+    </div>
+    <div id="main_content" class="main-table">
+        <div id="signin_container" class="aws-signin-float-left">
+            <div id="signin_inner_container" class="aws-signin-login-general-box">
+
+                <div id="error_message" style="display: none; !important">
+                    <div class="awsui-alert-type-error  aws-signin-alert">
+                        <div class="awsui-alert-header awsui-text-big">
+                            <span id="error_title"></span>
+                        </div>
+                        <div>
+                            <span id="error_message_description"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="resolver_container" class="signin-container">
+                    <div id="signin_head_box" class="aws-signin-login-header-box">
+                        <b id="signin_head" class="awsui-text-bigger">Sign in</b>
+                        <div class="aws-signin-tool-tip" style="bottom:2px;">
+                            <span class="awsui-icon info-circle awsui-icon-has-hover"></span>
+                            <span class="aws-signin-tooltip-text aws-signin-tooltip-size-medium">
+                                            <span>If you are an AWS account owner (root user), you can use your account email to sign in to this page. If an administrator added you to an AWS account, then you are an IAM user. Your administrator should have given you a 12-digit account ID or an account alias to sign in below.</span>
+                                        </span>
+                        </div>
+                    </div>
+                    <div class="aws-signin-general-label-box">
+                        <b id="resolving_input_label" class="awsui-text-normal">Email address of your AWS account</b>
+                    </div>
+                    <div class="aws-signin-general-label-box">
+                                    <span class="aws-signin-display-block aws-signin-color-mid-gray">
+                                        <span>Or to sign in as an IAM user, enter your</span>
+                                        <div class="aws-signin-tool-tip">
+                                            <span style="text-decoration: underline;">account ID</span>
+                                            <span class="aws-signin-tooltip-text aws-signin-tooltip-size-small" style="margin-left:8px;">
+                                                <span>A 12-digit account number provided by your administrator</span>
+                                            </span>
+                                        </div>
+                                        <span>or</span>
+                                        <div class="aws-signin-tool-tip">
+                                            <span style="text-decoration: underline;">account alias</span>
+                                            <span class="aws-signin-tooltip-text aws-signin-tooltip-size-small" style="margin-left:8px;">
+                                                <span>A friendly account identifier from your administrator that includes alphanumeric characters or dashes</span>
+                                            </span>
+                                        </div>
+                                        <span>instead.</span>
+                                    </span>
+                    </div>
+                    <div class="aws-signin-general-input-box">
+                        <input id="resolving_input" class="aws-signin-textfield" autocorrect="off" autocapitalize="off" type="text" data-fathom="username">
+                        <div id="resolving_input_alert" style="display:none">
+                            <span id="resolving_account_input_alert_content" class="awsui-text-small aws-signin-color-red"></span>
+                        </div>
+                    </div>
+                    <div class="aws-signin-general-button-box">
+                        <button id="next_button" type="button" class="aws-signin-button aws-signin-button-size-normal aws-signin-button-variant-primary aws-signin-button-width-full" data-fathom="next"><span id="next_button_text" class="aws-signin-color-white">Next</span></button>
+                    </div>
+
+                    <!-- New Account -->
+                    <div id="new_account_container" class="aws-signin-new-account-box">
+                        <div class="signin-break-wrapper">
+                            <span class="aws-signin-color-mid-gray">New to AWS?</span>
+                        </div>
+                        <div class="aws-signin-general-button-box">
+                            <button id="create_aws_account" class="awsui-button awsui-button-size-normal awsui-button-variant-normal awsui-hover-child-icons aws-signin-button-width-full">Create a new AWS account</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Root user -->
+                <div id="login_container" class="signin-container" style="display:none">
+                    <div id="root_account_sign_in" class="aws-signin-login-header-box">
+                        <b class="awsui-text-bigger">Root user sign in</b>
+                        <div class="aws-signin-tool-tip" style="bottom:2px;">
+                            <span class="awsui-icon info-circle awsui-icon-has-hover"></span>
+                            <span class="aws-signin-tooltip-text aws-signin-tooltip-size-medium">
+                                            <span>This sign-in page is for AWS account root users that have provided an account email. To sign in using IAM user credentials, choose "Sign in to a different account" below to return to the main sign-in page and enter your account ID or account alias.</span>
+                                        </span>
+                        </div>
+                    </div>
+                    <div id="decoupled_email_container" class="aws-signin-general-input-box">
+                        <b>Email:</b> <span id="email_label" class="aws-signin-span-word-break"></span>
+                        <input id="email" type="hidden" value=" ">
+                    </div>
+                    <div class="aws-signin-general-label-box">
+                        <div class="aws-signin-general-link-box-no-margin main-table">
+                            <div class="aws-signin-float-left" style="width:40%;"><b>Password</b></div>
+                            <div class="aws-signin-float-right" style="text-align:right; width:58%;">
+                                <span id="root_forgot_password_link">Forgot password?</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="aws-signin-general-input-box">
+                        <input id="password" type="password" class="aws-signin-textfield" autocorrect="off" autocapitalize="off">
+                        <div id="password_input_alert" class="signin-input-warning" style="display:none">
+                            <span id="password_input_alert_content" class="awsui-text-small aws-signin-color-red"></span>
+                        </div>
+                    </div>
+                    <div class="aws-signin-general-button-box">
+                        <button id="signin_button" type="button" class="aws-signin-button aws-signin-button-size-normal aws-signin-button-variant-primary" style="width:100%; !important;"><span id="signin_button_text" style="color:white; font-weight: bold;">Sign in</span></button>
+                    </div>
+                    <div class="aws-signin-general-link-box">
+                        <span id="change_account_link1" class="change_account_link">Sign in to a different account</span>
+                    </div>
+                    <div class="aws-signin-general-link-box">
+                        <span id="create_a_new_account_link">Create a new AWS account</span>
+                    </div>
+                </div>
+
+                <!-- Root user v2 -->
+                <div id="candidate_login_container" class="signin-container" style="display:none">
+                    <div id="root_account_sign_in_v2" class="aws-signin-login-header-box">
+                        <b class="awsui-text-bigger">Root user sign in</b>
+                        <div class="aws-signin-tool-tip" style="bottom:2px;">
+                            <span class="awsui-icon info-circle awsui-icon-has-hover"></span>
+                            <span class="aws-signin-tooltip-text aws-signin-tooltip-size-medium">
+                                <span>This sign-in page is for AWS account root users that have provided an account email. To sign in using IAM user credentials, choose "Sign in to a different account" below to return to the main sign-in page and enter your account ID or account alias.</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div id="candidate_email_container" class="aws-signin-general-input-box">
+                        <b>Email:</b> <span id="candidate_email_label" class="aws-signin-span-word-break"></span>
+                        <input id="candidate_email" type="hidden">
+                    </div>
+                    <div class="aws-signin-general-label-box">
+                        <div class="aws-signin-general-link-box-no-margin main-table">
+                            <div class="aws-signin-float-left" style="width:40%;"><b>Password</b></div>
+                            <div class="aws-signin-float-right" style="text-align:right; width:58%;">
+                                <span id="candidate_root_forgot_password_link">Forgot password?</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="aws-signin-general-input-box">
+                        <input id="candidate_password" type="password" class="aws-signin-textfield" autocorrect="off" autocapitalize="off">
+                        <div id="candidate_password_input_alert" class="signin-input-warning" style="display:none">
+                            <span id="password_input_alert_content_v2" class="awsui-text-small aws-signin-color-red"></span>
+                        </div>
+                    </div>
+                    <div class="aws-signin-general-button-box">
+                        <button id="candidate_signin_button" type="button" class="aws-signin-button aws-signin-button-size-normal aws-signin-button-variant-primary" style="width:100%; !important;"><span id="candidate_signin_button_text" style="color:white; font-weight: bold;">Sign in</span></button>
+                    </div>
+                    <div class="aws-signin-general-link-box">
+                        <span id="candidate_change_account_link" class="change_account_link">Sign in to a different account</span>
+                    </div>
+                </div>
+
+                <!-- Root User v2 MFA -->
+                <div id="candidate_mfa_container" class="signin-container" style="display:none; !important">
+                    <div class="aws-signin-general-header-box">
+                        <b id="mfa_display_header" class="awsui-text-bigger">Multi-factor authentication</b>
+                    </div>
+                    <div class="aws-signin-general-paragraph">
+                        <span id="mfa_display_text">Your account is secured using multi-factor authentication (MFA). To finish signing in, turn on or view your MFA device and type the authentication code below.</span>
+                    </div>
+                    <div class="aws-signin-general-input-box">
+                        <b>Email address:</b> <span id="candidate_mfa_email_label" class="aws-signin-span-word-break"></span>
+                    </div>
+                    <div class="aws-signin-general-label-box">
+                        <b>MFA code</b>
+                    </div>
+                    <div class="aws-signin-general-input-box">
+                        <input id="candidate_mfaCode" class="awsui-textfield awsui-textfield-type-text" maxlength="6" autocomplete="off" autocorrect="off" autocapitalize="off" type="text">
+                        <div id="candidate_mfaCode_input_alert" style="display:none">
+                            <span id="candidate_mfaCode_input_alert_content" class="awsui-text-small aws-signin-color-red">You must provide an MFA code</span>
+                        </div>
+                    </div>
+                    <div class="aws-signin-general-button-box">
+                        <button id="candidate_mfa_submit_button" type="button" class="aws-signin-button aws-signin-button-size-normal aws-signin-button-variant-primary" style="width:100%; !important;"><span id="candidate_mfa_submit_button_text" style="color:white; font-weight: bold;">Submit</span></button>
+                    </div>
+                    <div class="aws-signin-general-link-box">
+                        <span id="candidate_troubleshoot_mfa">Troubleshoot MFA</span>
+                    </div>
+                    <div class="aws-signin-general-link-box">
+                        <span id="candidate_cancel_mfa">Cancel</span>
+                    </div>
+                </div>
+
+                <!-- Suspended User -->
+                <div id="suspended_user_container" class="signin-container" style="display:none; !important">
+                    <div class="aws-signin-general-header-box">
+                        <b id="suspended_user_header" class="awsui-text-bigger">Amazon web service sign in</b>
+                    </div>
+                    <div class="aws-signin-general-paragraph">
+                        <span id="suspended_user_message">Authentication failed because your account has been suspended.</span>
+                    </div>
+                    <div class="aws-signin-general-paragraph">
+                        <span id="suspended_user_message1">If you believe your account was suspended due to non-payment of outstanding balance due on your account, you can pay now using the</span>
+                        <a id="suspended_user_billing_payment_hostory_link" href="https://console.aws.amazon.com/billing/home#/paymenthistory">payment page</a>
+                        <span id="suspended_user_message2">to reactivate your account. If you do not pay or provide a payment method to resolve your outstanding balance, your account resources may be terminated.</span>
+                    </div>
+                    <div class="aws-signin-general-paragraph">
+                        <span id="suspended_user_message3">If your account was suspended for reasons other than non-payment of outstanding dues, contact AWS customer support</span>
+                        <a id="suspended_user_customer_support_link" href="https://aws.amazon.com/contact-us">Contact Us</a>
+                    </div>
+                    <div class="aws-signin-general-paragraph">
+                        <span id="suspended_user_logout">To logout, click</span>
+                        <a href="https://signin.aws.amazon.com/oauth?Action=logout&amp;redirect_uri=aws.amazon.com">here.</a>
+                    </div>
+                </div>
+
+                <!-- MFA -->
+                <div id="mfa_container" class="signin-container" style="display:none; !important">
+                    <div class="aws-signin-general-header-box">
+                        <b id="mfa_display_header" class="awsui-text-bigger">Multi-factor authentication</b>
+                    </div>
+                    <div class="aws-signin-general-paragraph">
+                        <span id="mfa_display_text">Your account is secured using multi-factor authentication (MFA). To finish signing in, turn on or view your MFA device and type the authentication code below.</span>
+                    </div>
+                    <div class="aws-signin-general-input-box">
+                        <b>Email address:</b> <span id="mfa_email_label" class="aws-signin-span-word-break"></span>
+                    </div>
+                    <div class="aws-signin-general-label-box">
+                        <b>MFA code</b>
+                    </div>
+                    <div class="aws-signin-general-input-box">
+                        <input id="mfaCode" class="awsui-textfield awsui-textfield-type-text" maxlength="6" autocomplete="off" autocorrect="off" autocapitalize="off" type="text">
+                        <div id="mfaCode_input_alert" style="display:none">
+                            <span id="mfaCode_input_alert_content" class="awsui-text-small aws-signin-color-red">You must provide an MFA code</span>
+                        </div>
+                    </div>
+                    <div class="aws-signin-general-button-box">
+                        <button id="mfa_submit_button" type="button" class="aws-signin-button aws-signin-button-size-normal aws-signin-button-variant-primary" style="width:100%; !important;"><span id="mfa_submit_button_text" style="color:white; font-weight: bold;">Submit</span></button>
+                    </div>
+                    <div class="aws-signin-general-link-box">
+                        <span id="troubleshoot_mfa">Troubleshoot MFA</span>
+                    </div>
+                    <div class="aws-signin-general-link-box">
+                        <span id="cancel_mfa">Cancel</span>
+                    </div>
+                </div>
+
+                <!-- U2F MFA -->
+                <div id="u2f_container" class="u2f-container" style="display:none; !important">
+                    <div class="u2f-header">
+                        <b id="mfa_display_header" class="awsui-text-bigger">Sign in using MFA </b>
+                    </div>
+                    <div>
+                        <p id="mfa_display_text" class="awsui-text-normal" style="line-height: 19px;">Your account is secured by multi-factor authentication (MFA) using U2F Security Key. 
+                            <!-- The target is set to open the link in a new tab -->
+                            <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_enable_u2f.html?icmpid=docs_iam_console" target="_blank" class="awsui-text-normal">Learn more</a>
+                        </p>
+                    </div>
+                    <div id="u2f_compatible" class="u2f-border">
+                        <div class="u2f-padding">
+                            <div class="u2f-text-padding">
+                                <b class="awsui-text-normal" style="line-height: 19px;">Insert your U2F security key into your USB port, and then tap the button or gold disk.</b>
+                            </div>
+                            <div class="u2f-image-padding">
+                                
+
+
+    <meta charset="utf-8">
+    <style type="text/css">
+         @keyframes keyMovingIn {
+             0%   {transform: translate(75px, 30px)}
+             100% {transform: translate(50px, 30px)}
+         }
+
+         @keyframes shinyGold {
+             0%   { fill: #F49A06;}
+             100% { fill: #FFBC28;}
+         }
+
+         #image #U2fKey {
+             animation: keyMovingIn 1s cubic-bezier(0.6, -0.45, 0.735, 0.045) 1;
+             animation-delay: 1s;
+             animation-fill-mode: forwards;
+         }
+
+         #image #gold {
+             animation: shinyGold 0.4s  infinite;
+             animation-delay: 2.3s;
+             animation-direction: alternate;
+         }
+     </style>
+
+
+<svg width="200px" height="85px" viewBox="0 0 200 85" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="image">
+    <defs>
+        <circle id="path-1" cx="68.5" cy="18.5" r="13.5"></circle>
+        <filter x="-1.9%" y="-1.9%" width="103.7%" height="103.7%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="U2fKey" transform="translate(75.000000, 30.000000)">
+            <g id="Stick" fill="#272727">
+                <path d="M25,0 L88,0 C90.209139,-4.05812251e-16 92,1.790861 92,4 L92,33 C92,35.209139 90.209139,37 88,37 L25,37 C23.8954305,37 23,36.1045695 23,35 L23,2 C23,0.8954305 23.8954305,2.02906125e-16 25,0 Z" id="Rectangle-4"></path>
+                <rect id="Rectangle-4" x="0" y="4" width="74" height="29" rx="2"></rect>
+            </g>
+            <g id="USB-teeth" transform="translate(3.000000, 8.000000)" fill="#FBC100">
+                <rect id="Rectangle-4" opacity="0.699999988" x="1" y="18" width="19" height="4"></rect>
+                <rect id="Rectangle-4-Copy" opacity="0.5" x="2" y="12" width="18" height="4"></rect>
+                <rect id="Rectangle-4-Copy-2" opacity="0.5" x="2" y="6" width="18" height="4"></rect>
+                <rect id="Rectangle-4-Copy-3" opacity="0.699999988" x="0.455078125" y="0" width="19.5449219" height="4"></rect>
+            </g>
+            <g id="Touch-area">
+                <use fill="#FBAD00" fill-rule="evenodd" xlink:href="#path-1" id="gold"></use>
+                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+            </g>
+            <path d="M63,20.5 L61,20.5 L61,18 L69.2560586,18 C69.8738132,16.2522114 71.5406718,15 73.5,15 C75.9852814,15 78,17.0147186 78,19.5 C78,21.9852814 75.9852814,24 73.5,24 C71.3584126,24 69.5662374,22.5039887 69.1115082,20.5 L65.5,20.5 L65.5,23 L63,23 L63,20.5 Z M73.5,21.75 C74.7426407,21.75 75.75,20.7426407 75.75,19.5 C75.75,18.2573593 74.7426407,17.25 73.5,17.25 C72.2573593,17.25 71.25,18.2573593 71.25,19.5 C71.25,20.7426407 72.2573593,21.75 73.5,21.75 Z" id="Key-shadow" fill="#7D5600" transform="translate(69.500000, 19.500000) rotate(-25.000000) translate(-69.500000, -19.500000) "></path>
+            <path d="M62,19.5 L60,19.5 L60,17 L68.2560586,17 C68.8738132,15.2522114 70.5406718,14 72.5,14 C74.9852814,14 77,16.0147186 77,18.5 C77,20.9852814 74.9852814,23 72.5,23 C70.3584126,23 68.5662374,21.5039887 68.1115082,19.5 L64.5,19.5 L64.5,22 L62,22 L62,19.5 Z M72.5,20.75 C73.7426407,20.75 74.75,19.7426407 74.75,18.5 C74.75,17.2573593 73.7426407,16.25 72.5,16.25 C71.2573593,16.25 70.25,17.2573593 70.25,18.5 C70.25,19.7426407 71.2573593,20.75 72.5,20.75 Z" id="Key" fill="#FFFFFF" transform="translate(68.500000, 18.500000) rotate(-25.000000) translate(-68.500000, -18.500000) "></path>
+        </g>
+        <g id="Laptop">
+            <path d="M0,12 L60,12 C63.8659932,12 67,15.1340068 67,19 L67,82 L0,82 L0,12 Z" id="Rectangle-5" fill="#D8D8D8"></path>
+            <path d="M0,34 L37,34 C40.8659932,34 44,37.1340068 44,41 L44,82 L0,82 L0,34 Z" id="Rectangle-5" fill="#FFFFFF" opacity="0.5"></path>
+            <rect id="Rectangle-5" fill="#272727" opacity="0.870000005" x="0" y="38" width="40" height="26" rx="3"></rect>
+            <path d="M40,82 L0,82 L0,70 C-2.02906125e-16,68.3431458 1.34314575,67 3,67 L37,67 C38.6568542,67 40,68.3431458 40,70 L40,82 Z" id="Combined-Shape" fill="#272727" opacity="0.800000012"></path>
+            <path d="M0,0 L60,0 C63.8659932,-7.10171439e-16 67,3.13400675 67,7 L67,12 L0,12 L0,0 Z" id="Rectangle-5" fill="#202937" transform="translate(33.500000, 6.000000) scale(1, -1) translate(-33.500000, -6.000000) "></path>
+            <path d="M0,0 L59,0 C62.8659932,-7.10171439e-16 66,3.13400675 66,7 L66,11 L0,11 L0,0 Z" id="Rectangle-5" fill="#D8D8D8" opacity="0.229999989" transform="translate(33.000000, 5.500000) scale(1, -1) translate(-33.000000, -5.500000) "></path>
+            <circle id="Oval-2" stroke="#FFFFFF" stroke-width="2" cx="20" cy="52" r="6"></circle>
+            <rect id="Rectangle-7" fill="#404040" x="18" y="43" width="4" height="8"></rect>
+            <rect id="Rectangle-7" fill="#FFFFFF" x="19" y="43" width="2" height="8"></rect>
+        </g>
+    </g>
+</svg>
+
+
+                            </div>
+                            <div>
+                                <span class="u2f_loading">Waiting for security key</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="u2f_incompatible" class="u2f-incompatible-border">
+                        <div class="mainWarningWithBorder">
+                            <p>Your browser does not support U2F security keys. 
+                                <!-- The target is set to open the link in a new tab -->
+                                <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_u2f_supported_configurations.html?icmpid=docs_iam_console">See the list of compatible browsers</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="buttoninput">
+                        <a class="u2f-button" id="troubleshoot_u2f_mfa" alt="Troubleshoot MFA" value="Troubleshoot MFA" style="display:none; !important">
+                            Troubleshoot MFA
+                        </a>
+                        <a class="u2f-button" id="candidate_troubleshoot_u2f_mfa" alt="Troubleshoot MFA" value="Troubleshoot MFA" style="display:none; !important">
+                            Troubleshoot MFA
+                        </a>
+                        <a class="u2f-button" id="cancel_u2f_mfa" alt="Cancel" value="Cancel">
+                            Cancel
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Captcha -->
+                <div id="captcha_container" class="signin-container" style="display:none">
+                    <div class="aws-signin-general-header-box">
+                        <b class="awsui-text-bigger">Security check</b>
+                    </div>
+                    <div class="aws-signin-general-paragraph">
+                        <span>For security reasons, we need to verify that account holders are real people.</span>
+                    </div>
+                    <div class="aws-signin-general-label-box">
+                        <b>Type the characters seen in the image below</b>
+                    </div>
+                    <div class="aws-signin-general-paragraph">
+                        <div class="aws-signin-captcha-box"><img id="captcha_image" width="200px" height="70px"></div>
+                        <button id="refresh_captcha" class="awsui-button awsui-button-no-text awsui-button-size-normal awsui-button-variant-normal awsui-hover-child-icons" type="button" style="position: relative; bottom:10px; !important"><span class="awsui-button-icon awsui-button-icon-left awsui-icon refresh"></span></button>
+                    </div>
+                    <input id="captchaToken" type="hidden">
+                    <input id="captchaObfuscationToken" type="hidden">
+                    <input id="captchaEmail" type="hidden">
+                    <div class="aws-signin-general-input-box">
+                        <input class="awsui-textfield awsui-textfield-type-text" maxlength="6" autocomplete="off" autocorrect="off" autocapitalize="off" id="captchaGuess" type="text">
+                        <div id="captchaGuess_input_alert" style="display:none">
+                            <span id="captchaGuess_input_alert_content" class="awsui-text-small aws-signin-color-red">Enter the characters shown above</span>
+                        </div>
+                    </div>
+                    <div class="aws-signin-general-button-box">
+                        <button id="submit_captcha" type="button" class="awsui-button awsui-button-size-normal awsui-button-variant-primary awsui-hover-child-icons" style="width:100%; !important;">Submit</button>
+                    </div>
+                </div>
+
+                <!-- OTP -->
+                <div id="otp_container" class="signin-container" style="display:none">
+
+                    <div id="root_account_sign_in" class="aws-signin-login-header-box">
+                        <b class="awsui-text-bigger">Root user sign in</b>
+                        <div class="aws-signin-tool-tip" style="bottom:2px;">
+                            <span class="awsui-icon info-circle awsui-icon-has-hover"></span>
+                            <span class="aws-signin-tooltip-text aws-signin-tooltip-size-medium">
+                                            <span>This sign-in page is for AWS account root users that have provided an account email. To sign in using IAM user credentials, choose "Sign in to a different account" below to return to the main sign-in page and enter your account ID or account alias.</span>
+                                        </span>
+                        </div>
+                    </div>
+                    <div id="otp_error_message" style="display: none; !important">
+                        <div class="awsui-alert-type-error  aws-signin-alert-otp">
+                            <div class="awsui-alert-header awsui-text-normal">
+                                <b><span id="otp_error_title"></span></b>
+                            </div>
+                            <div>
+                                <span id="otp_error_message_description"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="otp_success_message" style="display: none; !important">
+                        <div class="awsui-alert-type-success  aws-signin-alert-otp">
+                            <div class="awsui-alert-header awsui-text-normal">
+                                <b><span id="otp_success_title"></span></b>
+                            </div>
+                            <div>
+                                <span id="otp_success_message_description"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="otp_general_message" class="aws-signin-general-paragraph">
+                        <span id="otp_general_message_description"></span>
+                    </div>
+                    <div id="otp_general_label_ox" class="aws-signin-general-label-box">
+                        <b>One-time verification code</b>
+                    </div>
+
+                    <div id="otp_general_input_box" class="aws-signin-general-input-box">
+                        <input class="awsui-textfield awsui-textfield-type-text" maxlength="12" autocomplete="off" autocorrect="off" autocapitalize="off" id="otpGuess" type="text">
+                        <div id="otpGuess_input_alert" style="display:none">
+                            <span id="captchaGuess_input_alert_content" class="awsui-text-small aws-signin-color-red">Enter the one-time verification code you received in email</span>
+                        </div>
+                    </div>
+                    <div id="otp_general_button_box" class="aws-signin-general-button-box">
+                        <button id="submit_otp" type="button" class="awsui-button awsui-button-size-normal awsui-button-variant-primary awsui-hover-child-icons" style="width:100%; !important;"><span id="otp_button_text" style="color:white; font-weight: bold;">Submit</span></button>
+                    </div>
+                    <div class="aws-signin-general-link-box">
+                        <span id="resend_otp_button_text">Resend email with verification code</span>
+                    </div>
+                    <div class="aws-signin-general-link-box">
+                        <span id="otp_change_account_link" class="change_account_link">Sign in to a different account</span>
+                    </div>
+                </div>
+            </div>
+            <div id="signin_inner_full_width_container" style="display: none;" class="aws-signin-login-general-box-full-width">
+                <!-- MFA Device Confirm -->
+                <div id="mfa_device_confirm_container" class="signin-container" style="display:none; !important">
+                    <div>
+                        <b class="awsui-text-bigger">Troubleshoot your authentication device</b>
+                    </div>
+                    <hr>
+                    <div id="aws-signin-troubleshoot-mfa-resync" class="aws-signin-troubleshoot-mfa-section">
+                        <div class="aws-signin-troubleshoot-mfa-section-text">
+                            <b class="awsui-text-big">Re-sync with AWS servers</b>
+                            <div class="aws-signin-troubleshoot-mfa-section-message">If your multi-factor authentication (MFA) device appears to be functioning properly, and you are not able to sign in, then the device might be out of sync.</div>
+                        </div>
+                        <div class="aws-signin-troubleshoot-mfa-section-button">
+                            <button id="resync_mfa" type="button" class="awsui-button awsui-button-size-normal awsui-button-variant-primary awsui-hover-child-icons">Re-sync MFA device</button>
+                        </div>
+                    </div>
+                    <hr id="aws-signin-troubleshoot-mfa-resync-hr" class="aws-signin-troubleshoot-mfa-section-hr">
+                    <div class="aws-signin-troubleshoot-mfa-section">
+                        <div class="aws-signin-troubleshoot-mfa-section-text">
+                            <b class="awsui-text-big">Sign in using alternative factors of authentication</b>
+                            <div class="aws-signin-troubleshoot-mfa-section-message">If your multi-factor authentication (MFA) device is lost, damaged, or not working, you can sign in using alternative factors of authentication. You must verify your identity using the email and phone registered with this account.</div>
+                        </div>
+                        <div class="aws-signin-troubleshoot-mfa-section-button">
+                            <button id="afa_login_button" type="button" class="awsui-button awsui-button-size-normal awsui-button-variant-primary awsui-hover-child-icons">Sign in using alternative factors</button>
+                        </div>
+                    </div>
+                    <hr class="aws-signin-troubleshoot-mfa-section-hr">
+                    <div class="aws-signin-troubleshoot-mfa-section">
+                        <div class="aws-signin-troubleshoot-mfa-section-text">
+                            <b class="awsui-text-big">Contact customer service</b>
+                            <div class="aws-signin-troubleshoot-mfa-section-message">If you are unable to sign in to your account using your MFA device or using alternative factors of authentication, contact customer service. A customer service representative can verify your account ownership and deactivate your MFA settings.</div>
+                        </div>
+                        <div class="aws-signin-troubleshoot-mfa-section-button">
+                            <button id="contact_mfa_customer_service_button" type="button" class="awsui-button awsui-button-size-normal awsui-button-variant-primary awsui-hover-child-icons">Contact customer service</button>
+                        </div>
+                    </div>
+                    <hr class="aws-signin-troubleshoot-mfa-section-hr">
+                    <div class="aws-signin-general-link-box">
+                        <span id="change_account_link2" class="change_account_link">Sign in to a different account</span>
+                    </div>
+                </div>
+
+                <!-- Resync MFA -->
+                <div id="resync_mfa_container" class="signin-container" style="display:none; !important">
+                    <div>
+                        <b class="awsui-text-bigger">Re-sync your device with AWS servers</b>
+                    </div>
+                    <hr>
+                    <div class="aws-signin-resync-mfa-container">
+                        <div class="aws-signin-general-paragraph">
+                            <span>If your multi-factor authentication (MFA) device appears to be functioning properly, and you are not able to sign in, then the device might be out of sync. First try to resync your device using the following instructions.</span>
+                        </div>
+                        <div class="aws-signin-general-label-box">
+                            <b>Turn on or view your device and type the first authentication code.</b>
+                        </div>
+                        <div class="aws-signin-general-input-box">
+                                        <span>
+                                            <input style="width: 50%;" type="text" id="resync_mfa_code1" class="awsui-textfield awsui-textfield-type-text" autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="Authentication code #1">
+                                            <div id="resync_mfa_code1_input_alert" style="display:none;">
+                                                <span id="resync_mfa_code1_input_alert_content" class="awsui-text-small" style="color:#CC0000; !important ">You must provide an MFA code</span>
+                                            </div>
+                                        </span>
+                        </div>
+                        <div class="aws-signin-general-label-box">
+                            <b>Wait until the authentication code changes or the display turns off. Then turn on or view your device and type the second authentication code.</b>
+                        </div>
+                        <div class="aws-signin-general-input-box">
+                                        <span>
+                                            <input style="width: 50%;" type="text" id="resync_mfa_code2" class="awsui-textfield awsui-textfield-type-text" autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="Authentication code #2">
+                                            <div id="resync_mfa_code2_input_alert" style="display:none;">
+                                                <span id="resync_mfa_code2_input_alert_content" class="awsui-text-small" style="color:#CC0000; !important ">You must provide a second MFA code</span>
+                                            </div>
+                                        </span>
+                        </div>
+                        <div>
+                            <button id="resync_mfa_button" type="button" class="aws-signin-button aws-signin-button-size-normal aws-signin-button-variant-primary"><span id="resync_mfa_button_text" style="color:white; font-weight: bold;">Re-sync MFA device</span></button>
+                            <span class="aws-signin-general-link-box" style="margin-left: 10px;">
+                                            <span id="cancel_mfa_resync">Cancel</span>
+                                        </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="marketing_container" class="aws-signin-display-block">
+            <a id="marketingimagelink" href="https://aws.amazon.com/free/?sc_ichannel=ha&amp;sc_icampaign=signin_prospects&amp;sc_isegment=en&amp;sc_iplace=sign-in&amp;sc_icontent=freetier&amp;sc_segment=-1" target="_blank"><img src="resources/69/5.jpg" alt="AWS Marketing" data-original-src="https://d1.awsstatic.com/Digital%20Marketing/House/signin/en_US/Prospect_image.fb1bf2461c8e1b8246368922beceff77f50c39aa.jpg" width="570" height="450"></a>
+        </div>
+    </div>
+
+    
+    <div id="smallprint" style="margin-top: 30px; margin-bottom:20px;">
+  
+
+  <div>
+    <b class="aws-signin-text-small">About Amazon.com Sign In</b>
+  </div>
+  <div class="aws-signin-text-small">
+    <span>Amazon Web Services uses information from your Amazon.com account to identify you and allow access to Amazon Web Services. Your use of this site is governed by our Terms of Use and Privacy Policy linked below. Your use of Amazon Web Services products and services is governed by the AWS Customer Agreement linked below unless you have entered into a separate agreement with Amazon Web Services or an AWS Value Added Reseller to purchase these products and services. The AWS Customer Agreement was updated on March 31, 2017. For more information about these updates, see <a href="https://aws.amazon.com/agreement/recent-changes/"> Recent Changes</a>.</span>
+  </div>
+
+  <div class="textinput" style="margin-top: 40px;">
+    
+        <span class="aws-signin-text-small">
+            © 2019, Amazon Web Services, Inc. or its affiliates. All rights reserved.
+        </span>
+    
+
+    
+    <a class="aws-signin-text-small" href="https://aws.amazon.com/terms/" style="margin-left: 2px; margin-right: 2px;">Terms of Use</a>
+    <span>|</span>
+    <a class="aws-signin-text-small" href="https://aws.amazon.com/privacy/" style="margin-left: 2px; margin-right: 2px;">Privacy Policy</a>
+    <span>|</span>
+    <a class="aws-signin-text-small" href="https://aws.amazon.com/agreement/" style="margin-left: 2px; margin-right: 2px;">AWS Customer Agreement</a>
+    <div style="display:inline-block; float:right;">
+        <button class="aws-signin-button aws-signin-button-size-normal aws-signin-button-variant-normal" type="button" style="width:115px;">
+            
+            <span>English</span>
+            <span class="aws-signin-arrow-down aws-signin-button-icon aws-signin-icon-right aws-signin-icon"></span>
+        </button>
+        <div class="aws-signin-button-dropup">
+            <ul id="language_drop_up" class="aws-signin-button-dropup-content" style="display:none;">
+                
+                    
+                
+                    
+                      <li id="footer_span" class="aws-signin-button-dropup-item">
+                        <span class="aws-signin-button-dropup-item-content">Deutsch</span>
+                      </li>
+                    
+                
+                    
+                      <li id="footer_span" class="aws-signin-button-dropup-item">
+                        <span class="aws-signin-button-dropup-item-content">Español</span>
+                      </li>
+                    
+                
+                    
+                      <li id="footer_span" class="aws-signin-button-dropup-item">
+                        <span class="aws-signin-button-dropup-item-content">Français</span>
+                      </li>
+                    
+                
+                    
+                      <li id="footer_span" class="aws-signin-button-dropup-item">
+                        <span class="aws-signin-button-dropup-item-content">日本語</span>
+                      </li>
+                    
+                
+                    
+                      <li id="footer_span" class="aws-signin-button-dropup-item">
+                        <span class="aws-signin-button-dropup-item-content">Português</span>
+                      </li>
+                    
+                
+                    
+                      <li id="footer_span" class="aws-signin-button-dropup-item">
+                        <span class="aws-signin-button-dropup-item-content">한국어</span>
+                      </li>
+                    
+                
+                    
+                      <li id="footer_span" class="aws-signin-button-dropup-item">
+                        <span class="aws-signin-button-dropup-item-content">中文(简体)</span>
+                      </li>
+                    
+                
+            </ul>
+        </div>
+    </div>
+    
+    
+  </div>
+</div>
+    
+</div>
+<div id="password_recovery_container">
+    <div id="modal_div" class="awsui-modal-__state-hidden awsui-modal-container">
+        <div tabindex="-1" class="awsui-modal-dialog" style="max-width:400px; !important">
+            <div class="awsui-modal-content">
+                <div class="awsui-modal-header">
+                    <b class="aws-signin-text-bigger">Password recovery</b>
+                    <button id="password_recovery_dismiss_button" class="awsui-modal-dismiss-control awsui-button-as-link awsui-icon times"></button>
+                </div>
+                <div class="awsui-modal-body" style="max-width:300px; margin:0 auto; !important">
+                    <div id="password_recovery_error_message" style="display: none">
+                        <div class="awsui-alert-has-dismiss awsui-alert-has-header awsui-alert-inside awsui-alert-type-error" style="padding: 15px 5px 20px 40px;" aria-hidden="false" role="alert">
+                            <span class="alert-exclamation-circle awsui-alert-icon awsui-icon awsui-icon-big" style="top: 15px; left: 9px;"></span>
+                            <div class="awsui-alert-header awsui-text-big" region-container="header">
+                                <span id="password_recovery_error_title">There was an error</span>
+                            </div>
+                            <div region-container="content">
+                                <span id="password_recovery_error_message_description">Please try again later.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="password_recovery_email_div">
+                        <div class="aws-signin-general-label-box">
+                            <b>Email address</b>
+                        </div>
+                        <div class="aws-signin-general-input-box">
+                            <input id="password_recovery_email" class="awsui-textfield awsui-textfield-type-text" type="email" style="cursor: default;" disabled="">
+                        </div>
+                    </div>
+
+                    <div id="password_recovery_captcha_div">
+                        <div class="aws-signin-general-label-box">
+                            <b>Type the characters seen in the image below</b>
+                        </div>
+                        <div class="aws-signin-general-input-box">
+                            <div class="aws-signin-captcha-box"><img id="password_recovery_captcha_image" width="200px" height="70px"></div>
+                            <button id="password_recovery_refresh_captcha" class="awsui-button awsui-button-no-text awsui-button-size-normal awsui-button-variant-normal awsui-hover-child-icons" type="button" style="position: relative; bottom:10px; !important"><span class="awsui-button-icon awsui-button-icon-left awsui-icon refresh"></span></button>
+                        </div>
+                        <input id="password_recovery_captcha_token" type="hidden">
+                        <div class="aws-signin-general-input-box">
+                            <input class="awsui-textfield awsui-textfield-type-text" maxlength="6" autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="Enter characters here" id="password_recovery_captcha_guess" type="text">
+                            <div id="password_recovery_captchaGuess_input_alert" style="display:none">
+                                <span id="password_recovery_captchaGuess_input_alert_content" class="awsui-text-small aws-signin-color-red">Enter the characters shown above</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="email_sent_confirmation_div" style="display:none; !important">
+                        <b class="awsui-icon awsui-icon-big alert-check-circle" style="margin-left:-27px; !important">Password email sent</b>
+                        <br>
+                        <span>Instructions have been sent to your associated email account. Check your email and follow the instructions to reset your password.</span>
+                    </div>
+                </div>
+                <div class="awsui-modal-footer">
+                    <div id="password_recovery_ok_cancel_div">
+                        <button id="password_recovery_ok_button" class="awsui-button awsui-button-size-normal awsui-button-variant-primary awsui-hover-child-icons aws-signin-float-right">Submit</button>
+                        <button id="password_recovery_cancel_button" class="awsui-button awsui-button-size-normal awsui-button-variant-link awsui-hover-child-icons aws-signin-float-right">Cancel</button>
+                    </div>
+                    <div id="password_recovery_done_div" style="display:none; !important">
+                        <button id="password_recovery_done_button" class="awsui-button awsui-button-size-normal awsui-button-variant-primary awsui-hover-child-icons aws-signin-float-right">Done</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="modal_background_div" class="awsui-modal-__state-hidden awsui-modal-overlay">
+</div>
+
+<form id="fpr_form" name="fpr_form" class="fwcim-form" data-fwcim-id="add9b4a6">
+</form>
+
+
+
+<div class="fwcim-container"></div></body></html>

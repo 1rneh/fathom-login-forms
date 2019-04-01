@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" class="en-us blizzard"><head xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; media-src 'self' data:; style-src 'self' data: 'unsafe-inline'; font-src 'self' data:; frame-src 'self' data:">
+<meta http-equiv="imagetoolbar" content="false">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Blizzard Login</title>
+<link rel="shortcut icon" href="resources/81/1.ico" data-original-href="https://bnetus-a.akamaihd.net/login/static/images/meta/favicon.0gxnz.ico">
+<!--[if gt IE 8]><!--><link rel="stylesheet" type="text/css" media="all" href="resources/81/2.css" data-original-href="https://bnetus-a.akamaihd.net/login/static/css/toolkit/blizzard-web.min.2Qz3u.css"><!-- <![endif]-->
+<!--[if IE 8]><link rel="stylesheet" type="text/css" media="all" href="/login/static/css/toolkit/blizzard-web-ie8.min.css?v=58-1" /><![endif]-->
+<link rel="stylesheet" type="text/css" media="all" href="resources/81/3.css" data-original-href="https://bnetus-a.akamaihd.net/login/static/css/login/global.min.3qbR2.css?v=1">
+<link rel="stylesheet" type="text/css" media="all" href="resources/81/4.css" data-original-href="https://bnetus-a.akamaihd.net/login/static/css/nav-client/nav-client.26C4w.css">
+<link rel="stylesheet" type="text/css" media="(max-width:800px)" href="resources/81/5.css" data-original-href="https://bnetus-a.akamaihd.net/login/static/css/nav-client/nav-client-responsive.2L8V6.css">
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" media="all" href="//bnetus-a.akamaihd.net/login/static/css/login/ie8.1GXdy.css" />
+<![endif]-->
+<link rel="search" type="application/opensearchdescription+xml" href="http://us.battle.net/en-us/data/opensearch" title="Blizzard Search">
+
+
+
+<meta name="viewport" content="width=device-width">
+</head>
+<body class="us en-us login-template web blizzard js-enabled" data-embedded-state="STATE_LOGIN" data-baseurl="/login/en" data-cdnurl="http://media.blizzard.com" data-staticurl="/login/static" data-sharedstaticurl="/login/static/local-common" data-securesupporturl="https://us.battle.net/support/" data-project="login" data-projecturl="/login" data-locale="en-us" data-language="en" data-region="us" data-loggedin="false" data-useragent="web" data-tagmanageraccount="GTM-589KTQ" data-gtmdatalayer="[{'userAgent':'web','analyticsRequestUri':'/login/en/','theme':'blizzard','errorCode':'','state':'STATE_LOGIN'}]" data-nonce="bCAcn1SXhj" data-network-error-message="Please check your network connection and try again.">
+
+<div class="grid-container wrapper">
+<h1 class="logo">Blizzard Login</h1>
+<div class="hide" id="info-wrapper">
+<h2><strong class="info-title"></strong></h2>
+<p class="info-body"></p>
+<button class="btn btn-block hide visible-phone" id="info-phone-close">Close</button>
+</div>
+<div class="input" id="login-wrapper">
+<div class="login">
+<form action="" method="post" id="password-form" novalidate="novalidate" class="
+username-required
+input-focus">
+<div id="login-input-container" class="">
+<div id="js-errors" class="alert alert-error alert-icon hide">
+<p id="cookie-check" class="hide">Your browser's cookies are disabled. Please reenable cookies to continue.</p>
+</div>
+
+<div class="control-group">
+<label id="accountName-label" class="control-label" for="accountName">Email</label>
+<div class="controls">
+<input aria-labelledby="accountName-label" id="accountName" name="accountName" title="Email" maxlength="320" type="text" tabindex="1" class="input-block input-large" placeholder="Email" autocorrect="off" spellcheck="false" data-fathom="username">
+</div>
+</div>
+<div class="control-group">
+<label id="password-label" class="control-label" for="password">Password</label>
+<div class="controls">
+<input aria-labelledby="password-label" id="password" name="password" title="Password" maxlength="16" type="password" tabindex="1" class="input-block input-large" autocomplete="off" placeholder="Password" autocorrect="off" spellcheck="false" data-show-password-message="Show" data-hide-password-message="Hide" data-fathom="password">
+</div>
+</div>
+<input type="hidden" id="useSrp" name="useSrp" value="false">
+<input type="hidden" id="publicA" name="publicA" value="">
+<input type="hidden" id="clientEvidenceM1" name="clientEvidenceM1" value="">
+<div class="persistWrapper">
+<label id="persistLogin-label" class="checkbox-label css-label hide checked" for="persistLogin">
+<input aria-labelledby="persistLogin-label" id="persistLogin" name="persistLogin" type="checkbox" checked="checked" tabindex="1">
+<span class="input-checkbox"></span>
+Keep me logged in
+</label>
+</div>
+</div>
+<div class="control-group submit ">
+<button type="submit" id="submit" class="btn btn-primary btn-large btn-block" data-loading-text="" tabindex="1" data-fathom="next">
+Log in to Blizzard
+<i class="spinner-battlenet"></i>
+</button>
+</div>
+<input type="hidden" id="csrftoken" class="csrftoken" name="csrftoken" value="a0e2928f-8c79-4c17-b9e1-73d35ba16142">
+<input type="hidden" id="sessionTimeout" name="sessionTimeout" value="1551434067883">
+</form>
+<div class="thirdparty-line">
+<span>Or log in with</span>
+</div>
+<div class="control-group useResponse">
+<div class="grid-50">
+<form method="post" action="https://us.battle.net/login/signin/facebook" id="facebookLogin" class="third-party-login" enctype="">
+<button id="facebook" class="btn btn-tertiary btn-block btn-large" rel="external" tabindex="1">
+<i class="icon-facebook-white"></i>
+Facebook
+</button>
+<input type="hidden" name="scope" value="public_profile,email,user_friends">
+<input type="hidden" name="ref" value="https://us.battle.net/oauth/authorize?scope%3Dwow.profile%26response_type%3Dcode%26redirect_uri%3Dhttps%253A%252F%252Fwww.wowhead.com%252Faccount%253Dbattlenet%26state%3DAkhB-q5y5lv6wTKCqx0iidVZ%26client_id%3Dc9b67224c7ab42768f5727fa05b427b4">
+<input type="hidden" name="app" value="oauth">
+<input type="hidden" name="scheme" value="">
+<input type="hidden" id="csrftoken-facebookLogin" class="csrftoken" name="csrftoken" value="a0e2928f-8c79-4c17-b9e1-73d35ba16142">
+</form>
+</div>
+<div class="grid-50">
+<form method="post" action="https://us.battle.net/login/signin/google" id="googleLogin" class="third-party-login" enctype="">
+<button id="google" class="btn btn-tertiary btn-block btn-large" rel="external" tabindex="1">
+<i class="icon-google"></i>
+Google
+</button>
+<input type="hidden" name="scope" value="openid,profile,email">
+<input type="hidden" name="ref" value="https://us.battle.net/oauth/authorize?scope%3Dwow.profile%26response_type%3Dcode%26redirect_uri%3Dhttps%253A%252F%252Fwww.wowhead.com%252Faccount%253Dbattlenet%26state%3DAkhB-q5y5lv6wTKCqx0iidVZ%26client_id%3Dc9b67224c7ab42768f5727fa05b427b4">
+<input type="hidden" name="app" value="oauth">
+<input type="hidden" name="scheme" value="">
+<input type="hidden" id="csrftoken-googleLogin" class="csrftoken" name="csrftoken" value="a0e2928f-8c79-4c17-b9e1-73d35ba16142">
+</form>
+</div>
+</div>
+<ul id="help-links">
+<li>
+<a rel="internal" href="https://www.battle.net/account/creation/tos.html?ref=https://us.battle.net/oauth/authorize?scope%3Dwow.profile%26response_type%3Dcode%26redirect_uri%3Dhttps%253A%252F%252Fwww.wowhead.com%252Faccount%253Dbattlenet%26state%3DAkhB-q5y5lv6wTKCqx0iidVZ%26client_id%3Dc9b67224c7ab42768f5727fa05b427b4&amp;theme=blizzard&amp;app=oauth" tabindex="1" id="signup">
+Create a free Blizzard Account
+</a>
+</li>
+<li>
+<a rel="internal" href="https://us.battle.net/account/recovery/?ref=&amp;theme=blizzard&amp;app=oauth" tabindex="1" id="loginSupport">
+Can't log in?
+</a>
+</li>
+</ul>
+</div>
+</div>
+<footer id="footer" class="footer en-us">
+<div id="nav-client-footer" class="nav-client">
+<div class="mobileFooterEnabled footer-content footer-desktop grid-container"> <div class="nav-section support-feedback">
+<div class="nav-left">
+<div id="nav-feedback">
+</div>
+</div>
+</div>
+<div class="nav-section">
+<div class="nav-left nav-logo-group">
+<div class="footer-links nav-left">
+<a class="nav-item nav-a" href="http://us.blizzard.com/company/legal/eula" data-analytics="global-nav" data-analytics-placement="Footer - eula">Battle.net EULA</a>
+<span>|</span>
+<a class="nav-item nav-a" href="http://us.blizzard.com/company/about/privacy.html" data-analytics="global-nav" data-analytics-placement="Footer - Privacy">Privacy</a>
+<span>|</span>
+<a class="nav-item nav-a" href="http://www.blizzard.com/legal/" data-analytics="global-nav" data-analytics-placement="Footer - Terms">Terms</a>
+<span>|</span>
+<a class="nav-item nav-a" href="http://us.blizzard.com/company/about/infringementnotice.html" data-analytics="global-nav" data-analytics-placement="Footer - copyright">Copyright Infringement</a>
+<div class="copyright">©2019 Blizzard Entertainment, Inc. All rights reserved.</div>
+<div class="nav-footer-icon-container">
+<ul class="nav-footer-icon-list">
+</ul>
+</div>
+</div>
+</div>
+<div class="nav-ratings">
+</div>
+</div>
+</div>
+<div class="mobileFooterEnabled footer-content footer-mobile grid-container"> <div class="nav-logo-group">
+<div class="footer-links">
+<a class="nav-item nav-a" href="http://us.blizzard.com/company/legal/eula" data-analytics="global-nav" data-analytics-placement="Footer - eula">Battle.net EULA</a>
+<span>|</span>
+<a class="nav-item nav-a" href="http://us.blizzard.com/company/about/privacy.html" data-analytics="global-nav" data-analytics-placement="Footer - Privacy">Privacy</a>
+<span>|</span>
+<a class="nav-item nav-a" href="http://www.blizzard.com/legal/" data-analytics="global-nav" data-analytics-placement="Footer - Terms">Terms</a>
+<span>|</span>
+<a class="nav-item nav-a" href="http://us.blizzard.com/company/about/infringementnotice.html" data-analytics="global-nav" data-analytics-placement="Footer - copyright">Copyright Infringement</a>
+</div>
+<div class="copyright">©2019 Blizzard Entertainment, Inc. All rights reserved.</div>
+<div class="nav-footer-icon-container">
+<ul class="nav-footer-icon-list">
+</ul>
+</div>
+<div class="nav-ratings">
+</div>
+</div>
+</div>
+</div>
+</footer> </div>
+
+
+
+
+
+<style id="parsererrorstyle">
+	parsererror {
+		display: none !important;
+	}
+</style>
+</body></html>

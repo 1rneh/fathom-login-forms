@@ -1,0 +1,1309 @@
+<!DOCTYPE html>
+<html xml:lang="en" style="" class="js no-touch localstorage no-ios" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; media-src 'self' data:; style-src 'self' data: 'unsafe-inline'; font-src 'self' data:; frame-src 'self' data:">
+<meta name="format-detection" content="telephone=no">
+	
+<title>Customer Login</title>
+<meta name="description" content="Default Description">
+<meta name="keywords" content="Magento, Varien, E-commerce">
+<meta name="robots" content="INDEX,FOLLOW">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+<link rel="icon" href="resources/397/1.png" type="image/x-icon" data-original-href="http://www.theledlight.com/media/favicon/default/logo.png">
+<link rel="shortcut icon" href="resources/397/1.png" type="image/x-icon" data-original-href="http://www.theledlight.com/media/favicon/default/logo.png">
+<link rel="author" href="https://plus.google.com/#">
+<!--[if lt IE 7]>
+<script type="text/javascript">
+//<![CDATA[
+    var BLANK_URL = 'http://www.theledlight.com/js/blank.html';
+    var BLANK_IMG = 'http://www.theledlight.com/js/spacer.gif';
+//]]>
+</script>
+<![endif]-->
+<!--group: nogroup-->
+<link rel="stylesheet" type="text/css" href="resources/397/2.css" data-original-href="http://www.theledlight.com/js/calendar/calendar-win2k-1.css">
+<link rel="stylesheet" type="text/css" href="resources/397/3.css" media="all" data-original-href="http://www.theledlight.com/skin/frontend/sm_market/default/bootstrap/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="resources/397/4.css" media="all" data-original-href="http://www.theledlight.com/skin/frontend/sm_market/default/bootstrap/css/bootstrap-theme.min.css">
+<link rel="stylesheet" type="text/css" href="resources/397/5.css" media="all" data-original-href="http://www.theledlight.com/skin/frontend/sm_market/default/css/font-awesome.css">
+<link rel="stylesheet" type="text/css" href="resources/397/6.css" media="all" data-original-href="http://www.theledlight.com/skin/frontend/sm_market/default/css/fontsocialico.css">
+<link rel="stylesheet" type="text/css" href="resources/397/7.css" media="all" data-original-href="http://www.theledlight.com/skin/frontend/sm_market/default/css/addons.css">
+<link rel="stylesheet" type="text/css" href="resources/397/8.css" media="all" data-original-href="http://www.theledlight.com/skin/frontend/sm_market/default/css/theme.css">
+<link rel="stylesheet" type="text/css" href="resources/397/9.css" media="all" data-original-href="http://www.theledlight.com/skin/frontend/sm_market/default/css/owl.carousel.css">
+<link rel="stylesheet" type="text/css" href="resources/397/10.css" media="all" data-original-href="http://www.theledlight.com/skin/frontend/sm_market/default/css/menu.css">
+<link rel="stylesheet" type="text/css" href="resources/397/11.css" media="all" data-original-href="http://www.theledlight.com/skin/frontend/sm_market/default/css/css3.css">
+<link rel="stylesheet" type="text/css" href="resources/397/12.css" media="all" data-original-href="http://www.theledlight.com/skin/frontend/sm_market/default/sm/basicproducts/css/style.css">
+<link rel="stylesheet" type="text/css" href="resources/397/13.css" media="all" data-original-href="http://www.theledlight.com/skin/frontend/sm_market/default/sm/cartpro/css/cartpro.css">
+<link rel="stylesheet" type="text/css" href="resources/397/14.css" media="all" data-original-href="http://www.theledlight.com/skin/frontend/sm_market/default/sm/categories/css/sm-categories.css">
+<link rel="stylesheet" type="text/css" href="resources/397/15.css" media="all" data-original-href="http://www.theledlight.com/skin/frontend/sm_market/default/sm/deal/css/sm_deal.css">
+<link rel="stylesheet" type="text/css" href="resources/397/16.css" media="all" data-original-href="http://www.theledlight.com/skin/frontend/sm_market/default/sm/megamenu/css/horizontal/black/megamenu.css">
+<link rel="stylesheet" type="text/css" href="resources/397/17.css" media="all" data-original-href="http://www.theledlight.com/skin/frontend/sm_market/default/sm/megamenu/css/vertical/black/megamenu.css">
+<link rel="stylesheet" type="text/css" href="resources/397/18.css" media="all" data-original-href="http://www.theledlight.com/skin/frontend/sm_market/default/sm/quickview/css/quickview.css">
+<link rel="stylesheet" type="text/css" href="resources/397/19.css" media="all" data-original-href="http://www.theledlight.com/skin/frontend/sm_market/default/sm/searchboxpro/css/searchboxpro.css">
+<link rel="stylesheet" type="text/css" href="resources/397/20.css" media="all" data-original-href="http://www.theledlight.com/skin/frontend/sm_market/default/sm/shopby/css/style.css">
+<link rel="stylesheet" type="text/css" href="resources/397/21.css" media="all" data-original-href="http://www.theledlight.com/skin/frontend/sm_market/default/sm/tablisting/css/tablisting.css">
+<link rel="stylesheet" type="text/css" href="resources/397/22.css" media="all" data-original-href="http://www.theledlight.com/skin/frontend/sm_market/default/sm/listingextend/css/style.css">
+<link rel="stylesheet" type="text/css" href="resources/397/23.css" media="all" data-original-href="http://www.theledlight.com/skin/frontend/sm_market/default/sm/listingdeals/css/animate.css">
+<link rel="stylesheet" type="text/css" href="resources/397/24.css" media="all" data-original-href="http://www.theledlight.com/skin/frontend/sm_market/default/sm/listingdeals/css/sm-listing-deals.css">
+<link rel="stylesheet" type="text/css" href="resources/397/25.css" media="all" data-original-href="http://www.theledlight.com/skin/frontend/sm_market/default/css/bonus-page.css">
+<link rel="stylesheet" type="text/css" href="resources/397/26.css" media="all" data-original-href="http://www.theledlight.com/skin/frontend/sm_market/default/css/jquery.fancybox.css">
+<link rel="stylesheet" type="text/css" href="resources/397/27.css" media="all" data-original-href="http://www.theledlight.com/skin/frontend/sm_market/default/css/cloudzoom.css">
+<link rel="stylesheet" type="text/css" href="resources/397/28.css" media="all" data-original-href="http://www.theledlight.com/skin/frontend/sm_market/default/css/imageslider.css">
+<link rel="stylesheet" type="text/css" href="resources/397/29.css" media="all" data-original-href="http://www.theledlight.com/skin/frontend/sm_market/default/css/new_cpanel.css">
+<link rel="stylesheet" type="text/css" href="resources/397/30.css" media="all" data-original-href="http://www.theledlight.com/skin/frontend/sm_market/default/css/yt-responsive.css">
+<link rel="stylesheet" type="text/css" href="resources/397/31.css" media="all" data-original-href="http://www.theledlight.com/skin/frontend/sm_market/default/css/colors/yellow.css">
+<link rel="stylesheet" type="text/css" href="resources/397/32.css" media="all" data-original-href="http://www.theledlight.com/skin/frontend/sm_market/default/css/configurableswatches.css">
+<link rel="stylesheet" type="text/css" href="resources/397/33.css" media="all" data-original-href="http://www.theledlight.com/skin/frontend/sm_market/default/aw_blog/css/style.css">
+<link rel="stylesheet" type="text/css" href="resources/397/34.css" media="all" data-original-href="http://www.theledlight.com/skin/frontend/sm_market/default/sm/cameraslide/css/cameraslide.css">
+<link rel="stylesheet" type="text/css" href="resources/397/35.css" media="print" data-original-href="http://www.theledlight.com/skin/frontend/sm_market/default/css/print.css">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="http://www.theledlight.com/blog/rss/index/store_id/1/" title="Blog" rel="alternate" type="application/rss+xml">
+
+
+
+
+
+
+            <!-- BEGIN GOOGLE ANALYTICS CODE -->
+        
+        <!-- END GOOGLE ANALYTICS CODE -->
+    
+<meta name="google-site-verification" content="2SUNu06cqpadt1ipywFDqDCzL45SZWJcPWODUXp9STU">
+
+
+
+
+<link rel="stylesheet" type="text/css" href="resources/397/36.css" media="all" data-original-href="http://fonts.googleapis.com/css?family=Open+Sans:400,700">
+<style type="text/css">
+body{	
+		font-size:12px;	
+	}body{
+			font-family:Open Sans, serif !important;
+		}.yt-menu-nav > #nav > li > a > span,.language-currency ul li a,.sm-serachbox-pro .sm-searbox-content,.sm-serachbox-pro .jqTransformInputWrapper input.input-text,#custom_popular_search .sm-searchbox-popular-title,.banner-policy a,.yt-header-bottom .more-wrap .more-view,.toolbar .select-inner ul li a.selected,.category-products .item .product-name a,.yt-product-detail .tab-product-detail .yt-tab-navi > li > a,
+.yt-product-detail .tab-product-detail .yt-tab-navi > li > a:hover,.sm_quickview_handler,.yt-tab-listing .respl-tabs-wrap ul li.respl-tab .respl-tab-label,.yt-tab-listing .title-text,.block-title span,.spotlight .block-title,.spotlight4,.footer-links-w,.toolbar,.sm-categories .cat-title,.breadcrumbs,#narrow-by-list dt,.yt-product-detail .product-name h1,.yt-product-detail .short-description h2,.postTitle h2 a,#yt_wrapper h1.page-title, #yt_wrapper .page-title h1{
+			color:#444444 ;
+		}
+		body.sm_market{	
+			color:#666666 ;			
+		}
+		body.sm_market{	
+			background-color:#FFFFFF ;
+		}
+		a{	
+			color:#666666 ;	
+		}
+		a:focus,
+		a:hover{	
+			color:#F4A137 ;	
+		}
+		/*titleColor  hover*/
+		.more-wrap .more-view:hover,
+		.postTitle h2 a:hover,
+		.category-products .item .product-name a:hover,
+		.yt-tab-listing .respl-tabs-wrap ul li.respl-tab .respl-tab-label:hover,
+		.yt-product-detail .tab-product-detail .yt-tab-navi > li > a:hover{	
+			color:#F4A137 ;	
+		}	
+		
+		.cloud-zoom-big {
+			top: 0 !important;
+			left: 0 !important;
+			width: 100% !important;
+			height: 100% !important;
+		}
+		
+		.category-products .item .wishlist-compare a.link-compare,
+		.product-compare,
+		.link-compare,
+		.block-compare,
+		.add-to-links .compare{
+			display: none;
+		}
+		.sm_megamenu_wrapper_horizontal_menu .sm_megamenu_icon {
+    top: 0px;
+}
+.yt-product-detail .more-views.slide-gallery .jCarouselLite {
+    margin: 0 auto;
+    width: 313px !important;
+}
+
+.siderbar-menu .nav-3{display:none}
+
+@media only screen and (min-width: 768px) {
+    .header-phone{
+        display:block;
+        font-weight:600;
+        padding-top:7px;
+    }
+}
+.subscribe{
+color: #fff;
+    text-transform: uppercase;
+    background-color: #444;
+    line-height: 100%;
+    padding: 10px 15px;
+}
+.subscribe:hover{
+
+background-color: #f4a137;
+}
+
+.block-newsletter  .block-title{    
+font-size: 126.6%;
+    font-weight: bold;
+    padding-bottom: 10px;
+    line-height: 100%;
+    color: rgb(68, 68, 68);
+}
+.newsletter-wrap{
+    margin: 40px 0px 0 0px;
+    float: left;
+width: 100%;
+}
+.newsletter-wrap p{
+    margin-bottom: 6px;
+    line-height: 23px;
+    font-size: 13px;
+    font-family: Open Sans, serif !important;
+}
+.newsletter-wrap form{
+margin-bottom: 10px;
+}
+.wrapper_404page .content-404page {
+    float: none !important;
+    margin-top: 40px;
+    max-width: 100%  !important;
+    text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+
+.newsletter-wrap{
+margin-bottom:10px;
+    padding: 0 15px;
+}
+}
+.megamenu3-parent{
+display:none !important;
+}
+.socials-wrap li:nth-child(2) ,.socials-wrap li:nth-child(3),.socials-wrap li:nth-child(4)  {
+display:none;
+}
+@media only screen and (min-width: 768px) {
+.need-help{
+    color: #fff;
+    text-transform: uppercase;
+    background-color: #444;
+    line-height: 100%;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    display: block;
+}
+.need-help:hover {
+color: #fff !important;
+    background-color: #f4a137;
+}
+}</style>
+
+
+
+
+<style type="text/css">.fancybox-margin{margin-right:17px;}</style><style data-olark="true" type="text/css">.olark-key,#hbl_code,#olark-data{display: none !important;}</style><style data-olark="true" type="text/css">@media print {#habla_beta_container_do_not_rely_on_div_classes_or_names {display: none !important}}</style></head>
+
+
+<body id="bd" class="sm_market    customer-account-login ">		<div id="options">		<div id="options-tab" style="top:0px;">			<!--block content-->			<div id="zoptions">					<div id="process" style="display:block;"></div>												<div id="fancybox-wrap-clone" style="display:none;"><div id="fancybox-outer"><div id="fancy-bg-n" class="fancy-bg"></div><div id="fancy-bg-ne" class="fancy-bg"></div><div id="fancy-bg-e" class="fancy-bg"></div><div id="fancy-bg-se" class="fancy-bg"></div><div id="fancy-bg-s" class="fancy-bg"></div><div id="fancy-bg-sw" class="fancy-bg"></div><div id="fancy-bg-w" class="fancy-bg"></div><div id="fancy-bg-nw" class="fancy-bg"></div><div id="confirmbox"></div>					<a id="fancybox-close" style="display: inline;"></a></div></div>			</div>		</div>		</div><div id="blurmask"></div>
+    <div id="yt_wrapper">
+    
+        <!-- BEGIN: Header -->
+		<div id="yt_header" class="yt-header wrap header1-wrap">    
+		
+		     
+
+<div class="yt-header-top">
+
+    <div class="container">
+   
+        <div class="row">
+        
+            <div class="language-currency col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            	<div class="inner">
+            	 <div class="v4-call-us"><span class="header-phone">Phone:1-775-841-4490</span></div>
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+                    
+                </div>
+            </div>
+            <div class="head-quicklink col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            	<div class="inner">
+                <ul class="links">
+	<!--<li>		
+                    <a title="Login" class="login-btn" data-toggle="modal" data-target="#loginForm">
+                Login            </a>
+           
+	</li>-->
+   
+    
+            			
+            <li class="first"><a href="http://www.theledlight.com/customer/account/" title="My Account" class="top-link-myaccount">My Account</a></li>
+                                <li><a href="http://www.theledlight.com/wishlist/" class="top-link-wishlist" title="My Wishlist">My Wishlist</a></li>
+                    			
+            <li><a href="http://www.theledlight.com/checkout/cart/" title="My Cart" class="top-link-cart">My Cart</a></li>
+                    			
+            <li><a href="http://www.theledlight.com/checkout/" title="Checkout" class="top-link-checkout">Checkout</a></li>
+                    			
+            <li class="last"><a href="http://www.theledlight.com/customer/account/login/" title="Log In">Log In</a></li>
+            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="yt-header-middle">
+	<div class="container">
+        <div class="row">
+        <div class="logo col-lg-3 col-md-3 col-sm-12 col-xs-12">
+            <a href="http://www.theledlight.com/" title="TheLEDLight " class="logo"><img src="resources/397/37.png" alt="TheLEDLight " data-original-src="http://www.theledlight.com/skin/frontend/sm_market/default/images/yellow/logo.png">
+            </a>
+        </div>
+        <div class="header-middle-right col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                            <div class="head-searchbox">
+                    	<div id="sm_serachbox_pro11709526351553094260" class="sm-serachbox-pro">
+			
+							<div class="sm-searbox-content jqtransformdone">
+			<form id="search_mini_form" action="http://www.theledlight.com/catalogsearch/result/" method="get">
+				<div class="form-search">
+										<div class="jqTransformSelectWrapper" style="z-index: 10; width: 243px;"><div><span style="width: 235px;">All Categories</span><a href="http://www.theledlight.com/customer/account/login/#" class="jqTransformSelectOpen"></a></div><ul style="width: 241px; display: none; visibility: visible;"><li><a href="http://www.theledlight.com/customer/account/login/#" index="0" class="selected">All Categories</a></li><li><a href="http://www.theledlight.com/customer/account/login/#" index="1">Default Category</a></li><li><a href="http://www.theledlight.com/customer/account/login/#" index="2">- - LED Light Fixtures</a></li><li><a href="http://www.theledlight.com/customer/account/login/#" index="3">- - LED Landscape Lighting</a></li><li><a href="http://www.theledlight.com/customer/account/login/#" index="4">- - Commercial LED Lighting</a></li><li><a href="http://www.theledlight.com/customer/account/login/#" index="5">- - LED Cabinet Lights</a></li><li><a href="http://www.theledlight.com/customer/account/login/#" index="6">- - Flexible LED Strips</a></li><li><a href="http://www.theledlight.com/customer/account/login/#" index="7">- - Aluminum Channel</a></li><li><a href="http://www.theledlight.com/customer/account/login/#" index="8">- - Crown Molding for Cove Lighting</a></li><li><a href="http://www.theledlight.com/customer/account/login/#" index="9">- - RGB Color Changing LED Lights</a></li><li><a href="http://www.theledlight.com/customer/account/login/#" index="10">- - Bare Rigid LED Strips</a></li><li><a href="http://www.theledlight.com/customer/account/login/#" index="11">- - Waterproof LED Light Bars</a></li><li><a href="http://www.theledlight.com/customer/account/login/#" index="12">- - LED Sign Lighting</a></li><li><a href="http://www.theledlight.com/customer/account/login/#" index="13">- - Battery Operated LED Lights</a></li><li><a href="http://www.theledlight.com/customer/account/login/#" index="14">- - Single LED Light Sources</a></li><li><a href="http://www.theledlight.com/customer/account/login/#" index="15">- - Controls for LED Products</a></li><li><a href="http://www.theledlight.com/customer/account/login/#" index="16">- - Wire Shrink Tube</a></li><li><a href="http://www.theledlight.com/customer/account/login/#" index="17">- - LED Traffic Control</a></li><li><a href="http://www.theledlight.com/customer/account/login/#" index="18">- - Solar Power</a></li><li><a href="http://www.theledlight.com/customer/account/login/#" index="19">- - RV and Solar Ready LED Lights</a></li><li><a href="http://www.theledlight.com/customer/account/login/#" index="20">- - Professional LED Flashlights</a></li><li><a href="http://www.theledlight.com/customer/account/login/#" index="21">- - LED Flashlights Headlamps</a></li><li><a href="http://www.theledlight.com/customer/account/login/#" index="22">- - LED Gifts and Gadgets</a></li><li><a href="http://www.theledlight.com/customer/account/login/#" index="23">- - Loose LEDs &amp; Drivers</a></li><li><a href="http://www.theledlight.com/customer/account/login/#" index="24">- - Made in the USA</a></li><li><a href="http://www.theledlight.com/customer/account/login/#" index="25">- - LED Light  Bulbs</a></li></ul><select id="cat" name="cat" class="jqTransformHidden" style="">
+						<option value="">All Categories</option>
+
+													<option value="2">Default Category</option>
+													<option value="154">- - LED Light Fixtures</option>
+													<option value="156">- - LED Landscape Lighting</option>
+													<option value="157">- - Commercial LED Lighting</option>
+													<option value="159">- - LED Cabinet Lights</option>
+													<option value="160">- - Flexible LED Strips</option>
+													<option value="161">- - Aluminum Channel</option>
+													<option value="162">- - Crown Molding for Cove Lighting</option>
+													<option value="163">- - RGB Color Changing LED Lights</option>
+													<option value="164">- - Bare Rigid LED Strips</option>
+													<option value="165">- - Waterproof LED Light Bars</option>
+													<option value="166">- - LED Sign Lighting</option>
+													<option value="167">- - Battery Operated LED Lights</option>
+													<option value="168">- - Single LED Light Sources</option>
+													<option value="169">- - Controls for LED Products</option>
+													<option value="170">- - Wire Shrink Tube</option>
+													<option value="171">- - LED Traffic Control</option>
+													<option value="172">- - Solar Power</option>
+													<option value="173">- - RV and Solar Ready LED Lights</option>
+													<option value="174">- - Professional LED Flashlights</option>
+													<option value="175">- - LED Flashlights Headlamps</option>
+													<option value="176">- - LED Gifts and Gadgets</option>
+													<option value="177">- - Loose LEDs &amp; Drivers</option>
+													<option value="179">- - Made in the USA</option>
+													<option value="189">- - LED Light  Bulbs</option>
+												
+						
+					</select></div>
+					<!-- <input size="30" id="search" type="text" name="q" class="input-text" onfocus="if(this.value=='Enter keywords to search your gadgets in entire store here...') this.value='';" onblur="if(this.value=='') this.value='Enter keywords to search your gadgets in entire store here...';" value="Enter keywords to search your gadgets in entire store here..."  /> -->
+					<div class="jqTransformInputWrapper" style="width: 310px;"><div class="jqTransformInputInner"><div><input size="30" id="search" type="text" name="q" class="input-text jqtranformdone jqTransformInput" value="Enter keywords to search..." autocomplete="off" style="width: 300px;"></div></div></div>
+					<button type="submit" title="Search" class="button form-button"><span class="icon-search"></span></button>
+					<div id="search_autocomplete" class="search-autocomplete" style="display: none;"></div>
+					
+				</div>
+			</form>
+		</div>
+		        
+        
+	</div>
+
+
+                </div>        
+                
+            <div class="head-cart">
+                
+<div class="block mini-cartpro sm-cartpro">
+		<div class="block-title">
+					<div class="btn-toggle show-cart-button">
+				<div class="detail-minicart">
+                	<p>Shopping Cart</p>
+                	<span class="count-item">
+						
+						<span class="txt-item"> 0 item</span>
+					</span>	
+					<span class="price">$0.00</span>				</div>
+				<div class="detail-minicart-v4">
+                	<p>My Cart - </p>
+                	<span class="count-item">
+						
+						<span class="txt-item"> 0 item</span>
+					</span>
+									</div>
+				
+				<div class="detail-minicart-v5">
+					<div class="minicart-title">
+						<span>My Cart:</span> <span class="txt-item">(0)</span>
+					</div>
+				</div>
+			</div>
+			
+			</div>
+	</div>
+
+
+
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+<div class="mega-horizontal-wrap header-style-1">
+    <div class="container">
+        <div class="row">
+            <div class="mega-horizontal-left col-lg-3 col-md-3 col-sm-2 col-xs-12">
+            </div>
+            <div class="mega-horizontal-right col-lg-9 col-md-9 col-sm-10 col-xs-12">
+                		
+
+<!--link media="all" href="" type="text/css" rel="stylesheet">
+
+
+<link media="all" href="" type="text/css" rel="stylesheet"-->
+
+		
+	<div class="sm_megamenu_wrapper_horizontal_menu sambar" id="sm_megamenu_menu5c925674e0f3a" data-sam="9268698691553094260">
+		<div class="sambar-inner">
+			<a class="btn-sambar" data-sapi="collapse" href="http://www.theledlight.com/customer/account/login/#sm_megamenu_menu5c925674e0f3a">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</a>	
+			<ul class="sm-megamenu-hover sm_megamenu_menu sm_megamenu_menu_black" data-jsapi="on">
+									<li class="home-item-menu-parent  other-toggle   
+						sm_megamenu_lv1 sm_megamenu_drop parent   ">
+
+                            <a class="sm_megamenu_head sm_megamenu_drop " href="http://www.theledlight.com/" id="sm_megamenu_165">
+                                                                <span class="sm_megamenu_icon sm_megamenu_nodesc">		
+                                                                        			
+                                	
+                                </span>
+                                                                <span class="sm_megamenu_title">Home</span>
+								                                
+                            </a>
+																																	</li><li class=" other-toggle   
+						sm_megamenu_lv1 sm_megamenu_drop parent   ">
+
+                            <a class="sm_megamenu_head sm_megamenu_drop " href="http://www.theledlight.com/new-arrivals.html" id="sm_megamenu_162">
+                                                                <span style="background: url('resources/397/38.png') no-repeat scroll 0% 50% transparent;" class="sm_megamenu_icon sm_megamenu_nodesc" data-original-style="background: url('http://www.theledlight.com/media/wysiwyg/mega-menu/mega-icon.png') no-repeat scroll 0% 50% transparent;">		
+                                                                        			
+                                	
+                                </span>
+                                                                <span class="sm_megamenu_title">New Arrivals</span>
+								                                
+                            </a>
+																																	</li><li class=" other-toggle   
+						sm_megamenu_lv1 sm_megamenu_drop parent   ">
+
+                            <a class="sm_megamenu_head sm_megamenu_drop " href="http://www.theledlight.com/about-us.html" id="sm_megamenu_166">
+                                                                <span class="sm_megamenu_icon sm_megamenu_nodesc">		
+                                                                        			
+                                	
+                                </span>
+                                                                <span class="sm_megamenu_title">About us</span>
+								                                
+                            </a>
+																																	</li><li class=" other-toggle   
+						sm_megamenu_lv1 sm_megamenu_drop parent   ">
+
+                            <a class="sm_megamenu_head sm_megamenu_drop " href="http://www.theledlight.com/callmeback.html" id="sm_megamenu_223">
+                                                                <span class="sm_megamenu_icon sm_megamenu_nodesc">		
+                                                                        			
+                                	
+                                </span>
+                                                                <span class="sm_megamenu_title">Call Me Back</span>
+								                                
+                            </a>
+																																	</li><li class=" other-toggle   
+						sm_megamenu_lv1 sm_megamenu_drop parent   ">
+
+                            <a class="sm_megamenu_head sm_megamenu_drop " href="http://www.theledlight.com/contacts.html" id="sm_megamenu_169">
+                                                                <span class="sm_megamenu_icon sm_megamenu_nodesc">		
+                                                                        			
+                                	
+                                </span>
+                                                                <span class="sm_megamenu_title">Contact us</span>
+								                                
+                            </a>
+																														</li></ul>
+		</div>
+	</div>
+	<!--End Module-->
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="yt-header-bottom">
+<div class="container">
+<div class="row">
+    <div id="yt_header_left" class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+        <div id="yt-responsivemenu" class="yt-responsivemenu">
+            	<button type="button" class="btn btn-navbar"><i class="icon-th-list"></i>
+    </button>
+    <div id="yt_resmenu_sidebar">
+	    <ul class="nav-menu clearfix">
+	    <li class="nav-home">
+	        <a class="nav-home" href="http://www.theledlight.com/" title="Home"><span>Home</span></a>
+	    </li>
+	    	        <li class="level0 nav-1">
+<a href="http://www.theledlight.com/led-light-bulbs.html">
+<span>LED Light  Bulbs</span>
+</a>
+</li>	    	        <li class="level0 nav-2">
+<a href="http://www.theledlight.com/led-light-fixtures.html">
+<span>LED Light Fixtures</span>
+</a>
+</li>	    	        <li class="level0 nav-3">
+<a href="http://www.theledlight.com/led-landscape-lighting.html">
+<span>LED Landscape Lighting</span>
+</a>
+</li>	    	        <li class="level0 nav-4">
+<a href="http://www.theledlight.com/commercial-led-lighting.html">
+<span>Commercial LED Lighting</span>
+</a>
+</li>	    	        <li class="level0 nav-5">
+<a href="http://www.theledlight.com/ledcabinetlights.html">
+<span>LED Cabinet Lights</span>
+</a>
+</li>	    	        <li class="level0 nav-6">
+<a href="http://www.theledlight.com/flexible-led-strips.html">
+<span>Flexible LED Strips</span>
+</a>
+</li>	    	        <li class="level0 nav-7">
+<a href="http://www.theledlight.com/aluminum-channel.html">
+<span>Aluminum Channel</span>
+</a>
+</li>	    	        <li class="level0 nav-8">
+<a href="http://www.theledlight.com/crown-molding-for-cove-lighting.html">
+<span>Crown Molding for Cove Lighting</span>
+</a>
+</li>	    	        <li class="level0 nav-9">
+<a href="http://www.theledlight.com/rgb-color-changing-led-lights.html">
+<span>RGB Color Changing LED Lights</span>
+</a>
+</li>	    	        <li class="level0 nav-10">
+<a href="http://www.theledlight.com/bare-rigid-led-strips.html">
+<span>Bare Rigid LED Strips</span>
+</a>
+</li>	    	        <li class="level0 nav-11">
+<a href="http://www.theledlight.com/waterproof-led-light-bars.html">
+<span>Waterproof LED Light Bars</span>
+</a>
+</li>	    	        <li class="level0 nav-12">
+<a href="http://www.theledlight.com/led-sign-lighting.html">
+<span>LED Sign Lighting</span>
+</a>
+</li>	    	        <li class="level0 nav-13">
+<a href="http://www.theledlight.com/battery-operated-led-lights.html">
+<span>Battery Operated LED Lights</span>
+</a>
+</li>	    	        <li class="level0 nav-14">
+<a href="http://www.theledlight.com/single-led-light-sources.html">
+<span>Single LED Light Sources</span>
+</a>
+</li>	    	        <li class="level0 nav-15">
+<a href="http://www.theledlight.com/controls-for-led-products.html">
+<span>Controls for LED Products</span>
+</a>
+</li>	    	        <li class="level0 nav-16">
+<a href="http://www.theledlight.com/wire-shrink-tube.html">
+<span>Wire Shrink Tube</span>
+</a>
+</li>	    	        <li class="level0 nav-17">
+<a href="http://www.theledlight.com/led-traffic-control.html">
+<span>LED Traffic Control</span>
+</a>
+</li>	    	        <li class="level0 nav-18">
+<a href="http://www.theledlight.com/solarpower.html">
+<span>Solar Power</span>
+</a>
+</li>	    	        <li class="level0 nav-19">
+<a href="http://www.theledlight.com/rv-led-lights.html">
+<span>RV and Solar Ready LED Lights</span>
+</a>
+</li>	    	        <li class="level0 nav-20">
+<a href="http://www.theledlight.com/professional-led-flashlights.html">
+<span>Professional LED Flashlights</span>
+</a>
+</li>	    	        <li class="level0 nav-21">
+<a href="http://www.theledlight.com/led-flashlights-headlamps.html">
+<span>LED Flashlights Headlamps</span>
+</a>
+</li>	    	        <li class="level0 nav-22">
+<a href="http://www.theledlight.com/led-gifts-gadgets.html">
+<span>LED Gifts and Gadgets</span>
+</a>
+</li>	    	        <li class="level0 nav-23">
+<a href="http://www.theledlight.com/loose-led.html">
+<span>Loose LEDs &amp; Drivers</span>
+</a>
+</li>	    	        <li class="level0 nav-24">
+<a href="http://www.theledlight.com/made-in-usa.html">
+<span>Made in the USA</span>
+</a>
+</li>	    	    </ul>
+	    
+	</div>
+        </div>
+        <div id="yt_menu_short">
+            <div id="btn_categories">
+                <span><i class="icon-cate"></i>Categories</span>
+            </div>
+            <div class="yt-menu-content">
+            		
+
+<!--link media="all" href="" type="text/css" rel="stylesheet">
+
+
+<link media="all" href="" type="text/css" rel="stylesheet"-->
+
+		
+	<div class="sm_megamenu_wrapper_vertical_menu sambar" id="sm_megamenu_menu5c925674ea0ff" data-sam="16621493881553094260">
+		<div class="sambar-inner">
+			<a class="btn-sambar" data-sapi="collapse" href="http://www.theledlight.com/customer/account/login/#sm_megamenu_menu5c925674ea0ff">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</a>	
+			<ul class="sm-megamenu-hover sm_megamenu_menu sm_megamenu_menu_black" data-jsapi="on">
+									<li class=" other-toggle   
+						sm_megamenu_lv1 sm_megamenu_nodrop   ">
+												<a class="sm_megamenu_head sm_megamenu_nodrop " href="http://www.theledlight.com/led-light-bulbs.html" id="sm_megamenu_224">
+																										<span style="background: url('resources/397/39.png') no-repeat scroll 0% 50% transparent;" class="sm_megamenu_icon sm_megamenu_nodesc" data-original-style="background: url('http://www.theledlight.com/media/wysiwyg/mega-menu/9.png') no-repeat scroll 0% 50% transparent;">		
+																												<span class="sm_megamenu_title">LED Light Bulbs</span>
+																	
+														
+													</span>
+																									</a>
+																																	</li><li class=" other-toggle   
+						sm_megamenu_lv1 sm_megamenu_nodrop   ">
+												<a class="sm_megamenu_head sm_megamenu_nodrop " href="http://www.theledlight.com/led-light-fixtures.html" id="sm_megamenu_197">
+																										<span style="background: url('resources/397/40.png') no-repeat scroll 0% 50% transparent;" class="sm_megamenu_icon sm_megamenu_nodesc" data-original-style="background: url('http://www.theledlight.com/media/wysiwyg/mega-menu/8.png') no-repeat scroll 0% 50% transparent;">		
+																												<span class="sm_megamenu_title">LED Light Fixtures</span>
+																	
+														
+													</span>
+																									</a>
+																																	</li><li class=" other-toggle   
+						sm_megamenu_lv1 sm_megamenu_nodrop   ">
+												<a class="sm_megamenu_head sm_megamenu_nodrop " href="http://www.theledlight.com/led-landscape-lighting.html" id="sm_megamenu_198">
+																										<span style="background: url('resources/397/40.png') no-repeat scroll 0% 50% transparent;" class="sm_megamenu_icon sm_megamenu_nodesc" data-original-style="background: url('http://www.theledlight.com/media/wysiwyg/mega-menu/8.png') no-repeat scroll 0% 50% transparent;">		
+																												<span class="sm_megamenu_title">LED Landscape Lighting</span>
+																	
+														
+													</span>
+																									</a>
+																																	</li><li class=" other-toggle   
+						sm_megamenu_lv1 sm_megamenu_nodrop   ">
+												<a class="sm_megamenu_head sm_megamenu_nodrop " href="http://www.theledlight.com/commercial-led-lighting.html" id="sm_megamenu_199">
+																										<span style="background: url('resources/397/41.png') no-repeat scroll 0% 50% transparent;" class="sm_megamenu_icon sm_megamenu_nodesc" data-original-style="background: url('http://www.theledlight.com/media/wysiwyg/mega-menu/6.png') no-repeat scroll 0% 50% transparent;">		
+																												<span class="sm_megamenu_title">Commercial LED Lighting</span>
+																	
+														
+													</span>
+																									</a>
+																																	</li><li class=" other-toggle   
+						sm_megamenu_lv1 sm_megamenu_nodrop   ">
+												<a class="sm_megamenu_head sm_megamenu_nodrop " href="http://www.theledlight.com/ledcabinetlights.html" id="sm_megamenu_200">
+																										<span style="background: url('resources/397/42.png') no-repeat scroll 0% 50% transparent;" class="sm_megamenu_icon sm_megamenu_nodesc" data-original-style="background: url('http://www.theledlight.com/media/wysiwyg/mega-menu/10.png') no-repeat scroll 0% 50% transparent;">		
+																												<span class="sm_megamenu_title">LED Cabinet Lights</span>
+																	
+														
+													</span>
+																									</a>
+																																	</li><li class=" other-toggle   
+						sm_megamenu_lv1 sm_megamenu_nodrop   ">
+												<a class="sm_megamenu_head sm_megamenu_nodrop " href="http://www.theledlight.com/flexible-led-strips.html" id="sm_megamenu_201">
+																										<span style="background: url('resources/397/43.png') no-repeat scroll 0% 50% transparent;" class="sm_megamenu_icon sm_megamenu_nodesc" data-original-style="background: url('http://www.theledlight.com/media/wysiwyg/mega-menu/3.png') no-repeat scroll 0% 50% transparent;">		
+																												<span class="sm_megamenu_title">Flexible LED Strips</span>
+																	
+														
+													</span>
+																									</a>
+																																	</li><li class=" other-toggle   
+						sm_megamenu_lv1 sm_megamenu_nodrop   ">
+												<a class="sm_megamenu_head sm_megamenu_nodrop " href="http://www.theledlight.com/aluminum-channel.html" id="sm_megamenu_202">
+																										<span style="background: url('resources/397/44.png') no-repeat scroll 0% 50% transparent;" class="sm_megamenu_icon sm_megamenu_nodesc" data-original-style="background: url('http://www.theledlight.com/media/wysiwyg/mega-menu/7.png') no-repeat scroll 0% 50% transparent;">		
+																												<span class="sm_megamenu_title">Aluminum Channel</span>
+																	
+														
+													</span>
+																									</a>
+																																	</li><li class=" other-toggle   
+						sm_megamenu_lv1 sm_megamenu_nodrop   ">
+												<a class="sm_megamenu_head sm_megamenu_nodrop " href="http://www.theledlight.com/crown-molding-for-cove-lighting.html" id="sm_megamenu_203">
+																										<span style="background: url('resources/397/45.png') no-repeat scroll 0% 50% transparent;" class="sm_megamenu_icon sm_megamenu_nodesc" data-original-style="background: url('http://www.theledlight.com/media/wysiwyg/mega-menu/5.png') no-repeat scroll 0% 50% transparent;">		
+																												<span class="sm_megamenu_title">Crown Molding for Cove Lighting</span>
+																	
+														
+													</span>
+																									</a>
+																																	</li><li class=" other-toggle   
+						sm_megamenu_lv1 sm_megamenu_nodrop   ">
+												<a class="sm_megamenu_head sm_megamenu_nodrop " href="http://www.theledlight.com/rgb-color-changing-led-lights.html" id="sm_megamenu_204">
+																										<span style="background: url('resources/397/46.png') no-repeat scroll 0% 50% transparent;" class="sm_megamenu_icon sm_megamenu_nodesc" data-original-style="background: url('http://www.theledlight.com/media/wysiwyg/mega-menu/2.png') no-repeat scroll 0% 50% transparent;">		
+																												<span class="sm_megamenu_title">RGB Color Changing LED Lights</span>
+																	
+														
+													</span>
+																									</a>
+																																	</li><li class=" other-toggle   
+						sm_megamenu_lv1 sm_megamenu_nodrop   ">
+												<a class="sm_megamenu_head sm_megamenu_nodrop " href="http://www.theledlight.com/bare-rigid-led-strips.html" id="sm_megamenu_205">
+																										<span style="background: url('resources/397/47.png') no-repeat scroll 0% 50% transparent;" class="sm_megamenu_icon sm_megamenu_nodesc" data-original-style="background: url('http://www.theledlight.com/media/wysiwyg/mega-menu/13.png') no-repeat scroll 0% 50% transparent;">		
+																												<span class="sm_megamenu_title">Bare Rigid LED Strips</span>
+																	
+														
+													</span>
+																									</a>
+																																	</li><li class=" other-toggle   
+						sm_megamenu_lv1 sm_megamenu_nodrop   ">
+												<a class="sm_megamenu_head sm_megamenu_nodrop " href="http://www.theledlight.com/waterproof-led-light-bars.html" id="sm_megamenu_206">
+																										<span style="background: url('resources/397/48.png') no-repeat scroll 0% 50% transparent;" class="sm_megamenu_icon sm_megamenu_nodesc" data-original-style="background: url('http://www.theledlight.com/media/wysiwyg/mega-menu/16.png') no-repeat scroll 0% 50% transparent;">		
+																												<span class="sm_megamenu_title">Waterproof LED Light Bars</span>
+																	
+														
+													</span>
+																									</a>
+																																	</li><li class=" other-toggle   
+						sm_megamenu_lv1 sm_megamenu_nodrop   ">
+												<a class="sm_megamenu_head sm_megamenu_nodrop " href="http://www.theledlight.com/led-sign-lighting.html" id="sm_megamenu_207">
+																										<span style="background: url('resources/397/42.png') no-repeat scroll 0% 50% transparent;" class="sm_megamenu_icon sm_megamenu_nodesc" data-original-style="background: url('http://www.theledlight.com/media/wysiwyg/mega-menu/10.png') no-repeat scroll 0% 50% transparent;">		
+																												<span class="sm_megamenu_title">LED Sign Lighting</span>
+																	
+														
+													</span>
+																									</a>
+																																	</li><li class=" other-toggle   
+						sm_megamenu_lv1 sm_megamenu_nodrop   ">
+												<a class="sm_megamenu_head sm_megamenu_nodrop " href="http://www.theledlight.com/battery-operated-led-lights.html" id="sm_megamenu_208">
+																										<span style="background: url('resources/397/49.png') no-repeat scroll 0% 50% transparent;" class="sm_megamenu_icon sm_megamenu_nodesc" data-original-style="background: url('http://www.theledlight.com/media/wysiwyg/mega-menu/1.png') no-repeat scroll 0% 50% transparent;">		
+																												<span class="sm_megamenu_title">Battery Operated LED Lights</span>
+																	
+														
+													</span>
+																									</a>
+																																	</li><li class=" other-toggle   
+						sm_megamenu_lv1 sm_megamenu_nodrop   " style="display: none;">
+												<a class="sm_megamenu_head sm_megamenu_nodrop " href="http://www.theledlight.com/single-led-light-sources.html" id="sm_megamenu_209">
+																										<span style="background: url('resources/397/50.png') no-repeat scroll 0% 50% transparent;" class="sm_megamenu_icon sm_megamenu_nodesc" data-original-style="background: url('http://www.theledlight.com/media/wysiwyg/mega-menu/12.png') no-repeat scroll 0% 50% transparent;">		
+																												<span class="sm_megamenu_title">Single LED Light Sources</span>
+																	
+														
+													</span>
+																									</a>
+																																	</li><li class=" other-toggle   
+						sm_megamenu_lv1 sm_megamenu_nodrop   " style="display: none;">
+												<a class="sm_megamenu_head sm_megamenu_nodrop " href="http://www.theledlight.com/controls-for-led-products.html" id="sm_megamenu_210">
+																										<span style="background: url('resources/397/51.png') no-repeat scroll 0% 50% transparent;" class="sm_megamenu_icon sm_megamenu_nodesc" data-original-style="background: url('http://www.theledlight.com/media/wysiwyg/mega-menu/14.png') no-repeat scroll 0% 50% transparent;">		
+																												<span class="sm_megamenu_title">Controls for LED Products</span>
+																	
+														
+													</span>
+																									</a>
+																																	</li><li class=" other-toggle   
+						sm_megamenu_lv1 sm_megamenu_nodrop   " style="display: none;">
+												<a class="sm_megamenu_head sm_megamenu_nodrop " href="http://www.theledlight.com/wire-shrink-tube.html" id="sm_megamenu_211">
+																										<span style="background: url('resources/397/52.png') no-repeat scroll 0% 50% transparent;" class="sm_megamenu_icon sm_megamenu_nodesc" data-original-style="background: url('http://www.theledlight.com/media/wysiwyg/mega-menu/15.png') no-repeat scroll 0% 50% transparent;">		
+																												<span class="sm_megamenu_title">Wire Shrink Tube</span>
+																	
+														
+													</span>
+																									</a>
+																																	</li><li class=" other-toggle   
+						sm_megamenu_lv1 sm_megamenu_nodrop   " style="display: none;">
+												<a class="sm_megamenu_head sm_megamenu_nodrop " href="http://www.theledlight.com/led-traffic-control.html" id="sm_megamenu_212">
+																										<span style="background: url('resources/397/49.png') no-repeat scroll 0% 50% transparent;" class="sm_megamenu_icon sm_megamenu_nodesc" data-original-style="background: url('http://www.theledlight.com/media/wysiwyg/mega-menu/1.png') no-repeat scroll 0% 50% transparent;">		
+																												<span class="sm_megamenu_title">LED Traffic Control</span>
+																	
+														
+													</span>
+																									</a>
+																																	</li><li class=" other-toggle   
+						sm_megamenu_lv1 sm_megamenu_nodrop   " style="display: none;">
+												<a class="sm_megamenu_head sm_megamenu_nodrop " href="http://www.theledlight.com/solarpower.html" id="sm_megamenu_213">
+																										<span style="background: url('resources/397/48.png') no-repeat scroll 0% 50% transparent;" class="sm_megamenu_icon sm_megamenu_nodesc" data-original-style="background: url('http://www.theledlight.com/media/wysiwyg/mega-menu/16.png') no-repeat scroll 0% 50% transparent;">		
+																												<span class="sm_megamenu_title">Solar Power</span>
+																	
+														
+													</span>
+																									</a>
+																																	</li><li class=" other-toggle   
+						sm_megamenu_lv1 sm_megamenu_nodrop   " style="display: none;">
+												<a class="sm_megamenu_head sm_megamenu_nodrop " href="http://www.theledlight.com/rv-led-lights.html" id="sm_megamenu_214">
+																										<span style="background: url('resources/397/50.png') no-repeat scroll 0% 50% transparent;" class="sm_megamenu_icon sm_megamenu_nodesc" data-original-style="background: url('http://www.theledlight.com/media/wysiwyg/mega-menu/12.png') no-repeat scroll 0% 50% transparent;">		
+																												<span class="sm_megamenu_title">RV and Solar Ready LED Lights</span>
+																	
+														
+													</span>
+																									</a>
+																																	</li><li class=" other-toggle   
+						sm_megamenu_lv1 sm_megamenu_nodrop   " style="display: none;">
+												<a class="sm_megamenu_head sm_megamenu_nodrop " href="http://www.theledlight.com/professional-led-flashlights.html" id="sm_megamenu_215">
+																										<span style="background: url('resources/397/42.png') no-repeat scroll 0% 50% transparent;" class="sm_megamenu_icon sm_megamenu_nodesc" data-original-style="background: url('http://www.theledlight.com/media/wysiwyg/mega-menu/10.png') no-repeat scroll 0% 50% transparent;">		
+																												<span class="sm_megamenu_title">Professional LED Flashlights</span>
+																	
+														
+													</span>
+																									</a>
+																																	</li><li class=" other-toggle   
+						sm_megamenu_lv1 sm_megamenu_nodrop   " style="display: none;">
+												<a class="sm_megamenu_head sm_megamenu_nodrop " href="http://www.theledlight.com/led-flashlights-headlamps.html" id="sm_megamenu_216">
+																										<span style="background: url('resources/397/39.png') no-repeat scroll 0% 50% transparent;" class="sm_megamenu_icon sm_megamenu_nodesc" data-original-style="background: url('http://www.theledlight.com/media/wysiwyg/mega-menu/9.png') no-repeat scroll 0% 50% transparent;">		
+																												<span class="sm_megamenu_title">LED Flashlights Headlamps</span>
+																	
+														
+													</span>
+																									</a>
+																																	</li><li class=" other-toggle   
+						sm_megamenu_lv1 sm_megamenu_nodrop   " style="display: none;">
+												<a class="sm_megamenu_head sm_megamenu_nodrop " href="http://www.theledlight.com/led-gifts-gadgets.html" id="sm_megamenu_217">
+																										<span style="background: url('resources/397/43.png') no-repeat scroll 0% 50% transparent;" class="sm_megamenu_icon sm_megamenu_nodesc" data-original-style="background: url('http://www.theledlight.com/media/wysiwyg/mega-menu/3.png') no-repeat scroll 0% 50% transparent;">		
+																												<span class="sm_megamenu_title">LED Gifts and Gadgets</span>
+																	
+														
+													</span>
+																									</a>
+																																	</li><li class=" other-toggle   
+						sm_megamenu_lv1 sm_megamenu_nodrop   " style="display: none;">
+												<a class="sm_megamenu_head sm_megamenu_nodrop " href="http://www.theledlight.com/loose-led.html" id="sm_megamenu_218">
+																										<span style="background: url('resources/397/40.png') no-repeat scroll 0% 50% transparent;" class="sm_megamenu_icon sm_megamenu_nodesc" data-original-style="background: url('http://www.theledlight.com/media/wysiwyg/mega-menu/8.png') no-repeat scroll 0% 50% transparent;">		
+																												<span class="sm_megamenu_title">Loose LEDs &amp; Drivers</span>
+																	
+														
+													</span>
+																									</a>
+																																	</li><li class=" other-toggle   
+						sm_megamenu_lv1 sm_megamenu_nodrop   " style="display: none;">
+												<a class="sm_megamenu_head sm_megamenu_nodrop " href="http://www.theledlight.com/made-in-usa.html" id="sm_megamenu_220">
+																										<span style="background: url('resources/397/45.png') no-repeat scroll 0% 50% transparent;" class="sm_megamenu_icon sm_megamenu_nodesc" data-original-style="background: url('http://www.theledlight.com/media/wysiwyg/mega-menu/5.png') no-repeat scroll 0% 50% transparent;">		
+																												<span class="sm_megamenu_title">Made in the USA</span>
+																	
+														
+													</span>
+																									</a>
+																																	</li><li class="megamenu1-parent  other-toggle   
+						sm_megamenu_lv1 sm_megamenu_drop parent   " style="display: none;">
+												<a class="sm_megamenu_head sm_megamenu_drop " href="http://www.theledlight.com/catalog/category/view/" id="sm_megamenu_3">
+																										<span style="background: url('resources/397/39.png') no-repeat scroll 0% 50% transparent;" class="sm_megamenu_icon sm_megamenu_nodesc" data-original-style="background: url('http://www.theledlight.com/media/wysiwyg/mega-menu/9.png') no-repeat scroll 0% 50% transparent;">		
+																												<span class="sm_megamenu_title">LED Light Blubs</span>
+																	
+														
+													</span>
+																									</a>
+																																	</li><li class="megamenu3-parent  other-toggle   
+						sm_megamenu_lv1 sm_megamenu_drop parent   " style="display: none;">
+												<a class="sm_megamenu_head sm_megamenu_drop " href="http://www.theledlight.com/catalog/category/view/" id="sm_megamenu_84">
+																										<span style="background: url('resources/397/46.png') no-repeat scroll 0% 50% transparent;" class="sm_megamenu_icon sm_megamenu_nodesc" data-original-style="background: url('http://www.theledlight.com/media/wysiwyg/mega-menu/2.png') no-repeat scroll 0% 50% transparent;">		
+																												<span class="sm_megamenu_title">Commercial LED Lighting</span>
+																	
+														
+													</span>
+																									</a>
+																														</li><div class="more-wrap" style="display: block;"><span class="more-view">More Categories</span></div></ul>
+		</div>
+	</div>
+	<!--End Module-->
+
+            </div>
+        </div>        
+    </div>  
+</div>
+</div>
+</div>        
+
+
+
+
+
+
+
+
+
+
+		</div>
+		<!-- END: Header -->
+		
+		<!-- BEGIN: content -->        
+        <div id="yt_content" class="yt-content wrap">
+
+        	<div id="yt_main" class="yt-main col-main">
+        		<div class="yt-main-inner yt-content-inner">
+	        		<div class="container">
+	        		
+		                <div class="row">                    
+                        	          
+									                                                        <div class="columns-w">
+							    
+							                            
+                                                        
+		                	<div class="account-login">
+    <div class="page-title">
+        <h1>Login or Create an Account</h1>
+    </div>
+        <form action="http://www.theledlight.com/customer/account/loginPost/" method="post" id="login-form">
+        <input name="form_key" type="hidden" value="tyLojdxREyw0MwlW">
+        <div class="col2-set">
+            <div class="col-1 new-users">
+                <div class="content">
+                    <h2>New Customers</h2>
+                    <p>By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.</p>
+                </div>
+            </div>
+            <div class="col-2 registered-users">
+                <div class="content">
+                    <h2>Registered Customers</h2>
+                    <p>If you have an account with us, please log in.</p>
+                    <ul class="form-list">
+                        <li>
+                            <label for="email" class="required"><em>*</em>Email Address</label>
+                            <div class="input-box">
+                                <input type="text" name="login[username]" value="" id="email" class="input-text required-entry validate-email" title="Email Address" data-fathom="username">
+                            </div>
+                        </li>
+                        <li>
+                            <label for="pass" class="required"><em>*</em>Password</label>
+                            <div class="input-box">
+                                <input type="password" name="login[password]" class="input-text required-entry validate-password" id="pass" title="Password" data-fathom="password">
+                            </div>
+                        </li>
+                                                                    </ul>
+                    
+
+
+                    <p class="required">* Required Fields</p>
+                </div>
+            </div>
+        </div>
+        <div class="col2-set">
+            <div class="col-1 new-users">
+                <div class="buttons-set">
+                    <button type="button" title="Create an Account" class="button"><span><span>Create an Account</span></span></button>
+                </div>
+            </div>
+            <div class="col-2 registered-users">
+                <div class="buttons-set">
+                    <a href="http://www.theledlight.com/customer/account/forgotpassword/" class="f-left">Forgot Your Password?</a>
+                    <button type="submit" class="button" title="Login" name="send" id="send2" data-fathom="next"><span><span>Login</span></span></button>
+                </div>
+            </div>
+        </div>
+            </form>
+    
+</div>
+                            </div>
+		        		</div>
+	        		</div>   
+                    <!-- Hot categories home page -->
+                                        
+        		</div>
+        	</div>
+         </div>      
+        <!-- END: content -->
+        
+        <!-- BEGIN: footer -->
+        <div id="yt_footer" class="yt-footer wrap">
+        	
+    <div class="social-fixed">        
+    <div class="socials-wrap">
+<div><a class="need-help" href="http://www.theledlight.com/contacts.html">Need Help?</a></div>
+	<ul>
+					<li><a title="Facebook" href="https://www.facebook.com/theledlight/" target="_blank" class="icon-facebook">				<!-- <span class="social-text">Facebook</span> -->
+			</a></li>
+								
+		        						
+	</ul>
+</div>    
+			
+    </div>
+	<div class="footer-top">  
+        <div class="container">
+            <div class="row">          				                                            
+               
+                                    <div class="spotlight-wrap">
+                        <div class="spotlight spotlight1 col-lg-3 col-md-3 col-sm-6 col-xs-12">
+<div class="block-title">About Market</div>
+<div class="block-content">
+<ul>
+<li><a href="http://www.theledlight.com/about-us.html/">About us</a></li>
+<li><a href="http://www.theledlight.com/blog/">Blog</a></li>
+<li><a href="http://www.theledlight.com/termscondition.html/">Terms of Use</a></li>
+<li><a href="http://www.theledlight.com/privacy-policy.html/">Privacy Policy</a></li>
+<li><a href="http://www.theledlight.com/catalog/seo_sitemap/category/">Site Map</a></li>
+<li><a href="http://www.theledlight.com/lumens.html">Lumens</a></li>
+<li><a href="http://www.theledlight.com/help.html">Help</a></li>
+<li><a href="http://www.theledlight.com/color_chart.html">ColorChart</a></li>
+<li><a href="http://www.theledlight.com/ledbulbprimer.html">LEDBulbPrimer</a></li>
+<li><a href="http://www.theledlight.com/callmeback.html">Call me Back</a></li>
+<li><a href="http://www.theledlight.com/crown-molding-shipping-cost.html/">Crown Molding Shipping Cost</a></li>
+<li><a href="http://www.theledlight.com/download-crown-molding-pdf.html/">Download Crown Molding PDF</a></li>
+<li><a href="http://www.theledlight.com/dimmers.html">Dimmers</a></li>
+<li><a href="http://http//www.theledlight.com/resistancecalculator.html">Resistance Calculator</a></li>
+</ul>
+</div>
+</div><div class="spotlight spotlight2 col-lg-3 col-md-3 col-sm-6 col-xs-12">
+<div class="block-title">Customer Service</div>
+<div class="block-content">
+<ul>
+<li><a href="http://www.theledlight.com/Contractors.html/">Contractors</a></li>
+<li><a href="http://www.theledlight.com/warranty.html/">Warranty</a></li>
+<li><a href="http://www.theledlight.com/return-policy.html/">Return Policy</a></li>
+<li><a href="http://www.theledlight.com/contacts.html/">Contact Us</a></li>
+<li><a href="http://www.theledlight.com/led-definitions.html">LED Definitions</a></li>
+<li><a href="http://www.theledlight.com/led101.html">LED101</a></li>
+<li><a href="http://www.theledlight.com/ledLightingForHomeAccents.html">LED LightingForHomeAccents</a></li>
+<li><a href="http://www.theledlight.com/rgb-colors.html">RGB Colors</a></li>
+<li><a href="http://www.theledlight.com/transformers.html">Transformers</a></li>
+<li><a href="http://www.theledlight.com/crown-molding-samples.html/">Crown Molding Samples</a></li>
+<li><a href="http://www.theledlight.com/crown-molding-order-page.html/">Crown Molding Order Page</a></li>
+<li><a href="http://www.theledlight.com/direct-replace-led-t8-tubes.html/">Direct Replacement LED T8 Tubes</a></li>
+<li><a href="http://www.theledlight.com/flexible-led-strips-transformers.html/">Flexible LED Stripes Transformers</a></li>
+<li><a href="http://www.theledlight.com/12volt-led-bulb.html/">12 Volt LED Bulb</a></li>
+</ul>
+</div>
+</div><div class="spotlight spotlight3 col-lg-3 col-md-3 col-sm-6 col-xs-12">
+<div class="block-title">Payment &amp; Shipping</div>
+<div class="block-content">
+<ul>
+<li><a href="http://www.theledlight.com/termscondition.html/">Terms of Use</a></li>
+<!--<li><a href="#">Payment Methods</a></li>-->
+<li><a href="http://www.theledlight.com/shippingguide.html/">Shipping Guide</a></li>
+<li><a href="http://www.theledlight.com/shipping-canada.html/">Shipping Canada</a></li>
+<li><a href="http://www.theledlight.com/locations-we-ship-to.html">Locations We Ship To</a></li>
+<li><a href="http://www.theledlight.com/trustwave.html/">Trustwave</a></li>
+<li><a href="http://www.theledlight.com/rgb-colors1.html">RGB Colors1</a></li>
+<li><a href="http://www.theledlight.com/technical.html">Technical </a></li>
+<li><a href="http://www.theledlight.com/technical1.html">Technical1</a></li>
+<li><a href="http://www.theledlight.com/catalog.html">Catalog</a></li>
+<li><a href="http://www.theledlight.com/whybuyfromus.html">whybuyfromus</a></li>
+<li><a href="http://www.theledlight.com/crown-molding-for-leds.html/">Crown Molding for LEDs</a></li>
+<li><a href="http://www.theledlight.com/crown-molding-corner-blocks.html">Crown Molding Corner Blocks</a></li>
+<li><a href="http://www.theledlight.com/led-hid-replacement-lamps.html/">LED HID Replacement Lamps</a></li>
+<li><a href="http://www.theledlight.com/installation-accessories.html">Installation Accessories</a></li>
+</ul>
+</div>
+</div><div class="spotlight spotlight4 col-lg-3 col-md-3 col-sm-6 col-xs-12">
+<div class="block-title">Contact us</div>
+<ul class="block-content">
+<li class="address"><span class="ico-contactus">icon</span>
+<div class="inner">Address : The LED Light, Inc 511 Fairview Drive Carson City NV 89701.</div>
+</li>
+<li class="email"><span class="ico-contactus">icon</span>
+<div class="inner">Email : <a href="mailto:Sales@TheLEDLight.com">Sales@TheLEDLight.com</a></div>
+</li>
+<li class="phone"><span class="ico-contactus">icon</span>
+<div class="inner">Phone :1-775-841-4490 <br> Fax : 1-775-841-4491</div>
+</li>
+</ul>
+</div>
+<div class="spotlight-wrap newsletter-wrap">
+<div class="block-newsletter">
+<div class="block-title">Newsletter</div>
+<div class="block-content">
+<p>Please sign up to the Market mailing list to receive updates on new arrivals, special offers and other discount information</p>
+<form id="newsletter-validate-detail" action="http://www.theledlight.com/customer/account/login/newsletter/subscriber/new/" method="post">
+<div class="input-box"><input id="newsletter" class="input-text required-entry validate-email" title="Sign up for our newsletter" type="text" value="Your email address" name="email"> <button class="subscribe" type="submit"><span>Subscribe</span></button></div>
+</form></div>
+</div>
+</div>                    </div>
+                                            </div>
+        </div>
+    </div>
+    
+    <div class="footer-bottom"> 
+        <div class="container">
+            <div class="row">          	
+            	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 yt-copyright">
+        			<p>© 1997-Present The LED Light Inc. All Rights Reserved. </p>            	</div>
+            	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 yt-payment">
+            		<div class="block-payment"><a class="payment1" href="http://www.theledlight.com/customer/account/login/#">payment1</a> <a class="payment2" href="http://www.theledlight.com/customer/account/login/#">payment2</a> <a class="payment3" href="http://www.theledlight.com/customer/account/login/#">payment3</a> <a class="payment4" href="http://www.theledlight.com/customer/account/login/#">payment4</a><a class="payment5" href="http://www.theledlight.com/customer/account/login/#">payment5</a><a class="payment6" href="http://www.theledlight.com/customer/account/login/#">payment6</a></div>            	</div>
+            </div>
+        </div>
+    </div>
+    
+<div id="cpanel_wrapper">
+	<div class="cpanel-head">
+		<span>Theme setting</span>
+		<div class="action cpanel-reset">
+			<a class="btn btn-info reset" href="http://www.theledlight.com/customer/account/login/#">Reset</a>
+		</div>		
+	</div>
+
+	<div class="accordion" id="ytcpanel_accordion">
+		<!--Theme-->
+        <div class="accordion-group cpanel-theme-color">
+            <div id="yt_cpanelaccordionfirst" class="accordion-heading">
+                <a class="accordion-toggle" data-parent="#ytcpanel_accordion" href="http://www.theledlight.com/customer/account/login/#ytitem_1">
+					Theme Color
+				</a>
+            </div>
+        	<div id="ytitem_1" class="accordion-theme">
+                <div class="accordion-inner clearfix">
+					<div class="color-theme">
+												<a class="theme-color yellow active" href="http://www.theledlight.com/?___store=english&amp;___from_store=australia"><span title="Yellow">Yellow</span></a>
+						<a class="theme-color blue " href="http://www.theledlight.com/?___store=australia&amp;___from_store=english"><span title="Blue">Blue</span></a>
+                        <a class="theme-color tangerine " href="http://www.theledlight.com/?___store=german&amp;___from_store=english"><span title="Tangerine">Tangerine</span></a>
+						<a class="theme-color emerald " href="http://www.theledlight.com/?___store=italia&amp;___from_store=english"><span title="Emerald">Emerald</span></a>
+						<a class="theme-color green " href="http://www.theledlight.com/?___store=canada&amp;___from_store=english"><span title="Green">Green</span></a>
+						
+					</div>
+				</div>
+			</div>
+        </div>
+	
+		<!--Store-->
+		<!--<div class="accordion-group cpanel-store">
+			<div class="accordion-heading">
+				<a class="accordion-toggle" data-parent="#ytcpanel_accordion" href="#ytitem_2">
+				Layout Style</a>
+			</div>
+			<div id="ytitem_2" class="accordion-store">
+				<div class="accordion-inner clearfix">
+					<div class="cp-item">
+						<div class="inner">
+													</div>
+					</div>-->
+					<!-- Select Layout -->
+					<!--<div class="cp-item layout-option">
+						<div class="inner">
+							<select onchange="javascript: onCPApply();" name="ytcpanel_layoutstyle" class="cp_select">
+								<option value="1" >Full Width</option>
+								<option value="2" >Boxed</option>
+							</select>
+						</div>
+					</div>					
+				</div>
+			</div>
+		</div>-->
+		<!-- Menu -->
+		<div class="accordion-group cpanel-menu">
+			<div class="accordion-heading">
+				<a class="accordion-toggle" data-parent="#ytcpanel_accordion" href="http://www.theledlight.com/customer/account/login/#ytitem_6">
+				Menu style </a>
+			</div>
+			<div id="ytitem_6" class="accordion-menu">
+				<div class="accordion-inner clearfix">
+					<!-- Styles -->
+					<div class="cp-item footer-background-color">
+						<!--span>Styles</span-->
+						<div class="inner">
+							<select name="ytcpanel_menustyle" class="cp_select">
+								<option value="mega" selected="selected">Mega</option>
+								<option value="css">Css</option>
+							</select>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="cpanel_btn" class="normal">
+		<i class="icon-hand-left"></i>
+	</div>
+</div>
+
+
+
+<a id="yt-totop" href="http://www.theledlight.com/customer/account/login/#" title="Go to Top" style="display: none;"></a>
+
+       
+			
+        </div>
+        <!-- END: footer -->
+
+		
+
+		
+
+
+ 
+        <!-- begin olark code -->
+
+<!-- end olark code -->
+    </div>
+
+
+<div id="window-overlay" class="window-overlay" style="display:none;"></div><div id="remember-me-popup" class="remember-me-popup" style="display:none;">
+    <div class="remember-me-popup-head">
+        <h3>What's this?</h3>
+        <a href="http://www.theledlight.com/customer/account/login/#" class="remember-me-popup-close" title="Close">Close</a>
+    </div>
+    <div class="remember-me-popup-body">
+        <p>Checking "Remember Me" will let you access your shopping cart on this computer when you are logged out</p>
+        <div class="remember-me-popup-close-button a-right">
+            <a href="http://www.theledlight.com/customer/account/login/#" class="remember-me-popup-close button" title="Close"><span>Close</span></a>
+        </div>
+    </div>
+</div><div class="yt_ressidebar_screennav"><nav id="yt_screennav"><ul class="siderbar-menu">
+	    <li class="nav-home">
+	        <a class="nav-home" href="http://www.theledlight.com/" title="Home"><span>Home</span></a>
+	    </li>
+	    	        <li class="level0 nav-1">
+<a href="http://www.theledlight.com/led-light-bulbs.html">
+<span>LED Light  Bulbs</span>
+</a>
+</li>	    	        <li class="level0 nav-2">
+<a href="http://www.theledlight.com/led-light-fixtures.html">
+<span>LED Light Fixtures</span>
+</a>
+</li>	    	        <li class="level0 nav-3">
+<a href="http://www.theledlight.com/led-landscape-lighting.html">
+<span>LED Landscape Lighting</span>
+</a>
+</li>	    	        <li class="level0 nav-4">
+<a href="http://www.theledlight.com/commercial-led-lighting.html">
+<span>Commercial LED Lighting</span>
+</a>
+</li>	    	        <li class="level0 nav-5">
+<a href="http://www.theledlight.com/ledcabinetlights.html">
+<span>LED Cabinet Lights</span>
+</a>
+</li>	    	        <li class="level0 nav-6">
+<a href="http://www.theledlight.com/flexible-led-strips.html">
+<span>Flexible LED Strips</span>
+</a>
+</li>	    	        <li class="level0 nav-7">
+<a href="http://www.theledlight.com/aluminum-channel.html">
+<span>Aluminum Channel</span>
+</a>
+</li>	    	        <li class="level0 nav-8">
+<a href="http://www.theledlight.com/crown-molding-for-cove-lighting.html">
+<span>Crown Molding for Cove Lighting</span>
+</a>
+</li>	    	        <li class="level0 nav-9">
+<a href="http://www.theledlight.com/rgb-color-changing-led-lights.html">
+<span>RGB Color Changing LED Lights</span>
+</a>
+</li>	    	        <li class="level0 nav-10">
+<a href="http://www.theledlight.com/bare-rigid-led-strips.html">
+<span>Bare Rigid LED Strips</span>
+</a>
+</li>	    	        <li class="level0 nav-11">
+<a href="http://www.theledlight.com/waterproof-led-light-bars.html">
+<span>Waterproof LED Light Bars</span>
+</a>
+</li>	    	        <li class="level0 nav-12">
+<a href="http://www.theledlight.com/led-sign-lighting.html">
+<span>LED Sign Lighting</span>
+</a>
+</li>	    	        <li class="level0 nav-13">
+<a href="http://www.theledlight.com/battery-operated-led-lights.html">
+<span>Battery Operated LED Lights</span>
+</a>
+</li>	    	        <li class="level0 nav-14">
+<a href="http://www.theledlight.com/single-led-light-sources.html">
+<span>Single LED Light Sources</span>
+</a>
+</li>	    	        <li class="level0 nav-15">
+<a href="http://www.theledlight.com/controls-for-led-products.html">
+<span>Controls for LED Products</span>
+</a>
+</li>	    	        <li class="level0 nav-16">
+<a href="http://www.theledlight.com/wire-shrink-tube.html">
+<span>Wire Shrink Tube</span>
+</a>
+</li>	    	        <li class="level0 nav-17">
+<a href="http://www.theledlight.com/led-traffic-control.html">
+<span>LED Traffic Control</span>
+</a>
+</li>	    	        <li class="level0 nav-18">
+<a href="http://www.theledlight.com/solarpower.html">
+<span>Solar Power</span>
+</a>
+</li>	    	        <li class="level0 nav-19">
+<a href="http://www.theledlight.com/rv-led-lights.html">
+<span>RV and Solar Ready LED Lights</span>
+</a>
+</li>	    	        <li class="level0 nav-20">
+<a href="http://www.theledlight.com/professional-led-flashlights.html">
+<span>Professional LED Flashlights</span>
+</a>
+</li>	    	        <li class="level0 nav-21">
+<a href="http://www.theledlight.com/led-flashlights-headlamps.html">
+<span>LED Flashlights Headlamps</span>
+</a>
+</li>	    	        <li class="level0 nav-22">
+<a href="http://www.theledlight.com/led-gifts-gadgets.html">
+<span>LED Gifts and Gadgets</span>
+</a>
+</li>	    	        <li class="level0 nav-23">
+<a href="http://www.theledlight.com/loose-led.html">
+<span>Loose LEDs &amp; Drivers</span>
+</a>
+</li>	    	        <li class="level0 nav-24">
+<a href="http://www.theledlight.com/made-in-usa.html">
+<span>Made in the USA</span>
+</a>
+</li>	    	    </ul></nav></div><iframe data-olark="true" aria-hidden="true" style="width: 0px; height: 0px; position: absolute; left: 0px; bottom: 0px; border: medium none;"></iframe></body></html>

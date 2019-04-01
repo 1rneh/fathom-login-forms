@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en"><head><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; media-src 'self' data:; style-src 'self' data: 'unsafe-inline'; font-src 'self' data:; frame-src 'self' data:">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="robots" content="noindex">
+
+    <!-- x Thu Feb 07 2019 13:16:40 GMT-0800 (PST) -->
+
+    <link rel="dns-prefetch" href="https://www.paypalobjects.com/">
+    <link rel="dns-prefetch" href="https://c.paypal.com/">
+
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://www.paypalobjects.com/webstatic/icon/pp144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://www.paypalobjects.com/webstatic/icon/pp114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://www.paypalobjects.com/webstatic/icon/pp72.png">
+    <link rel="apple-touch-icon-precomposed" href="https://www.paypalobjects.com/webstatic/icon/pp64.png">
+    <link rel="shortcut icon" sizes="196x196" href="resources/fp10/1.png" data-original-href="https://www.paypalobjects.com/webstatic/icon/pp196.png">
+    <link rel="shortcut icon" type="image/x-icon" href="resources/fp10/2.ico" data-original-href="https://www.paypalobjects.com/webstatic/icon/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="resources/fp10/3.png" data-original-href="https://www.paypalobjects.com/webstatic/icon/pp32.png">
+    <link rel="apple-touch-icon" href="https://www.paypalobjects.com/en_US/i/pui/apple-touch-icon.png">
+
+    <!-- (xo-spinner/dist/styles.less) Inlining spinner CSS, then the main CSS bundle is injected when main.js is loaded -->
+    <style type="text/css" nonce="szOMmqKUNjmVOfG2APYYz+O6yI7anzwSNfhvthPy983ALjGs">
+       .loading #main {
+           opacity: .1
+       }
+       .spinner {
+           height: 100%;
+           width: 100%;
+           position: absolute;
+           z-index: 10;
+       }
+       .spinner .spinWrap {
+           width: 200px;
+           height: 100px;
+           position: absolute;
+           top: 45%;
+           left: 50%;
+           margin-left: -100px;
+           margin-top: -100px
+       }
+       .framed .spinner {
+           position: fixed
+       }
+       .framed .spinner .spinWrap {
+           position: fixed;
+           top: 50%;
+           height: 75px;
+           margin-top: -37.5px
+       }
+       .spinner .loader,
+       .spinner .spinnerImage {
+           height: 100px;
+           width: 100px;
+           position: absolute;
+           top: 0;
+           left: 50%;
+           opacity: 1;
+           filter: alpha(opacity=100)
+       }
+       .spinner .spinnerImage {
+           margin: 28px 0 0 -25px;
+           background: url(resources/fp10/4.png) no-repeat
+       }
+       .spinner .loader {
+           margin: 0 0 0 -55px;
+           background-color: transparent;
+           -webkit-animation: rotation .7s infinite linear;
+           -moz-animation: rotation .7s infinite linear;
+           -o-animation: rotation .7s infinite linear;
+           animation: rotation .7s infinite linear;
+           border-left: 5px solid #cbcbca;
+           border-right: 5px solid #cbcbca;
+           border-bottom: 5px solid #cbcbca;
+           border-top: 5px solid #2380be;
+           border-radius: 100%
+       }
+       .spinner .loadingMessage {
+           -webkit-box-sizing: border-box;
+           -moz-box-sizing: border-box;
+           -ms-box-sizing: border-box;
+           box-sizing: border-box;
+           width: 100%;
+           margin-top: 125px;
+           text-align: center;
+           z-index: 100;
+           outline: 0
+       }
+       @-webkit-keyframes rotation {
+           from {
+               -webkit-transform: rotate(0)
+           }
+           to {
+               -webkit-transform: rotate(359deg)
+           }
+       }
+       @-moz-keyframes rotation {
+           from {
+               -moz-transform: rotate(0)
+           }
+           to {
+               -moz-transform: rotate(359deg)
+           }
+       }
+       @-o-keyframes rotation {
+           from {
+               -o-transform: rotate(0)
+           }
+           to {
+               -o-transform: rotate(359deg)
+           }
+       }
+       @keyframes rotation {
+           from {
+               transform: rotate(0)
+           }
+           to {
+               transform: rotate(359deg)
+           }
+       }
+        @media only screen and (max-width: 768px) {
+            .spinner {
+                .spinWrap {
+                    width: 200px;
+                    height: 100px; //180 or 212
+                    position: fixed;
+                    top: 40%;
+                    left: 50%;
+                    margin-left: -93px; //length of half spinwrap width
+                    margin-top: -50px; //length of half spinwrap height
+                }
+            }
+        }
+    </style>
+
+    <!--
+    Angular automatically injects angular-csp.css at run time. To add `nonce` token to that particular
+    inline style, we tell angular to not inject `angular-csp.css` (ng-csp="no-inline-style"), instead we
+    copy `angular-csp.css` manually here and attach our `nonce`
+     -->
+    <style type="text/css" nonce="szOMmqKUNjmVOfG2APYYz+O6yI7anzwSNfhvthPy983ALjGs">
+        @charset "UTF-8";
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak],
+        .ng-cloak, .x-ng-cloak,
+        .ng-hide:not(.ng-hide-animate) {
+            display: none !important;
+        }
+        ng\:form {
+            display: block;
+        }
+        .ng-animate-shim {
+            visibility:hidden;
+        }
+        .ng-anchor {
+            position:absolute;
+        }
+    </style>
+
+        <link rel="stylesheet" href="resources/fp10/5.css" type="text/css" data-original-href="https://www.paypalobjects.com/web/res/0d9/f8a6f4aee6afac972b9dbed1095e7/css/styles.css">
+
+    
+
+    <title>PayPal Checkout</title>
+</head>
+
+<body ng-csp="no-inline-style" class="ng-scope">
+
+
+
+
+
+<div id="preloaderSpinner" class="preloader spinner" style="display: none;">
+    <div class="spinWrap">
+        <p class="spinnerImage"></p>
+        <p class="loader"></p>
+        <p class="loadingMessage" id="spinnerMessage"></p>
+    </div>
+</div>
+
+<!-- uiView: --><div ui-view="" class="ng-scope"><div xo-checkout="" component-route="route" class="ng-scope ng-isolate-scope"><div class="outerWrapper ltr US en" ng-class="[locale.metadata.directionality, locale.country, locale.lang, miniBrowser?'minibrowser':'', isApp?'mobileApp':'']" id="outerWrapper">
+    <xo-merchant-header token="token" class="ng-isolate-scope"><!-- ngIf: populated && display --><div class="xo-merchant-header-wrapper ng-scope" ng-if="populated &amp;&amp; display"><header role="banner">
+    <div ng-attr-id="{{ props.disableId ? '' : 'header' }}" class="merchantHeader clearfix" id="header">
+        <div class="headerWrapper">
+            <!-- ngIf: !(merchant.logo_url || merchant.imageUrl) -->
+            <!-- ngIf: merchant.logo_url || merchant.imageUrl --><img ng-src="https://www.paypalobjects.com/webstatic/directlmlogos/locator/Logo_HomeDepot.png" alt="The Home Depot" ng-if="merchant.logo_url || merchant.imageUrl" xo-merchant-image-resize="" class="ng-scope" src="resources/fp10/6.png" data-original-src="https://www.paypalobjects.com/webstatic/directlmlogos/locator/Logo_HomeDepot.png"><!-- end ngIf: merchant.logo_url || merchant.imageUrl -->
+        </div>
+    </div>
+</header>
+</div><!-- end ngIf: populated && display --></xo-merchant-header>
+    <div id="wrapper" class="clearfix">
+        <main id="main" tabindex="-1" aria-disabled="false">
+            <xo-header token="token" is-unbranded="isUnbranded" unbranded-title="unbrandedTitle" unbranded-sub-title="unbrandedSubTitle" language-switch="languageSwitchHeader" class="ng-isolate-scope"><div class="row-fluid paypalHeaderWrapper" ng-class="{ 'langDropdown': languageSwitch &amp;&amp; languageSwitch.show }" content="">
+    <div class="span14 clearfix paypalHeader">
+        <div id="mobileMerchantHeader">
+            <xo-merchant-header token="token" disable-id="true" class="ng-isolate-scope"><!-- ngIf: populated && display --><div class="xo-merchant-header-wrapper ng-scope" ng-if="populated &amp;&amp; display"><header role="banner">
+    <div ng-attr-id="{{ props.disableId ? '' : 'header' }}" class="merchantHeader clearfix" id="">
+        <div class="headerWrapper">
+            <!-- ngIf: !(merchant.logo_url || merchant.imageUrl) -->
+            <!-- ngIf: merchant.logo_url || merchant.imageUrl --><img ng-src="https://www.paypalobjects.com/webstatic/directlmlogos/locator/Logo_HomeDepot.png" alt="The Home Depot" ng-if="merchant.logo_url || merchant.imageUrl" xo-merchant-image-resize="" class="ng-scope" src="resources/fp10/6.png" data-original-src="https://www.paypalobjects.com/webstatic/directlmlogos/locator/Logo_HomeDepot.png"><!-- end ngIf: merchant.logo_url || merchant.imageUrl -->
+        </div>
+    </div>
+</header>
+</div><!-- end ngIf: populated && display --></xo-merchant-header>
+        </div>
+        <!-- ngIf: unbrandedTitle -->
+        <!-- ngIf: !isMessengerBAIntegration && !isUnbranded && !isVenmoFlow --><div ng-if="!isMessengerBAIntegration &amp;&amp; !isUnbranded &amp;&amp; !isVenmoFlow" id="paypalLogo" class="logo ng-scope"><span class="accessAid ng-binding">PayPal Checkout</span></div><!-- end ngIf: !isMessengerBAIntegration && !isUnbranded && !isVenmoFlow -->
+        <!-- ngIf: !isMessengerBAIntegration && !isUnbranded && isVenmoFlow -->
+        <!-- ngIf: isFacebookBAIntegration -->
+        <!-- ngIf: !isFacebookBAIntegration && isMessengerBAIntegration -->
+        <xo-cart token="token" show-cart-total="showCartTotal" render-cart-container="renderCartContainer" class="ng-isolate-scope"><!-- ngIf: showAmt || showArrow --><div class="cartContainer ng-scope" content="" ng-if="showAmt || showArrow">
+    <div class="transactionDetailsContainer hasAmount" ng-class="{cart:showCart, hasAmount:showAmt}">
+
+        <!-- ngIf: showArrow --><a href="https://www.paypal.com/us/cgi-bin/dni/webscr?useraction=commit&amp;token=EC-3L987160YM5580340&amp;cmd=_express-checkout&amp;&amp;force_web=true#transactionCartDetails" class="transactionDetails scTrack:hermes-cartExpanded ng-scope" aria-controls="transctionCartDetails" aria-haspopup="true" role="button" ng-click="toggleCart($event)" focus-when="" focus-refresh-on="'cart-closed'" ng-if="showArrow" pa-marked="1">
+            <!-- ngIf: showArrow --><cart-wrapper ng-if="showArrow" show-amt="showAmountInCartIcon" show-arrow="showArrow" token="token" class="ng-scope ng-isolate-scope"><span class="totalWrapper clearfix" id="totalWrapper" content="">
+    <span id="transactionCart" ng-class="{hasItems:showArrow}" class="hasItems">
+        <span class="cartIcon" aria-label="Shopping cart"></span>
+        <!-- ngIf: showAmt --><span ng-if="showAmt" class="ng-scope">
+            <format-currency class="formatCurrency ng-isolate-scope" code="checkoutCart.purchase.amounts.total.currency_code" amount="checkoutCart.purchase.amounts.total.amount"><span ng-bind-html="amount_formatted" class="ltrOverride ng-binding">$109.00 <span class="currencyCode">USD</span></span></format-currency>
+        </span><!-- end ngIf: showAmt -->
+        <!-- ngIf: showArrow --><span ng-if="showArrow" class="arrow ng-scope" aria-label="Show"></span><!-- end ngIf: showArrow -->
+    </span>
+</span>
+</cart-wrapper><!-- end ngIf: showArrow -->
+        </a><!-- end ngIf: showArrow -->
+
+        <!-- ngIf: !showArrow -->
+
+        <!-- ngIf: showArrow --><div class="transctionCartDetails ng-scope" id="transctionCartDetails" modal-box="" modal-refresh-on="'cart-updated'" modal-cancel="closeCart()" aria-hidden="false" ng-if="showArrow">
+            <div class="details" role="document" focus-when="" focus-refresh-on="'cart-updated'" focus-element="focusElementCssSelector">
+
+                <a id="closeCart" link-button="content('header.close')" class="actions focusableIcon" ng-click="closeCart($event)" role="button" tabindex="0" aria-label="Close" pa-marked="1"></a>
+
+                <div>
+                    <!-- ngIf: checkoutAppData.merchant --><h2 ng-if="checkoutAppData.merchant" class="merchantName ng-scope" ng-class="{merchantTitle: showAmt &amp;&amp; (note || desc)}" id="merchantName">
+                        <!-- ngIf: note -->
+                        <!-- ngIf: !note --><span ng-if="!note" class="ng-binding ng-scope">The Home Depot</span><!-- end ngIf: !note -->
+                    </h2><!-- end ngIf: checkoutAppData.merchant -->
+                    <!-- ngIf: note || desc -->
+                </div>
+
+                <!-- ngIf: checkoutAppData.is_wps_subscription_flow() -->
+
+
+                <!-- ngIf: !checkoutAppData.is_wps_subscription_flow() --><div ng-if="!checkoutAppData.is_wps_subscription_flow()" dynamic-maxheight="'cart-updated'" class="scrollable-middle ng-scope" style="max-height: 343px;">
+                    <!-- ngIf: hasItems --><ul class="detail-items ng-scope" ng-if="hasItems">
+                        <!-- ngRepeat: item in checkoutCart.purchase.items track by $index --><li ng-repeat="item in checkoutCart.purchase.items track by $index" class="items ng-scope">
+
+                            <div focusable="" class="itemNameContainer" ng-class="{expanded: isExpanded($index)}" tabindex="0">
+                                <a class="more ng-binding" link-button="content('header.srMore')" ng-show="showMore($index, 'floating')" ng-click="expand($index)" role="button" tabindex="0" aria-label="Show more" pa-marked="1">More</a>
+                                <span title="Everly 4 in. Centerset 2-Handle Bathroom Faucet in SpotShield Brushed Nickel" class="itemName ng-binding" style="">Everly 4 in. Centerset 2-Handle Bathroom Faucet in SpotShield Brushed Nickel <a class="less ng-binding ng-hide" link-button="content('header.srLess')" ng-show="isExpanded($index) &amp;&amp; !item.hasDetails" ng-click="collapse()" role="button" tabindex="0" aria-label="Show less" pa-marked="1">Less</a><a class="more inline-more ng-binding ng-hide" link-button="content('header.srMore')" ng-show="showMore($index, 'inline')" ng-click="expand($index)" role="button" tabindex="0" aria-label="Show more" pa-marked="1">More</a></span>
+                            </div>
+                            <span class="itemPrice">
+                                <format-currency code="item.amount.currency_code" amount="item.amount.amount" class="ng-isolate-scope"><span ng-bind-html="amount_formatted" class="ltrOverride ng-binding">$109.00 <span class="currencyCode">USD</span></span></format-currency>
+                            </span>
+                            <item-details ng-show="isExpanded($index) &amp;&amp; item.hasDetails" currency-code="item.amount.currency_code" details="item.details" class="ng-isolate-scope ng-hide"><!-- this directive requires
+  * visible boolean
+  * details object (with .price, .quantity, .description,
+  * possible .item_option_selections)
+  * currency-code string
+  * possible sku (item number)
+  * on-click-less - function invocation expression
+-->
+<ul focusable="" content="" class="itemDetails" tabindex="0">
+  <!-- ngIf: details.sku --><li ng-if="details.sku" class="ng-scope">
+      <span>
+          <strong class="ng-binding">Item #:</strong> <span class="item-number ng-binding">206696777</span>
+      </span>
+  </li><!-- end ngIf: details.sku -->
+  <!-- ngIf: details.price -->
+  <!-- ngIf: details.quantity -->
+  <!-- ngIf: details.hasMore --><li ng-if="details.hasMore" class="ng-scope">
+    <!-- ngIf: details.hasSelections -->
+
+    <!-- ngIf: details.description --><div ng-if="details.description" class="ng-scope">
+      <strong class="item-selection-name ng-binding">Item description:</strong> <span class="item-description ng-binding">Everly 4 in. Centerset 2-Handle Bathroom Faucet in SpotShield Brushed Nickel</span>
+    </div><!-- end ngIf: details.description -->
+  </li><!-- end ngIf: details.hasMore -->
+</ul>
+<a class="less ng-binding" link-button="content('header.srLess')" ng-click="onClickLess()" role="button" tabindex="0" aria-label="Show less" pa-marked="1">Less</a>
+</item-details></li><!-- end ngRepeat: item in checkoutCart.purchase.items track by $index -->
+                    </ul><!-- end ngIf: hasItems -->
+
+                    <!-- ngIf: showAmt && hasItems --><ul class="detail-extras ng-scope" ng-if="showAmt &amp;&amp; hasItems">
+                        <!-- ngIf: checkoutCart.purchase.amounts --><li class="detail-breakdown ng-scope" ng-if="checkoutCart.purchase.amounts">
+                            </li><!-- end ngIf: checkoutCart.purchase.amounts --><!-- ngRepeat: breakdown in checkoutCart.purchase.amounts track by $index --><!-- ngIf: showCartItem(breakdown) --><!-- end ngRepeat: breakdown in checkoutCart.purchase.amounts track by $index --><!-- ngIf: showCartItem(breakdown) --><li ng-repeat="breakdown in checkoutCart.purchase.amounts track by $index" class="amounts ng-scope" ng-if="showCartItem(breakdown)">
+                                <span class="itemNameContainer ng-binding">Item total</span>
+                                <span class="itemPrice">
+                                    <format-currency code="breakdown.currency_code" amount="breakdown.amount" class="ng-isolate-scope"><span ng-bind-html="amount_formatted" class="ltrOverride ng-binding">$109.00 <span class="currencyCode">USD</span></span></format-currency>
+                                </span>
+                            </li><!-- end ngIf: showCartItem(breakdown) --><!-- end ngRepeat: breakdown in checkoutCart.purchase.amounts track by $index --><!-- ngIf: showCartItem(breakdown) --><!-- end ngRepeat: breakdown in checkoutCart.purchase.amounts track by $index --><!-- ngIf: showCartItem(breakdown) --><!-- end ngRepeat: breakdown in checkoutCart.purchase.amounts track by $index --><!-- ngIf: showCartItem(breakdown) --><!-- end ngRepeat: breakdown in checkoutCart.purchase.amounts track by $index --><!-- ngIf: showCartItem(breakdown) --><!-- end ngRepeat: breakdown in checkoutCart.purchase.amounts track by $index --><!-- ngIf: showCartItem(breakdown) --><!-- end ngRepeat: breakdown in checkoutCart.purchase.amounts track by $index -->
+                        
+                    </ul><!-- end ngIf: showAmt && hasItems -->
+                </div><!-- end ngIf: !checkoutAppData.is_wps_subscription_flow() -->
+
+                <!-- ngIf: showCartSubTotal --><div class="subTotal ng-scope" ng-if="showCartSubTotal">
+                    <span class="itemNameContainer ng-binding">Total</span>
+                    <span class="itemPrice">
+                        <format-currency code="checkoutCart.purchase.amounts.total.currency_code" amount="checkoutCart.purchase.amounts.total.amount" class="ng-isolate-scope"><span ng-bind-html="amount_formatted" class="ltrOverride ng-binding">$109.00 <span class="currencyCode">USD</span></span></format-currency>
+                    </span>
+                </div><!-- end ngIf: showCartSubTotal -->
+
+            </div>
+            <div class="pointer"> </div>
+        </div><!-- end ngIf: showArrow -->
+    </div>
+</div><!-- end ngIf: showAmt || showArrow -->
+</xo-cart>
+
+        <!-- ngIf: languageSwitch && languageSwitch.show -->
+
+        <!-- ngIf: unbrandedSubTitle -->
+        <xo-close-frame redirectiframe="redirectiframe" redirect-lightbox="redirectLightbox" class="ng-isolate-scope"><a ng-show="isIFrame" href="" id="closeButton" target="_parent" role="button" ng-click="closeFrame($event)" class="ng-binding ng-hide" pa-marked="1"></a>
+</xo-close-frame>
+    </div>
+</div>
+</xo-header>
+            <div id="contents">
+                <!-- uiView: --><div ui-view="" class="ng-scope"><div xo-signup="" token="token" button-params="buttonParams" component-route="route" export="view" class="ng-scope ng-isolate-scope"><section class="fullSignup" id="fullSignup" content="">
+    <div class="row-fluid">
+        <div class="span14">
+            <xo-onboard-payment token="token" mode="mode" single-step-model="singleStepModel" button-params="buttonParams" class="ng-isolate-scope"><!-- ngIf: populated && display --><div class="xo-onboard-payment-wrapper ng-scope" ng-if="populated &amp;&amp; display"><div content="" class="singlePagePayment" id="singlePagePayment">
+
+    <!-- BillingAgreement flows need to display description passed by merchant in cart -->
+    <!-- ngIf: billingAgreementMerchantMsg -->
+
+    <xo-message message="topErrorMessage" class="ng-isolate-scope"><!-- ngIf: message.msgs || message.msgKeys -->
+</xo-message>
+    <!-- ngIf: landingAbTestCheck() --><xo-login-button ng-if="landingAbTestCheck()" redirect="redirect" class="ng-scope ng-isolate-scope"><div id="loginSection" content="" class="loginRedirect">
+    <div class="row-fluid">
+        <div class="span13 verticallyCentered baslLoginLabelContainer">
+            <b class="ng-binding">Have a PayPal account?</b>
+        </div>
+        <div class="span11 alignRight baslLoginButtonContainer">
+            <a class="btn full ng-binding" ng-click="logWebviewLoginClickWrapper(); redirect()" href="" pa-marked="1">Log In</a>
+        </div>
+    </div>
+</div>
+
+<div id="loginDivider">
+      <span class="textInDivider ng-binding">
+        &nbsp;or&nbsp;
+      </span>
+</div>
+</xo-login-button><!-- end ngIf: landingAbTestCheck() -->
+    <xo-message message="errorMessage" class="ng-isolate-scope"><!-- ngIf: message.msgs || message.msgKeys -->
+</xo-message>
+
+    <xo-xoon-header token="token" flags="flags" user="onboard.user" mode="mode" fi-mode="onboard.fiMode" class="ng-isolate-scope"><!-- ngIf: populated && display --><div class="xo-xoon-header-wrapper ng-scope" ng-if="populated &amp;&amp; display"><div class="headerBox" content="">
+    <h1 class="alpha ng-binding" id="pageTitle" ng-bind-html="htmlContent(pageTitleContentKey)">Pay with debit or credit card</h1>
+    <p class="subTitle ng-binding" id="pageTitleProps" ng-bind-html="htmlContent(pageTitlePropsContentKey, { subject: subject, countryName: currentCountryName })">We don’t share your financial details with the merchant.</p>
+
+    <!-- ngIf: showEmailCheckInfoBox -->
+</div>
+</div><!-- end ngIf: populated && display --></xo-xoon-header>
+
+    <form id="singlePagePaymentForm" name="singlePagePaymentForm" class="singlePagePaymentForm ng-pristine ng-invalid ng-invalid-prod-type ng-invalid-len ng-valid-luhn ng-valid-pattern ng-valid-maxlength ng-invalid-required ng-invalid-validator ng-valid-minlength ng-invalid-valid-phone ng-invalid-valid-zip ng-invalid-password ng-invalid-valid-email ng-valid-email" ng-submit="singlePagePaymentForm.$valid &amp;&amp; actions.onSubmit()" ng-class="{'validated': validated, 'APAC': isApac()}" novalidate="">
+
+        <xo-country-list is-unbranded="isUnbranded" token="token" show-mask="showMask" mode="mode" class="ng-isolate-scope"><!-- ngIf: populated && display --><div class="xo-country-list-wrapper ng-scope" ng-if="populated &amp;&amp; display"><div id="countryList" class="countryList dropdown confidential inputField floatingLabel" ng-class="{'validated': showMessage}" content="" floating-label-dropdown="">
+    <!-- ngIf: blockNonDomesticPayer --><div id="blockNonDomesticPayer" ng-if="blockNonDomesticPayer" class="infoMsg errorMsgRuleSpecific ng-scope">
+        <span class="infoIcon"></span>
+        <span class="ng-binding">The merchant requires a US billing address for all purchases made using PayPal.</span>
+    </div><!-- end ngIf: blockNonDomesticPayer -->
+    <div ng-class="{'showMask': disableCountryList}" class="custom-select-container showMask">
+        <select xo-dropdown="" compliance-validation="" dropdown-text-bind-var="selectedCountryObj.name" ng-model="selectedCountryObj" name="countryName" id="countrySelector" ng-required="true" ng-disabled="disableCountryList" ng-attr-aria-describedby="{{ariaDescribedBy}}" ng-options="country.name for country in supportedCountries track by country.code" ng-change="actions.countryChanged(selectedCountryObj.code)" class="ng-pristine ng-untouched ng-isolate-scope replaced focused ng-not-empty ng-valid ng-valid-required" required="required" disabled="disabled"><option label="Albania" value="AL">Albania</option><option label="Algeria" value="DZ">Algeria</option><option label="Andorra" value="AD">Andorra</option><option label="Angola" value="AO">Angola</option><option label="Anguilla" value="AI">Anguilla</option><option label="Antigua &amp; Barbuda" value="AG">Antigua &amp; Barbuda</option><option label="Argentina" value="AR">Argentina</option><option label="Armenia" value="AM">Armenia</option><option label="Aruba" value="AW">Aruba</option><option label="Australia" value="AU">Australia</option><option label="Austria" value="AT">Austria</option><option label="Azerbaijan" value="AZ">Azerbaijan</option><option label="Bahamas" value="BS">Bahamas</option><option label="Bahrain" value="BH">Bahrain</option><option label="Barbados" value="BB">Barbados</option><option label="Belarus" value="BY">Belarus</option><option label="Belgium" value="BE">Belgium</option><option label="Belize" value="BZ">Belize</option><option label="Benin" value="BJ">Benin</option><option label="Bermuda" value="BM">Bermuda</option><option label="Bhutan" value="BT">Bhutan</option><option label="Bolivia" value="BO">Bolivia</option><option label="Bosnia &amp; Herzegovina" value="BA">Bosnia &amp; Herzegovina</option><option label="Botswana" value="BW">Botswana</option><option label="Brazil" value="BR">Brazil</option><option label="British Virgin Islands" value="VG">British Virgin Islands</option><option label="Brunei" value="BN">Brunei</option><option label="Bulgaria" value="BG">Bulgaria</option><option label="Burkina Faso" value="BF">Burkina Faso</option><option label="Burundi" value="BI">Burundi</option><option label="Cambodia" value="KH">Cambodia</option><option label="Cameroon" value="CM">Cameroon</option><option label="Canada" value="CA">Canada</option><option label="Cape Verde" value="CV">Cape Verde</option><option label="Cayman Islands" value="KY">Cayman Islands</option><option label="Chad" value="TD">Chad</option><option label="Chile" value="CL">Chile</option><option label="China" value="C2">China</option><option label="Colombia" value="CO">Colombia</option><option label="Comoros" value="KM">Comoros</option><option label="Congo - Brazzaville" value="CG">Congo - Brazzaville</option><option label="Congo - Kinshasa" value="CD">Congo - Kinshasa</option><option label="Cook Islands" value="CK">Cook Islands</option><option label="Costa Rica" value="CR">Costa Rica</option><option label="Côte d’Ivoire" value="CI">Côte d’Ivoire</option><option label="Croatia" value="HR">Croatia</option><option label="Cyprus" value="CY">Cyprus</option><option label="Czech Republic" value="CZ">Czech Republic</option><option label="Denmark" value="DK">Denmark</option><option label="Djibouti" value="DJ">Djibouti</option><option label="Dominica" value="DM">Dominica</option><option label="Dominican Republic" value="DO">Dominican Republic</option><option label="Ecuador" value="EC">Ecuador</option><option label="Egypt" value="EG">Egypt</option><option label="El Salvador" value="SV">El Salvador</option><option label="Eritrea" value="ER">Eritrea</option><option label="Estonia" value="EE">Estonia</option><option label="Ethiopia" value="ET">Ethiopia</option><option label="Falkland Islands" value="FK">Falkland Islands</option><option label="Faroe Islands" value="FO">Faroe Islands</option><option label="Fiji" value="FJ">Fiji</option><option label="Finland" value="FI">Finland</option><option label="France" value="FR">France</option><option label="French Guiana" value="GF">French Guiana</option><option label="French Polynesia" value="PF">French Polynesia</option><option label="Gabon" value="GA">Gabon</option><option label="Gambia" value="GM">Gambia</option><option label="Georgia" value="GE">Georgia</option><option label="Germany" value="DE">Germany</option><option label="Gibraltar" value="GI">Gibraltar</option><option label="Greece" value="GR">Greece</option><option label="Greenland" value="GL">Greenland</option><option label="Grenada" value="GD">Grenada</option><option label="Guadeloupe" value="GP">Guadeloupe</option><option label="Guatemala" value="GT">Guatemala</option><option label="Guinea" value="GN">Guinea</option><option label="Guinea-Bissau" value="GW">Guinea-Bissau</option><option label="Guyana" value="GY">Guyana</option><option label="Honduras" value="HN">Honduras</option><option label="Hong Kong SAR China" value="HK">Hong Kong SAR China</option><option label="Hungary" value="HU">Hungary</option><option label="Iceland" value="IS">Iceland</option><option label="India" value="IN">India</option><option label="Indonesia" value="ID">Indonesia</option><option label="Ireland" value="IE">Ireland</option><option label="Israel" value="IL">Israel</option><option label="Italy" value="IT">Italy</option><option label="Jamaica" value="JM">Jamaica</option><option label="Japan" value="JP">Japan</option><option label="Jordan" value="JO">Jordan</option><option label="Kazakhstan" value="KZ">Kazakhstan</option><option label="Kenya" value="KE">Kenya</option><option label="Kiribati" value="KI">Kiribati</option><option label="Kuwait" value="KW">Kuwait</option><option label="Kyrgyzstan" value="KG">Kyrgyzstan</option><option label="Laos" value="LA">Laos</option><option label="Latvia" value="LV">Latvia</option><option label="Lesotho" value="LS">Lesotho</option><option label="Liechtenstein" value="LI">Liechtenstein</option><option label="Lithuania" value="LT">Lithuania</option><option label="Luxembourg" value="LU">Luxembourg</option><option label="Macedonia" value="MK">Macedonia</option><option label="Madagascar" value="MG">Madagascar</option><option label="Malawi" value="MW">Malawi</option><option label="Malaysia" value="MY">Malaysia</option><option label="Maldives" value="MV">Maldives</option><option label="Mali" value="ML">Mali</option><option label="Malta" value="MT">Malta</option><option label="Marshall Islands" value="MH">Marshall Islands</option><option label="Martinique" value="MQ">Martinique</option><option label="Mauritania" value="MR">Mauritania</option><option label="Mauritius" value="MU">Mauritius</option><option label="Mayotte" value="YT">Mayotte</option><option label="Mexico" value="MX">Mexico</option><option label="Micronesia" value="FM">Micronesia</option><option label="Moldova" value="MD">Moldova</option><option label="Monaco" value="MC">Monaco</option><option label="Mongolia" value="MN">Mongolia</option><option label="Montenegro" value="ME">Montenegro</option><option label="Montserrat" value="MS">Montserrat</option><option label="Morocco" value="MA">Morocco</option><option label="Mozambique" value="MZ">Mozambique</option><option label="Namibia" value="NA">Namibia</option><option label="Nauru" value="NR">Nauru</option><option label="Nepal" value="NP">Nepal</option><option label="Netherlands" value="NL">Netherlands</option><option label="Netherlands Antilles" value="AN">Netherlands Antilles</option><option label="New Caledonia" value="NC">New Caledonia</option><option label="New Zealand" value="NZ">New Zealand</option><option label="Nicaragua" value="NI">Nicaragua</option><option label="Niger" value="NE">Niger</option><option label="Nigeria" value="NG">Nigeria</option><option label="Niue" value="NU">Niue</option><option label="Norfolk Island" value="NF">Norfolk Island</option><option label="Norway" value="NO">Norway</option><option label="Oman" value="OM">Oman</option><option label="Palau" value="PW">Palau</option><option label="Panama" value="PA">Panama</option><option label="Papua New Guinea" value="PG">Papua New Guinea</option><option label="Paraguay" value="PY">Paraguay</option><option label="Peru" value="PE">Peru</option><option label="Philippines" value="PH">Philippines</option><option label="Pitcairn Islands" value="PN">Pitcairn Islands</option><option label="Poland" value="PL">Poland</option><option label="Portugal" value="PT">Portugal</option><option label="Qatar" value="QA">Qatar</option><option label="Réunion" value="RE">Réunion</option><option label="Romania" value="RO">Romania</option><option label="Russia" value="RU">Russia</option><option label="Rwanda" value="RW">Rwanda</option><option label="Samoa" value="WS">Samoa</option><option label="San Marino" value="SM">San Marino</option><option label="São Tomé &amp; Príncipe" value="ST">São Tomé &amp; Príncipe</option><option label="Saudi Arabia" value="SA">Saudi Arabia</option><option label="Senegal" value="SN">Senegal</option><option label="Serbia" value="RS">Serbia</option><option label="Seychelles" value="SC">Seychelles</option><option label="Sierra Leone" value="SL">Sierra Leone</option><option label="Singapore" value="SG">Singapore</option><option label="Slovakia" value="SK">Slovakia</option><option label="Slovenia" value="SI">Slovenia</option><option label="Solomon Islands" value="SB">Solomon Islands</option><option label="Somalia" value="SO">Somalia</option><option label="South Africa" value="ZA">South Africa</option><option label="South Korea" value="KR">South Korea</option><option label="Spain" value="ES">Spain</option><option label="Sri Lanka" value="LK">Sri Lanka</option><option label="St. Helena" value="SH">St. Helena</option><option label="St. Kitts &amp; Nevis" value="KN">St. Kitts &amp; Nevis</option><option label="St. Lucia" value="LC">St. Lucia</option><option label="St. Pierre &amp; Miquelon" value="PM">St. Pierre &amp; Miquelon</option><option label="St. Vincent &amp; Grenadines" value="VC">St. Vincent &amp; Grenadines</option><option label="Suriname" value="SR">Suriname</option><option label="Svalbard &amp; Jan Mayen" value="SJ">Svalbard &amp; Jan Mayen</option><option label="Swaziland" value="SZ">Swaziland</option><option label="Sweden" value="SE">Sweden</option><option label="Switzerland" value="CH">Switzerland</option><option label="Taiwan" value="TW">Taiwan</option><option label="Tajikistan" value="TJ">Tajikistan</option><option label="Tanzania" value="TZ">Tanzania</option><option label="Thailand" value="TH">Thailand</option><option label="Togo" value="TG">Togo</option><option label="Tonga" value="TO">Tonga</option><option label="Trinidad &amp; Tobago" value="TT">Trinidad &amp; Tobago</option><option label="Tunisia" value="TN">Tunisia</option><option label="Turkmenistan" value="TM">Turkmenistan</option><option label="Turks &amp; Caicos Islands" value="TC">Turks &amp; Caicos Islands</option><option label="Tuvalu" value="TV">Tuvalu</option><option label="Uganda" value="UG">Uganda</option><option label="Ukraine" value="UA">Ukraine</option><option label="United Arab Emirates" value="AE">United Arab Emirates</option><option label="United Kingdom" value="GB">United Kingdom</option><option label="United States" value="US" selected="selected">United States</option><option label="Uruguay" value="UY">Uruguay</option><option label="Vanuatu" value="VU">Vanuatu</option><option label="Vatican City" value="VA">Vatican City</option><option label="Venezuela" value="VE">Venezuela</option><option label="Vietnam" value="VN">Vietnam</option><option label="Wallis &amp; Futuna" value="WF">Wallis &amp; Futuna</option><option label="Yemen" value="YE">Yemen</option><option label="Zambia" value="ZM">Zambia</option><option label="Zimbabwe" value="ZW">Zimbabwe</option></select><span class="custom-select" aria-hidden="true"><span><span>United States</span></span></span>
+        <label for="countrySelector" id="countryListLabel" class="ng-binding">Country</label>
+    </div>
+
+    <!-- ngIf: showMessage -->
+</div>
+</div><!-- end ngIf: populated && display --></xo-country-list>
+
+        <div ng-class="{'showMask': showMask}" disable-form="showMask">
+            <!-- ngIf: showFISwitchTab() -->
+
+            <!-- ngIf: showTeslaAddBankFlow() -->
+
+            <!-- ngIf: !showTeslaAddBankFlow() --><div ng-if="!showTeslaAddBankFlow()" class="ng-scope">
+                <!-- ngIf: onboard.fiMode === 'card' --><div ng-if="onboard.fiMode === 'card'" id="cardFields" class="ng-scope">
+                <xo-credit-card token="token" card="onboard.card" user="onboard.user" name-below="true" card-number-changed="cardNumberChanged" set-buyer-fx-flag="setBuyerFxFlag" class="ng-isolate-scope"><div class="creditCardInput" content="">
+    <!-- These two hidden fields are added to avoid autofill issue by chome for password and login field -->
+    <input style="display:none">
+    <input type="password" style="display:none">
+
+    <!-- ngIf: !debitCardFlow && !manageCardFlow && showAcceptedCardLogos() --><div class="cardIconsGroup ng-scope" ng-if="!debitCardFlow &amp;&amp; !manageCardFlow &amp;&amp; showAcceptedCardLogos()">
+        <!-- ngRepeat: cardType in cardTypes.allowed --><div class="icons ng-scope" ng-repeat="cardType in cardTypes.allowed"><div class="cardIcon DISCOVER"></div></div><!-- end ngRepeat: cardType in cardTypes.allowed --><div class="icons ng-scope" ng-repeat="cardType in cardTypes.allowed"><div class="cardIcon VISA"></div></div><!-- end ngRepeat: cardType in cardTypes.allowed --><div class="icons ng-scope" ng-repeat="cardType in cardTypes.allowed"><div class="cardIcon AMEX"></div></div><!-- end ngRepeat: cardType in cardTypes.allowed --><div class="icons ng-scope" ng-repeat="cardType in cardTypes.allowed"><div class="cardIcon MASTERCARD"></div></div><!-- end ngRepeat: cardType in cardTypes.allowed -->
+        <!-- ngIf: showScanCardExperiment -->
+    </div><!-- end ngIf: !debitCardFlow && !manageCardFlow && showAcceptedCardLogos() -->
+
+    <!-- ngIf: !debitCardFlow && !manageCardFlow && showMXCardLogos() -->
+
+    <!-- ngIf: isPlcc -->
+
+    <!-- ngIf: !manageCardFlow && showDropDown() -->
+
+    <!-- ngIf: !manageCardFlow --><div ng-if="!manageCardFlow" class="inputField confidential cardNumber creditCardField ng-scope floatingLabel" floating-label="" directionality="">
+        <input type="tel" ui-validate="{luhn: 'cardLuhnValid($value)', len: 'cardLengthValid($value)', prodType: 'cardProductValid($value)'}" ui-validate-watch="'card.type'" ng-model="card.number" name="cardNumber" id="cc" value="" ng-change="changeCardNumber(false)" js-onchange="checkCardForDccCall" ng-blur="ccOnBlur()" maxlength="19" data-number="" autocapitalize="off" data-country="US" autocomplete="off" ng-pattern="/.*/" pattern="[0-9]*" scroll-to-top="" data-error-key="validation.validCreditCard" xo-error-tooltip="" class="ng-pristine ng-invalid ng-invalid-prod-type ng-invalid-len ng-valid-luhn ng-empty ng-valid-pattern ng-valid-maxlength hasErrorTooltipRuleSpecific ng-touched" aria-describedby="" aria-invalid="false"><div class="errorTooltip errorTooltipRuleSpecific ng-binding ng-scope" id="dyxirdd">Enter a valid card number</div>
+
+        <!-- ngIf: allowedCardsTooltip -->
+
+        <!-- ngIf: showScanCardExperiment -->
+        <!-- ngIf: !showScanCardExperiment --><label ng-if="!showScanCardExperiment" for="cc" class="focus ng-binding ng-scope">
+            Card number
+        </label><!-- end ngIf: !showScanCardExperiment -->
+
+        <!-- ngIf: card.type -->
+    </div><!-- end ngIf: !manageCardFlow -->
+
+    <!-- Issue no and start date for maestro cards -->
+    <!-- ngIf: flag('fields.issue') -->
+
+    <!-- ngIf: expiryShown() || cvvShown() --><div class="expiration confidential ng-scope" id="expiration" ng-if="expiryShown() || cvvShown()">
+        <!-- ngIf: expiryShown() --><xo-card-expiry ng-if="expiryShown()" expiry-month="card.expiry_month" expiry-year="card.expiry_year" class="ng-scope ng-isolate-scope"><!-- ngIf: populated && display --><div class="xo-card-expiry-wrapper ng-scope" ng-if="populated &amp;&amp; display"><div class="expirationField inputField" id="expirationField" content="">
+    <div class="inputField floatingLabel" floating-label="" directionality="">
+        <input type="tel" ng-model="expiryDate" name="expiry_value" id="expiry_value" value="" maxlength="5" autocapitalize="off" aria-describedby="expiryHelp" autocomplete="off" ui-validate="'validate($value)'" ng-keyup="formatExpiry($event)" placeholder="MM/YY" data-error-key="validation.validExpirationDate" xo-error-tooltip="" required="" class="ng-pristine ng-invalid ng-invalid-validator ng-empty ng-invalid-required ng-valid-maxlength hasErrorTooltipRuleSpecific hasErrorTooltipRequired hasPlaceholder ng-touched" aria-invalid="false"><div class="errorTooltip errorTooltipRequired ng-binding ng-scope" id="tuktigj">Required</div><div class="errorTooltip errorTooltipRuleSpecific ng-binding ng-scope" id="ewmbyrh">Enter a valid expiration date</div>
+        <span id="expiryHelp" class="accessAid ng-binding" ng-bind="content('creditcard.expiresPlaceholder')">MM/YY</span>
+        <label for="expiry_value" class="ng-binding">Expires</label>
+    </div>
+</div>
+</div><!-- end ngIf: populated && display --></xo-card-expiry><!-- end ngIf: expiryShown() -->
+        <!-- ngIf: cvvShown() --><xo-cvv ng-if="cvvShown()" card="card" show-label="true" class="ng-scope ng-isolate-scope"><!-- ngIf: populated && display --><div class="xo-cvv-wrapper ng-scope" ng-if="populated &amp;&amp; display"><div content="" class="inputField cvvField" id="cvvField">
+    <div class="cvvSecurityCode inputField floatingLabel" floating-label="" directionality="">
+        <input type="tel" id="cvv" name="cvv" ng-model="card.security_code" aria-describedby="securityCodeHelp" ng-pattern="/^[0-9]{1,4}$/" ng-minlength="3" maxlength="3" placeholder="3 digits" ng-required="cvvRequired()" ng-class="{'four': cvvLength() === 4}" autocomplete="off" data-error-key="validation.validCSC" xo-error-tooltip="" class="ng-pristine ng-empty ng-invalid ng-invalid-required ng-valid-pattern ng-valid-minlength ng-valid-maxlength hasErrorTooltipRuleSpecific hasErrorTooltipRequired hasPlaceholder ng-touched" required="required" aria-invalid="false"><div class="errorTooltip errorTooltipRequired ng-binding ng-scope" id="buppdjm">Required</div><div class="errorTooltip errorTooltipRuleSpecific ng-binding ng-scope" id="ujdxywm">Enter a valid CSC</div>
+
+        <span id="securityCode" class="creditCard" role="img" ng-class="{'four': cvvLength() === 4}" aria-label="It’s the last 3 digits in the signature area on the back of your card.">
+        </span>
+        <!-- ngIf: showLabel --><label ng-if="showLabel" for="cvv" class="ng-binding ng-scope">CSC</label><!-- end ngIf: showLabel -->
+        <span id="securityCodeHelp" class="accessAid ng-binding" ng-bind="cvvLength() === 4 ? content('creditcard.cscHelp4Digits') : content('creditcard.cscHelp3Digits')">It’s the last 3 digits in the signature area on the back of your card.</span>
+    </div>
+</div>
+</div><!-- end ngIf: populated && display --></xo-cvv><!-- end ngIf: cvvShown() -->
+    </div><!-- end ngIf: expiryShown() || cvvShown() -->
+
+    <!-- DOB fields for Country specific cards -->
+    <!-- ngIf: flag('fields.dob') -->
+</div>
+</xo-credit-card>
+
+                <!-- ngIf: isInstallmentsVisible() -->
+
+                <!-- ngIf: isInstallmentsVisible() && !singleStepModel.selectedInstallmentData -->
+
+                <xo-name-input user="onboard.user" class="ng-isolate-scope"><!-- ngIf: populated && display --><div class="xo-name-input-wrapper ng-scope" ng-if="populated &amp;&amp; display"><div class="fieldGroup name clearfix US" ng-class="country || locale.country" content="">
+    <!-- ngRepeat: layoutItem in metadata.nameEntry.layout track by $index --><!-- ngIf: metadata.nameEntry.layout --><div ng-if="metadata.nameEntry.layout" ng-repeat="layoutItem in metadata.nameEntry.layout track by $index" class="ng-scope">
+        <!-- First name -->
+        <!-- ngIf: layoutItem.$ === 'givenName' --><div ng-if="layoutItem.$ === 'givenName'" class="ng-scope">
+            <div class="inputField half confidential floatingLabel" ng-class="{'last-child': $last}" data-test-id="first-name-container" floating-label="" disable-autoblur="" directionality="">
+                <input ng-model="user.first_name" id="firstName" name="firstName" prefix-attrs-with="" value="" pattern="(?!^\d+$)^.+$" autocapitalize="off" autocomplete="off" maxlength="100" xo-error-tooltip="" ng-required="true" data-test-id="user.first_name" class="ng-pristine ng-untouched ng-empty ng-valid-pattern ng-invalid ng-invalid-required ng-valid-maxlength hasErrorTooltipRequired" required="required" aria-describedby="" aria-invalid="false"><div class="errorTooltip errorTooltipRequired ng-binding ng-scope" id="lrcgwkf">Required</div>
+                <label for="firstName" prefix-attrs-with="" class="ng-binding">
+                    First name
+                </label>
+            </div>
+        </div><!-- end ngIf: layoutItem.$ === 'givenName' -->
+
+        <!-- Last name -->
+        <!-- ngIf: layoutItem.$ === 'surname' -->
+    </div><!-- end ngIf: metadata.nameEntry.layout --><!-- end ngRepeat: layoutItem in metadata.nameEntry.layout track by $index --><!-- ngIf: metadata.nameEntry.layout --><div ng-if="metadata.nameEntry.layout" ng-repeat="layoutItem in metadata.nameEntry.layout track by $index" class="ng-scope">
+        <!-- First name -->
+        <!-- ngIf: layoutItem.$ === 'givenName' -->
+
+        <!-- Last name -->
+        <!-- ngIf: layoutItem.$ === 'surname' --><div ng-if="layoutItem.$ === 'surname'" class="ng-scope">
+            <div class="inputField half confidential last-child floatingLabel" ng-class="{'last-child': $last}" data-test-id="last-name-container" floating-label="" directionality="">
+                <input ng-model="user.last_name" id="lastName" name="lastName" prefix-attrs-with="" value="" pattern="(?!^\d+$)^.+$" autocapitalize="off" autocomplete="off" maxlength="100" xo-error-tooltip="" ng-required="true" data-test-id="user.last_name" class="ng-pristine ng-empty ng-valid-pattern ng-invalid ng-invalid-required ng-valid-maxlength hasErrorTooltipRequired ng-touched" required="required" aria-describedby="" aria-invalid="false"><div class="errorTooltip errorTooltipRequired ng-binding ng-scope" id="pdheje">Required</div>
+                <label for="lastName" prefix-attrs-with="" class="ng-binding">
+                    Last name
+                </label>
+            </div>
+        </div><!-- end ngIf: layoutItem.$ === 'surname' -->
+    </div><!-- end ngIf: metadata.nameEntry.layout --><!-- end ngRepeat: layoutItem in metadata.nameEntry.layout track by $index -->
+
+    <!-- ngIf: !metadata.nameEntry.layout -->
+</div>
+</div><!-- end ngIf: populated && display --></xo-name-input>
+
+                <!-- ngIf: flags.hasBuyerFxPrePlanData && flags.buyerFxTreatment -->
+            </div><!-- end ngIf: onboard.fiMode === 'card' -->
+
+            <!-- ngIf: onboard.fiMode === 'bank' -->
+
+            <!-- ngIf: !hasDialingCodeOverride() && !flags.allowChoice && !flags.cupDetected --><xo-phone-input ng-if="!hasDialingCodeOverride() &amp;&amp; !flags.allowChoice &amp;&amp; !flags.cupDetected" phone="onboard.phone" countrycode="locale.country" class="ng-scope ng-isolate-scope"><!-- ngIf: populated && display --><div class="xo-phone-input-wrapper ng-scope" ng-if="populated &amp;&amp; display"><!-- ngIf: !treatment -->
+<!-- ngIf: treatment --><xo-phone-input-b ng-if="treatment" phone="phone" hide-phone-type="hidePhoneType" show-phone-type="showPhoneType" hide-work="hideWork" class="ng-scope ng-isolate-scope"><!-- ngIf: populated && display --><div class="xo-phone-input-b-wrapper ng-scope" ng-if="populated &amp;&amp; display"><div class="row-fluid fieldGroup clearfix" content="">
+    <!-- ngIf: hidePhoneType !== true --><div ng-if="hidePhoneType !== true" id="phoneTypeContainer" class="phoneTypeContainer dropdown confidential inputField half ng-scope custom-select-container floatingLabel" ng-class="{'rtlPhoneType': locale.metadata.directionality === 'rtl', 'dialCodeVisible': showDialingCodeContainer}" floating-label-dropdown="">
+
+        <select xo-dropdown="" ng-model="phone.phoneType" name="phoneType" id="phoneType" ng-change="actions.updatePhoneMaskAndPattern()" xo-error-tooltip="" class="ng-pristine ng-untouched ng-valid ng-isolate-scope replaced ng-not-empty focused" aria-describedby="" aria-invalid="false">
+            <option value="Mobile" class="ng-binding" selected="selected">Mobile</option>
+            <option value="Home" class="ng-binding">Home</option>
+            <!-- ngIf: !hideWork --><option ng-if="!hideWork" value="Work" class="ng-binding ng-scope">Work</option><!-- end ngIf: !hideWork -->
+        </select><span class="custom-select" aria-hidden="true"><span><span>Mobile</span></span></span>
+
+        <label for="phoneType" id="phoneTypeLabel" class="ng-binding">Phone type</label>
+    </div><!-- end ngIf: hidePhoneType !== true -->
+
+
+    <!-- ngIf: showDialingCodeContainer -->
+
+
+    <div id="phoneNumberContainer" class="inputField confidential last-child phoneNumber half telephoneField floatingLabel" ng-class="{'half': !hidePhoneType,
+            'telephoneField': !hidePhoneType,
+            'telephoneFieldFull': hidePhoneType,
+            'rtlPhoneField': locale.metadata.directionality === 'rtl',
+            'dialCodeVisible': showDialingCodeContainer,
+            'singleLineMobile' : hidePhoneType}" floating-label="" directionality="">
+
+        <span class="fixedCode ltrOverride ng-binding" id="countryTelephoneCode">+1</span>
+        <input id="telephone" class="telephone ng-pristine ng-invalid ng-invalid-valid-phone ng-empty ng-invalid-required ng-valid-maxlength digit1 hasErrorTooltipRuleSpecific hasErrorTooltipRequired ng-touched" ng-class="{'digit1' : phone.IntDialingCountryCode.length === 1, 'digit2' : phone.IntDialingCountryCode.length === 2, 'digit3' : phone.IntDialingCountryCode.length === 3, 'digit4' : phone.IntDialingCountryCode.length === 4 }" type="tel" ng-model="phone.telephone" name="telephone" value="" data-mask="(000) 000-0000" ng-change="actions.applyMaskOnPhoneInput()" autocapitalize="off" autocomplete="off" aria-labelledby="telephoneLabel countryTelephoneCode" country-code="phone.phoneCountryCode" xo-validation="{&quot;validator&quot;: &quot;validPhone&quot;}" data-error-key="validation.validPhone" maxlength="14" ng-keyup="actions.applyMaskOnPhoneInput()" required="" xo-error-tooltip="" aria-describedby="" aria-invalid="false"><div class="errorTooltip errorTooltipRequired ng-binding ng-scope" id="xojwcsn">Required</div><div class="errorTooltip errorTooltipRuleSpecific ng-binding ng-scope" id="jzypa">Enter a valid phone number</div>
+        <label for="telephone" class="focus ng-binding" id="telephoneLabel">Phone number</label>
+    </div>
+
+
+</div>
+
+</div><!-- end ngIf: populated && display --></xo-phone-input-b><!-- end ngIf: treatment -->
+</div><!-- end ngIf: populated && display --></xo-phone-input><!-- end ngIf: !hasDialingCodeOverride() && !flags.allowChoice && !flags.cupDetected -->
+
+
+            <!-- ngIf: !flags.whiteListedIndiaMerchant --><h2 class="billingLabel sectionTitle ng-binding ng-scope" ng-if="!flags.whiteListedIndiaMerchant">Billing address</h2><!-- end ngIf: !flags.whiteListedIndiaMerchant -->
+            <!-- ngIf: !flags.whiteListedIndiaMerchant --><div id="billingAddress" ng-class="{'validated': billingAddressValidated}" ng-if="!flags.whiteListedIndiaMerchant" class="ng-scope">
+                <xo-add-address address="onboard.billing_address" country="locale.country" trigger-zip-code-blur="(flags.wpsFlow &amp;&amp; flags.wps_SnT_flow) || isInstantUpdateFlow" trigger-zip-code-key-press="(flags.wpsFlow &amp;&amp; flags.wps_SnT_flow) || isInstantUpdateFlow" class="ng-isolate-scope"><!-- ngIf: populated && display --><div class="xo-add-address-wrapper ng-scope" ng-if="populated &amp;&amp; display"><div id="addressForm" class="addressForm US" content="" ng-class="country">
+    <!-- ngIf: isShipping && !hideName -->
+    <div ng-switch="normalizeCountry(country)" class="addressGroup clearfix">
+        <!-- ngSwitchWhen: BR -->
+
+        <!-- ngSwitchWhen: GB -->
+        <!-- GB end -->
+        <!-- IE begin -->
+        <!-- ngSwitchWhen: IE -->
+        <!-- IE end -->
+
+        <!-- ngSwitchDefault: --><div ng-switch-default="" class="ng-scope">
+            <!-- Griffin metadata DOES exist for this country -->
+            <!-- ngRepeat: layoutItem in metadata.addressEntry.layout track by $index --><!-- ngIf: metadata.addressEntry.layout --><div ng-if="metadata.addressEntry.layout" ng-repeat="layoutItem in metadata.addressEntry.layout track by $index" class="ng-scope">
+                <!-- ngIf: layoutItem.$ === 'line1' --><div ng-if="layoutItem.$ === 'line1'" class="ng-scope">
+                    <div class="inputField confidential line1 floatingLabel" floating-label="" directionality="">
+                        <input type="text" name="billingLine1" id="billingLine1" ng-model="address.line1" value="" maxlength="50" autocapitalize="off" autocomplete="off" data-error-key="common.valueInvalid" xo-error-tooltip="" ng-required="true" prefix-attrs-with="billing" class="ng-pristine ng-empty ng-invalid ng-invalid-required ng-valid-maxlength hasErrorTooltipRuleSpecific hasErrorTooltipRequired ng-touched" required="required" aria-describedby="" aria-invalid="false"><div class="errorTooltip errorTooltipRequired ng-binding ng-scope" id="iugeqfo">Required</div><div class="errorTooltip errorTooltipRuleSpecific ng-binding ng-scope" id="atbhzd">Value is invalid</div>
+                        <label for="billingLine1" id="billingLine1Label" prefix-attrs-with="billing" class="ng-binding">
+                            Street address
+                        </label>
+                    </div>
+                </div><!-- end ngIf: layoutItem.$ === 'line1' -->
+                <!-- ngIf: layoutItem.$ === 'line2' -->
+                <!-- ngIf: layoutItem.$ === 'city' -->
+                <!-- ngIf: layoutItem.$ === 'state' -->
+                <!-- ngIf: layoutItem.$ === 'postcode' -->
+            </div><!-- end ngIf: metadata.addressEntry.layout --><!-- end ngRepeat: layoutItem in metadata.addressEntry.layout track by $index --><!-- ngIf: metadata.addressEntry.layout --><div ng-if="metadata.addressEntry.layout" ng-repeat="layoutItem in metadata.addressEntry.layout track by $index" class="ng-scope">
+                <!-- ngIf: layoutItem.$ === 'line1' -->
+                <!-- ngIf: layoutItem.$ === 'line2' --><div ng-if="layoutItem.$ === 'line2'" class="ng-scope">
+                    <div class="inputField confidential line2 floatingLabel" floating-label="" directionality="">
+                        <input type="text" name="billingLine2" id="billingLine2" ng-model="address.line2" value="" maxlength="50" autocapitalize="off" autocomplete="off" data-error-key="common.valueInvalid" prefix-attrs-with="billing" class="ng-pristine ng-valid ng-empty ng-valid-maxlength ng-touched">
+                        <label for="billingLine2" id="billingLine2Label" prefix-attrs-with="billing" class="ng-binding">
+                            Apt., ste., bldg.
+                        </label>
+                    </div>
+                </div><!-- end ngIf: layoutItem.$ === 'line2' -->
+                <!-- ngIf: layoutItem.$ === 'city' -->
+                <!-- ngIf: layoutItem.$ === 'state' -->
+                <!-- ngIf: layoutItem.$ === 'postcode' -->
+            </div><!-- end ngIf: metadata.addressEntry.layout --><!-- end ngRepeat: layoutItem in metadata.addressEntry.layout track by $index --><!-- ngIf: metadata.addressEntry.layout --><div ng-if="metadata.addressEntry.layout" ng-repeat="layoutItem in metadata.addressEntry.layout track by $index" class="ng-scope">
+                <!-- ngIf: layoutItem.$ === 'line1' -->
+                <!-- ngIf: layoutItem.$ === 'line2' -->
+                <!-- ngIf: layoutItem.$ === 'city' --><div ng-if="layoutItem.$ === 'city'" class="ng-scope">
+                    <div class="inputField confidential city floatingLabel" floating-label="" directionality="">
+                        <input type="text" name="billingCity" id="billingCity" maxlength="100" ng-model="address.city" value="" autocapitalize="off" autocomplete="off" data-error-key="common.valueInvalid" xo-error-tooltip="" ng-required="true" prefix-attrs-with="billing" class="ng-pristine ng-empty ng-invalid ng-invalid-required ng-valid-maxlength hasErrorTooltipRuleSpecific hasErrorTooltipRequired ng-touched" required="required" aria-describedby="" aria-invalid="false"><div class="errorTooltip errorTooltipRequired ng-binding ng-scope" id="fshzsp">Required</div><div class="errorTooltip errorTooltipRuleSpecific ng-binding ng-scope" id="krkgorg">Value is invalid</div>
+                        <label for="billingCity" id="billingCityLabel" prefix-attrs-with="billing" class="ng-binding">
+                            City
+                        </label>
+                    </div>
+                </div><!-- end ngIf: layoutItem.$ === 'city' -->
+                <!-- ngIf: layoutItem.$ === 'state' -->
+                <!-- ngIf: layoutItem.$ === 'postcode' -->
+            </div><!-- end ngIf: metadata.addressEntry.layout --><!-- end ngRepeat: layoutItem in metadata.addressEntry.layout track by $index --><!-- ngIf: metadata.addressEntry.layout --><div ng-if="metadata.addressEntry.layout" ng-repeat="layoutItem in metadata.addressEntry.layout track by $index" class="ng-scope">
+                <!-- ngIf: layoutItem.$ === 'line1' -->
+                <!-- ngIf: layoutItem.$ === 'line2' -->
+                <!-- ngIf: layoutItem.$ === 'city' -->
+                <!-- ngIf: layoutItem.$ === 'state' --><div ng-if="layoutItem.$ === 'state'" class="ng-scope">
+                    <!-- ngIf: locale.metadata.addressEntry.strings[country] && locale.metadata.addressEntry.strings[country].stateList || metadata.addressEntry.strings[country].stateList --><div ng-if="locale.metadata.addressEntry.strings[country] &amp;&amp; locale.metadata.addressEntry.strings[country].stateList || metadata.addressEntry.strings[country].stateList" class="dropdown confidential state nullable inputField ng-scope custom-select-container floatingLabel" floating-label-dropdown="">
+                        <select name="billingState" xo-dropdown="" ng-options="state.$id.toUpperCase() as state.$elt for state in (locale.metadata.addressEntry.strings[country] &amp;&amp; locale.metadata.addressEntry.strings[country].stateList || metadata.addressEntry.strings[country].stateList)" ng-model="address.state" id="billingState" aria-required="true" ng-required="true" prefix-attrs-with="billing" class="ng-pristine ng-untouched ng-isolate-scope replaced ng-empty ng-invalid ng-invalid-required" required="required"><option value="" class="ng-binding" selected="selected">State</option><option label="Alabama" value="string:AL">Alabama</option><option label="Alaska" value="string:AK">Alaska</option><option label="American Samoa" value="string:AS">American Samoa</option><option label="Arizona" value="string:AZ">Arizona</option><option label="Arkansas" value="string:AR">Arkansas</option><option label="Armed Forces Americas" value="string:AA">Armed Forces Americas</option><option label="Armed Forces Europe" value="string:AE">Armed Forces Europe</option><option label="Armed Forces Pacific" value="string:AP">Armed Forces Pacific</option><option label="California" value="string:CA">California</option><option label="Colorado" value="string:CO">Colorado</option><option label="Connecticut" value="string:CT">Connecticut</option><option label="Delaware" value="string:DE">Delaware</option><option label="District of Columbia" value="string:DC">District of Columbia</option><option label="Federated States of Micronesia" value="string:FM">Federated States of Micronesia</option><option label="Florida" value="string:FL">Florida</option><option label="Georgia" value="string:GA">Georgia</option><option label="Guam" value="string:GU">Guam</option><option label="Hawaii" value="string:HI">Hawaii</option><option label="Idaho" value="string:ID">Idaho</option><option label="Illinois" value="string:IL">Illinois</option><option label="Indiana" value="string:IN">Indiana</option><option label="Iowa" value="string:IA">Iowa</option><option label="Kansas" value="string:KS">Kansas</option><option label="Kentucky" value="string:KY">Kentucky</option><option label="Louisiana" value="string:LA">Louisiana</option><option label="Maine" value="string:ME">Maine</option><option label="Marshall Islands" value="string:MH">Marshall Islands</option><option label="Maryland" value="string:MD">Maryland</option><option label="Massachusetts" value="string:MA">Massachusetts</option><option label="Michigan" value="string:MI">Michigan</option><option label="Minnesota" value="string:MN">Minnesota</option><option label="Mississippi" value="string:MS">Mississippi</option><option label="Missouri" value="string:MO">Missouri</option><option label="Montana" value="string:MT">Montana</option><option label="Nebraska" value="string:NE">Nebraska</option><option label="Nevada" value="string:NV">Nevada</option><option label="New Hampshire" value="string:NH">New Hampshire</option><option label="New Jersey" value="string:NJ">New Jersey</option><option label="New Mexico" value="string:NM">New Mexico</option><option label="New York" value="string:NY">New York</option><option label="North Carolina" value="string:NC">North Carolina</option><option label="North Dakota" value="string:ND">North Dakota</option><option label="Northern Mariana Islands" value="string:MP">Northern Mariana Islands</option><option label="Ohio" value="string:OH">Ohio</option><option label="Oklahoma" value="string:OK">Oklahoma</option><option label="Oregon" value="string:OR">Oregon</option><option label="Palau" value="string:PW">Palau</option><option label="Pennsylvania" value="string:PA">Pennsylvania</option><option label="Puerto Rico" value="string:PR">Puerto Rico</option><option label="Rhode Island" value="string:RI">Rhode Island</option><option label="South Carolina" value="string:SC">South Carolina</option><option label="South Dakota" value="string:SD">South Dakota</option><option label="Tennessee" value="string:TN">Tennessee</option><option label="Texas" value="string:TX">Texas</option><option label="Utah" value="string:UT">Utah</option><option label="Vermont" value="string:VT">Vermont</option><option label="Virgin Islands" value="string:VI">Virgin Islands</option><option label="Virginia" value="string:VA">Virginia</option><option label="Washington" value="string:WA">Washington</option><option label="West Virginia" value="string:WV">West Virginia</option><option label="Wisconsin" value="string:WI">Wisconsin</option><option label="Wyoming" value="string:WY">Wyoming</option></select><span class="custom-select" aria-hidden="true"><span><span class="noValue">State</span></span></span>
+                        <label for="billingState" id="billingStateLabel" prefix-attrs-with="billing" class="ng-binding hide">
+                            State
+                        </label>
+                    </div><!-- end ngIf: locale.metadata.addressEntry.strings[country] && locale.metadata.addressEntry.strings[country].stateList || metadata.addressEntry.strings[country].stateList -->
+                    <!-- ngIf: !(locale.metadata.addressEntry.strings[country] && locale.metadata.addressEntry.strings[country].stateList || metadata.addressEntry.strings[country].stateList) -->
+                </div><!-- end ngIf: layoutItem.$ === 'state' -->
+                <!-- ngIf: layoutItem.$ === 'postcode' -->
+            </div><!-- end ngIf: metadata.addressEntry.layout --><!-- end ngRepeat: layoutItem in metadata.addressEntry.layout track by $index --><!-- ngIf: metadata.addressEntry.layout --><div ng-if="metadata.addressEntry.layout" ng-repeat="layoutItem in metadata.addressEntry.layout track by $index" class="ng-scope">
+                <!-- ngIf: layoutItem.$ === 'line1' -->
+                <!-- ngIf: layoutItem.$ === 'line2' -->
+                <!-- ngIf: layoutItem.$ === 'city' -->
+                <!-- ngIf: layoutItem.$ === 'state' -->
+                <!-- ngIf: layoutItem.$ === 'postcode' --><div ng-if="layoutItem.$ === 'postcode'" class="ng-scope">
+                    <xo-zipcode id="billingZipcode" zip-entry="layoutItem" country="US" max-length="layoutItem.maxLength" address="address" attr-prefix="attrPrefix" done-fn="zipCodeBlur" prefix-attrs-with="billing" key-press-fn="zipCodeKeyPress" zip-required="layoutItem.required" zip-label="ZIP code" zip-error-key="validation.validZipCode" class="ng-isolate-scope"><!-- ngIf: populated && display --><div class="xo-zipcode-wrapper ng-scope" ng-if="populated &amp;&amp; display"><div id="billingZipField" data-test-id="zipField" class="inputField confidential postalCode floatingLabel" prefix-attrs-with="billing" floating-label="" directionality="" content="">
+    <input type="text" name="billingPostalCode" id="billingPostalCode" ng-model="address.postal_code" data-test-id="address.postal_code" autocapitalize="off" autocomplete="off" ng-change="actions.changeZip(address.postal_code)" xo-validation="{&quot;validator&quot;: &quot;validZip&quot;}" minlength="" maxlength="10" ng-blur="actions.doneFunction()" ng-keypress="actions.keyPressHandler($event)" data-error-key="validation.validZipCode" xo-error-tooltip="" ng-required="true" prefix-attrs-with="billing" class="ng-pristine ng-invalid ng-invalid-valid-zip ng-empty ng-invalid-required ng-valid-minlength ng-valid-maxlength hasErrorTooltipRuleSpecific hasErrorTooltipRequired ng-touched" required="required" aria-describedby="" aria-invalid="false"><div class="errorTooltip errorTooltipRequired ng-binding ng-scope" id="scawaaq">Required</div><div class="errorTooltip errorTooltipRuleSpecific ng-binding ng-scope" id="lxjdqth">Enter a valid ZIP code</div>
+    <label for="billingPostalCode" id="billingPostalCodeLabel" data-test-id="postalCodeLabel" prefix-attrs-with="billing" class="ng-binding">ZIP code</label>
+</div>
+</div><!-- end ngIf: populated && display --></xo-zipcode>
+                </div><!-- end ngIf: layoutItem.$ === 'postcode' -->
+            </div><!-- end ngIf: metadata.addressEntry.layout --><!-- end ngRepeat: layoutItem in metadata.addressEntry.layout track by $index -->
+            <!-- Griffin metadata DOES NOT exist for this country -->
+            <!-- ngIf: !metadata.addressEntry.layout -->
+        </div><!-- end ngSwitchWhen: -->
+    </div>
+
+    <!-- ngIf: isAddPreferred -->
+
+    <!-- ngIf: renderBillingAddCheckbox -->
+</div>
+</div><!-- end ngIf: populated && display --></xo-add-address>
+            </div><!-- end ngIf: !flags.whiteListedIndiaMerchant -->
+
+
+            <!-- ngIf: flags.allowEditShipping && !flags.disallowShipToBilling && !flags.whiteListedIndiaMerchant --><div class="row-fluid checkbox shipToBillingContainer ng-scope" ng-if="flags.allowEditShipping &amp;&amp; !flags.disallowShipToBilling &amp;&amp; !flags.whiteListedIndiaMerchant">
+                <input ng-model="flags.shipToBilling" type="checkbox" name="shipToBilling" id="shipToBilling" class="shipToBilling ng-pristine ng-untouched ng-valid ng-not-empty">
+                <label class="noBottom ng-binding" for="shipToBilling" ng-bind-html="htmlContent('largeScreenPayment.shipTo')">Ship to my billing address</label>
+            </div><!-- end ngIf: flags.allowEditShipping && !flags.disallowShipToBilling && !flags.whiteListedIndiaMerchant -->
+
+            <!-- ngIf: flags.showShippingLabel && (flags.wps_SnT_flow || isInstantUpdateFlow || ixoModel.ixoShippingMethods) -->
+
+            <!-- ngIf: flags.showSingleAddress -->
+
+            <!-- ngIf: (!flags.shipToBilling || flags.whiteListedIndiaMerchant) && flags.allowEditShipping -->
+
+            <!-- ngIf: flags.wps_SnT_flow || isInstantUpdateFlow || ixoModel.ixoShippingMethods -->
+
+            <!-- ngIf: showContactInfo() -->
+
+            <xo-onboard-options single-page-payment-form="singlePagePaymentForm" validated="validated" token="token" flags="flags" mode="mode" is-unbranded="isUnbranded" sepa="sepa" merchant="nonEmptyMerchantDisplayName" class="ng-isolate-scope"><!-- ngIf: populated && display --><div class="xo-onboard-options-wrapper ng-scope" ng-if="populated &amp;&amp; display"><div class="onboardOptions" content="">
+
+    <!-- signup/guest fieldset container open -->
+    <!-- ngIf: flags.signupEnabled && !flags.showPomaUi --><div ng-if="flags.signupEnabled &amp;&amp; !flags.showPomaUi" class="signupFieldsContainer ng-scope" id="signupContainer">
+
+        <fieldset>
+
+            <!-- ngIf: frsNonWpsInterstitalFlow --><div ng-if="frsNonWpsInterstitalFlow" class="ng-scope">
+
+                <legend>
+                    <h2 class="onboard-header alpha">
+                        <p id="onboardTitleLine1" class="onboardTitleLine1 ng-binding">Create an account to get Purchase Protection, free return shipping, and more.</p>
+                    </h2>
+                </legend>
+
+                <p class="subTitle ng-binding" id="subTitle" ng-bind-html="htmlContent(frsContentKeys.subTitle, {country: locale.country, lang: locale.lang})">Just add a password to get these perks. <a href="https://www.paypal.com/US/webapps/mpp/returns/terms?locale.x=en_US" target="_blank" pa-marked="1">See Terms</a></p>
+
+                <!-- ngIf: validated && singlePagePaymentForm.guestSignup.$error.required -->
+            </div><!-- end ngIf: frsNonWpsInterstitalFlow -->
+
+            <!-- ngIf: !flags.allowChoice && flags.titleSubtitlePxpTreatment && !flags.marketingOfferTitleContentExp -->
+
+            <!-- ngIf: flags.allowChoice && !flags.freeReturnShippingOptInFlowApplicable -->
+
+            <!-- we cannot merge all variable on ng-if into one showMarkingOffers variable -->
+            <!-- as change in any flag value after template is rendered, will not refect in template -->
+            <!-- ngIf: showMarketingOffers() && !flags.marketingOfferTitleContentExp -->
+
+            <!-- ngIf: showMarketingOffers() && flags.marketingOfferTitleContentExp -->
+
+            <!-- ngIf: models.checkoutCart.isWalletTokenization() -->
+            <div class="signupFieldGroup">
+
+                <!-- ngIf: flags.allowChoice -->
+
+                <xo-signup-options single-page-payment-form="singlePagePaymentForm" validated="validated" flags="flags" is-unbranded="isUnbranded" sepa="sepa" class="ng-isolate-scope"><!-- ngIf: populated && display --><div class="xo-signup-options-wrapper ng-scope" ng-if="populated &amp;&amp; display"><div class="signupOptions" content="">
+    <!-- ngIf: flags.showDisabledPasswordField && flags.allowChoice && !guestUpgrade -->
+    <!-- ngIf: guestUpgrade || flags.mode === 'signup' || flags.buyerMode === 'signup' --><div class="signupFields ng-scope fullSignup" ng-if="guestUpgrade || flags.mode === 'signup' || flags.buyerMode === 'signup'" ng-class="{'fullSignup': fullSignup || !flags.allowChoice, 'ignoreValidation': flags.ignoreValidationTheFirstTime }">
+            <!-- ngIf: !flags.allowChoice --><xo-email-input flow="signup" flags="flags" user="onboard.user" ng-if="!flags.allowChoice" class="ng-scope ng-isolate-scope"><!-- ngIf: populated && display --><div class="xo-email-input-wrapper ng-scope" ng-if="populated &amp;&amp; display"><div class="inputField emailField confidential floatingLabel" content="" floating-label="" directionality="">
+    <input ng-model="user.email" id="email" name="email" type="email" value="" autocapitalize="off" xo-validation="{ &quot;validator&quot;: &quot;validEmail&quot; }" autocomplete="off" data-error-key="email.invalid" ng-disabled="disabled" xo-error-tooltip="" required="" class="ng-pristine ng-invalid ng-invalid-valid-email ng-empty ng-valid-email ng-invalid-required hasErrorTooltipRuleSpecific hasErrorTooltipRequired ng-touched" aria-describedby="" aria-invalid="false"><div class="errorTooltip errorTooltipRequired ng-binding ng-scope" id="hlzmoho">Required</div><div class="errorTooltip errorTooltipRuleSpecific ng-binding ng-scope" id="ogjoidx">Enter a valid email address</div>
+    <!-- ngIf: !hideHelper --><div class="emailHelper ng-scope" ng-if="!hideHelper">
+        <a id="verifyHelp" class="verifyHelp" aria-label="Why we need your email address" href="javascript:" pa-marked="1" aria-describedby="">
+        </a>
+    </div><!-- end ngIf: !hideHelper -->
+    <label for="email" class="ng-binding">
+        Email
+    </label>
+    <!-- ngIf: !hideHelper --><xo-tooltip trigger="#verifyHelp" ng-if="!hideHelper" class="ng-scope ng-isolate-scope" style="display: none;"><!-- ngIf: populated && display --><div class="xo-tooltip-wrapper ng-scope" ng-if="populated &amp;&amp; display"><div class="toolTip  balloon" ng-class="{'displayInline': displayInline, 'balloon': !displayInline}" ng-transclude="" role="tooltip" id="toolTip_jvvasnc">
+        <div id="emailToolTipText" class="tip tipDesc emailToolTip ng-scope">
+            <span ng-bind-html="htmlContent(emailToolTip)" class="ng-binding">You'll use this email to log in to PayPal. If necessary, you can change your email address at PayPal.com.</span>
+        </div>
+    </div>
+</div><!-- end ngIf: populated && display --></xo-tooltip><!-- end ngIf: !hideHelper -->
+</div>
+</div><!-- end ngIf: populated && display --></xo-email-input><!-- end ngIf: !flags.allowChoice -->
+            <xo-password-input class="highZindexTooltip ng-isolate-scope" user="onboard.user"><!-- ngIf: populated && display --><div class="xo-password-input-wrapper ng-scope" ng-if="populated &amp;&amp; display"><div class="fieldGroup passwords clearfix" content="">
+    <div ng-switch="isDisabled" class="inputField passwordField confidential ltr full floatingLabel" ng-class="{ 'half': !singlePassword, 'full': singlePassword }" floating-label="">
+
+         <!-- ngSwitchWhen: true -->
+
+         <!-- ngSwitchDefault: --><div ng-switch-default="" directionality="" class="ng-scope">
+            <input ng-model="user.password" ng-focus="actions.onPasswordFocusBlur($event, true)" ng-blur="actions.onPasswordFocusBlur($event, false)" id="password" name="password" type="password" autocapitalize="off" autocomplete="off" aria-required="true" aria-describedby="passwordToolTip" maxlength="22" value="" password-validate="" class="ng-pristine ng-invalid ng-invalid-password ng-empty ng-valid-maxlength ng-touched">
+            <label for="password" class="ng-binding">Password</label>
+         </div><!-- end ngSwitchWhen: -->
+
+        <!-- ngIf: singlePassword && !isDisabled && showPasswordTextToggleLink -->
+
+        <div ng-class="passwordToolTip" class="show">
+            <xo-tooltip trigger="#password" show-event="keyup" ng-class="passwordToolTip" id="passwordToolTip" class="ng-isolate-scope show" style="display: none;"><!-- ngIf: populated && display --><div class="xo-tooltip-wrapper ng-scope" ng-if="populated &amp;&amp; display"><div class="toolTip  balloon" ng-class="{'displayInline': displayInline, 'balloon': !displayInline}" ng-transclude="" role="tooltip" id="toolTip_xetggpm">
+                <div class="tip tipDesc passwordToolTip ng-scope">
+                    <ul class="tipInfoText">
+                        <li class="requirement ng-binding active" ng-class="requirementLength">Password must be at least 8 characters</li>
+                        <li class="requirement ng-binding active" ng-class="requirementNumberSymbol">Include at least one number or symbol (!@#$%^)</li>
+                        <li class="requirement ng-isolate-scope" ng-class="requirementInfoSec" feature="requirementInfoSec"><!-- ngIf: enabled() --></li>
+                        <li class="restriction ng-binding" ng-class="restrictionEmail">Do not use your email address</li>
+                        <li class="restriction ng-binding" ng-class="restrictionFourRepeated">Do not use four repeated characters</li>
+                        <li class="restriction ng-binding" ng-class="restrictionNonValidCharacters">Include at least 1 number, common punctuation, or symbol (!@#$%^&amp;*)</li>
+                        <li class="restriction ng-binding" ng-class="restrictionFourSequence">Do not use four key sequence</li>
+                        <li class="restriction ng-binding" ng-class="restrictionDoubleByte">Use only Latin characters and numbers</li>
+                    </ul>
+                </div>
+            </div>
+</div><!-- end ngIf: populated && display --></xo-tooltip>
+        </div>
+    </div>
+    <!-- ngIf: !singlePassword -->
+</div>
+</div><!-- end ngIf: populated && display --></xo-password-input>
+
+            <!--As per the UI design, DOB and Gender needs to be side by side for HK and others just DOB-->
+            <div class="dualInputElements clearfix">
+                <!-- ngIf: onboard.fiMode === 'card' && !flags.whiteListedIndiaMerchant --><span feature="dobRequired" ng-class="{'halfInputElement': isGenderFieldEnabled}" ng-if="onboard.fiMode === 'card' &amp;&amp; !flags.whiteListedIndiaMerchant" class="ng-scope ng-isolate-scope"><!-- ngIf: enabled() --></span><!-- end ngIf: onboard.fiMode === 'card' && !flags.whiteListedIndiaMerchant -->
+                <!--gender is enabled only for HK-->
+                <span feature="gender" class="ng-isolate-scope"><!-- ngIf: enabled() --></span>
+            </div>
+
+            <!--placeOfBirth is enabled only for HK-->
+            <span feature="placeOfBirth" class="ng-isolate-scope"><!-- ngIf: enabled() --></span>
+
+            <span feature="collectOccupation" class="ng-isolate-scope"><!-- ngIf: enabled() --></span>
+
+            <!-- ngIf: showNationalityField -->
+
+            <!-- ngIf: flags.nationalIdFlag -->
+
+            <xo-citizenship user="onboard.user"></xo-citizenship>
+
+            <div class="row-fluid inputField checkbox legal ltrOverride ng-isolate-scope" directionality="" feature="econsent"><!-- ngIf: enabled() --><span ng-if="enabled()" ng-transclude="" class="ng-scope">
+                <div id="errorSignupAgree" ng-show="!flags.ignoreValidationTheFirstTime &amp;&amp; singlePagePaymentForm.agree.$error.required" class="errorTooltip errorTooltipRuleSpecific ng-binding ng-scope">Please confirm that you have read and agree to the PayPal Terms and Conditions.</div>
+                <input ng-model="agree" type="checkbox" name="agree" id="agree" required="" aria-describedby="errorSignupAgree" class="ng-pristine ng-untouched ng-scope ng-empty ng-invalid ng-invalid-required">
+                <label class="noBottom signupTerms bgImgOnSpan ng-scope" for="agree" aria-describedby="errorSignupAgree">
+                    <span class="bgImg">&nbsp;</span>
+                    <span id="consentTerms" ng-bind-html="htmlContent(onboard.eConsentTermsContent, { country: locale.country, lang: locale.lang })" class="ng-binding">Please create my PayPal account now - I have read and agree to the <a href="https://www.paypal.com/us/webapps/mpp/ua/esign-full" target="_new" class="popup" pa-marked="1">E-Communications Delivery Policy</a>, which provides that PayPal is an online service and that I will receive all account notices and information electronically via my primary email address. I have also read and agree to the <a href="https://www.paypal.com/US/webapps/mpp/ua/useragreement-full?country.x=US&amp;locale.x=en_US" target="_new" class="popup" pa-marked="1">User Agreement</a> and <a href="https://www.paypal.com/US/webapps/mpp/ua/privacy-full?country.x=US&amp;locale.x=en_US" target="_new" class="popup" pa-marked="1">Privacy Statement</a>. If you provide a mobile phone number, you give us permission to contact you about your PayPal branded accounts using automated calls or texts to: service your accounts, investigate fraud, or collect a debt, but not for telemarketing. If you don’t want to receive automated calls or texts, you can change your preferences in your account settings at any time.</span>
+                </label>
+            </span><!-- end ngIf: enabled() --></div>
+            <div class="terms ng-isolate-scope" feature="signupTerms"><!-- ngIf: enabled() --></div>
+            <!-- ngIf: onboard.fiMode === 'bank' && !flags.wpsInterstitial -->
+            <!-- ngIf: showMarketingOptin -->
+        </div><!-- end ngIf: guestUpgrade || flags.mode === 'signup' || flags.buyerMode === 'signup' -->
+</div>
+</div><!-- end ngIf: populated && display --></xo-signup-options>
+
+            </div>
+
+            <!-- ngIf: flags.allowChoice -->
+
+            <xo-guest-options single-page-payment-form="singlePagePaymentForm" validated="validated" flags="flags" sepa="sepa" class="ng-isolate-scope"><!-- ngIf: populated && display --><div class="xo-guest-options-wrapper ng-scope" ng-if="populated &amp;&amp; display"><div class="guestOption" content="">
+    <!-- ngIf: flags.buyerMode === 'guest' || flags.mode === 'guestonly' -->
+</div>
+</div><!-- end ngIf: populated && display --></xo-guest-options>
+
+        </fieldset>
+
+    </div><!-- end ngIf: flags.signupEnabled && !flags.showPomaUi -->
+    <!-- signup/guest fieldset container closed -->
+
+    <!-- ngIf: mode === 'guestonly' -->
+
+    <!-- ngIf: flags.showPomaUi -->
+
+    <!-- ngIf: showBillingAgreementText -->
+
+    <!-- ngIf: showRpAgreementText -->
+</div>
+</div><!-- end ngIf: populated && display --></xo-onboard-options>
+
+            <!-- ngIf: showInvoicingRegEMsg -->
+
+            <div class="buttons">
+                <!-- ngIf: showNewSignupComplianceExp && !flags.commit -->
+
+                <!-- ngIf: flags.backButtonWebview -->
+
+                <button type="submit" class="btn ng-binding" track-input="Pay_Now" track-submit="signup" id="guestSubmit" ng-bind-html="htmlContent(this.submitButtonText, { currency: selectedCurrency })" ng-click="actions.positionToErrorField()" ng-class="{backButtonEnabled: flags.backButtonWebview}" pa-marked="1">Create Account &amp; Pay Now</button>
+
+            </div>
+        </div><!-- end ngIf: !showTeslaAddBankFlow() -->
+        </div>
+    </form>
+</div>
+
+<!-- ngIf: showAddressNormalizationLightbox -->
+
+<xo-guest-sepa-lightbox single-page-payment-form="singlePagePaymentForm" section-element="sectionElement" update-page-level-error-message="actions.updatePageLevelErrorMessage" address="onboard.billing_address" is-unbranded="isUnbranded" flags="flags" validated="validated" sepa="sepa" done-fn="actions.onSubmit" class="ng-isolate-scope"><!-- ngIf: populated && display --><div class="xo-guest-sepa-lightbox-wrapper ng-scope" ng-if="populated &amp;&amp; display">
+<!-- ngIf: noErrorShowSepa -->
+</div><!-- end ngIf: populated && display --></xo-guest-sepa-lightbox>
+
+<!-- ngIf: launch3DSResolver -->
+<!-- ngIf: launchUpopScreen -->
+<!-- ngIf: launchCurrencyConversionLightbox -->
+<!-- ngIf: launchTravelRuleLightbox -->
+<!-- ngIf: flags.showRedirectWarningPrompt -->
+
+<!-- ngIf: flags.showCartChanged -->
+</div><!-- end ngIf: populated && display --></xo-onboard-payment>
+        </div>
+        <div class="span10">
+            <xo-value-props type="review" title="PayPal is the safer, easier way to pay" text-content="guestVerify.propVal" class="ng-isolate-scope"><div class="props review" content="">
+    <div class="prop-img"></div>
+    <h2 class="vprop-header ng-binding">PayPal is the safer, easier way to pay</h2>
+    <!-- ngIf: textContent --><p ng-if="textContent" ng-bind-html="htmlContent(textContent)" class="ng-binding ng-scope">No matter where you shop, we keep your financial information secure.</p><!-- end ngIf: textContent -->
+    <!-- ngIf: !textContent -->
+</div>
+</xo-value-props>
+        </div>
+    </div>
+    <!-- uiView: --><div ui-view="" class="ng-scope"></div>
+</section>
+</div></div>
+            </div>
+        </main>
+        <xo-spinner class="ng-isolate-scope"><!-- ngIf: loading -->
+</xo-spinner>
+    </div>
+    <xo-footer token="token" language-switch="languageSwitchFooter" class="ng-isolate-scope"><footer content="" aria-disabled="false">
+    <div class="footer clearfix commonFooter" ng-class="{APAC: isApac()}">
+        <!-- ngIf: !hideCancel --><p ng-if="!hideCancel" id="defaultCancelLink" class="cancelUrl ng-scope">
+            <a track-link="cancel_and_return_to_merchant" href="http://www.homedepot.com/mycart/home?token=EC-3L987160YM5580340" ng-click="cancelRedirect($event)" role="button" id="cancelLink" ng-hide="hideReturnCancelUrl()" pa-marked="1">
+               <span ng-bind-html="merchant ? content('base.cancelUrl', { merchantName: merchant, modelName: 'merchant' }) : content('common.cancelAndReturnToMerchant')" class="ng-binding">Cancel and return to The Home Depot</span>
+            </a>
+        </p><!-- end ngIf: !hideCancel -->
+
+        <div class="footerWrapper">
+            <!-- ngIf: showPaypalLinks() --><ul class="footerLinks ng-scope" ng-if="showPaypalLinks()">
+                <!-- ngRepeat: link in footerLinks() track by $index --><li ng-repeat="link in footerLinks() track by $index" id="footer_policy" bind-html-compile="htmlContent(link.content, {country: locale.country.toLowerCase(), lang: locale.lang})" class="ng-scope"><a href="https://www.paypal.com/US/cgi-bin/webscr?cmd=xpt/cps/popup/FundingMixEducation-outside&amp;locale.x=en_US" xo-popup="" class="popup ng-scope" target="_blank" pa-marked="1">Policies</a></li><!-- end ngRepeat: link in footerLinks() track by $index --><li ng-repeat="link in footerLinks() track by $index" id="footer_terms" bind-html-compile="htmlContent(link.content, {country: locale.country.toLowerCase(), lang: locale.lang})" class="ng-scope"><a href="https://www.paypal.com/webapps/mpp/ua/legalhub-full?country.x=US&amp;locale.x=en_US" xo-popup="" class="popup ng-scope" target="_blank" pa-marked="1">Terms</a></li><!-- end ngRepeat: link in footerLinks() track by $index --><li ng-repeat="link in footerLinks() track by $index" id="footer_privacy" bind-html-compile="htmlContent(link.content, {country: locale.country.toLowerCase(), lang: locale.lang})" class="ng-scope"><a href="https://www.paypal.com/webapps/mpp/ua/privacy-full?country.x=US&amp;locale.x=en_US" xo-popup="" class="popup ng-scope" target="_blank" pa-marked="1">Privacy</a></li><!-- end ngRepeat: link in footerLinks() track by $index -->
+                <!-- ngIf: showFeedback() --><li ng-if="showFeedback()" class="ng-scope"><a href="https://www.paypal.com/us/cgi-bin/dni/webscr?useraction=commit&amp;token=EC-3L987160YM5580340&amp;cmd=_express-checkout&amp;&amp;force_web=true#" id="footer_sfLink" ng-click="showOL($event)" class="ng-binding" pa-marked="1">Feedback</a></li><!-- end ngIf: showFeedback() -->
+            </ul><!-- end ngIf: showPaypalLinks() -->
+            <!-- ngIf: showVenmoLinks() -->
+            <p class="copyright ng-binding">
+                © 1999 - 2019
+                <span class="secureIcon"></span>
+                <span class="accessAid ng-binding">PayPal is the safer, easier way to pay</span>
+            </p>
+
+            <!-- ngIf: languageSwitch && languageSwitch.show --><xo-language-options direction="top" ng-if="languageSwitch &amp;&amp; languageSwitch.show" class="ng-scope ng-isolate-scope"><!-- ngIf: hasMultipleLanguages --><div class="languageToggleDisplay ng-scope ng-isolate-scope" content="" feature="languageToggle" ng-if="hasMultipleLanguages"><!-- ngIf: enabled() --><span ng-if="enabled()" ng-transclude="" class="ng-scope">
+    <div class="ng-scope">
+        <a id="clickLanguageToggle" aria-expanded="false" aria-label="Language selector, currently English" ng-click="toggle()" select-button="" focus-when="!showLanguages" focused-once-before="" role="button" aria-haspopup="true" tabindex="0" pa-marked="1" lang="en"><span class="displayText ng-binding">English</span><span class="changeLanguage" ng-class="{expand:showLanguages}"></span></a>
+    </div>
+    <div id="langDropdownBlock" ng-show="showLanguages" class="top ng-hide">
+        <div class="arrow"></div>
+        <div ng-click="toggle()" tabindex="0">
+            <ul aria-labelledby="clickLanguageToggle" select-box="showLanguages &amp;&amp; supportedLanguages" select-cancel="toggle()" role="menu">
+                <!-- ngRepeat: lang in supportedLanguages track by $index --><li role="presentation" ng-repeat="lang in supportedLanguages track by $index" class="ng-scope" lang="en">
+                    <a track-link="language_change" class="submit ng-binding" ng-click="selectLanguage(lang)" link-button="" select-option="lang == currentLanguage" focus-when="showLanguages &amp;&amp; lang == currentLanguage" role="button" aria-selected="true" tabindex="0" pa-marked="1">English</a>
+                </li><!-- end ngRepeat: lang in supportedLanguages track by $index --><li role="presentation" ng-repeat="lang in supportedLanguages track by $index" class="ng-scope" lang="fr">
+                    <a track-link="language_change" class="submit ng-binding" ng-click="selectLanguage(lang)" link-button="" select-option="lang == currentLanguage" focus-when="showLanguages &amp;&amp; lang == currentLanguage" role="button" tabindex="0" pa-marked="1">Français</a>
+                </li><!-- end ngRepeat: lang in supportedLanguages track by $index --><li role="presentation" ng-repeat="lang in supportedLanguages track by $index" class="ng-scope" lang="es">
+                    <a track-link="language_change" class="submit ng-binding" ng-click="selectLanguage(lang)" link-button="" select-option="lang == currentLanguage" focus-when="showLanguages &amp;&amp; lang == currentLanguage" role="button" tabindex="0" pa-marked="1">Español</a>
+                </li><!-- end ngRepeat: lang in supportedLanguages track by $index --><li role="presentation" ng-repeat="lang in supportedLanguages track by $index" class="ng-scope" lang="zh">
+                    <a track-link="language_change" class="submit ng-binding" ng-click="selectLanguage(lang)" link-button="" select-option="lang == currentLanguage" focus-when="showLanguages &amp;&amp; lang == currentLanguage" role="button" tabindex="0" pa-marked="1">中文</a>
+                </li><!-- end ngRepeat: lang in supportedLanguages track by $index -->
+            </ul>
+        </div>
+    </div>
+</span><!-- end ngIf: enabled() --></div><!-- end ngIf: hasMultipleLanguages -->
+</xo-language-options><!-- end ngIf: languageSwitch && languageSwitch.show -->
+        </div>
+
+        <!-- ngIf: showPolicyInfo() -->
+
+    </div>
+    <div class="modal-wrapper ng-isolate-scope ng-hide" ng-class="{'animate': animate}" ng-show="show" content="">
+	<div class="modal-overlay"></div>
+	<div class="modal-dialog" ng-class="{'mobile-interstitial': enableMobileInterstitial}" modal-box="" modal-cancel="hideModal()">
+		<div class="modal-content modal-default" ng-class="{'modal-default': !overrideDefaultContainer}" tabindex="-1" focus-when="show">
+			<div ng-transclude="">
+        <p class="ng-binding ng-scope">To view this page, paste the link into a new browser window.</p>
+        <p class="popLink ng-binding ng-scope"></p>
+        <input class="btn btn-submit full ng-scope" type="button" ng-click="hideModal()" value="OK" pa-marked="1">
+    </div>
+			<!-- ngIf: showCloseButton -->
+		</div>
+	</div>
+</div>
+</footer>
+</xo-footer>
+    <!-- ngIf: isGdprValid() -->
+</div>
+</div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<iframe src="resources/fp10/7.html" title="pbf" style="width: 0; height: 0; border: 0; position:absolute; z-index:-999" data-original-src="about:blank"></iframe><iframe title="ppfniframe" style="width: 0; height: 0; border: 0; position:absolute; z-index:-999" src="resources/fp10/8.html" data-original-src="https://c.paypal.com/v1/r/d/i?js_src=https://c.paypal.com/da/r/fb.js"></iframe></body></html>

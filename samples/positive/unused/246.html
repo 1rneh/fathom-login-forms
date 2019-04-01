@@ -1,0 +1,1262 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; media-src 'self' data:; style-src 'self' data: 'unsafe-inline'; font-src 'self' data:; frame-src 'self' data:">
+<title>Profile details</title>
+
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Language" content="en">
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="resources/246/1.css" data-original-href="https://www.stargatecinema.com/skin/A.stargate2,,_lib,,_jqueryui,,_jquery.ui.theme.css+common_files,,_css,,_main.css+common_files,,_css,,_main.FF.css+common_files,,_lib,,_cluetip,,_jquery.cluetip.css+common_files,,_modules,,_Upselling_Products,,_main.css+stargate2,,_modules,,_Recently_Viewed,,_main.css+common_files,,_modules,,_Gift_Certificates,,_main.css+common_files,,_modules,,_Magnifier,,_main.css+common_files,,_modules,,_Wishlist,,_main.css+common_files,,_modules,,_Gift_Registry,,_main.css+common_files,,_modules,,_Manufacturers,,_main.css+common_files,,_modules,,_XAffiliate,,_main.css+common_files,,_modules,,_Survey,,_main.css+common_files,,_modules,,_Image_Verification,,_main.css+common_files,,_modules,,_Feature_Comparison,,_main.css+common_files,,_modules,,_Advanced_Order_Management,,_main.css+common_files,,_modules,,_Product_Configurator,,_main.css+common_files,,_modules,,_RMA,,_main.css+common_files,,_modules,,_Product_Options,,_main.css,Mcc.b7yV5GCHE9.css.pagespeed.cf.1MCAybvHa0.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="resources/246/2.css" data-original-href="https://www.stargatecinema.com/skin/A.common_files,,_modules,,_Wholesale_Trading,,_main.css+common_files,,_modules,,_Detailed_Product_Images,,_main.css+stargate2,,_modules,,_Recommended_Products,,_main.css+common_files,,_modules,,_Customer_Reviews,,_main.css+common_files,,_modules,,_One_Page_Checkout,,_main.css+stargate2,,_modules,,_Flyout_Menus,,_Icons,,_main.css+stargate2,,_css,,_altskin.css+common_files,,_lib,,_colorbox,,_colorbox.css,Mcc.W8K1ZRL2t8.css.pagespeed.cf.F27pylkGgE.css">
+
+	
+
+<link href="resources/246/3.css" rel="stylesheet" type="text/css" data-original-href="https://fonts.googleapis.com/css?family=PT+Sans">
+<link rel="shortcut icon" href="resources/246/4.ico" data-original-href="https://www.stargatecinema.com/skin/stargate2/images/favicon.ico">
+<style type="text/css">.a2a_menu,.a2a_menu *{-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box;float:none;margin:0;padding:0;position:static;height:auto;width:auto}.a2a_menu{border-radius:6px;display:none;direction:ltr;background:#FFF;font:16px sans-serif-light,HelveticaNeue-Light,"Helvetica Neue Light","Helvetica Neue",Arial,Helvetica,"Liberation Sans",sans-serif;color:#000;line-height:12px;border:1px solid #CCC;vertical-align:baseline;outline:0;overflow:hidden}.a2a_mini{min-width:200px;position:absolute;width:300px;z-index:9999997}.a2a_overlay{display:none;background:#616c7d;_height:expression( ((e=document.documentElement.clientHeight)?e:document.body.clientHeight)+"px" );_width:expression( ((e=document.documentElement.clientWidth)?e:document.body.clientWidth)+"px" );filter:alpha(opacity=90);opacity:.92;position:fixed;_position:absolute;top:0;right:0;left:0;bottom:0;z-index:9999998;-webkit-tap-highlight-color:rgba(0,0,0,0);transition:opacity .14s}.a2a_full{background:#FFF;border:1px solid #FFF;height:auto;height:calc(320px);top:15%;_top:expression(40+((e=document.documentElement.scrollTop)?e:document.body.scrollTop)+"px");left:50%;margin-left:-320px;position:fixed;_position:absolute;text-align:center;width:640px;z-index:9999999;transition:transform .14s,opacity .14s}.a2a_full_footer,.a2a_full_header,.a2a_full_services{border:0;margin:0;padding:12px;box-sizing:border-box}.a2a_full_header{padding-bottom:8px}.a2a_full_services{height:280px;overflow-y:scroll;padding:0 12px;-webkit-overflow-scrolling:touch}.a2a_full_services .a2a_i{display:inline-block;float:none;width:181px;width:calc(33.334% - 18px)}div.a2a_full_footer{font-size:12px;text-align:center;padding:8px 14px}div.a2a_full_footer a,div.a2a_full_footer a:visited{display:inline;font-size:12px;line-height:14px;padding:8px 14px}div.a2a_full_footer a:focus,div.a2a_full_footer a:hover{background:0 0;border:0;color:#0166FF}div.a2a_full_footer a span.a2a_s_a2a,div.a2a_full_footer a span.a2a_w_a2a{background-size:14px;border-radius:3px;display:inline-block;height:14px;line-height:14px;margin:0 3px 0 0;vertical-align:top;*vertical-align:middle;width:14px}.a2a_modal{height:0;left:50%;margin-left:-320px;position:fixed;_position:absolute;text-align:center;top:15%;_top:expression(40+((e=document.documentElement.scrollTop)?e:document.body.scrollTop)+"px");width:640px;z-index:9999999;transition:transform .14s,opacity .14s;-webkit-tap-highlight-color:rgba(0,0,0,0)}.a2a_modal_body{background:0 0;border:0;font:24px sans-serif-light,HelveticaNeue-Light,"Helvetica Neue Light","Helvetica Neue",Arial,Helvetica,"Liberation Sans",sans-serif;position:relative;height:auto;width:auto}.a2a_thanks{color:#fff;height:auto;margin-top:20px;width:auto}.a2a_thanks>div:first-child{margin:0 0 40px 0}.a2a_thanks div *{height:inherit}#a2a_copy_link{background:#FFF;border:1px solid #FFF;margin-top:15%}span.a2a_s_link#a2a_copy_link_icon,span.a2a_w_link#a2a_copy_link_icon{background-size:48px;border-radius:0;display:inline-block;height:48px;left:0;line-height:48px;margin:0 3px 0 0;position:absolute;vertical-align:top;*vertical-align:middle;width:48px}#a2a_modal input#a2a_copy_link_text{background-color:transparent;_background-color:#FFF;border:0;color:#2A2A2A;font:inherit;height:48px;left:62px;max-width:initial;padding:0;position:relative;width:564px;width:calc(100% - 76px)}#a2a_copy_link_copied{background-color:#0166ff;color:#fff;display:none;font:inherit;font-size:16px;margin-top:1px;padding:3px 8px}@media print{.a2a_floating_style,.a2a_menu,.a2a_overlay{visibility:hidden}}@keyframes a2aFadeIn{from{opacity:0}to{opacity:1}}.a2a_starting{opacity:0}.a2a_starting.a2a_full,.a2a_starting.a2a_modal{transform:scale(.8)}@media (max-width:639px){.a2a_full{border-radius:0;top:15%;left:0;margin-left:auto;width:100%}.a2a_modal{left:0;margin-left:10px;width:calc(100% - 20px)}}@media (min-width:318px) and (max-width:437px){.a2a_full .a2a_full_services .a2a_i{width:calc(50% - 18px)}}@media (max-width:317px){.a2a_full .a2a_full_services .a2a_i{width:calc(100% - 18px)}}@media (max-height:436px){.a2a_full{bottom:40px;height:auto;top:40px}}@media (max-height:550px){.a2a_modal{top:30px}}@media (max-height:360px){.a2a_modal{top:20px}.a2a_thanks>div:first-child{margin-bottom:20px}}.a2a_menu a{color:#0166FF;text-decoration:none;font:16px sans-serif-light,HelveticaNeue-Light,"Helvetica Neue Light","Helvetica Neue",Arial,Helvetica,"Liberation Sans",sans-serif;line-height:14px;height:auto;width:auto;outline:0;-moz-outline:none}.a2a_menu a.a2a_i:visited,.a2a_menu a.a2a_more{color:#0166FF}.a2a_menu a.a2a_i:active,.a2a_menu a.a2a_i:focus,.a2a_menu a.a2a_i:hover,.a2a_menu a.a2a_more:active,.a2a_menu a.a2a_more:focus,.a2a_menu a.a2a_more:hover{color:#2A2A2A;border-color:#EEE;border-style:solid;background-color:#EEE;text-decoration:none}.a2a_menu span.a2a_s_find{background-size:24px;height:24px;left:8px;position:absolute;top:7px;width:24px}.a2a_menu span.a2a_s_find svg{background-color:#FFF}.a2a_menu span.a2a_s_find svg path{fill:#CCC}#a2a_menu_container{display:inline-block}#a2a_menu_container{_display:inline}.a2a_menu_find_container{border:1px solid #CCC;border-radius:6px;padding:2px 24px 2px 0;position:relative;text-align:left}.a2a_cols_container .a2a_col1{overflow-x:hidden;overflow-y:auto;-webkit-overflow-scrolling:touch}#a2a_modal input,#a2a_modal input[type=text],.a2a_menu input,.a2a_menu input[type=text]{display:block;background-image:none;box-shadow:none;line-height:100%;margin:0;outline:0;overflow:hidden;padding:0;-moz-box-shadow:none;-webkit-box-shadow:none;-webkit-appearance:none}#a2apage_find_container input,#a2apage_find_container input[type=text]{background-color:transparent;_background-color:#FFF;border:0;box-sizing:content-box;color:#2A2A2A;font:inherit;font-size:16px;height:28px;line-height:20px;left:38px;outline:0;margin:0;max-width:initial;padding:2px 0;position:relative;width:99%}.a2a_clear{clear:both} .a2a_svg{background-repeat:no-repeat;display:block;overflow:hidden;height:32px;line-height:32px;padding:0;width:32px}.a2a_svg svg{background-repeat:no-repeat;background-position:50% 50%;border:none;display:block;left:0;margin:0 auto;overflow:hidden;padding:0;position:relative;top:0;width:auto;height:auto}a.a2a_i,i.a2a_i{display:block;float:left;border:1px solid #FFF;line-height:24px;padding:6px 8px;text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:132px}a.a2a_i span,a.a2a_more span{display:inline-block;overflow:hidden;vertical-align:top;*vertical-align:middle}a.a2a_i .a2a_svg{margin:0 6px 0 0}a.a2a_i .a2a_svg,a.a2a_more .a2a_svg{background-size:24px;height:24px;line-height:24px;width:24px}a.a2a_sss:hover{border-left:1px solid #CCC}a.a2a_menu_show_more_less{border-bottom:1px solid #FFF;border-left:0;border-right:0;line-height:24px;margin:6px 0 0;padding:6px;-webkit-touch-callout:none}a.a2a_menu_show_more_less span{display:inline-block;height:24px;margin:0 6px 0 0}.a2a_kit .a2a_svg{background-repeat:repeat}.a2a_default_style a{float:left;line-height:16px;padding:0 2px}.a2a_default_style a:hover .a2a_svg,.a2a_floating_style a:hover .a2a_svg,.a2a_overlay_style a:hover .a2a_svg svg{opacity:.7}.a2a_overlay_style.a2a_default_style a:hover .a2a_svg{opacity:1}.a2a_default_style .a2a_count,.a2a_default_style .a2a_svg,.a2a_floating_style .a2a_svg,.a2a_menu .a2a_svg,.a2a_vertical_style .a2a_count,.a2a_vertical_style .a2a_svg{border-radius:4px}.a2a_default_style .a2a_counter img,.a2a_default_style .a2a_dd,.a2a_default_style .a2a_svg{float:left}.a2a_default_style .a2a_img_text{margin-right:4px}.a2a_default_style .a2a_divider{border-left:1px solid #000;display:inline;float:left;height:16px;line-height:16px;margin:0 5px}.a2a_kit a{cursor:pointer}.a2a_floating_style{background-color:#fff;border-radius:6px;position:fixed;z-index:9999995}.a2a_overlay_style{z-index:2147483647}.a2a_floating_style,.a2a_overlay_style{animation:a2aFadeIn .2s ease-in;padding:4px}.a2a_vertical_style a{clear:left;display:block;overflow:hidden;padding:4px;text-decoration:none}.a2a_floating_style.a2a_default_style{bottom:0}.a2a_floating_style.a2a_default_style a,.a2a_overlay_style.a2a_default_style a{padding:4px}.a2a_count{background-color:#fff;border:1px solid #ccc;box-sizing:border-box;color:#2a2a2a;display:block;float:left;font:12px Arial,Helvetica,sans-serif;height:16px;margin-left:4px;position:relative;text-align:center;width:50px}.a2a_count:after,.a2a_count:before{border:solid transparent;border-width:4px 4px 4px 0;content:"";height:0;left:0;line-height:0;margin:-4px 0 0 -4px;position:absolute;top:50%;width:0}.a2a_count:before{border-right-color:#ccc}.a2a_count:after{border-right-color:#fff;margin-left:-3px}.a2a_count span{animation:a2aFadeIn .14s ease-in}.a2a_vertical_style .a2a_counter img{display:block}.a2a_vertical_style .a2a_count{float:none;margin-left:0;margin-top:6px}.a2a_vertical_style .a2a_count:after,.a2a_vertical_style .a2a_count:before{border:solid transparent;border-width:0 4px 4px 4px;content:"";height:0;left:50%;line-height:0;margin:-4px 0 0 -4px;position:absolute;top:0;width:0}.a2a_vertical_style .a2a_count:before{border-bottom-color:#ccc}.a2a_vertical_style .a2a_count:after{border-bottom-color:#fff;margin-top:-3px}.a2a_nowrap{white-space:nowrap}.a2a_note{margin:0 auto;padding:9px;font-size:12px;text-align:center}.a2a_note .a2a_note_note{margin:0;color:#2A2A2A}.a2a_wide a{display:block;margin-top:3px;border-top:1px solid #EEE;text-align:center}.a2a_label{position:absolute!important;clip:rect(1px 1px 1px 1px);clip:rect(1px,1px,1px,1px);clip-path:polygon(0 0,0 0,0 0);-webkit-clip-path:polygon(0 0,0 0,0 0);overflow:hidden;height:1px;width:1px}.a2a_kit,.a2a_menu,.a2a_modal,.a2a_overlay{-ms-touch-action:manipulation;touch-action:manipulation}.a2a_dd img{border:0}.a2a_button_facebook_like iframe{max-width:none}</style></head>
+<body class="normal-page fancycat-page-skin-icons fancycat-page-subskin-e"><span id="BuySafeSealSpan" style="display: inline; padding: 0px; margin: 0px; border: 0px none; position: fixed; inset: auto 0px 0px auto; z-index: 10001; background-color: transparent; height: auto; width: auto;"><img name="buysafeseal_1_img" id="buysafeseal_1_img" alt="buySAFE Guarantee" src="resources/246/5.bin" data-pin-no-hover="true" data-pin-nopin="true" data-original-src="https://seal.buysafe.com/Web/Seal/AltSeal.aspx?PR=https%3A%2F%2Fwww.stargatecinema.com%2F&amp;HASH=c3ECPVRcntAw4CTCgNN2n8Nq%2bz4BN5mv1xWLrt49aFCOI%2fFJWsCi2tEXwY022Abbe7X6%2bq8lykfgVhXQwqoRSA%3d%3d&amp;S=Large&amp;T=M&amp;MSPHASH=&amp;X=png&amp;DP=br%3DFirefox%3Bvr%3D67.0%3Bos%3DWindows&amp;I=&amp;TS=1552487828145" border="0"><iframe id="BuySafeSealSpan_frame" title="Unused iFrame 1" tabindex="-1" marginwidth="0" marginheight="0" scrolling="no" style="padding: 0px; margin: 0px; border: 0px none; position: absolute; height: 100%; width: 100%; left: 0px; top: 0px; z-index: -2;" width="100%" height="100%" frameborder="0"></iframe></span><div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" style="padding-bottom: 42px; padding-right: 42px; display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear:left"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxLoadedContent" style="width: 0px; height: 0px; overflow: hidden;" class=""></div><div id="cboxLoadingOverlay" class=""></div><div id="cboxLoadingGraphic" class=""></div><div id="cboxTitle" class=""></div><div id="cboxCurrent" class=""></div><div id="cboxNext" class=""></div><div id="cboxPrevious" class=""></div><div id="cboxSlideshow" class=""></div><div id="cboxClose" class=""></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear:left"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position:absolute; width:9999px; visibility:hidden; display:none"></div></div>
+<div style="width: 1016px; margin: auto">
+<div id="TopBar">
+<div id="HeaderMenu">
+<a id="my-account-dropdown-link" class="select" href="https://www.stargatecinema.com/register.php?mode=update" style="padding-top: 10px; padding-bottom: 10px">My Account</a>
+<a href="https://www.stargatecinema.com/cart.php?mode=wishlist">My Wish List</a>
+<a href="http://www.stargatecinema.com/home-theater-accessories-sale-from-stargate-cinema.html">Get Coupon</a>
+<a href="https://www.stargatecinema.com/help.php?section=contactus">Contact Us</a>
+</div>
+<div id="HeaderImgMenu">
+<a href="http://www.stargatecinema.com/"><img src="resources/246/6.png" alt="" data-pagespeed-url-hash="2620455671" data-original-src="https://www.stargatecinema.com/skin/stargate2/images/stargate_cinema.png"></a>
+</div>
+</div>
+</div>
+<div style="width: 1016px; margin: auto">
+<div id="Header">
+<div id="HeaderContent">
+<div id="HeaderLeft">
+<a href="https://www.stargatecinema.com/home.php"><img id="Logo" src="resources/246/7.png" alt="" data-pagespeed-url-hash="4011203515" data-original-src="https://www.stargatecinema.com/skin/stargate2/images/sgs-logo.png"></a>
+</div>
+<div id="HeaderRight">
+<div id="HeaderCall">
+<a id="header-chat-link" href="https://www.stargatecinema.com/help.php?section=contactus&amp;chat=1"><img id="chat-icon" src="resources/246/8.png" alt="" data-pagespeed-url-hash="42872258" data-original-src="https://www.stargatecinema.com/skin/stargate2/images/chat-icon.png">Chat with Us</a>
+<div id="phone"><img id="phone-icon" src="resources/246/9.png" alt="" data-pagespeed-url-hash="3154409742" data-original-src="https://www.stargatecinema.com/skin/stargate2/images/phone-icon.png">Call Our Product Experts:<div class="number">800.314.8578</div></div>
+<div id="HeaderHours">M-F 8:00 - 5:00 PST</div>
+</div>
+<div id="SearchWrapper">
+<form id="searchform" method="post" action="https://www.stargatecinema.com/search.php" name="productsearchform">
+<input type="hidden" name="simple_search" value="Y">
+<input type="hidden" name="mode" value="search">
+<input type="hidden" name="posted_data[by_title]" value="Y">
+<input type="hidden" name="posted_data[by_descr]" value="Y">
+<input type="hidden" name="posted_data[by_sku]" value="Y">
+<input type="hidden" name="posted_data[search_in_subcategories]" value="Y">
+<input type="hidden" name="posted_data[including]" value="all">
+<table width="100%" cellspacing="0" cellpadding="0"><tbody><tr><td><div class="text-wrapper"><input type="text" name="posted_data[substring]" class=" default-value" value="Search Seating, Signs, Lighting, Carpet, Decor"></div></td><td><input id="search-button" type="submit" value="GO"></td></tr></tbody></table>
+</form>	</div>
+<div id="TopcartBox">
+<div id="TopcartBoxInner">
+<div id="Topcart">
+<div class="minicart-block">
+<img src="resources/246/10.gif" class="ajax-minicart-icon empty" alt="" data-pagespeed-url-hash="894117495" data-original-src="https://www.stargatecinema.com/skin/common_files/images/spacer.gif">
+<a href="https://www.stargatecinema.com/cart.php">My Cart</a> <span class="minicart">
+(0 items)
+</span>
+</div>
+<div class="clearing">&nbsp;</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+	</div>
+<div class="clearing">&nbsp;</div>
+<div id="Speedbar">
+<div id="SpeedbarTop">
+<ul id="fload-root-container">
+<li><a class="top-links" id="cat-0" href="https://www.stargatecinema.com/register.php#" title="Shop All Categories">Shop All Categories</a></li>
+<li><a title="Home Theater Seating" class="top-links" id="cat-299" href="http://www.stargatecinema.com/home-theater-seating/">Home Theater Seating</a></li>
+<li><a title="Home Theater Decor" class="top-links" id="cat-6" href="http://www.stargatecinema.com/home-theater-decor/">Home Theater Decor</a></li>
+<li><a title="Home Theater Furniture" class="top-links" id="cat-379" href="http://www.stargatecinema.com/home-theater-furniture/">Home Theater Furniture</a></li>
+<li><a title="Popcorn Machines" class="top-links" id="cat-2" href="http://www.stargatecinema.com/popcorn-machines/">Popcorn Machines</a></li>
+<li><a title="Popcorn Supplies" class="top-links" id="cat-3" href="http://www.stargatecinema.com/popcorn-supplies/">Popcorn Supplies</a></li>
+<li><a title="Concession Equipment" class="top-links" id="cat-721" href="http://www.stargatecinema.com/concession-equipment/">Concession Equipment</a></li>
+<li><a title="Movie Poster Frames, Cases" class="top-links" id="cat-4" href="http://www.stargatecinema.com/movie-poster-frames-cases/">Movie Poster Frames, Cases</a></li>
+<li><a title="Movie Posters" class="top-links" id="cat-357" href="http://www.stargatecinema.com/movie-posters/">Movie Posters</a></li>
+<li><a title="Posts and Rope, Stanchions" class="top-links" id="cat-335" href="http://www.stargatecinema.com/posts-and-rope-stanchions/">Posts and Rope, Stanchions</a></li>
+</ul>	<div class="clearing">&nbsp;</div>
+</div>
+<div class="clearing">&nbsp;</div>
+<div id="float-cat-0" class="float-sub-block" style="display: none;">
+<div class="float-sub-inner_01">
+<div class="float-sub-wrapper_01">
+<div class="float-sub-title_01"><a title="Home Theater Seating" href="http://www.stargatecinema.com/home-theater-seating/">Home Theater Seating</a></div>
+<div class="float-sub-title_01"><a title="Home Theater Decor" href="http://www.stargatecinema.com/home-theater-decor/">Home Theater Decor</a></div>
+<div class="float-sub-title_01"><a title="Home Theater Furniture" href="http://www.stargatecinema.com/home-theater-furniture/">Home Theater Furniture</a></div>
+<div class="float-sub-title_01"><a title="Popcorn Machines" href="http://www.stargatecinema.com/popcorn-machines/">Popcorn Machines</a></div>
+<div class="float-sub-title_01"><a title="Popcorn Supplies" href="http://www.stargatecinema.com/popcorn-supplies/">Popcorn Supplies</a></div>
+<div class="float-sub-title_01"><a title="Concession Equipment" href="http://www.stargatecinema.com/concession-equipment/">Concession Equipment</a></div>
+<div class="float-sub-title_01"><a title="Movie Poster Frames, Cases" href="http://www.stargatecinema.com/movie-poster-frames-cases/">Movie Poster Frames, Cases</a></div>
+<div class="float-sub-title_01"><a title="Movie Posters" href="http://www.stargatecinema.com/movie-posters/">Movie Posters</a></div>
+</div>
+<div class="float-sub-add_01" style="padding-top: 0">
+<ul class="float-sub-list-bottom_01" style="padding-top: 0">
+<li style="line-height: normal"><div class="float-sub-title_01"><a title="Posts and Rope, Stanchions" href="http://www.stargatecinema.com/posts-and-rope-stanchions/">Posts and Rope, Stanchions</a></div></li>
+<li style="line-height: normal"><div class="float-sub-title_01"><a title="" href="https://www.stargatecinema.com/home.php?cat=933">Lift Chair Recliners</a></div></li>
+<li style="line-height: normal"><div class="float-sub-title_01"><a title="Custom Movie Intro DVDs" href="http://www.stargatecinema.com/custom-movie-intro-dvds/">Custom Movie Intro DVDs</a></div></li>
+<li style="line-height: normal"><div class="float-sub-title_01"><a title="The Game Room" href="http://www.stargatecinema.com/the-game-room/">The Game Room</a></div></li>
+<li style="line-height: normal"><div class="float-sub-title_01"><a title="Audio/Video Products" href="http://www.stargatecinema.com/video-products/">Audio/Video Products</a></div></li>
+<li style="line-height: normal"><div class="float-sub-title_01"><a title="Acoustical Treatments" href="http://www.stargatecinema.com/acoustical-treatments/">Acoustical Treatments</a></div></li>
+<li style="line-height: normal"><div class="float-sub-title_01"><a title="Personalized Home Theater" href="http://www.stargatecinema.com/personalized-home-theater/">Personalized Home Theater</a></div></li>
+<li style="line-height: normal"><div class="float-sub-title_01"><a title="Home Theater Gift Ideas" href="http://www.stargatecinema.com/home-theater-gift-ideas/">Home Theater Gift Ideas</a></div></li>
+</ul>	<ul class="float-sub-list-bottom_01" style="padding-top: 0">
+<li style="line-height: normal"><div class="float-sub-title_01"><a title="New Releases" href="http://www.stargatecinema.com/new-releases/">New Releases</a></div></li>
+<li style="line-height: normal"><div class="float-sub-title_01"><a title="Coming Attractions!" href="http://www.stargatecinema.com/coming-attractions/">Coming Attractions!</a></div></li>
+<li style="line-height: normal"><div class="float-sub-title_01"><a title="2D and 3D Theater Design Services" href="http://www.stargatecinema.com/2d-and-3d-theater-design-services/">2D and 3D Theater Design Services</a></div></li>
+</ul>
+</div>
+<div class="clearing">&nbsp;</div>
+</div>
+</div>
+<div id="float-cat-299" class="float-sub-block" style="display: none;">
+<div class="float-sub-inner_01">
+<div class="float-sub-wrapper_01">
+<div class="float-sub-title_01"><a title="Home Theater Seating" href="http://www.stargatecinema.com/home-theater-seating/">Home Theater Seating</a></div>
+<ul class="float-sub-list_01">
+<li>
+<div><a title="" href="https://www.stargatecinema.com/home.php?cat=926">Seatcraft Home Theater Seats</a></div>
+</li>
+<li>
+<div><a title="" href="https://www.stargatecinema.com/home.php?cat=938">Seatcraft Your Choice Seats</a></div>
+</li>
+<li>
+<div><a title="Sofas &amp; Sectionals" href="http://www.stargatecinema.com/sofas-sectionals/">Multimedia Sofas &amp; Sectionals</a></div>
+</li>
+<li>
+<div><a title="Lane Home Furnishings" href="http://www.stargatecinema.com/lane-home-furnishings/">Lane Home Furnishings</a></div>
+</li>
+<li>
+<div><a title="Palliser Theater Seating" href="http://www.stargatecinema.com/palliser-theater-seating/">Palliser Theater Seating</a></div>
+</li>
+<li>
+<div><a title="Albany Theater Seating" href="http://www.stargatecinema.com/albany-theater-seating/">Albany Theater Seating</a></div>
+</li>
+<li>
+<div><a title="Coaster Theater Collections" href="http://www.stargatecinema.com/coaster-theater-collections/">Coaster Theater Collections</a></div>
+</li>
+<li>
+<div><a title="Home Meridian Seating" href="http://www.stargatecinema.com/home-meridian-seating/">Home Meridian Seating</a></div>
+</li>
+</ul>
+</div>
+<div class="float-sub-add_01">
+<br>
+<ul class="float-sub-list-bottom_01">
+<li><a title="Klaussner Seating" href="http://www.stargatecinema.com/klaussner-seating/">Klaussner Seating</a></li>
+<li><a title="Movie Theater Seating" href="http://www.stargatecinema.com/movie-theater-seating/">Movie Theater Seating</a></li>
+<li><a title="Jaymar Home Theater Seating" href="http://www.stargatecinema.com/jaymar-home-theater-seating/">Jaymar Home Theater Seating</a></li>
+<li><a title="Elite Seating" href="http://www.stargatecinema.com/elite-seating/">Elite Seating</a></li>
+<li><a title="Quick Ship Home Theater Seating" href="http://www.stargatecinema.com/quick-ship-home-theater-seating/">Quick Ship Home Theater Seating</a></li>
+<li><a title="Dezmo Theater Seating" href="http://www.stargatecinema.com/dezmo-theater-seating/">Dezmo Theater Seating</a></li>
+<li><a title="Rissanti Recliners" href="http://www.stargatecinema.com/rissanti-recliners/">Rissanti Recliners</a></li>
+<li><a title="Home Cineplex Seats" href="http://www.stargatecinema.com/home-cineplex-seats/">Home Cineplex Seats</a></li>
+</ul>	<ul class="float-sub-list-bottom_01">
+<li><a title="Coja Premium Theater Seats" href="http://www.stargatecinema.com/coja-premium-theater-seats/">Coja Premium Theater Seats</a></li>
+<li><a title="Barcalounger Seating" href="http://www.stargatecinema.com/barcalounger-seating/">Barcalounger Seating</a></li>
+<li><a title="Jackson-Catnapper Seating" href="http://www.stargatecinema.com/jackson-catnapper-seating/">Jackson-Catnapper Seating</a></li>
+<li><a title="Cozzia Massage Chairs" href="http://www.stargatecinema.com/cozzia-massage-chairs/">Cozzia Massage Chairs</a></li>
+<li><a title="Palliser Clearance Sale" href="http://www.stargatecinema.com/palliser-clearance-sale/">Palliser Clearance Sale</a></li>
+<li><a title="Osaki Massage Chairs" href="http://www.stargatecinema.com/osaki-massage-chairs/">Osaki Massage Chairs</a></li>
+<li><a title="Infinite Therapeutics Massage Chairs" href="http://www.stargatecinema.com/infinite-therapeutics-massage-chairs/">Infinite Therapeutics Massage Chairs</a></li>
+<li><a title="Coaster Massage Chairs" href="http://www.stargatecinema.com/coaster-massage-chairs/">Coaster Massage Chairs</a></li>
+</ul>	<ul class="float-sub-list-bottom_01">
+<li><a title="Omega Massage Chairs" href="http://www.stargatecinema.com/omega-massage-chairs/">Omega Massage Chairs</a></li>
+<li><a title="Panasonic Massage Chairs" href="http://www.stargatecinema.com/panasonic-massage-chairs/">Panasonic Massage Chairs</a></li>
+<li><a title="Home Theater Sectionals" href="http://www.stargatecinema.com/home-theater-sectionals/">Home Theater Sectionals</a></li>
+<li><a title="Berkline Theater Seating" href="http://www.stargatecinema.com/berkline-theater-seating/">Berkline Theater Seating</a></li>
+<li><a title="Home Theater Seating Clearance Sale" href="http://www.stargatecinema.com/Home-Theater-Seating-Overstock-Sale/">Warehouse Overstock Sale</a></li>
+<li><a title="Euro Swivel Recliners" href="http://www.stargatecinema.com/euro-swivel-recliners/">Euro Swivel Recliners</a></li>
+<li><a title="Gaming Chairs" href="http://www.stargatecinema.com/gaming-chairs/">Gaming Chairs</a></li>
+<li><a title="Alternative Seating" href="http://www.stargatecinema.com/alternative-seating/">Alternative Seating</a></li>
+</ul>	<ul class="float-sub-list-bottom_01">
+<li><a title="Kids Theater Seating" href="http://www.stargatecinema.com/kids-theater-seating/">Kids Theater Seating</a></li>
+<li><a title="Theater Seating Accessories" href="http://www.stargatecinema.com/theater-seating-accessories/">Theater Seating Accessories</a></li>
+</ul>
+</div>
+<div class="clearing">&nbsp;</div>
+</div>
+</div>
+<div id="float-cat-6" class="float-sub-block" style="display: none;">
+<div class="float-sub-inner_01">
+<div class="float-sub-wrapper_01">
+<div class="float-sub-title_01"><a title="Home Theater Decor" href="http://www.stargatecinema.com/home-theater-decor/">Home Theater Decor</a></div>
+<ul class="float-sub-list_01">
+<li>
+<div><a title="Theater Signs &amp; Wall Art" href="http://www.stargatecinema.com/theater-signs-wall-art/">Theater Signs &amp; Wall Art</a></div>
+</li>
+<li>
+<div><a title="Home Theater Lighting" href="http://www.stargatecinema.com/Home-Theater-Lighting-c-454/">Home Theater Lighting</a></div>
+</li>
+<li>
+<div><a title="Home Theater Carpet" href="http://www.stargatecinema.com/home-theater-carpet/">Home Theater Carpet</a></div>
+</li>
+<li>
+<div><a title="Theater Decor &amp; Accessories" href="http://www.stargatecinema.com/theater-decor-accessories/">Theater Decor &amp; Accessories</a></div>
+</li>
+<li>
+<div><a title="Home Theater Area Rugs" href="http://www.stargatecinema.com/home-theater-area-rugs/">Home Theater Area Rugs</a></div>
+</li>
+<li>
+<div><a title="Movie Reel Decor" href="http://www.stargatecinema.com/movie-reel-decor/">Movie Reel Decor</a></div>
+</li>
+<li>
+<div><a title="Home Theater Metal Work" href="http://www.stargatecinema.com/home-theater-metal-work/">Home Theater Metal Work</a></div>
+</li>
+<li>
+<div><a title="Paramount Pictures Series" href="http://www.stargatecinema.com/paramount-pictures-series/">Paramount Pictures Series</a></div>
+</li>
+</ul>
+</div>
+<div class="float-sub-add_01">
+<br>
+<ul class="float-sub-list-bottom_01">
+<li><a title="Theater Masks" href="http://www.stargatecinema.com/theater-masks/">Theater Masks</a></li>
+<li><a title="Personalized Prints" href="http://www.stargatecinema.com/personalized-prints/">Personalized Prints</a></li>
+<li><a title="Movie Film Cells" href="http://www.stargatecinema.com/movie-film-cells/">Movie Film Cells</a></li>
+<li><a title="Framed Movie Memorabilia" href="http://www.stargatecinema.com/framed-movie-memorabilia/">Framed Movie Memorabilia</a></li>
+<li><a title="Architectural Details" href="http://www.stargatecinema.com/architectural-details/">Architectural Details</a></li>
+<li><a title="Decorative Hardware" href="http://www.stargatecinema.com/decorative-hardware/">Decorative Hardware</a></li>
+<li><a title="Star Charcoal Prints" href="http://www.stargatecinema.com/star-charcoal-prints/">Star Charcoal Prints</a></li>
+<li><a title="Movie Props and Replicas" href="http://www.stargatecinema.com/movie-props-and-replicas/">Movie Props and Replicas</a></li>
+</ul>	<ul class="float-sub-list-bottom_01">
+<li><a title="Mirrors for Home Decor" href="http://www.stargatecinema.com/mirrors-for-home-decor/">Mirrors for Home Decor</a></li>
+</ul>
+</div>
+<div class="clearing">&nbsp;</div>
+</div>
+</div>
+<div id="float-cat-379" class="float-sub-block">
+<div class="float-sub-inner_01">
+<div class="float-sub-wrapper_01">
+<div class="float-sub-title_01"><a title="Home Theater Furniture" href="http://www.stargatecinema.com/home-theater-furniture/">Home Theater Furniture</a></div>
+<ul class="float-sub-list_01">
+<li>
+<div><a title="Candy Counters" href="http://www.stargatecinema.com/candy-counters/">Candy Counters</a></div>
+</li>
+<li>
+<div><a title="Home Theater Tables" href="http://www.stargatecinema.com/home-theater-tables/">Home Theater Tables</a></div>
+</li>
+<li>
+<div><a title="Plasma &amp; TV Stands" href="http://www.stargatecinema.com/plasma-tv-stands/">Plasma &amp; TV Stands</a></div>
+</li>
+<li>
+<div><a title="Home Theater Bars" href="http://www.stargatecinema.com/home-theater-bars/">Home Theater Bar Furniture</a></div>
+</li>
+<li>
+<div><a title="Wine Coolers and more" href="http://www.stargatecinema.com/wine-coolers-and-more/">Wine Coolers and more</a></div>
+</li>
+<li>
+<div><a title="Screen Masking Systems" href="http://www.stargatecinema.com/screen-masking-systems/">Screen Masking Systems</a></div>
+</li>
+<li>
+<div><a title="AV Racks &amp; Stands" href="http://www.stargatecinema.com/av-racks-stands/">AV Racks &amp; Stands</a></div>
+</li>
+<li>
+<div><a title="Media Storage" href="http://www.stargatecinema.com/media-storage/">Media Storage</a></div>
+</li>
+</ul>
+</div>
+<div class="clearing">&nbsp;</div>
+</div>
+</div>
+<div id="float-cat-2" class="float-sub-block">
+<div class="float-sub-inner_01">
+<div class="float-sub-wrapper_01">
+<div class="float-sub-title_01"><a title="Popcorn Machines" href="http://www.stargatecinema.com/popcorn-machines/">Popcorn Machines</a></div>
+<ul class="float-sub-list_01">
+<li>
+<div><a title="Theater Style Popcorn Machines" href="http://www.stargatecinema.com/theater-style-popcorn-machines/">Theater Style Popcorn Machines</a></div>
+</li>
+<li>
+<div><a title="Antique Popcorn Machines" href="http://www.stargatecinema.com/antique-popcorn-machines/">Antique Popcorn Machines</a></div>
+</li>
+<li>
+<div><a title="Contemporary Popcorn Machines" href="http://www.stargatecinema.com/contemporary-popcorn-machines/">Contemporary Popcorn Machines</a></div>
+</li>
+<li>
+<div><a title="Commercial Popcorn Machines" href="http://www.stargatecinema.com/commercial-popcorn-machines/">Commercial Popcorn Machines</a></div>
+</li>
+<li>
+<div><a title="Branded Popcorn Machines" href="http://www.stargatecinema.com/branded-popcorn-machines/">Branded Popcorn Machines</a></div>
+</li>
+<li>
+<div><a title="Stands and Carts" href="http://www.stargatecinema.com/stands-and-carts/">Stands and Carts</a></div>
+</li>
+</ul>
+</div>
+<div class="clearing">&nbsp;</div>
+</div>
+</div>
+<div id="float-cat-3" class="float-sub-block">
+<div class="float-sub-inner_01">
+<div class="float-sub-wrapper_01">
+<div class="float-sub-title_01"><a title="Popcorn Supplies" href="http://www.stargatecinema.com/popcorn-supplies/">Popcorn Supplies</a></div>
+<ul class="float-sub-list_01">
+<li>
+<div><a title="Popcorn Portion Packs" href="http://www.stargatecinema.com/popcorn-portion-packs/">Popcorn Portion Packs</a></div>
+</li>
+<li>
+<div><a title="Buckets, Bags &amp; Boxes" href="http://www.stargatecinema.com/buckets-bags-boxes/">Buckets, Bags &amp; Boxes</a></div>
+</li>
+<li>
+<div><a title="Popcorn Toppings" href="http://www.stargatecinema.com/popcorn-toppings/">Popcorn Toppings</a></div>
+</li>
+<li>
+<div><a title="Bulk Popcorn" href="http://www.stargatecinema.com/bulk-popcorn/">Bulk Popcorn</a></div>
+</li>
+<li>
+<div><a title="Scoops, Oil &amp; More" href="http://www.stargatecinema.com/scoops-oil-more/">Scoops, Oil &amp; More</a></div>
+</li>
+</ul>
+</div>
+<div class="clearing">&nbsp;</div>
+</div>
+</div>
+<div id="float-cat-721" class="float-sub-block">
+<div class="float-sub-inner_01">
+<div class="float-sub-wrapper_01">
+<div class="float-sub-title_01"><a title="Concession Equipment" href="http://www.stargatecinema.com/concession-equipment/">Concession Equipment</a></div>
+<ul class="float-sub-list_01">
+<li>
+<div><a title="Snowcone Concession" href="http://www.stargatecinema.com/snowcone-concession/">Snowcone Concession</a></div>
+</li>
+<li>
+<div><a title="Cotton Candy Concession" href="http://www.stargatecinema.com/cotton-candy-concession/">Cotton Candy Concession</a></div>
+</li>
+<li>
+<div><a title="Hog Dog Concession" href="http://www.stargatecinema.com/hog-dog-concession/">Hog Dog Concession</a></div>
+</li>
+<li>
+<div><a title="Concession Warmers" href="http://www.stargatecinema.com/concession-warmers/">Concession Warmers</a></div>
+</li>
+<li>
+<div><a title="Concession Signs" href="http://www.stargatecinema.com/concession-signs/">Concession Signs</a></div>
+</li>
+<li>
+<div><a title="Candy Counters" href="https://www.stargatecinema.com/home.php?cat=850">Candy Counters</a></div>
+</li>
+</ul>
+</div>
+<div class="clearing">&nbsp;</div>
+</div>
+</div>
+<div id="float-cat-4" class="float-sub-block">
+<div class="float-sub-inner_01">
+<div class="float-sub-wrapper_01">
+<div class="float-sub-title_01"><a title="Movie Poster Frames, Cases" href="http://www.stargatecinema.com/movie-poster-frames-cases/">Movie Poster Frames, Cases</a></div>
+<ul class="float-sub-list_01">
+<li>
+<div><a title="Movie Poster Frames" href="http://www.stargatecinema.com/movie-poster-frames/">Movie Poster Frames</a></div>
+</li>
+<li>
+<div><a title="Illuminated Poster Cases" href="http://www.stargatecinema.com/illuminated-poster-cases/">Illuminated Poster Cases</a></div>
+</li>
+</ul>
+</div>
+<div class="clearing">&nbsp;</div>
+</div>
+</div>
+<div id="float-cat-357" class="float-sub-block">
+<div class="float-sub-inner_01">
+<div class="float-sub-wrapper_01">
+<div class="float-sub-title_01"><a title="Movie Posters" href="http://www.stargatecinema.com/movie-posters/">Movie Posters</a></div>
+<ul class="float-sub-list_01">
+<li>
+<div><a title="Double-Sided Movie Posters" href="http://www.stargatecinema.com/double-sided-movie-posters/">Double-Sided Movie Posters</a></div>
+</li>
+<li>
+<div><a title="0 - 9 Movie Posters" href="http://www.stargatecinema.com/0-9-movie-posters/">0 - 9 Movie Posters</a></div>
+</li>
+<li>
+<div><a title="'A' Movie Posters" href="http://www.stargatecinema.com/a-movie-posters/">'A' Movie Posters</a></div>
+</li>
+<li>
+<div><a title="'B' Movie Posters" href="http://www.stargatecinema.com/b-movie-posters/">'B' Movie Posters</a></div>
+</li>
+<li>
+<div><a title="'C-D' Movie Posters" href="http://www.stargatecinema.com/c-d-movie-posters/">'C-D' Movie Posters</a></div>
+</li>
+<li>
+<div><a title="'E-F' Movie Posters" href="http://www.stargatecinema.com/e-f-movie-posters/">'E-F' Movie Posters</a></div>
+</li>
+<li>
+<div><a title="'G-H' Movie Posters" href="http://www.stargatecinema.com/g-h-movie-posters/">'G-H' Movie Posters</a></div>
+</li>
+<li>
+<div><a title="'I-L' Movie Posters" href="http://www.stargatecinema.com/i-l-movie-posters/">'I-L' Movie Posters</a></div>
+</li>
+</ul>
+</div>
+<div class="float-sub-add_01">
+<br>
+<ul class="float-sub-list-bottom_01">
+<li><a title="'M-O' Movie Posters" href="http://www.stargatecinema.com/m-o-movie-posters/">'M-O' Movie Posters</a></li>
+<li><a title="'P-R' Movie Posters" href="http://www.stargatecinema.com/p-r-movie-posters/">'P-R' Movie Posters</a></li>
+<li><a title="'S' Movie Posters" href="http://www.stargatecinema.com/s-movie-posters/">'S' Movie Posters</a></li>
+<li><a title="'T' - 'Z' Movie Posters" href="http://www.stargatecinema.com/t-z-movie-posters/">'T' - 'Z' Movie Posters</a></li>
+<li><a title="Classic Movie Posters" href="http://www.stargatecinema.com/classic-movie-posters/">Classic Movie Posters</a></li>
+<li><a title="British Movie Posters" href="http://www.stargatecinema.com/british-movie-posters/">British Movie Posters</a></li>
+<li><a title="French Movie Posters" href="http://www.stargatecinema.com/french-movie-posters/">French Movie Posters</a></li>
+<li><a title="Other Foreign Movie Posters" href="http://www.stargatecinema.com/other-foreign-movie-posters/">Other Foreign Movie Posters</a></li>
+</ul>	<ul class="float-sub-list-bottom_01">
+<li><a title="11&quot; X 17&quot; Movie Posters" href="http://www.stargatecinema.com/11-x-17-movie-posters/">11" X 17" Movie Posters</a></li>
+<li><a title="Other Posters" href="http://www.stargatecinema.com/other-posters/">Other Posters</a></li>
+</ul>
+</div>
+<div class="clearing">&nbsp;</div>
+</div>
+</div>
+<div id="float-cat-335" class="float-sub-block">
+<div class="float-sub-inner_01">
+<div class="float-sub-wrapper_01">
+<div class="float-sub-title_01"><a title="Posts and Rope, Stanchions" href="http://www.stargatecinema.com/posts-and-rope-stanchions/">Posts and Rope, Stanchions</a></div>
+<ul class="float-sub-list_01">
+<li>
+<div><a title="Posts &amp; Stanchions" href="http://www.stargatecinema.com/posts-stanchions/">Posts &amp; Stanchions</a></div>
+</li>
+<li>
+<div><a title="Tensabarrier Posts" href="http://www.stargatecinema.com/tensabarrier-posts/">Tensabarrier Posts</a></div>
+</li>
+<li>
+<div><a title="Wooden Stanchions" href="http://www.stargatecinema.com/wooden-stanchions/">Wooden Stanchions</a></div>
+</li>
+<li>
+<div><a title="Post &amp; Stanchion Ropes" href="http://www.stargatecinema.com/post-stanchion-ropes/">Post &amp; Stanchion Ropes</a></div>
+</li>
+<li>
+<div><a title="Post &amp; Rope Components" href="http://www.stargatecinema.com/post-rope-components/">Post &amp; Rope Components</a></div>
+</li>
+<li>
+<div><a title="Crowd Control Signs" href="http://www.stargatecinema.com/crowd-control-signs/">Crowd Control Signs</a></div>
+</li>
+</ul>
+</div>
+<div class="clearing">&nbsp;</div>
+</div>
+</div>
+<div id="float-cat-481" class="float-sub-block">
+<div class="float-sub-inner_01">
+<div class="float-sub-wrapper_01">
+<div class="float-sub-title_01"><a title="The Game Room" href="http://www.stargatecinema.com/the-game-room/">The Game Room</a></div>
+<ul class="float-sub-list_01">
+<li>
+<div><a title="Gameroom and Sports Carpet" href="http://www.stargatecinema.com/gameroom-and-sports-carpet/">Game Room and Sports Carpet</a></div>
+</li>
+<li>
+<div><a title="Game Room Furniture" href="http://www.stargatecinema.com/game-room-furniture/">Game Room Furniture</a></div>
+</li>
+<li>
+<div><a title="Sports Team Bar Stools" href="http://www.stargatecinema.com/sports-team-bar-stools/">Sports Team Bar Stools</a></div>
+</li>
+<li>
+<div><a title="Game Room Lighting" href="http://www.stargatecinema.com/game-room-lighting/">Game Room Lighting</a></div>
+</li>
+<li>
+<div><a title="Clocks" href="http://www.stargatecinema.com/clocks/">Clocks</a></div>
+</li>
+<li>
+<div><a title="Gameroom Signs &amp; Wall Art" href="http://www.stargatecinema.com/gameroom-signs-wall-art/">Game Room Signs &amp; Wall Art</a></div>
+</li>
+<li>
+<div><a title="Neon Game Room Signs" href="http://www.stargatecinema.com/neon-game-room-signs/">Neon Game Room Signs</a></div>
+</li>
+<li>
+<div><a title="Pool, Bar and Card Game Signs" href="http://www.stargatecinema.com/pool-bar-and-card-game-signs/">Pool, Bar and Card Game Signs</a></div>
+</li>
+</ul>
+</div>
+<div class="float-sub-add_01">
+<br>
+<ul class="float-sub-list-bottom_01">
+<li><a title="Sports Signs" href="http://www.stargatecinema.com/sports-signs/">Sports Metal Art &amp; Signs</a></li>
+<li><a title="Bar Accessories" href="http://www.stargatecinema.com/bar-accessories/">Bar Accessories</a></li>
+<li><a title="The Tiki Bar" href="http://www.stargatecinema.com/the-tiki-bar/">The Tiki Bar</a></li>
+<li><a title="Jukeboxes" href="http://www.stargatecinema.com/jukeboxes/">Jukeboxes</a></li>
+<li><a title="Pool Tables" href="http://www.stargatecinema.com/pool-tables/">Pool Tables</a></li>
+<li><a title="Wall Racks &amp; Cue Holders" href="http://www.stargatecinema.com/wall-racks-cue-holders/">Wall Racks &amp; Cue Holders</a></li>
+<li><a title="Air and Dome Hockey Tables" href="http://www.stargatecinema.com/air-and-dome-hockey-tables/">Air and Dome Hockey Tables</a></li>
+<li><a title="Arcade Games" href="http://www.stargatecinema.com/arcade-games/">Arcade Games</a></li>
+</ul>	<ul class="float-sub-list-bottom_01">
+<li><a title="Foosball Tables" href="http://www.stargatecinema.com/foosball-tables/">Foosball Tables</a></li>
+<li><a title="Pinball Machines" href="http://www.stargatecinema.com/pinball-machines/">Pinball Machines</a></li>
+<li><a title="Countertop Games" href="http://www.stargatecinema.com/countertop-games/">Countertop Games</a></li>
+<li><a title="Gaming Chairs" href="https://www.stargatecinema.com/home.php?cat=543">Gaming Chairs</a></li>
+</ul>
+</div>
+<div class="clearing">&nbsp;</div>
+</div>
+</div>
+<div id="float-cat-548" class="float-sub-block">
+<div class="float-sub-inner_01">
+<div class="float-sub-wrapper_01">
+<div class="float-sub-title_01"><a title="Audio/Video Products" href="http://www.stargatecinema.com/video-products/">Audio/Video Products</a></div>
+<ul class="float-sub-list_01">
+<li>
+<div><a title="Tactile Sound Transducers" href="http://www.stargatecinema.com/tactile-sound-transducers/">Tactile Sound Transducers</a></div>
+</li>
+<li>
+<div><a title="Home Theater Packages" href="http://www.stargatecinema.com/home-theater-packages/">Home Theater Packages</a></div>
+</li>
+<li>
+<div><a title="Home Theater Projectors" href="http://www.stargatecinema.com/home-theater-projectors/">Home Theater Projectors</a></div>
+</li>
+<li>
+<div><a title="Projector Screens" href="http://www.stargatecinema.com/projector-screens/">Projector Screens</a></div>
+</li>
+<li>
+<div><a title="Speakers and Subwoofers" href="http://www.stargatecinema.com/speakers-and-subwoofers/">Speakers and Subwoofers</a></div>
+</li>
+<li>
+<div><a title="Receivers &amp; Pre/Power Amps" href="http://www.stargatecinema.com/power-amps/">Receivers &amp; Pre/Power Amps</a></div>
+</li>
+<li>
+<div><a title="Remote Controls" href="http://www.stargatecinema.com/remote-controls/">Remote Controls</a></div>
+</li>
+<li>
+<div><a title="Power Conditioning" href="http://www.stargatecinema.com/power-conditioning/">Power Conditioning</a></div>
+</li>
+</ul>
+</div>
+<div class="float-sub-add_01">
+<br>
+<ul class="float-sub-list-bottom_01">
+<li><a title="Cables and Interconnects" href="http://www.stargatecinema.com/cables-and-interconnects/">Cables and Interconnects</a></li>
+</ul>
+</div>
+<div class="clearing">&nbsp;</div>
+</div>
+</div>
+<div id="float-cat-553" class="float-sub-block">
+<div class="float-sub-inner_01">
+<div class="float-sub-wrapper_01">
+<div class="float-sub-title_01"><a title="Acoustical Treatments" href="http://www.stargatecinema.com/acoustical-treatments/">Acoustical Treatments</a></div>
+<ul class="float-sub-list_01">
+<li>
+<div><a title="Home Theater Drapes" href="http://www.stargatecinema.com/home-theater-drapes/">Home Theater Drapes</a></div>
+</li>
+<li>
+<div><a title="Acoustic Panels" href="http://www.stargatecinema.com/acoustic-panels/">Acoustic Panels</a></div>
+</li>
+</ul>
+</div>
+<div class="clearing">&nbsp;</div>
+</div>
+</div>
+<div id="float-cat-447" class="float-sub-block">
+<div class="float-sub-inner_01">
+<div class="float-sub-wrapper_01">
+<div class="float-sub-title_01"><a title="Home Theater Gift Ideas" href="http://www.stargatecinema.com/home-theater-gift-ideas/">Home Theater Gift Ideas</a></div>
+<ul class="float-sub-list_01">
+<li>
+<div><a title="Specialized Gifts" href="http://www.stargatecinema.com/specialized-gifts/">Great Holiday Gift Ideas</a></div>
+</li>
+<li>
+<div><a title="Gift Ideas Under " href="http://www.stargatecinema.com/gift-ideas-under-50/">Gift Ideas Under $50</a></div>
+</li>
+<li>
+<div><a title="Gift Ideas Under 0" href="http://www.stargatecinema.com/gift-ideas-under-100/">Gift Ideas Under $100</a></div>
+</li>
+<li>
+<div><a title="Gift Ideas Under 0" href="http://www.stargatecinema.com/gift-ideas-under-150/">Gift Ideas Under $150</a></div>
+</li>
+<li>
+<div><a title="Gift Ideas Under 0" href="http://www.stargatecinema.com/gift-ideas-under-200/">Gift Ideas Under $200</a></div>
+</li>
+<li>
+<div><a title="Gift Ideas Over 0" href="http://www.stargatecinema.com/gift-ideas-over-200/">Gift Ideas Over $200</a></div>
+</li>
+<li>
+<div><a title="Gift Ideas Over 0" href="http://www.stargatecinema.com/gift-ideas-over-500/">Gift Ideas Over $500</a></div>
+</li>
+</ul>
+</div>
+<div class="clearing">&nbsp;</div>
+</div>
+</div>
+
+</div>
+</div>
+<div class="clearing">&nbsp;</div>
+<div id="center-main">
+<div id="PageContainer">
+<div id="PageContainer2">
+<div class="slide_window">
+<div class="content">
+<div class="title">Sometimes it's easier to talk through your decision to purchase home theater seating and accessories with a real person. Our product experts would be glad to assist you!</div>
+<div class="purchase">
+<div class="phonenum">Speak to a Product Expert now:<br><span style="font-size: 30px">1.866.684.3843</span></div>
+<div style="padding-left: 60px; padding-top: 10px">
+<div>We are here to help:</div>
+<div class="bold" style="margin: 6px 0">Mon - Fri 8:30 AM - 5 PM EST</div>
+<div class="bold">Sat/Sun- Closed</div>
+</div>
+</div>
+<div class="chat">
+<a id="howcanwe-chat-link" href="https://www.stargatecinema.com/help.php?section=contactus&amp;chat=1">Or Chat With Us</a>
+</div>
+<span class="close">Close X</span>
+</div>
+<div class="help_click">
+</div>
+</div>
+
+
+<div id="SpeedbarMid" style="margin-top: 0px">
+<a href="https://www.stargatecinema.com/Home-Theater-Accessories-Sale-from-Stargate-Cinema-p-62.html"><img src="resources/246/11.png" alt="" data-pagespeed-url-hash="663274322" data-original-src="https://www.stargatecinema.com/skin/stargate2/images/stargate_homepage_banner_1016x40.png"></a>
+<div class="clearing">&nbsp;</div>
+</div>
+<div id="SpeedbarBottom">
+<table cellspacing="0" cellpadding="0">
+<tbody><tr>
+<td><a title="Price Match Guarantee" href="http://www.stargatecinema.com/price-match-guarantee.html">Price Match Guarantee</a></td>
+<td><a href="https://www.stargatecinema.com/register.php#">No Sales Tax (Except CA and TX)</a></td>
+<td><a title="10 Reasons to Buy From Us" href="http://www.stargatecinema.com/10-reasons-to-buy-from-us.html">10 Reasons to Buy From Us</a></td>
+<td><a href="https://www.stargatecinema.com/10-reasons-to-buy-from-us.html">Our A+ BBB Record</a></td>
+<td><a href="https://www.stargatecinema.com/testimonials.html">Testimonials</a></td>
+<td><a title="Home Theater International Orders" href="http://www.stargatecinema.com/home-theater-international-orders.html">International Orders</a></td>
+</tr>
+</tbody></table>
+<div class="clearing">&nbsp;</div>
+</div>
+<div class="clearing">&nbsp;</div>
+<div id="BorderContent" class="two_cols">
+<div id="ContentContainer">
+<div id="ContentContainer2">
+<div id="CenterContainer">
+<div id="CenterMain">
+<div class="colpadding">
+<div class="breadcrumbs">
+<a href="http://www.stargatecinema.com/">Home</a>
+<span>::</span>
+Profile details
+<div style="float: right;">
+<a class="a2a_dd" href="https://www.addtoany.com/share#url=https%3A%2F%2Fwww.stargatecinema.com%2Fregister.php&amp;title=Profile%20details"><img src="resources/246/12.png" alt="Share/Bookmark" data-pagespeed-url-hash="176289805" srcset="resources/246/13.png 2x" data-original-src="https://static.addtoany.com/buttons/share_save_171_16.png" data-original-srcset="https://static.addtoany.com/buttons/share_save_342_32.png 2x" width="171" height="16" border="0"></a>
+</div>
+<span class="clearing">&nbsp;</span>
+</div>
+<h1>Secure login form</h1>
+<p class="text-block">In this form you can safely enter your login and password.</p>
+<div class="box noborder">
+<div class="box-content">
+<form action="https://www.stargatecinema.com/login.php" method="post" name="authform">
+<input type="hidden" name="xid_b5669" value="ab16acb9215fc245e56e741206b3e30f">
+<input type="hidden" name="is_remember" value="">
+<input type="hidden" name="mode" value="login">
+<table class="data-table" summary="Authentication" cellspacing="0">
+<tbody><tr>
+<td class="data-name"><label for="username">Username</label></td>
+<td class="data-required">*</td>
+<td>
+<input type="text" id="username" name="username" size="30" value="" data-fathom="username">
+</td>
+</tr>
+<tr>
+<td class="data-name"><label for="password">Password</label></td>
+<td class="data-required">*</td>
+<td><input type="password" id="password" name="password" size="30" maxlength="64" value="" data-fathom="password"></td>
+</tr>
+<tr>
+<td colspan="2">&nbsp;</td>
+<td class="button-row">
+<button class="button main-button" type="submit" title="Submit">
+<span class="button-right"><span class="button-left" data-fathom="next">Submit</span></span>
+</button>
+</td>
+</tr>
+<tr>
+<td colspan="2">&nbsp;</td>
+<td>
+<div class="button main-button" title="Forgot password?">
+<a href="https://www.stargatecinema.com/help.php?section=Password_Recovery">Forgot password?</a>
+</div>
+</td>
+</tr>
+</tbody></table>
+</form>
+<br>
+If you do not have an account, you can easily<br><a href="https://www.stargatecinema.com/register.php" class="Button">register here</a>
+<div class="clearing">&nbsp;</div>
+</div>
+</div> <h1>Create Profile</h1>
+
+ 
+ 
+
+
+
+
+
+<p class="register-note">
+The form below allows you to create a profile which is necessary to place orders. Do not forget that this information is essential to use our services correctly.
+<br>
+<br>
+The fields marked with <span class="data-required">*</span> are mandatory.
+</p>
+<div class="box noborder">
+<div class="box-content">
+<form action="https://www.stargatecinema.com/register.php?" method="post" name="registerform">
+<input type="hidden" name="usertype" value="C">
+<input type="hidden" name="anonymous" value="">
+<input type="hidden" name="xid_b5669" value="ab16acb9215fc245e56e741206b3e30f">
+<table class="data-table register-table" summary="Register" cellspacing="1">
+<tbody>
+<tr>
+<td colspan="3" class="register-section-title">
+<div>
+<label>Personal information</label>
+</div>
+</td>
+</tr>
+<tr>
+<td class="data-name"><label for="firstname">First name</label></td>
+<td class="data-required">*</td>
+<td>
+<input type="text" id="firstname" name="firstname" size="32" maxlength="128" value="">
+</td>
+</tr>
+<tr>
+<td class="data-name"><label for="lastname">Last name</label></td>
+<td class="data-required">*</td>
+<td>
+<input type="text" id="lastname" name="lastname" size="32" maxlength="128" value="">
+</td>
+</tr>
+<tr>
+<td class="data-name"><label for="company">Company</label></td>
+<td>&nbsp;</td>
+<td>
+<input type="text" id="company" name="company" size="32" maxlength="255" value="">
+</td>
+</tr>
+<tr>
+<td class="data-name"><label for="url">Web site</label></td>
+<td>&nbsp;</td>
+<td>
+<input type="text" id="url" name="url" size="32" maxlength="128" value="">
+</td>
+</tr>
+<tr>
+<td class="data-name"><label for="tax_number">Tax number</label></td>
+<td>&nbsp;</td>
+<td>
+<input type="text" id="tax_number" name="tax_number" size="32" maxlength="32" value="">
+</td>
+</tr>
+<tr style="display: none;">
+<td>
+
+</td>
+</tr>
+<tr>
+<td class="register-section-title" colspan="3">
+<div>
+<a name="ccinfo"></a>
+<label>Credit card information</label>
+</div>
+</td>
+</tr>
+<tr>
+<td class="data-name">
+Credit card type
+</td>
+<td>&nbsp;</td>
+<td>
+<select name="card_type[b6b8fb72c42d2eaa3c8e6b7d020e23a9]">
+<option value="VISA">Visa</option>
+<option value="MC">MasterCard</option>
+<option value="AMEX">American Express</option>
+<option value="DINO">Discover</option>
+</select>
+</td>
+</tr>
+<tr>
+<td class="data-name">Cardholder's name</td>
+<td>&nbsp;</td>
+<td>
+<input type="text" name="card_name[b6b8fb72c42d2eaa3c8e6b7d020e23a9]" size="32" maxlength="128" value="">
+</td>
+</tr>
+<tr>
+<td class="data-name">Credit card number (no spaces or dashes)</td>
+<td>&nbsp;</td>
+<td>
+<input type="text" name="card_number[b6b8fb72c42d2eaa3c8e6b7d020e23a9]" size="32" maxlength="20" value="">
+</td>
+</tr>
+<tr>
+<td class="data-name">Expiration date (month/year)</td>
+<td>&nbsp;</td>
+<td>
+<select name="card_expire_Month[b6b8fb72c42d2eaa3c8e6b7d020e23a9]">
+<option label="01" value="01">01</option>
+<option label="02" value="02">02</option>
+<option label="03" value="03" selected="selected">03</option>
+<option label="04" value="04">04</option>
+<option label="05" value="05">05</option>
+<option label="06" value="06">06</option>
+<option label="07" value="07">07</option>
+<option label="08" value="08">08</option>
+<option label="09" value="09">09</option>
+<option label="10" value="10">10</option>
+<option label="11" value="11">11</option>
+<option label="12" value="12">12</option>
+</select>
+<select name="card_expire_Year[b6b8fb72c42d2eaa3c8e6b7d020e23a9]">
+<option label="2019" value="2019" selected="selected">2019</option>
+<option label="2020" value="2020">2020</option>
+<option label="2021" value="2021">2021</option>
+<option label="2022" value="2022">2022</option>
+<option label="2023" value="2023">2023</option>
+<option label="2024" value="2024">2024</option>
+<option label="2025" value="2025">2025</option>
+<option label="2026" value="2026">2026</option>
+<option label="2027" value="2027">2027</option>
+<option label="2028" value="2028">2028</option>
+<option label="2029" value="2029">2029</option>
+</select>
+</td>
+</tr>
+<tr>
+<td class="data-name">CVV2</td>
+<td id="cvv2_star">&nbsp;</td>
+<td class="valign-middle">
+<input type="text" name="card_cvv2[b6b8fb72c42d2eaa3c8e6b7d020e23a9]" size="4" maxlength="4" value="">
+<a href="https://www.stargatecinema.com/popup_info.php?action=CVV2" class="popup-link" target="_blank"><img src="resources/246/10.gif" alt="What is it?" data-pagespeed-url-hash="894117495" data-original-src="https://www.stargatecinema.com/skin/common_files/images/spacer.gif"></a>
+</td>
+</tr>
+<tr>
+<td colspan="3" class="register-section-title">
+<div>
+<label>Account information</label>
+</div>
+</td>
+</tr>
+<tr>
+<td class="data-name"><label for="email">Email</label></td>
+<td class="data-required">*</td>
+<td>
+<input type="text" id="email" name="email" class="input-required input-email" size="32" maxlength="128" value="" autocomplete="off">
+<div id="email_note" class="note-box" style="display: none;">Make sure you enter a valid email address because the store will send you notifications to this address.</div>
+</td>
+</tr>
+<tr>
+<td class="data-name"><label for="uname">Username</label></td>
+<td class="data-required">*</td>
+<td>
+<input type="text" id="uname" name="uname" class="input-required" size="32" maxlength="32" value="" autocomplete="off">
+</td>
+</tr>
+<tr style="display:none;"><td><input type="hidden" name="password_is_modified" id="password_is_modified" value="N"></td></tr>
+<tr>
+<td class="data-name"><label for="passwd1">Password</label></td>
+<td class="data-required">*</td>
+<td>
+<input type="password" id="passwd1" name="passwd1" class="input-required" size="32" maxlength="64" value="" autocomplete="off">
+</td>
+</tr>
+<tr>
+<td class="data-name"><label for="passwd2">Confirm password</label></td>
+<td class="data-required">*</td>
+<td>
+<input type="password" id="passwd2" name="passwd2" class="input-required" size="32" maxlength="64" value="" autocomplete="off">
+<span class="validate-mark"><img src="resources/246/10.gif" alt="" data-pagespeed-url-hash="894117495" data-original-src="https://www.stargatecinema.com/skin/common_files/images/spacer.gif" width="15" height="15"></span>
+</td>
+</tr>
+<tr>
+<td colspan="3" class="register-newbie-note">
+I accept the <a href="https://www.stargatecinema.com/%7B%7Bxcart_web_dir%7D%7D%7B%7Bsep%7D%7Dpages.php?pageid=3" target="_blank">"Terms &amp; Conditions"</a>
+</td>
+</tr>
+<tr>
+<td colspan="3" class="button-row center">
+<div class="center">
+<button class="button main-button" type="submit" title="Submit">
+<span class="button-right"><span class="button-left">Submit</span></span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</form>
+All information you provide to us will be kept confidential. We will never sell, exchange or market it in any way.
+<div class="clearing">&nbsp;</div>
+</div>
+</div>
+<div class="clearing">&nbsp;</div>
+</div>
+</div>
+</div>
+<div id="LeftBar">
+<div class="box">
+<div class="box-title">Categories</div>
+<div class="box-content">
+<ul class="list">
+<li class="list-title"><a href="https://www.stargatecinema.com/register.php#" title="Shop All Categories">Shop All Categories</a></li>
+<div id="shopall-cats" class="list" style="display: none">
+<li class="highlight first"><a title="Home Theater Seating" href="http://www.stargatecinema.com/home-theater-seating/">
+Home Theater Seating (630)	</a></li>
+<li><a title="Home Theater Decor" href="http://www.stargatecinema.com/home-theater-decor/">
+Home Theater Decor (1448)	</a></li>
+<li class="highlight"><a title="Home Theater Furniture" href="http://www.stargatecinema.com/home-theater-furniture/">
+Home Theater Furniture (144)	</a></li>
+<li><a title="Popcorn Machines" href="http://www.stargatecinema.com/popcorn-machines/">
+Popcorn Machines (146)	</a></li>
+<li class="highlight"><a title="Popcorn Supplies" href="http://www.stargatecinema.com/popcorn-supplies/">
+Popcorn Supplies (214)	</a></li>
+<li><a title="Concession Equipment" href="http://www.stargatecinema.com/concession-equipment/">
+Concession Equipment (152)	</a></li>
+<li class="highlight"><a title="Movie Poster Frames, Cases" href="http://www.stargatecinema.com/movie-poster-frames-cases/">
+Movie Poster Frames, Cases (44)	</a></li>
+<li><a title="Movie Posters" href="http://www.stargatecinema.com/movie-posters/">
+Movie Posters (2)	</a></li>
+<li class="highlight"><a title="Posts and Rope, Stanchions" href="http://www.stargatecinema.com/posts-and-rope-stanchions/">
+Posts and Rope, Stanchions (104)	</a></li>
+<li><a title="" href="https://www.stargatecinema.com/home.php?cat=933">
+Lift Chair Recliners (5)	</a></li>
+<li class="highlight"><a title="Custom Movie Intro DVDs" href="http://www.stargatecinema.com/custom-movie-intro-dvds/">
+Custom Movie Intro DVDs	</a></li>
+<li><a title="The Game Room" href="http://www.stargatecinema.com/the-game-room/">
+The Game Room (598)	</a></li>
+<li class="highlight"><a title="Audio/Video Products" href="http://www.stargatecinema.com/video-products/">
+Audio/Video Products (56)	</a></li>
+<li><a title="Acoustical Treatments" href="http://www.stargatecinema.com/acoustical-treatments/">
+Acoustical Treatments (131)	</a></li>
+<li class="highlight"><a title="Personalized Home Theater" href="http://www.stargatecinema.com/personalized-home-theater/">
+Personalized Home Theater (40)	</a></li>
+<li><a title="Home Theater Gift Ideas" href="http://www.stargatecinema.com/home-theater-gift-ideas/">
+Home Theater Gift Ideas (422)	</a></li>
+<li class="highlight"><a title="New Releases" href="http://www.stargatecinema.com/new-releases/">
+New Releases (37)	</a></li>
+<li><a title="Coming Attractions!" href="http://www.stargatecinema.com/coming-attractions/">
+Coming Attractions!	</a></li>
+<li class="highlight last"><a title="2D and 3D Theater Design Services" href="http://www.stargatecinema.com/2d-and-3d-theater-design-services/">
+2D and 3D Theater Design Services (1)	</a></li>
+</div>
+</ul>
+</div>
+<div class="box-content">
+<img src="resources/246/10.gif" alt="" class="fancy-height-extender" data-pagespeed-url-hash="894117495" data-original-src="https://www.stargatecinema.com/skin/common_files/images/spacer.gif">
+
+<div id="catrootmenu" class="fancycat-icons-scheme fancycat-icons-e">
+<ul class="list">
+<li class="list-title">
+<a title="Home Theater Seating" href="http://www.stargatecinema.com/home-theater-seating/">Home Theater Seating (630)</a>
+</li>
+<li>
+<a title="" href="https://www.stargatecinema.com/home.php?cat=926">Seatcraft Home Theater Seats (81)</a>
+</li>
+<li>
+<a title="" href="https://www.stargatecinema.com/home.php?cat=938">Seatcraft Your Choice Seats (30)</a>
+</li>
+<li>
+<a title="Sofas &amp; Sectionals" href="http://www.stargatecinema.com/sofas-sectionals/">Multimedia Sofas &amp; Sectionals (142)</a>
+</li>
+<li><a title="Home Theater Seating" href="http://www.stargatecinema.com/home-theater-seating/"><b>+More Home Theater Seating</b></a></li>	<li class="hr">&nbsp;</li>
+<li class="list-title">
+<a title="Home Theater Decor" href="http://www.stargatecinema.com/home-theater-decor/">Home Theater Decor (1448)</a>
+</li>
+<li>
+<a title="Theater Signs &amp; Wall Art" href="http://www.stargatecinema.com/theater-signs-wall-art/">Theater Signs &amp; Wall Art (274)</a>
+</li>
+<li>
+<a title="Home Theater Lighting" href="http://www.stargatecinema.com/Home-Theater-Lighting-c-454/">Home Theater Lighting (485)</a>
+</li>
+<li>
+<a title="Home Theater Carpet" href="http://www.stargatecinema.com/home-theater-carpet/">Home Theater Carpet (279)</a>
+</li>
+<li><a title="Home Theater Decor" href="http://www.stargatecinema.com/home-theater-decor/"><b>+More Home Theater Decor</b></a></li>	<li class="hr">&nbsp;</li>
+<li class="list-title">
+<a title="Home Theater Furniture" href="http://www.stargatecinema.com/home-theater-furniture/">Home Theater Furniture (144)</a>
+</li>
+<li>
+<a title="Candy Counters" href="http://www.stargatecinema.com/candy-counters/">Candy Counters (2)</a>
+</li>
+<li>
+<a title="Home Theater Tables" href="http://www.stargatecinema.com/home-theater-tables/">Home Theater Tables (14)</a>
+</li>
+<li>
+<a title="Plasma &amp; TV Stands" href="http://www.stargatecinema.com/plasma-tv-stands/">Plasma &amp; TV Stands (28)</a>
+</li>
+<li><a title="Home Theater Furniture" href="http://www.stargatecinema.com/home-theater-furniture/"><b>+More Home Theater Furniture</b></a></li>	<li class="hr">&nbsp;</li>
+<li class="list-title">
+<a title="Popcorn Machines" href="http://www.stargatecinema.com/popcorn-machines/">Popcorn Machines (146)</a>
+</li>
+<li>
+<a title="Theater Style Popcorn Machines" href="http://www.stargatecinema.com/theater-style-popcorn-machines/">Theater Style Popcorn Machines (13)</a>
+</li>
+<li>
+<a title="Antique Popcorn Machines" href="http://www.stargatecinema.com/antique-popcorn-machines/">Antique Popcorn Machines (15)</a>
+</li>
+<li>
+<a title="Contemporary Popcorn Machines" href="http://www.stargatecinema.com/contemporary-popcorn-machines/">Contemporary Popcorn Machines (18)</a>
+</li>
+<li><a title="Popcorn Machines" href="http://www.stargatecinema.com/popcorn-machines/"><b>+More Popcorn Machines</b></a></li>	<li class="hr">&nbsp;</li>
+<li class="list-title">
+<a title="Popcorn Supplies" href="http://www.stargatecinema.com/popcorn-supplies/">Popcorn Supplies (214)</a>
+</li>
+<li>
+<a title="Popcorn Portion Packs" href="http://www.stargatecinema.com/popcorn-portion-packs/">Popcorn Portion Packs (19)</a>
+</li>
+<li>
+<a title="Buckets, Bags &amp; Boxes" href="http://www.stargatecinema.com/buckets-bags-boxes/">Buckets, Bags &amp; Boxes (46)</a>
+</li>
+<li>
+<a title="Popcorn Toppings" href="http://www.stargatecinema.com/popcorn-toppings/">Popcorn Toppings (26)</a>
+</li>
+<li><a title="Popcorn Supplies" href="http://www.stargatecinema.com/popcorn-supplies/"><b>+More Popcorn Supplies</b></a></li>	<li class="hr">&nbsp;</li>
+<li class="list-title">
+<a title="Concession Equipment" href="http://www.stargatecinema.com/concession-equipment/">Concession Equipment (152)</a>
+</li>
+<li>
+<a title="Snowcone Concession" href="http://www.stargatecinema.com/snowcone-concession/">Snowcone Concession (42)</a>
+</li>
+<li>
+<a title="Cotton Candy Concession" href="http://www.stargatecinema.com/cotton-candy-concession/">Cotton Candy Concession (21)</a>
+</li>
+<li>
+<a title="Hog Dog Concession" href="http://www.stargatecinema.com/hog-dog-concession/">Hog Dog Concession (28)</a>
+</li>
+<li><a title="Concession Equipment" href="http://www.stargatecinema.com/concession-equipment/"><b>+More Concession Equipment</b></a></li>	<li class="hr">&nbsp;</li>
+<li class="list-title">
+<a title="Movie Poster Frames, Cases" href="http://www.stargatecinema.com/movie-poster-frames-cases/">Movie Poster Frames, Cases (44)</a>
+</li>
+<li>
+<a title="Movie Poster Frames" href="http://www.stargatecinema.com/movie-poster-frames/">Movie Poster Frames (4)</a>
+</li>
+<li>
+<a title="Illuminated Poster Cases" href="http://www.stargatecinema.com/illuminated-poster-cases/">Illuminated Poster Cases (19)</a>
+</li>
+<li class="hr">&nbsp;</li>
+<li class="list-title">
+<a title="Movie Posters" href="http://www.stargatecinema.com/movie-posters/">Movie Posters (2)</a>
+</li>
+<li>
+<a title="Double-Sided Movie Posters" href="http://www.stargatecinema.com/double-sided-movie-posters/">Double-Sided Movie Posters</a>
+</li>
+<li>
+<a title="0 - 9 Movie Posters" href="http://www.stargatecinema.com/0-9-movie-posters/">0 - 9 Movie Posters</a>
+</li>
+<li>
+<a title="'A' Movie Posters" href="http://www.stargatecinema.com/a-movie-posters/">'A' Movie Posters</a>
+</li>
+<li><a title="Movie Posters" href="http://www.stargatecinema.com/movie-posters/"><b>+More Movie Posters</b></a></li>	<li class="hr">&nbsp;</li>
+<li class="list-title">
+<a title="Posts and Rope, Stanchions" href="http://www.stargatecinema.com/posts-and-rope-stanchions/">Posts and Rope, Stanchions (104)</a>
+</li>
+<li>
+<a title="Posts &amp; Stanchions" href="http://www.stargatecinema.com/posts-stanchions/">Posts &amp; Stanchions (5)</a>
+</li>
+<li>
+<a title="Tensabarrier Posts" href="http://www.stargatecinema.com/tensabarrier-posts/">Tensabarrier Posts (29)</a>
+</li>
+<li>
+<a title="Wooden Stanchions" href="http://www.stargatecinema.com/wooden-stanchions/">Wooden Stanchions (7)</a>
+</li>
+<li><a title="Posts and Rope, Stanchions" href="http://www.stargatecinema.com/posts-and-rope-stanchions/"><b>+More Posts and Rope, Stanchions</b></a></li>	<li class="hr">&nbsp;</li>
+<li class="list-title">
+<a title="" href="https://www.stargatecinema.com/home.php?cat=933">Lift Chair Recliners (5)</a>
+</li>
+<li class="hr">&nbsp;</li>
+<li class="list-title">
+<a title="Custom Movie Intro DVDs" href="http://www.stargatecinema.com/custom-movie-intro-dvds/">Custom Movie Intro DVDs</a>
+</li>
+<li class="hr">&nbsp;</li>
+<li class="list-title">
+<a title="The Game Room" href="http://www.stargatecinema.com/the-game-room/">The Game Room (598)</a>
+</li>
+<li>
+<a title="Gameroom and Sports Carpet" href="http://www.stargatecinema.com/gameroom-and-sports-carpet/">Game Room and Sports Carpet (97)</a>
+</li>
+<li>
+<a title="Game Room Furniture" href="http://www.stargatecinema.com/game-room-furniture/">Game Room Furniture (15)</a>
+</li>
+<li>
+<a title="Sports Team Bar Stools" href="http://www.stargatecinema.com/sports-team-bar-stools/">Sports Team Bar Stools (18)</a>
+</li>
+<li><a title="The Game Room" href="http://www.stargatecinema.com/the-game-room/"><b>+More The Game Room</b></a></li>	<li class="hr">&nbsp;</li>
+<li class="list-title">
+<a title="Audio/Video Products" href="http://www.stargatecinema.com/video-products/">Audio/Video Products (56)</a>
+</li>
+<li>
+<a title="Tactile Sound Transducers" href="http://www.stargatecinema.com/tactile-sound-transducers/">Tactile Sound Transducers (52)</a>
+</li>
+<li>
+<a title="Home Theater Packages" href="http://www.stargatecinema.com/home-theater-packages/">Home Theater Packages (6)</a>
+</li>
+<li>
+<a title="Home Theater Projectors" href="http://www.stargatecinema.com/home-theater-projectors/">Home Theater Projectors (12)</a>
+</li>
+<li><a title="Audio/Video Products" href="http://www.stargatecinema.com/video-products/"><b>+More Audio/Video Products</b></a></li>	<li class="hr">&nbsp;</li>
+<li class="list-title">
+<a title="Acoustical Treatments" href="http://www.stargatecinema.com/acoustical-treatments/">Acoustical Treatments (131)</a>
+</li>
+<li>
+<a title="Home Theater Drapes" href="http://www.stargatecinema.com/home-theater-drapes/">Home Theater Drapes (120)</a>
+</li>
+<li>
+<a title="Acoustic Panels" href="http://www.stargatecinema.com/acoustic-panels/">Acoustic Panels (5)</a>
+</li>
+<li><a title="Acoustical Treatments" href="http://www.stargatecinema.com/acoustical-treatments/"><b>+More Acoustical Treatments</b></a></li>	<li class="hr">&nbsp;</li>
+<li class="list-title">
+<a title="Personalized Home Theater" href="http://www.stargatecinema.com/personalized-home-theater/">Personalized Home Theater (40)</a>
+</li>
+<li class="hr">&nbsp;</li>
+<li class="list-title">
+<a title="Home Theater Gift Ideas" href="http://www.stargatecinema.com/home-theater-gift-ideas/">Home Theater Gift Ideas (422)</a>
+</li>
+<li>
+<a title="Specialized Gifts" href="http://www.stargatecinema.com/specialized-gifts/">Great Holiday Gift Ideas (42)</a>
+</li>
+<li>
+<a title="Gift Ideas Under " href="http://www.stargatecinema.com/gift-ideas-under-50/">Gift Ideas Under $50 (63)</a>
+</li>
+<li>
+<a title="Gift Ideas Under 0" href="http://www.stargatecinema.com/gift-ideas-under-100/">Gift Ideas Under $100 (98)</a>
+</li>
+<li><a title="Home Theater Gift Ideas" href="http://www.stargatecinema.com/home-theater-gift-ideas/"><b>+More Home Theater Gift Ideas</b></a></li>	<li class="hr">&nbsp;</li>
+<li class="list-title">
+<a title="New Releases" href="http://www.stargatecinema.com/new-releases/">New Releases (37)</a>
+</li>
+<li class="hr">&nbsp;</li>
+<li class="list-title">
+<a title="Coming Attractions!" href="http://www.stargatecinema.com/coming-attractions/">Coming Attractions!</a>
+</li>
+<li class="hr">&nbsp;</li>
+<li class="list-title">
+<a title="2D and 3D Theater Design Services" href="http://www.stargatecinema.com/2d-and-3d-theater-design-services/">2D and 3D Theater Design Services (1)</a>
+</li>
+</ul>
+<div class="clearing"></div>
+</div>
+<div class="categories-clearing"></div>
+<div class="clearing">&nbsp;</div>
+</div>
+</div>
+</div>
+<div id="RightBar">
+</div>
+</div>
+</div>
+<div class="clearing">&nbsp;</div>
+</div>
+<div class="clearing">&nbsp;</div>
+</div>
+</div>
+<div id="FooterBG">
+<div id="FooterWrapper">
+<div id="Footer">
+<div id="FooterInner">
+<div id="BottomBar">
+<div class="listWrapper">
+<ul class="bottom-list">
+<li class="list-title">Customer Care</li>
+<li><a href="https://www.stargatecinema.com/help.php?section=contactus&amp;mode=update">Contact us</a></li>
+<li><a title="Security and Privacy" href="http://www.stargatecinema.com/security-and-privacy.html">Security &amp; Privacy</a></li>
+<li><a title="Terms and Conditions" href="http://www.stargatecinema.com/terms-and-conditions.html">Terms &amp; Conditions</a></li>
+<li><a title="Frequently Asked Questions (FAQ)" href="http://www.stargatecinema.com/frequently-asked-questions-faq.html">Frequently Asked Questions</a></li>
+<li><a title="About Our Site" href="http://www.stargatecinema.com/about-our-site.html">About Our Site</a></li>
+<li><a title="Shipping Policy" href="http://www.stargatecinema.com/shipping-policy.html">Shipping Policy</a></li>
+<li><a title="Returns" href="http://www.stargatecinema.com/returns.html">Returns</a></li>
+</ul>
+<ul class="bottom-list">
+<li class="list-title">Helpful Information</li>
+<li><a title="Our Local Showroom" href="http://www.stargatecinema.com/our-local-showroom.html">Our Local Showroom</a></li>
+<li><a title="Home Theater Glossary" href="http://www.stargatecinema.com/home-theater-glossary.html">Home Theater Glossary</a></li>
+<li><a title="Popcorn Recipes" href="http://www.stargatecinema.com/popcorn-recipes.html">Popcorn Recipes</a></li>
+<li><a title="Palliser Seating Information" href="http://www.stargatecinema.com/palliser-seating-information.html">Palliser Seating Information</a></li>
+<li><a title="Selecting Home Theater Draperies" href="http://www.stargatecinema.com/selecting-home-theater-draperies.html">Selecting Home Theater Draperies</a></li>
+<li><a title="Extreme Makeover Home Edition" href="http://www.stargatecinema.com/extreme-makeover-home-edition.html">Extreme Makeover Home Edition</a></li>
+<li><a title="10 Reasons to Buy From Us" href="http://www.stargatecinema.com/10-reasons-to-buy-from-us.html">10 Reasons to Buy From Us</a></li>
+<li><a title="Price Match Guarantee" href="http://www.stargatecinema.com/price-match-guarantee.html">Price Match Guarantee</a></li>
+<li><a title="Our Featured Brands" href="http://www.stargatecinema.com/our-featured-brands.html">Our Featured Brands</a></li>
+<li><a title="Home Theater Product Information" href="http://www.stargatecinema.com/home-theater-product-information.html">Home Theater Product Information</a></li>
+<li><a title="How to Choose Home Theater Seating" href="http://www.stargatecinema.com/how-to-choose-home-theater-seating.html">How to Choose Home Theater Seating</a></li>
+<li><a title="How to Measure Carpet" href="http://www.stargatecinema.com/how-to-measure-carpet.html">How to Measure Carpet</a></li>
+<li><a title="Why Choose Power Recline?" href="http://www.stargatecinema.com/why-choose-power-recline.html">Why Choose Power Recline?</a></li>
+<li><a title="Home Theater Lighting" href="https://www.stargatecinema.com/pages.php?pageid=207">Home Theater Lighting</a></li>
+<li><a href="https://www.stargatecinema.com/sitemap.php">Site Map</a></li>
+</ul>
+<ul class="bottom-list">
+<li class="list-title">Shop</li>
+<li>
+<a href="https://www.stargatecinema.com/giftcert.php">Gift certificates</a>
+</li>	<li><a href="https://www.stargatecinema.com/cart.php?mode=checkout">Checkout</a></li>
+<li><a href="https://www.stargatecinema.com/cart.php">My Shopping Cart</a></li>
+<li><a href="https://www.stargatecinema.com/login.php" title="Sign in" id="href_Sign_in">Login</a></li>
+<li><a href="https://www.stargatecinema.com/register.php">Register</a></li>
+<li><a href="https://www.stargatecinema.com/cart.php?mode=wishlist">Wish list</a></li>
+<li><a href="https://www.stargatecinema.com/giftreg_manage.php">Gift registry</a></li>
+</ul>
+<ul class="bottom-list">
+<li class="list-title" style="text-align: center; text-transform: capitalize">Payment methods</li>
+<li style="text-align: center;"><img data-pagespeed-lazy-src="/skin/stargate2/images/payment.png" alt="" data-pagespeed-url-hash="3156447482" src="resources/246/14.gif" data-pagespeed-lazy-replaced-functions="1" data-original-src="https://4seating.com/media/1.gif"></li>
+</ul>
+</div>
+<div class="clearing">&nbsp;</div>
+</div>
+<div id="FooterContent">
+<img id="FooterLogo" data-pagespeed-lazy-src="/skin/stargate2/images/sgs-footer-logo.png" alt="" data-pagespeed-url-hash="3430367107" src="resources/246/14.gif" data-pagespeed-lazy-replaced-functions="1" data-original-src="https://4seating.com/media/1.gif">
+<div id="FooterMenu">
+<a title="Home Theater Seating" href="http://www.stargatecinema.com/home-theater-seating/">Home Theater Seating</a>&nbsp;|
+<a title="Home Theater Decor" href="http://www.stargatecinema.com/home-theater-decor/">Home Theater Decor</a>&nbsp;|
+<a title="Home Theater Furniture" href="http://www.stargatecinema.com/home-theater-furniture/">Home Theater Furniture</a>&nbsp;|
+<a title="Popcorn Machines" href="http://www.stargatecinema.com/popcorn-machines/">Popcorn Machines</a>&nbsp;|
+<a title="Popcorn Supplies" href="http://www.stargatecinema.com/popcorn-supplies/">Popcorn Supplies</a>&nbsp;|
+<a title="Concession Equipment" href="http://www.stargatecinema.com/concession-equipment/">Concession Equipment</a>&nbsp;|
+<a title="Movie Poster Frames, Cases" href="http://www.stargatecinema.com/movie-poster-frames-cases/">Movie Poster Frames, Cases</a>&nbsp;|
+<a title="Movie Posters" href="http://www.stargatecinema.com/movie-posters/">Movie Posters</a>&nbsp;|
+<a title="Posts and Rope, Stanchions" href="http://www.stargatecinema.com/posts-and-rope-stanchions/">Posts and Rope, Stanchions</a>&nbsp;|
+<a title="" href="https://www.stargatecinema.com/home.php?cat=933">Lift Chair Recliners</a>&nbsp;|
+<a title="Custom Movie Intro DVDs" href="http://www.stargatecinema.com/custom-movie-intro-dvds/">Custom Movie Intro DVDs</a>&nbsp;|
+<a title="The Game Room" href="http://www.stargatecinema.com/the-game-room/">The Game Room</a>&nbsp;|
+<a title="Audio/Video Products" href="http://www.stargatecinema.com/video-products/">Audio/Video Products</a>&nbsp;|
+<a title="Acoustical Treatments" href="http://www.stargatecinema.com/acoustical-treatments/">Acoustical Treatments</a>&nbsp;|
+<a title="Personalized Home Theater" href="http://www.stargatecinema.com/personalized-home-theater/">Personalized Home Theater</a>&nbsp;|
+<a title="Home Theater Gift Ideas" href="http://www.stargatecinema.com/home-theater-gift-ideas/">Home Theater Gift Ideas</a>&nbsp;|
+<a title="New Releases" href="http://www.stargatecinema.com/new-releases/">New Releases</a>&nbsp;|
+<a title="Coming Attractions!" href="http://www.stargatecinema.com/coming-attractions/">Coming Attractions!</a>&nbsp;|
+<a title="2D and 3D Theater Design Services" href="http://www.stargatecinema.com/2d-and-3d-theater-design-services/">2D and 3D Theater Design Services</a>&nbsp;|
+</div>
+<div class="copyright">Copyright © 2002-2019 Stargate Cinema
+</div>
+<div class="clearing">&nbsp;</div>
+</div>
+
+
+
+<iframe src="https://pixel.fetchback.com/serve/fb/pdc?cat=&amp;name=landing&amp;sid=1253" scrolling="no" marginheight="0" marginwidth="0" width="1" height="1" frameborder="0"></iframe>
+</div>
+</div>
+<div class="clearing">&nbsp;</div>
+</div>
+</div>
+</div><div style="position: static;"><div class="a2a_overlay" id="a2a_overlay"></div><div id="a2a_modal" class="a2a_modal" role="dialog" tabindex="-1" aria-label="" style="display:none"><div class="a2a_modal_body a2a_menu" id="a2a_copy_link" style="display:none"><span id="a2a_copy_link_icon" class="a2a_svg a2a_s_link" style="background-color:#0166ff"><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill="#FFF" d="M24.4 21.18c0-.36-.1-.67-.36-.92l-2.8-2.8a1.24 1.24 0 0 0-.92-.38c-.38 0-.7.14-.97.43.02.04.1.12.25.26l.3.3.2.24c.08.12.14.24.17.35.03.1.05.23.05.37 0 .36-.13.66-.38.92a1.25 1.25 0 0 1-.92.37 1.4 1.4 0 0 1-.37-.03 1.06 1.06 0 0 1-.35-.18 2.27 2.27 0 0 1-.25-.2 6.82 6.82 0 0 1-.3-.3l-.24-.25c-.3.28-.44.6-.44.98 0 .36.13.66.38.92l2.78 2.8c.24.23.54.35.9.35.37 0 .68-.12.93-.35l1.98-1.97c.26-.25.38-.55.38-.9zm-9.46-9.5c0-.37-.13-.67-.38-.92l-2.78-2.8a1.24 1.24 0 0 0-.9-.37c-.36 0-.67.1-.93.35L7.97 9.92c-.26.25-.38.55-.38.9 0 .36.1.67.37.92l2.8 2.8c.24.25.55.37.92.37.36 0 .7-.13.96-.4-.03-.04-.1-.12-.26-.26s-.24-.23-.3-.3a2.67 2.67 0 0 1-.2-.24 1.05 1.05 0 0 1-.17-.35 1.4 1.4 0 0 1-.04-.37c0-.36.1-.66.36-.9.26-.26.56-.4.92-.4.14 0 .26.03.37.06.12.03.23.1.35.17.1.1.2.16.25.2l.3.3.24.26c.3-.28.44-.6.44-.98zM27 21.17c0 1.07-.38 2-1.15 2.73l-1.98 1.98c-.74.75-1.66 1.12-2.73 1.12-1.1 0-2-.38-2.75-1.14l-2.8-2.8c-.74-.74-1.1-1.65-1.1-2.73 0-1.1.38-2.04 1.17-2.82l-1.18-1.17c-.8.8-1.72 1.18-2.82 1.18-1.08 0-2-.36-2.75-1.12l-2.8-2.8C5.38 12.8 5 11.9 5 10.82c0-1.08.38-2 1.15-2.74L8.13 6.1C8.87 5.37 9.78 5 10.86 5c1.1 0 2 .38 2.75 1.15l2.8 2.8c.74.73 1.1 1.65 1.1 2.72 0 1.1-.38 2.05-1.17 2.82l1.18 1.18c.8-.8 1.72-1.2 2.82-1.2 1.08 0 2 .4 2.75 1.14l2.8 2.8c.76.76 1.13 1.68 1.13 2.76z"></path></svg></span><input id="a2a_copy_link_text" type="text" title="Copy link" readonly=""><div id="a2a_copy_link_copied">✓</div></div><div class="a2a_modal_body a2a_menu a2a_thanks" id="a2a_thanks" style="display:none"><div class="a2a_localize" data-a2a-localize="inner,ThanksForSharing">Thanks for sharing!</div></div></div><div class="a2a_menu a2a_full a2a_localize" id="a2apage_full" role="dialog" tabindex="-1" aria-label="Share" data-a2a-localize="title,Share"><div class="a2a_full_header"><div id="a2apage_find_container" class="a2a_menu_find_container"><input id="a2apage_find" class="a2a_menu_find a2a_localize" type="text" autocomplete="off" title="Find any service" data-a2a-localize="title,FindAnyServiceToAddTo"><span id="a2apage_find_icon" class="a2a_svg a2a_s_find"><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="#CCC" d="M19.7 18.2l-4.5-4.5c.7-1.1 1.2-2.3 1.2-3.6 0-3.5-2.8-6.3-6.3-6.3s-6.3 2.8-6.3 6.3 2.8 6.3 6.3 6.3c1.4 0 2.6-.4 3.6-1.2l4.5 4.5c.6.6 1.3.7 1.7.2.5-.4.4-1.1-.2-1.7zm-9.6-3.6c-2.5 0-4.5-2.1-4.5-4.5 0-2.5 2.1-4.5 4.5-4.5 2.5 0 4.5 2.1 4.5 4.5s-2 4.5-4.5 4.5z"></path></svg></span></div></div><div class="a2a_full_services" id="a2apage_full_services" role="presentation"><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#facebook" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_facebook" style="background-color: rgb(59, 89, 152);"></span>Facebook </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#twitter" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_twitter" style="background-color: rgb(85, 172, 238);"></span>Twitter </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#email" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_email" style="background-color: rgb(1, 102, 255);"></span>Email </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#pinterest" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_pinterest" style="background-color: rgb(189, 8, 28);"></span>Pinterest </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#linkedin" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_linkedin" style="background-color: rgb(0, 123, 181);"></span>LinkedIn </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#reddit" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_reddit" style="background-color: rgb(255, 69, 0);"></span>Reddit </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#whatsapp" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_whatsapp" style="background-color: rgb(18, 175, 10);"></span>WhatsApp </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#google_gmail" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_gmail" style="background-color: rgb(221, 83, 71);"></span>Gmail </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#telegram" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_telegram" style="background-color: rgb(44, 165, 224);"></span>Telegram </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#pocket" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_pocket" style="background-color: rgb(238, 64, 86);"></span>Pocket </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#mix" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_mix" style="background-color: rgb(255, 130, 38);"></span>Mix </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#tumblr" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_tumblr" style="background-color: rgb(53, 70, 92);"></span>Tumblr </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#amazon_wish_list" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_amazon" style="background-color: rgb(255, 153, 0);"></span>Amazon Wish List </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#aol_mail" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_aol" style="background-color: rgb(42, 42, 42);"></span>AOL Mail </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#balatarin" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_balatarin" style="background-color: rgb(7, 153, 72);"></span>Balatarin </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#bibsonomy" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_bibsonomy" style="background-color: rgb(42, 42, 42);"></span>BibSonomy </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#bitty_browser" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_bitty" style="background-color: rgb(153, 153, 153);"></span>Bitty Browser </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#blinklist" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_blinklist" style="background-color: rgb(61, 60, 59);"></span>Blinklist </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#blogger" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_blogger" style="background-color: rgb(253, 163, 82);"></span>Blogger </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#blogmarks" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_blogmarks" style="background-color: rgb(83, 83, 83);"></span>BlogMarks </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#bookmarks_fr" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_bookmarks_fr" style="background-color: rgb(150, 192, 68);"></span>Bookmarks.fr </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#box_net" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_box" style="background-color: rgb(26, 116, 176);"></span>Box.net </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#buffer" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_buffer" style="background-color: rgb(42, 42, 42);"></span>Buffer </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#care2_news" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_care2" style="background-color: rgb(110, 180, 63);"></span>Care2 News </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#citeulike" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_citeulike" style="background-color: rgb(39, 129, 205);"></span>CiteULike </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#copy_link" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_link" style="background-color: rgb(1, 102, 255);"></span>Copy Link </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#design_float" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_designfloat" style="background-color: rgb(138, 200, 255);"></span>Design Float </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#diary_ru" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_diary_ru" style="background-color: rgb(145, 45, 49);"></span>Diary.Ru </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#diaspora" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_diaspora" style="background-color: rgb(46, 52, 54);"></span>Diaspora </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#digg" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_digg" style="background-color: rgb(42, 42, 42);"></span>Digg </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#diigo" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_diigo" style="background-color: rgb(74, 139, 202);"></span>Diigo </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#douban" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_douban" style="background-color: rgb(0, 119, 17);"></span>Douban </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#draugiem" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_draugiem" style="background-color: rgb(255, 102, 0);"></span>Draugiem </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#dzone" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_dzone" style="background-color: rgb(130, 194, 81);"></span>DZone </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#evernote" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_evernote" style="background-color: rgb(0, 168, 45);"></span>Evernote </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#facebook_messenger" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_facebook_messenger" style="background-color: rgb(0, 132, 255);"></span>Facebook Messenger </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#fark" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_fark" style="background-color: rgb(85, 85, 85);"></span>Fark </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#flipboard" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_flipboard" style="background-color: rgb(204, 0, 0);"></span>Flipboard </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#folkd" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_folkd" style="background-color: rgb(15, 112, 178);"></span>Folkd </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#google_bookmarks" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_google" style="background-color: rgb(66, 133, 244);"></span>Google Bookmarks </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#google_classroom" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_google_classroom" style="background-color: rgb(255, 193, 18);"></span>Google Classroom </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#google_plus" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_google_plus" style="background-color: rgb(221, 75, 57);"></span>Google+ </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#hacker_news" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_y18" style="background-color: rgb(255, 102, 0);"></span>Hacker News </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#hatena" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_hatena" style="background-color: rgb(0, 166, 219);"></span>Hatena </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#houzz" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_houzz" style="background-color: rgb(122, 193, 67);"></span>Houzz </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#instapaper" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_instapaper" style="background-color: rgb(42, 42, 42);"></span>Instapaper </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#kakao" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_kakao" style="background-color: rgb(252, 183, 0);"></span>Kakao </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#kik" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_kik" style="background-color: rgb(42, 42, 42);"></span>Kik </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#kindle_it" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_kindle" style="background-color: rgb(42, 42, 42);"></span>Kindle It </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#known" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_known" style="background-color: rgb(42, 42, 42);"></span>Known </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#line" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_line" style="background-color: rgb(0, 195, 0);"></span>Line </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#livejournal" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_livejournal" style="background-color: rgb(17, 49, 64);"></span>LiveJournal </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#mail_ru" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_mail_ru" style="background-color: rgb(53, 111, 172);"></span>Mail.Ru </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#mastodon" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_mastodon" style="background-color: rgb(43, 144, 217);"></span>Mastodon </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#mendeley" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_mendeley" style="background-color: rgb(167, 8, 5);"></span>Mendeley </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#meneame" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_meneame" style="background-color: rgb(255, 125, 18);"></span>Meneame </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#mewe" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_mewe" style="background-color: rgb(0, 125, 161);"></span>MeWe </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#mixi" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_mixi" style="background-color: rgb(209, 173, 90);"></span>Mixi </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#myspace" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_myspace" style="background-color: rgb(42, 42, 42);"></span>MySpace </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#netvouz" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_netvouz" style="background-color: rgb(102, 204, 51);"></span>Netvouz </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#odnoklassniki" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_odnoklassniki" style="background-color: rgb(242, 114, 12);"></span>Odnoklassniki </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#outlook_com" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_outlook_com" style="background-color: rgb(0, 114, 198);"></span>Outlook.com </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#papaly" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_papaly" style="background-color: rgb(58, 192, 246);"></span>Papaly </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#pinboard" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_pinboard" style="background-color: rgb(19, 65, 222);"></span>Pinboard </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#plurk" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_plurk" style="background-color: rgb(207, 104, 47);"></span>Plurk </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#print" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_print" style="background-color: rgb(1, 102, 255);"></span>Print </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#printfriendly" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_printfriendly" style="background-color: rgb(109, 159, 0);"></span>PrintFriendly </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#protopage_bookmarks" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_protopage" style="background-color: rgb(65, 63, 255);"></span>Protopage Bookmarks </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#pusha" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_pusha" style="background-color: rgb(0, 114, 184);"></span>Pusha </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#qzone" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_qzone" style="background-color: rgb(43, 130, 217);"></span>Qzone </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#rediff" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_rediff" style="background-color: rgb(210, 0, 0);"></span>Rediff MyPage </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#refind" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_refind" style="background-color: rgb(20, 146, 239);"></span>Refind </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#renren" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_renren" style="background-color: rgb(0, 94, 172);"></span>Renren </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#sina_weibo" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_sina_weibo" style="background-color: rgb(230, 22, 45);"></span>Sina Weibo </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#sitejot" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_sitejot" style="background-color: rgb(255, 200, 8);"></span>SiteJot </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#skype" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_skype" style="background-color: rgb(0, 175, 240);"></span>Skype </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#slashdot" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_slashdot" style="background-color: rgb(0, 66, 66);"></span>Slashdot </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#sms" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_sms" style="background-color: rgb(108, 190, 69);"></span>SMS </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#stocktwits" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_stocktwits" style="background-color: rgb(64, 87, 111);"></span>StockTwits </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#svejo" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_svejo" style="background-color: rgb(91, 212, 40);"></span>Svejo </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#symbaloo_bookmarks" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_symbaloo" style="background-color: rgb(109, 168, 247);"></span>Symbaloo Bookmarks </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#threema" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_threema" style="background-color: rgb(42, 42, 42);"></span>Threema </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#trello" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_trello" style="background-color: rgb(0, 121, 191);"></span>Trello </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#tuenti" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_tuenti" style="background-color: rgb(0, 117, 201);"></span>Tuenti </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#twiddla" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_twiddla" style="background-color: rgb(42, 42, 42);"></span>Twiddla </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#typepad_post" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_typepad" style="background-color: rgb(210, 222, 97);"></span>TypePad Post </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#viadeo" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_viadeo" style="background-color: rgb(42, 42, 42);"></span>Viadeo </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#viber" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_viber" style="background-color: rgb(124, 82, 158);"></span>Viber </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#vk" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_vk" style="background-color: rgb(88, 126, 163);"></span>VK </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#wanelo" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_wanelo" style="background-color: rgb(156, 176, 146);"></span>Wanelo </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#wechat" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_wechat" style="background-color: rgb(123, 179, 46);"></span>WeChat </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#wordpress" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_wordpress" style="background-color: rgb(70, 70, 70);"></span>WordPress </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#wykop" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_wykop" style="background-color: rgb(54, 125, 169);"></span>Wykop </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#xing" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_xing" style="background-color: rgb(22, 91, 102);"></span>XING </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#yahoo_mail" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_yahoo" style="background-color: rgb(64, 0, 144);"></span>Yahoo Mail </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#yoolink" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_yoolink" style="background-color: rgb(162, 197, 56);"></span>Yoolink </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#yummly" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_yummly" style="background-color: rgb(225, 97, 32);"></span>Yummly </a><i class="a2a_i"></i><i class="a2a_i"></i></div><div class="a2a_full_footer"><a href="https://www.addtoany.com/" title="Share Buttons" rel="noopener" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_a2a" style="background-color:#0166ff"><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><g fill="#FFF"><path d="M14 7h4v18h-4z"></path><path d="M7 14h18v4H7z"></path></g></svg></span>AddToAny</a></div></div><div id="a2apage_dropdown" class="a2a_menu a2a_mini a2a_localize" tabindex="-1" aria-label="Share" data-a2a-localize="label,Share" style="display:none"><div id="a2apage_title_container" class="a2a_menu_title_container" style="display:none"><div id="a2apage_title" class="a2a_menu_title"></div></div><div class="a2a_mini_services" id="a2apage_mini_services"><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#facebook" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_facebook" style="background-color: rgb(59, 89, 152);"></span>Facebook </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#twitter" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_twitter" style="background-color: rgb(85, 172, 238);"></span>Twitter </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#email" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_email" style="background-color: rgb(1, 102, 255);"></span>Email </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#pinterest" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_pinterest" style="background-color: rgb(189, 8, 28);"></span>Pinterest </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#linkedin" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_linkedin" style="background-color: rgb(0, 123, 181);"></span>LinkedIn </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#reddit" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_reddit" style="background-color: rgb(255, 69, 0);"></span>Reddit </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#whatsapp" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_whatsapp" style="background-color: rgb(18, 175, 10);"></span>WhatsApp </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#google_gmail" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_gmail" style="background-color: rgb(221, 83, 71);"></span>Gmail </a></div><div id="a2apage_cols_container" class="a2a_cols_container"><div class="a2a_col1" id="a2apage_col1"></div><div id="a2apage_2_col1" style="display:none"><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#email" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_email" style="background-color: rgb(1, 102, 255);"></span>Email </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#google_gmail" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_gmail" style="background-color: rgb(221, 83, 71);"></span>Gmail </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#aol_mail" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_aol" style="background-color: rgb(42, 42, 42);"></span>AOL Mail </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#outlook_com" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_outlook_com" style="background-color: rgb(0, 114, 198);"></span>Outlook.com </a><a rel="nofollow noopener" class="a2a_i" href="https://www.stargatecinema.com/#yahoo_mail" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_yahoo" style="background-color: rgb(64, 0, 144);"></span>Yahoo Mail </a></div><div class="a2a_clear"></div></div><div class="a2apage_wide a2a_wide"><a href="" id="a2apage_show_more_less" class="a2a_menu_show_more_less a2a_more a2a_localize" title="Show all" data-a2a-localize="title,ShowAll"><span class="a2a_svg a2a_s__default a2a_s_a2a" style="background-color:#0166ff"><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><g fill="#FFF"><path d="M14 7h4v18h-4z"></path><path d="M7 14h18v4H7z"></path></g></svg></span><span class="a2a_localize" data-a2a-localize="inner,More">More…</span></a></div></div><div style="height: 1px; width: 1px; position: absolute; z-index: 100000; top: 0px; visibility: hidden;"><iframe id="a2apage_sm_ifr" style="height: 1px; width: 1px; border: 0px none; left: 0px; top: 0px; position: absolute; z-index: 100000; display: none;" title="AddToAny Utility Frame" transparency="true" allowtransparency="true" src="resources/246/15.html" data-original-src="https://static.addtoany.com/menu/sm.21.html#type=page&amp;event=load&amp;url=https%3A%2F%2Fwww.stargatecinema.com%2Fregister.php&amp;referrer=https%3A%2F%2Fwww.stargatecinema.com%2F" width="1" height="1" frameborder="0"></iframe></div></div>
+
+
+
+
+
+
+
+</body></html>
