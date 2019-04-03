@@ -1,0 +1,52 @@
+Smells:
+
+Username:
+1:
+<input type=email data-codeception-id=login-email-input name=email>
+ancestor data-hypernova-key="login_main_page"
+sibling <header class="LoginHeaderWide">
+ancestor <section class="LoginPage">
+<form class="LoginCreate-loginForm" action=".../account"
+
+5:
+<form class="cia-sign-on-form" name="ciaSignOn">
+linked label contents: "Email Address"
+<input type=email>
+<input name="email_CQa3I5u48cEghgJtNSqAMYpoRXZg40H2dgVpOxgMRQjn%2F%2BGnnK65YhkHLdR6kfkJ">
+near and below in markup <h1 class="cia-sign-on__heading">Sign In to BestBuy.com</h1>
+
+26:
+<input name="username" id="input_username">
+ancestor <div class="login_row">
+ancestor <div class="loginbox">
+ancestor <div class="loginbox_left">
+ancestor <div class="loginbox_content">
+near and below in markup <h2>Sign in</h2>
+<form id="login_form" name="logon">
+
+37:
+<input name="loginName" data-auid="loginPage_field_LoginName">
+linked label contents: "Login name or email"
+<form name="loginForm" action=".../account"
+ancestor <div id="checkoutLogin">
+ancestor <div class="normal_login">
+
+119:
+<input id="username" name="username" for="username" title="Please enter your username">
+linked label contents: "Username"
+ancestor <div class="cssmod_usernameField_234234">
+<form id="loginForm" class="member-login-form">
+ancestor <div class="cssmod_memberLogin_sdf987">
+ancestor <div class="cssmod_loginWrapper_sjd987 loginWrapper">
+
+Patterns observed so far:
+KEYWORDS = email, login, sign-on, signOn, username
+<input name; id; title; or, fairly frequently, other attrs> contains KEYWORDS
+ancestor classes and IDs (and, rarely, other attrs) contain KEYWORDS
+<input type=email>
+<form action="...../account">
+<form attrs=KEYWORDS>
+linked label contents: KEYWORDS
+near and below <hN> containing KEYWORDS
+
+Try with and without one feature per keyword.
