@@ -1,6 +1,7 @@
 Smells:
 
 Username:
+Suspected patterns:
 1:
 <input type=email data-codeception-id=login-email-input name=email>
 ancestor data-hypernova-key="login_main_page"
@@ -39,9 +40,9 @@ ancestor <div class="cssmod_usernameField_234234">
 ancestor <div class="cssmod_memberLogin_sdf987">
 ancestor <div class="cssmod_loginWrapper_sjd987 loginWrapper">
 
-Patterns observed so far:
+Actual patterns observed so far:
 KEYWORDS = email, login, sign-on, signOn, username
-<input name; id; title; or, fairly frequently, other attrs> contains KEYWORDS
+√ <input name; id; title; or, fairly frequently, other attrs> contains KEYWORDS
 ancestor classes and IDs (and, rarely, other attrs) contain KEYWORDS
 <input type=email>
 <form action="...../account">
@@ -50,3 +51,11 @@ linked label contents: KEYWORDS
 near and below <hN> containing KEYWORDS
 
 Try with and without one feature per keyword.
+
+254:
+Gets the wrong email field: a hidden one from a hidden "subscribe" popup.
+Add a smell for visibility.
+Maybe break off email as a separate smell, separate from other keywords.
+
+440:
+Has a concerningly low confidence, though it succeeds pagewise.

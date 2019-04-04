@@ -1,4 +1,5 @@
 import {ruleset, rule, dom, type, score, out} from 'fathom-web';
+import {isVisible} from 'fathom-web/utilsForFrontend';
 
 
 /**
@@ -19,11 +20,15 @@ trainees.set(
     // often go behind modal popups
     'username',
     {coeffs: new Map([  // [rule name, coefficient]
-        ['1Keyword', 3.418416976928711],
-        ['2Keywords', 5.58962345123291],
-        ['3Keywords', 0.8764145374298096],
-        ['4Keywords', 0.7827615737915039]]),
-    // Bias: -10.107586860656738
+        ['1Keyword', 3.6806068420410156],
+        ['2Keywords', 5.163995742797852],
+        ['3Keywords', 1.2049275636672974],
+        ['4Keywords', 0.9653778076171875],
+        ['visible', 9.1512451171875]]),
+    // Bias: -18.908517837524414
+
+     viewportSize: {width: 1100, height: 900},
+     // The content-area size to use while training.
 
      vectorType: 'username',
      // The type of node to extract features from when using the Vectorizer
@@ -71,6 +76,8 @@ trainees.set(
                 rule(type('username'), score(fnode => Number(numAttrMatches(fnode.element, keywordRegex) >= 2)), {name: '2Keywords'}),
                 rule(type('username'), score(fnode => Number(numAttrMatches(fnode.element, keywordRegex) >= 3)), {name: '3Keywords'}),
                 rule(type('username'), score(fnode => Number(numAttrMatches(fnode.element, keywordRegex) >= 4)), {name: '4Keywords'}),
+                // TODO: Turn this into a when():
+                rule(type('username'), score(fnode => Number(isVisible(fnode.element))), {name: 'visible'}),
                 rule(type('username').max(), out('username'))
             ]);
             return rules;
