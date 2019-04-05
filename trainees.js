@@ -20,12 +20,12 @@ trainees.set(
     // often go behind modal popups
     'username',
     {coeffs: new Map([  // [rule name, coefficient]
-        ['1Keyword', 3.6806068420410156],
-        ['2Keywords', 5.163995742797852],
-        ['3Keywords', 1.2049275636672974],
-        ['4Keywords', 0.9653778076171875],
-        ['visible', 9.1512451171875]]),
-    // Bias: -18.908517837524414
+        ['1Keyword', 4.413244724273682],
+        ['2Keywords', 3.875072717666626],
+        ['3Keywords', 1.2041250467300415],
+        ['4Keywords', 0.9650816917419434],
+    ]),
+    // Bias: -9.204758644104004
 
      viewportSize: {width: 1100, height: 900},
      // The content-area size to use while training.
@@ -43,7 +43,7 @@ trainees.set(
              * string.
              */
             function numMatches(regex, string) {
-                return (string.match(regex) || []).length;
+                return (string.match(regex) || []).length;  // Optimization: split benchmarks faster.
             }
 
             /**
@@ -70,14 +70,12 @@ trainees.set(
             }
 
             const rules = ruleset([
-                rule(dom('input[type=email],input[type=text]'), type('username')),
+                rule(dom('input[type=email],input[type=text]').when(isVisible), type('username')),
                 // TODO: If slow, lay down the count as a note.
                 rule(type('username'), score(fnode => Number(numAttrMatches(fnode.element, keywordRegex) >= 1)), {name: '1Keyword'}),
                 rule(type('username'), score(fnode => Number(numAttrMatches(fnode.element, keywordRegex) >= 2)), {name: '2Keywords'}),
                 rule(type('username'), score(fnode => Number(numAttrMatches(fnode.element, keywordRegex) >= 3)), {name: '3Keywords'}),
                 rule(type('username'), score(fnode => Number(numAttrMatches(fnode.element, keywordRegex) >= 4)), {name: '4Keywords'}),
-                // TODO: Turn this into a when():
-                rule(type('username'), score(fnode => Number(isVisible(fnode.element))), {name: 'visible'}),
                 rule(type('username').max(), out('username'))
             ]);
             return rules;
