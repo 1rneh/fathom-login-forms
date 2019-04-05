@@ -20,10 +20,10 @@ trainees.set(
     // often go behind modal popups
     'username',
     {coeffs: new Map([  // [rule name, coefficient]
-        ['1Keyword', 4.413244724273682],
-        ['2Keywords', 3.875072717666626],
-        ['3Keywords', 1.2041250467300415],
-        ['4Keywords', 0.9650816917419434],
+        ['keywordsGte1', 4.413244724273682],
+        ['keywordsGte2', 3.875072717666626],
+        ['keywordsGte3', 1.2041250467300415],
+        ['keywordsGte4', 0.9650816917419434],
     ]),
     // Bias: -9.204758644104004
 
@@ -69,13 +69,19 @@ trainees.set(
                 return num;
             }
 
+            /**
+             * Return a rule which is 1 if the number of keyword occurrences on
+             * the fnode is >= ``num``.
+             */
+            function keywordCountRule(inType, num) {
+                return rule(type(inType), score(fnode => Number(numAttrMatches(fnode.element, keywordRegex) >= num)),
+                            {name: 'keywordsGte' + num})
+            }
+
             const rules = ruleset([
                 rule(dom('input[type=email],input[type=text]').when(isVisible), type('username')),
                 // TODO: If slow, lay down the count as a note.
-                rule(type('username'), score(fnode => Number(numAttrMatches(fnode.element, keywordRegex) >= 1)), {name: '1Keyword'}),
-                rule(type('username'), score(fnode => Number(numAttrMatches(fnode.element, keywordRegex) >= 2)), {name: '2Keywords'}),
-                rule(type('username'), score(fnode => Number(numAttrMatches(fnode.element, keywordRegex) >= 3)), {name: '3Keywords'}),
-                rule(type('username'), score(fnode => Number(numAttrMatches(fnode.element, keywordRegex) >= 4)), {name: '4Keywords'}),
+                ...([1, 2, 3, 4].map(num => keywordCountRule('username', num))),
                 rule(type('username').max(), out('username'))
             ]);
             return rules;
