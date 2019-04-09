@@ -79,7 +79,7 @@ trainees.set(
             }
 
             const rules = ruleset([
-                rule(dom('input[type=email],input[type=text]').when(isVisible), type('username')),
+                rule(dom('input[type=email],input[type=text],input[type=""],input:not([type])').when(isVisible), type('username')),
                 // TODO: If slow, lay down the count as a note.
                 ...([1, 2, 3, 4].map(num => keywordCountRule('username', num))),
                 rule(type('username').max(), out('username'))
