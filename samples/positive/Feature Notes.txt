@@ -69,4 +69,7 @@ Grabbing the search field for no reason. Login field looks like it should be yum
 
 Reverted ancestor keyword rules for now.
 
-isVisible was calling offscreen elements visible. Fixed that. That reduced our universe of input tags. Page accuracy fell from 95% to 90%, puzzlingly. 146 is the new failure, but it doesn't fail in actual Fathom. 452 is the other failure. The correct target node has a tie for first place. I'm going to add more samples so I have more than 1 or 2 failures to inform me and to give us a broader base to decide whether things really improve or hurt results or not.
+isVisible was calling offscreen elements visible. Fixed that. That reduced our universe of input tags. Page accuracy fell from 95% to 90%, puzzlingly. 146 is the new failure, but it doesn't fail in actual Fathom. 452 is the other failure. The correct target node has a tie for first place. I'm going to add 20 more samples so I have more than 1 or 2 failures to inform me and to give us a broader base to decide whether things really improve or hurt results or not.
+
+At 40 samples, I notice that 146 and 187 have no target=true candidates. Let's fix that. Ah, isVisible was wrongly excluding things on 146 that were above the fold. (Don't ask me why it's loading scrolled in only 1 of my browsers.) Fixed it to use absolute coords rather than viewport-relative ones. Removed the tests against things being off the right and bottom of the page for now, because I'm not sure how to test that the window isn't legitimately super-wide or at least scrollable.
+Fixing isVisible made 146 and 187 pass.
