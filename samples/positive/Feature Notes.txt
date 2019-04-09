@@ -73,3 +73,7 @@ isVisible was calling offscreen elements visible. Fixed that. That reduced our u
 
 At 40 samples, I notice that 146 and 187 have no target=true candidates. Let's fix that. Ah, isVisible was wrongly excluding things on 146 that were above the fold. (Don't ask me why it's loading scrolled in only 1 of my browsers.) Fixed it to use absolute coords rather than viewport-relative ones. Removed the tests against things being off the right and bottom of the page for now, because I'm not sure how to test that the window isn't legitimately super-wide or at least scrollable.
 Fixing isVisible made 146 and 187 pass.
+
+Next, is there anything obvious up with 395 and 452? If so, fix. If not, get more samples and search for the next signal to implement.
+
+395 is picking an unrelated email subscription field. Trying breaking out email keyword as a separate smell.

@@ -20,12 +20,16 @@ trainees.set(
     // often go behind modal popups
     'username',
     {coeffs: new Map([  // [rule name, coefficient]
-        ['keywordsGte1', 4.905412673950195],
-        ['keywordsGte2', 4.387679100036621],
-        ['keywordsGte3', 0.6933890581130981],
-        ['keywordsGte4', 0.4855072498321533],
+        ['emailKeywordsGte1', 3.63763165473938],
+        ['emailKeywordsGte2', -2.219099998474121],
+        ['emailKeywordsGte3', -0.008162454701960087],
+        ['emailKeywordsGte4', 0.04619207605719566],
+        ['loginKeywordsGte1', 16.131746292114258],
+        ['loginKeywordsGte2', 3.8598639965057373],
+        ['loginKeywordsGte3', 2.3433659076690674],
+        ['loginKeywordsGte4', 2.16237211227417],
     ]),
-    // Bias: -9.293333053588867
+    // Bias: -9.813919067382812
 
      viewportSize: {width: 1100, height: 900},
      // The content-area size to use while training.
@@ -36,7 +40,7 @@ trainees.set(
      rulesetMaker:
         function () {
             const usernameKeywords = ['email', 'login', 'log-in', 'log_in', 'signon', 'sign-on', 'sign_on', 'username']  // no 'user-name' or 'user_name' found in first 20 training samples
-            const keywordRegex = /email|login|log-in|log_in|signon|sign-on|sign_on|username/gi;
+            const loginRegex = /login|log-in|log_in|signon|sign-on|sign_on|username/gi;
 
             /**
              * Return the number of occurrences of a string or regex in another
@@ -73,15 +77,16 @@ trainees.set(
              * Return a rule which is 1 if the number of keyword occurrences on
              * the fnode is >= ``num``.
              */
-            function keywordCountRule(inType, num) {
+            function keywordCountRule(inType, num, keywordRegex, baseName) {
                 return rule(type(inType), score(fnode => Number(numAttrMatches(fnode.element, keywordRegex) >= num)),  // === drops accuracy on first 20 training samples from 95% to 70%.
-                            {name: 'keywordsGte' + num})
+                            {name: baseName + num})
             }
 
             const rules = ruleset([
                 rule(dom('input[type=email],input[type=text],input[type=""],input:not([type])').when(isVisible), type('username')),
                 // TODO: If slow, lay down the count as a note.
-                ...([1, 2, 3, 4].map(num => keywordCountRule('username', num))),
+                ...([1, 2, 3, 4].map(num => keywordCountRule('username', num, loginRegex, 'loginKeywordsGte'))),
+                ...([1, 2, 3, 4].map(num => keywordCountRule('username', num, /email/gi, 'emailKeywordsGte'))),
                 rule(type('username').max(), out('username'))
             ]);
             return rules;
