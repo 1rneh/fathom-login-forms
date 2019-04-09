@@ -20,12 +20,12 @@ trainees.set(
     // often go behind modal popups
     'username',
     {coeffs: new Map([  // [rule name, coefficient]
-        ['keywordsGte1', 4.413244724273682],
-        ['keywordsGte2', 3.875072717666626],
-        ['keywordsGte3', 1.2041250467300415],
-        ['keywordsGte4', 0.9650816917419434],
+        ['keywordsGte1', 4.905412673950195],
+        ['keywordsGte2', 4.387679100036621],
+        ['keywordsGte3', 0.6933890581130981],
+        ['keywordsGte4', 0.4855072498321533],
     ]),
-    // Bias: -9.204758644104004
+    // Bias: -9.293333053588867
 
      viewportSize: {width: 1100, height: 900},
      // The content-area size to use while training.
@@ -74,7 +74,7 @@ trainees.set(
              * the fnode is >= ``num``.
              */
             function keywordCountRule(inType, num) {
-                return rule(type(inType), score(fnode => Number(numAttrMatches(fnode.element, keywordRegex) >= num)),
+                return rule(type(inType), score(fnode => Number(numAttrMatches(fnode.element, keywordRegex) >= num)),  // === drops accuracy on first 20 training samples from 95% to 70%.
                             {name: 'keywordsGte' + num})
             }
 

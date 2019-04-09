@@ -43,7 +43,7 @@ ancestor <div class="cssmod_loginWrapper_sjd987 loginWrapper">
 Actual patterns observed so far:
 KEYWORDS = email, login, sign-on, signOn, username
 √ <input name; id; title; or, fairly frequently, other attrs> contains KEYWORDS
-ancestor classes and IDs (and, rarely, other attrs) contain KEYWORDS
+√ ancestor classes and IDs (and, rarely, other attrs) contain KEYWORDS
 √ <input type=email> Made it worse. Dropped per-tag accuracy from .85 to .83. Got a negative weight. I don't think this is a good smell by itself, because some username fields are meant to take emails, and others aren't. May reintroduce this if we add hidden layers so it can be part of a boolean computation.
 <form action="...../account">
 <form attrs=KEYWORDS>
@@ -59,3 +59,14 @@ Maybe break off email as a separate smell, separate from other keywords.
 
 440:
 Has a concerningly low confidence, though it succeeds pagewise.
+
+Added ancestor keyword rules.
+
+37:
+It's picking some phone number field from inside a hidden "Call us" pulldown. Why isn't it skipping the invisible stuff?
+222, 256:
+Grabbing the search field for no reason. Login field looks like it should be yummier.
+
+Reverted ancestor keyword rules for now.
+
+isVisible was calling offscreen elements visible. Fixed that. That reduced our universe of input tags. Page accuracy fell from 95% to 90%, puzzlingly. 146 is the new failure, but it doesn't fail in actual Fathom. 452 is the other failure. The correct target node has a tie for first place. I'm going to add more samples so I have more than 1 or 2 failures to inform me and to give us a broader base to decide whether things really improve or hurt results or not.
