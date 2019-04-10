@@ -39,8 +39,7 @@ trainees.set(
 
      rulesetMaker:
         function () {
-            const usernameKeywords = ['email', 'login', 'log-in', 'log_in', 'signon', 'sign-on', 'sign_on', 'username']  // no 'user-name' or 'user_name' found in first 20 training samples
-            const loginRegex = /login|log-in|log_in|signon|sign-on|sign_on|username/gi;
+            const loginRegex = /login|log-in|log_in|signon|sign-on|sign_on|username/gi;  // no 'user-name' or 'user_name' found in first 20 training samples
 
             /**
              * Return the number of occurrences of a string or regex in another
