@@ -83,3 +83,18 @@ Suddenly 95→100% on the first 40 samples. Went from a mix of confidences hover
 Pretty soon, I'm going to need a way of running precomputed coeffs using the CLI trainer.
 
 Validated on 19 samples (see emailSplitWithLoginValidation run). 100% training, 100% validation. Big overfit: best validation loss was actually at step 47. The coeffs still wiggle around more (when I add new samples) than I would expect if I were really closing in on a global fit.
+
+Smells from existing FF autofill (https://searchfox.org/mozilla-central/source/toolkit/components/passwordmgr/LoginManagerContent.jsm#855, in _getFormFields() and callees):
+* First, note that it starts from a form and tried to figure out how to fill it.
+* Whether the form is HTTPS
+* Whether there are existing saved logins for it
+* It anchors on the pw field and looks backward. It assumes the first text field before the pw field is the username field.
+* Password: looks for <input type=password>. Gives up if it finds >3.
+* There are "recipes" blowing around that mask out certain fields by selector. https://searchfox.org/mozilla-central/source/toolkit/components/passwordmgr/content/recipes.json.
+  * 9 recipes in all, across username and pw
+  * A few have to do with enabling consideration of hidden fields on sites doing purposeful obfuscation.
+  * Another dodges confusion with other pw-like forms that happen to be onscreen.
+  * Another dodges a site that puts pw and un in separate forms.
+  * The rest of for random peculiarities.
+* Username: <input type=text|email|url|tel|number>
+* 2 pw fields are identical (in the case of a password-change form).
