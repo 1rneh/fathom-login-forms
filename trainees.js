@@ -20,16 +20,16 @@ trainees.set(
     // often go behind modal popups
     'username',
     {coeffs: new Map([  // [rule name, coefficient]
-        ['emailKeywordsGte1', 3.63763165473938],
-        ['emailKeywordsGte2', -2.219099998474121],
-        ['emailKeywordsGte3', -0.008162454701960087],
-        ['emailKeywordsGte4', 0.04619207605719566],
-        ['loginKeywordsGte1', 16.131746292114258],
-        ['loginKeywordsGte2', 3.8598639965057373],
-        ['loginKeywordsGte3', 2.3433659076690674],
-        ['loginKeywordsGte4', 2.16237211227417],
+        ['emailKeywordsGte1', 1.6883251667022705],
+        ['emailKeywordsGte2', -0.41830191016197205],
+        ['emailKeywordsGte3', 0.09648159891366959],
+        ['emailKeywordsGte4', -0.0839453637599945],
+        ['loginKeywordsGte1', 3.430608034133911],
+        ['loginKeywordsGte2', 2.2097525596618652],
+        ['loginKeywordsGte3', 1.8574389219284058],
+        ['loginKeywordsGte4', 2.074976682662964],
     ]),
-    // Bias: -9.813919067382812
+    // Bias: -3.374068021774292
 
      viewportSize: {width: 1100, height: 900},
      // The content-area size to use while training.
@@ -84,8 +84,10 @@ trainees.set(
 
             const rules = ruleset([
                 rule(dom('input[type=email],input[type=text],input[type=""],input:not([type])').when(isVisible), type('username')),
+                // Look at "login"-like keywords on the <input>:
                 // TODO: If slow, lay down the count as a note.
                 ...([1, 2, 3, 4].map(num => keywordCountRule('username', num, loginRegex, 'loginKeywordsGte'))),
+                // Look at "email"-like keywords on the <input>:
                 ...([1, 2, 3, 4].map(num => keywordCountRule('username', num, /email/gi, 'emailKeywordsGte'))),
                 rule(type('username').max(), out('username'))
             ]);

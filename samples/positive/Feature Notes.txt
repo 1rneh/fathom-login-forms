@@ -77,3 +77,9 @@ Fixing isVisible made 146 and 187 pass.
 Next, is there anything obvious up with 395 and 452? If so, fix. If not, get more samples and search for the next signal to implement.
 
 395 is picking an unrelated email subscription field. Trying breaking out email keyword as a separate smell.
+Damn!
+Suddenly 95→100% on the first 40 samples. Went from a mix of confidences hovering around 50-75% to basically 100% across the board, and all it took was one simple change: having it consider "email"ish keywords as separate features from "login"ish.
+
+Pretty soon, I'm going to need a way of running precomputed coeffs using the CLI trainer.
+
+Validated on 19 samples (see emailSplitWithLoginValidation run). 100% training, 100% validation. Big overfit: best validation loss was actually at step 47. The coeffs still wiggle around more (when I add new samples) than I would expect if I were really closing in on a global fit.
