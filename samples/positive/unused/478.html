@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; media-src 'self' data:; style-src 'self' data: 'unsafe-inline'; font-src 'self' data:; frame-src 'self' data:"><style type="text/css">.uib-time input{width:50px;}</style><style type="text/css">.uib-datepicker .uib-title{width:100%;}.uib-day button,.uib-month button,.uib-year button{min-width:100%;}.uib-left,.uib-right{width:100%}</style><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style><title> Live View GPS </title><link rel="shortcut icon" href="resources/478/1.ico" data-original-href="https://www.liveviewgps.net/img/liveviewgps.ico"><link rel="stylesheet" href="resources/478/2.css" data-original-href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,600,800"><link href="resources/478/3.css" rel="stylesheet" data-original-href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700"><link rel="stylesheet" href="resources/478/4.css" crossorigin="anonymous" data-original-href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"><link rel="stylesheet" type="text/css" href="resources/478/5.css" data-original-href="https://www.liveviewgps.net/bower/angular-tooltips/dist/angular-tooltips.min.css?8db9bbd278a6ba7ed8be02684a4e651265cf58a6"><link rel="stylesheet" type="text/css" href="resources/478/6.css" data-original-href="https://www.liveviewgps.net/bower/angular-bootstrap-colorpicker/css/colorpicker.min.css?8db9bbd278a6ba7ed8be02684a4e651265cf58a6"><link rel="stylesheet" type="text/css" href="resources/478/7.css" data-original-href="https://www.liveviewgps.net/css/style.min.css?8db9bbd278a6ba7ed8be02684a4e651265cf58a6"><link rel="stylesheet" type="text/css" href="resources/478/8.css" data-original-href="https://www.liveviewgps.net/bower/angularjs-slider/dist/rzslider.css"><meta http-equiv="X-UA-Compatible" content="IE=edge"></head><body><div class="app-wrapper" id="app-wrapper"><usft-map><div id="map"></div></usft-map><usft-app><!----></usft-app><usft-playback-hover><!----></usft-playback-hover><usft-loading><!----></usft-loading></div><div class="login-wrapper"><usft-login logo="https://static.usfleettracking.com/img/logos/LiveViewGPS.png" login-success="" user="" powered-by=""><div class="login-container"><div class="login-window"><input type="hidden" id="logoUrl" value="https://static.usfleettracking.com/img/logos/LiveViewGPS.png"><div class="title-bar"><div class="title-left-bar"></div><div class="title-middle-bar-wrapper"><div class="title-middle-bar">User Authentication</div></div><div class="title-right-bar"></div></div><div class="content"><!----><div ng-if="!usftLoginCtrl.expiredViewToken"><img class="logo" ng-src="https://static.usfleettracking.com/img/logos/LiveViewGPS.png" src="resources/478/9.png" data-original-src="https://static.usfleettracking.com/img/logos/LiveViewGPS.png" width="290"><form ng-submit="usftLoginCtrl.submitLogin()" class="ng-pristine ng-valid"><input type="text" ng-model="usftLoginCtrl.username" placeholder="Username" autofocus="" class="ng-pristine ng-valid ng-empty ng-touched" style="" data-fathom="username"> <input type="password" ng-model="usftLoginCtrl.password" placeholder="Password" class="ng-pristine ng-valid ng-empty ng-touched" style="" data-fathom="password"><!----><div ng-if="!usftLoginCtrl.loggedIn"><div class="rememberMe"><label>Remember Me</label><input type="checkbox" ng-model="usftLoginCtrl.rememberMe" ng-change="usftLoginCtrl.setRememberMe()" class="ng-pristine ng-untouched ng-valid ng-empty"></div><div class="button" data-fathom="next"><button>Login</button></div><!--[if lt IE 10]>
+            <div class="rised-panel updateBrowser">
+              <div class="text">
+                <span class="large">Your Browser is Outdated</span>
+                You are using a version of Internet Explorer that we do not support. Please update your browser by using
+                one of the links below. If you do not update, please be aware that there will be issues while using this
+                application.
+              </div>
+              <div class="download">
+                <div class="downloadTitle">
+                  Download Here:
+                </div>
+                <div class="links">
+                  <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie" class="browser-ie"
+                     target="_blank"></a>
+                  <a href="https://www.mozilla.org/en-US/firefox/new/" class="browser-firefox" target="_blank"></a>
+                  <a href="https://www.google.com/chrome/browser/" class="browser-chrome" target="_blank"></a>
+                </div>
+              </div>
+            </div>
+            <style>
+              .login-window {
+                margin-top: -332px !important;
+              }
+            </style>
+            <![endif]--></div><!----><!----><!----></form></div><!----><!----></div></div></div></usft-login></div>    <!-- <script type="text/javascript" async> ; (function (o, l, a, r, k, y) { if (o.olark) return; 
+      r = "script"; 
+      y = l.createElement(r); 
+      r = l.getElementsByTagName(r)[0]; 
+      y.async = 1; y.src = "//" + a; 
+      r.parentNode.insertBefore(y, r); 
+      y = o.olark = function () { k.s.push(arguments); 
+      k.t.push(+new Date) }; 
+      y.extend = function (i, j) { y("extend", i, j) }; 
+      y.identify = function (i) { y("identify", k.i = i) }; 
+      y.configure = function (i, j) { y("configure", i, j); 
+      k.c[i] = j }; 
+      k = y._ = { s: [], t: [+new Date], c: {}, l: a }; })(window, document, "static.olark.com/jsclient/loader.js");
+      olark.configure('features.attention_grabber', false );
+      olark.configure('system.hb_detached', true);
+      olark.configure('features.greeter', false );
+      olark.configure('system.is_single_page_application', true );
+      olark.configure('system.group', 'a0fb7efa6131f567e000510ed5c02eeb'); 
+      olark.identify('4165-142-10-5059');
+    </script>
+    <style>
+    .olark-launch-button {
+      display: none !important;
+    }
+    </style>
+    <script>
+      var loginID = {
+        LoginID: ''
+      };
+      if (localStorage.confirmedToken) {
+        var loginID = JSON.parse(localStorage.confirmedToken);
+      };
+      var cid;
+      var username = localStorage.username;
+      if (window.location.href.includes('?cid')) {
+        var getCid = window.location.href.split('=');
+        cid = getCid[1];
+      }
+      var del = cid ? cid : 'USFT';
+      olark('api.visitor.updateFullName', {
+        fullName: username + ': ' + loginID.LoginID + ': ' + del
+      });
+      olark('api.chat.onBeginConversation', function() {
+        olark('api.visitor.updateFullName', {
+          fullName: username + ': ' + loginID.LoginID + ': ' + del
+        });
+      });
+
+    </script> --></body></html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; media-src 'self' data:; style-src 'self' data: 'unsafe-inline'; font-src 'self' data:; frame-src 'self' data:">
+    <title>NavIQ Web Portal</title>
+    <meta content="True" name="vs_snapToGrid">
+    <meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema">
+    <meta http-equiv="imagetoolbar" content="no">
+    <link rel="stylesheet" type="text/css" href="resources/482/1.css" data-original-href="http://gps.rmtracking.com/css/jquery-ui.css">
+    
+    
+    <style type="text/css">
+        body
+        {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        a, a:visited, a:active
+        {
+            color: #cc0000;
+            text-decoration: none;
+        }
+        a:hover
+        {
+            text-decoration: underline;
+        }
+        #loginFormBackDiv
+        {
+            box-shadow: 10px 10px 5px #888888;
+            border: 2px solid #a1a1a1;
+            padding: 10px 40px;
+            background: #ffffff;
+            border-radius: 25px;
+            -moz-border-radius: 25px; /* Old Firefox */
+            position: absolute;
+            overflow: hidden;
+            overflow-x: hidden;
+            overflow-y: hidden;
+            top: 50%;
+            left: 50%;
+            height: 270px;
+            width: 235px;
+            margin-top: -155px;
+            margin-left: -155px;
+        }
+        #frontLogoImg
+        {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 246px;
+            height: 136px;
+            margin-top: -130px;
+            margin-left: -120px;
+        }
+        #loginErrorDiv
+        {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 350px;
+            height: 20px;
+            background-color: #ffffff;
+            margin: 10px;
+            color: #cc0000;
+            font-weight: bold;
+            margin-top: 200px;
+            margin-left: -175px;
+            visibility: hidden;
+        }
+        #loginFormDiv
+        {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 250px;
+            height: auto;
+            margin-top: 20px;
+            margin-left: -130px;
+            padding: 20px;
+            padding: 5px;
+        }
+        #backGroundDiv
+        {
+            position: absolute;
+            overflow: hidden;
+            overflow-x: hidden;
+            overflow-y: hidden;
+            top: 50%;
+            left: 50%;
+            width: 858px;
+            height: 608px;
+            margin-top: -300px;
+            margin-left: -460px;
+        }
+        #motdDiv
+        {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -373px;
+            margin-top: -315px;
+            padding: 0;
+            height: 160px;
+            width: 746px;
+            display: none;
+            border: 5 inset;
+        }
+        #topContent
+        {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -350px;
+            margin-top: -265px;
+            width: 700px;
+            height: 100px;
+        }
+        #botmContent
+        {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -350px;
+            margin-top: 160px;
+            width: 700px;
+            height: 100px;
+        }
+        #ButtonLogin
+        {
+            color: #41427f;
+            font-size: 12px;
+            font-weight: bold;
+        }
+    </style>
+    <!--
+		<script language="JavaScript" src="js/x/x.js"></script>
+		<script language="JavaScript" src="js/x/x_core.js"></script>
+		<script language="JavaScript" src="js/x/x_event.js"></script>
+		<script language="JavaScript" src="js/x/lib/xevent.js"></script>
+		<script language="JavaScript" src="js/x/lib/xpagex.js"></script>
+		<script language="JavaScript" src="js/x/lib/xpagey.js"></script>
+		<script language="JavaScript" src="js/x/lib/xopacity.js"></script>
+		<script language="JavaScript" src="js/x/lib/xaniopacity.js"></script>
+		<script language="JavaScript" src="js/x/lib/xhaspoint.js"></script>
+		-->
+    
+</head>
+<body scroll="no" style="overflow: hidden;
+    overflow-x: hidden; overflow-y: hidden;" data-original-background="http://gps.rmtracking.com/images/backgroundRMT.gif" background="resources/482/2.gif">
+    <div id="loginFormBackDiv">
+    </div>
+    <img src="resources/482/3.png" id="frontLogoImg" name="frontLogoImg" alt="NavIQ by Rocky Mountain Tracking" data-original-src="http://gps.rmtracking.com/images/WiqFront.png">
+    <div id="loginFormDiv">
+        <form id="Form1" action="http://gps.rmtracking.com/dbq.aspx" method="post" style="margin: 0px; padding: 0px;">
+        <input id="action" name="action" type="hidden" value="login">
+        <table cellspacing="2" cellpadding="0" border="0" align="center">
+            <tbody><tr>
+                <td class="inputLabel1" align="right">
+                    Username:
+                </td>
+                <td>
+                    <input name="username" id="username" type="Text" style="font-size: 12px;" size="24" value="" data-fathom="username">
+                </td>
+            </tr>
+            <tr>
+                <td class="inputLabel1" align="right">
+                    Password:
+                </td>
+                <td>
+                    <input name="password" id="password" type="Password" style="font-size: 12px;" size="24" data-fathom="password">
+                </td>
+            </tr>
+        </tbody></table>
+        <br>
+        <div align="right">
+            <input id="ButtonLogin" name="ButtonLogin" type="Submit" value="Login" class="ui-button ui-widget ui-state-default ui-corner-all" role="button" aria-disabled="false" data-fathom="next"></div>
+        <input id="UTCoffset" type="hidden" value="-120" name="UTCoffset">
+    </form></div>
+    <div id="topContent" align="center">
+    </div>
+    <div id="botmContent" align="center">
+        <table cellspacing="0" cellpadding="0" border="0">
+            <tbody><tr style="font-weight: bold; font-size: 12px; color: #000;">
+                <td align="center">
+                    Forgot Your Password?<br>
+                    Click here for <a href="http://gps.rmtracking.com/LostPassword.aspx" title="Password Reset">Password Reset</a>
+                </td>
+                <td>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+                <td align="center">
+                    Visit <a href="http://www.rmtracking.com/" title="Rocky Mountain Tracking">Rocky Mountain Tracking</a> For<br>
+                    Innovative GPS Tracking
+                    Solutions
+                </td>
+            </tr>
+            <tr style="font-size: 11px;">
+                <td>
+                    &nbsp;
+                </td>
+                <td>
+                    &nbsp;
+                </td>
+                <td>
+                    &nbsp;
+                </td>
+            </tr>
+            <tr style="font-size: 11px;">
+                <td>
+                    &nbsp;
+                </td>
+                <td>
+                    <a href="http://m.rmtracking.com/" title="Mobile Site">Mobile Site</a>
+                </td>
+                <td>
+                    &nbsp;
+                </td>
+            </tr>
+        </tbody></table>
+    </div>
+    
+    <div id="motdDiv" align="center">
+        <iframe id="motdIFrame" name="motdIFrame" scrolling="Auto" src="resources/482/4.html" data-original-src="http://gps.rmtracking.com/dbq.aspx?template=MOTD_LoginMsg.htm" width="100%" height="100%" frameborder="0"></iframe>
+    </div>
+    <div id="loginErrorDiv" align="center">
+        Invalid Username or Password!</div>
+    
+
+
+
+</body></html>

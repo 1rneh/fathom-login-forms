@@ -1,0 +1,243 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; media-src 'self' data:; style-src 'self' data: 'unsafe-inline'; font-src 'self' data:; frame-src 'self' data:"><link href="resources/510/1.css" type="text/css" rel="stylesheet" data-original-href="http://portal.piicomm.ca:8080/App_Themes/Default/jquery.pagination.css"><link href="resources/510/2.css" type="text/css" rel="stylesheet" data-original-href="http://portal.piicomm.ca:8080/App_Themes/Default/jquery-sortable.css"><link href="resources/510/3.css" type="text/css" rel="stylesheet" data-original-href="http://portal.piicomm.ca:8080/App_Themes/Default/jquery-ui-1.8.11.custom.css"><link href="resources/510/4.css" type="text/css" rel="stylesheet" data-original-href="http://portal.piicomm.ca:8080/App_Themes/Default/selector.css"><link href="resources/510/5.css" type="text/css" rel="stylesheet" data-original-href="http://portal.piicomm.ca:8080/App_Themes/Default/statsGraphics.css"><link href="resources/510/6.css" type="text/css" rel="stylesheet" data-original-href="http://portal.piicomm.ca:8080/App_Themes/Default/StyleSheet.css"><link href="resources/510/7.css" type="text/css" rel="stylesheet" data-original-href="http://portal.piicomm.ca:8080/App_Themes/Default/togglePanels.css"><title>
+	PiiComm AIM Portal - Authentication Form
+</title>
+    <!-- Google fonts - Open Sans -->
+    <link href="resources/510/8.css" rel="stylesheet" type="text/css" data-original-href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600,700">
+    <!-- FontAwesome Icon CSS -->        
+    <link href="resources/510/9.css" rel="stylesheet" data-original-href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+
+	
+	
+	
+	
+	
+	    
+	
+	
+	
+	<style type="text/css">   
+		
+	   
+	</style>
+	
+	
+
+	
+	
+	
+	
+	
+	
+	   
+    
+           
+	
+	<style type="text/css">
+        body 
+        {
+        	
+        }
+        #bntLogin {
+            
+            border:none !important;
+	        -webkit-border-radius:0 !important;
+	        -moz-border-radius:0 !important;
+	        border-radius:0 !important;
+	        font-family: 'Open Sans', Arial, sans-serif !important;
+	        font-weight:600;
+	        text-transform:uppercase;
+            color:White !important;
+            font-size:16px !important;
+            background:#f15a23 !important;
+            background: -moz-linear-gradient(#fc982d, #f15a23) !important;
+            background: -webkit-linear-gradient(#fc982d, #f15a23) !important;
+            background: -o-linear-gradient(#fc982d, #f15a23) !important;
+            background: -ms-linear-gradient(#fc982d, #f15a23) !important;/*For IE10*/
+            background: linear-gradient(#fc982d, #f15a23) !important;
+            filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#fc982d', endColorstr='#f15a23') !important;/*For IE7-8-9*/
+            margin:0;
+        }
+        #bntLogin:hover,
+        .cie-list li label:hover 
+        {
+        	background:#f16f40 !important;
+        	background: -moz-linear-gradient(#f15a23, #fc982d) !important;
+            background: -webkit-linear-gradient(#f15a23, #fc982d) !important;
+            background: -o-linear-gradient(#f15a23, #fc982d !important);
+            background: -ms-linear-gradient(#f15a23, #fc982d) !important;/*For IE10*/
+            background: linear-gradient(#f15a23, #fc982d) !important;
+            filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#f15a23', endColorstr='#fc982d') !important;/*For IE7-8-9*/
+        }
+        #bntLogin:active,
+        .cie-list li label:active
+        {
+        	background:#f16f40 !important;
+        	background: -moz-linear-gradient(#ffa862, #fc982d) !important;
+            background: -webkit-linear-gradient(#ffa862, #fc982d) !important;
+            background: -o-linear-gradient(#ffa862, #fc982d !important);
+            background: -ms-linear-gradient(#ffa862, #fc982d) !important;/*For IE10*/
+            background: linear-gradient(#ffa862, #fc982d) !important;
+            filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#ffa862', endColorstr='#fc982d') !important;/*For IE7-8-9*/
+		}
+		.ui-widget 
+		{	
+			font-family: 'Open Sans', Arial, sans-serif !important;
+		}
+		#tbUname, #tbPwd 
+		{
+			padding: 3px 5px !important;
+			-webkit-border-radius:0 !important;
+			-moz-border-radius:0 !important;
+			border-radius:0 !important;
+			border:1px solid #aaa !important;
+		}
+		.ui-state-error 
+		{
+			-webkit-border-radius:0 !important;
+			-moz-border-radius:0 !important;
+			border-radius:0 !important;
+			border:1px dashed #f15a23 !important;
+			background:white !important;
+			font-family: 'Open Sans', Arial, sans-serif !important;
+		}
+        .cie-list 
+        {
+        	margin:0;
+        	padding:0;
+        }
+        .cie-list li 
+        {
+        	list-style:none;
+        }
+        .cie-list li input[type="radio"] 
+        {
+        	display:none;
+        }
+        .cie-list li label 
+        {
+        	display:block;
+        	color:White;
+        	text-transform:uppercase;
+	        font-family: 'Open Sans', Arial, sans-serif !important;
+	        font-weight:600;
+            font-size:16px !important;
+            margin:0 0 10px 0;
+            padding:10px;
+            background:#f15a23 !important;
+            background: -moz-linear-gradient(#fc982d, #f15a23) !important;
+            background: -webkit-linear-gradient(#fc982d, #f15a23) !important;
+            background: -o-linear-gradient(#fc982d, #f15a23) !important;
+            background: -ms-linear-gradient(#fc982d, #f15a23) !important;/*For IE10*/
+            background: linear-gradient(#fc982d, #f15a23) !important;
+            filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#fc982d', endColorstr='#f15a23') !important;/*For IE7-8-9*/
+        }
+        .cie-list li label .fa 
+        {
+        	display:none;
+        	float:right;
+        }
+        .cie-list li label:hover .fa 
+        {
+        	display:inline-block;
+        }
+        #btnMultiCieSelect 
+        {
+        	display:none;
+        }
+        .list-title 
+        {
+        	font-size: 20px;
+            font-weight: 600;
+            margin: 0 0 10px 0;
+        }
+        #about-piicomm 
+        {
+        	font-size:11px;
+        	color:#666;
+        	text-align:center;
+        	margin:55px 0 0 0;
+        }
+        #about-piicomm h3 
+        {
+        	font-size:14px;
+        	margin:0 0 10px 0;
+        }
+        #pageWrapper 
+        {
+        	width:550px;
+        	margin:0 auto;
+        	background:url('resources/510/10.png') -43px 0 no-repeat;
+        }
+	</style>
+	
+<link href="resources/510/1.css" type="text/css" rel="stylesheet" data-original-href="http://portal.piicomm.ca:8080/App_Themes/Default/jquery.pagination.css"><link href="resources/510/2.css" type="text/css" rel="stylesheet" data-original-href="http://portal.piicomm.ca:8080/App_Themes/Default/jquery-sortable.css"><link href="resources/510/3.css" type="text/css" rel="stylesheet" data-original-href="http://portal.piicomm.ca:8080/App_Themes/Default/jquery-ui-1.8.11.custom.css"><link href="resources/510/4.css" type="text/css" rel="stylesheet" data-original-href="http://portal.piicomm.ca:8080/App_Themes/Default/selector.css"><link href="resources/510/5.css" type="text/css" rel="stylesheet" data-original-href="http://portal.piicomm.ca:8080/App_Themes/Default/statsGraphics.css"><link href="resources/510/6.css" type="text/css" rel="stylesheet" data-original-href="http://portal.piicomm.ca:8080/App_Themes/Default/StyleSheet.css"><link href="resources/510/7.css" type="text/css" rel="stylesheet" data-original-href="http://portal.piicomm.ca:8080/App_Themes/Default/togglePanels.css"></head>
+<body>
+
+	<form name="form1" method="post" action="http://portal.piicomm.ca:8080/Login.aspx?ReturnUrl=default.asp" id="form1" style="height:auto;">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJOTc5ODY2ODE5ZGRUH5GH6KfsTKPQfWZ0N1Nke2HsTA==">
+</div>
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="C2EE9ABB">
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWAwL19+GXBQKpw/TeBgLAr6WkDNDgQNOWrmy3QZa+rxqGbAEEWPtZ">
+</div>
+    <div id="pageWrapper">
+    <div id="Wrapper" style="width:350px; padding-top:230px; margin-left:201px;">
+		<div id="Logo" style="padding-top:32px">
+            
+            <img alt="piicomm-AIM" src="resources/510/11.png" data-original-src="http://portal.piicomm.ca:8080/Images/piicomm-AIM-logo.png">
+		</div>
+        <div id="TitreDiv" style="height:20px; padding-right:4px; padding-top: 4px; margin-left: 160px">
+			<img id="Titre" class="multilng" src="resources/510/12.png" style="display: inline; opacity: 0.3759;" data-original-src="http://portal.piicomm.ca:8080/Images/Login.Title.en.png"></div>
+		<div id="spacerTopMsg" style="height:25px;"></div>
+		<div id="Messages" class="multilng ui-widget" style="text-align: left; font-size: medium; width: 95%; margin: auto; display: none;">
+			<div class="ui-state-error ui-corner-all" style="padding: 0 .7em;"> 
+				<p><span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em; margin-top: .2em; "></span> 
+				<span id="MessageTitle"><strong>Attention:</strong></span> 
+				<span id="Message">
+					
+				</span></p>
+			</div>
+		</div>
+		<div id="Login" style="">
+			<table class="ui-widget" width="100%" cellpadding="5" border="0">
+				<tbody><tr>
+					<th id="lblUsername" class="multilng" style="display: table-cell; opacity: 0.399375;" align="right">Username:</th>
+                    <td width="140"><input name="tbUname" type="text" id="tbUname" style="font-size:15px;width:140px;" data-fathom="username"></td>
+				</tr>
+				<tr>
+					<th id="lblPassword" class="multilng" style="display: table-cell; opacity: 0.399375;" align="right">Password:</th>
+                    <td width="140"><input name="tbPwd" type="password" id="tbPwd" style="font-size:15px;width:140px;" data-fathom="password"></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="right">
+						<button style="font-size:large;" class="multilng ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" id="bntLogin" role="button" aria-disabled="false" data-fathom="next"><span class="ui-button-text" style="display: block; opacity: 0.383775;">Login</span></button></td>
+				</tr>
+			</tbody></table>
+		</div>
+        <div id="MultiCie" style="display:none; width:270px; float:right;">
+			<div class="container">
+                <div class="list-title">Pick a product: </div>
+				<ul class="cie-list">
+					
+				</ul>
+				<div style="text-align: right;">
+					<button id="btnMultiCieSelect" type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false"><span class="ui-button-text">Ok</span></button>
+				</div>
+			</div>
+		</div>
+        <div style="clear:both;"></div>
+	</div>
+    <div id="about-piicomm">
+            
+            <img src="resources/510/13.png" style="height:33px" data-original-src="http://portal.piicomm.ca:8080/Images/piicomm-logo.png">
+            <p>Specializing in Mobile Information Technology solutions that solve business problems, PiiComm works with all levels of Government and Canada's largest commercial companies to simplify the complexity of Mobile solutions for their workforce though Managed Services, Software Development, Professional Consulting services. PiiComm partners with best-in-class hardware manufacturers, offers unique services, mobile application development and cellular expertise which has allowed them to become a dominant player in this rapidly evolving technology sector. <a href="http://piicomm.ca/" target="_blank">Learn more</a></p>
+        </div>
+        </div>
+	</form>
+
+
+</body></html>
