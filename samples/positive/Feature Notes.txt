@@ -85,16 +85,25 @@ Pretty soon, I'm going to need a way of running precomputed coeffs using the CLI
 Validated on 19 samples (see emailSplitWithLoginValidation run). 100% training, 100% validation. Big overfit: best validation loss was actually at step 47. The coeffs still wiggle around more (when I add new samples) than I would expect if I were really closing in on a global fit.
 
 Smells from existing FF autofill (https://searchfox.org/mozilla-central/source/toolkit/components/passwordmgr/LoginManagerContent.jsm#855, in _getFormFields() and callees):
-* First, note that it starts from a form and tried to figure out how to fill it.
-* Whether the form is HTTPS
+* First, note that it starts from a form and tried to figure out how to fill it. It takes a lot of cues from the user: where is the focus? what were the field names when the login was stored?
+* Whether the form is HTTPS *useful*
 * Whether there are existing saved logins for it
-* It anchors on the pw field and looks backward. It assumes the first text field before the pw field is the username field.
+* It anchors on the pw field and looks backward. It assumes the first text field before the pw field is the username field. *useful*
 * Password: looks for <input type=password>. Gives up if it finds >3.
-* There are "recipes" blowing around that mask out certain fields by selector. https://searchfox.org/mozilla-central/source/toolkit/components/passwordmgr/content/recipes.json.
+* There are "recipes" blowing around that mask out certain fields by selector, mostly uninteresting: https://searchfox.org/mozilla-central/source/toolkit/components/passwordmgr/content/recipes.json.
   * 9 recipes in all, across username and pw
   * A few have to do with enabling consideration of hidden fields on sites doing purposeful obfuscation.
   * Another dodges confusion with other pw-like forms that happen to be onscreen.
   * Another dodges a site that puts pw and un in separate forms.
   * The rest of for random peculiarities.
-* Username: <input type=text|email|url|tel|number>
+* Username: <input type=text|email|url|tel|number> *useful*
 * 2 pw fields are identical (in the case of a password-change form).
+
+Add false positives. Make sure that doesn't throw training off. If it does, fix it: add signal or whatever. If it doesn't, see if it throws off validation.
+Fixed fathom-trainer to judge negative samples better. Now I'll see how negatives are doing in training and validation and attack those smells.
+Next signals:
+  * "Create/register" in nearby headings. (On fp44, all the attrs are compiled noise.)
+  * First/last name fields in same form.
+  * "Create/register/reg" smells (even on ancestors)
+  * Maybe "join" smells on submit buttons
+Go up 5 parents, do a querySelector for headings, filter out ones that are visually after the input, then check the remainder for smells. When the thing isn't a header, it's often at least got "title" or "head" in its class. Maybe just look for short text nodes with large font size.

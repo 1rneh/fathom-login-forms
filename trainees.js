@@ -20,16 +20,16 @@ trainees.set(
     // often go behind modal popups
     'username',
     {coeffs: new Map([  // [rule name, coefficient]
-        ['emailKeywordsGte1', 1.6883251667022705],
-        ['emailKeywordsGte2', -0.41830191016197205],
-        ['emailKeywordsGte3', 0.09648159891366959],
-        ['emailKeywordsGte4', -0.0839453637599945],
-        ['loginKeywordsGte1', 3.430608034133911],
-        ['loginKeywordsGte2', 2.2097525596618652],
-        ['loginKeywordsGte3', 1.8574389219284058],
-        ['loginKeywordsGte4', 2.074976682662964],
+        ['emailKeywordsGte1', 0.3532141447067261],
+        ['emailKeywordsGte2', 0.5771306753158569],
+        ['emailKeywordsGte3', -0.44014012813568115],
+        ['emailKeywordsGte4', 0.6634965538978577],
+        ['loginKeywordsGte1', 4.568066596984863],
+        ['loginKeywordsGte2', 1.0989577770233154],
+        ['loginKeywordsGte3', 0.5121222138404846],
+        ['loginKeywordsGte4', 2.076481342315674],
     ]),
-    // Bias: -3.374068021774292
+    // Bias: -3.8374111652374268
 
      viewportSize: {width: 1100, height: 900},
      // The content-area size to use while training.
