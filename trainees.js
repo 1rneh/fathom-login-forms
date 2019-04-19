@@ -1,5 +1,6 @@
 import {ruleset, rule, dom, type, score, out} from 'fathom-web';
-import {isVisible} from 'fathom-web/utilsForFrontend';
+import {euclidean} from 'fathom-web/clusters';
+import {isVisible, min} from 'fathom-web/utilsForFrontend';
 
 
 /**
@@ -28,6 +29,10 @@ trainees.set(
         ['loginKeywordsGte2', 1.0989577770233154],
         ['loginKeywordsGte3', 0.5121222138404846],
         ['loginKeywordsGte4', 2.076481342315674],
+        ['headerRegistrationKeywordsGte1', 1],
+        ['headerRegistrationKeywordsGte2', 1],
+        ['headerRegistrationKeywordsGte3', 1],
+        ['headerRegistrationKeywordsGte4', 1],
     ]),
     // Bias: -3.8374111652374268
 
@@ -40,20 +45,21 @@ trainees.set(
      rulesetMaker:
         function () {
             const loginRegex = /login|log-in|log_in|signon|sign-on|sign_on|username/gi;  // no 'user-name' or 'user_name' found in first 20 training samples
+            const registerRegex = /create|register|reg/gi;
 
             /**
              * Return the number of occurrences of a string or regex in another
              * string.
              */
             function numMatches(regex, string) {
-                return (string.match(regex) || []).length;  // Optimization: split benchmarks faster.
+                return (string.match(regex) || []).length;  // Optimization: split() benchmarks faster.
             }
 
             /**
              * Return the number of matches to the given regex in the attribute
              * values of the given element.
              */
-            function numAttrMatches(element, regex, attrs = []) {
+            function numAttrMatches(regex, element, attrs = []) {
                 const attributes = attrs.length === 0 ? Array.from(element.attributes).map(a => a.name) : attrs;
                 let num = 0;
                 for (let i = 0; i < attributes.length; i++) {
@@ -77,17 +83,48 @@ trainees.set(
              * the fnode is >= ``num``.
              */
             function keywordCountRule(inType, num, keywordRegex, baseName) {
-                return rule(type(inType), score(fnode => Number(numAttrMatches(fnode.element, keywordRegex) >= num)),  // === drops accuracy on first 20 training samples from 95% to 70%.
+                return rule(type(inType), score(fnode => Number(numAttrMatches(keywordRegex, fnode.element) >= num)),  // === drops accuracy on first 20 training samples from 95% to 70%.
                             {name: baseName + num})
+            }
+
+            /**
+             * Return the <hN> element Euclidean-wise above and center-point-
+             * nearest the given element, null if there is none.
+             */
+            function closestHeaderAbove(element) {  // TODO: Impose a distance limit?
+                const body = element.ownerDocument.body;
+                if (body !== null) {
+                    const headers = Array.from(body.querySelectorAll('h1,h2,h3,h4,h5,h6'));
+                    headers.filter(h => isAbove(h, element));
+                    return min(headers, h => euclidean(h, element));
+                }
+                return null;
+            }
+
+            /**
+             * Return whether element A is strictly above B: that is, A's
+             * bottom is above or equal to B's top.
+             */
+            function isAbove(a, b) {
+                return a.getBoundingClientRect().bottom <= b.getBoundingClientRect().top;
+            }
+
+            function numContentMatches(regex, element) {
+                if (element === null) {
+                    return 0;
+                }
+                return numMatches(regex, element.innerText);
             }
 
             const rules = ruleset([
                 rule(dom('input[type=email],input[type=text],input[type=""],input:not([type])').when(isVisible), type('username')),
                 // Look at "login"-like keywords on the <input>:
                 // TODO: If slow, lay down the count as a note.
-                ...([1, 2, 3, 4].map(num => keywordCountRule('username', num, loginRegex, 'loginKeywordsGte'))),
+                ...[1, 2, 3, 4].map(gte => keywordCountRule('username', gte, loginRegex, 'loginKeywordsGte')),
                 // Look at "email"-like keywords on the <input>:
-                ...([1, 2, 3, 4].map(num => keywordCountRule('username', num, /email/gi, 'emailKeywordsGte'))),
+                ...[1, 2, 3, 4].map(gte => keywordCountRule('username', gte, /email/gi, 'emailKeywordsGte')),
+                // Maybe also try the 2 closest headers, within some limit.
+                ...[1, 2, 3, 4].map(gte => rule(type('username'), score(fnode => Number(numContentMatches(registerRegex, closestHeaderAbove(fnode.element)) >= gte)), {name: 'headerRegistrationKeywordsGte' + gte})),
                 rule(type('username').max(), out('username'))
             ]);
             return rules;
