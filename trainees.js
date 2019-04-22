@@ -1,6 +1,6 @@
 import {ruleset, rule, dom, type, score, out} from 'fathom-web';
 import {euclidean} from 'fathom-web/clusters';
-import {isVisible, min} from 'fathom-web/utilsForFrontend';
+import {ancestors, isVisible, min} from 'fathom-web/utilsForFrontend';
 
 
 /**
@@ -21,20 +21,21 @@ trainees.set(
     // often go behind modal popups
     'username',
     {coeffs: new Map([  // [rule name, coefficient]
-        ['emailKeywordsGte1', 0.25459080934524536],
-        ['emailKeywordsGte2', 0.8482664227485657],
-        ['emailKeywordsGte3', 0.23385368287563324],
-        ['emailKeywordsGte4', 0.24192124605178833],
-        ['loginKeywordsGte1', 4.621892929077148],
-        ['loginKeywordsGte2', 1.0190210342407227],
-        ['loginKeywordsGte3', 1.0752729177474976],
-        ['loginKeywordsGte4', 2.0910520553588867],
-        ['headerRegistrationKeywordsGte1', -1.3342167139053345],
-        ['headerRegistrationKeywordsGte2', 0.08143582940101624],
-        ['headerRegistrationKeywordsGte3', -0.18398119509220123],
-        ['headerRegistrationKeywordsGte4', 0.16558906435966492],
+        ['emailKeywordsGte1', 1.7506369352340698],
+        ['emailKeywordsGte2', 0.3925047516822815],
+        ['emailKeywordsGte3', 0.10444984585046768],
+        ['emailKeywordsGte4', -0.1944221407175064],
+        ['loginKeywordsGte1', 4.707931995391846],
+        ['loginKeywordsGte2', 1.885134220123291],
+        ['loginKeywordsGte3', 1.444320559501648],
+        ['loginKeywordsGte4', 1.8948482275009155],
+        ['headerRegistrationKeywordsGte1', -0.8698500990867615],
+        ['headerRegistrationKeywordsGte2', -0.0502895712852478],
+        ['headerRegistrationKeywordsGte3', -0.06126268208026886],
+        ['headerRegistrationKeywordsGte4', -0.08957384526729584],
+        ['buttonRegistrationKeywordsGte1', -2.887512683868408],
     ]),
-    // Bias: -3.9037985801696777
+    // Bias: -4.361201286315918
 
      viewportSize: {width: 1100, height: 900},
      // The content-area size to use while training.
@@ -45,7 +46,7 @@ trainees.set(
      rulesetMaker:
         function () {
             const loginRegex = /login|log-in|log_in|signon|sign-on|sign_on|username/gi;  // no 'user-name' or 'user_name' found in first 20 training samples
-            const registerRegex = /create|register|reg/gi;
+            const registerRegex = /create|register|reg|sign up|signup|join/gi;
 
             /**
              * Return the number of occurrences of a string or regex in another
@@ -118,6 +119,26 @@ trainees.set(
                 return numMatches(regex, element.innerText);
             }
 
+            /**
+             * Return the number of registration keywords found on buttons in
+             * the same form as the username element.
+             */
+            function numRegistrationKeywordsOnButtons(usernameElement) {
+                let num = 0;
+                for (const a of ancestors(usernameElement)) {
+                    if (a.tagName === 'FORM') {
+                        for (const button of Array.from(a.querySelectorAll('button'))) {
+                            num += numContentMatches(registerRegex, button) + numAttrMatches(registerRegex, button);
+                        }
+                        for (const input of Array.from(a.querySelectorAll('input[type=submit],input[type=button]'))) {
+                            num += numAttrMatches(registerRegex, input);
+                        }
+                        break;  // to save time
+                    }
+                }
+                return num;
+            }
+
             const rules = ruleset([
                 rule(dom('input[type=email],input[type=text],input[type=""],input:not([type])').when(isVisible), type('username')),
                 // Look at "login"-like keywords on the <input>:
@@ -127,6 +148,12 @@ trainees.set(
                 ...[1, 2, 3, 4].map(gte => keywordCountRule('username', gte, /email/gi, 'emailKeywordsGte')),
                 // Maybe also try the 2 closest headers, within some limit.
                 ...[1, 2, 3, 4].map(gte => rule(type('username'), score(fnode => Number(numContentMatches(registerRegex, closestHeaderAbove(fnode.element)) >= gte)), {name: 'headerRegistrationKeywordsGte' + gte})),
+                // If there is a Create or Join or Sign Up button in the form,
+                // it's probably an account creation form, not a login one.
+                // TODO: This is O(n * m). In a Prolog solution, we would first find all the forms, then characterize them as Sign-In-having or not, etc.:
+                // signInForm(F) :- tagName(F, 'form'), hasSignInButtons(F).
+                // Then this rule would say: contains(F, U), signInForm(F).
+                rule(type('username'), score(fnode => Number(numRegistrationKeywordsOnButtons(fnode.element) >= 1)), {name: 'buttonRegistrationKeywordsGte1'}),
                 rule(type('username').max(), out('username'))
             ]);
             return rules;

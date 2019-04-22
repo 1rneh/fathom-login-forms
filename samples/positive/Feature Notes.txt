@@ -102,8 +102,15 @@ Smells from existing FF autofill (https://searchfox.org/mozilla-central/source/t
 Add false positives. Make sure that doesn't throw training off. If it does, fix it: add signal or whatever. If it doesn't, see if it throws off validation.
 Fixed fathom-trainer to judge negative samples better. Now I'll see how negatives are doing in training and validation and attack those smells.
 Next signals:
-  * "Create/register" in nearby headings. (On fp44, all the attrs are compiled noise.)
-  * First/last name fields in same form.
+  * "Create/register" in nearby headings. (On fp44, all the <input> attrs are compiled noise.)
   * "Create/register/reg" smells (even on ancestors)
-  * Maybe "join" smells on submit buttons
+  * Maybe join/create smells on submit buttons
+  * First/last name fields in same form.
 Go up 5 parents, do a querySelector for headings, filter out ones that are visually after the input, then check the remainder for smells. When the thing isn't a header, it's often at least got "title" or "head" in its class. Maybe just look for short text nodes with large font size.
+Implemented check for "create" and such in closest header above username candidate.
+  * fp39 was missing legit labels.
+  * fp44 is probably working fine, but the coeff for Create headers is training too low to sufficiently lower confidence.
+Next smell: "Create/register/join" in buttons, which will help fp76.
+    "Sign up" in headers
+Another smell: 2 password fields in the form means not a login form.
+Another: large numbers of inputs probably mean not a login form.
