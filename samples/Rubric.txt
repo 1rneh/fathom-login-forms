@@ -20,7 +20,7 @@ We will also grab some change-password forms. On these, we'll label the password
 
 # Negative Samples
 
-Please be sure to capture some false-positive bait. That is, grab some samples that have no login forms but that do have input fields that might trick a computer into thinking they do. For example, these have been known to trick Firefox's current autofill:
+Please be sure to capture some false-positive bait. That is, grab some samples that have *no login forms* but that do have input fields that might trick a computer into thinking they do. For example, these have been known to trick Firefox's current autofill:
 
    * Registration forms (for making new accounts)
    * Credit card payment-info forms (which often have name and security-code fields)
