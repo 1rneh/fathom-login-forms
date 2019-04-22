@@ -21,20 +21,20 @@ trainees.set(
     // often go behind modal popups
     'username',
     {coeffs: new Map([  // [rule name, coefficient]
-        ['emailKeywordsGte1', 0.3532141447067261],
-        ['emailKeywordsGte2', 0.5771306753158569],
-        ['emailKeywordsGte3', -0.44014012813568115],
-        ['emailKeywordsGte4', 0.6634965538978577],
-        ['loginKeywordsGte1', 4.568066596984863],
-        ['loginKeywordsGte2', 1.0989577770233154],
-        ['loginKeywordsGte3', 0.5121222138404846],
-        ['loginKeywordsGte4', 2.076481342315674],
-        ['headerRegistrationKeywordsGte1', 1],
-        ['headerRegistrationKeywordsGte2', 1],
-        ['headerRegistrationKeywordsGte3', 1],
-        ['headerRegistrationKeywordsGte4', 1],
+        ['emailKeywordsGte1', 0.25459080934524536],
+        ['emailKeywordsGte2', 0.8482664227485657],
+        ['emailKeywordsGte3', 0.23385368287563324],
+        ['emailKeywordsGte4', 0.24192124605178833],
+        ['loginKeywordsGte1', 4.621892929077148],
+        ['loginKeywordsGte2', 1.0190210342407227],
+        ['loginKeywordsGte3', 1.0752729177474976],
+        ['loginKeywordsGte4', 2.0910520553588867],
+        ['headerRegistrationKeywordsGte1', -1.3342167139053345],
+        ['headerRegistrationKeywordsGte2', 0.08143582940101624],
+        ['headerRegistrationKeywordsGte3', -0.18398119509220123],
+        ['headerRegistrationKeywordsGte4', 0.16558906435966492],
     ]),
-    // Bias: -3.8374111652374268
+    // Bias: -3.9037985801696777
 
      viewportSize: {width: 1100, height: 900},
      // The content-area size to use while training.
@@ -95,15 +95,17 @@ trainees.set(
                 const body = element.ownerDocument.body;
                 if (body !== null) {
                     const headers = Array.from(body.querySelectorAll('h1,h2,h3,h4,h5,h6'));
-                    headers.filter(h => isAbove(h, element));
-                    return min(headers, h => euclidean(h, element));
+                    if (headers.length) {
+                        headers.filter(h => isAbove(h, element));
+                        return min(headers, h => euclidean(h, element));
+                    }
                 }
                 return null;
             }
 
             /**
-             * Return whether element A is strictly above B: that is, A's
-             * bottom is above or equal to B's top.
+             * Return whether element A is non-overlappingly above B: that is,
+             * A's bottom is above or equal to B's top.
              */
             function isAbove(a, b) {
                 return a.getBoundingClientRect().bottom <= b.getBoundingClientRect().top;

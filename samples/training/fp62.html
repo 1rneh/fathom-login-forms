@@ -183,7 +183,7 @@
 
 <form id="form-login" action="https://myaccount.nytimes.com/" method="post">
     <div class="form-controls">
-        <input autocomplete="username" type="email" id="email" name="email" placeholder="Email Address" class="ems-input" data-ems-id="login-email">
+        <input autocomplete="username" type="email" id="email" name="email" placeholder="Email Address" class="ems-input" data-ems-id="login-email" data-fathom="username">
         <p class="legalese-links">
             By selecting 'Continue', you agree to the 
             <a href="http://www.nytimes.com/content/help/rights/terms/terms-of-service.html" target="_blank" data-tracking-id="terms-of-service-link">Terms of Service</a>
@@ -193,7 +193,7 @@
 
         <div class="ems-msg error-msg-email hidden"></div>
         <div class="ems-msg server-err-msg hidden"></div>
-        <button type="submit" class="email-button next-button primary">
+        <button type="submit" class="email-button next-button primary" data-fathom="next">
             Continue
         </button>
 
