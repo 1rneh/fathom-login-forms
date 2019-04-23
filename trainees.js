@@ -21,23 +21,14 @@ trainees.set(
     // often go behind modal popups
     'username',
     {coeffs: new Map([  // [rule name, coefficient]
-        ['emailKeywordsGte1', 2.5455455780029297],
-        ['emailKeywordsGte2', -0.6052015423774719],
-        ['emailKeywordsGte3', -0.814266562461853],
-        ['emailKeywordsGte4', -0.516806960105896],
-        ['loginKeywordsGte1', 6.071885585784912],
-        ['loginKeywordsGte2', 2.3720338344573975],
-        ['loginKeywordsGte3', 2.0024030208587646],
-        ['loginKeywordsGte4', 1.9363112449645996],
-        ['headerRegistrationKeywordsGte1', -0.7349238395690918],
-        ['headerRegistrationKeywordsGte2', 0.20319712162017822],
-        ['headerRegistrationKeywordsGte3', -0.13256409764289856],
-        ['headerRegistrationKeywordsGte4', -0.08296145498752594],
-        ['buttonRegistrationKeywordsGte1', -2.184483051300049],
-        ['formPasswordFieldsGte2', -4.5845561027526855],
-        ['formTextFields', -1.2654680013656616],
+        ['emailKeywords', 1.2665141820907593],
+        ['loginKeywords', 7.138837814331055],
+        ['headerRegistrationKeywords', -0.8720579147338867],
+        ['buttonRegistrationKeywordsGte1', -2.178023338317871],
+        ['formPasswordFieldsGte2', -4.264151096343994],
+        ['formTextFields', -1.4122109413146973],
     ]),
-    // Bias: -3.369257926940918
+    // Bias: -2.891770362854004
 
      viewportSize: {width: 1100, height: 900},
      // The content-area size to use while training.
@@ -85,9 +76,9 @@ trainees.set(
              * Return a rule which is 1 if the number of keyword occurrences on
              * the fnode is >= ``num``.
              */
-            function keywordCountRule(inType, num, keywordRegex, baseName) {
-                return rule(type(inType), score(fnode => Number(numAttrMatches(keywordRegex, fnode.element) >= num)),  // === drops accuracy on first 20 training samples from 95% to 70%.
-                            {name: baseName + num})
+            function keywordCountRule(inType, keywordRegex, baseName) {
+                return rule(type(inType), score(fnode => numAttrMatches(keywordRegex, fnode.element)),  // === drops accuracy on first 20 training samples from 95% to 70%.
+                            {name: baseName})
             }
 
             /**
@@ -175,11 +166,11 @@ trainees.set(
                 rule(dom('input[type=email],input[type=text],input[type=""],input:not([type])').when(isVisible), type('username')),
                 // Look at "login"-like keywords on the <input>:
                 // TODO: If slow, lay down the count as a note.
-                ...[1, 2, 3, 4].map(gte => keywordCountRule('username', gte, loginRegex, 'loginKeywordsGte')),
+                keywordCountRule('username', loginRegex, 'loginKeywords'),
                 // Look at "email"-like keywords on the <input>:
-                ...[1, 2, 3, 4].map(gte => keywordCountRule('username', gte, /email/gi, 'emailKeywordsGte')),
+                keywordCountRule('username', /email/gi, 'emailKeywords'),
                 // Maybe also try the 2 closest headers, within some limit.
-                ...[1, 2, 3, 4].map(gte => rule(type('username'), score(fnode => Number(numContentMatches(registerRegex, closestHeaderAbove(fnode.element)) >= gte)), {name: 'headerRegistrationKeywordsGte' + gte})),
+                rule(type('username'), score(fnode => numContentMatches(registerRegex, closestHeaderAbove(fnode.element))), {name: 'headerRegistrationKeywords'}),
                 // If there is a Create or Join or Sign Up button in the form,
                 // it's probably an account creation form, not a login one.
                 // TODO: This is O(n * m). In a Prolog solution, we would first find all the forms, then characterize them as Sign-In-having or not, etc.:
