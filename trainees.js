@@ -21,21 +21,22 @@ trainees.set(
     // often go behind modal popups
     'username',
     {coeffs: new Map([  // [rule name, coefficient]
-        ['emailKeywordsGte1', 1.7506369352340698],
-        ['emailKeywordsGte2', 0.3925047516822815],
-        ['emailKeywordsGte3', 0.10444984585046768],
-        ['emailKeywordsGte4', -0.1944221407175064],
-        ['loginKeywordsGte1', 4.707931995391846],
-        ['loginKeywordsGte2', 1.885134220123291],
-        ['loginKeywordsGte3', 1.444320559501648],
-        ['loginKeywordsGte4', 1.8948482275009155],
-        ['headerRegistrationKeywordsGte1', -0.8698500990867615],
-        ['headerRegistrationKeywordsGte2', -0.0502895712852478],
-        ['headerRegistrationKeywordsGte3', -0.06126268208026886],
-        ['headerRegistrationKeywordsGte4', -0.08957384526729584],
-        ['buttonRegistrationKeywordsGte1', -2.887512683868408],
+        ['emailKeywordsGte1', 1.6371116638183594],
+        ['emailKeywordsGte2', 0.17671474814414978],
+        ['emailKeywordsGte3', -0.3340998888015747],
+        ['emailKeywordsGte4', -0.11124800890684128],
+        ['loginKeywordsGte1', 6.215968608856201],
+        ['loginKeywordsGte2', 1.96979820728302],
+        ['loginKeywordsGte3', 1.2085391283035278],
+        ['loginKeywordsGte4', 2.087592601776123],
+        ['headerRegistrationKeywordsGte1', -0.6434410810470581],
+        ['headerRegistrationKeywordsGte2', 0.26056554913520813],
+        ['headerRegistrationKeywordsGte3', -0.24665363132953644],
+        ['headerRegistrationKeywordsGte4', -0.13837982714176178],
+        ['buttonRegistrationKeywordsGte1', -2.238640308380127],
+        ['2PasswordFields', -4.737903118133545],
     ]),
-    // Bias: -4.361201286315918
+    // Bias: -4.505446434020996
 
      viewportSize: {width: 1100, height: 900},
      // The content-area size to use while training.
@@ -139,6 +140,30 @@ trainees.set(
                 return num;
             }
 
+            function first(iterable, defaultValue = null) {
+                for (const i of iterable) {
+                    return i;
+                }
+                return defaultValue;
+            }
+
+            function *filter(iterable, predicate) {
+                for (const i of iterable) {
+                    if (predicate(i)) {
+                        yield i;
+                    }
+                }
+            }
+
+            /**
+             * Return the number of password fields in the same form as the
+             * given element.
+             */
+            function numPasswordFieldsInForm(usernameElement) {
+                const form = first(filter(ancestors(usernameElement), e => e.tagName === 'FORM'));
+                return (form === null) ? 0 : form.querySelectorAll('input[type=password]').length;
+            }
+
             const rules = ruleset([
                 rule(dom('input[type=email],input[type=text],input[type=""],input:not([type])').when(isVisible), type('username')),
                 // Look at "login"-like keywords on the <input>:
@@ -154,6 +179,8 @@ trainees.set(
                 // signInForm(F) :- tagName(F, 'form'), hasSignInButtons(F).
                 // Then this rule would say: contains(F, U), signInForm(F).
                 rule(type('username'), score(fnode => Number(numRegistrationKeywordsOnButtons(fnode.element) >= 1)), {name: 'buttonRegistrationKeywordsGte1'}),
+                // If there is more than one password field, it's more likely a sign-up form.
+                rule(type('username'), score(fnode => Number(numPasswordFieldsInForm(fnode.element) >= 2)), {name: '2PasswordFields'}),
                 rule(type('username').max(), out('username'))
             ]);
             return rules;
