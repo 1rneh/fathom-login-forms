@@ -35,14 +35,7 @@ trainees.set(
         ['headerRegistrationKeywordsGte4', -0.08296145498752594],
         ['buttonRegistrationKeywordsGte1', -2.184483051300049],
         ['formPasswordFieldsGte2', -4.5845561027526855],
-        ['formTextFieldsGte1', -1.2654680013656616],
-        ['formTextFieldsGte2', -1.204832911491394],
-        ['formTextFieldsGte3', -1.8272669315338135],
-        ['formTextFieldsGte4', -1.3346205949783325],
-        ['formTextFieldsGte5', -1.130501627922058],
-        ['formTextFieldsGte6', -1.0718588829040527],
-        ['formTextFieldsGte7', -0.9950136542320251],
-        ['formTextFieldsGte8', -1.1469388008117676],
+        ['formTextFields', -1.2654680013656616],
     ]),
     // Bias: -3.369257926940918
 
@@ -194,9 +187,9 @@ trainees.set(
                 // Then this rule would say: contains(F, U), signInForm(F).
                 rule(type('username'), score(fnode => Number(numRegistrationKeywordsOnButtons(fnode.element) >= 1)), {name: 'buttonRegistrationKeywordsGte1'}),
                 // If there is more than one password field, it's more likely a sign-up form.
-                rule(type('username'), score(fnode => Number(numSelectorMatches(ancestorForm(fnode.element), 'input[type=password]') >= 2)), {name: 'formPasswordFieldsGte2'}),  // good
+                rule(type('username'), score(fnode => Number(numSelectorMatches(ancestorForm(fnode.element), 'input[type=password]') >= 2)), {name: 'formPasswordFieldsGte2'}),
                 // Login forms are short. Many fields smells like a sign-up form or payment form.
-                ...[1, 2, 3, 4, 5, 6, 7, 8].map(gte => rule(type('username'), score(fnode => Number(numSelectorMatches(ancestorForm(fnode.element), 'input[type=text]') >= gte)), {name: 'formTextFieldsGte' + gte})),  // good
+                rule(type('username'), score(fnode => numSelectorMatches(ancestorForm(fnode.element), 'input[type=text]')), {name: 'formTextFields'}),
                 rule(type('username').max(), out('username'))
             ]);
             return rules;
