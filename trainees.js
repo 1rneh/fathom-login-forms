@@ -126,15 +126,13 @@ trainees.set(
              */
             function numRegistrationKeywordsOnButtons(usernameElement) {
                 let num = 0;
-                for (const a of ancestors(usernameElement)) {
-                    if (a.tagName === 'FORM') {
-                        for (const button of Array.from(a.querySelectorAll('button'))) {
-                            num += numContentMatches(registerRegex, button) + numAttrMatches(registerRegex, button);
-                        }
-                        for (const input of Array.from(a.querySelectorAll('input[type=submit],input[type=button]'))) {
-                            num += numAttrMatches(registerRegex, input);
-                        }
-                        break;  // to save time
+                const form = first(filter(ancestors(usernameElement), e => e.tagName === 'FORM'));
+                if (form !== null) {
+                    for (const button of Array.from(form.querySelectorAll('button'))) {
+                        num += numContentMatches(registerRegex, button) + numAttrMatches(registerRegex, button);
+                    }
+                    for (const input of Array.from(form.querySelectorAll('input[type=submit],input[type=button]'))) {
+                        num += numAttrMatches(registerRegex, input);
                     }
                 }
                 return num;
