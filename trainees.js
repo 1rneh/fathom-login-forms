@@ -21,22 +21,26 @@ trainees.set(
     // often go behind modal popups
     'username',
     {coeffs: new Map([  // [rule name, coefficient]
-        ['emailKeywordsGte1', 1.6371116638183594],
-        ['emailKeywordsGte2', 0.17671474814414978],
-        ['emailKeywordsGte3', -0.3340998888015747],
-        ['emailKeywordsGte4', -0.11124800890684128],
-        ['loginKeywordsGte1', 6.215968608856201],
-        ['loginKeywordsGte2', 1.96979820728302],
-        ['loginKeywordsGte3', 1.2085391283035278],
-        ['loginKeywordsGte4', 2.087592601776123],
-        ['headerRegistrationKeywordsGte1', -0.6434410810470581],
-        ['headerRegistrationKeywordsGte2', 0.26056554913520813],
-        ['headerRegistrationKeywordsGte3', -0.24665363132953644],
-        ['headerRegistrationKeywordsGte4', -0.13837982714176178],
-        ['buttonRegistrationKeywordsGte1', -2.238640308380127],
-        ['2PasswordFields', -4.737903118133545],
+        ['emailKeywordsGte1', 2.550144910812378],
+        ['emailKeywordsGte2', -0.6569490432739258],
+        ['emailKeywordsGte3', -0.9700988531112671],
+        ['emailKeywordsGte4', -0.39275500178337097],
+        ['loginKeywordsGte1', 6.3963093757629395],
+        ['loginKeywordsGte2', 2.3954036235809326],
+        ['loginKeywordsGte3', 2.181589365005493],
+        ['loginKeywordsGte4', 1.8220667839050293],
+        ['headerRegistrationKeywordsGte1', -0.7386323809623718],
+        ['headerRegistrationKeywordsGte2', -0.07115936279296875],
+        ['headerRegistrationKeywordsGte3', -0.1006220281124115],
+        ['headerRegistrationKeywordsGte4', -0.09111052751541138],
+        ['buttonRegistrationKeywordsGte1', -2.220561981201172],
+        ['formPasswordFieldsGte2', -4.96799373626709],
+        ['formTextFieldsGte1', -1.240425705909729],
+        ['formTextFieldsGte2', -1.3281922340393066],
+        ['formTextFieldsGte3', -2.0335545539855957],
+        ['formTextFieldsGte4', -1.6302993297576904],
     ]),
-    // Bias: -4.505446434020996
+    // Bias: -3.451695680618286
 
      viewportSize: {width: 1100, height: 900},
      // The content-area size to use while training.
@@ -53,7 +57,7 @@ trainees.set(
              * Return the number of occurrences of a string or regex in another
              * string.
              */
-            function numMatches(regex, string) {
+            function numRegexMatches(regex, string) {
                 return (string.match(regex) || []).length;  // Optimization: split() benchmarks faster.
             }
 
@@ -70,10 +74,10 @@ trainees.set(
                     if (attr) {
                         if (Array.isArray(attr)) {
                             for (const eachValue of attr) {
-                                num += numMatches(regex, eachValue);
+                                num += numRegexMatches(regex, eachValue);
                             }
                         } else {
-                            num += numMatches(regex, attr);
+                            num += numRegexMatches(regex, attr);
                         }
                     }
                 }
@@ -117,7 +121,7 @@ trainees.set(
                 if (element === null) {
                     return 0;
                 }
-                return numMatches(regex, element.innerText);
+                return numRegexMatches(regex, element.innerText);
             }
 
             /**
@@ -126,7 +130,7 @@ trainees.set(
              */
             function numRegistrationKeywordsOnButtons(usernameElement) {
                 let num = 0;
-                const form = first(filter(ancestors(usernameElement), e => e.tagName === 'FORM'));
+                const form = ancestorForm(usernameElement);
                 if (form !== null) {
                     for (const button of Array.from(form.querySelectorAll('button'))) {
                         num += numContentMatches(registerRegex, button) + numAttrMatches(registerRegex, button);
@@ -153,13 +157,21 @@ trainees.set(
                 }
             }
 
+            function ancestorForm(element) {
+                // TOOD: Could probably be turned into upUntil(el, pred or selector), to go with plain up().
+                return first(filter(ancestors(element), e => e.tagName === 'FORM'));
+            }
+
             /**
-             * Return the number of password fields in the same form as the
-             * given element.
+             * Return the number of matches to a selector within a parent
+             * element. Obey my convention of null meaning nothing returned,
+             * for functions expected to return 1 or 0 elements.
              */
-            function numPasswordFieldsInForm(usernameElement) {
-                const form = first(filter(ancestors(usernameElement), e => e.tagName === 'FORM'));
-                return (form === null) ? 0 : form.querySelectorAll('input[type=password]').length;
+            function numSelectorMatches(element, selector) {
+                // TODO: Could generalize to within(element, predicate or selector).length.
+                //console.log('ELE, QSA:', (element === null) ? null : typeof element, (element === null) ? null : element.tagName, element.querySelectorAll);
+                // element is a non-null thing whose qsa prop is undefined.
+                return (element === null) ? 0 : element.querySelectorAll(selector).length;
             }
 
             const rules = ruleset([
@@ -178,7 +190,9 @@ trainees.set(
                 // Then this rule would say: contains(F, U), signInForm(F).
                 rule(type('username'), score(fnode => Number(numRegistrationKeywordsOnButtons(fnode.element) >= 1)), {name: 'buttonRegistrationKeywordsGte1'}),
                 // If there is more than one password field, it's more likely a sign-up form.
-                rule(type('username'), score(fnode => Number(numPasswordFieldsInForm(fnode.element) >= 2)), {name: '2PasswordFields'}),
+                rule(type('username'), score(fnode => Number(numSelectorMatches(ancestorForm(fnode.element), 'input[type=password]') >= 2)), {name: 'formPasswordFieldsGte2'}),  // good
+                // Login forms are short. Many fields smells like a sign-up form or payment form.
+                ...[1, 2, 3, 4, 5, 6, 7, 8].map(gte => rule(type('username'), score(fnode => Number(numSelectorMatches(ancestorForm(fnode.element), 'input[type=text]') >= gte)), {name: 'formTextFieldsGte' + gte})),  // good
                 rule(type('username').max(), out('username'))
             ]);
             return rules;
