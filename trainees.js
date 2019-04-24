@@ -15,10 +15,32 @@ import {ancestors, isVisible, min} from 'fathom-web/utilsForFrontend';
  * when run for 1 iteration, showing what the ruleset chose wrong.
  */
 const trainees = new Map();
+const VIEWPORT_SIZE = {width: 1100, height: 900};
 
 trainees.set(
-    // A ruleset that finds the full-screen, content-blocking overlays that
-    // often go behind modal popups
+    'next',
+    {coeffs: new Map([  // [rule name, coefficient]
+        ['typeSubmit', 1]
+    ]),
+
+     viewportSize: VIEWPORT_SIZE,
+     // The content-area size to use while training.
+
+     vectorType: 'next',
+     // The type of node to extract features from when using the Vectorizer
+
+     rulesetMaker:
+        function () {
+            const rules = ruleset([
+                rule(dom('button').when(isVisible), type('next')),
+                rule(type('next'), score(fnode => fnode.element.getAttribute('type') === 'submit' ? 1 : 0), {name: 'typeSubmit'})
+            ]);
+            return rules;
+        }
+    }
+);
+
+trainees.set(
     'username',
     {coeffs: new Map([  // [rule name, coefficient]
         ['emailKeywords', 1.2665141820907593],
@@ -30,7 +52,7 @@ trainees.set(
     ]),
     // Bias: -2.891770362854004
 
-     viewportSize: {width: 1100, height: 900},
+     viewportSize: VIEWPORT_SIZE,
      // The content-area size to use while training.
 
      vectorType: 'username',
