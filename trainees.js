@@ -17,11 +17,52 @@ import {ancestors, isVisible, min} from 'fathom-web/utilsForFrontend';
 const trainees = new Map();
 const VIEWPORT_SIZE = {width: 1100, height: 900};
 
+/**
+ * Return the number of occurrences of a string or regex in another
+ * string.
+ */
+function numRegexMatches(regex, string) {
+    return (string.match(regex) || []).length;  // Optimization: split() benchmarks faster.
+}
+
+/**
+ * Return the number of matches to the given regex in the attribute
+ * values of the given element.
+ */
+function numAttrMatches(regex, element, attrs = []) {
+    const attributes = attrs.length === 0 ? Array.from(element.attributes).map(a => a.name) : attrs;
+    let num = 0;
+    for (let i = 0; i < attributes.length; i++) {
+        const attr = element.getAttribute(attributes[i]);
+        // If the attribute is an array, apply the scoring function to each element
+        if (attr) {
+            if (Array.isArray(attr)) {
+                for (const eachValue of attr) {
+                    num += numRegexMatches(regex, eachValue);
+                }
+            } else {
+                num += numRegexMatches(regex, attr);
+            }
+        }
+    }
+    return num;
+}
+
+function numContentMatches(regex, element) {
+    if (element === null) {
+        return 0;
+    }
+    return numRegexMatches(regex, element.innerText);
+}
+
 trainees.set(
     'next',
     {coeffs: new Map([  // [rule name, coefficient]
-        ['typeSubmit', 1]
+        ['nextTypeSubmit', 2.7297091484069824],
+        ['nextLoginAttrs', -0.20297829806804657],
+        ['nextButtonContents', 4.865756511688232],
     ]),
+    // Bias: -5.656163215637207
 
      viewportSize: VIEWPORT_SIZE,
      // The content-area size to use while training.
@@ -33,7 +74,9 @@ trainees.set(
         function () {
             const rules = ruleset([
                 rule(dom('button').when(isVisible), type('next')),
-                rule(type('next'), score(fnode => fnode.element.getAttribute('type') === 'submit' ? 1 : 0), {name: 'typeSubmit'})
+                rule(type('next'), score(fnode => fnode.element.getAttribute('type') === 'submit' ? 1 : 0), {name: 'nextTypeSubmit'}),
+                rule(type('next'), score(fnode => numAttrMatches(/login|log-in|log_in|signon|sign-on|sign_on|signin|sign-in|sign_in/gi, fnode.element)), {name: 'nextLoginAttrs'}),
+                rule(type('next'), score(fnode => numContentMatches(/sign in|signin|log in|login/gi, fnode.element)), {name: 'nextButtonContents'}),
             ]);
             return rules;
         }
@@ -62,37 +105,6 @@ trainees.set(
         function () {
             const loginRegex = /login|log-in|log_in|signon|sign-on|sign_on|username/gi;  // no 'user-name' or 'user_name' found in first 20 training samples
             const registerRegex = /create|register|reg|sign up|signup|join/gi;
-
-            /**
-             * Return the number of occurrences of a string or regex in another
-             * string.
-             */
-            function numRegexMatches(regex, string) {
-                return (string.match(regex) || []).length;  // Optimization: split() benchmarks faster.
-            }
-
-            /**
-             * Return the number of matches to the given regex in the attribute
-             * values of the given element.
-             */
-            function numAttrMatches(regex, element, attrs = []) {
-                const attributes = attrs.length === 0 ? Array.from(element.attributes).map(a => a.name) : attrs;
-                let num = 0;
-                for (let i = 0; i < attributes.length; i++) {
-                    const attr = element.getAttribute(attributes[i]);
-                    // If the attribute is an array, apply the scoring function to each element
-                    if (attr) {
-                        if (Array.isArray(attr)) {
-                            for (const eachValue of attr) {
-                                num += numRegexMatches(regex, eachValue);
-                            }
-                        } else {
-                            num += numRegexMatches(regex, attr);
-                        }
-                    }
-                }
-                return num;
-            }
 
             /**
              * Return a rule which is 1 if the number of keyword occurrences on
@@ -125,13 +137,6 @@ trainees.set(
              */
             function isAbove(a, b) {
                 return a.getBoundingClientRect().bottom <= b.getBoundingClientRect().top;
-            }
-
-            function numContentMatches(regex, element) {
-                if (element === null) {
-                    return 0;
-                }
-                return numRegexMatches(regex, element.innerText);
             }
 
             /**
