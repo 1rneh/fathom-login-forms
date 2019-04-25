@@ -203,9 +203,9 @@ trainees.set(
                 // TODO: This is O(n * m). In a Prolog solution, we would first find all the forms, then characterize them as Sign-In-having or not, etc.:
                 // signInForm(F) :- tagName(F, 'form'), hasSignInButtons(F).
                 // Then this rule would say: contains(F, U), signInForm(F).
-                rule(type('username'), score(fnode => Number(numRegistrationKeywordsOnButtons(fnode.element) >= 1)), {name: 'buttonRegistrationKeywordsGte1'}),
+                rule(type('username'), score(fnode => numRegistrationKeywordsOnButtons(fnode.element) >= 1), {name: 'buttonRegistrationKeywordsGte1'}),
                 // If there is more than one password field, it's more likely a sign-up form.
-                rule(type('username'), score(fnode => Number(numSelectorMatches(ancestorForm(fnode.element), 'input[type=password]') >= 2)), {name: 'formPasswordFieldsGte2'}),
+                rule(type('username'), score(fnode => numSelectorMatches(ancestorForm(fnode.element), 'input[type=password]') >= 2), {name: 'formPasswordFieldsGte2'}),
                 // Login forms are short. Many fields smells like a sign-up form or payment form.
                 rule(type('username'), score(fnode => numSelectorMatches(ancestorForm(fnode.element), 'input[type=text]')), {name: 'formTextFields'}),
                 rule(type('username').max(), out('username'))
