@@ -55,12 +55,22 @@ function numContentMatches(regex, element) {
     return numRegexMatches(regex, element.innerText);
 }
 
+/**
+ * Return the "boiled-down" inner text of a fnode, stripping off surrounding
+ * space and lowercasing it for comparison.
+ */
+function boiledText(fnode) {
+    return fnode.element.innerText.trim().toLowerCase();
+}
+
 trainees.set(
     'next',
     {coeffs: new Map([  // [rule name, coefficient]
         ['nextTypeSubmit', 2.7297091484069824],
         ['nextLoginAttrs', -0.20297829806804657],
-        ['nextButtonContents', 4.865756511688232],
+        ['nextButtonContentContainsLogIn', 4.865756511688232],
+        ['nextButtonContentIsLogIn', 1],
+        ['nextButtonContentIsNext', 1],
     ]),
     // Bias: -5.656163215637207
 
@@ -76,7 +86,13 @@ trainees.set(
                 rule(dom('button').when(isVisible), type('next')),
                 rule(type('next'), score(fnode => fnode.element.getAttribute('type') === 'submit' ? 1 : 0), {name: 'nextTypeSubmit'}),
                 rule(type('next'), score(fnode => numAttrMatches(/login|log-in|log_in|signon|sign-on|sign_on|signin|sign-in|sign_in/gi, fnode.element)), {name: 'nextLoginAttrs'}),
-                rule(type('next'), score(fnode => numContentMatches(/sign in|signin|log in|login/gi, fnode.element)), {name: 'nextButtonContents'}),
+
+                // Maybe one of these can go away:
+                rule(type('next'), score(fnode => numContentMatches(/sign in|signin|log in|login/gi, fnode.element)), {name: 'nextButtonContentContainsLogIn'}),
+                rule(type('next'), score(fnode => ['log in', 'login', 'sign in'].includes(boiledText(fnode))), {name: 'nextButtonContentIsLogIn'}),
+
+                // "Next" is a more ambiguous title than "Log In", so let it get a different weight:
+                rule(type('next'), score(fnode => boiledText(fnode) === 'next'), {name: 'nextButtonContentIsNext'}),
             ]);
             return rules;
         }

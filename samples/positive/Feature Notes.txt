@@ -1,5 +1,3 @@
-Smells:
-
 Username:
 Suspected patterns:
 1:
@@ -114,3 +112,17 @@ Next smell: "Create/register/join" in buttons, which will help fp76.
     "Sign up" in headers
 Another smell: 2 password fields in the form means not a login form.
 Another: large numbers of inputs probably mean not a login form.
+
+Next button:
+Suspected patterns:
+√ <button type=submit>
+within same form as username field
+√ <button attrs="login|sign-on|signin"
+√ <button> contains Sign In|Log In
+√ <button> contents MATCH Sign In|Log In
+√ <button> contents MATCH Next
+<button> near[est] and below username field
+isVisible (caught one <input type=submit> that's hidden)
+What about <input>s?
+
+Next: test the nextButtonContentsIsNext signal, then get <input type="submit"> in there, then see what our accuracy is. The accuracy measurement should be sane then.
