@@ -63,6 +63,10 @@ function boiledText(fnode) {
     return fnode.element.innerText.trim().toLowerCase();
 }
 
+const nextButton = type('next').when(fnode => fnode.element.tagName === 'BUTTON');
+const nextInput = type('next').when(fnode => fnode.element.tagName === 'INPUT');
+const nextAnything = type('next');
+
 trainees.set(
     'next',
     {coeffs: new Map([  // [rule name, coefficient]
@@ -83,16 +87,16 @@ trainees.set(
      rulesetMaker:
         function () {
             const rules = ruleset([
-                rule(dom('button').when(isVisible), type('next')),
-                rule(type('next'), score(fnode => fnode.element.getAttribute('type') === 'submit' ? 1 : 0), {name: 'nextTypeSubmit'}),
-                rule(type('next'), score(fnode => numAttrMatches(/login|log-in|log_in|signon|sign-on|sign_on|signin|sign-in|sign_in/gi, fnode.element)), {name: 'nextLoginAttrs'}),
+                rule(dom('button,input[type=submit]').when(isVisible), type('next')),
+                rule(nextButton, score(fnode => fnode.element.getAttribute('type') === 'submit' ? 1 : 0), {name: 'nextTypeSubmit'}),
+                rule(nextAnything, score(fnode => numAttrMatches(/login|log-in|log_in|signon|sign-on|sign_on|signin|sign-in|sign_in/gi, fnode.element)), {name: 'nextLoginAttrs'}),
 
                 // Maybe one of these can go away:
-                rule(type('next'), score(fnode => numContentMatches(/sign in|signin|log in|login/gi, fnode.element)), {name: 'nextButtonContentContainsLogIn'}),
-                rule(type('next'), score(fnode => ['log in', 'login', 'sign in'].includes(boiledText(fnode))), {name: 'nextButtonContentIsLogIn'}),
+                rule(nextButton, score(fnode => numContentMatches(/sign in|signin|log in|login/gi, fnode.element)), {name: 'nextButtonContentContainsLogIn'}),
+                rule(nextButton, score(fnode => ['log in', 'login', 'sign in'].includes(boiledText(fnode))), {name: 'nextButtonContentIsLogIn'}),
 
                 // "Next" is a more ambiguous title than "Log In", so let it get a different weight:
-                rule(type('next'), score(fnode => boiledText(fnode) === 'next'), {name: 'nextButtonContentIsNext'}),
+                rule(nextButton, score(fnode => boiledText(fnode) === 'next'), {name: 'nextButtonContentIsNext'}),
             ]);
             return rules;
         }
