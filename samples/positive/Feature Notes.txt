@@ -135,5 +135,16 @@ Working on fixing the obvious errors in the training set.
   * Vectorizing the training samples, 169.html didn't get any nodes. It turned out to be a gremlin: revectorizing made one show up.
   * 146 is coming out green when it should be a failure. It has candidate nodes but none that are a target. Shouldn't it at least be printing a "negative sample assumed" message? Fixed fathom-train to do so. 146 has an <a> as a Next button. 270 and 423 have <input type=image>. Opened up the criteria for the content tests to apply to the <a>. The attr ones should catch the image one. Added a weight for type=image. Let's see if the images can share a weight with the other things that need attrs weighed. If not, I can make a special rule for them. This might be the sort of ruleset that could benefit from a deeper net: ands and ors between smells.
 
+Recovering from all the extra fodder those new tags give us:
+  * 146 is picking a login menu <a>. Sane. But far from username field and not within the form.
+  * 263 is doing the same. Their <a> says "header" in it and is within a <nav>.
+  * 270 also a login link, up at the top of the page.
+  * 374 also.
+They all...
+  * √ have a non-javascript: href
+  * are outside its form
+  * are near the top of the page
+  * are far from the username field
+
 Think about adding a bonus (or negative) for just being an <a> tag.
 Why is nextLoginAttrs so low, negative even?

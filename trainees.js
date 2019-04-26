@@ -75,6 +75,10 @@ function isInput(fnode) {
     return fnode.element.tagName === 'INPUT';
 }
 
+function isAnchor(fnode) {
+    return fnode.element.tagName === 'A';
+}
+
 function isInputSubmit(fnode) {
     return isInput(fnode) && fnode.element.getAttribute('type') === 'submit';
 }
@@ -99,20 +103,28 @@ function and(...functions) {
     }
 }
 
+/**
+ * Return the given attr of a DOM node, "" if it is absent.
+ */
+function attr(element, attrName) {
+    return element.getAttribute(attrName) || '';
+}
+
 trainees.set(
     'next',
     {coeffs: new Map([  // [rule name, coefficient]
-        ['nextButtonTypeSubmit', 4.285979270935059],
-        ['nextInputTypeSubmit', 4.056891918182373],
-        ['nextInputTypeImage', 6.281125068664551],
-        ['nextLoginAttrs', -0.12746892869472504],
-        ['nextButtonContentContainsLogIn', 1.1784777641296387],
-        ['nextButtonContentIsLogIn', 3.6133906841278076],
-        ['nextInputContentContainsLogIn', 2.3991267681121826],
-        ['nextInputContentIsLogIn', 2.72870135307312],
-        ['nextButtonContentIsNext', 0.02409958839416504],
+        ['nextAnchorIsntJavaScript', -3.328075647354126],
+        ['nextButtonTypeSubmit', 2.2774908542633057],
+        ['nextInputTypeSubmit', 2.0744035243988037],
+        ['nextInputTypeImage', 4.304122447967529],
+        ['nextLoginAttrs', -0.10403445363044739],
+        ['nextButtonContentContainsLogIn', 1.3002732992172241],
+        ['nextButtonContentIsLogIn', 3.4924819469451904],
+        ['nextInputContentContainsLogIn', 2.5252463817596436],
+        ['nextInputContentIsLogIn', 2.5901713371276855],
+        ['nextButtonContentIsNext', 0.24742576479911804],
     ]),
-    // Bias: -6.651727676391602
+    // Bias: -4.678980350494385
 
      viewportSize: VIEWPORT_SIZE,
      // The content-area size to use while training.
@@ -127,6 +139,9 @@ trainees.set(
 
                 // Prune down the <a> candidates in the hopes of better speed and accuracy:
                 rule(dom('a').when(fnode => numAttrOrContentMatches(/log|sign/gi, fnode.element) && isVisible(fnode)), type('next')),
+
+                // <a href!='javascript:...'>. Most login anchors are JS calls, often hard-coded:
+                rule(type('next'), score(and(isAnchor, fnode => !attr(fnode.element, 'href').startsWith('javascript:'))), {name: 'nextAnchorIsntJavaScript'}),
 
                 // <button type=submit>:
                 rule(type('next'), score(and(isButton, typeAttrIsSubmit)), {name: 'nextButtonTypeSubmit'}),
@@ -148,7 +163,7 @@ trainees.set(
                 // Login smell bonus on value attr, since that's the visible label on <input>s:
                 // Maybe one of these can go away too.
                 rule(type('next'), score(fnode => isInputSubmit(fnode) && numAttrMatches(/sign in|signin|log in|login/gi, fnode.element, ['value'])), {name: 'nextInputContentContainsLogIn'}),
-                rule(type('next'), score(fnode => isInputSubmit(fnode) && ['log in', 'login', 'sign in'].includes((fnode.element.getAttribute('value') || '').trim().toLowerCase())), {name: 'nextInputContentIsLogIn'}),
+                rule(type('next'), score(fnode => isInputSubmit(fnode) && ['log in', 'login', 'sign in'].includes(attr(fnode.element, 'value').trim().toLowerCase())), {name: 'nextInputContentIsLogIn'}),
 
                 // "Next" is a more ambiguous button title than "Log In", so let it get a different weight:
                 rule(type('next'), score(and(isButton, fnode => boiledText(fnode) === 'next')), {name: 'nextButtonContentIsNext'}),
