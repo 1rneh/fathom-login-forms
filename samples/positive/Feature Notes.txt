@@ -121,8 +121,12 @@ within same form as username field
 √ <button> contains Sign In|Log In
 √ <button> contents MATCH Sign In|Log In
 √ <button> contents MATCH Next
-<button> near[est] and below username field
-isVisible (caught one <input type=submit> that's hidden)
+<button> or <input type=submit> near[est] and below username field
+√ isVisible (caught one <input type=submit> that's hidden)
 What about <input>s?
+    √ value="Log In"
+    
+It turns out conserveScore() is the mirror of when(): one splits fnode streams, and the other joins them.
 
-Next: test the nextButtonContentsIsNext signal, then get <input type="submit"> in there, then see what our accuracy is. The accuracy measurement should be sane then.
+Test the nextButtonContentsIsNext signal, then get <input type="submit"> in there, then see what our accuracy is. The accuracy measurement should be sane then.
+It turns out a null is emitted for rules that don't apply (according to their when()). What should we do? I'm trying restyling the RHS to be "matches the when() and whatever signal you were going for in the first place" and removing the when(). Ultimately, we should being conserveScore() back or jump to full-on Prolog.
