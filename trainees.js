@@ -55,6 +55,10 @@ function numContentMatches(regex, element) {
     return numRegexMatches(regex, element.innerText);
 }
 
+function numAttrOrContentMatches(regex, element) {
+    return numContentMatches(regex, element) + numAttrMatches(regex, element);
+}
+
 /**
  * Return the "boiled-down" inner text of a fnode, stripping off surrounding
  * space and lowercasing it for comparison.
@@ -69,6 +73,10 @@ function isButton(fnode) {
 
 function isInput(fnode) {
     return fnode.element.tagName === 'INPUT';
+}
+
+function isInputSubmit(fnode) {
+    return isInput(fnode) && fnode.element.getAttribute('type') === 'submit';
 }
 
 function typeAttrIsSubmit(fnode) {
@@ -94,16 +102,17 @@ function and(...functions) {
 trainees.set(
     'next',
     {coeffs: new Map([  // [rule name, coefficient]
-        ['nextButtonTypeSubmit', 2.8362350463867188],
-        ['nextInputTypeSubmit', 3.0160202980041504],
-        ['nextLoginAttrs', -0.5516546368598938],
-        ['nextButtonContentContainsLogIn', 2.0475430488586426],
-        ['nextButtonContentIsLogIn', 4.805412292480469],
-        ['nextInputContentContainsLogIn', 2.930311918258667],
-        ['nextInputContentIsLogIn', 2.602526903152466],
-        ['nextButtonContentIsNext', 0.004743754863739014],
+        ['nextButtonTypeSubmit', 4.285979270935059],
+        ['nextInputTypeSubmit', 4.056891918182373],
+        ['nextInputTypeImage', 6.281125068664551],
+        ['nextLoginAttrs', -0.12746892869472504],
+        ['nextButtonContentContainsLogIn', 1.1784777641296387],
+        ['nextButtonContentIsLogIn', 3.6133906841278076],
+        ['nextInputContentContainsLogIn', 2.3991267681121826],
+        ['nextInputContentIsLogIn', 2.72870135307312],
+        ['nextButtonContentIsNext', 0.02409958839416504],
     ]),
-    // Bias: -5.605991840362549
+    // Bias: -6.651727676391602
 
      viewportSize: VIEWPORT_SIZE,
      // The content-area size to use while training.
@@ -114,7 +123,10 @@ trainees.set(
      rulesetMaker:
         function () {
             const rules = ruleset([
-                rule(dom('button,input[type=submit]').when(isVisible), type('next')),
+                rule(dom('button,input[type=submit],input[type=image]').when(isVisible), type('next')),
+
+                // Prune down the <a> candidates in the hopes of better speed and accuracy:
+                rule(dom('a').when(fnode => numAttrOrContentMatches(/log|sign/gi, fnode.element) && isVisible(fnode)), type('next')),
 
                 // <button type=submit>:
                 rule(type('next'), score(and(isButton, typeAttrIsSubmit)), {name: 'nextButtonTypeSubmit'}),
@@ -122,21 +134,25 @@ trainees.set(
                 // Weight type=submit on <input>s separately, in case they're different:
                 rule(type('next'), score(and(isInput, typeAttrIsSubmit)), {name: 'nextInputTypeSubmit'}),
 
-                // Login-smelling attrs on <button>s and <input>s:
+                // A few buttons are <input type=image>:
+                rule(type('next'), score(fnode => isInput(fnode) && fnode.element.getAttribute('type') === 'image'), {name: 'nextInputTypeImage'}),
+
+                // Login-smelling attrs on <button>s, <input>s and <a>s:
                 rule(type('next'), score(fnode => numAttrMatches(/login|log-in|log_in|signon|sign-on|sign_on|signin|sign-in|sign_in/gi, fnode.element)), {name: 'nextLoginAttrs'}),
 
-                // Login-smelling contents (on buttons):
+                // Login-smelling contents (on elements that have contents):
                 // Maybe one of these can go away.
-                rule(type('next'), score(and(isButton, fnode => numContentMatches(/sign in|signin|log in|login/gi, fnode.element))), {name: 'nextButtonContentContainsLogIn'}),
-                rule(type('next'), score(and(isButton, fnode => ['log in', 'login', 'sign in'].includes(boiledText(fnode)))), {name: 'nextButtonContentIsLogIn'}),
+                rule(type('next'), score(fnode => numContentMatches(/sign in|signin|log in|login/gi, fnode.element)), {name: 'nextButtonContentContainsLogIn'}),
+                rule(type('next'), score(fnode => ['log in', 'login', 'sign in'].includes(boiledText(fnode))), {name: 'nextButtonContentIsLogIn'}),
 
                 // Login smell bonus on value attr, since that's the visible label on <input>s:
                 // Maybe one of these can go away too.
-                rule(type('next'), score(and(isInput, fnode => numAttrMatches(/sign in|signin|log in|login/gi, fnode.element, ['value']))), {name: 'nextInputContentContainsLogIn'}),
-                rule(type('next'), score(and(isInput, fnode => ['log in', 'login', 'sign in'].includes((fnode.element.getAttribute('value') || '').trim().toLowerCase()))), {name: 'nextInputContentIsLogIn'}),
+                rule(type('next'), score(fnode => isInputSubmit(fnode) && numAttrMatches(/sign in|signin|log in|login/gi, fnode.element, ['value'])), {name: 'nextInputContentContainsLogIn'}),
+                rule(type('next'), score(fnode => isInputSubmit(fnode) && ['log in', 'login', 'sign in'].includes((fnode.element.getAttribute('value') || '').trim().toLowerCase())), {name: 'nextInputContentIsLogIn'}),
 
                 // "Next" is a more ambiguous button title than "Log In", so let it get a different weight:
                 rule(type('next'), score(and(isButton, fnode => boiledText(fnode) === 'next')), {name: 'nextButtonContentIsNext'}),
+                rule(type('next'), out('next')),
             ]);
             return rules;
         }

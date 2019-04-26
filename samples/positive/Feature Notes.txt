@@ -130,3 +130,10 @@ It turns out conserveScore() is the mirror of when(): one splits fnode streams, 
 
 Test the nextButtonContentsIsNext signal, then get <input type="submit"> in there, then see what our accuracy is. The accuracy measurement should be sane then.
 It turns out a null is emitted for rules that don't apply (according to their when()). What should we do? I'm trying restyling the RHS to be "matches the when() and whatever signal you were going for in the first place" and removing the when(). Ultimately, we should being conserveScore() back or jump to full-on Prolog.
+
+Working on fixing the obvious errors in the training set.
+  * Vectorizing the training samples, 169.html didn't get any nodes. It turned out to be a gremlin: revectorizing made one show up.
+  * 146 is coming out green when it should be a failure. It has candidate nodes but none that are a target. Shouldn't it at least be printing a "negative sample assumed" message? Fixed fathom-train to do so. 146 has an <a> as a Next button. 270 and 423 have <input type=image>. Opened up the criteria for the content tests to apply to the <a>. The attr ones should catch the image one. Added a weight for type=image. Let's see if the images can share a weight with the other things that need attrs weighed. If not, I can make a special rule for them. This might be the sort of ruleset that could benefit from a deeper net: ands and ors between smells.
+
+Think about adding a bonus (or negative) for just being an <a> tag.
+Why is nextLoginAttrs so low, negative even?
