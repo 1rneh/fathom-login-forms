@@ -199,6 +199,19 @@ function attr(element, attrName) {
     return element.getAttribute(attrName) || '';
 }
 
+function nearUsername(fnode) {
+    function stretchedSigmoid(x) {
+        return 1 / (1 + Math.exp(-(x - 300) / 100));
+    }
+    const bestUsername = fnode._ruleset.get('username')[0];
+    if (bestUsername === undefined) {
+        return 0;
+    }
+    const distance = euclidean(fnode, bestUsername);
+    // Start 1-ish, then start being 0-ish at 600px. Be halfway to zeroish at 300px.
+    return 1 - stretchedSigmoid(distance);
+}
+
 /**
  * Return a big, fat ruleset that finds username fields, password fields, and Next buttons.
  */
@@ -213,16 +226,17 @@ function makeRuleset() {
         ['formTextFields', -1.4122109413146973],
 
         // "Next" button:
-        ['nextAnchorIsJavaScript', -3.328075647354126],
-        ['nextButtonTypeSubmit', 2.2774908542633057],
-        ['nextInputTypeSubmit', 2.0744035243988037],
-        ['nextInputTypeImage', 4.304122447967529],
-        ['nextLoginAttrs', -0.10403445363044739],
-        ['nextButtonContentContainsLogIn', 1.3002732992172241],
-        ['nextButtonContentIsLogIn', 3.4924819469451904],
-        ['nextInputContentContainsLogIn', 2.5252463817596436],
-        ['nextInputContentIsLogIn', 2.5901713371276855],
-        ['nextButtonContentIsNext', 0.24742576479911804],
+        ['nextAnchorIsJavaScript', 1.6873281002044678],
+        ['nextButtonTypeSubmit', 4.750747203826904],
+        ['nextInputTypeSubmit', 5.030472278594971],
+        ['nextInputTypeImage', 7.9236860275268555],
+        ['nextLoginAttrs', -0.12361090630292892],
+        ['nextButtonContentContainsLogIn', 0.34277015924453735],
+        ['nextButtonContentIsLogIn', 4.914956569671631],
+        ['nextInputContentContainsLogIn', 2.0749547481536865],
+        ['nextInputContentIsLogIn', 1.9257749319076538],
+        ['nextButtonContentIsNext', -0.10448239743709564],
+        ['nextNearUsername', 4.566072463989258],
     ]);
 
     const rules = ruleset([
@@ -291,9 +305,12 @@ function makeRuleset() {
         // "Next" is a more ambiguous button title than "Log In", so let it get a different weight:
         rule(type('next'), score(and(isButton, fnode => boiledText(fnode) === 'next')), {name: 'nextButtonContentIsNext'}),
 
+        // Login controls are near username fields:
+        rule(type('next'), score(nearUsername), {name: 'nextNearUsername'}),
+
         rule(type('next'), out('next')),
     ],
-    {coeffs, biases: [['username', -2.891770362854004], ['next', -4.678980350494385]]});
+    {coeffs, biases: [['username', -2.891770362854004], ['next', -9.6146240234375]]});
 
     return rules;
 }
@@ -313,6 +330,7 @@ trainees.set(
         ['nextInputContentContainsLogIn', 1],
         ['nextInputContentIsLogIn', 1],
         ['nextButtonContentIsNext', 1],
+        ['nextNearUsername', 1],
      ]),
 
      viewportSize: VIEWPORT_SIZE,
