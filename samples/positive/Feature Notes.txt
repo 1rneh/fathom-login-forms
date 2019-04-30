@@ -148,3 +148,10 @@ They all...
 
 Think about adding a bonus (or negative) for just being an <a> tag.
 Why is nextLoginAttrs so low, negative even?
+
+fp32 failed by finding a so-called high-confidence false positive Next. But it's not a false positive at all. Labeled and renamed it to npf32.
+    Still getting it wrong (without retraining). Maybe add "new" in attrs as a create smell.
+54 is BS for Next.
+    Try an attr and content smell on "create" for next button candidates.
+263 (low-conf success) just says "Submit" on its button.
+    Maybe a smell for being in the same form as username would help.

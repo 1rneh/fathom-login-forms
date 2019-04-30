@@ -17,12 +17,15 @@ import {ancestors, isVisible, min} from 'fathom-web/utilsForFrontend';
 const trainees = new Map();
 const VIEWPORT_SIZE = {width: 1100, height: 900};
 
-const loginRegex = /login|log-in|log_in|signon|sign-on|sign_on|username/gi;  // no 'user-name' or 'user_name' found in first 20 training samples
-const registerRegex = /create|register|reg|sign up|signup|join/gi;
+const loginAttrRegex = /login|log-in|log_in|signon|sign-on|sign_on|signin|sign-in|sign_in|username/gi;  // no 'user-name' or 'user_name' found in first 20 training samples
+const registerRegex = /create|register|reg|sign up|signup|join|new/gi;
 
 /**
- * Return a rule which is 1 if the number of keyword occurrences on
- * the fnode is >= ``num``.
+ * Return a rule with a score equallying the number of keyword occurrences on
+ * the fnode.
+ *
+ * Small unbucketed numbers seem to train similarly to a bucket using >= for
+ * number.
  */
 function keywordCountRule(inType, keywordRegex, baseName) {
     return rule(type(inType), score(fnode => numAttrMatches(keywordRegex, fnode.element)),  // === drops accuracy on first 20 training samples from 95% to 70%.
@@ -62,7 +65,7 @@ function numRegistrationKeywordsOnButtons(usernameElement) {
     const form = ancestorForm(usernameElement);
     if (form !== null) {
         for (const button of Array.from(form.querySelectorAll('button'))) {
-            num += numContentMatches(registerRegex, button) + numAttrMatches(registerRegex, button);
+            num += numAttrOrContentMatches(registerRegex, button);
         }
         for (const input of Array.from(form.querySelectorAll('input[type=submit],input[type=button]'))) {
             num += numAttrMatches(registerRegex, input);
@@ -218,25 +221,26 @@ function nearUsername(fnode) {
 function makeRuleset() {
     const coeffs = new Map([  // [rule name, coefficient]
         // Username field:
-        ['emailKeywords', 1.2665141820907593],
-        ['loginKeywords', 7.138837814331055],
-        ['headerRegistrationKeywords', -0.8720579147338867],
-        ['buttonRegistrationKeywordsGte1', -2.178023338317871],
-        ['formPasswordFieldsGte2', -4.264151096343994],
-        ['formTextFields', -1.4122109413146973],
+        ['emailKeywords', 0.3606211543083191],
+        ['loginKeywords', 5.311713218688965],
+        ['headerRegistrationKeywords', -1.6875461339950562],
+        ['buttonRegistrationKeywordsGte1', -2.22440767288208],
+        ['formPasswordFieldsGte2', -6.207341194152832],
+        ['formTextFields', -1.3702701330184937],
 
         // "Next" button:
-        ['nextAnchorIsJavaScript', 1.6873281002044678],
-        ['nextButtonTypeSubmit', 4.750747203826904],
-        ['nextInputTypeSubmit', 5.030472278594971],
-        ['nextInputTypeImage', 7.9236860275268555],
-        ['nextLoginAttrs', -0.12361090630292892],
-        ['nextButtonContentContainsLogIn', 0.34277015924453735],
-        ['nextButtonContentIsLogIn', 4.914956569671631],
-        ['nextInputContentContainsLogIn', 2.0749547481536865],
-        ['nextInputContentIsLogIn', 1.9257749319076538],
-        ['nextButtonContentIsNext', -0.10448239743709564],
-        ['nextNearUsername', 4.566072463989258],
+        ['nextAnchorIsJavaScript', 1.170885443687439],
+        ['nextButtonTypeSubmit', 4.6349921226501465],
+        ['nextInputTypeSubmit', 4.399911403656006],
+        ['nextInputTypeImage', 6.886825084686279],
+        ['nextLoginAttrs', 0.07831855118274689],
+        ['nextButtonContentContainsLogIn', -0.6583542227745056],
+        ['nextButtonContentIsLogIn', 4.931175708770752],
+        ['nextInputContentContainsLogIn', 3.9439573287963867],
+        ['nextInputContentIsLogIn', 4.154344081878662],
+        ['nextButtonContentIsNext', 0.0434117317199707],
+        ['nextNearUsername', 4.551006317138672],
+        ['nextRegisterAttrsOrContent', -3.426626443862915],
     ]);
 
     const rules = ruleset([
@@ -246,7 +250,7 @@ function makeRuleset() {
 
         // Look at "login"-like keywords on the <input>:
         // TODO: If slow, lay down the count as a note.
-        keywordCountRule('username', loginRegex, 'loginKeywords'),
+        keywordCountRule('username', loginAttrRegex, 'loginKeywords'),
 
         // Look at "email"-like keywords on the <input>:
         keywordCountRule('username', /email/gi, 'emailKeywords'),
@@ -308,9 +312,12 @@ function makeRuleset() {
         // Login controls are near username fields:
         rule(type('next'), score(nearUsername), {name: 'nextNearUsername'}),
 
+        // Buttons, anchors, and inputs shouldn't smell like "new" or "create".
+        rule(type('next'), score(fnode => numAttrOrContentMatches(registerRegex, fnode.element)), {name: 'nextRegisterAttrsOrContent'}),
+
         rule(type('next'), out('next')),
     ],
-    {coeffs, biases: [['username', -2.891770362854004], ['next', -9.6146240234375]]});
+    {coeffs, biases: [['username', -2.7013704776763916], ['next', -8.660104751586914]]});
 
     return rules;
 }
@@ -331,6 +338,7 @@ trainees.set(
         ['nextInputContentIsLogIn', 1],
         ['nextButtonContentIsNext', 1],
         ['nextNearUsername', 1],
+        ['nextRegisterAttrsOrContent', 1],
      ]),
 
      viewportSize: VIEWPORT_SIZE,
