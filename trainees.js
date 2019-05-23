@@ -219,7 +219,7 @@ function nearUsername(fnode) {
  * Return a big, fat ruleset that finds username fields, password fields, and Next buttons.
  */
 function makeRuleset() {
-    const coeffs = new Map([  // [rule name, coefficient]
+    const coeffs = [  // [rule name, coefficient]
         // Username field:
         ['emailKeywords', 0.3606211543083191],
         ['loginKeywords', 5.311713218688965],
@@ -241,7 +241,7 @@ function makeRuleset() {
         ['nextButtonContentIsNext', 0.0434117317199707],
         ['nextNearUsername', 4.551006317138672],
         ['nextRegisterAttrsOrContent', -3.426626443862915],
-    ]);
+    ];
 
     const rules = ruleset([
         // Username fields:
@@ -317,7 +317,8 @@ function makeRuleset() {
 
         rule(type('next'), out('next')),
     ],
-    {coeffs, biases: [['username', -2.7013704776763916], ['next', -8.660104751586914]]});
+    coeffs,
+    [['username', -2.7013704776763916], ['next', -8.660104751586914]]);
 
     return rules;
 }
