@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; media-src 'self' data:; style-src 'self' data: 'unsafe-inline'; font-src 'self' data:; frame-src 'self' data:"><meta http-equiv="Memento-Datetime" content="Mon, 10 Feb 2020 14:53:19 GMT"><link rel="original" href="https://login.fleetize.com/">
+    <title>FLEETIZE - Ortungsportal</title>
+    <meta name="theme-color" content="#22262e">
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta content="FLEETIZE Ortungsportal zur Ortung und Steuerung Ihrer Flotte." name="description">
+    <meta content="Fleetize" name="author">
+
+    <meta property="og:title" content="FLEETIZE - Ortungsportal">
+    <meta property="og:description" content="FLEETIZE Ortungsportal zur Ortung und Steuerung Ihrer Flotte.">
+    <meta property="og:image" content="assets/img/favicon/favicon-FLEETIZE-HD.png">
+
+    <meta name="date" content="2015-12-12T18:55:00+02:00">
+
+    <link rel="icon" sizes="192x192" href="resources/DE_63/1.png" data-original-href="https://login.fleetize.com/assets/img/favicon/favicon-FLEETIZE-HD.png">
+    <link rel="apple-touch-icon" href="https://login.fleetize.com/assets/img/favicon/appletouch-FLEETIZE-HD.png">
+    <link type="image/png" href="resources/DE_63/2.png" rel="icon" data-original-href="https://login.fleetize.com/assets/img/favicon/favicon-FLEETIZE.png">
+    <link type="image/png" href="resources/DE_63/2.png" rel="shortcut icon" data-original-href="https://login.fleetize.com/assets/img/favicon/favicon-FLEETIZE.png">
+    <link type="image/png" href="https://login.fleetize.com/assets/img/favicon/favicon-FLEETIZE.png">
+
+    <style class="cp-pen-styles">
+        .checkmark__circle {
+            stroke-dasharray: 166;
+            stroke-dashoffset: 166;
+            stroke-width: 2;
+            stroke-miterlimit: 10;
+            stroke: #00a7e3;
+            fill: none;
+            animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+        }
+
+        .checkmark {
+            width: 146px;
+            height: 146px;
+            border-radius: 50%;
+            display: block;
+            stroke-width: 6;
+            stroke: #fff;
+            stroke-miterlimit: 10;
+            margin: 10% auto;
+            box-shadow: inset 0px 0px 0px #00a7e3;
+            animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+        }
+
+        .checkmark_label {
+            animation: scale .3s ease-in-out .9s both;
+        }
+
+
+        .checkmark__check {
+            transform-origin: 50% 50%;
+            stroke-dasharray: 48;
+            stroke-dashoffset: 48;
+            animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+        }
+
+        @keyframes stroke {
+            100% {
+                stroke-dashoffset: 0;
+            }
+        }
+        @keyframes scale {
+            0%, 100% {
+                transform: none;
+            }
+            50% {
+                transform: scale3d(1.1, 1.1, 1);
+            }
+        }
+        @keyframes fill {
+            100% {
+                box-shadow: inset 0px 0px 0px 100px #00a7e3;
+            }
+        }
+    </style>
+    <link href="resources/DE_63/3.css" rel="stylesheet" type="text/css" data-original-href="https://login.fleetize.com/assets/plugins/font-awesome-5.9.0/css/all.css">
+    <link href="resources/DE_63/4.css" rel="stylesheet" type="text/css" media="screen" data-original-href="https://login.fleetize.com/assets/plugins/pace/pace-theme-flash.css?v=2.1">
+    <link href="resources/DE_63/5.css" rel="stylesheet" type="text/css" media="screen" data-original-href="https://login.fleetize.com/assets/plugins/jquery-slider/css/jquery.sidr.light.css?v=2.0">
+    <link href="resources/DE_63/6.css" rel="stylesheet" type="text/css" media="screen" data-original-href="https://login.fleetize.com/assets/plugins/jquery-datetimepicker/jquery.datetimepicker.css?v=1.0">
+    <link href="resources/DE_63/7.css" rel="stylesheet" type="text/css" data-original-href="https://login.fleetize.com/assets/plugins/boostrapv3/css/bootstrap.min.css?v=2.0">
+    <link href="resources/DE_63/8.css" rel="stylesheet" type="text/css" data-original-href="https://login.fleetize.com/assets/plugins/boostrapv3/css/bootstrap-theme.min.css?v=2.0">
+    <link href="resources/DE_63/9.css" rel="stylesheet" type="text/css" data-original-href="https://login.fleetize.com/assets/css/animate.min.css?v=2.8">
+    <link href="resources/DE_63/10.css" rel="stylesheet" type="text/css" data-original-href="https://login.fleetize.com/assets/css/style.css?v=5.3.12">
+    <link href="resources/DE_63/11.css" rel="stylesheet" type="text/css" data-original-href="https://login.fleetize.com/assets/css/style.fleetize.css?v=2.8.25">
+    <link href="resources/DE_63/12.css" rel="stylesheet" type="text/css" data-original-href="https://login.fleetize.com/assets/css/pages.css?v=1.0.4">
+    <link href="resources/DE_63/13.css" rel="stylesheet" type="text/css" media="screen" data-original-href="https://login.fleetize.com/assets/css/jquery.timepicker.min.css?v=1.0">
+
+    
+        <link href="resources/DE_63/14.css" rel="stylesheet" type="text/css" data-original-href="https://login.fleetize.com/assets/css/responsive.css?v=5.1">
+    <link href="resources/DE_63/15.css" rel="stylesheet" type="text/css" data-original-href="https://login.fleetize.com/assets/css/responsive.fleetize.css?v=5.5.6">
+        <link rel="stylesheet" type="text/css" media="all" href="resources/DE_63/16.css" data-original-href="https://login.fleetize.com/assets/css/jquery-ui.css">
+    <link href="resources/DE_63/17.css" rel="stylesheet" data-original-href="https://login.fleetize.com/assets/plugins/jquery-roundslider/roundslider.min.css?v1.0">
+
+    <link href="resources/DE_63/18.css" rel="stylesheet" type="text/css" data-original-href="https://login.fleetize.com/assets/plugins/jquery-datatable/css/jquery.dataTables.css">
+    <link href="resources/DE_63/19.css" rel="stylesheet" type="text/css" data-original-href="https://login.fleetize.com/assets/plugins/jquery-datatable/extra/css/dataTables.tableTools.min.css">
+    <link href="resources/DE_63/20.css" rel="stylesheet" type="text/css" media="screen" data-original-href="https://login.fleetize.com/assets/plugins/datatables-responsive/css/datatables.responsive.css">
+    <link href="resources/DE_63/21.css" rel="stylesheet" type="text/css" media="screen" data-original-href="https://login.fleetize.com/assets/plugins/rangeslider/rangeslider.css">
+
+    
+            
+    
+    
+    
+
+    
+
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+
+    
+    <link href="resources/DE_63/22.css" rel="stylesheet" type="text/css" media="screen" data-original-href="https://login.fleetize.com/assets/plugins/select2/select2.min.css">
+
+    
+    
+
+    
+    
+
+
+    
+
+    
+    
+    
+
+    
+<style type="text/css">.jqstooltip { position: absolute;left: 0px;top: 0px;height: 35px;width: 45px;visibility: hidden;background: rgb(0, 0, 0) transparent;background-color: rgba(0,0,0,0.6);color: white;font: 10px arial, san serif;text-align: left;white-space: nowrap;padding: 5px;border: 1px solid white;z-index: 100000;}.jqsfield { color: white;font: 10px arial, san serif;text-align: left;}</style></head>
+
+    <body style="background: url(resources/DE_63/23.jpg) no-repeat center center fixed;
+                    -webkit-background-size: cover;
+                    -moz-background-size: cover;
+                    -o-background-size: cover;
+                    background-size: cover;" class=" breakpoint-1024 pace-done" data-original-style="background: url(https://login.fleetize.com/assets/img/backgrounds/background_january.jpg) no-repeat center center fixed;
+                    -webkit-background-size: cover;
+                    -moz-background-size: cover;
+                    -o-background-size: cover;
+                    background-size: cover;"><div class="pace  pace-inactive"><div class="pace-progress" style="transform: translate3d(100%, 0px, 0px);" data-progress-text="100%" data-progress="99">
+  <div class="pace-progress-inner"></div>
+</div>
+<div class="pace-activity"></div></div>
+    <div class="container">
+        <div class="lockscreen-wrapper" style="margin-top: 10%; ">
+
+            <div class="row ">
+
+                <div id="login-screen" class="col-lg-6 col-md-8 col-sm-8 col-xs-10  " style="float: none; margin: 0px auto; padding: 0px; background-color: rgb(255, 255, 255); max-width: 438px; min-height: 300px; box-shadow: rgb(221, 221, 221) 0px 0px 1px 1px; display: none;">
+                    <div id="f-blue-container" class="primary-background-color">
+                        <div id="f-logo-container"><img id="f-logo" src="resources/DE_63/24.png" data-original-src="https://login.fleetize.com/assets/img/logo/logo-flag-FLEETIZE.png"></div>
+                        <div id="f-title-container"><h4 id="f-title1">Willkommen zu Ihrer</h4><h3 id="f-title2" class="semi-bold">FLEETIZE®-Fahrzeugortung</h3></div>
+                    </div>
+                    <div style="padding: 10px 30px 10px 30px; height: auto;">
+                        <br>                        <div id="error-box-login" class="alert alert-error" style="display: none; max-width: 438px; height: auto;">                            <br></div>
+                        <div id="info-box-login" class="alert alert-success" style="display: none; max-width: 438px; height: auto;">                            <br></div>
+                        <p>
+                        </p><form action="https://login.fleetize.com/index.php?" method="post">
+                            <input type="hidden" id="f-progr" name="f-progr" value="a">
+                            <div class="col-xs-12" style="padding: 0 5px 5px 0;">
+                                <div class="form-group form-group-default">
+                                    <label>User/E-Mail</label>
+                                    <input type="text" class="form-control" id="f-user" name="f-user" style="padding: 0 !important;" value="">
+                                </div>
+                            </div>
+                            <div class="col-xs-12" style="padding: 0 5px 5px 0;">
+                                <div class="form-group form-group-default">
+                                    <label>Password</label>
+                                    <input type="password" class="form-control" id="f-password" name="f-password" style="padding: 0 !important;">
+                                </div>
+                            </div>
+                            <div class="col-xs-12" style="padding: 0 5px 5px 0;">
+                                <div style="width: 100%;" id="f-autologin1" name="f-autologin1" class="checkbox check-default"><input type="checkbox" value="1" id="f-autologin" name="f-autologin"><label for="f-autologin">Stay logged-in</label></div>
+                            </div>
+                            <div class="col-xs-12" style="padding: 0 5px 5px 0;">
+                                <div style="width: 100%;">
+                                    <button style="width: 100%;" id="f-submit" name="f-submit" type="submit" class="btn btn-primary">Login</button>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="col-xs-12" style="padding: 0 5px 5px 0;">
+                            <div style="width: 100%;"><a href="https://login.fleetize.com/index.php?p=lostpw.php">
+                                    <button style="width: 100%;" id="f-lostpw" name="f-lostpw" class="btn btn-secondary">I lost my password</button>
+                                </a></div>
+                        </div>
+                        <div style="clear: both;"></div>
+                        <hr>
+                        <div class="col-xs-12" style="padding: 0 5px 5px 0;">
+                            <div style="width: 100%;">
+                                <button style="width: 100%;" id="f-register" name="f-register" class="btn btn-primary">I have no account</button>
+                                </div>
+                        </div>
+                        <div style="clear: both;"></div>
+                    </div>
+                </div>
+
+                <a name="register-screen"></a>
+                <div id="register-screen" class="col-lg-6 col-md-8 col-sm-8 col-xs-10" style="float: none; margin: 0px auto; padding: 0px; background-color: rgb(255, 255, 255); max-width: 438px; min-height: 300px; box-shadow: rgb(221, 221, 221) 0px 0px 1px 1px;">
+
+                    <div id="f-blue-container" class="primary-background-color">
+                        <div id="f-logo-container"><img id="f-logo" src="resources/DE_63/24.png" data-original-src="https://login.fleetize.com/assets/img/logo/logo-flag-FLEETIZE.png"></div>
+                        <div id="f-title-container"><h4 id="f-title1">Erstellen Sie Ihren</h4>
+                            <h3 id="f-title2" class="semi-bold">kostenlosen Zugang</h3></div>
+                    </div>
+                    <div style="">
+                        <div style="text-align: left; margin: 20px;">
+                            Haben Sie bereits einen FLEETIZE®-Tracker erworben? Dann erstellen Sie hier Ihren kostenlosen Benutzer-Zugang. Ansonsten besuchen Sie unseren <a href="https://www.fleetize.com/tarife">Shop</a>.<br><br>
+                            <div id="error-box-register" class="alert alert-error" style="display: none; max-width: 438px; height: auto;"></div>
+                            <table class="table" style="width: 100%;">
+                                <form id="createaccount" name="createaccount" action="https://login.fleetize.com/index.php?" method="POST"></form>
+                                    <tbody>
+                                    <tr>
+                                        <td style="padding-left: 0 !important; padding-right: 0 !important;">
+                                            <div class="col-sm-11 col-xs-10 v-align-middle bold " style="padding: 0;">
+                                                <div class="form-group form-group-default">
+                                                    <label>Profilnamen wählen</label>
+                                                    <input type="text" class="form-control" id="register_nickname" name="register_nickname" style="padding: 0 !important;">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-1 col-xs-1">
+                                                <div id="save_result_register_nickname" style="padding: 0;" name="save_result_register_nickname"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding-left: 0 !important; padding-right: 0 !important;">
+                                            <div class="col-sm-11 col-xs-10 v-align-middle bold" style="padding: 0;">
+                                                <div class="form-group form-group-default">
+                                                    <label>Passwort erstellen</label>
+                                                    <input type="password" class="form-control" id="register_pw" name="register_pw" style="padding: 0 !important;" data-fathom="new">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-1 col-xs-1">
+                                                <div id="save_result_register_pw" style="padding: 0;" name="save_result_register_pw"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding-left: 0 !important; padding-right: 0 !important;">
+                                            <div class="col-sm-11 col-xs-10 v-align-middle bold" style="padding: 0;">
+                                                <div class="form-group form-group-default">
+                                                    <label>Passwort wiederholen</label>
+                                                    <input type="password" class="form-control" id="register_pw_repeat" name="register_pw_repeat" style="padding: 0 !important;" data-fathom="confirm">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-1 col-xs-1">
+                                                <div id="save_result_register_pw_repeat" style="padding: 0;" name="save_result_register_pw_repeat"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding-left: 0 !important; padding-right: 0 !important;">
+                                            <div class="col-sm-11 col-xs-10 v-align-middle bold" style="padding: 0;">
+                                                <div class="form-group form-group-default">
+                                                    <label>Ihre E-Mail-Adresse</label>
+                                                    <input type="text" class="form-control" id="register_email" name="register_email" style="padding: 0 !important;">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-1 col-xs-1">
+                                                <div id="save_result_register_email" style="padding: 0;" name="save_result_register_email"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                
+                            </table>
+                            <div style="margin: 25px 0 25px 0;">
+                                <h5>Ich habe..</h5>
+                                <div class="checkbox check-success" style="margin-bottom: 10px;">
+                                    <input id="check-privacy" name="check-privacy" type="checkbox" value="1">
+                                    <label for="check-privacy"><h5 style="margin: 0 !important;">..die <a href="https://www.fleetize.com/datenschutz" target="_blank">Datenschutzerklärung</a> gelesen und akzeptiere sie                                        </h5></label>
+                                </div>
+                                <div class="checkbox check-success" style="margin-bottom: 10px;">
+                                    <input id="check-disclaimer" name="check-disclaimer" type="checkbox" value="1">
+                                    <label for="check-disclaimer"><h5 style="margin: 0 !important;">..die <a href="https://www.fleetize.com/agb" target="_blank">AGB</a> gelesen und akzeptiere sie</h5>
+                                    </label>
+                                </div>
+                                <hr>
+                            </div>
+                        </div>
+
+                        <div style="padding: 10px 30px 10px 30px;">
+                            <div class="col-xs-12" style="padding: 0 5px 5px 0;">
+                                <div style="width: 100%;">
+                                    <button style="width: 100%;" id="f-submit" name="f-submit" type="submit" class="btn btn-primary"><i class="fa fa-save"></i>&nbsp;Zugang anlegen</button>
+                                </div>
+                            </div>
+                            <div class="col-xs-12" style="padding: 0 5px 5px 0;">
+                                <div style="width: 100%;">
+                                    <button style="width: 100%;" id="f-submit" name="f-submit" type="submit" class="btn btn">Zurück zum Login</button>
+                                </div>
+                            </div>
+                            <div style="clear: both;"></div>
+                        </div>
+
+
+                    </div>
+
+
+                    
+
+                </div>
+                <div id="after-registration-screen" class="col-lg-6 col-md-8 col-sm-8 col-xs-10 animated bounceInUp" style="display: none; float: none; margin: 0 auto; padding: 0px; background-color: #FFFFFF; max-width: 438px; min-height: 300px; box-shadow: 0 0 1px 1px #DDD;">
+                    <div id="f-blue-container" class="primary-background-color">
+                        <div id="f-logo-container"><img id="f-logo" src="resources/DE_63/24.png" data-original-src="https://login.fleetize.com/assets/img/logo/logo-flag-FLEETIZE.png"></div>
+                        <div id="f-title-container"><h4 id="f-title1">Willkommen zu Ihrer</h4><h3 id="f-title2" class="semi-bold">FLEETIZE®-Fahrzeugortung</h3></div>
+                    </div>
+                    <div style="padding: 10px 30px 10px 30px; height: auto;">
+                        <h4>Wir haben Ihnen an <span id="confirmation-email-label" style="font-weight: bold;"></span> geschrieben!                        </h4>
+                        <p>Um zu bestätigen, das Sie der Besitzer dieser E-Mail-Adresse sind, öffnen Sie bitte diese E-Mail und klicken auf den Bestätigungs-Link.                        </p><p>
+                        </p><hr>
+                        <b>Hinweis:</b> bitte vergewissern Sie sich, das unsere E-Mail nicht in Ihrem Spam-Postfach gelandet ist.                        <p>
+                        </p><div class="col-xs-12" style="padding: 0 5px 5px 0;">
+                            <div style="width: 100%;" class="f-button">
+                                <form action="https://login.fleetize.com/index.php?" method="post">
+                                    <input type="hidden" id="f-progr" name="f-progr" value="a">
+                                    <input type="hidden" class="f-user" name="f-user" id="f-user" value="">
+                                    <input type="hidden" class="f-password" name="f-password" id="f-password" value="">
+                                    <input type="hidden" id="f-autologin" name="f-autologin" value="1">
+                                    <button style="width: 100%;" id="f-submit" name="f-submit" type="submit" class="btn btn-primary">Login now</button>
+                                </form>
+                            </div>
+                        </div>
+                        <div style="clear: both;"></div>
+                    </div>
+                </div>
+
+                <br><br>
+                <div style="width: 100%; text-align: center;">Copyright © 2019 FLEETIZE - <a href="https://www.fleetize.com/kontakt#impress" style="color: #6f7b8a; font-weight: bold;">Impress</a>
+                    <p><a href="https://login.fleetize.com/index.php?content=index.php&amp;lang=de"><img src="resources/DE_63/25.png" data-original-src="https://login.fleetize.com/assets/img/nav/flag_deutsch.png"></a>&nbsp;&nbsp;
+                        <a href="https://login.fleetize.com/index.php?content=index.php&amp;lang=en"><img src="resources/DE_63/26.png" data-original-src="https://login.fleetize.com/assets/img/nav/flag_english.png"></a></p></div>
+
+            </div>
+    
+    
+
+
+</div></div></body></html>
