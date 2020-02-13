@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; media-src 'self' data:; style-src 'self' data: 'unsafe-inline'; font-src 'self' data:; frame-src 'self' data:"><meta http-equiv="Memento-Datetime" content="Wed, 12 Feb 2020 14:52:17 GMT"><link rel="original" href="https://zkt-passport.zhiketong.cn/login?client_id=eb&amp;tokenType=auth&amp;callback_url=https%3A%2F%2Febooking.zhiketong.cn%2F">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title data-i18="page.title">直客通 - 赋能生活服务类企业直销的行业领导者</title>
+    <link rel="icon" href="resources/ZH_85n/1.ico" type="image/x-icon" data-original-href="https://zkt-passport.zhiketong.cn/favicon.ico">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            user-select: none;
+        }
+
+        .disabled {
+            background-color: #e8e8e8!important;
+            cursor: default!important;
+        }
+
+        .clearfix::after {
+            display: block;
+            content: "";
+            clear: both;
+        }
+
+        .float-left {
+            float: left!important;
+        }
+
+        .float-right {
+            float: right!important;
+        }
+
+        .text-center {
+            text-align: center!important;
+        }
+
+        .h-100 {
+            height: 100%!important;
+        }
+
+        .w-20 {
+            width: 20%!important;
+        }
+
+        .w-30 {
+            width: 30%!important;
+        }
+
+        .w-40 {
+            width: 40%!important;
+        }
+
+        .w-60 {
+            width: 60%!important;
+        }
+
+        .w-70 {
+            width: 70%!important;
+        }
+
+        .w-80 {
+            width: 80%!important;
+        }
+
+        .w-100 {
+            width: 100%!important;
+        }
+
+        .absolute-center-middle {
+            top: 50%;
+            left: 50%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+        }
+
+        .center-middle {
+            top: 50%;
+            left: 50%;
+            position: relative;
+            transform: translate(-50%, -50%);
+        }
+
+        body{
+            min-width: 1024px;
+        }
+
+        #navbar {
+            height: 4.2rem;
+            background-color: #4d4d4d;
+            min-width: 1024px;
+            position: fixed;
+            right: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        #navbar nav {
+            margin-left: 1rem;
+            height: 100%;
+            line-height: 4.2rem;
+            display: inline-block;
+        }
+
+        #navbar nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+
+        #navbar span.translate {
+            padding: .2rem .6rem;
+            right: 4rem;
+            transform: translateY(-50%) skewX(-20deg);
+            background-color: #ee4d53;
+            top: 50%;
+            position: absolute;
+        }
+
+        #navbar span.translate a {
+            transform: skewX(20deg);
+            display: inline-block;
+            color: #ccc;
+            text-decoration: none;
+            font-size: .9rem;
+        }
+
+        #navbar span.translate a.lang-actived {
+            color: #fff;
+        }
+
+        main {
+            display: block;
+            padding-top: 4.2rem;
+            height: 100vh;
+        }
+
+        aside {
+            position: relative;
+            height: 100%;
+        }
+
+        aside.float-left footer {
+            text-align: center;
+            color: #4e4c4d;
+            transform: translateY(-80px);
+            font-size: 1.1rem;
+            padding: 0 22%;
+        }
+
+        .login-area {
+            width: 50%;
+            min-width: 380px;
+            color: #4e4c4d;
+        }
+
+        .login-area form {
+            border-radius: 5px;
+            padding: 2rem;
+            box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+            margin-bottom: 10px;
+        }
+
+        .login-area form button {
+            width: 100%;
+            height: 38px;
+            margin: 5px 0;
+            color: #fff;
+            border-width: 0;
+            font-size: 1.01rem;
+            cursor: pointer;
+        }
+
+        .login-area header {
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .form-group {
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .checkbox {
+            width: 1.2rem;
+            height: 1.2rem;
+            vertical-align: middle;
+        }
+
+        .form-group .form-control {
+            padding: 0 1.8rem;
+            border: 1px solid #4e4c4d;
+            width: 100%;
+            height: 2.3rem;
+        }
+
+        .forgot-pwd {
+            cursor: pointer;
+            color: #ee4d53;
+        }
+
+        button.login {
+            background-color: #ee4d53;
+        }
+
+        button.apply {
+            background-color: #4e4c4d;
+        }
+
+        svg{
+            width: 1rem;
+            height: 1rem;
+            vertical-align: middle;
+            fill: #4e4c4d;
+        }
+        .form-group svg{
+            position: absolute;
+            top:50%;
+            transform: translateY(-50%);
+            left: .6rem;
+        }
+    </style>
+    <!-- Matomo -->
+    
+    <!-- End Matomo Code -->
+</head>
+
+<body class=" lang-cn">
+    <header id="navbar" class="clearfix">
+        <img class="float-left h-100" src="resources/ZH_85n/2.png" alt="logo" data-original-src="https://zkt-passport.zhiketong.cn/images/login-logo.png">
+        <nav id="navigator">
+            <a href="" data-i18="home">首页</a>
+            <a href="#services" data-i18="products.and.services">产品和服务</a>
+            <a href="#procedures" data-i18="procedures">服务流程</a>
+            <a href="#about" data-i18="about.us">关于我们</a>
+            <!-- <a href="//www.zhiketong.cn#sign" class="lang-link" data-i18="sign.contract"></a> -->
+        </nav>
+        <span class="translate absolute-middle">
+            <a href="###" class="toggle-lang lang-actived" data-lang="cn">中文</a>
+            <a>/</a>
+            <a href="###" class="toggle-lang" data-lang="en">EN</a>
+        </span>
+    </header>
+    <main class="clearfix">
+        <aside class="w-60 float-left">
+            <div class="center-middle">
+                <img src="resources/ZH_85n/3.svg" class="w-100" data-original-src="https://zkt-passport.zhiketong.cn/images/login_bg.svg">
+                <footer data-i18="site.desc">微信生态下赋能生活服务服务类企业直销的行业领导者</footer>
+            </div>
+        </aside>
+        <aside class="w-40 float-right">
+            <div class="login-area center-middle">
+                <form action="" method="post" id="login-form">
+                    <header class="text-center" data-i18="login.ebooking">登录EBooking</header>
+                    <div class="form-group">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 0c88.366 0 160 71.634 160 160s-71.634 160-160 160S96 248.366 96 160 167.634 0 256 0zm183.283 333.821l-71.313-17.828c-74.923 53.89-165.738 41.864-223.94 0l-71.313 17.828C29.981 344.505 0 382.903 0 426.955V464c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48v-37.045c0-44.052-29.981-82.45-72.717-93.134z"></path><style xmlns="">#yddContainer{display:block;font-family:Microsoft YaHei;position:relative;width:100%;height:100%;top:-4px;left:-4px;font-size:12px;border:1px solid}#yddTop{display:block;height:22px}#yddTopBorderlr{display:block;position:static;height:17px;padding:2px 28px;line-height:17px;font-size:12px;color:#5079bb;font-weight:bold;border-style:none solid;border-width:1px}#yddTopBorderlr .ydd-sp{position:absolute;top:2px;height:0;overflow:hidden}.ydd-icon{left:5px;width:17px;padding:0px 0px 0px 0px;padding-top:17px;background-position:-16px -44px}.ydd-close{right:5px;width:16px;padding-top:16px;background-position:left -44px}#yddKeyTitle{float:left;text-decoration:none}#yddMiddle{display:block;margin-bottom:10px}.ydd-tabs{display:block;margin:5px 0;padding:0 5px;height:18px;border-bottom:1px solid}.ydd-tab{display:block;float:left;height:18px;margin:0 5px -1px 0;padding:0 4px;line-height:18px;border:1px solid;border-bottom:none}.ydd-trans-container{display:block;line-height:160%}.ydd-trans-container a{text-decoration:none;}#yddBottom{position:absolute;bottom:0;left:0;width:100%;height:22px;line-height:22px;overflow:hidden;background-position:left -22px}.ydd-padding010{padding:0 10px}#yddWrapper{color:#252525;z-index:10001;background:url(chrome-extension://eopjamdnofihpioajgfdikhhbobonhbb/ab20.png);}#yddContainer{background:#fff;border-color:#4b7598}#yddTopBorderlr{border-color:#f0f8fc}#yddWrapper .ydd-sp{background-image:url(chrome-extension://eopjamdnofihpioajgfdikhhbobonhbb/ydd-sprite.png)}#yddWrapper a,#yddWrapper a:hover,#yddWrapper a:visited{color:#50799b}#yddWrapper .ydd-tabs{color:#959595}.ydd-tabs,.ydd-tab{background:#fff;border-color:#d5e7f3}#yddBottom{color:#363636}#yddWrapper{min-width:250px;max-width:400px;}</style></svg>
+                        <input type="text" class="form-control" name="mobile" autofocus="" required="" maxlength="11" minlength="11" data-i18-placeholder="cell.no" placeholder="手机号 ">
+                    </div>
+                    <div class="form-group">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M400 224h-24v-72C376 68.2 307.8 0 224 0S72 68.2 72 152v72H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48zm-104 0H152v-72c0-39.7 32.3-72 72-72s72 32.3 72 72v72z"></path><style xmlns="">#yddContainer{display:block;font-family:Microsoft YaHei;position:relative;width:100%;height:100%;top:-4px;left:-4px;font-size:12px;border:1px solid}#yddTop{display:block;height:22px}#yddTopBorderlr{display:block;position:static;height:17px;padding:2px 28px;line-height:17px;font-size:12px;color:#5079bb;font-weight:bold;border-style:none solid;border-width:1px}#yddTopBorderlr .ydd-sp{position:absolute;top:2px;height:0;overflow:hidden}.ydd-icon{left:5px;width:17px;padding:0px 0px 0px 0px;padding-top:17px;background-position:-16px -44px}.ydd-close{right:5px;width:16px;padding-top:16px;background-position:left -44px}#yddKeyTitle{float:left;text-decoration:none}#yddMiddle{display:block;margin-bottom:10px}.ydd-tabs{display:block;margin:5px 0;padding:0 5px;height:18px;border-bottom:1px solid}.ydd-tab{display:block;float:left;height:18px;margin:0 5px -1px 0;padding:0 4px;line-height:18px;border:1px solid;border-bottom:none}.ydd-trans-container{display:block;line-height:160%}.ydd-trans-container a{text-decoration:none;}#yddBottom{position:absolute;bottom:0;left:0;width:100%;height:22px;line-height:22px;overflow:hidden;background-position:left -22px}.ydd-padding010{padding:0 10px}#yddWrapper{color:#252525;z-index:10001;background:url(chrome-extension://eopjamdnofihpioajgfdikhhbobonhbb/ab20.png);}#yddContainer{background:#fff;border-color:#4b7598}#yddTopBorderlr{border-color:#f0f8fc}#yddWrapper .ydd-sp{background-image:url(chrome-extension://eopjamdnofihpioajgfdikhhbobonhbb/ydd-sprite.png)}#yddWrapper a,#yddWrapper a:hover,#yddWrapper a:visited{color:#50799b}#yddWrapper .ydd-tabs{color:#959595}.ydd-tabs,.ydd-tab{background:#fff;border-color:#d5e7f3}#yddBottom{color:#363636}#yddWrapper{min-width:250px;max-width:400px;}</style></svg>
+                        <input type="password" class="form-control" name="password" required="" data-i18-placeholder="pwd" placeholder="密码">
+                    </div>
+                    <div class="form-group clearfix">
+                        <div class="float-left">
+                            <input class="checkbox" type="checkbox" name="remember" value="yes">
+                            <span data-i18="remember.me">2周内自动登录</span>
+                        </div>
+                        <div class="float-right forgot-pwd" data-i18="forgot.pwd">忘记密码？</div>
+                    </div>
+                    <button class="login" type="submit" data-i18="login">登录</button>
+                    <button class="apply" data-i18="apply.join">申请开通酒店直销系统</button>
+                </form>
+                <footer class="text-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z"></path><style xmlns="">#yddContainer{display:block;font-family:Microsoft YaHei;position:relative;width:100%;height:100%;top:-4px;left:-4px;font-size:12px;border:1px solid}#yddTop{display:block;height:22px}#yddTopBorderlr{display:block;position:static;height:17px;padding:2px 28px;line-height:17px;font-size:12px;color:#5079bb;font-weight:bold;border-style:none solid;border-width:1px}#yddTopBorderlr .ydd-sp{position:absolute;top:2px;height:0;overflow:hidden}.ydd-icon{left:5px;width:17px;padding:0px 0px 0px 0px;padding-top:17px;background-position:-16px -44px}.ydd-close{right:5px;width:16px;padding-top:16px;background-position:left -44px}#yddKeyTitle{float:left;text-decoration:none}#yddMiddle{display:block;margin-bottom:10px}.ydd-tabs{display:block;margin:5px 0;padding:0 5px;height:18px;border-bottom:1px solid}.ydd-tab{display:block;float:left;height:18px;margin:0 5px -1px 0;padding:0 4px;line-height:18px;border:1px solid;border-bottom:none}.ydd-trans-container{display:block;line-height:160%}.ydd-trans-container a{text-decoration:none;}#yddBottom{position:absolute;bottom:0;left:0;width:100%;height:22px;line-height:22px;overflow:hidden;background-position:left -22px}.ydd-padding010{padding:0 10px}#yddWrapper{color:#252525;z-index:10001;background:url(chrome-extension://eopjamdnofihpioajgfdikhhbobonhbb/ab20.png);}#yddContainer{background:#fff;border-color:#4b7598}#yddTopBorderlr{border-color:#f0f8fc}#yddWrapper .ydd-sp{background-image:url(chrome-extension://eopjamdnofihpioajgfdikhhbobonhbb/ydd-sprite.png)}#yddWrapper a,#yddWrapper a:hover,#yddWrapper a:visited{color:#50799b}#yddWrapper .ydd-tabs{color:#959595}.ydd-tabs,.ydd-tab{background:#fff;border-color:#d5e7f3}#yddBottom{color:#363636}#yddWrapper{min-width:250px;max-width:400px;}</style></svg>
+                    <span data-i18="hot.line">服务热线</span>：+8610 5621 1182
+                </footer>
+            </div>
+        </aside>
+    </main>
+    
+
+
+
+</body></html>

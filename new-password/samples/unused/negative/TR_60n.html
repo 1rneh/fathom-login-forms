@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html ng-app="phptravelsApp" style="overflow-y: hidden;" class="js no-touch backgroundsize csstransforms3d csstransitions ng-scope"><head><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; media-src 'self' data:; style-src 'self' data: 'unsafe-inline'; font-src 'self' data:; frame-src 'self' data:"><meta http-equiv="Memento-Datetime" content="Wed, 12 Feb 2020 14:43:50 GMT"><link rel="original" href="https://turkmenistanairlines.tm/login"><style type="text/css">[uib-typeahead-popup].dropdown-menu{display:block;}</style><style type="text/css">.uib-time input{width:50px;}</style><style type="text/css">[uib-tooltip-popup].tooltip.top-left > .tooltip-arrow,[uib-tooltip-popup].tooltip.top-right > .tooltip-arrow,[uib-tooltip-popup].tooltip.bottom-left > .tooltip-arrow,[uib-tooltip-popup].tooltip.bottom-right > .tooltip-arrow,[uib-tooltip-popup].tooltip.left-top > .tooltip-arrow,[uib-tooltip-popup].tooltip.left-bottom > .tooltip-arrow,[uib-tooltip-popup].tooltip.right-top > .tooltip-arrow,[uib-tooltip-popup].tooltip.right-bottom > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.top-left > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.top-right > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.bottom-left > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.bottom-right > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.left-top > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.left-bottom > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.right-top > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.right-bottom > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.top-left > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.top-right > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.bottom-left > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.bottom-right > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.left-top > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.left-bottom > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.right-top > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.right-bottom > .tooltip-arrow,[uib-popover-popup].popover.top-left > .arrow,[uib-popover-popup].popover.top-right > .arrow,[uib-popover-popup].popover.bottom-left > .arrow,[uib-popover-popup].popover.bottom-right > .arrow,[uib-popover-popup].popover.left-top > .arrow,[uib-popover-popup].popover.left-bottom > .arrow,[uib-popover-popup].popover.right-top > .arrow,[uib-popover-popup].popover.right-bottom > .arrow,[uib-popover-html-popup].popover.top-left > .arrow,[uib-popover-html-popup].popover.top-right > .arrow,[uib-popover-html-popup].popover.bottom-left > .arrow,[uib-popover-html-popup].popover.bottom-right > .arrow,[uib-popover-html-popup].popover.left-top > .arrow,[uib-popover-html-popup].popover.left-bottom > .arrow,[uib-popover-html-popup].popover.right-top > .arrow,[uib-popover-html-popup].popover.right-bottom > .arrow,[uib-popover-template-popup].popover.top-left > .arrow,[uib-popover-template-popup].popover.top-right > .arrow,[uib-popover-template-popup].popover.bottom-left > .arrow,[uib-popover-template-popup].popover.bottom-right > .arrow,[uib-popover-template-popup].popover.left-top > .arrow,[uib-popover-template-popup].popover.left-bottom > .arrow,[uib-popover-template-popup].popover.right-top > .arrow,[uib-popover-template-popup].popover.right-bottom > .arrow{top:auto;bottom:auto;left:auto;right:auto;margin:0;}[uib-popover-popup].popover,[uib-popover-html-popup].popover,[uib-popover-template-popup].popover{display:block !important;}</style><style type="text/css">.uib-datepicker-popup.dropdown-menu{display:block;float:none;margin:0;}.uib-button-bar{padding:10px 9px 2px;}</style><style type="text/css">.uib-position-measure{display:block !important;visibility:hidden !important;position:absolute !important;top:-9999px !important;left:-9999px !important;}.uib-position-scrollbar-measure{position:absolute !important;top:-9999px !important;width:50px !important;height:50px !important;overflow:scroll !important;}.uib-position-body-scrollbar-measure{overflow:scroll !important;}</style><style type="text/css">.uib-datepicker .uib-title{width:100%;}.uib-day button,.uib-month button,.uib-year button{min-width:100%;}.uib-left,.uib-right{width:100%}</style><style type="text/css">.ng-animate.item:not(.left):not(.right){-webkit-transition:0s ease-in-out left;transition:0s ease-in-out left}</style><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+        
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="author" content="Turkmenistan Airlines">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="defaultLanguage" content="ru-RU">
+        <meta name="availableLanguages" content="ru-RU, tk, en-US">
+        <title>Login</title>
+        <link rel="shortcut icon" href="resources/TR_60n/1.png" data-original-href="https://turkmenistanairlines.tm/uploads/global/favicon.png">
+        <link rel="localization" href="https://turkmenistanairlines.tm/uploads/global/locales/avia.%7Blocale%7D.ftl">
+
+<!--        <script defer src="https://turkmenistanairlines.tm/themes/default/js/l20n.js"></script>-->
+        <!-- facebook --> <meta property="og:title" content="Login"> <meta property="og:site_name" content="Turkmenistan Airlines"> <meta property="og:description" content=""> <meta property="og:image" content="https://turkmenistanairlines.tm/uploads/global/favicon.png">  <meta property="og:url" content="https://turkmenistanairlines.tm//"> <meta property="og:publisher" content="https://www.facebook.com/Turkmenistan Airlines"> <div class="fit-vids-style" id="fit-vids-style" style="display: none;">­<style>                 .fluid-width-video-wrapper {                   width: 100%;                                position: relative;                         padding: 0;                              }                                                                                       .fluid-width-video-wrapper iframe,          .fluid-width-video-wrapper object,          .fluid-width-video-wrapper embed {             position: absolute;                         top: 0;                                     left: 0;                                    width: 100%;                                height: 100%;                            }                                         </style></div>
+        <!-- Google Maps -->         <!-- jQuery --> 
+        
+
+        <!-- Mobile Redirect --> 
+        
+
+        <!-- GOOGLE FONTS -->
+        <link href="resources/TR_60n/2.css" rel="stylesheet" type="text/css" data-original-href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700">
+        <link href="resources/TR_60n/3.css" rel="stylesheet" type="text/css" data-original-href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,600">
+
+        <!-- /GOOGLE FONTS -->
+        <link rel="stylesheet" href="resources/TR_60n/4.css" data-original-href="https://turkmenistanairlines.tm/themes/default/css/bootstrap.css">
+        <link rel="stylesheet" href="resources/TR_60n/5.css" data-original-href="https://turkmenistanairlines.tm/themes/default/css/font-awesome.css">
+        <link rel="stylesheet" href="resources/TR_60n/6.css" data-original-href="https://turkmenistanairlines.tm/themes/default/css/icomoon.css">
+        <link rel="stylesheet" href="resources/TR_60n/7.css" data-original-href="https://turkmenistanairlines.tm/themes/default/css/styles.css">
+        <link rel="stylesheet" href="resources/TR_60n/8.css" data-original-href="https://turkmenistanairlines.tm/themes/default/css/mystyles.css">
+        
+          
+        
+        <!----------------------------------------------------- -->
+    <!--<link href="https://turkmenistanairlines.tm/themes/default/assets/css/bootstrap.css" rel="stylesheet" media="screen">
+    <link href="https://turkmenistanairlines.tm/themes/default/style.css" rel="stylesheet">-->
+
+        <!-- Child Theme --> 
+        <!--<style> @import "https://turkmenistanairlines.tm/themes/default/assets/css/childstyle.css"; </style>-->
+
+        <!-- jQuery --> 
+        <!--<script src="https://turkmenistanairlines.tm/themes/default/assets/js/jquery-1.11.2.min.js"></script>-->
+        <!-- RTL CSS --> 
+        
+<!--[if lt IE 7] > <link rel="stylesheet" type="text/css" href="https://turkmenistanairlines.tm/themes/default/assets/css/font-awesome-ie7.css" media="screen" /> <![endif]-->
+    <style type="text/css"></style></head>
+    <body>     
+
+        <div class="global-wrap" style="overflow: hidden; outline: currentcolor none medium;" tabindex="1">
+            <header id="main-header">
+                <div class="header-top">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <a class="logo" href="https://turkmenistanairlines.tm/">
+                                    <img src="resources/TR_60n/9.png" alt="Turkmenistan Airlines" title="Image Title" data-original-src="https://turkmenistanairlines.tm/uploads/global/logo.png">
+                                </a>
+                            </div>
+                            <div class="col-md-3 col-md-offset-1">
+                                <form class="main-header-search ng-pristine ng-valid">
+                                    <div class="form-group form-group-icon-left">
+                                        <i class="fa fa-search input-icon"></i>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="top-user-area clearfix">
+                                    <ul class="top-user-area-list list list-horizontal list-border">
+                                                           
+                                                    <li class="top-user-area-avatar">
+                                                        <a href="https://turkmenistanairlines.tm/login">
+                                                            <i class="icon_set_2_icon-105"></i> Girmek </a>
+                                                    </li>
+                                                    <li><a href="https://turkmenistanairlines.tm/register" data-l10n-idremove="sign-out">Bellige alynmak</a>
+                                                    </li>
+                                                                                         <!--                                                <li class="nav-drop">                        
+                                                <a href="#"><i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                                <ul class="list nav-drop-menu">
+                                                                                                    </ul>
+                                            </li>
+                                         -->
+
+                                        <li class="top-user-area-lang nav-drop">
+                                                                    
+                                                    <a class="current-lang" data-title="TKM" data-lang-id="tr">
+                                                        <span>TKM</span><i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i>
+                                                    </a>
+                                                    <ul class="list nav-drop-menu">
+                                                                                                                    <li>
+                                                                <a style="line-height: 0px;" title="TKM" href="https://turkmenistanairlines.tm/login/tr" data-langname="TKM" class="changelang" id="tr">
+                                                                    <span class="right">TKM</span>
+                                                                </a>
+                                                            </li>
+                                                                                                                    <li>
+                                                                <a style="line-height: 0px;" title="RUS" href="https://turkmenistanairlines.tm/login/ru" data-langname="RUS" class="changelang" id="ru">
+                                                                    <span class="right">RUS</span>
+                                                                </a>
+                                                            </li>
+                                                                                                                    <li>
+                                                                <a style="line-height: 0px;" title="ENG" href="https://turkmenistanairlines.tm/login/en" data-langname="ENG" class="changelang" id="en">
+                                                                    <span class="right">ENG</span>
+                                                                </a>
+                                                            </li>
+                                                                                
+                                                    </ul>
+                                                                                            </li>
+                                        <li class="nav-drop text-uc">
+                                            <a href="https://turkmenistanairlines.tm/login#"><span data-l10n-idremove="menu"><font><font>Menu</font></font></span><i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                            <ul class="list nav-drop-menu" style="min-width: 150px">
+                                                
+                                                
+                                                            <li>
+                                                                <a href="https://turkmenistanairlines.tm/services/timetable" data-l10n-idremove="" target="_self">
+                                                                Turkmenistan awiakompaniýasy 
+                                                                </a>
+                                                                                                                                </li>
+                                                            
+                                                            <li>
+                                                                <a href="https://turkmenistanairlines.tm/services/online-booking-regulations" data-l10n-idremove="" target="_self">
+                                                                Maglumatlar 
+                                                                </a>
+                                                                                                                                </li>
+                                                            
+                                                            <li>
+                                                                <a href="https://turkmenistanairlines.tm/services/en/Turkmenistan-Airlines" data-l10n-idremove="" target="_self">
+                                                                Habarlaşmak 
+                                                                </a>
+                                                                                                                                </li>
+                                                            
+                                                            <li>
+                                                                <a href="https://turkmenistanairlines.tm/blog" data-l10n-idremove="" target="_self">
+                                                                Habarlar 
+                                                                </a>
+                                                                                                                                </li>
+                                                            
+                                                            <li>
+                                                                <a href="https://turkmenistanairlines.tm/Services" data-l10n-idremove="" target="_self">
+                                                                Services 
+                                                                </a>
+                                                                                                                                </li>
+                                                            
+
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--                                                        <div class="container">
+                                                                                                <div class="nav">
+                                                                                                    <ul class="slimmenu" id="slimmenu">
+                                                                                                        <li class="  go-right">
+                                                                                                            <a class="dropdown-toggle" href="https://turkmenistanairlines.tm/"> Öýe </a>
+                                                                                                        </li>
+                                                                                                                                                        <li class="">
+                                                                                                                                            <a href="https://turkmenistanairlines.tm/themes/default/../../services/timetable"   data-l10n-idremove="" target="_self">
+                                                                                                                                              <i class=''></i> Turkmenistan awiakompaniýasy                                                                                                                                              </a>
+                                                                                                                                                                </li>
+                                                                                                                                                                <li class="">
+                                                                                                                                            <a href="https://turkmenistanairlines.tm/themes/default/../../services/online-booking-regulations"   data-l10n-idremove="" target="_self">
+                                                                                                                                              <i class=''></i> Maglumatlar                                                                                                                                              </a>
+                                                                                                                                                                </li>
+                                                                                                                                                                <li class="">
+                                                                                                                                            <a href="https://turkmenistanairlines.tm/services/en/Turkmenistan-Airlines"   data-l10n-idremove="" target="_self">
+                                                                                                                                              <i class='glyphicon glyphicon-phone-alt'></i> Habarlaşmak                                                                                                                                              </a>
+                                                                                                                                                                </li>
+                                                                                                                                                                <li class="">
+                                                                                                                                            <a href="https://turkmenistanairlines.tm/themes/default/../../blog"   data-l10n-idremove="" target="_self">
+                                                                                                                                              <i class=''></i> Habarlar                                                                                                                                              </a>
+                                                                                                                                                                </li>
+                                                                                                                                                                <li class="">
+                                                                                                                                            <a href="https://turkmenistanairlines.tm/Services"   data-l10n-idremove="" target="_self">
+                                                                                                                                              <i class='fa fa-building'></i> Services                                                                                                                                              </a>
+                                                                                                                                                                </li>
+                                                                                                                </ul>
+                                                                                    </div>
+                                                            </div>-->
+            </header>
+        <div class="container">
+            <h1 class="page-title" data-l10n-id="login-register-on-traveler">Login/Register on Traveler</h1>
+        </div>
+
+        <div class="gap"></div>
+
+
+        <div class="container">
+            <div class="row" data-gutter="60">
+                <div class="col-md-4">
+                    <h3 data-l10n-id="welcome-to-traveler">Welcome to Traveler</h3>
+                    <p data-l10n-id="euismod-nunc-porta-magna-elementum-penatibus-amet-gravida-sit-ligula-odio-id-nunc-proin-sem-augue-quis-posuere-interdum-in-sapien-congue-rutrum-scelerisque-sociosqu-cubilia-ridiculus-et-luctus-mollis">Euismod nunc porta magna elementum penatibus amet gravida sit ligula odio id nunc proin sem augue quis posuere interdum in sapien congue rutrum scelerisque sociosqu cubilia ridiculus et luctus mollis</p>
+                    <p data-l10n-id="praesent-est-semper-massa-lobortis-quisque-lectus-ridiculus-hac-eget">Praesent est semper massa lobortis quisque lectus ridiculus hac eget</p>
+                </div>
+                <div class="col-md-4">
+                    <h3 data-l10n-id="login">Login</h3>
+                    <div class="resultlogin"></div><div id="login-overlay"></div>
+                    <form method="POST" action="" id="loginfrm" accept-charset="UTF-8" class="ng-pristine ng-valid">
+                        <div class="form-group form-group-icon-left"><i class="fa fa-user input-icon input-icon-show"></i>
+                            <label data-l10n-id="username-or-email">Elektron bukja</label>
+                            <input class="form-control" placeholder="Elektron bukja" type="email" required="required" name="username">
+                        </div>
+                        <div class="form-group form-group-icon-left"><i class="fa fa-lock input-icon input-icon-show"></i>
+                            <label data-l10n-id="password">Parol</label>
+                            <input class="form-control" type="password" placeholder="Parol" required="required" name="password">
+                        </div>
+                                                <input type="hidden" class="url" value="https://turkmenistanairlines.tm/account/">
+                                                <label><input class="go-right" type="checkbox" name="remember" id="remember-me" value="1"> <span style="font-size:13px;color:#000"><span class="go-left"> &nbsp; Meni ýatda saklamak &nbsp; </span></span></label>
+<!--                        <button style="margin-top: -16px; border-radius: 0px;" type="submit" class="btn btn-action btn-primary loginbtn">Girmek</button>-->
+                        <input class="btn btn-action btn-primary loginbtn" type="submit" value="Girmek">
+                    </form>
+                </div>
+              
+            </div>
+        </div>
+
+
+
+        <div class="gap"></div>
+        <!-- PHPTRAVELS forget password ending -->
+
+      <footer id="main-footer">
+        <div class="container">
+          <div class="row row-wrap">
+           <div class="row row-wrap">
+            <div class="col-md-4">
+              <a class="logo" href="https://turkmenistanairlines.tm/">
+                <img src="resources/TR_60n/10.png" alt="" title="" data-original-src="https://turkmenistanairlines.tm/themes/default/img/logo-white.png">
+              </a>
+<!--              <a href="#">
+                <div class="mobile-app-appstore"></div>
+                <div class="mobile-app-googleplay mt-5"></div>
+              </a>-->
+              <p class="mb20">&nbsp;</p>
+            </div>
+
+            <div class="col-md-4">
+              <!-- <h4 data-l10n-id="newsletter">Newsletter</h4> -->
+              <h4 data-l10n-id="newsletter">Habarlary iberişdirme</h4>
+              <form class="ng-pristine ng-valid">
+                <!-- <label data-l10n-id="enter-your-email">Enter your E-mail Address</label> -->
+                <label data-l10n-id="enter-your-email">Bukjaňyzy giriziň</label>
+                <input type="text" class="form-control">
+                <p class="mt5"><small data-l10n-id="we-never-send-spam">*Biz hiç haçan spam ugradamyzok</small>
+                </p>
+                <input type="submit" class="btn btn-primary" data-l10n-id="btn-subscribe" value="ýazylmak">
+              </form>
+            </div>
+          
+            <div class="col-md-4">
+              <h4 data-l10n-id="have-questions">Sorag barmy?</h4>
+              <h4 class="text-color">+993 12 39-17-47</h4>
+              <h4><a href="https://turkmenistanairlines.tm/login#" class="text-color">info@turkmenistanairlines.tm</a></h4>
+              <p data-l10n-id="a-24-7-dedicated-customer-support">Gije-gündiz müşderileri ýardam gullugy</p>
+            </div>
+
+          </div>
+          </div>
+        </div>
+<!--          <div class="text-center hidden-xs">
+            <div class="col-md-12"><div class="row"><a class="btn btn-primary btn-block btn-lg" target="_blank" href="https://turkmenistanairlines.tm/supplier/">Daşky görnüş</a></div></div>
+        </div>-->
+          
+          
+    <!-- tripadvisors block -->
+        <!-- tripadvisors block -->
+
+    <div class="footerbg hidden-xs">
+        <div class="container text-center">
+            <a href="javascript:" style="border-radius: 50%; padding: 10px; visibility: hidden; animation-name: none;" class="gotop scroll wow fadeInUp btn btn-default"><i style="color:black;" class="fa fa-angle-up icon-normal round animate-icon-bottom-to-top"></i></a>
+        </div>
+    </div>
+    
+      </footer>
+
+<!--      <script src="https://turkmenistanairlines.tm/themes/default/js/jquery.js"></script>-->
+      
+      
+      
+      
+      
+      
+      
+      
+      
+<!--      <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>-->
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+<!-- Start Custom Template for Autosuggest -->
+
+
+
+<!-- End Custom Template for Autosuggest -->
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    
+  
+
+
+<div id="ascrail2000" class="nicescroll-rails nicescroll-rails-vr" style="width: 6px; z-index: auto; background: rgb(187, 187, 187) none repeat scroll 0% 0%; cursor: default; position: absolute; top: 0px; left: 1360px; height: 896px; opacity: 1; display: none;"><div style="position: relative; top: 0px; float: right; width: 6px; height: 0px; background-color: rgb(51, 51, 51); border: 0px none; background-clip: padding-box; border-radius: 5px;" class="nicescroll-cursors"></div></div><div id="ascrail2000-hr" class="nicescroll-rails nicescroll-rails-hr" style="height: 6px; z-index: auto; background: rgb(187, 187, 187) none repeat scroll 0% 0%; top: 890px; left: 0px; position: absolute; opacity: 1; cursor: default; display: none;"><div style="position: absolute; top: 0px; height: 6px; width: 0px; background-color: rgb(51, 51, 51); border: 0px none; background-clip: padding-box; border-radius: 5px; left: 0px;" class="nicescroll-cursors"></div></div><div id="ascrail2001" class="nicescroll-rails nicescroll-rails-vr" style="width: 10px; z-index: 9999; cursor: default; position: fixed; top: 0px; height: 100%; right: 0px; display: block; opacity: 0.2;"><div style="position: relative; top: 0px; float: right; width: 10px; height: 658px; background-color: rgb(0, 0, 0); border: 0px solid rgb(255, 255, 255); background-clip: padding-box; border-radius: 0px;" class="nicescroll-cursors"></div></div></body></html>

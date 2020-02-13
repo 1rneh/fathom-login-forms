@@ -1,0 +1,360 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en"><head><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; media-src 'self' data:; style-src 'self' data: 'unsafe-inline'; font-src 'self' data:; frame-src 'self' data:"><meta http-equiv="Memento-Datetime" content="Wed, 12 Feb 2020 14:20:30 GMT"><link rel="original" href="https://myaccess.dmdc.osd.mil/identitymanagement/authenticate.do;jsessionid=4wwR9ubqRePgmCbU0+eXJ+yg?execution=e1s1">
+
+    <title>
+      DS Logon - Login
+    </title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<link rel="stylesheet" href="resources/EN_12n/1.css" type="text/css" data-original-href="https://myaccess.dmdc.osd.mil/identitymanagement/idm-3.05.47/css/style.css">
+	<link rel="stylesheet" href="resources/EN_12n/2.css" type="text/css" data-original-href="https://myaccess.dmdc.osd.mil/identitymanagement/idm-3.05.47/css/jquery-ui.css">
+	<link rel="stylesheet" href="resources/EN_12n/3.css" type="text/css" data-original-href="https://myaccess.dmdc.osd.mil/identitymanagement/idm-3.05.47/css/bootstrap.css">
+
+    
+    
+    
+       <link rel="stylesheet" href="resources/EN_12n/4.css" type="text/css" data-original-href="https://myaccess.dmdc.osd.mil/identitymanagement/content/vets.gov/style.css.do">
+    
+	
+    
+    
+	
+	
+	
+    
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </head>
+  <body id="page_login">
+    <div id="pageHolder">
+      <a href="#contentHolder" class="skipnav" tabindex="1">Skip to Content</a>
+      <div id="headerHolder">
+        
+
+
+
+    
+              <img src="resources/EN_12n/5.png" alt="Return Home" data-original-src="https://myaccess.dmdc.osd.mil/identitymanagement/content/vets.gov/header.png.do">
+    
+    
+
+      </div>
+      
+
+
+
+
+<div class="page_bar" id="page_bar_top">
+  <ul>
+    <li>
+        <a href="https://myaccess.dmdc.osd.mil/identitymanagement/help.do?redirect=/authenticate.do">
+          <img class="linkHelp" alt="Help" src="resources/EN_12n/6.png" data-original-src="https://myaccess.dmdc.osd.mil/identitymanagement/themes/default/images/help_toggle.png">
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+      <div id="contentHolder">
+        
+
+
+
+
+
+
+
+<style type="text/css">
+    span.clickMe:hover {
+        cursor: pointer;
+        color: green;
+    }
+    section.hidden {
+        display: none;
+        position: fixed;
+    }
+    section article.popup {
+        position: relative;
+        width: 400px;
+        height: 300px;
+        background: #e3e3e3;
+        color: #222;
+        border: 1px solid #333;
+        border-radius: 3px;
+        padding: 5px 7px;
+        margin: 10% auto;
+    }
+    span.close {
+        text-transform: uppercase;
+        color: #222;
+    }
+    span.close:hover{
+        color: red;
+        cursor: pointer;
+    }
+</style>
+
+
+
+
+
+
+    
+    
+        
+            
+                
+                    
+                
+                
+                
+            
+        
+            
+                
+                
+                    
+                
+                
+            
+        
+    
+
+
+
+
+
+
+
+
+
+    
+
+
+
+    
+        
+            <div id="global-message-wrapper" style="margin-bottom: 20px;">
+                <div id="global-message-text">
+                    <div id="adviserbanner" style="text-align:center">
+</div>
+<div id="message" class="infoBox" style="width:95%;white-space:wrap;font-size:90%;text-align:left">ATTENTION ALL USERS: PLEASE READ CAREFULLY TO PROTECT YOUR INFORMATION
+<br><br>
+ACTION NEEDED:  Phone Numbers can be updated by yourself by logging into DS Logon account and going to "UPDATE CONTACT INFORMATION."  This will take you to a screen to update your own phone number and email.  Please ensure your phone (e.g., cell, landline) and email address is accurate as future security features will be enabled soon and you won't have access to your DSL account if the phone number is not one you can access.
+<br><br>
+After visiting DS LOGON or one of our partner sites, CLOSE your browser window AND all open tabs. This will help protect your information and privacy. If you chose not to close your browser and all open tabs, this can enable third parties access to your PRIVATE HEALTH and BENEFIT INFORMATION.
+</div>
+                </div>
+            </div>
+        
+    
+
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+<form id="loginForm" method="post" autocomplete="off" action="https://myaccess.dmdc.osd.mil/identitymanagement/authenticate.do?execution=e1s1">
+    <input type="hidden" name="reauthendpoint" id="reauthendpoint" value="">
+    
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="nav nav-tabs dsl-nav-justified" role="tablist">
+          
+              <li class="active" role="presentation"><a data-toggle="tab" href="#dslogon_content">DS Logon</a></li>
+          
+          
+              <li role="presentation"><a data-toggle="tab" href="#cac_content">CAC</a></li>
+          
+          
+        </ul>
+      </div>
+    
+
+    <div id="loginPanes">
+            
+            <h1></h1>
+            <h2></h2>
+            <div class="tab-content">
+
+            
+                  <div id="dslogon_content" class="tab-pane fade in active">
+                    <div id="dslogon_content" class="loginColumn">
+                        <h3 class="loginHeader">
+                            DS Logon
+                        </h3>
+                        
+                        <h4></h4>
+
+                        <div class="columnsContent">
+                            <div class="formfield">
+                                
+                                    <label for="userName">
+                                    
+                                    
+                                    
+                                    
+                                        <span class="screenreader">username</span>
+                                        <input id="userName" class="defaultValueLabel formfield" name="userName" maxlength="129" tabindex="1" value="DS Logon Username">
+                                    </label>
+                            </div>
+                            <div class="formfieldSmallGap">
+                                
+                                <label for="password">
+                                    
+                                    <input type="password" style="display:none">
+                                        <input type="password" id="password" name="password" maxlength="20" tabindex="2" class="formfield login-entry-field" style="display: none;">
+                                    
+                                </label>
+                                <label for="password-clear">
+                                    <input id="password-clear" class="passwordLabel formfield" name="password-clear" maxlength="20" value="DS Logon Password" tabindex="2">
+                                </label>
+                            </div>
+                            
+                            
+                            <div class="formfield">
+                                <a id="forgot_username" href="https://myaccess.dmdc.osd.mil/identitymanagement/retrieveusername.do" tabindex="5">Forgot Username?</a>
+                            </div>
+                            <div class="formfield">
+                                <a id="forgot_password" href="https://myaccess.dmdc.osd.mil/identitymanagement/resetpassword.do" tabindex="6">Forgot Password?</a>
+                            </div>
+                            <div class="formbuttons">
+                                
+                                <input id="dsLogonButton" type="submit" class="btn btn-sm btn-primary button" name="_eventId_dslogon" value="Login" tabindex="3">
+                                <img src="resources/EN_12n/7.gif" style="display: none; margin:auto;   padding-top:10px;" id="logonLoadingImage" alt="loading image" data-original-src="https://myaccess.dmdc.osd.mil/identitymanagement/themes/default/images/loading.gif" width="50">
+                                <input id="dsLogonVerifyButton" style="display: none" type="button" class="button" name="_eventId_dslogon_verify" value="Verify Credentials" tabindex="3">
+                                <br>
+                                <div id="authentication-successful" style="display: none">
+                                    <span id="successful-text" style="color: green">Credentials Accepted</span>
+                                    <br>
+                                    <input id="closeModalButton" style="margin-top: 5px" type="button" class="button" name="_eventId_dslogon_modal_close" value="Continue" tabindex="3">
+                                </div>
+                                <img src="resources/EN_12n/7.gif" style="margin-top: 20px; display: none" id="loading-image" alt="loading image" data-original-src="https://myaccess.dmdc.osd.mil/identitymanagement/themes/default/images/loading.gif" width="100">
+                                
+                            </div>
+                        </div>
+                      </div>
+                  </div>
+            
+
+            
+                  <div id="cac_content" class="tab-pane fade ">
+                    <div id="cac_content" class="loginColumn">
+                        <h3 class="loginHeader">
+                            CAC
+                        </h3>
+                        
+                        <h4></h4>
+                        <div class="columnsContent">
+                            
+                            <img src="resources/EN_12n/8.png" alt="Examples of CAC" class="cachelp" data-original-src="https://myaccess.dmdc.osd.mil/identitymanagement/themes/default/images/simple_cac.png">
+                            <div class="formbuttons">
+                                
+                                <input id="cacButton" type="submit" class="btn btn-sm btn-primary cachelp button" name="_eventId_cac" value="Login" tabindex="11">
+                                <img src="resources/EN_12n/7.gif" style="display: none; margin:auto; padding-top:10px;" id="cacLoadingImage" alt="loading image" data-original-src="https://myaccess.dmdc.osd.mil/identitymanagement/themes/default/images/loading.gif" width="50">
+                                
+                            </div>
+                            
+                        </div>
+                      </div>
+                  </div>
+            
+
+            
+          </div>
+    </div>
+
+    
+        
+        <h1></h1>
+        <h2></h2>
+        <h3></h3>
+        <div class="row">
+            <div class="form-group vertButtonsContainer">
+                <div class="vertButtonsCell">
+                    <button id="registerButton" type="submit" data-toggle="tooltip" class="button btn btn-info btn-block" data-placement="top" name="_eventId_register">
+                        <span class="bsBtnLoginOther"><i class="glyphicon glyphicon-user"></i></span>
+                        <span class="loginOtherLabel">Need An Account?</span>
+                    </button>
+                    <button id="activaterButton" type="submit" data-toggle="tooltip" class="button btn btn-info btn-block" data-placement="top" name="_eventId_activate">
+                        <span class="bsBtnLoginOther"><i class="glyphicon glyphicon-ok"></i></span>
+                        <span class="loginOtherLabel">Activate My Account</span>
+                    </button>
+                    <button id="upgradeButton" type="submit" data-toggle="tooltip" data-placement="top" class="button btn btn-info btn-block" name="_eventId_upgrade">
+                        <span class="bsBtnLoginOther"><i class="glyphicon glyphicon-arrow-up"></i></span>
+                        <span class="loginOtherLabel">Upgrade To Premium Account</span>
+                    </button>
+                  
+                     <button id="manageButton" type="submit" data-toggle="tooltip" data-placement="top" class="button btn btn-info btn-block" name="_eventId_manage">
+                         <span class="bsBtnLoginOther"><i class="glyphicon glyphicon-wrench"></i></span>
+                         <span class="loginOtherLabel">Change My Account</span>
+                     </button>
+                  
+                </div>
+            </div>
+        </div>
+    
+
+    
+
+    <div class="phishing-banner-wrapper">
+        <img src="resources/EN_12n/9.png" title="Phishing Alert" alt="Phishing Alert" class="phishing-banner-image" data-original-src="https://myaccess.dmdc.osd.mil/identitymanagement/themes/default/images/alert.png">
+        <div class="phishing-banner">
+            <b>Phishing Alert:</b>
+            We do not initiate contact with beneficiaries via email or telephone to request private personal (Name, SSN, DOB) or
+            sensitive DS Logon account information (username, password, challenge questions).  If you think you provided personal or
+            account information in response to a fraudulent email, website or phone call, be sure to change your password and challenge questions immediately.
+        </div>
+        <div class="clearfix">
+    </div>
+
+
+<div class="infobanner-wrapper" style="display: none; text-align: left; margin: 20px; display: none" id="consent-banner-modal">
+
+      </div>
+      <div id="footerHolder">
+        
+
+
+<div class="footer">
+  <span style="display:none">2020-02-12 06:20:26-816NRY1775C80V</span>
+</div>
+      </div>
+    </div><input type="hidden" name="OWASP_CSRFTOKEN" value="IIVV-DRWD-RYUD-X1D1-PO1G-KZDF-F8GA-H0X3"></form>
+  
+</div></div></body></html>
