@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; media-src 'self' data:; style-src 'self' data: 'unsafe-inline'; font-src 'self' data:; frame-src 'self' data:"><meta http-equiv="Memento-Datetime" content="Wed, 12 Feb 2020 14:48:48 GMT"><link rel="original" href="https://my.htu.edu/ICS"><meta http-equiv="Content-Language" content="en"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>
+	Home | My HT
+</title>
+
+
+<!-- BEGIN Html Head Elements -->
+
+
+
+<link rel="stylesheet" type="text/css" href="resources/EN_73n/1.css" data-original-href="https://my.htu.edu/ICS/UI/Common/Styles/jQuery/jquery-ui.custom.css">
+<link href="resources/EN_73n/2.css" rel="stylesheet" type="text/css" data-original-href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+<link href="resources/EN_73n/3.css" rel="stylesheet" type="text/css" data-original-href="https://fonts.googleapis.com/css?family=Open+Sans">
+
+
+			<link type="text/css" rel="stylesheet" href="resources/EN_73n/4.css" data-original-href="https://my.htu.edu/ICS/portlets/cus/ics/BCProxyLogin/Styles/ProxyLoginStyles.css">
+
+<!-- END Html Head Elements -->
+
+<link href="resources/EN_73n/5.css" rel="stylesheet" data-original-href="https://my.htu.edu/ICS/UI/Common/Styles/site-bundle.css?v=CxPAD5ADBpOSyspVSlSc6s1yhbWeAJAjaESq6b6q67I1">
+
+
+<link href="resources/EN_73n/6.css" type="text/css" rel="stylesheet" data-original-href="https://my.htu.edu/ICS/Portlets/ICS/CalendarPortlet/Styles/calendar.css">
+<link href="resources/EN_73n/7.css" type="text/css" rel="stylesheet" data-original-href="https://my.htu.edu/ICS/Portlets/CRM/Student/Portlet.CourseSchedules/CourseSchedules.css">
+<link href="resources/EN_73n/8.css" type="text/css" rel="stylesheet" data-original-href="https://my.htu.edu/ICS/Portlets/ICS/HandoutPortlet/Handouts.css">
+
+<link rel="stylesheet" type="text/css" media="print" href="resources/EN_73n/9.css" data-original-href="https://my.htu.edu/ICS/UI/Common/Styles/print.css">
+
+
+
+
+
+
+<!-- BEGIN Html Head Elements After JICS JS Framework -->
+
+<!-- END Html Head Elements After JICS JS Framework -->
+
+
+<!--[if IE]>
+<style type="text/css" media="all">@import url( UI/Common/Styles/IEOnly.css );</style>
+<script type="text/javascript" language="JavaScript" src="UI/Common/Scripts/IEOnly.js"></SCRIPT>
+<![endif]-->
+
+
+
+<link rel="Shortcut Icon" href="resources/EN_73n/10.ico" type="image/x-icon" data-original-href="https://my.htu.edu/ICS/favicon.ico">
+<style type="text/css" media="all">@import url(resources/EN_73n/11.css);</style><link rel="stylesheet" type="text/css" href="resources/EN_73n/12.css" data-original-href="https://my.htu.edu/ICS/UI/Themes/default/style.css?v=1">
+
+
+</head>
+<body>
+    <div id="siteWrapper">
+    <form name="MAINFORM" method="post" action="https://my.htu.edu/ICS" id="MAINFORM" enctype="multipart/form-data" autocomplete="off">
+<div class="aspNetHidden">
+<input type="hidden" name="_scriptManager_HiddenField" id="_scriptManager_HiddenField" value="">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTI3NTE0NTYzNg8QZGRkFgICAQ9kFgYCCw9kFgJmDw8WAh4IX19Mb2FkZWRnZGQCDQ9kFgICAw8WAh4HVmlzaWJsZWhkAg8PZBYMAgMPFCsAAhYCHhNFZGl0Q3VzdG9tQ29udGVudElEMqkCAAEAAAD/////AQAAAAAAAAAMAgAAAFBKZW56YWJhci5Qb3J0YWwuRnJhbWV3b3JrLCBWZXJzaW9uPTAuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49bnVsbAUBAAAAL0plbnphYmFyLlBvcnRhbC5GcmFtZXdvcmsuRGF0YS5PYmplY3RJZGVudGlmaWVyAgAAAAhtX0d1aWRJRAptX1N0cmluZ0lEAwELU3lzdGVtLkd1aWQCAAAABP3///8LU3lzdGVtLkd1aWQLAAAAAl9hAl9iAl9jAl9kAl9lAl9mAl9nAl9oAl9pAl9qAl9rAAAAAAAAAAAAAAAIBwcCAgICAgICAk2P1+b3UY9Hjb8MN4mAnKgGBAAAAAALZBYIAgIPFgIfAWhkAgQPFgIfAWhkAggPZBYCZg8PFgIfAGdkFgQCBQ8WAh8BaGQCBw8WAh4LXyFJdGVtQ291bnQCARYCZg9kFgQCAQ8WAh4EVGV4dAWuBDxkaXYgY2xhc3M9InBTZWN0aW9uIGNjU2VjdGlvbiI+PGRpdiBhbGlnbj0ibGVmdCI+PGRpdiBjbGFzcz0id3lzaXd5Z3RleHQiPjxkaXYgY2xhc3M9Ind5c2l3eWd0ZXh0IiBhbGlnbj0ibGVmdCI+DQo8ZGl2IGFsaWduPSJjZW50ZXIiPsKgPC9kaXY+DQo8c3BhbiBzdHlsZT0iY29sb3I6ICM2NjAwMDA7IGZvbnQtZmFtaWx5OiBWZXJkYW5hOyBmb250LXNpemU6IDEycHQ7IGZvbnQtd2VpZ2h0OiBib2xkOyI+PGltZyBzcmM9Ii9JQ1MvaWNzZnMvSFRHcmFkMjAxNl9LZWVwaXREaWdpdGFsXzAxNDgtQy5qcGc/dGFyZ2V0PTg3OTUxZWY0LTY0NjItNGE5Zi1iOWJjLTVlMjk0ZGJhMWZmMCIgYWx0PSIiIHdpZHRoPSI2NDkiIGhlaWdodD0iMzI1IiBib3JkZXI9IjAiIC8+PGJyIC8+V2VsY29tZSB0byBteS5IVFU8L3NwYW4+IDxzcGFuIHN0eWxlPSJmb250LWZhbWlseTogVmVyZGFuYTsgZm9udC1zaXplOiAxMnB0OyI+LCB0aGUgb2ZmaWNpYWwgY2FtcHVzIHBvcnRhbCBvZiBIdXN0b24tVGlsbG90c29uIFVuaXZlcnNpdHkuIMKgPC9zcGFuPjwvZGl2PjwvZGl2PjwvZGl2PjwvZGl2PmQCAw8PFgIfAWhkZAIKDw8WAh8BaGRkAgQPFCsAAmRkFggCAg8WAh8BaGQCBA8WAh8BaGQCCA9kFgJmDw8WAh8AZ2QWBgIBDxYCHwMCARYCAgEPZBYEAgEPZBYCZg8VAStTcHJpbmcgMjAxOCBBZG1pc3Npb25zIEFwcGxpY2F0aW9uIERlYWRsaW5lZAIDDxYCHglpbm5lcmh0bWwFFyhmcm9tIEplZmZyZXkgRSBQaWVyY2UpZAIDDxYCHwUFI1lvdSBoYXZlIG5vIGluY29taW5nIGFubm91bmNlbWVudHMuZAIFDw8WAh8EBRZTaG93IEFsbCBBbm5vdW5jZW1lbnRzZGQCCg8PFgIfAWhkZAIFDxQrAAJkZBYIAgIPFgIfAWhkAgQPFgIfAWhkAggPZBYCZg8PFgIfAGdkZAIKDw8WAh8BaGRkAggPFCsAAmRkFggCAg8WAh8BaGQCBA8WAh8BaGQCCA9kFgJmDw8WAh8AZ2QWBAIDDxYCHwFnZAIHD2QWAgIBDw8WAh8EBSZDaGFuZ2UgQ2hhbGxlbmdlIFF1ZXN0aW9ucyBhbmQgQW5zd2Vyc2RkAgoPDxYCHwFoZGQCCQ8UKwACZGQWCAICDxYCHwFoZAIEDxYCHwFoZAIID2QWAmYPDxYCHwBnZBYGZg8PFgIfAWhkZAIGD2QWCAIBDxYCHwFoFgQCBw8WAh8EBQ5Db3Vyc2UgUHJvZ3JhbWQCDw9kFgICAQ9kFgJmDzwrAAkAZAIDDxYEHgRocmVmBVkvSUNTL1BvcnRhbF9Ib21lcGFnZS5qbno/cG9ydGxldD1Db3Vyc2VfU2NoZWR1bGVzJnNjcmVlbj1BZGQrRHJvcCtDb3Vyc2VzJnNjcmVlblR5cGU9bmV4dB8BaBYCAgEPDxYCHwQFEEFkZC9Ecm9wIENvdXJzZXNkZAIFDxYCHwYFXy9JQ1MvUG9ydGFsX0hvbWVwYWdlLmpuej9wb3J0bGV0PUNvdXJzZV9TY2hlZHVsZXMmc2NyZWVuPUFkdmFuY2VkK0NvdXJzZStTZWFyY2gmc2NyZWVuVHlwZT1uZXh0FgICAQ8PFgIfBAUNQ291cnNlIFNlYXJjaGRkAgcPFgIfAWgWAgIBDzwrAAsAZAIID2QWBAIBD2QWBAIBDxYCHwQFFFBlcnNvbmFsIEluZm8gVXBkYXRlZAIFDw8WBB8EBSZDb21wbGV0ZSB0aGUgUGVyc29uYWwgSW5mbyBVcGRhdGUgZm9ybR4PQ29tbWFuZEFyZ3VtZW50BSRiNWJmM2RhZC1hMGM0LTRjNGMtYjk4YS01MjczMGYzYmM4Y2VkZAIDD2QWBgIBDxYCHwQFFlJlZ2lzdHJhdGlvbiBBZ3JlZW1lbnRkAgUPDxYEHwQFKENvbXBsZXRlIHRoZSBSZWdpc3RyYXRpb24gQWdyZWVtZW50IGZvcm0fBwUkOWZiYTM3MmEtYmQ0Ni00NjgyLWJhYTEtNjdlMDMzNmNlOTljZGQCBw8WBB8GBVkvSUNTL1BvcnRhbF9Ib21lcGFnZS5qbno/cG9ydGxldD1Db3Vyc2VfU2NoZWR1bGVzJnNjcmVlbj1BZGQrRHJvcCtDb3Vyc2VzJnNjcmVlblR5cGU9bmV4dB8BaBYCAgEPDxYCHwQFEUdvIHRvIE1haW4gc2NyZWVuZGQCCg8PFgIfAWhkZAIKDxQrAAJkZBYIAgIPFgIfAWhkAgQPFgIfAWhkAggPZBYCZg8PFgIfAGdkFgYCAQ8PFgIfAWhkZAIDDzwrAAsBAA8WBh4IRGF0YUtleXMWJGRkZDKpAgABAAAA/////wEAAAAAAAAADAIAAABQSmVuemFiYXIuUG9ydGFsLkZyYW1ld29yaywgVmVyc2lvbj0wLjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPW51bGwFAQAAAC9KZW56YWJhci5Qb3J0YWwuRnJhbWV3b3JrLkRhdGEuT2JqZWN0SWRlbnRpZmllcgIAAAAIbV9HdWlkSUQKbV9TdHJpbmdJRAMBC1N5c3RlbS5HdWlkAgAAAAT9////C1N5c3RlbS5HdWlkCwAAAAJfYQJfYgJfYwJfZAJfZQJfZgJfZwJfaAJfaQJfagJfawAAAAAAAAAAAAAACAcHAgICAgICAgIZrmGisq7AQIXCL7Wr04W8BgQAAAAAC2RkZDKpAgABAAAA/////wEAAAAAAAAADAIAAABQSmVuemFiYXIuUG9ydGFsLkZyYW1ld29yaywgVmVyc2lvbj0wLjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPW51bGwFAQAAAC9KZW56YWJhci5Qb3J0YWwuRnJhbWV3b3JrLkRhdGEuT2JqZWN0SWRlbnRpZmllcgIAAAAIbV9HdWlkSUQKbV9TdHJpbmdJRAMBC1N5c3RlbS5HdWlkAgAAAAT9////C1N5c3RlbS5HdWlkCwAAAAJfYQJfYgJfYwJfZAJfZQJfZgJfZwJfaAJfaQJfagJfawAAAAAAAAAAAAAACAcHAgICAgICAgL+vkI/5VDPSr0opoZ77r6wBgQAAAAACzKpAgABAAAA/////wEAAAAAAAAADAIAAABQSmVuemFiYXIuUG9ydGFsLkZyYW1ld29yaywgVmVyc2lvbj0wLjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPW51bGwFAQAAAC9KZW56YWJhci5Qb3J0YWwuRnJhbWV3b3JrLkRhdGEuT2JqZWN0SWRlbnRpZmllcgIAAAAIbV9HdWlkSUQKbV9TdHJpbmdJRAMBC1N5c3RlbS5HdWlkAgAAAAT9////C1N5c3RlbS5HdWlkCwAAAAJfYQJfYgJfYwJfZAJfZQJfZgJfZwJfaAJfaQJfagJfawAAAAAAAAAAAAAACAcHAgICAgICAgIAqttAPPyoQbtMlfNswzWrBgQAAAAACzKpAgABAAAA/////wEAAAAAAAAADAIAAABQSmVuemFiYXIuUG9ydGFsLkZyYW1ld29yaywgVmVyc2lvbj0wLjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPW51bGwFAQAAAC9KZW56YWJhci5Qb3J0YWwuRnJhbWV3b3JrLkRhdGEuT2JqZWN0SWRlbnRpZmllcgIAAAAIbV9HdWlkSUQKbV9TdHJpbmdJRAMBC1N5c3RlbS5HdWlkAgAAAAT9////C1N5c3RlbS5HdWlkCwAAAAJfYQJfYgJfYwJfZAJfZQJfZgJfZwJfaAJfaQJfagJfawAAAAAAAAAAAAAACAcHAgICAgICAgIv/JJw4i3qQIEmuY5AvNJRBgQAAAAAC2RkZDKpAgABAAAA/////wEAAAAAAAAADAIAAABQSmVuemFiYXIuUG9ydGFsLkZyYW1ld29yaywgVmVyc2lvbj0wLjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPW51bGwFAQAAAC9KZW56YWJhci5Qb3J0YWwuRnJhbWV3b3JrLkRhdGEuT2JqZWN0SWRlbnRpZmllcgIAAAAIbV9HdWlkSUQKbV9TdHJpbmdJRAMBC1N5c3RlbS5HdWlkAgAAAAT9////C1N5c3RlbS5HdWlkCwAAAAJfYQJfYgJfYwJfZAJfZQJfZgJfZwJfaAJfaQJfagJfawAAAAAAAAAAAAAACAcHAgICAgICAgISaCNHfYkWRafeORl2BQ3QBgQAAAAACzKpAgABAAAA/////wEAAAAAAAAADAIAAABQSmVuemFiYXIuUG9ydGFsLkZyYW1ld29yaywgVmVyc2lvbj0wLjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPW51bGwFAQAAAC9KZW56YWJhci5Qb3J0YWwuRnJhbWV3b3JrLkRhdGEuT2JqZWN0SWRlbnRpZmllcgIAAAAIbV9HdWlkSUQKbV9TdHJpbmdJRAMBC1N5c3RlbS5HdWlkAgAAAAT9////C1N5c3RlbS5HdWlkCwAAAAJfYQJfYgJfYwJfZAJfZQJfZgJfZwJfaAJfaQJfagJfawAAAAAAAAAAAAAACAcHAgICAgICAgIfaNSnzWUARIHBNdqnxribBgQAAAAACzKpAgABAAAA/////wEAAAAAAAAADAIAAABQSmVuemFiYXIuUG9ydGFsLkZyYW1ld29yaywgVmVyc2lvbj0wLjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPW51bGwFAQAAAC9KZW56YWJhci5Qb3J0YWwuRnJhbWV3b3JrLkRhdGEuT2JqZWN0SWRlbnRpZmllcgIAAAAIbV9HdWlkSUQKbV9TdHJpbmdJRAMBC1N5c3RlbS5HdWlkAgAAAAT9////C1N5c3RlbS5HdWlkCwAAAAJfYQJfYgJfYwJfZAJfZQJfZgJfZwJfaAJfaQJfagJfawAAAAAAAAAAAAAACAcHAgICAgICAgLKgMhSYtPpTYG5X5QonMJzBgQAAAAACzKpAgABAAAA/////wEAAAAAAAAADAIAAABQSmVuemFiYXIuUG9ydGFsLkZyYW1ld29yaywgVmVyc2lvbj0wLjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPW51bGwFAQAAAC9KZW56YWJhci5Qb3J0YWwuRnJhbWV3b3JrLkRhdGEuT2JqZWN0SWRlbnRpZmllcgIAAAAIbV9HdWlkSUQKbV9TdHJpbmdJRAMBC1N5c3RlbS5HdWlkAgAAAAT9////C1N5c3RlbS5HdWlkCwAAAAJfYQJfYgJfYwJfZAJfZQJfZgJfZwJfaAJfaQJfagJfawAAAAAAAAAAAAAACAcHAgICAgICAgLm7V2UDxWOSJqTFqUECUpIBgQAAAAACzKpAgABAAAA/////wEAAAAAAAAADAIAAABQSmVuemFiYXIuUG9ydGFsLkZyYW1ld29yaywgVmVyc2lvbj0wLjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPW51bGwFAQAAAC9KZW56YWJhci5Qb3J0YWwuRnJhbWV3b3JrLkRhdGEuT2JqZWN0SWRlbnRpZmllcgIAAAAIbV9HdWlkSUQKbV9TdHJpbmdJRAMBC1N5c3RlbS5HdWlkAgAAAAT9////C1N5c3RlbS5HdWlkCwAAAAJfYQJfYgJfYwJfZAJfZQJfZgJfZwJfaAJfaQJfagJfawAAAAAAAAAAAAAACAcHAgICAgICAgKgFfX/GIGRRKBThZJfqUJnBgQAAAAACzKpAgABAAAA/////wEAAAAAAAAADAIAAABQSmVuemFiYXIuUG9ydGFsLkZyYW1ld29yaywgVmVyc2lvbj0wLjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPW51bGwFAQAAAC9KZW56YWJhci5Qb3J0YWwuRnJhbWV3b3JrLkRhdGEuT2JqZWN0SWRlbnRpZmllcgIAAAAIbV9HdWlkSUQKbV9TdHJpbmdJRAMBC1N5c3RlbS5HdWlkAgAAAAT9////C1N5c3RlbS5HdWlkCwAAAAJfYQJfYgJfYwJfZAJfZQJfZgJfZwJfaAJfaQJfagJfawAAAAAAAAAAAAAACAcHAgICAgICAgJk8+HJZTtPQ724y5bTlYaBBgQAAAAACzKpAgABAAAA/////wEAAAAAAAAADAIAAABQSmVuemFiYXIuUG9ydGFsLkZyYW1ld29yaywgVmVyc2lvbj0wLjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPW51bGwFAQAAAC9KZW56YWJhci5Qb3J0YWwuRnJhbWV3b3JrLkRhdGEuT2JqZWN0SWRlbnRpZmllcgIAAAAIbV9HdWlkSUQKbV9TdHJpbmdJRAMBC1N5c3RlbS5HdWlkAgAAAAT9////C1N5c3RlbS5HdWlkCwAAAAJfYQJfYgJfYwJfZAJfZQJfZgJfZwJfaAJfaQJfagJfawAAAAAAAAAAAAAACAcHAgICAgICAgLuOpWttKJ7SZj/JPnqcwS5BgQAAAAACzKpAgABAAAA/////wEAAAAAAAAADAIAAABQSmVuemFiYXIuUG9ydGFsLkZyYW1ld29yaywgVmVyc2lvbj0wLjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPW51bGwFAQAAAC9KZW56YWJhci5Qb3J0YWwuRnJhbWV3b3JrLkRhdGEuT2JqZWN0SWRlbnRpZmllcgIAAAAIbV9HdWlkSUQKbV9TdHJpbmdJRAMBC1N5c3RlbS5HdWlkAgAAAAT9////C1N5c3RlbS5HdWlkCwAAAAJfYQJfYgJfYwJfZAJfZQJfZgJfZwJfaAJfaQJfagJfawAAAAAAAAAAAAAACAcHAgICAgICAgIMd7yWFmYuSoccUrEjWIT6BgQAAAAACzKpAgABAAAA/////wEAAAAAAAAADAIAAABQSmVuemFiYXIuUG9ydGFsLkZyYW1ld29yaywgVmVyc2lvbj0wLjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPW51bGwFAQAAAC9KZW56YWJhci5Qb3J0YWwuRnJhbWV3b3JrLkRhdGEuT2JqZWN0SWRlbnRpZmllcgIAAAAIbV9HdWlkSUQKbV9TdHJpbmdJRAMBC1N5c3RlbS5HdWlkAgAAAAT9////C1N5c3RlbS5HdWlkCwAAAAJfYQJfYgJfYwJfZAJfZQJfZgJfZwJfaAJfaQJfagJfawAAAAAAAAAAAAAACAcHAgICAgICAgLKArPeGDnjTqtHQa4LnQ4yBgQAAAAACzKpAgABAAAA/////wEAAAAAAAAADAIAAABQSmVuemFiYXIuUG9ydGFsLkZyYW1ld29yaywgVmVyc2lvbj0wLjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPW51bGwFAQAAAC9KZW56YWJhci5Qb3J0YWwuRnJhbWV3b3JrLkRhdGEuT2JqZWN0SWRlbnRpZmllcgIAAAAIbV9HdWlkSUQKbV9TdHJpbmdJRAMBC1N5c3RlbS5HdWlkAgAAAAT9////C1N5c3RlbS5HdWlkCwAAAAJfYQJfYgJfYwJfZAJfZQJfZgJfZwJfaAJfaQJfagJfawAAAAAAAAAAAAAACAcHAgICAgICAgJo34yIaHEbTIIFvGtKM+PRBgQAAAAAC2RkZDKpAgABAAAA/////wEAAAAAAAAADAIAAABQSmVuemFiYXIuUG9ydGFsLkZyYW1ld29yaywgVmVyc2lvbj0wLjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPW51bGwFAQAAAC9KZW56YWJhci5Qb3J0YWwuRnJhbWV3b3JrLkRhdGEuT2JqZWN0SWRlbnRpZmllcgIAAAAIbV9HdWlkSUQKbV9TdHJpbmdJRAMBC1N5c3RlbS5HdWlkAgAAAAT9////C1N5c3RlbS5HdWlkCwAAAAJfYQJfYgJfYwJfZAJfZQJfZgJfZwJfaAJfaQJfagJfawAAAAAAAAAAAAAACAcHAgICAgICAgLCOlvhNgTaSr6KcboghMVaBgQAAAAAC2RkZDKpAgABAAAA/////wEAAAAAAAAADAIAAABQSmVuemFiYXIuUG9ydGFsLkZyYW1ld29yaywgVmVyc2lvbj0wLjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPW51bGwFAQAAAC9KZW56YWJhci5Qb3J0YWwuRnJhbWV3b3JrLkRhdGEuT2JqZWN0SWRlbnRpZmllcgIAAAAIbV9HdWlkSUQKbV9TdHJpbmdJRAMBC1N5c3RlbS5HdWlkAgAAAAT9////C1N5c3RlbS5HdWlkCwAAAAJfYQJfYgJfYwJfZAJfZQJfZgJfZwJfaAJfaQJfagJfawAAAAAAAAAAAAAACAcHAgICAgICAgK/JT591j82Qrv/MRnE+5j3BgQAAAAACzKpAgABAAAA/////wEAAAAAAAAADAIAAABQSmVuemFiYXIuUG9ydGFsLkZyYW1ld29yaywgVmVyc2lvbj0wLjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPW51bGwFAQAAAC9KZW56YWJhci5Qb3J0YWwuRnJhbWV3b3JrLkRhdGEuT2JqZWN0SWRlbnRpZmllcgIAAAAIbV9HdWlkSUQKbV9TdHJpbmdJRAMBC1N5c3RlbS5HdWlkAgAAAAT9////C1N5c3RlbS5HdWlkCwAAAAJfYQJfYgJfYwJfZAJfZQJfZgJfZwJfaAJfaQJfagJfawAAAAAAAAAAAAAACAcHAgICAgICAgIsb/EJjHprRbdp2qHcktasBgQAAAAACzKpAgABAAAA/////wEAAAAAAAAADAIAAABQSmVuemFiYXIuUG9ydGFsLkZyYW1ld29yaywgVmVyc2lvbj0wLjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPW51bGwFAQAAAC9KZW56YWJhci5Qb3J0YWwuRnJhbWV3b3JrLkRhdGEuT2JqZWN0SWRlbnRpZmllcgIAAAAIbV9HdWlkSUQKbV9TdHJpbmdJRAMBC1N5c3RlbS5HdWlkAgAAAAT9////C1N5c3RlbS5HdWlkCwAAAAJfYQJfYgJfYwJfZAJfZQJfZgJfZwJfaAJfaQJfagJfawAAAAAAAAAAAAAACAcHAgICAgICAgLJt7qFdIQPQYoax5JgDNmrBgQAAAAACzKpAgABAAAA/////wEAAAAAAAAADAIAAABQSmVuemFiYXIuUG9ydGFsLkZyYW1ld29yaywgVmVyc2lvbj0wLjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPW51bGwFAQAAAC9KZW56YWJhci5Qb3J0YWwuRnJhbWV3b3JrLkRhdGEuT2JqZWN0SWRlbnRpZmllcgIAAAAIbV9HdWlkSUQKbV9TdHJpbmdJRAMBC1N5c3RlbS5HdWlkAgAAAAT9////C1N5c3RlbS5HdWlkCwAAAAJfYQJfYgJfYwJfZAJfZQJfZgJfZwJfaAJfaQJfagJfawAAAAAAAAAAAAAACAcHAgICAgICAgJB90MdgV1xSpNnyR9X0ECFBgQAAAAACzKpAgABAAAA/////wEAAAAAAAAADAIAAABQSmVuemFiYXIuUG9ydGFsLkZyYW1ld29yaywgVmVyc2lvbj0wLjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPW51bGwFAQAAAC9KZW56YWJhci5Qb3J0YWwuRnJhbWV3b3JrLkRhdGEuT2JqZWN0SWRlbnRpZmllcgIAAAAIbV9HdWlkSUQKbV9TdHJpbmdJRAMBC1N5c3RlbS5HdWlkAgAAAAT9////C1N5c3RlbS5HdWlkCwAAAAJfYQJfYgJfYwJfZAJfZQJfZgJfZwJfaAJfaQJfagJfawAAAAAAAAAAAAAACAcHAgICAgICAgKZPLL62BXJR5bcg2xhsSnOBgQAAAAACzKpAgABAAAA/////wEAAAAAAAAADAIAAABQSmVuemFiYXIuUG9ydGFsLkZyYW1ld29yaywgVmVyc2lvbj0wLjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPW51bGwFAQAAAC9KZW56YWJhci5Qb3J0YWwuRnJhbWV3b3JrLkRhdGEuT2JqZWN0SWRlbnRpZmllcgIAAAAIbV9HdWlkSUQKbV9TdHJpbmdJRAMBC1N5c3RlbS5HdWlkAgAAAAT9////C1N5c3RlbS5HdWlkCwAAAAJfYQJfYgJfYwJfZAJfZQJfZgJfZwJfaAJfaQJfagJfawAAAAAAAAAAAAAACAcHAgICAgICAgJSz2chzMHCS4LzhS+gXKTlBgQAAAAACx4MXyFJdGVtQ291bnRzFgUWARYBFgAWARYDFgAWABYAFgEWChYAFgAWABYAFgAWABYAFgAWABYAFgEWARYAFgEWBhYAFgAWABYAFgAWAB8DAgVkFh5mD2QWAmYPZBYCZg8PFgIeCkNvbHVtblNwYW4CAWQWAmYPZBYCZg8VASBTcHJpbmcgMjAyMCBGaW5hbCBFeGFtcyBTY2hlZHVsZWQCAQ9kFgJmD2QWAmYPDxYCHwoCAWQWAmYPZBYCZg8VAQBkAgIPZBYEZg8PFgIfAWhkFgJmDw8WAh8KAgFkZAIBD2QWAmYPDxYCHwRlZBYEAgEPZBYCZg8VAmEvSUNTL1BvcnRsZXRzL0lDUy9IYW5kb3V0cG9ydGxldC92aWV3aGFuZGxlci5hc2h4P2hhbmRvdXRfaWQ9YTI2MWFlMTktYWViMi00MGMwLTg1YzItMmZiNWFiZDM4NWJjIFNwcmluZyAyMDIwIEZpbmFsIEV4YW1zIFNjaGVkdWxlZAIEDxUDBC5wZGYEMjE3SwBkAgMPZBYCZg9kFgJmDw8WAh8KAgFkFgJmD2QWAmYPFQEjZVJhY2VyIHZpZGVvIHR1dG9yaWFscyBmb3Igc3R1ZGVudHNkAgQPZBYCZg9kFgJmDw8WAh8KAgFkFgJmD2QWAmYPFQFhPGRpdiBjbGFzcz0id3lzaXd5Z3RleHQiPjxwPkluIHRoaXMgZm9sZGVyIHlvdSBjYW4gZmluZCBzaG9ydCB2aWRlbyB0dXRvcmlhbHMgb24gZVJhY2VyPC9wPjwvZGl2PmQCBQ9kFghmDw8WAh8BaGQWAmYPDxYCHwoCAWRkAgEPZBYCZg8PFgIfBGVkFgQCAQ9kFgJmDxUCYS9JQ1MvUG9ydGxldHMvSUNTL0hhbmRvdXRwb3J0bGV0L3ZpZXdoYW5kbGVyLmFzaHg/aGFuZG91dF9pZD0zZjQyYmVmZS01MGU1LTRhY2YtYmQyOC1hNjg2N2JlZWJlYjASUG9zdGluZyB0byBhIGZvcnVtZAIEDxUDBC5tcDQFNDQ5MUsfPGRpdiBjbGFzcz0id3lzaXd5Z3RleHQiPjwvZGl2PmQCAg9kFgJmDw8WAh8EZWQWBAIBD2QWAmYPFQJhL0lDUy9Qb3J0bGV0cy9JQ1MvSGFuZG91dHBvcnRsZXQvdmlld2hhbmRsZXIuYXNoeD9oYW5kb3V0X2lkPTQwZGJhYTAwLWZjM2MtNDFhOC1iYjRjLTk1ZjM2Y2MzMzVhYg5UYWtpbmcgYW4gZXhhbWQCBA8VAwQubXA0BTM4MThLHzxkaXYgY2xhc3M9Ind5c2l3eWd0ZXh0Ij48L2Rpdj5kAgMPZBYCZg8PFgIfBGVkFgQCAQ9kFgJmDxUCYS9JQ1MvUG9ydGxldHMvSUNTL0hhbmRvdXRwb3J0bGV0L3ZpZXdoYW5kbGVyLmFzaHg/aGFuZG91dF9pZD03MDkyZmMyZi0yZGUyLTQwZWEtODEyNi1iOThlNDBiY2QyNTEXdXBsb2FkaW5nIGFuIGFzc2lnbm1lbnRkAgQPFQMELm1wNAUzMDkxSx88ZGl2IGNsYXNzPSJ3eXNpd3lndGV4dCI+PC9kaXY+ZAIGD2QWAmYPZBYCZg8PFgIfCgIBZBYCZg9kFgJmDxUBImVSYWNlciB2aWRlbyB0dXRvcmlhbHMgZm9yIGZhY3VsdHlkAgcPZBYCZg9kFgJmDw8WAh8KAgFkFgJmD2QWAmYPFQFhPGRpdiBjbGFzcz0id3lzaXd5Z3RleHQiPjxwPkluIHRoaXMgZm9sZGVyIHlvdSBjYW4gZmluZCBzaG9ydCB2aWRlbyB0dXRvcmlhbHMgb24gZVJhY2VyPC9wPjwvZGl2PmQCCA9kFhZmDw8WAh8BaGQWAmYPDxYCHwoCAWRkAgEPZBYCZg8PFgIfBGVkFgQCAQ9kFgJmDxUCYS9JQ1MvUG9ydGxldHMvSUNTL0hhbmRvdXRwb3J0bGV0L3ZpZXdoYW5kbGVyLmFzaHg/aGFuZG91dF9pZD00NzIzNjgxMi04OTdkLTQ1MTYtYTdkZS0zOTE5NzYwNTBkZDAiY3JlYXRpbmcgYW5kIGdyYWRpbmcgYW4gYXNzaWdubWVudGQCBA8VAwQubXA0BjEzNDUwSx88ZGl2IGNsYXNzPSJ3eXNpd3lndGV4dCI+PC9kaXY+ZAICD2QWAmYPDxYCHwRlZBYEAgEPZBYCZg8VAmEvSUNTL1BvcnRsZXRzL0lDUy9IYW5kb3V0cG9ydGxldC92aWV3aGFuZGxlci5hc2h4P2hhbmRvdXRfaWQ9YTdkNDY4MWYtNjVjZC00NDAwLTgxYzEtMzVkYWE3YzZiODliFUhvdyB0byBjcmVhdGUgYSBmb3J1bWQCBA8VAwQubXA0BjE2NzMxSx88ZGl2IGNsYXNzPSJ3eXNpd3lndGV4dCI+PC9kaXY+ZAIDD2QWAmYPDxYCHwRlZBYEAgEPZBYCZg8VAmEvSUNTL1BvcnRsZXRzL0lDUy9IYW5kb3V0cG9ydGxldC92aWV3aGFuZGxlci5hc2h4P2hhbmRvdXRfaWQ9NTJjODgwY2EtZDM2Mi00ZGU5LTgxYjktNWY5NDI4OWNjMjczG01haW4gcGFnZSAtIEFib3V0IHRoaXMgcGFnZWQCBA8VAwQubXA0BTUyNjJLHzxkaXYgY2xhc3M9Ind5c2l3eWd0ZXh0Ij48L2Rpdj5kAgQPZBYCZg8PFgIfBGVkFgQCAQ9kFgJmDxUCYS9JQ1MvUG9ydGxldHMvSUNTL0hhbmRvdXRwb3J0bGV0L3ZpZXdoYW5kbGVyLmFzaHg/aGFuZG91dF9pZD05NDVkZWRlNi0xNTBmLTQ4OGUtOWE5My0xNmE1MDQwOTRhNDgUTWFpbiBwYWdlIC0gQ2FsZW5kYXJkAgQPFQMELm1wNAU3MDk1Sx88ZGl2IGNsYXNzPSJ3eXNpd3lndGV4dCI+PC9kaXY+ZAIFD2QWAmYPDxYCHwRlZBYEAgEPZBYCZg8VAmEvSUNTL1BvcnRsZXRzL0lDUy9IYW5kb3V0cG9ydGxldC92aWV3aGFuZGxlci5hc2h4P2hhbmRvdXRfaWQ9ZmZmNTE1YTAtODExOC00NDkxLWEwNTMtODU5MjVmYTk0MjY3G01haW4gcGFnZTogQWRkaW5nIGJvb2ttYXJrc2QCBA8VAwQubXA0BTM5OTdLHzxkaXYgY2xhc3M9Ind5c2l3eWd0ZXh0Ij48L2Rpdj5kAgYPZBYCZg8PFgIfBGVkFgQCAQ9kFgJmDxUCYS9JQ1MvUG9ydGxldHMvSUNTL0hhbmRvdXRwb3J0bGV0L3ZpZXdoYW5kbGVyLmFzaHg/aGFuZG91dF9pZD1jOWUxZjM2NC0zYjY1LTQzNGYtYmRiOC1jYjk2ZDM5NTg2ODEJR3JhZGVib29rZAIEDxUDBC5tcDQGMTg1MDBLfjxkaXYgY2xhc3M9Ind5c2l3eWd0ZXh0Ij48cD5QbGVhc2UgbWFrZSBzdXJlIHlvdSB3YXRjaCBDcmVhdGluZyBhbmQgR3JhZGluZyBhbiBBc3NpZ25tZW50IGJlZm9yZSB3YXRjaGluZyB0aGlzIGNsaXAuPC9wPjwvZGl2PmQCBw9kFgJmDw8WAh8EZWQWBAIBD2QWAmYPFQJhL0lDUy9Qb3J0bGV0cy9JQ1MvSGFuZG91dHBvcnRsZXQvdmlld2hhbmRsZXIuYXNoeD9oYW5kb3V0X2lkPWFkOTUzYWVlLWEyYjQtNDk3Yi05OGZmLTI0ZjllYTczMDRiORxNYWluIHBhZ2UgLSBBZGRpbmcgYSBoYW5kb3V0ZAIEDxUDBC5tcDQFODQxMUsfPGRpdiBjbGFzcz0id3lzaXd5Z3RleHQiPjwvZGl2PmQCCA9kFgJmDw8WAh8EZWQWBAIBD2QWAmYPFQJhL0lDUy9Qb3J0bGV0cy9JQ1MvSGFuZG91dHBvcnRsZXQvdmlld2hhbmRsZXIuYXNoeD9oYW5kb3V0X2lkPTk2YmM3NzBjLTY2MTYtNGEyZS04NzFjLTUyYjEyMzU4ODRmYTRHcmFkZWJvb2sgLSBhdHRlbmRhbmNlIGFuZCBsZXR0ZXJncmFkZSBjb25maWd1cmF0aW9uZAIEDxUDBC5tcDQFODYyOUsfPGRpdiBjbGFzcz0id3lzaXd5Z3RleHQiPjwvZGl2PmQCCQ9kFgJmDw8WAh8EZWQWBAIBD2QWAmYPFQJhL0lDUy9Qb3J0bGV0cy9JQ1MvSGFuZG91dHBvcnRsZXQvdmlld2hhbmRsZXIuYXNoeD9oYW5kb3V0X2lkPWRlYjMwMmNhLTM5MTgtNGVlMy1hYjQ3LTQxYWUwYjlkMGUzMh9UYWtpbmcgYW5kIHJlcG9ydGluZyBhdHRlbmRhbmNlZAIEDxUDBC5tcDQGMTM5NDRLHzxkaXYgY2xhc3M9Ind5c2l3eWd0ZXh0Ij48L2Rpdj5kAgoPZBYCZg8PFgIfBGVkFgQCAQ9kFgJmDxUCYS9JQ1MvUG9ydGxldHMvSUNTL0hhbmRvdXRwb3J0bGV0L3ZpZXdoYW5kbGVyLmFzaHg/aGFuZG91dF9pZD04ODhjZGY2OC03MTY4LTRjMWItODIwNS1iYzZiNGEzM2UzZDEjVGFraW5nIGF0dGVuZGFuY2Ugb24gbW9iaWxlIGRldmljZXNkAgQPFQMELm1wNAU0NDgySx88ZGl2IGNsYXNzPSJ3eXNpd3lndGV4dCI+PC9kaXY+ZAIJD2QWAmYPZBYCZg8PFgIfCgIBZBYCZg9kFgJmDxUBEVN0dWRlbnQgRG9jdW1lbnRzZAIKD2QWAmYPZBYCZg8PFgIfCgIBZBYCZg9kFgJmDxUBAGQCCw9kFgRmDw8WAh8BaGQWAmYPDxYCHwoCAWRkAgEPZBYCZg8PFgIfBGVkFgQCAQ9kFgJmDxUCYS9JQ1MvUG9ydGxldHMvSUNTL0hhbmRvdXRwb3J0bGV0L3ZpZXdoYW5kbGVyLmFzaHg/aGFuZG91dF9pZD1lMTViM2FjMi0wNDM2LTRhZGEtYmU4YS03MWJhMjA4NGM1NWEVQ3VycmVudCBTdHVkZW50IEd1aWRlZAIEDxUDBC5wZGYEMTM4SwBkAgwPZBYCZg9kFgJmDw8WAh8KAgFkFgJmD2QWAmYPFQERRmFjdWx0eSBEb2N1bWVudHNkAg0PZBYCZg9kFgJmDw8WAh8KAgFkFgJmD2QWAmYPFQEAZAIOD2QWDmYPDxYCHwFoZBYCZg8PFgIfCgIBZGQCAQ9kFgJmDw8WAh8EZWQWBAIBD2QWAmYPFQJhL0lDUy9Qb3J0bGV0cy9JQ1MvSGFuZG91dHBvcnRsZXQvdmlld2hhbmRsZXIuYXNoeD9oYW5kb3V0X2lkPTdkM2UyNWJmLTNmZDYtNDIzNi1iYmZmLTMxMTljNGZiOThmNw1GYWN1bHR5IEd1aWRlZAIEDxUDBC5wZGYEMTk5SwBkAgIPZBYCZg8PFgIfBGVkFgQCAQ9kFgJmDxUCYS9JQ1MvUG9ydGxldHMvSUNTL0hhbmRvdXRwb3J0bGV0L3ZpZXdoYW5kbGVyLmFzaHg/aGFuZG91dF9pZD0wOWYxNmYyYy03YThjLTQ1NmItYjc2OS1kYWExZGM5MmQ2YWMNQWR2aXNvciBHdWlkZWQCBA8VAwQucGRmBDUwNksAZAIDD2QWAmYPDxYCHwRlZBYEAgEPZBYCZg8VAmEvSUNTL1BvcnRsZXRzL0lDUy9IYW5kb3V0cG9ydGxldC92aWV3aGFuZGxlci5hc2h4P2hhbmRvdXRfaWQ9ODViYWI3YzktODQ3NC00MTBmLThhMWEtYzc5MjYwMGNkOWFiEUdyYWRlIEVudHJ5IEd1aWRlZAIEDxUDBC5wZGYEMjkwSwBkAgQPZBYCZg8PFgIfBGVkFgQCAQ9kFgJmDxUCYS9JQ1MvUG9ydGxldHMvSUNTL0hhbmRvdXRwb3J0bGV0L3ZpZXdoYW5kbGVyLmFzaHg/aGFuZG91dF9pZD0xZDQzZjc0MS01ZDgxLTRhNzEtOTM2Ny1jOTFmNTdkMDQwODUXRmFjdWx0eS1HdWlkZS1lUmFjZXIxLjZkAgQPFQMELnBkZgU5MTIxSwBkAgUPZBYCZg8PFgIfBGVkFgQCAQ9kFgJmDxUCYS9JQ1MvUG9ydGxldHMvSUNTL0hhbmRvdXRwb3J0bGV0L3ZpZXdoYW5kbGVyLmFzaHg/aGFuZG91dF9pZD1mYWIyM2M5OS0xNWQ4LTQ3YzktOTZkYy04MzZjNjFiMTI5Y2UOZVJhY2VyIGpvYiBhaWRkAgQPFQMFLmRvY3gEMjcxSx88ZGl2IGNsYXNzPSJ3eXNpd3lndGV4dCI+PC9kaXY+ZAIGD2QWAmYPDxYCHwRlZBYEAgEPZBYCZg8VAmEvSUNTL1BvcnRsZXRzL0lDUy9IYW5kb3V0cG9ydGxldC92aWV3aGFuZGxlci5hc2h4P2hhbmRvdXRfaWQ9MjE2N2NmNTItYzFjYy00YmMyLTgyZjMtODUyZmEwNWNhNGU1I1Rha2luZyBhdHRlbmRhbmNlIG9uIG1vYmlsZSBkZXZpY2VzZAIEDxUDBS5kb2N4BDEzOEsfPGRpdiBjbGFzcz0id3lzaXd5Z3RleHQiPjwvZGl2PmQCBQ8PFgIfBAURR28gdG8gTWFpbiBTY3JlZW5kZAIKDw8WAh8BaGRkZH35sXgPCs+1qej1m0bVcQf2jyIlpbMrLLHJz2tyTDWk">
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="38ABEAAB">
+</div>
+        
+
+        <input name="___BrowserRefresh" type="hidden" id="___BrowserRefresh" value="36aec1c3-37a6-4228-bea0-a2be82e32469">
+        <p class="accessibility"><a href="https://my.htu.edu/ICS/#content" title="Skip to Content">Skip To Content</a> </p>
+        <div id="masthead"><h1><a href="https://my.htu.edu/ICS/" title="Huston-Tillotson University">Huston-Tillotson University</a></h1></div>
+        <div id="welcomeBackBar">
+
+
+
+<div id="searchAutoCompleteResults" class="searchAutoComplete"> <ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content" id="ui-id-1" tabindex="0" style="display: none;"></ul></div>
+
+<div id="ctl03_searchPanel" class="searchPanel">
+	
+    <div id="ctl03_divSideBarContainer">
+        <div class="searchControls">
+     
+             <label for="ctl03_tbSearch" id="ctl03_lblForSearch" class="screenReaderText">Search</label>
+             <input name="ctl03$tbSearch" type="text" value="Search..." id="ctl03_tbSearch" class="ui-autocomplete-input" autocomplete="off" style="color: rgb(128, 128, 128);">
+           
+            <label for="ctl03_lbSearch" id="ctl03_lblForSearchButton" class="screenReaderText">Search Button</label>
+            <a id="ctl03_lbSearch" alt="Search" class="searchButton ieInlineBlock" role="button" href="javascript:"><span class="screenReaderText">Search</span></a>
+            
+        </div>
+        
+    </div>
+
+</div>
+<span id="userLogin"><label for="userName">User Name:</label><input type="text" name="userName" id="userName" value=""><label for="password">Password:</label><input type="password" name="password" id="password"><input type="submit" name="btnLogin" value="Login" id="btnLogin"></span></div>
+        <div id="errorMessage"></div>
+        
+        <div id="headerTabs"><ul><li class="tab_Home firstTab selected"><a href="https://my.htu.edu/ICS/">Home</a></li><li class="tab_Admission"><a href="https://my.htu.edu/ICS/Admission/">Admission</a></li><li class="tab_IT"><a href="https://my.htu.edu/ICS/IT/">IT</a></li><li class="tab_Email lastTab"><a href="https://my.htu.edu/ICS/Email/">Email</a></li></ul></div>
+        <div id="mainCrumbs">
+            
+            <div id="youAreHere">
+                <span class="crumbs">You are here:&nbsp; <a href="https://my.htu.edu/ICS/Portal_Homepage.jnz">Home</a> &nbsp;</span>
+            </div>
+        </div>
+        <div id="mainLayout" class="container">
+            
+            <div id="sideBar" class="container">
+            
+                <div class="sideSection" id="thisContext"><h2><a href="https://my.htu.edu/ICS/">My HT</a></h2><ul id="contextPages"><li class="currentPage"><a href="https://my.htu.edu/ICS/Portal_Homepage.jnz">Home</a><ul id="pagePortlets"><li><a href="https://my.htu.edu/ICS/Portal_Homepage.jnz?portlet=Public_Page">Welcome to my.HTU</a></li><li><a href="https://my.htu.edu/ICS/Portal_Homepage.jnz?portlet=Announcements">Announcements</a></li><li><a href="https://my.htu.edu/ICS/Portal_Homepage.jnz?portlet=Campus_Events_Calendar">Campus Events Calendar</a></li><li><a href="https://my.htu.edu/ICS/Portal_Homepage.jnz?portlet=Password_Management">Password Management</a></li><li><a href="https://my.htu.edu/ICS/Portal_Homepage.jnz?portlet=Course_Schedules">Course Schedules</a></li><li><a href="https://my.htu.edu/ICS/Portal_Homepage.jnz?portlet=my.HTU_Guides">my.HTU Info</a></li></ul></li></ul><div class="contexts"></div></div><div id="quickLinks"><h3>Quick Links</h3><ul id="globalLinks"><li><a target="_blank" href="https://www.htu.edu/">HT Home Page</a></li><li><a target="_blank" href="https://my.htu.edu/ICS/Email/">HT Webmail</a></li><li><a target="_blank" href="http://htu.edu/academics/library">Library Services</a></li><li><a target="_blank" href="https://my.htu.edu/go" title="My.HTU for Smart Phones.">RAMConnect</a></li><li><a target="_blank" href="http://htu.textbookx.com/institutional/index.php#">Textbooks</a></li></ul></div>
+                
+
+
+
+            
+                <div class="sideBarFoot containerFoot"></div>
+            </div>
+            
+            <div id="portlets" class="container">
+                <div id="pageTitle">
+                    <h2><a href="https://my.htu.edu/ICS/" id="contextName">My HT</a></h2>
+                </div>
+                <div id="pageTitleButtons">
+                    
+                    
+                    <input name="btnPrintView" type="button" id="btnPrintView" class="print-preview" alt="Print this page" title="Print this page" value="Print this page">
+                    
+                    
+                </div>
+                
+                <a name="content"></a>
+                <div id="PORTLETGRID" class="two_column_even container"><div class="pColumn pColumn1 container"><div id="pg0_CustomContentPortlet" class="portlet pt_CustomContentPortlet pi_Public_Page" style="z-index:6;"><div class="pHead"><h3><a href="https://my.htu.edu/ICS/Portal_Homepage.jnz?portlet=Public_Page" title="Go to main Welcome to my.HTU screen">Welcome to my.HTU</a></h3><div> <a class="help" target="blank" href="https://my.htu.edu/ICS/Help/Base/Custom_Content.htm" title="Get help using 'Welcome to my.HTU'"><img alt="help" src="resources/EN_73n/13.gif" title="Get help using 'Welcome to my.HTU'" data-original-src="https://my.htu.edu/ICS/ui/common/images/help.gif"></a></div></div><div class="pContent">
+
+
+
+<link rel="stylesheet" type="text/css" href="resources/EN_73n/14.css" data-original-href="https://my.htu.edu/ICS/UI/Common/Styles/lightbox.css">
+
+
+
+
+
+
+        <div class="pSection ccSection"><div align="left"><div class="wysiwygtext"><div class="wysiwygtext" align="left">
+<div align="center">&nbsp;</div>
+<span style="color: #660000; font-family: Verdana; font-size: 12pt; font-weight: bold;"><img src="resources/EN_73n/15.jpg" alt="" data-original-src="https://my.htu.edu/ICS/icsfs/HTGrad2016_KeepitDigital_0148-C.jpg?target=87951ef4-6462-4a9f-b9bc-5e294dba1ff0" width="649" height="325" border="0"><br>Welcome to my.HTU</span> <span style="font-family: Verdana; font-size: 12pt;">, the official campus portal of Huston-Tillotson University. &nbsp;</span></div></div></div></div>
+        
+        <div style="clear:both"></div>
+    
+</div></div>
+<div id="pg1_AnnouncementPortlet" class="portlet pt_AnnouncementPortlet pi_Announcements" style="z-index:5;"><div class="pHead"><h3><a href="https://my.htu.edu/ICS/Portal_Homepage.jnz?portlet=Announcements" title="Go to main Announcements screen">Announcements</a></h3><div> <a class="help" target="blank" href="https://my.htu.edu/ICS/Help/Base/Announcements.htm" title="Get help using 'Announcements'"><img alt="help" src="resources/EN_73n/13.gif" title="Get help using 'Announcements'" data-original-src="https://my.htu.edu/ICS/ui/common/images/help.gif"></a></div></div><div class="pContent">
+
+<style>
+	ul.defaultAnnouncements { padding: 0px; }
+	ul.defaultAnnouncements li { padding: 5px 0px; }
+	ul.defaultAnnouncements .author { font-size: 80%; }
+</style>
+
+<div class="pSection">
+
+	
+			<ul class="defaultAnnouncements">
+		
+		<li>
+			<div class="title"><a id="pg1_V_InboxAnnouncements_ctl01_Title" href="javascript:">Spring 2018 Admissions Application Deadline</a></div>
+			<div id="pg1_V_InboxAnnouncements_ctl01_Author" class="author">(from Jeffrey E Pierce)</div>
+		</li>
+		
+			</ul>
+		
+
+	
+
+</div>
+
+<div class="buttonBar">
+	<a id="pg1_V_ShowAllButton" href="javascript:">Show All Announcements</a>
+</div>
+</div></div>
+<div id="pg2_CalendarPortlet" class="portlet pt_CalendarPortlet pi_Campus_Events_Calendar" style="z-index:4;"><div class="pHead"><h3><a href="https://my.htu.edu/ICS/Portal_Homepage.jnz?portlet=Campus_Events_Calendar" title="Go to main Campus Events Calendar screen">Campus Events Calendar</a></h3><div></div></div><div class="pContent calendar-portlet">
+
+
+
+
+
+
+<div class="default-view">
+    <div id="pg2_V_ViewContainer"><div class="float-right"><a class="ember-action-link" href="https://my.htu.edu/ICS/Portal_Homepage.jnz?portlet=Campus_Events_Calendar&amp;screen=MainView&amp;screenType=change">View full calendar</a></div><div class="clearBoth"></div><div class="fc-center"><h2>February 12 — March 13, 2020</h2></div>
+<div class="calendar-list-view">
+No events in this time frame.
+</div></div> 
+</div></div></div>
+<div class="pColumnFoot pColumn1Foot containerFoot"></div></div><div class="pColumn pColumn2 container"><div id="pg3_PasswordManagement" class="portlet pt_PasswordManagement pi_Password_Management" style="z-index:3;"><div class="pHead"><h3><a href="https://my.htu.edu/ICS/Portal_Homepage.jnz?portlet=Password_Management" title="Go to main Password Management screen">Password Management</a></h3><div></div></div><div class="pContent">
+<div class="pSection">
+    
+	<div id="pg3_V_divForgotPwd">
+		<a id="pg3_V_glnkForgotPwd" href="javascript:">Forgot My Password</a>
+	</div>
+	
+	
+</div>
+</div></div>
+<div id="pg4_CourseSchedules" class="portlet pt_CourseSchedules pi_Course_Schedules" style="z-index:2;"><div class="pHead"><h3><a href="https://my.htu.edu/ICS/Portal_Homepage.jnz?portlet=Course_Schedules" title="Go to main Course Schedules screen">Course Schedules</a></h3><div> <a class="help" target="blank" href="https://my.htu.edu/ICS/Help/Student/course_schedules.htm" title="Get help using 'Course Schedules'"><img alt="help" src="resources/EN_73n/13.gif" title="Get help using 'Course Schedules'" data-original-src="https://my.htu.edu/ICS/ui/common/images/help.gif"></a></div></div><div class="pToolbar"></div><div class="pContent CS">
+
+
+<div class="pSection">
+<div id="pg4_V_divHiddenForRegAgreement">
+	
+	<br>
+	<table width="100%" cellspacing="2" cellpadding="2">
+		<tbody><tr>
+			<td width="160">
+				
+			</td>
+			<td width="30"></td>
+			<td>
+				<a href="https://my.htu.edu/ICS/Portal_Homepage.jnz?portlet=Course_Schedules&amp;screen=Advanced+Course+Search&amp;screenType=next" id="pg4_V_lnkAdvancedSearch" style="VERTICAL-ALIGN: bottom"><img id="imgAdvancedSearch" src="resources/EN_73n/16.gif" alt="Advanced Search" data-original-src="https://my.htu.edu/ICS/ui/common/images/PortletImages/Icons/findcourseicon.gif">
+					<span id="pg4_V_lblAdvancedSearch">Course Search</span>
+				</a>
+			</td>
+		</tr>
+	</tbody></table>
+	<br>
+	
+	<br>
+	</div>
+    
+</div>
+</div></div>
+<div id="pg5_HandoutPortlet" class="portlet pt_HandoutPortlet pi_my_HTU_Guides" style="z-index:1;"><div class="pHead"><h3><a href="https://my.htu.edu/ICS/Portal_Homepage.jnz?portlet=my.HTU_Guides" title="Go to main my.HTU Info screen">my.HTU Info</a></h3><div> <a class="help" target="blank" href="https://my.htu.edu/ICS/Help/Base/Handouts.htm" title="Get help using 'my.HTU Info'"><img alt="help" src="resources/EN_73n/13.gif" title="Get help using 'my.HTU Info'" data-original-src="https://my.htu.edu/ICS/ui/common/images/help.gif"></a></div></div><div class="pContent Handouts">
+<div class="pSection">
+<div></div>
+	<table class="groupedGrid " id="pg5_V_HandoutGrid" cellspacing="0" cellpadding="-1" border="0">
+	<tbody class="ghead">
+		<tr>
+			<td colspan="1"><span class="left">
+			Spring 2020 Final Exams Schedule
+		</span><span class="right"></span></td>
+		</tr>
+	</tbody><tbody class="gsubhead">
+
+	</tbody><tbody class="gbody">
+		<tr>
+			<td>
+				    <span id="pg5_V_HandoutGrid_sec3_row3_spanProtectedItemLink">
+    					<a href="https://my.htu.edu/ICS/Portlets/ICS/Handoutportlet/viewhandler.ashx?handout_id=a261ae19-aeb2-40c0-85c2-2fb5abd385bc" target="_blank">
+	        				Spring 2020 Final Exams Schedule
+			    		</a>
+					</span>
+					
+					(.pdf, 217K)
+					<br>
+					
+
+				</td>
+		</tr>
+	</tbody><tbody class="ghead">
+		<tr>
+			<td colspan="1"><span class="left">
+			eRacer video tutorials for students
+		</span><span class="right"></span></td>
+		</tr>
+	</tbody><tbody class="gsubhead">
+		<tr>
+			<td colspan="1"><span class="left">
+			<div class="wysiwygtext"><p>In this folder you can find short video tutorials on eRacer</p></div>
+		</span><span class="right"></span></td>
+		</tr>
+	</tbody><tbody class="gbody">
+		<tr>
+			<td>
+				    <span id="pg5_V_HandoutGrid_sec6_row7_spanProtectedItemLink">
+    					<a href="https://my.htu.edu/ICS/Portlets/ICS/Handoutportlet/viewhandler.ashx?handout_id=3f42befe-50e5-4acf-bd28-a6867beebeb0" target="_blank">
+	        				Posting to a forum
+			    		</a>
+					</span>
+					
+					(.mp4, 4491K)
+					<br>
+					<div class="wysiwygtext"></div>
+
+				</td>
+		</tr><tr class="alt">
+			<td>
+				    <span id="pg5_V_HandoutGrid_sec6_row8_spanProtectedItemLink">
+    					<a href="https://my.htu.edu/ICS/Portlets/ICS/Handoutportlet/viewhandler.ashx?handout_id=40dbaa00-fc3c-41a8-bb4c-95f36cc335ab" target="_blank">
+	        				Taking an exam
+			    		</a>
+					</span>
+					
+					(.mp4, 3818K)
+					<br>
+					<div class="wysiwygtext"></div>
+
+				</td>
+		</tr><tr>
+			<td>
+				    <span id="pg5_V_HandoutGrid_sec6_row9_spanProtectedItemLink">
+    					<a href="https://my.htu.edu/ICS/Portlets/ICS/Handoutportlet/viewhandler.ashx?handout_id=7092fc2f-2de2-40ea-8126-b98e40bcd251" target="_blank">
+	        				uploading an assignment
+			    		</a>
+					</span>
+					
+					(.mp4, 3091K)
+					<br>
+					<div class="wysiwygtext"></div>
+
+				</td>
+		</tr>
+	</tbody><tbody class="ghead">
+		<tr>
+			<td colspan="1"><span class="left">
+			eRacer video tutorials for faculty
+		</span><span class="right"></span></td>
+		</tr>
+	</tbody><tbody class="gsubhead">
+		<tr>
+			<td colspan="1"><span class="left">
+			<div class="wysiwygtext"><p>In this folder you can find short video tutorials on eRacer</p></div>
+		</span><span class="right"></span></td>
+		</tr>
+	</tbody><tbody class="gbody">
+		<tr>
+			<td>
+				    <span id="pg5_V_HandoutGrid_sec9_row13_spanProtectedItemLink">
+    					<a href="https://my.htu.edu/ICS/Portlets/ICS/Handoutportlet/viewhandler.ashx?handout_id=47236812-897d-4516-a7de-391976050dd0" target="_blank">
+	        				creating and grading an assignment
+			    		</a>
+					</span>
+					
+					(.mp4, 13450K)
+					<br>
+					<div class="wysiwygtext"></div>
+
+				</td>
+		</tr><tr class="alt">
+			<td>
+				    <span id="pg5_V_HandoutGrid_sec9_row14_spanProtectedItemLink">
+    					<a href="https://my.htu.edu/ICS/Portlets/ICS/Handoutportlet/viewhandler.ashx?handout_id=a7d4681f-65cd-4400-81c1-35daa7c6b89b" target="_blank">
+	        				How to create a forum
+			    		</a>
+					</span>
+					
+					(.mp4, 16731K)
+					<br>
+					<div class="wysiwygtext"></div>
+
+				</td>
+		</tr><tr>
+			<td>
+				    <span id="pg5_V_HandoutGrid_sec9_row15_spanProtectedItemLink">
+    					<a href="https://my.htu.edu/ICS/Portlets/ICS/Handoutportlet/viewhandler.ashx?handout_id=52c880ca-d362-4de9-81b9-5f94289cc273" target="_blank">
+	        				Main page - About this page
+			    		</a>
+					</span>
+					
+					(.mp4, 5262K)
+					<br>
+					<div class="wysiwygtext"></div>
+
+				</td>
+		</tr><tr class="alt">
+			<td>
+				    <span id="pg5_V_HandoutGrid_sec9_row16_spanProtectedItemLink">
+    					<a href="https://my.htu.edu/ICS/Portlets/ICS/Handoutportlet/viewhandler.ashx?handout_id=945dede6-150f-488e-9a93-16a504094a48" target="_blank">
+	        				Main page - Calendar
+			    		</a>
+					</span>
+					
+					(.mp4, 7095K)
+					<br>
+					<div class="wysiwygtext"></div>
+
+				</td>
+		</tr><tr>
+			<td>
+				    <span id="pg5_V_HandoutGrid_sec9_row17_spanProtectedItemLink">
+    					<a href="https://my.htu.edu/ICS/Portlets/ICS/Handoutportlet/viewhandler.ashx?handout_id=fff515a0-8118-4491-a053-85925fa94267" target="_blank">
+	        				Main page: Adding bookmarks
+			    		</a>
+					</span>
+					
+					(.mp4, 3997K)
+					<br>
+					<div class="wysiwygtext"></div>
+
+				</td>
+		</tr><tr class="alt">
+			<td>
+				    <span id="pg5_V_HandoutGrid_sec9_row18_spanProtectedItemLink">
+    					<a href="https://my.htu.edu/ICS/Portlets/ICS/Handoutportlet/viewhandler.ashx?handout_id=c9e1f364-3b65-434f-bdb8-cb96d3958681" target="_blank">
+	        				Gradebook
+			    		</a>
+					</span>
+					
+					(.mp4, 18500K)
+					<br>
+					<div class="wysiwygtext"><p>Please make sure you watch Creating and Grading an Assignment before watching this clip.</p></div>
+
+				</td>
+		</tr><tr>
+			<td>
+				    <span id="pg5_V_HandoutGrid_sec9_row19_spanProtectedItemLink">
+    					<a href="https://my.htu.edu/ICS/Portlets/ICS/Handoutportlet/viewhandler.ashx?handout_id=ad953aee-a2b4-497b-98ff-24f9ea7304b9" target="_blank">
+	        				Main page - Adding a handout
+			    		</a>
+					</span>
+					
+					(.mp4, 8411K)
+					<br>
+					<div class="wysiwygtext"></div>
+
+				</td>
+		</tr><tr class="alt">
+			<td>
+				    <span id="pg5_V_HandoutGrid_sec9_row20_spanProtectedItemLink">
+    					<a href="https://my.htu.edu/ICS/Portlets/ICS/Handoutportlet/viewhandler.ashx?handout_id=96bc770c-6616-4a2e-871c-52b1235884fa" target="_blank">
+	        				Gradebook - attendance and lettergrade configuration
+			    		</a>
+					</span>
+					
+					(.mp4, 8629K)
+					<br>
+					<div class="wysiwygtext"></div>
+
+				</td>
+		</tr><tr>
+			<td>
+				    <span id="pg5_V_HandoutGrid_sec9_row21_spanProtectedItemLink">
+    					<a href="https://my.htu.edu/ICS/Portlets/ICS/Handoutportlet/viewhandler.ashx?handout_id=deb302ca-3918-4ee3-ab47-41ae0b9d0e32" target="_blank">
+	        				Taking and reporting attendance
+			    		</a>
+					</span>
+					
+					(.mp4, 13944K)
+					<br>
+					<div class="wysiwygtext"></div>
+
+				</td>
+		</tr><tr class="alt">
+			<td>
+				    <span id="pg5_V_HandoutGrid_sec9_row22_spanProtectedItemLink">
+    					<a href="https://my.htu.edu/ICS/Portlets/ICS/Handoutportlet/viewhandler.ashx?handout_id=888cdf68-7168-4c1b-8205-bc6b4a33e3d1" target="_blank">
+	        				Taking attendance on mobile devices
+			    		</a>
+					</span>
+					
+					(.mp4, 4482K)
+					<br>
+					<div class="wysiwygtext"></div>
+
+				</td>
+		</tr>
+	</tbody><tbody class="ghead">
+		<tr>
+			<td colspan="1"><span class="left">
+			Student Documents
+		</span><span class="right"></span></td>
+		</tr>
+	</tbody><tbody class="gsubhead">
+
+	</tbody><tbody class="gbody">
+		<tr>
+			<td>
+				    <span id="pg5_V_HandoutGrid_sec12_row26_spanProtectedItemLink">
+    					<a href="https://my.htu.edu/ICS/Portlets/ICS/Handoutportlet/viewhandler.ashx?handout_id=e15b3ac2-0436-4ada-be8a-71ba2084c55a" target="_blank">
+	        				Current Student Guide
+			    		</a>
+					</span>
+					
+					(.pdf, 138K)
+					<br>
+					
+
+				</td>
+		</tr>
+	</tbody><tbody class="ghead">
+		<tr>
+			<td colspan="1"><span class="left">
+			Faculty Documents
+		</span><span class="right"></span></td>
+		</tr>
+	</tbody><tbody class="gsubhead">
+
+	</tbody><tbody class="gbody">
+		<tr>
+			<td>
+				    <span id="pg5_V_HandoutGrid_sec15_row30_spanProtectedItemLink">
+    					<a href="https://my.htu.edu/ICS/Portlets/ICS/Handoutportlet/viewhandler.ashx?handout_id=7d3e25bf-3fd6-4236-bbff-3119c4fb98f7" target="_blank">
+	        				Faculty Guide
+			    		</a>
+					</span>
+					
+					(.pdf, 199K)
+					<br>
+					
+
+				</td>
+		</tr><tr class="alt">
+			<td>
+				    <span id="pg5_V_HandoutGrid_sec15_row31_spanProtectedItemLink">
+    					<a href="https://my.htu.edu/ICS/Portlets/ICS/Handoutportlet/viewhandler.ashx?handout_id=09f16f2c-7a8c-456b-b769-daa1dc92d6ac" target="_blank">
+	        				Advisor Guide
+			    		</a>
+					</span>
+					
+					(.pdf, 506K)
+					<br>
+					
+
+				</td>
+		</tr><tr>
+			<td>
+				    <span id="pg5_V_HandoutGrid_sec15_row32_spanProtectedItemLink">
+    					<a href="https://my.htu.edu/ICS/Portlets/ICS/Handoutportlet/viewhandler.ashx?handout_id=85bab7c9-8474-410f-8a1a-c792600cd9ab" target="_blank">
+	        				Grade Entry Guide
+			    		</a>
+					</span>
+					
+					(.pdf, 290K)
+					<br>
+					
+
+				</td>
+		</tr><tr class="alt">
+			<td>
+				    <span id="pg5_V_HandoutGrid_sec15_row33_spanProtectedItemLink">
+    					<a href="https://my.htu.edu/ICS/Portlets/ICS/Handoutportlet/viewhandler.ashx?handout_id=1d43f741-5d81-4a71-9367-c91f57d04085" target="_blank">
+	        				Faculty-Guide-eRacer1.6
+			    		</a>
+					</span>
+					
+					(.pdf, 9121K)
+					<br>
+					
+
+				</td>
+		</tr><tr>
+			<td>
+				    <span id="pg5_V_HandoutGrid_sec15_row34_spanProtectedItemLink">
+    					<a href="https://my.htu.edu/ICS/Portlets/ICS/Handoutportlet/viewhandler.ashx?handout_id=fab23c99-15d8-47c9-96dc-836c61b129ce" target="_blank">
+	        				eRacer job aid
+			    		</a>
+					</span>
+					
+					(.docx, 271K)
+					<br>
+					<div class="wysiwygtext"></div>
+
+				</td>
+		</tr><tr class="alt">
+			<td>
+				    <span id="pg5_V_HandoutGrid_sec15_row35_spanProtectedItemLink">
+    					<a href="https://my.htu.edu/ICS/Portlets/ICS/Handoutportlet/viewhandler.ashx?handout_id=2167cf52-c1cc-4bc2-82f3-852fa05ca4e5" target="_blank">
+	        				Taking attendance on mobile devices
+			    		</a>
+					</span>
+					
+					(.docx, 138K)
+					<br>
+					<div class="wysiwygtext"></div>
+
+				</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+<div class="buttonBar">
+	<a id="pg5_V_lnkGoToMain" href="javascript:">Go to Main Screen</a>
+</div>
+
+
+<a href="http://www.adobe.com/products/acrobat/readstep2.html" target="_blank">
+<span class="accessibility">Adobe Acrobat Reader is required to view and print PDF files.</span>
+</a>
+</div></div>
+<div class="pColumnFoot pColumn2Foot containerFoot"></div></div><div class="PORTLETGRIDFoot containerFoot"></div></div>
+                <div class="portletsFoot containerFoot"></div>
+            </div>
+            <div class="mainLayoutFoot containerFoot"></div>
+        </div>
+        <div id="foot"><span id="policies"><a target="_blank" href="https://my.htu.edu/ICS/ClientConfig/HtmlContent/Privacy.html">Privacy Policy</a>|<a target="_blank" href="http://www.htu.edu/AboutHT/index.html">About Us</a>|<a target="_blank" href="http://www.htu.edu/ContactUs/index.html">Contact Us</a>|<a href="javascript:">Campus Directory</a></span><span id="copyright">  Powered by Jenzabar. v8.4.0</span></div>
+        
+    
+
+
+</form>
+    </div>
+
+
+<span role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></span><div id="overlay" style="display: none;"></div><div id="lightbox" style="display: none;"><div id="outerImageContainer" style="width: 250px; height: 250px;"><div id="imageContainer"><img id="lightboxImage"><div id="hoverNav"><a href="javascript:" title="previous image" id="prevLink"></a><a href="javascript:" id="nextLink" title="next image"></a></div><div id="loading"><a href="javascript:" id="loadingLink"><img src="resources/EN_73n/17.gif" data-original-src="https://my.htu.edu/ICS/UI/Common/Images/PortletImages/Lightbox/loading.gif"></a></div></div></div><div id="imageDataContainer" class="clearfix" style="width: 250px;"><div id="imageData"><div id="imageDetails"><span id="caption"></span><span id="numberDisplay"></span></div><div id="bottomNav"><a href="javascript:" id="bottomNavClose" title="close image gallery"><img src="resources/EN_73n/18.gif" data-original-src="https://my.htu.edu/ICS/UI/Common/Images/PortletImages/Lightbox/closelabel.gif"></a></div></div></div></div></body></html>
