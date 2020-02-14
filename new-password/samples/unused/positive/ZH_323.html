@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="zh-CN"><!--<![endif]--><head><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; media-src 'self' data:; style-src 'self' data: 'unsafe-inline'; font-src 'self' data:; frame-src 'self' data:"><meta http-equiv="Memento-Datetime" content="Wed, 12 Feb 2020 14:35:36 GMT"><link rel="original" href="https://www.gzidc.com/Member/MemberIndex/register.html">
+  
+  <title>新一代数据中心 - 会员注册</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  
+  <link rel="shortcut icon" href="resources/ZH_323/1.ico" data-original-href="https://www.gzidc.com/Public/DemoModule/Images/index/favicon.ico">
+  <link rel="stylesheet" href="resources/ZH_323/2.css" data-original-href="https://www.gzidc.com/Public/DemoModule/Css/member/GZIDC_member_lr.css?v=20191009">
+  <link rel="stylesheet" href="resources/ZH_323/3.css" data-original-href="https://www.gzidc.com/Public/DemoModule/Css/lib/GZIDC_ui.css?v=20190429">
+  <!--[if lt IE 9]>
+                <link rel="stylesheet" href="/Public/DemoModule/Css/member/fix_ie_lr.css">
+            <![endif]-->
+</head>
+
+<body>
+  <div class="gzidc-header w ma">
+    <!-- header goes here -->
+    <a href="https://www.gzidc.com/Front/FrontIndex/index.html"></a>
+  </div>
+  <div class="w ma clearfix reg-title">
+    <h1>会员注册</h1>
+  </div>
+  <div class="w ma r-container clearfix">
+    <div class="reg-form">
+      <div class="ctn-tab">
+        <ul id="tab" class="clearfix">
+          <li>
+            <a href="https://www.gzidc.com/Member/MemberIndex/register.html#" class="current" data-type="#member_type_2">个人会员</a>
+          </li>
+          <li>
+            <a href="https://www.gzidc.com/Member/MemberIndex/register.html#" data-type="#member_type_1">企业会员</a>
+          </li>
+        </ul>
+      </div>
+      <form action="https://www.gzidc.com/Member/MemberIndex/register.html" method="POST" class="register-form" autocomplete="off">
+        <div class="r-item company-item hide">
+          <div class="tit">
+            <i class="n">*</i>公司名称:</div>
+          <input id="reg-name" class="r-input" type="text" name="member_name" placeholder="请输入公司名称" value="" disabled="" maxlength="32">
+          <span class="tip"></span>
+        </div>
+        <div class="r-item company-item hide">
+          <div class="tit">
+            <i class="n">*</i>联系人姓名:</div>
+          <input id="reg-name" class="r-input" type="text" name="contact_name" placeholder="请输入联系人名称" value="" disabled="" maxlength="32">
+          <span class="tip"></span>
+        </div>
+        <div class="r-item personal-item">
+          <div class="tit">
+            <i class="n">*</i>姓名:</div>
+          <input id="reg-name" class="r-input" type="text" name="member_name" placeholder="请输入联系人名称" value="" maxlength="32">
+          <span class="tip"></span>
+        </div>
+        <div class="r-item">
+          <div class="tit">
+            <i class="n">*</i>邮箱:</div>
+          <input id="reg-login" class="r-input" type="text" name="login_name" placeholder="请输入邮箱地址" autocapitalize="off" autocomplete="off" autocorrect="off" value="">
+          <span class="tip"></span>
+        </div>
+        <div class="r-item">
+          <div class="tit">
+            <i class="n">*</i>密码:</div>
+          <input id="reg-pwd" class="r-input r-pwd" type="password" name="password" placeholder="请输入密码" value="" autocomplete="off" maxlength="16" data-fathom="new">
+          <span class="tip">请输入8-16位至少含英文和数字的密码</span>
+        </div>
+        <div class="r-item ctn-pwd-strength">
+          <div class="tit">&nbsp;</div>
+          <span id="ctn-pwd-strength">
+            <em class="low" title="含有数字与小写字母">弱</em>
+            <em class="normal" title="含有数字与大小写字母">中</em>
+            <em class="high" title="含有数字与大小写字母及符号">强</em>
+          </span>
+        </div>
+        <div class="r-item">
+          <div class="tit">
+            <i class="n">*</i>再次输入密码:</div>
+          <input id="reg-repwd" class="r-input r-pwd" type="password" name="repassword" placeholder="请再次输入密码" value="" autocomplete="off" maxlength="16" data-fathom="confirm">
+          <span class="tip"></span>
+        </div>
+        <div class="r-item">
+          <div class="tit">
+            <i class="n">*</i>手机号:</div>
+          <input class="r-input" type="text" name="mobile" placeholder="请输入手机号码" autocapitalize="off" autocomplete="off" autocorrect="off" value="">
+          <span class="tip"></span>
+        </div>
+        <div class="r-item">
+          <div class="tit">
+            <i class="n">*</i>地址:</div>
+          <input class="r-input" type="text" name="address" placeholder="请输入地址" autocapitalize="off" autocomplete="off" autocorrect="off" value="">
+          <span class="tip"></span>
+        </div>
+        <div class="r-item">
+          <div class="tit">
+            <i class="n">*</i>验证码:</div>
+          <input class="r-input" type="text" name="valicode" placeholder="请输入验证码" value="" autocomplete="off">
+          <span class="tip"></span>
+        </div>
+        <div class="r-item">
+          <div class="tit">&nbsp;</div>
+          <img src="resources/ZH_323/4.png" class="change-code" title="点击更换验证码" alt="验证码" data-original-src="https://www.gzidc.com/Member/MemberIndex/verify.html">
+        </div>
+        <div class="r-item member-type-form hide">
+          <label for="member_type_2" class="dib">
+            <input type="radio" value="2" name="member_type" id="member_type_2" checked="">个人会员
+          </label>
+          <label for="member_type_1" class="dib">
+            <input type="radio" value="1" name="member_type" id="member_type_1">企业会员
+          </label>
+          <span class="tip"></span>
+        </div>
+        <div class="r-item agreement-form">
+          <label for="agreement-hide" class="dib">
+            <input name="agreement" type="checkbox" id="agreement" class="hide"> 请点击阅读并同意
+            <a href="https://www.gzidc.com/Front/FrontIndex/agreement-register.html" target="_blank">《新一代数据中心用户注册协议》</a>
+          </label>
+          <span class="tip"></span>
+        </div>
+        <div class="r-item submit-form">
+          <button class="submit-button" disabled="">注册</button>
+        </div>
+      </form>
+    </div>
+    <div class="login-info">
+      <p>已有帐号?</p>
+      <p>
+        <button class="login-button">立即登录</button>
+      </p>
+      
+    </div>
+  </div>
+  <textarea id="login-box-template" style="display:none">    &lt;div class="login-form reg-login-form"&gt;
+      &lt;p id="login-tip"&gt;&lt;/p&gt;
+      &lt;form action="module.php?g=Member&amp;m=MemberIndex&amp;a=login" method="POST" onsubmit="return false"&gt;
+        &lt;div class="l-item l-usr"&gt;
+          &lt;div class="tit"&gt;帐号:&lt;/div&gt;
+          &lt;input type="text" id="l-name" class="l-input" name="login" placeholder="请输入邮箱地址/手机号" value="请输入邮箱地址/手机号" /&gt;
+          &lt;span class="infomsg"&gt;&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class="l-item l-pwd"&gt;
+          &lt;div class="tit"&gt;密码:&lt;/div&gt;
+          &lt;input type="password" id="l-pwd" class="l-input" name="password" placeholder="请输入密码" value="请输入密码" /&gt;
+        &lt;/div&gt;
+        &lt;div class="l-item"&gt;
+          &lt;button class="submit-button"&gt;登录&lt;/button&gt;
+          &lt;a href="#" class="forget-pwd"&gt;忘记密码?&lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/form&gt;
+    &lt;/div&gt;
+  </textarea>
+  <textarea id="reg-success-template" style="display:none">    &lt;p&gt;注册成功, 请激活账号后使用, 您的帐号:
+      &lt;strong&gt;
+                &lt;%account%&gt;
+            &lt;/strong&gt;
+    &lt;/p&gt;
+    &lt;p&gt;您可以
+      &lt;!-- &lt;a href="/Member/MemberAuthentication/index.html"&gt;登录会员中心&lt;/a&gt; --&gt;
+      &lt;a href="//&lt;%mail-host%&gt;" target="_blank"&gt;前往邮箱激活账号&lt;/a&gt;
+      或
+      &lt;a href="/Front/FrontIndex/index.html"&gt;前往首页&lt;/a&gt;
+    &lt;/p&gt;
+  </textarea>
+  
+  
+  
+  
+
+
+</body></html>
