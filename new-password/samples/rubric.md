@@ -19,3 +19,13 @@ If it turns out there are pages that don't use <input> elements, let's talk.
 
 * Please do get forms in various languages.
 * We're collecting from a shuffled Trexa list. The shuffling is because we want to get started on feature engineering while samples are still being collected. Thus, we need the samples to come in from a uniform distribution, not the skewed one characteristic of starting with popular domains and only afterward descending into the long, weird tail. Several of us are collecting samples in parallel. Domains from the list that have been allocated to a collector are indicated by putting the person's name by the domain name in tranco_100k_alexa_100k_union_shuffled_2019-12-14.tsv.
+
+# Sample Naming
+
+Samples are named `{language}_{"X" if non-Trexa}{line number in tranco_100k_alexa_100k_union_shuffled_2019-12-14.tsv}{"n" if negative}.html`.
+
+The language prefix helps us make sure each set gets some of each language, which might not happen by random chance in a small corpus.
+
+For cases where the sample is not from a Trexa domain (that is, one in the TSV file), we put an X before an arbitrary, increasing serial number, just to split them into a different namespace, e.g. `EN_X1.html`, `DE_X2.html`, etc.
+
+Samples consisting wholly of negative samples have an "n" added: `EN_1n.html`. This saves the user of fathom-train manual checking when the tool reports that it's treating a sample as a negative.
