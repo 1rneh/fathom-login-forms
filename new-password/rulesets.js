@@ -8,13 +8,13 @@ import {euclidean} from 'fathom-web/clusters';
 import {min} from 'fathom-web/utilsForFrontend';
 
 const coefficients = {
-  "newPassword": [
+  "new": [
     ["hasPasswordLabel", 0.0],
   ]
 };
 
 const biases = [
-  ["newPassword", 0.0]
+  ["new", 0.0]
 ];
 
 const passwordRegex = /password|passwort/gi;
@@ -50,9 +50,9 @@ function makeRuleset(coeffs, biases) {
   }
 
   return ruleset([
-      rule(dom('input'), type('newPassword')),
-      rule(type('newPassword'), score(hasPasswordLabel), {name: 'hasPasswordLabel'}),
-      rule(type('newPassword'), out('newPassword'))
+      rule(dom('input'), type('new')),
+      rule(type('new'), score(hasPasswordLabel), {name: 'hasPasswordLabel'}),
+      rule(type('new'), out('new'))
     ],
     coeffs,
     biases);
@@ -61,14 +61,14 @@ function makeRuleset(coeffs, biases) {
 const trainees = new Map();
 const VIEWPORT_SIZE = {width: 1366, height: 768};
 
-const FEATURES = ['newPassword'];
+const FEATURES = ['new'];
 for (const feature of FEATURES) {
   const ruleset = {
     coeffs: new Map(coefficients[feature]),
     viewportSize: VIEWPORT_SIZE,
     vectorType: feature,
     rulesetMaker: () => makeRuleset([
-        ...coefficients.newPassword,
+        ...coefficients.new,
       ],
       biases),
   };
