@@ -37,10 +37,10 @@ function makeRuleset(coeffs, biases) {
       labelledBy = labelledBy.split(' ').map(id => element.ownerDocument.getElementById(id));
       if (labelledBy.length === 1) {
         console.log(labelledBy);
-        return labelledBy.innerText.match(passwordRegex);
+        return !!labelledBy[0].innerText.match(passwordRegex);
       } else if (labelledBy.length > 1) {
         console.log(labelledBy);
-        return min(labelledBy, node => euclidean(node, element)).innerText.match(passwordRegex);
+        return !!min(labelledBy, node => euclidean(node, element)).innerText.match(passwordRegex);
       }
     }
 
