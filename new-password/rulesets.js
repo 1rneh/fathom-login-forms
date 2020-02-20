@@ -17,37 +17,56 @@ const biases = [
   ["new", 0.0]
 ];
 
-const passwordRegex = /password|passwort/gi;
+const passwordRegex = /password|passwort|رمز عبور|mot de passe|パスワード|신규 비밀번호|wachtwoord|senha|Пароль|parol|密码|contraseña/gi;
 
 function makeRuleset(coeffs, biases) {
 
   function hasPasswordLabel(fnode) {
-    let labels = fnode.element.labels;
+    const element = fnode.element;
+
+    // Check element.labels
+    const labels = element.labels;
     // TODO: Should I be concerned with multiple labels?
     if (labels != null && labels.length > 0) {
       return !!labels[0].innerText.match(passwordRegex);
     }
-    const closestLabel = closestSelectorAboveElementWithinElement(fnode.element, fnode.element.form, 'label');
+
+    // Check element.aria-labelledby
+    let labelledBy = element.getAttribute('aria-labelledby');
+    if (labelledBy != null) {
+      labelledBy = labelledBy.split(' ').map(id => element.ownerDocument.getElementById(id));
+      if (labelledBy.length === 1) {
+        console.log(labelledBy);
+        return labelledBy.innerText.match(passwordRegex);
+      } else if (labelledBy.length > 1) {
+        console.log(labelledBy);
+        return min(labelledBy, node => euclidean(node, element)).innerText.match(passwordRegex);
+      }
+    }
+
+    // Check all text within the <td>'s of the <tr>
+
+    // Check the closest preceding label as determined by euclidean distance
+    const closestLabel = closestSelectorBeforeElementWithinElement(element, element.form, 'label');
     if (closestLabel != null) {
       return !!closestLabel.innerText.match(passwordRegex);
     }
+
     return false;
   }
 
-  function closestSelectorAboveElementWithinElement(toElement, withinElement, querySelector) {
+  function closestSelectorBeforeElementWithinElement(toElement, withinElement, querySelector) {
     if (withinElement !== null) {
-      const nodeList = Array.from(withinElement.querySelectorAll(querySelector));
+      let nodeList = Array.from(withinElement.querySelectorAll(querySelector))
+        .filter(node => toElement.compareDocumentPosition(node) & Node.DOCUMENT_POSITION_PRECEDING); // TODO: Doesn't work for right to left. Try removing the positional constraint.
       if (nodeList.length) {
-        nodeList.filter(node => isAbove(node, toElement));
         return min(nodeList, node => euclidean(node, toElement));
       }
     }
     return null;
   }
 
-  function isAbove(a, b) {
-    return a.getBoundingClientRect().bottom <= b.getBoundingClientRect().top;
-  }
+  // Check aria-label text
 
   return ruleset([
       rule(dom('input'), type('new')),
