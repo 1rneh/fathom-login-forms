@@ -3,9 +3,9 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 /* eslint-disable import/no-unresolved */
-import {dom, out, rule, ruleset, score, type} from 'fathom-web';
-import {euclidean} from 'fathom-web/clusters';
-import {min} from 'fathom-web/utilsForFrontend';
+import {dom, out, rule, ruleset, score, type} from "fathom-web";
+import {euclidean} from "fathom-web/clusters";
+import {min} from "fathom-web/utilsForFrontend";
 
 const coefficients = {
   "new": [
@@ -32,9 +32,9 @@ function makeRuleset(coeffs, biases) {
     }
 
     // Check element.aria-labelledby
-    let labelledBy = element.getAttribute('aria-labelledby');
+    let labelledBy = element.getAttribute("aria-labelledby");
     if (labelledBy != null) {
-      labelledBy = labelledBy.split(' ').map(id => element.ownerDocument.getElementById(id));
+      labelledBy = labelledBy.split(" ").map(id => element.ownerDocument.getElementById(id));
       if (labelledBy.length === 1) {
         console.log(labelledBy);
         return !!labelledBy[0].innerText.match(passwordRegex);
@@ -47,7 +47,7 @@ function makeRuleset(coeffs, biases) {
     // Check all text within the <td>'s of the <tr>
 
     // Check the closest label in the form as determined by euclidean distance
-    const closestLabel = closestSelectorElementWithinElement(element, element.form, 'label');
+    const closestLabel = closestSelectorElementWithinElement(element, element.form, "label");
     if (closestLabel != null) {
       return !!closestLabel.innerText.match(passwordRegex);
     }
@@ -68,9 +68,9 @@ function makeRuleset(coeffs, biases) {
   // Check aria-label text
 
   return ruleset([
-      rule(dom('input[type=text],input[type=password],input[type=""],input:not([type])'), type('new')),
-      rule(type('new'), score(hasPasswordLabel), {name: 'hasPasswordLabel'}),
-      rule(type('new'), out('new'))
+      rule(dom("input[type=text],input[type=password],input[type=\"\"],input:not([type])"), type("new")),
+      rule(type("new"), score(hasPasswordLabel), {name: "hasPasswordLabel"}),
+      rule(type("new"), out("new"))
     ],
     coeffs,
     biases);
@@ -79,7 +79,7 @@ function makeRuleset(coeffs, biases) {
 const trainees = new Map();
 const VIEWPORT_SIZE = {width: 1366, height: 768};
 
-const FEATURES = ['new'];
+const FEATURES = ["new"];
 for (const feature of FEATURES) {
   const ruleset = {
     coeffs: new Map(coefficients[feature]),
