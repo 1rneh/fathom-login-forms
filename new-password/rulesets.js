@@ -10,6 +10,7 @@ import {min} from "fathom-web/utilsForFrontend";
 const coefficients = {
   "new": [
     ["hasPasswordLabel", 0.0],
+    ["hasPasswordAriaLabel", 0.0],
   ]
 };
 
@@ -75,11 +76,19 @@ function makeRuleset(coeffs, biases) {
     return null;
   }
 
-  // Check aria-label text
+  function hasPasswordAriaLabel(fnode) {
+    const ariaLabel = fnode.element.getAttribute('aria-label');
+    if (ariaLabel != null) {
+      console.log(ariaLabel);
+      return !!ariaLabel.match(passwordRegex);
+    }
+    return false;
+  }
 
   return ruleset([
       rule(dom("input[type=text],input[type=password],input[type=\"\"],input:not([type])"), type("new")),
       rule(type("new"), score(hasPasswordLabel), {name: "hasPasswordLabel"}),
+      rule(type("new"), score(hasPasswordAriaLabel), {name: "hasPasswordAriaLabel"}),
       rule(type("new"), out("new"))
     ],
     coeffs,
