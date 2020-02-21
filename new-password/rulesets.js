@@ -9,13 +9,14 @@ import {min} from "fathom-web/utilsForFrontend";
 
 const coefficients = {
   "new": [
-    ["hasPasswordLabel", 0.0],
-    ["hasPasswordAriaLabel", 0.0],
+    ["hasPasswordLabel", 4.089301109313965],
+    ["hasPasswordAriaLabel", 2.3727352619171143],
+    ["hasPasswordPlaceholder", 1.9345881938934326],
   ]
 };
 
 const biases = [
-  ["new", 0.0]
+  ["new", -3.3244168758392334]
 ];
 
 const passwordRegex = /password|passwort|رمز عبور|mot de passe|パスワード|신규 비밀번호|wachtwoord|senha|Пароль|parol|密码|contraseña/gi;
@@ -28,19 +29,17 @@ function makeRuleset(coeffs, biases) {
     // Check element.labels
     const labels = element.labels;
     // TODO: Should I be concerned with multiple labels?
-    if (labels != null && labels.length > 0) {
+    if (labels !== null && labels.length > 0) {
       return !!labels[0].innerText.match(passwordRegex);
     }
 
     // Check element.aria-labelledby
     let labelledBy = element.getAttribute("aria-labelledby");
-    if (labelledBy != null) {
+    if (labelledBy !== null) {
       labelledBy = labelledBy.split(" ").map(id => element.ownerDocument.getElementById(id));
       if (labelledBy.length === 1) {
-        console.log(labelledBy);
         return !!labelledBy[0].innerText.match(passwordRegex);
       } else if (labelledBy.length > 1) {
-        console.log(labelledBy);
         return !!min(labelledBy, node => euclidean(node, element)).innerText.match(passwordRegex);
       }
     }
@@ -51,7 +50,7 @@ function makeRuleset(coeffs, biases) {
       // TODO: How bad is the assumption that the <tr> won't be the parent of the <td>?
       return !!parentElement.parentElement.innerText.match(passwordRegex);
     }
-    
+
     // Check if the input is in a <dd>, and, if so, check the innerText of the preceding <dt>
     if (parentElement.tagName === "DD") {
       return !!parentElement.previousElementSibling.innerText.match(passwordRegex);
@@ -59,7 +58,7 @@ function makeRuleset(coeffs, biases) {
 
     // Check the closest label in the form as determined by euclidean distance
     const closestLabel = closestSelectorElementWithinElement(element, element.form, "label");
-    if (closestLabel != null) {
+    if (closestLabel !== null) {
       return !!closestLabel.innerText.match(passwordRegex);
     }
 
@@ -78,9 +77,16 @@ function makeRuleset(coeffs, biases) {
 
   function hasPasswordAriaLabel(fnode) {
     const ariaLabel = fnode.element.getAttribute("aria-label");
-    if (ariaLabel != null) {
-      console.log(ariaLabel);
+    if (ariaLabel !== null) {
       return !!ariaLabel.match(passwordRegex);
+    }
+    return false;
+  }
+
+  function hasPasswordPlaceholder(fnode) {
+    const placeholder = fnode.element.getAttribute("placeholder");
+    if (placeholder !== null) {
+      return !!placeholder.match(passwordRegex);
     }
     return false;
   }
@@ -89,6 +95,7 @@ function makeRuleset(coeffs, biases) {
       rule(dom("input[type=text],input[type=password],input[type=\"\"],input:not([type])"), type("new")),
       rule(type("new"), score(hasPasswordLabel), {name: "hasPasswordLabel"}),
       rule(type("new"), score(hasPasswordAriaLabel), {name: "hasPasswordAriaLabel"}),
+      rule(type("new"), score(hasPasswordPlaceholder), {name: "hasPasswordPlaceholder"}),
       rule(type("new"), out("new"))
     ],
     coeffs,
