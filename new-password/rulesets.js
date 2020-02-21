@@ -44,7 +44,17 @@ function makeRuleset(coeffs, biases) {
       }
     }
 
-    // Check all text within the <td>'s of the <tr>
+    const parentElement = element.parentElement;
+    // Check if the input is in a <td>, and, if so, check the innerText of the containing <tr>
+    if (parentElement.tagName === "TD") {
+      // TODO: How bad is the assumption that the <tr> won't be the parent of the <td>?
+      return !!parentElement.parentElement.innerText.match(passwordRegex);
+    }
+    
+    // Check if the input is in a <dd>, and, if so, check the innerText of the preceding <dt>
+    if (parentElement.tagName === "DD") {
+      return !!parentElement.previousElementSibling.innerText.match(passwordRegex);
+    }
 
     // Check the closest label in the form as determined by euclidean distance
     const closestLabel = closestSelectorElementWithinElement(element, element.form, "label");
