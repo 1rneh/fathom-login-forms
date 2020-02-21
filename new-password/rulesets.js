@@ -11,6 +11,7 @@ const coefficients = {
   "new": [
     ["hasPasswordLabel", 0.0],
     ["hasPasswordAriaLabel", 0.0],
+    ["hasPasswordPlaceholder", 0.0],
   ]
 };
 
@@ -51,7 +52,7 @@ function makeRuleset(coeffs, biases) {
       // TODO: How bad is the assumption that the <tr> won't be the parent of the <td>?
       return !!parentElement.parentElement.innerText.match(passwordRegex);
     }
-    
+
     // Check if the input is in a <dd>, and, if so, check the innerText of the preceding <dt>
     if (parentElement.tagName === "DD") {
       return !!parentElement.previousElementSibling.innerText.match(passwordRegex);
@@ -77,10 +78,19 @@ function makeRuleset(coeffs, biases) {
   }
 
   function hasPasswordAriaLabel(fnode) {
-    const ariaLabel = fnode.element.getAttribute('aria-label');
+    const ariaLabel = fnode.element.getAttribute("aria-label");
     if (ariaLabel != null) {
       console.log(ariaLabel);
       return !!ariaLabel.match(passwordRegex);
+    }
+    return false;
+  }
+
+  function hasPasswordPlaceholder(fnode) {
+    const placeholder = fnode.element.getAttribute("placeholder");
+    if (placeholder != null) {
+      console.log(placeholder);
+      return !!placeholder.match(passwordRegex);
     }
     return false;
   }
@@ -89,6 +99,7 @@ function makeRuleset(coeffs, biases) {
       rule(dom("input[type=text],input[type=password],input[type=\"\"],input:not([type])"), type("new")),
       rule(type("new"), score(hasPasswordLabel), {name: "hasPasswordLabel"}),
       rule(type("new"), score(hasPasswordAriaLabel), {name: "hasPasswordAriaLabel"}),
+      rule(type("new"), score(hasPasswordPlaceholder), {name: "hasPasswordPlaceholder"}),
       rule(type("new"), out("new"))
     ],
     coeffs,
@@ -108,8 +119,8 @@ for (const feature of FEATURES) {
         ...coefficients.new,
       ],
       biases),
-    isTarget: fnode => (fnode.element.dataset.fathom === 'new' ||
-                        fnode.element.dataset.fathom === 'confirm')
+    isTarget: fnode => (fnode.element.dataset.fathom === "new" ||
+                        fnode.element.dataset.fathom === "confirm")
   };
   trainees.set(feature, trainee);
 }
