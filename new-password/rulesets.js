@@ -100,7 +100,7 @@ const VIEWPORT_SIZE = {width: 1366, height: 768};
 
 const FEATURES = ["new"];
 for (const feature of FEATURES) {
-  const ruleset = {
+  const trainee = {
     coeffs: new Map(coefficients[feature]),
     viewportSize: VIEWPORT_SIZE,
     vectorType: feature,
@@ -109,7 +109,7 @@ for (const feature of FEATURES) {
       ],
       biases),
   };
-  trainees.set(feature, ruleset);
+  trainees.set(feature, trainee);
 }
 
 export default trainees;
