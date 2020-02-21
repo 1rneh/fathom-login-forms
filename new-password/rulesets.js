@@ -77,7 +77,7 @@ function makeRuleset(coeffs, biases) {
   }
 
   function hasPasswordAriaLabel(fnode) {
-    const ariaLabel = fnode.element.getAttribute('aria-label');
+    const ariaLabel = fnode.element.getAttribute("aria-label");
     if (ariaLabel != null) {
       console.log(ariaLabel);
       return !!ariaLabel.match(passwordRegex);
@@ -108,8 +108,8 @@ for (const feature of FEATURES) {
         ...coefficients.new,
       ],
       biases),
-    isTarget: fnode => (fnode.element.dataset.fathom === 'new' ||
-                        fnode.element.dataset.fathom === 'confirm')
+    isTarget: fnode => (fnode.element.dataset.fathom === "new" ||
+                        fnode.element.dataset.fathom === "confirm")
   };
   trainees.set(feature, trainee);
 }
