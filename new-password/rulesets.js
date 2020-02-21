@@ -46,8 +46,8 @@ function makeRuleset(coeffs, biases) {
 
     // Check all text within the <td>'s of the <tr>
 
-    // Check the closest preceding label as determined by euclidean distance
-    const closestLabel = closestSelectorBeforeElementWithinElement(element, element.form, 'label');
+    // Check the closest label in the form as determined by euclidean distance
+    const closestLabel = closestSelectorElementWithinElement(element, element.form, 'label');
     if (closestLabel != null) {
       return !!closestLabel.innerText.match(passwordRegex);
     }
@@ -55,10 +55,9 @@ function makeRuleset(coeffs, biases) {
     return false;
   }
 
-  function closestSelectorBeforeElementWithinElement(toElement, withinElement, querySelector) {
+  function closestSelectorElementWithinElement(toElement, withinElement, querySelector) {
     if (withinElement !== null) {
-      let nodeList = Array.from(withinElement.querySelectorAll(querySelector))
-        .filter(node => toElement.compareDocumentPosition(node) & Node.DOCUMENT_POSITION_PRECEDING); // TODO: Doesn't work for right to left. Try removing the positional constraint.
+      let nodeList = Array.from(withinElement.querySelectorAll(querySelector));
       if (nodeList.length) {
         return min(nodeList, node => euclidean(node, toElement));
       }
@@ -69,7 +68,7 @@ function makeRuleset(coeffs, biases) {
   // Check aria-label text
 
   return ruleset([
-      rule(dom('input'), type('new')),
+      rule(dom('input[type=text],input[type=password],input[type=""],input:not([type])'), type('new')),
       rule(type('new'), score(hasPasswordLabel), {name: 'hasPasswordLabel'}),
       rule(type('new'), out('new'))
     ],
