@@ -9,14 +9,15 @@ import {min} from "fathom-web/utilsForFrontend";
 
 const coefficients = {
   "new": [
-    ["hasPasswordLabel", 4.089301109313965],
-    ["hasPasswordAriaLabel", 2.3727352619171143],
-    ["hasPasswordPlaceholder", 1.9345881938934326],
+    ["hasPasswordLabel", 4.290476322174072],
+    ["hasPasswordAriaLabel", 2.236283540725708],
+    ["hasPasswordPlaceholder", 2.4695398807525635],
+    ["formContainsForgotPasswordLink", -3.3516998291015625]
   ]
 };
 
 const biases = [
-  ["new", -3.3244168758392334]
+  ["new", -3.3234548568725586]
 ];
 
 const passwordRegex = /password|passwort|رمز عبور|mot de passe|パスワード|신규 비밀번호|wachtwoord|senha|Пароль|parol|密码|contraseña/gi;
@@ -91,11 +92,38 @@ function makeRuleset(coeffs, biases) {
     return false;
   }
 
+  function formContainsForgotPasswordLink(fnode) {
+    const form = fnode.element.form;
+    if (form !== null) {
+      const anchors = Array.from(form.querySelectorAll('a'));
+      const innerTextMatches = anchors.filter(anchor => {
+          if (anchor.innerText !== null) {
+            return !!(anchor.innerText.match(passwordRegex) && anchor.innerText.match(/vergessen|forgot|oublié|dimenticata|Esqueceu|Забыли|忘记|找回/gi));
+          }
+          return false;
+      });
+      if (innerTextMatches.length) {
+        return true;
+      }
+      const hrefMatches = anchors.filter(anchor => {
+        if (anchor.href !== null) {
+          return !!(anchor.href.match(passwordRegex) && anchor.href.match(/forgot|reset|recovery|change/gi));
+        }
+        return false;
+      });
+      if (hrefMatches.length) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   return ruleset([
       rule(dom("input[type=text],input[type=password],input[type=\"\"],input:not([type])"), type("new")),
       rule(type("new"), score(hasPasswordLabel), {name: "hasPasswordLabel"}),
       rule(type("new"), score(hasPasswordAriaLabel), {name: "hasPasswordAriaLabel"}),
       rule(type("new"), score(hasPasswordPlaceholder), {name: "hasPasswordPlaceholder"}),
+      rule(type("new"), score(formContainsForgotPasswordLink), {name: "formContainsForgotPasswordLink"}),
       rule(type("new"), out("new"))
     ],
     coeffs,
