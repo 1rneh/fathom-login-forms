@@ -20,7 +20,9 @@ const biases = [
   ["new", -3.3234548568725586]
 ];
 
-const passwordRegex = /password|passwort|رمز عبور|mot de passe|パスワード|신규 비밀번호|wachtwoord|senha|Пароль|parol|密码|contraseña/gi;
+const passwordRegex = /password|passwort|رمز عبور|mot de passe|パスワード|신규 비밀번호|wachtwoord|senha|Пароль|parol|密码|contraseña/i;
+const forgotPasswordInnerTextRegex = /vergessen|forgot|oublié|dimenticata|Esqueceu|Забыли|忘记|找回/i;
+const forgotPasswordHrefRegex = /forgot|reset|recovery|change/i;
 
 function makeRuleset(coeffs, biases) {
 
@@ -31,7 +33,7 @@ function makeRuleset(coeffs, biases) {
     const labels = element.labels;
     // TODO: Should I be concerned with multiple labels?
     if (labels !== null && labels.length > 0) {
-      return !!labels[0].innerText.match(passwordRegex);
+      return passwordRegex.test(labels[0].innerText);
     }
 
     // Check element.aria-labelledby
@@ -41,7 +43,7 @@ function makeRuleset(coeffs, biases) {
       if (labelledBy.length === 1) {
         return !!labelledBy[0].innerText.match(passwordRegex);
       } else if (labelledBy.length > 1) {
-        return !!min(labelledBy, node => euclidean(node, element)).innerText.match(passwordRegex);
+        return passwordRegex.test(min(labelledBy, node => euclidean(node, element)).innerText);
       }
     }
 
@@ -49,18 +51,18 @@ function makeRuleset(coeffs, biases) {
     // Check if the input is in a <td>, and, if so, check the innerText of the containing <tr>
     if (parentElement.tagName === "TD") {
       // TODO: How bad is the assumption that the <tr> won't be the parent of the <td>?
-      return !!parentElement.parentElement.innerText.match(passwordRegex);
+      return passwordRegex.test(parentElement.parentElement.innerText);
     }
 
     // Check if the input is in a <dd>, and, if so, check the innerText of the preceding <dt>
     if (parentElement.tagName === "DD") {
-      return !!parentElement.previousElementSibling.innerText.match(passwordRegex);
+      return passwordRegex.test(parentElement.previousElementSibling.innerText);
     }
 
     // Check the closest label in the form as determined by euclidean distance
     const closestLabel = closestSelectorElementWithinElement(element, element.form, "label");
     if (closestLabel !== null) {
-      return !!closestLabel.innerText.match(passwordRegex);
+      return passwordRegex.test(closestLabel.innerText);
     }
 
     return false;
@@ -79,7 +81,7 @@ function makeRuleset(coeffs, biases) {
   function hasPasswordAriaLabel(fnode) {
     const ariaLabel = fnode.element.getAttribute("aria-label");
     if (ariaLabel !== null) {
-      return !!ariaLabel.match(passwordRegex);
+      return passwordRegex.test(ariaLabel);
     }
     return false;
   }
@@ -87,7 +89,7 @@ function makeRuleset(coeffs, biases) {
   function hasPasswordPlaceholder(fnode) {
     const placeholder = fnode.element.getAttribute("placeholder");
     if (placeholder !== null) {
-      return !!placeholder.match(passwordRegex);
+      return passwordRegex.test(placeholder);
     }
     return false;
   }
@@ -98,7 +100,7 @@ function makeRuleset(coeffs, biases) {
       const anchors = Array.from(form.querySelectorAll('a'));
       const innerTextMatches = anchors.filter(anchor => {
           if (anchor.innerText !== null) {
-            return !!(anchor.innerText.match(passwordRegex) && anchor.innerText.match(/vergessen|forgot|oublié|dimenticata|Esqueceu|Забыли|忘记|找回/gi));
+            return passwordRegex.test(anchor.innerText) && forgotPasswordInnerTextRegex.test(anchor.innerText);
           }
           return false;
       });
@@ -107,7 +109,7 @@ function makeRuleset(coeffs, biases) {
       }
       const hrefMatches = anchors.filter(anchor => {
         if (anchor.href !== null) {
-          return !!(anchor.href.match(passwordRegex) && anchor.href.match(/forgot|reset|recovery|change/gi));
+          return passwordRegex.test(anchor.href) && forgotPasswordHrefRegex.test(anchor.href);
         }
         return false;
       });
