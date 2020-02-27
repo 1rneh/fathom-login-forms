@@ -12,7 +12,8 @@ const coefficients = {
     ["hasPasswordLabel", 4.290476322174072],
     ["hasPasswordAriaLabel", 2.236283540725708],
     ["hasPasswordPlaceholder", 2.4695398807525635],
-    ["formContainsForgotPasswordLink", -3.3516998291015625]
+    ["forgotPasswordLinkInnerText", -3.3516998291015625],
+    ["forgotPasswordLinkHref", -3.3516998291015625],
   ]
 };
 
@@ -94,19 +95,27 @@ function makeRuleset(coeffs, biases) {
     return false;
   }
 
-  function formContainsForgotPasswordLink(fnode) {
+  function forgotPasswordLinkInnerText(fnode) {
     const form = fnode.element.form;
     if (form !== null) {
       const anchors = Array.from(form.querySelectorAll('a'));
       const innerTextMatches = anchors.filter(anchor => {
-          if (anchor.innerText !== null) {
-            return passwordRegex.test(anchor.innerText) && forgotPasswordInnerTextRegex.test(anchor.innerText);
-          }
-          return false;
+        if (anchor.innerText !== null) {
+          return passwordRegex.test(anchor.innerText) && forgotPasswordInnerTextRegex.test(anchor.innerText);
+        }
+        return false;
       });
       if (innerTextMatches.length) {
         return true;
       }
+    }
+    return false;
+  }
+
+  function forgotPasswordLinkHref(fnode) {
+    const form = fnode.element.form;
+    if (form !== null) {
+      const anchors = Array.from(form.querySelectorAll('a'));
       const hrefMatches = anchors.filter(anchor => {
         if (anchor.href !== null) {
           return passwordRegex.test(anchor.href) && forgotPasswordHrefRegex.test(anchor.href);
@@ -125,7 +134,8 @@ function makeRuleset(coeffs, biases) {
       rule(type("new"), score(hasPasswordLabel), {name: "hasPasswordLabel"}),
       rule(type("new"), score(hasPasswordAriaLabel), {name: "hasPasswordAriaLabel"}),
       rule(type("new"), score(hasPasswordPlaceholder), {name: "hasPasswordPlaceholder"}),
-      rule(type("new"), score(formContainsForgotPasswordLink), {name: "formContainsForgotPasswordLink"}),
+      rule(type("new"), score(forgotPasswordLinkInnerText), {name: "forgotPasswordLinkInnerText"}),
+      rule(type("new"), score(forgotPasswordLinkHref), {name: "forgotPasswordLinkHref"}),
       rule(type("new"), out("new"))
     ],
     coeffs,
