@@ -5,7 +5,7 @@
 /* eslint-disable import/no-unresolved */
 import {dom, out, rule, ruleset, score, type} from "fathom-web";
 import {euclidean} from "fathom-web/clusters";
-import {min} from "fathom-web/utilsForFrontend";
+import {isVisible, min} from "fathom-web/utilsForFrontend";
 
 const coefficients = {
   "new": [
@@ -92,7 +92,7 @@ function makeRuleset(coeffs, biases) {
   }
 
   return ruleset([
-      rule(dom("input[type=text],input[type=password],input[type=\"\"],input:not([type])"), type("new")),
+      rule(dom("input[type=text],input[type=password],input[type=\"\"],input:not([type])").when(isVisible), type("new")),
       rule(type("new"), score(hasPasswordLabel), {name: "hasPasswordLabel"}),
       rule(type("new"), score(hasPasswordAriaLabel), {name: "hasPasswordAriaLabel"}),
       rule(type("new"), score(hasPasswordPlaceholder), {name: "hasPasswordPlaceholder"}),
