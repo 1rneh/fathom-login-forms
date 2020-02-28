@@ -14,6 +14,10 @@ const coefficients = {
     ["hasPasswordPlaceholder", 2.4695398807525635],
     ["forgotPasswordLinkInnerText", -3.3516998291015625],
     ["forgotPasswordLinkHref", -3.3516998291015625],
+    ["idIsPassword1Or2", 0.0],
+    ["nameIsPassword1Or2", 0.0],
+    ["idMatchesPassword", 0.0],
+    ["nameMatchesPassword", 0.0],
   ]
 };
 
@@ -24,6 +28,7 @@ const biases = [
 const passwordRegex = /password|passwort|رمز عبور|mot de passe|パスワード|신규 비밀번호|wachtwoord|senha|Пароль|parol|密码|contraseña/i;
 const forgotPasswordInnerTextRegex = /vergessen|forgot|oublié|dimenticata|Esqueceu|Забыли|忘记|找回/i;
 const forgotPasswordHrefRegex = /forgot|reset|recovery|change/i;
+const password1Or2Regex = /password1|password2/i;
 
 function makeRuleset(coeffs, biases) {
 
@@ -116,6 +121,22 @@ function makeRuleset(coeffs, biases) {
     });
   }
 
+  function idIsPassword1Or2(fnode) {
+    return password1Or2Regex.test(fnode.element.id);
+  }
+
+  function nameIsPassword1Or2(fnode) {
+    return password1Or2Regex.test(fnode.element.name);
+  }
+
+  function idMatchesPassword(fnode) {
+    return passwordRegex.test(fnode.element.id);
+  }
+
+  function nameMatchesPassword(fnode) {
+    return passwordRegex.test(fnode.element.name);
+  }
+
   return ruleset([
       rule(dom("input[type=text],input[type=password],input[type=\"\"],input:not([type])").when(isVisible), type("new")),
       rule(type("new"), score(hasPasswordLabel), {name: "hasPasswordLabel"}),
@@ -123,6 +144,10 @@ function makeRuleset(coeffs, biases) {
       rule(type("new"), score(hasPasswordPlaceholder), {name: "hasPasswordPlaceholder"}),
       rule(type("new"), score(forgotPasswordLinkInnerText), {name: "forgotPasswordLinkInnerText"}),
       rule(type("new"), score(forgotPasswordLinkHref), {name: "forgotPasswordLinkHref"}),
+      rule(type("new"), score(idIsPassword1Or2), {name: "idIsPassword1Or2"}),
+      rule(type("new"), score(nameIsPassword1Or2), {name: "nameIsPassword1Or2"}),
+      rule(type("new"), score(idMatchesPassword), {name: "idMatchesPassword"}),
+      rule(type("new"), score(nameMatchesPassword), {name: "nameMatchesPassword"}),
       rule(type("new"), out("new"))
     ],
     coeffs,
