@@ -9,20 +9,21 @@ import {isVisible, min} from "fathom-web/utilsForFrontend";
 
 const coefficients = {
   "new": [
-    ["hasPasswordLabel", 4.429488182067871],
-    ["hasPasswordAriaLabel", 14.41894817352295],
-    ["hasPasswordPlaceholder", 3.6812350749969482],
-    ["forgotPasswordLinkInnerText", -8.92212963104248],
-    ["forgotPasswordLinkHref", -15.914643287658691],
-    ["idIsPassword1Or2", 6.294931411743164],
-    ["nameIsPassword1Or2", 6.619712829589844],
-    ["idMatchesPassword", 4.032618045806885],
-    ["nameMatchesPassword", 0.9834535717964172],
+    ["hasPasswordLabel", 2.978555202484131],
+    ["closestLabelInFormIsPasswordy", 0.8106302618980408],
+    ["hasPasswordAriaLabel", 3.401607036590576],
+    ["hasPasswordPlaceholder", 1.685030460357666],
+    ["forgotPasswordLinkInnerText", -3.0623300075531006],
+    ["forgotPasswordLinkHref", -3.7858667373657227],
+    ["idIsPassword1Or2", 1.6637455224990845],
+    ["nameIsPassword1Or2", 1.6624956130981445],
+    ["idMatchesPassword", 1.4521360397338867],
+    ["nameMatchesPassword", 1.945937991142273]
   ]
 };
 
 const biases = [
-  ["new", -3.512035608291626]
+  ["new", -2.5635554790496826]
 ];
 
 const passwordRegex = /password|passwort|رمز عبور|mot de passe|パスワード|신규 비밀번호|wachtwoord|senha|Пароль|parol|密码|contraseña/i;
@@ -64,13 +65,14 @@ function makeRuleset(coeffs, biases) {
     if (parentElement.tagName === "DD") {
       return passwordRegex.test(parentElement.previousElementSibling.innerText);
     }
+    return false;
+  }
 
-    // Check the closest label in the form as determined by euclidean distance
-    const closestLabel = closestSelectorElementWithinElement(element, element.form, "label");
+  function closestLabelInFormIsPasswordy(fnode) {
+    const closestLabel = closestSelectorElementWithinElement(fnode.element, fnode.element.form, "label");
     if (closestLabel !== null) {
       return passwordRegex.test(closestLabel.innerText);
     }
-
     return false;
   }
 
@@ -140,6 +142,7 @@ function makeRuleset(coeffs, biases) {
   return ruleset([
       rule(dom("input[type=text],input[type=password],input[type=\"\"],input:not([type])").when(isVisible), type("new")),
       rule(type("new"), score(hasPasswordLabel), {name: "hasPasswordLabel"}),
+      rule(type("new"), score(closestLabelInFormIsPasswordy), {name: "closestLabelInFormIsPasswordy"}),
       rule(type("new"), score(hasPasswordAriaLabel), {name: "hasPasswordAriaLabel"}),
       rule(type("new"), score(hasPasswordPlaceholder), {name: "hasPasswordPlaceholder"}),
       rule(type("new"), score(forgotPasswordLinkInnerText), {name: "forgotPasswordLinkInnerText"}),
