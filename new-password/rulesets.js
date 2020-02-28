@@ -96,13 +96,9 @@ function makeRuleset(coeffs, biases) {
   }
 
   function forgotPasswordLinkInnerText(fnode) {
-    function matchingPredicate(anchor) {
-      if (anchor.innerText !== null) {
-        return passwordRegex.test(anchor.innerText) && forgotPasswordInnerTextRegex.test(anchor.innerText);
-      }
-      return false;
-    }
-    return hasFormAnchorMatchingPredicate(fnode.element, matchingPredicate);
+    return hasFormAnchorMatchingPredicate(fnode.element, anchor => {
+      return passwordRegex.test(anchor.innerText) && forgotPasswordInnerTextRegex.test(anchor.innerText);
+    });
   }
 
   function hasFormAnchorMatchingPredicate(element, matchingPredicate) {
@@ -115,10 +111,9 @@ function makeRuleset(coeffs, biases) {
   }
 
   function forgotPasswordLinkHref(fnode) {
-    function matchingPredicate(anchor) {
+    return hasFormAnchorMatchingPredicate(fnode.element, anchor => {
       return passwordRegex.test(anchor.href) && forgotPasswordHrefRegex.test(anchor.href);
-    }
-    return hasFormAnchorMatchingPredicate(fnode.element, matchingPredicate);
+    });
   }
 
   return ruleset([
