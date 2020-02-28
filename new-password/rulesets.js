@@ -9,21 +9,26 @@ import {isVisible, min} from "fathom-web/utilsForFrontend";
 
 const coefficients = {
   "new": [
-    ["hasPasswordLabel", 4.290476322174072],
-    ["hasPasswordAriaLabel", 2.236283540725708],
-    ["hasPasswordPlaceholder", 2.4695398807525635],
-    ["forgotPasswordLinkInnerText", -3.3516998291015625],
-    ["forgotPasswordLinkHref", -3.3516998291015625],
+    ["hasPasswordLabel", 4.429488182067871],
+    ["hasPasswordAriaLabel", 14.41894817352295],
+    ["hasPasswordPlaceholder", 3.6812350749969482],
+    ["forgotPasswordLinkInnerText", -8.92212963104248],
+    ["forgotPasswordLinkHref", -15.914643287658691],
+    ["idIsPassword1Or2", 6.294931411743164],
+    ["nameIsPassword1Or2", 6.619712829589844],
+    ["idMatchesPassword", 4.032618045806885],
+    ["nameMatchesPassword", 0.9834535717964172],
   ]
 };
 
 const biases = [
-  ["new", -3.3234548568725586]
+  ["new", -3.512035608291626]
 ];
 
 const passwordRegex = /password|passwort|رمز عبور|mot de passe|パスワード|신규 비밀번호|wachtwoord|senha|Пароль|parol|密码|contraseña/i;
 const forgotPasswordInnerTextRegex = /vergessen|forgot|oublié|dimenticata|Esqueceu|Забыли|忘记|找回/i;
 const forgotPasswordHrefRegex = /forgot|reset|recovery|change/i;
+const password1Or2Regex = /password1|password2/i;
 
 function makeRuleset(coeffs, biases) {
 
@@ -116,6 +121,22 @@ function makeRuleset(coeffs, biases) {
     });
   }
 
+  function idIsPassword1Or2(fnode) {
+    return password1Or2Regex.test(fnode.element.id);
+  }
+
+  function nameIsPassword1Or2(fnode) {
+    return password1Or2Regex.test(fnode.element.name);
+  }
+
+  function idMatchesPassword(fnode) {
+    return passwordRegex.test(fnode.element.id);
+  }
+
+  function nameMatchesPassword(fnode) {
+    return passwordRegex.test(fnode.element.name);
+  }
+
   return ruleset([
       rule(dom("input[type=text],input[type=password],input[type=\"\"],input:not([type])").when(isVisible), type("new")),
       rule(type("new"), score(hasPasswordLabel), {name: "hasPasswordLabel"}),
@@ -123,6 +144,10 @@ function makeRuleset(coeffs, biases) {
       rule(type("new"), score(hasPasswordPlaceholder), {name: "hasPasswordPlaceholder"}),
       rule(type("new"), score(forgotPasswordLinkInnerText), {name: "forgotPasswordLinkInnerText"}),
       rule(type("new"), score(forgotPasswordLinkHref), {name: "forgotPasswordLinkHref"}),
+      rule(type("new"), score(idIsPassword1Or2), {name: "idIsPassword1Or2"}),
+      rule(type("new"), score(nameIsPassword1Or2), {name: "nameIsPassword1Or2"}),
+      rule(type("new"), score(idMatchesPassword), {name: "idMatchesPassword"}),
+      rule(type("new"), score(nameMatchesPassword), {name: "nameMatchesPassword"}),
       rule(type("new"), out("new"))
     ],
     coeffs,
