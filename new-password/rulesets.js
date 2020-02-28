@@ -9,20 +9,20 @@ import {isVisible, min} from "fathom-web/utilsForFrontend";
 
 const coefficients = {
   "new": [
-    ["hasPasswordLabel", 4.290476322174072],
-    ["hasPasswordAriaLabel", 2.236283540725708],
-    ["hasPasswordPlaceholder", 2.4695398807525635],
-    ["forgotPasswordLinkInnerText", -3.3516998291015625],
-    ["forgotPasswordLinkHref", -3.3516998291015625],
-    ["idIsPassword1Or2", 0.0],
-    ["nameIsPassword1Or2", 0.0],
-    ["idMatchesPassword", 0.0],
-    ["nameMatchesPassword", 0.0],
+    ["hasPasswordLabel", 4.429488182067871],
+    ["hasPasswordAriaLabel", 14.41894817352295],
+    ["hasPasswordPlaceholder", 3.6812350749969482],
+    ["forgotPasswordLinkInnerText", -8.92212963104248],
+    ["forgotPasswordLinkHref", -15.914643287658691],
+    ["idIsPassword1Or2", 6.294931411743164],
+    ["nameIsPassword1Or2", 6.619712829589844],
+    ["idMatchesPassword", 4.032618045806885],
+    ["nameMatchesPassword", 0.9834535717964172],
   ]
 };
 
 const biases = [
-  ["new", -3.3234548568725586]
+  ["new", -3.512035608291626]
 ];
 
 const passwordRegex = /password|passwort|رمز عبور|mot de passe|パスワード|신규 비밀번호|wachtwoord|senha|Пароль|parol|密码|contraseña/i;
