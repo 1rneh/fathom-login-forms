@@ -96,37 +96,29 @@ function makeRuleset(coeffs, biases) {
   }
 
   function forgotPasswordLinkInnerText(fnode) {
-    const form = fnode.element.form;
+    function matchingPredicate(anchor) {
+      if (anchor.innerText !== null) {
+        return passwordRegex.test(anchor.innerText) && forgotPasswordInnerTextRegex.test(anchor.innerText);
+      }
+      return false;
+    }
+    return hasFormAnchorMatchingPredicate(fnode.element, matchingPredicate);
+  }
+
+  function hasFormAnchorMatchingPredicate(element, matchingPredicate) {
+    const form = element.form;
     if (form !== null) {
       const anchors = Array.from(form.querySelectorAll('a'));
-      const innerTextMatches = anchors.filter(anchor => {
-        if (anchor.innerText !== null) {
-          return passwordRegex.test(anchor.innerText) && forgotPasswordInnerTextRegex.test(anchor.innerText);
-        }
-        return false;
-      });
-      if (innerTextMatches.length) {
-        return true;
-      }
+      return anchors.some(matchingPredicate);
     }
     return false;
   }
 
   function forgotPasswordLinkHref(fnode) {
-    const form = fnode.element.form;
-    if (form !== null) {
-      const anchors = Array.from(form.querySelectorAll('a'));
-      const hrefMatches = anchors.filter(anchor => {
-        if (anchor.href !== null) {
-          return passwordRegex.test(anchor.href) && forgotPasswordHrefRegex.test(anchor.href);
-        }
-        return false;
-      });
-      if (hrefMatches.length) {
-        return true;
-      }
+    function matchingPredicate(anchor) {
+      return passwordRegex.test(anchor.href) && forgotPasswordHrefRegex.test(anchor.href);
     }
-    return false;
+    return hasFormAnchorMatchingPredicate(fnode.element, matchingPredicate);
   }
 
   return ruleset([
