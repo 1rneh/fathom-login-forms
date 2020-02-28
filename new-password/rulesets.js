@@ -9,17 +9,21 @@ import {isVisible, min} from "fathom-web/utilsForFrontend";
 
 const coefficients = {
   "new": [
-    ["hasPasswordLabel", 4.089301109313965],
-    ["hasPasswordAriaLabel", 2.3727352619171143],
-    ["hasPasswordPlaceholder", 1.9345881938934326],
+    ["hasPasswordLabel", 4.290476322174072],
+    ["hasPasswordAriaLabel", 2.236283540725708],
+    ["hasPasswordPlaceholder", 2.4695398807525635],
+    ["forgotPasswordLinkInnerText", -3.3516998291015625],
+    ["forgotPasswordLinkHref", -3.3516998291015625],
   ]
 };
 
 const biases = [
-  ["new", -3.3244168758392334]
+  ["new", -3.3234548568725586]
 ];
 
-const passwordRegex = /password|passwort|رمز عبور|mot de passe|パスワード|신규 비밀번호|wachtwoord|senha|Пароль|parol|密码|contraseña/gi;
+const passwordRegex = /password|passwort|رمز عبور|mot de passe|パスワード|신규 비밀번호|wachtwoord|senha|Пароль|parol|密码|contraseña/i;
+const forgotPasswordInnerTextRegex = /vergessen|forgot|oublié|dimenticata|Esqueceu|Забыли|忘记|找回/i;
+const forgotPasswordHrefRegex = /forgot|reset|recovery|change/i;
 
 function makeRuleset(coeffs, biases) {
 
@@ -30,7 +34,7 @@ function makeRuleset(coeffs, biases) {
     const labels = element.labels;
     // TODO: Should I be concerned with multiple labels?
     if (labels !== null && labels.length > 0) {
-      return !!labels[0].innerText.match(passwordRegex);
+      return passwordRegex.test(labels[0].innerText);
     }
 
     // Check element.aria-labelledby
@@ -40,7 +44,7 @@ function makeRuleset(coeffs, biases) {
       if (labelledBy.length === 1) {
         return !!labelledBy[0].innerText.match(passwordRegex);
       } else if (labelledBy.length > 1) {
-        return !!min(labelledBy, node => euclidean(node, element)).innerText.match(passwordRegex);
+        return passwordRegex.test(min(labelledBy, node => euclidean(node, element)).innerText);
       }
     }
 
@@ -48,18 +52,18 @@ function makeRuleset(coeffs, biases) {
     // Check if the input is in a <td>, and, if so, check the innerText of the containing <tr>
     if (parentElement.tagName === "TD") {
       // TODO: How bad is the assumption that the <tr> won't be the parent of the <td>?
-      return !!parentElement.parentElement.innerText.match(passwordRegex);
+      return passwordRegex.test(parentElement.parentElement.innerText);
     }
 
     // Check if the input is in a <dd>, and, if so, check the innerText of the preceding <dt>
     if (parentElement.tagName === "DD") {
-      return !!parentElement.previousElementSibling.innerText.match(passwordRegex);
+      return passwordRegex.test(parentElement.previousElementSibling.innerText);
     }
 
     // Check the closest label in the form as determined by euclidean distance
     const closestLabel = closestSelectorElementWithinElement(element, element.form, "label");
     if (closestLabel !== null) {
-      return !!closestLabel.innerText.match(passwordRegex);
+      return passwordRegex.test(closestLabel.innerText);
     }
 
     return false;
@@ -78,7 +82,7 @@ function makeRuleset(coeffs, biases) {
   function hasPasswordAriaLabel(fnode) {
     const ariaLabel = fnode.element.getAttribute("aria-label");
     if (ariaLabel !== null) {
-      return !!ariaLabel.match(passwordRegex);
+      return passwordRegex.test(ariaLabel);
     }
     return false;
   }
@@ -86,9 +90,30 @@ function makeRuleset(coeffs, biases) {
   function hasPasswordPlaceholder(fnode) {
     const placeholder = fnode.element.getAttribute("placeholder");
     if (placeholder !== null) {
-      return !!placeholder.match(passwordRegex);
+      return passwordRegex.test(placeholder);
     }
     return false;
+  }
+
+  function forgotPasswordLinkInnerText(fnode) {
+    return hasFormAnchorMatchingPredicate(fnode.element, anchor => {
+      return passwordRegex.test(anchor.innerText) && forgotPasswordInnerTextRegex.test(anchor.innerText);
+    });
+  }
+
+  function hasFormAnchorMatchingPredicate(element, matchingPredicate) {
+    const form = element.form;
+    if (form !== null) {
+      const anchors = Array.from(form.querySelectorAll('a'));
+      return anchors.some(matchingPredicate);
+    }
+    return false;
+  }
+
+  function forgotPasswordLinkHref(fnode) {
+    return hasFormAnchorMatchingPredicate(fnode.element, anchor => {
+      return passwordRegex.test(anchor.href) && forgotPasswordHrefRegex.test(anchor.href);
+    });
   }
 
   return ruleset([
@@ -96,6 +121,8 @@ function makeRuleset(coeffs, biases) {
       rule(type("new"), score(hasPasswordLabel), {name: "hasPasswordLabel"}),
       rule(type("new"), score(hasPasswordAriaLabel), {name: "hasPasswordAriaLabel"}),
       rule(type("new"), score(hasPasswordPlaceholder), {name: "hasPasswordPlaceholder"}),
+      rule(type("new"), score(forgotPasswordLinkInnerText), {name: "forgotPasswordLinkInnerText"}),
+      rule(type("new"), score(forgotPasswordLinkHref), {name: "forgotPasswordLinkHref"}),
       rule(type("new"), out("new"))
     ],
     coeffs,
