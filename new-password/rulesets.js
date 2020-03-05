@@ -12,25 +12,17 @@ const coefficients = {
     ["hasPasswordLabel", 2.0694828033447266],
     ["hasNewLabel", -1.1102620363235474],
     ["hasConfirmLabel", 1.5610512495040894],
-    ["hasNewPasswordLabel", 1.7947221994400024],
-    ["hasConfirmPasswordLabel", 1.087942361831665],
     ["hasConfirmEmailLabel", -2.446869373321533],
     ["closestLabelMatchesPassword", 1.2149089574813843],
     ["closestLabelMatchesNew", 0.3049805760383606],
     ["closestLabelMatchesConfirm", 0.5655747652053833],
-    ["closestLabelMatchesNewPassword", 1.8284662961959839],
-    ["closestLabelMatchesConfirmPassword", 0.17259569466114044],
     ["closestLabelMatchesConfirmEmail", -1.6233612298965454],
     ["hasPasswordAriaLabel", 2.1855459213256836],
     ["hasNewAriaLabel", 0.6927503347396851],
     ["hasConfirmAriaLabel", 2.571136236190796],
-    ["hasNewPasswordAriaLabel", 0.47767698764801025],
-    ["hasConfirmPasswordAriaLabel", 0.4256565272808075],
     ["hasPasswordPlaceholder", 2.0468626022338867],
     ["hasNewPlaceholder", 0.739714503288269],
     ["hasConfirmPlaceholder", 0.7622326612472534],
-    ["hasNewPasswordPlaceholder", 0.639854907989502],
-    ["hasConfirmPasswordPlaceholder", 0.5716732740402222],
     ["hasConfirmEmailPlaceholder", 0.0855690985918045],
     ["forgotPasswordLinkInnerText", -2.348062753677368],
     ["forgotPasswordLinkHref", -3.2276556491851807],
@@ -67,10 +59,6 @@ const buttonClassRegex = /button|btn/i;
 
 
 function makeRuleset(coeffs, biases) {
-  function cross(scoringFunction1, scoringFunction2) {
-    return fnode => scoringFunction1(fnode) * scoringFunction2(fnode);
-  }
-
   function hasPasswordLabel(fnode) {
     return hasLabelMatchingRegex(fnode.element, passwordRegex);
   }
@@ -83,16 +71,8 @@ function makeRuleset(coeffs, biases) {
     return hasLabelMatchingRegex(fnode.element, confirmRegex);
   }
 
-  function hasNewPasswordLabel(fnode) {
-    return cross(hasPasswordLabel, hasNewLabel)(fnode);
-  }
-
   function hasConfirmEmailLabel(fnode) {
     return hasConfirmLabel(fnode) && hasLabelMatchingRegex(fnode.element, emailRegex);
-  }
-
-  function hasConfirmPasswordLabel(fnode) {
-    return cross(hasPasswordLabel, hasConfirmLabel)(fnode);
   }
 
   function hasLabelMatchingRegex(element, regex) {
@@ -140,25 +120,17 @@ function makeRuleset(coeffs, biases) {
     return closestLabelMatchesRegex(fnode.element, confirmRegex);
   }
 
-  function closestLabelMatchesNewPassword(fnode) {
-    return cross(closestLabelMatchesPassword, closestLabelMatchesNew)(fnode);
-  }
-
-  function closestLabelMatchesConfirmPassword(fnode) {
-    return cross(closestLabelMatchesPassword, closestLabelMatchesConfirm)(fnode);
-  }
-
   function closestLabelMatchesConfirmEmail(fnode) {
     return closestLabelMatchesConfirm(fnode) && closestLabelMatchesRegex(fnode.element, emailRegex);
   }
 
   function closestLabelMatchesRegex(element, regex) {
     const previousElementSibling = element.previousElementSibling;
-    if (previousElementSibling !== null && previousElementSibling.tagName === "label") {
+    if (previousElementSibling !== null && previousElementSibling.tagName === "LABEL") {
       return regex.test(previousElementSibling.innerText);
     }
     const nextElementSibling = element.nextElementSibling;
-    if (nextElementSibling !== null && nextElementSibling.tagName === "label") {
+    if (nextElementSibling !== null && nextElementSibling.tagName === "LABEL") {
       return regex.test(nextElementSibling.innerText);
     }
     const closestLabelWithinForm = closestSelectorElementWithinElement(element, element.form, "label");
@@ -190,14 +162,6 @@ function makeRuleset(coeffs, biases) {
     return hasAriaLabelMatchingRegex(fnode.element, confirmRegex);
   }
 
-  function hasNewPasswordAriaLabel(fnode) {
-    return cross(hasPasswordAriaLabel, hasNewAriaLabel)(fnode);
-  }
-
-  function hasConfirmPasswordAriaLabel(fnode) {
-    return cross(hasPasswordAriaLabel, hasConfirmAriaLabel)(fnode);
-  }
-
   function hasAriaLabelMatchingRegex(element, regex) {
     const ariaLabel = element.getAttribute("aria-label");
     if (ariaLabel !== null) {
@@ -216,14 +180,6 @@ function makeRuleset(coeffs, biases) {
 
   function hasConfirmPlaceholder(fnode) {
     return hasPlaceholderMatchingRegex(fnode.element, confirmRegex);
-  }
-
-  function hasNewPasswordPlaceholder(fnode) {
-    return cross(hasPasswordPlaceholder, hasNewPlaceholder)(fnode);
-  }
-
-  function hasConfirmPasswordPlaceholder(fnode) {
-    return cross(hasPasswordPlaceholder, hasConfirmPlaceholder)(fnode);
   }
 
   function hasConfirmEmailPlaceholder(fnode) {
@@ -310,30 +266,19 @@ function makeRuleset(coeffs, biases) {
   }
 
   function formButtonIsRegistery(fnode) {
-    const form = fnode.element.form;
-    if (form !== null) {
-      let inputs = Array.from(form.querySelectorAll("input"));
-      inputs = inputs.some(input => {
-        return buttonClassRegex.test(input.className) && registerButtonRegex.test(input.value);
-      });
-      if (inputs.length) {
-        return true;
-      }
-
-      let buttons = Array.from(form.querySelectorAll("button"));
-      return buttons.some(button => {
-        return registerButtonRegex.test(button.value) || registerButtonRegex.test(button.innerText);
-      })
-    }
-    return false;
+    return testFormButtonsAgainst(fnode.element, registerButtonRegex);
   }
 
   function formButtonIsLoginy(fnode) {
-    const form = fnode.element.form;
+    return testFormButtonsAgainst(fnode.element, loginRegex);
+  }
+
+  function testFormButtonsAgainst(element, stringRegex) {
+    const form = element.form;
     if (form !== null) {
-      let inputs = Array.from(form.querySelectorAll("input"));
+      let inputs = Array.from(form.querySelectorAll("input[type=submit],input[type=button]"));
       inputs = inputs.filter(input => {
-        return buttonClassRegex.test(input.className) && loginRegex.test(input.value);
+        return buttonClassRegex.test(input.className) && stringRegex.test(input.value);
       });
       if (inputs.length) {
         return true;
@@ -341,7 +286,7 @@ function makeRuleset(coeffs, biases) {
 
       let buttons = Array.from(form.querySelectorAll("button"));
       return buttons.some(button => {
-        return loginRegex.test(button.value) || loginRegex.test(button.innerText);
+        return buttonClassRegex.test(button.value) || stringRegex.test(button.innerText);
       })
     }
     return false;
@@ -352,25 +297,17 @@ function makeRuleset(coeffs, biases) {
       rule(type("new"), score(hasPasswordLabel), {name: "hasPasswordLabel"}),
       rule(type("new"), score(hasNewLabel), {name: "hasNewLabel"}),
       rule(type("new"), score(hasConfirmLabel), {name: "hasConfirmLabel"}),
-      rule(type("new"), score(hasNewPasswordLabel), {name: "hasNewPasswordLabel"}),
-      rule(type("new"), score(hasConfirmPasswordLabel), {name: "hasConfirmPasswordLabel"}),
       rule(type("new"), score(hasConfirmEmailLabel), {name: "hasConfirmEmailLabel"}),
       rule(type("new"), score(closestLabelMatchesPassword), {name: "closestLabelMatchesPassword"}),
       rule(type("new"), score(closestLabelMatchesNew), {name: "closestLabelMatchesNew"}),
       rule(type("new"), score(closestLabelMatchesConfirm), {name: "closestLabelMatchesConfirm"}),
-      rule(type("new"), score(closestLabelMatchesNewPassword), {name: "closestLabelMatchesNewPassword"}),
-      rule(type("new"), score(closestLabelMatchesConfirmPassword), {name: "closestLabelMatchesConfirmPassword"}),
       rule(type("new"), score(closestLabelMatchesConfirmEmail), {name: "closestLabelMatchesConfirmEmail"}),
       rule(type("new"), score(hasPasswordAriaLabel), {name: "hasPasswordAriaLabel"}),
       rule(type("new"), score(hasNewAriaLabel), {name: "hasNewAriaLabel"}),
       rule(type("new"), score(hasConfirmAriaLabel), {name: "hasConfirmAriaLabel"}),
-      rule(type("new"), score(hasNewPasswordAriaLabel), {name: "hasNewPasswordAriaLabel"}),
-      rule(type("new"), score(hasConfirmPasswordAriaLabel), {name: "hasConfirmPasswordAriaLabel"}),
       rule(type("new"), score(hasPasswordPlaceholder), {name: "hasPasswordPlaceholder"}),
       rule(type("new"), score(hasNewPlaceholder), {name: "hasNewPlaceholder"}),
       rule(type("new"), score(hasConfirmPlaceholder), {name: "hasConfirmPlaceholder"}),
-      rule(type("new"), score(hasNewPasswordPlaceholder), {name: "hasNewPasswordPlaceholder"}),
-      rule(type("new"), score(hasConfirmPasswordPlaceholder), {name: "hasConfirmPasswordPlaceholder"}),
       rule(type("new"), score(hasConfirmEmailPlaceholder), {name: "hasConfirmEmailPlaceholder"}),
       rule(type("new"), score(forgotPasswordLinkInnerText), {name: "forgotPasswordLinkInnerText"}),
       rule(type("new"), score(forgotPasswordLinkHref), {name: "forgotPasswordLinkHref"}),
