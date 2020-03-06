@@ -88,7 +88,7 @@ function makeRuleset(coeffs, biases) {
     if (labelledBy !== null) {
       labelledBy = labelledBy.split(" ").map(id => element.ownerDocument.getElementById(id));
       if (labelledBy.length === 1) {
-        return !!labelledBy[0].innerText.match(regex);
+        return regex.test(labelledBy[0].innerText);
       } else if (labelledBy.length > 1) {
         return regex.test(min(labelledBy, node => euclidean(node, element)).innerText);
       }
