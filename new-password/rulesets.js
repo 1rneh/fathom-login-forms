@@ -5,7 +5,7 @@
 /* eslint-disable import/no-unresolved */
 import {dom, out, rule, ruleset, score, type} from "fathom-web";
 import {euclidean} from "fathom-web/clusters";
-import {isVisible, min} from "fathom-web/utilsForFrontend";
+import {identity, isVisible, min} from "fathom-web/utilsForFrontend";
 
 const coefficients = {
   "new": [
@@ -129,15 +129,18 @@ function makeRuleset(coeffs, biases) {
     if (previousElementSibling !== null && previousElementSibling.tagName === "LABEL") {
       return regex.test(previousElementSibling.innerText);
     }
+
     const nextElementSibling = element.nextElementSibling;
     if (nextElementSibling !== null && nextElementSibling.tagName === "LABEL") {
       return regex.test(nextElementSibling.innerText);
     }
+
     const closestLabelWithinForm = closestSelectorElementWithinElement(element, element.form, "label");
-    if (closestLabelWithinForm !== null) {
-      return regex.test(closestLabelWithinForm.innerText);
-    }
-    return false;
+    return containsRegex(regex, closestLabelWithinForm, closestLabelWithinForm => closestLabelWithinForm.innerText);
+  }
+
+  function containsRegex(regex, thingOrNull, thingToString=identity) {
+    return thingOrNull !== null && regex.test(thingToString(thingOrNull));
   }
 
   function closestSelectorElementWithinElement(toElement, withinElement, querySelector) {
@@ -163,11 +166,7 @@ function makeRuleset(coeffs, biases) {
   }
 
   function hasAriaLabelMatchingRegex(element, regex) {
-    const ariaLabel = element.getAttribute("aria-label");
-    if (ariaLabel !== null) {
-      return regex.test(ariaLabel);
-    }
-    return false;
+    return containsRegex(regex, element.getAttribute("aria-label"));
   }
 
   function hasPasswordPlaceholder(fnode) {
@@ -187,11 +186,7 @@ function makeRuleset(coeffs, biases) {
   }
 
   function hasPlaceholderMatchingRegex(element, regex) {
-    const placeholder = element.getAttribute("placeholder");
-    if (placeholder !== null) {
-      return regex.test(placeholder);
-    }
-    return false;
+    return containsRegex(regex, element.getAttribute("placeholder"));
   }
 
   function forgotPasswordLinkInnerText(fnode) {
@@ -251,18 +246,12 @@ function makeRuleset(coeffs, biases) {
 
   function containingFormHasLoginAction(fnode) {
     const form = fnode.element.form;
-    if (form !== null) {
-      return loginRegex.test(form.action);
-    }
-    return false;
+    return containsRegex(loginRegex, form, form => form.action);
   }
 
   function containingFormHasLoginId(fnode) {
     const form = fnode.element.form;
-    if (form !== null) {
-      return loginRegex.test(form.id);
-    }
-    return false;
+    return containsRegex(loginRegex, form, form => form.id);
   }
 
   function formButtonIsRegistery(fnode) {
