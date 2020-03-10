@@ -7,6 +7,10 @@ import {dom, out, rule, ruleset, score, type} from "fathom-web";
 import {euclidean} from "fathom-web/clusters";
 import {identity, isVisible, min} from "fathom-web/utilsForFrontend";
 
+// Whether this is running in the Vectorizer, rather than in-application, in a
+// privileged Chrome context
+const DEVELOPMENT = true;
+
 const coefficients = {
   "new": [
     ["hasPasswordLabel", 2.0694828033447266],
@@ -59,6 +63,15 @@ const buttonClassRegex = /button|btn/i;
 
 
 function makeRuleset(coeffs, biases) {
+  /**
+   * Don't bother with the fairly expensive isVisible() call when we're in
+   * production. We fire only when the user clicks an <input> field. They can't
+   * very well click an invisible one.
+   */
+  function isVisibleInDev(fnodeOrElement) {
+    return DEVELOPMENT ? isVisible(fnodeOrElement) : true;
+  }
+
   function hasPasswordLabel(fnode) {
     return hasLabelMatchingRegex(fnode.element, passwordRegex);
   }
@@ -282,7 +295,7 @@ function makeRuleset(coeffs, biases) {
   }
 
   return ruleset([
-      rule(dom("input[type=text],input[type=password],input[type=\"\"],input:not([type])").when(isVisible), type("new")),
+      rule(dom("input[type=text],input[type=password],input[type=\"\"],input:not([type])").when(isVisibleInDev), type("new")),
       rule(type("new"), score(hasPasswordLabel), {name: "hasPasswordLabel"}),
       rule(type("new"), score(hasNewLabel), {name: "hasNewLabel"}),
       rule(type("new"), score(hasConfirmLabel), {name: "hasConfirmLabel"}),
