@@ -74,14 +74,6 @@ function makeRuleset(coeffs, biases) {
     return DEVELOPMENT ? isVisible(fnodeOrElement) : true;
   }
 
-  function hasPasswordLabel(fnode) {
-    return hasLabelMatchingRegex(fnode.element, passwordRegex);
-  }
-
-  function hasNewLabel(fnode) {
-    return hasLabelMatchingRegex(fnode.element, newRegex);
-  }
-
   function hasConfirmLabel(fnode) {
     return hasLabelMatchingRegex(fnode.element, confirmRegex);
   }
@@ -123,14 +115,6 @@ function makeRuleset(coeffs, biases) {
     return false;
   }
 
-  function closestLabelMatchesPassword(fnode) {
-    return closestLabelMatchesRegex(fnode.element, passwordRegex);
-  }
-
-  function closestLabelMatchesNew(fnode) {
-    return closestLabelMatchesRegex(fnode.element, newRegex);
-  }
-
   function closestLabelMatchesConfirm(fnode) {
     return closestLabelMatchesRegex(fnode.element, confirmRegex);
   }
@@ -168,28 +152,8 @@ function makeRuleset(coeffs, biases) {
     return null;
   }
 
-  function hasPasswordAriaLabel(fnode) {
-    return hasAriaLabelMatchingRegex(fnode.element, passwordRegex);
-  }
-
-  function hasNewAriaLabel(fnode) {
-    return hasAriaLabelMatchingRegex(fnode.element, newRegex);
-  }
-
-  function hasConfirmAriaLabel(fnode) {
-    return hasAriaLabelMatchingRegex(fnode.element, confirmRegex);
-  }
-
   function hasAriaLabelMatchingRegex(element, regex) {
     return containsRegex(regex, element.getAttribute("aria-label"));
-  }
-
-  function hasPasswordPlaceholder(fnode) {
-    return hasPlaceholderMatchingRegex(fnode.element, passwordRegex);
-  }
-
-  function hasNewPlaceholder(fnode) {
-    return hasPlaceholderMatchingRegex(fnode.element, newRegex);
   }
 
   function hasConfirmPlaceholder(fnode) {
@@ -231,46 +195,6 @@ function makeRuleset(coeffs, biases) {
     });
   }
 
-  function idIsPassword1Or2(fnode) {
-    return password1Or2Regex.test(fnode.element.id);
-  }
-
-  function nameIsPassword1Or2(fnode) {
-    return password1Or2Regex.test(fnode.element.name);
-  }
-
-  function idMatchesPassword(fnode) {
-    return passwordRegex.test(fnode.element.id);
-  }
-
-  function nameMatchesPassword(fnode) {
-    return passwordRegex.test(fnode.element.name);
-  }
-
-  function idMatchesPasswordy(fnode) {
-    return passwordyRegex.test(fnode.element.id)
-  }
-
-  function nameMatchesPasswordy(fnode) {
-    return passwordyRegex.test(fnode.element.name)
-  }
-
-  function classMatchesPasswordy(fnode) {
-    return passwordyRegex.test(fnode.element.className)
-  }
-
-  function idMatchesLogin(fnode) {
-    return loginRegex.test(fnode.element.id)
-  }
-
-  function nameMatchesLogin(fnode) {
-    return loginRegex.test(fnode.element.name)
-  }
-
-  function classMatchesLogin(fnode) {
-    return loginRegex.test(fnode.element.className)
-  }
-
   function containingFormHasLoginAction(fnode) {
     const form = fnode.element.form;
     return containsRegex(loginRegex, form, form => form.action);
@@ -279,14 +203,6 @@ function makeRuleset(coeffs, biases) {
   function containingFormHasLoginId(fnode) {
     const form = fnode.element.form;
     return containsRegex(loginRegex, form, form => form.id);
-  }
-
-  function formButtonIsRegistery(fnode) {
-    return testFormButtonsAgainst(fnode.element, registerButtonRegex);
-  }
-
-  function formButtonIsLoginy(fnode) {
-    return testFormButtonsAgainst(fnode.element, loginRegex);
   }
 
   function testFormButtonsAgainst(element, stringRegex) {
@@ -310,38 +226,38 @@ function makeRuleset(coeffs, biases) {
 
   return ruleset([
       rule(dom("input[type=text],input[type=password],input[type=\"\"],input:not([type])").when(isVisibleInDev), type("new")),
-      rule(type("new"), score(hasPasswordLabel), {name: "hasPasswordLabel"}),
-      rule(type("new"), score(hasNewLabel), {name: "hasNewLabel"}),
+      rule(type("new"), score(fnode => hasLabelMatchingRegex(fnode.element, passwordRegex)), {name: "hasPasswordLabel"}),
+      rule(type("new"), score(fnode => hasLabelMatchingRegex(fnode.element, newRegex)), {name: "hasNewLabel"}),
       rule(type("new"), score(hasConfirmLabel), {name: "hasConfirmLabel"}),
       rule(type("new"), score(hasConfirmEmailLabel), {name: "hasConfirmEmailLabel"}),
-      rule(type("new"), score(closestLabelMatchesPassword), {name: "closestLabelMatchesPassword"}),
-      rule(type("new"), score(closestLabelMatchesNew), {name: "closestLabelMatchesNew"}),
+      rule(type("new"), score(fnode => closestLabelMatchesRegex(fnode.element, passwordRegex)), {name: "closestLabelMatchesPassword"}),
+      rule(type("new"), score(fnode => closestLabelMatchesRegex(fnode.element, newRegex)), {name: "closestLabelMatchesNew"}),
       rule(type("new"), score(closestLabelMatchesConfirm), {name: "closestLabelMatchesConfirm"}),
       rule(type("new"), score(closestLabelMatchesConfirmEmail), {name: "closestLabelMatchesConfirmEmail"}),
-      rule(type("new"), score(hasPasswordAriaLabel), {name: "hasPasswordAriaLabel"}),
-      rule(type("new"), score(hasNewAriaLabel), {name: "hasNewAriaLabel"}),
-      rule(type("new"), score(hasConfirmAriaLabel), {name: "hasConfirmAriaLabel"}),
-      rule(type("new"), score(hasPasswordPlaceholder), {name: "hasPasswordPlaceholder"}),
-      rule(type("new"), score(hasNewPlaceholder), {name: "hasNewPlaceholder"}),
+      rule(type("new"), score(fnode => hasAriaLabelMatchingRegex(fnode.element, passwordRegex)), {name: "hasPasswordAriaLabel"}),
+      rule(type("new"), score(fnode => hasAriaLabelMatchingRegex(fnode.element, newRegex)), {name: "hasNewAriaLabel"}),
+      rule(type("new"), score(fnode => hasAriaLabelMatchingRegex(fnode.element, confirmRegex)), {name: "hasConfirmAriaLabel"}),
+      rule(type("new"), score(fnode => hasPlaceholderMatchingRegex(fnode.element, passwordRegex)), {name: "hasPasswordPlaceholder"}),
+      rule(type("new"), score(fnode => hasPlaceholderMatchingRegex(fnode.element, newRegex)), {name: "hasNewPlaceholder"}),
       rule(type("new"), score(hasConfirmPlaceholder), {name: "hasConfirmPlaceholder"}),
       rule(type("new"), score(hasConfirmEmailPlaceholder), {name: "hasConfirmEmailPlaceholder"}),
       rule(type("new"), score(forgotPasswordLinkInnerText), {name: "forgotPasswordLinkInnerText"}),
       rule(type("new"), score(forgotPasswordLinkHref), {name: "forgotPasswordLinkHref"}),
       rule(type("new"), score(forgotPasswordLinkTitle), {name: "forgotPasswordLinkTitle"}),
-      rule(type("new"), score(idIsPassword1Or2), {name: "idIsPassword1Or2"}),
-      rule(type("new"), score(nameIsPassword1Or2), {name: "nameIsPassword1Or2"}),
-      rule(type("new"), score(idMatchesPassword), {name: "idMatchesPassword"}),
-      rule(type("new"), score(nameMatchesPassword), {name: "nameMatchesPassword"}),
-      rule(type("new"), score(idMatchesPasswordy), {name: "idMatchesPasswordy"}),
-      rule(type("new"), score(nameMatchesPasswordy), {name: "nameMatchesPasswordy"}),
-      rule(type("new"), score(classMatchesPasswordy), {name: "classMatchesPasswordy"}),
-      rule(type("new"), score(idMatchesLogin), {name: "idMatchesLogin"}),
-      rule(type("new"), score(nameMatchesLogin), {name: "nameMatchesLogin"}),
-      rule(type("new"), score(classMatchesLogin), {name: "classMatchesLogin"}),
+      rule(type("new"), score(fnode => password1Or2Regex.test(fnode.element.id)), {name: "idIsPassword1Or2"}),
+      rule(type("new"), score(fnode => password1Or2Regex.test(fnode.element.name)), {name: "nameIsPassword1Or2"}),
+      rule(type("new"), score(fnode => passwordRegex.test(fnode.element.id)), {name: "idMatchesPassword"}),
+      rule(type("new"), score(fnode => passwordRegex.test(fnode.element.name)), {name: "nameMatchesPassword"}),
+      rule(type("new"), score(fnode => passwordyRegex.test(fnode.element.id)), {name: "idMatchesPasswordy"}),
+      rule(type("new"), score(fnode => passwordyRegex.test(fnode.element.name)), {name: "nameMatchesPasswordy"}),
+      rule(type("new"), score(fnode => passwordyRegex.test(fnode.element.className)), {name: "classMatchesPasswordy"}),
+      rule(type("new"), score(fnode => loginRegex.test(fnode.element.id)), {name: "idMatchesLogin"}),
+      rule(type("new"), score(fnode => loginRegex.test(fnode.element.name)), {name: "nameMatchesLogin"}),
+      rule(type("new"), score(fnode => loginRegex.test(fnode.element.className)), {name: "classMatchesLogin"}),
       rule(type("new"), score(containingFormHasLoginAction), {name: "containingFormHasLoginAction"}),
       rule(type("new"), score(containingFormHasLoginId), {name: "containingFormHasLoginId"}),
-      rule(type("new"), score(formButtonIsRegistery), {name: "formButtonIsRegistery"}),
-      rule(type("new"), score(formButtonIsLoginy), {name: "formButtonIsLoginy"}),
+      rule(type("new"), score(fnode => testFormButtonsAgainst(fnode.element, registerButtonRegex)), {name: "formButtonIsRegistery"}),
+      rule(type("new"), score(fnode => testFormButtonsAgainst(fnode.element, loginRegex)), {name: "formButtonIsLoginy"}),
       rule(type("new"), out("new"))
     ],
     coeffs,
