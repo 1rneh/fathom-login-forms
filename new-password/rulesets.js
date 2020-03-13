@@ -38,6 +38,9 @@ const coefficients = {
     ["idMatchesPasswordy", 3.035764455795288],
     ["nameMatchesPasswordy", 2.4590933322906494],
     ["classMatchesPasswordy", 3.5805118083953857],
+    ["idMatchesLogin", 3.035764455795288],
+    ["nameMatchesLogin", 2.4590933322906494],
+    ["classMatchesLogin", 3.5805118083953857],
     ["containingFormHasLoginAction", -0.8333544135093689],
     ["containingFormHasLoginId", -2.0090487003326416],
     ["formButtonIsRegistery", -0.4711592495441437],
@@ -57,7 +60,7 @@ const forgotPasswordInnerTextRegex = /vergessen|forgot|oublié|dimenticata|Esque
 const forgotPasswordHrefRegex = /forgot|reset|recovery|change/i;
 const password1Or2Regex = /password1|password2/i;
 const passwordyRegex = /pw|pwd|passwd/i;
-const loginRegex = /login|Войти|sign in|ورود|登录|Přihlásit se|Авторизоваться/i;
+const loginRegex = /login|Войти|sign in|ورود|登录|Přihlásit se|Авторизоваться|signin/i;
 const registerButtonRegex = /create account|Zugang anlegen|Angaben prüfen|Konto erstellen|register|sign up|create an account|create my account|ثبت نام|登録|Cadastrar|Зарегистрироваться|Bellige alynmak/i;
 
 
@@ -256,6 +259,18 @@ function makeRuleset(coeffs, biases) {
     return passwordyRegex.test(fnode.element.className)
   }
 
+  function idMatchesLogin(fnode) {
+    return loginRegex.test(fnode.element.id)
+  }
+
+  function nameMatchesLogin(fnode) {
+    return loginRegex.test(fnode.element.name)
+  }
+
+  function classMatchesLogin(fnode) {
+    return loginRegex.test(fnode.element.className)
+  }
+
   function containingFormHasLoginAction(fnode) {
     const form = fnode.element.form;
     return containsRegex(loginRegex, form, form => form.action);
@@ -320,6 +335,9 @@ function makeRuleset(coeffs, biases) {
       rule(type("new"), score(idMatchesPasswordy), {name: "idMatchesPasswordy"}),
       rule(type("new"), score(nameMatchesPasswordy), {name: "nameMatchesPasswordy"}),
       rule(type("new"), score(classMatchesPasswordy), {name: "classMatchesPasswordy"}),
+      rule(type("new"), score(idMatchesLogin), {name: "idMatchesLogin"}),
+      rule(type("new"), score(nameMatchesLogin), {name: "nameMatchesLogin"}),
+      rule(type("new"), score(classMatchesLogin), {name: "classMatchesLogin"}),
       rule(type("new"), score(containingFormHasLoginAction), {name: "containingFormHasLoginAction"}),
       rule(type("new"), score(containingFormHasLoginId), {name: "containingFormHasLoginId"}),
       rule(type("new"), score(formButtonIsRegistery), {name: "formButtonIsRegistery"}),
