@@ -45,15 +45,15 @@ const biases = [
   ["new", -2.771840810775757]
 ];
 
-const passwordRegex = /password|passwort|رمز عبور|mot de passe|パスワード|신규 비밀번호|wachtwoord|senha|Пароль|parol|密码|contraseña/i;
+const passwordRegex = /password|passwort|رمز عبور|mot de passe|パスワード|신규 비밀번호|wachtwoord|senha|Пароль|parol|密码|contraseña|heslo/i;
 const newRegex = /erstellen|create|choose|設定/i;
 const confirmRegex = /wiederholen|wiederholung|confirm|repeat|confirmation|verify|retype|repite|確認|の確認|تکرار|re-enter|확인|bevestigen|confirme|Повторите|tassyklamak|再次输入/i;
 const emailRegex = /e-mail|email|ایمیل|メールアドレス|이메일|邮箱/i;
-const forgotPasswordInnerTextRegex = /vergessen|forgot|oublié|dimenticata|Esqueceu|Забыли|忘记|找回/i;
+const forgotPasswordInnerTextRegex = /vergessen|forgot|oublié|dimenticata|Esqueceu|Забыли|忘记|找回|Zapomenuté/i;
 const forgotPasswordHrefRegex = /forgot|reset|recovery|change/i;
 const password1Or2Regex = /password1|password2/i;
 const passwordyRegex = /pw|pwd|passwd/i;
-const loginRegex = /login|Войти|sign in|ورود|登录/i;
+const loginRegex = /login|Войти|sign in|ورود|登录|Přihlásit se|Авторизоваться/i;
 const registerButtonRegex = /create account|Zugang anlegen|Angaben prüfen|Konto erstellen|register|sign up|create an account|create my account|ثبت نام|登録|Cadastrar|Зарегистрироваться|Bellige alynmak/i;
 const buttonClassRegex = /button|btn/i;
 
@@ -275,7 +275,7 @@ function makeRuleset(coeffs, biases) {
 
       let buttons = Array.from(form.querySelectorAll("button"));
       return buttons.some(button => {
-        return buttonClassRegex.test(button.value) || stringRegex.test(button.innerText);
+        return stringRegex.test(button.value) || stringRegex.test(button.innerText);
       })
     }
     return false;
