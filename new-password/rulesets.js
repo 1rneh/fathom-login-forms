@@ -13,54 +13,54 @@ const DEVELOPMENT = true;
 
 const coefficients = {
   "new": [
-    ["hasPasswordLabel", 2.3833765983581543],
-    ["hasNewLabel", 0.48126065731048584],
-    ["hasConfirmLabel", 1.9799463748931885],
-    ["hasConfirmEmailLabel", -2.9743504524230957],
-    ["closestLabelMatchesPassword", 1.5385273694992065],
-    ["closestLabelMatchesNew", 0.033577289432287216],
-    ["closestLabelMatchesConfirm", 1.4472700357437134],
-    ["closestLabelMatchesConfirmEmail", -2.307504415512085],
-    ["hasPasswordAriaLabel", 3.0719003677368164],
-    ["hasNewAriaLabel", 0.8545650243759155],
-    ["hasConfirmAriaLabel", 3.3399014472961426],
-    ["hasPasswordPlaceholder", 2.742359161376953],
-    ["hasNewPlaceholder", 1.0603445768356323],
-    ["hasConfirmPlaceholder", 1.064456820487976],
-    ["hasConfirmEmailPlaceholder", 0.14425905048847198],
-    ["forgotPasswordLinkInnerText", -2.0089941024780273],
-    ["forgotPasswordLinkHref", -2.365290641784668],
-    ["forgotPasswordLinkTitle", -3.4189813137054443],
-    ["idIsPassword1Or2", 1.6477850675582886],
-    ["nameIsPassword1Or2", 1.5114083290100098],
-    ["idMatchesPassword", 2.09035325050354],
-    ["nameMatchesPassword", 1.9379414319992065],
-    ["idMatchesPasswordy", 2.7130038738250732],
-    ["nameMatchesPasswordy", 2.728764057159424],
-    ["classMatchesPasswordy", 3.2804055213928223],
-    ["idMatchesLogin", -3.3479135036468506],
-    ["nameMatchesLogin", 1.527779459953308],
-    ["classMatchesLogin", -1.8222365379333496],
-    ["containingFormHasLoginAction", -0.9223688244819641],
-    ["containingFormHasLoginId", -2.533879041671753],
-    ["formButtonIsRegistery", -0.4845658838748932],
-    ["formButtonIsLoginy", -3.3155627250671387],
+    ["hasPasswordLabel", 2.7149229049682617],
+    ["hasNewLabel", 0.45097795128822327],
+    ["hasConfirmLabel", 2.2106854915618896],
+    ["hasConfirmEmailLabel", -3.2878189086914062],
+    ["closestLabelMatchesPassword", 1.6291762590408325],
+    ["closestLabelMatchesNew", -0.1162780150771141],
+    ["closestLabelMatchesConfirm", 1.3217304944992065],
+    ["closestLabelMatchesConfirmEmail", -2.3257358074188232],
+    ["hasPasswordAriaLabel", 3.0113303661346436],
+    ["hasNewAriaLabel", 0.8805380463600159],
+    ["hasConfirmAriaLabel", 3.4130001068115234],
+    ["hasPasswordPlaceholder", 3.1426496505737305],
+    ["hasNewPlaceholder", 1.1650742292404175],
+    ["hasConfirmPlaceholder", 1.077685832977295],
+    ["hasConfirmEmailPlaceholder", 0.08717037737369537],
+    ["forgotPasswordLinkInnerText", -2.1632297039031982],
+    ["forgotPasswordLinkHref", -2.6421539783477783],
+    ["forgotPasswordLinkTitle", -3.9319965839385986],
+    ["idIsPassword1Or2", 1.8374722003936768],
+    ["nameIsPassword1Or2", 1.583190679550171],
+    ["idMatchesPassword", 2.284926652908325],
+    ["nameMatchesPassword", 2.0525405406951904],
+    ["idMatchesPasswordy", 2.5396833419799805],
+    ["nameMatchesPasswordy", 3.3658037185668945],
+    ["classMatchesPasswordy", 3.812939405441284],
+    ["idMatchesLogin", -3.6237170696258545],
+    ["nameMatchesLogin", 1.6548441648483276],
+    ["classMatchesLogin", -2.0910685062408447],
+    ["containingFormHasLoginAction", -0.9044652581214905],
+    ["containingFormHasLoginId", -1.7688874006271362],
+    ["formButtonIsRegistery", -0.6545770764350891],
+    ["formButtonIsLoginy", -3.6265504360198975]
   ]
 };
 
 const biases = [
-  ["new", -2.9617109298706055]
+  ["new", -3.018282175064087]
 ];
 
 const passwordRegex = /password|passwort|رمز عبور|mot de passe|パスワード|신규 비밀번호|wachtwoord|senha|Пароль|parol|密码|contraseña|heslo/i;
 const newRegex = /erstellen|create|choose|設定/i;
 const confirmRegex = /wiederholen|wiederholung|confirm|repeat|confirmation|verify|retype|repite|確認|の確認|تکرار|re-enter|확인|bevestigen|confirme|Повторите|tassyklamak|再次输入/i;
 const emailRegex = /e-mail|email|ایمیل|メールアドレス|이메일|邮箱/i;
-const forgotPasswordInnerTextRegex = /vergessen|forgot|oublié|dimenticata|Esqueceu|Забыли|忘记|找回|Zapomenuté/i;
-const forgotPasswordHrefRegex = /forgot|reset|recovery|change/i;
+const forgotPasswordInnerTextRegex = /vergessen|forgot|oublié|dimenticata|Esqueceu|Забыли|忘记|找回|Zapomenuté|lost/i;
+const forgotPasswordHrefRegex = /forgot|reset|recovery|change|lost/i;
 const password1Or2Regex = /password1|password2/i;
 const passwordyRegex = /pw|pwd|passwd/i;
-const loginRegex = /login|Войти|sign in|ورود|登录|Přihlásit se|Авторизоваться|signin/i;
+const loginRegex = /login|Войти|sign in|ورود|登录|Přihlásit se|Авторизоваться|signin|log in/i;
 const registerButtonRegex = /create account|Zugang anlegen|Angaben prüfen|Konto erstellen|register|sign up|create an account|create my account|ثبت نام|登録|Cadastrar|Зарегистрироваться|Bellige alynmak/i;
 
 
