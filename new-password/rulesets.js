@@ -55,7 +55,6 @@ const password1Or2Regex = /password1|password2/i;
 const passwordyRegex = /pw|pwd|passwd/i;
 const loginRegex = /login|Войти|sign in|ورود|登录|Přihlásit se|Авторизоваться/i;
 const registerButtonRegex = /create account|Zugang anlegen|Angaben prüfen|Konto erstellen|register|sign up|create an account|create my account|ثبت نام|登録|Cadastrar|Зарегистрироваться|Bellige alynmak/i;
-const buttonClassRegex = /button|btn/i;
 
 
 function makeRuleset(coeffs, biases) {
@@ -267,7 +266,7 @@ function makeRuleset(coeffs, biases) {
     if (form !== null) {
       let inputs = Array.from(form.querySelectorAll("input[type=submit],input[type=button]"));
       inputs = inputs.filter(input => {
-        return buttonClassRegex.test(input.className) && stringRegex.test(input.value);
+        return stringRegex.test(input.value);
       });
       if (inputs.length) {
         return true;
