@@ -9,40 +9,40 @@ import {identity, isVisible, min} from "fathom-web/utilsForFrontend";
 
 const coefficients = {
   "new": [
-    ["hasPasswordLabel", 2.0694828033447266],
-    ["hasNewLabel", -1.1102620363235474],
-    ["hasConfirmLabel", 1.5610512495040894],
-    ["hasConfirmEmailLabel", -2.446869373321533],
-    ["closestLabelMatchesPassword", 1.2149089574813843],
-    ["closestLabelMatchesNew", 0.3049805760383606],
-    ["closestLabelMatchesConfirm", 0.5655747652053833],
-    ["closestLabelMatchesConfirmEmail", -1.6233612298965454],
-    ["hasPasswordAriaLabel", 2.1855459213256836],
-    ["hasNewAriaLabel", 0.6927503347396851],
-    ["hasConfirmAriaLabel", 2.571136236190796],
-    ["hasPasswordPlaceholder", 2.0468626022338867],
-    ["hasNewPlaceholder", 0.739714503288269],
-    ["hasConfirmPlaceholder", 0.7622326612472534],
-    ["hasConfirmEmailPlaceholder", 0.0855690985918045],
-    ["forgotPasswordLinkInnerText", -2.348062753677368],
-    ["forgotPasswordLinkHref", -3.2276556491851807],
-    ["forgotPasswordLinkTitle", -3.1015498638153076],
-    ["idIsPassword1Or2", 1.1725564002990723],
-    ["nameIsPassword1Or2", 1.2064672708511353],
-    ["idMatchesPassword", 1.95237135887146],
-    ["nameMatchesPassword", 2.0143351554870605],
-    ["idMatchesPasswordy", 2.1929826736450195],
-    ["nameMatchesPasswordy", 2.7664480209350586],
-    ["classMatchesPasswordy", 3.399362087249756],
-    ["containingFormHasLoginAction", -0.8223199844360352],
-    ["containingFormHasLoginId", 0.7332413792610168],
-    ["formButtonIsRegistery", -1.0084218978881836],
-    ["formButtonIsLoginy", -3.287984848022461],
+    ["hasPasswordLabel", 2.1837241649627686],
+    ["hasNewLabel", 1.1178549528121948],
+    ["hasConfirmLabel", 2.1779603958129883],
+    ["hasConfirmEmailLabel", -2.9966349601745605],
+    ["closestLabelMatchesPassword", 1.1249979734420776],
+    ["closestLabelMatchesNew", -0.22834941744804382],
+    ["closestLabelMatchesConfirm", 1.6404834985733032],
+    ["closestLabelMatchesConfirmEmail", -2.3305678367614746],
+    ["hasPasswordAriaLabel", 2.572655439376831],
+    ["hasNewAriaLabel", 0.9810380339622498],
+    ["hasConfirmAriaLabel", 3.1013524532318115],
+    ["hasPasswordPlaceholder", 3.0460968017578125],
+    ["hasNewPlaceholder", 0.7414823770523071],
+    ["hasConfirmPlaceholder", 1.04634690284729],
+    ["hasConfirmEmailPlaceholder", -0.17487505078315735],
+    ["forgotPasswordLinkInnerText", -1.629896879196167],
+    ["forgotPasswordLinkHref", -2.7374587059020996],
+    ["forgotPasswordLinkTitle", -3.362605333328247],
+    ["idIsPassword1Or2", 1.8272839784622192],
+    ["nameIsPassword1Or2", 1.6616942882537842],
+    ["idMatchesPassword", 1.905286192893982],
+    ["nameMatchesPassword", 1.7484756708145142],
+    ["idMatchesPasswordy", 3.035764455795288],
+    ["nameMatchesPasswordy", 2.4590933322906494],
+    ["classMatchesPasswordy", 3.5805118083953857],
+    ["containingFormHasLoginAction", -0.8333544135093689],
+    ["containingFormHasLoginId", -2.0090487003326416],
+    ["formButtonIsRegistery", -0.4711592495441437],
+    ["formButtonIsLoginy", -3.7845025062561035]
   ]
 };
 
 const biases = [
-  ["new", -2.771840810775757]
+  ["new", -2.828099012374878]
 ];
 
 const passwordRegex = /password|passwort|رمز عبور|mot de passe|パスワード|신규 비밀번호|wachtwoord|senha|Пароль|parol|密码|contraseña|heslo/i;
