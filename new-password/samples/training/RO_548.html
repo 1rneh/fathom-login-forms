@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html xmlns:ng="http://angularjs.org" id="ng-app" data-ng-strict-di="" data-ng-app-name="paysera.registration" data-ng-csp="" data-app-settings="{&quot;min_password_length&quot;:8,&quot;csrf_token&quot;:&quot;7FeYf8EUMT46Lm1nad0W-i7GDctv-Ld-7WdnY1Vp1vA&quot;,&quot;session_box&quot;:{&quot;autoRefresh&quot;:false,&quot;tokenLifetime&quot;:150,&quot;sessionLifetime&quot;:7200},&quot;current_route&quot;:{&quot;name&quot;:&quot;evp_user_front_end_registration&quot;,&quot;params&quot;:{&quot;_locale&quot;:&quot;ro&quot;}},&quot;feature_flag&quot;:{&quot;log-rocket&quot;:false,&quot;card-details-error&quot;:false},&quot;impersonation_domain&quot;:&quot;impersonate.paysera.net&quot;,&quot;sentry_dsn&quot;:&quot;https:\/\/1f97b66141a14cdcb316b36f241a2a53@sentry.paysera.com\/38&quot;,&quot;available_locales&quot;:[&quot;lt&quot;,&quot;en&quot;,&quot;ru&quot;,&quot;lv&quot;,&quot;pl&quot;,&quot;bg&quot;,&quot;es&quot;,&quot;sq&quot;,&quot;et&quot;,&quot;de&quot;,&quot;ro&quot;],&quot;pending_locales&quot;:[&quot;sq&quot;],&quot;extra_available_locales&quot;:[&quot;lt&quot;,&quot;en&quot;,&quot;ru&quot;,&quot;lv&quot;,&quot;pl&quot;,&quot;bg&quot;,&quot;es&quot;,&quot;et&quot;,&quot;de&quot;,&quot;ro&quot;,&quot;pt&quot;,&quot;zh&quot;,&quot;da&quot;,&quot;nl&quot;,&quot;fr&quot;,&quot;it&quot;,&quot;ka&quot;,&quot;cs&quot;,&quot;sk&quot;,&quot;no&quot;,&quot;sq&quot;,&quot;th&quot;,&quot;sl&quot;],&quot;banking_history&quot;:{&quot;endpoint&quot;:&quot;https:\/\/blacklist.paysera.com&quot;},&quot;default_public_host&quot;:&quot;https:\/\/www.paysera.com&quot;,&quot;public_transfer_url&quot;:&quot;https:\/\/accounts.paysera.com\/public\/transfer\/rest\/v1&quot;,&quot;public_account_base_url&quot;:&quot;https:\/\/accounts.paysera.com\/public\/account\/rest\/v1&quot;,&quot;public_charge_base_url&quot;:&quot;https:\/\/accounts.paysera.com\/public\/charge\/rest\/v1&quot;,&quot;public_refund_base_url&quot;:&quot;https:\/\/accounts.paysera.com\/public\/refund\/rest\/v1&quot;,&quot;public_blacklist_base_url&quot;:&quot;https:\/\/accounts.paysera.com\/public\/blacklist\/rest\/v1&quot;,&quot;public_blacklist_words_base_url&quot;:&quot;https:\/\/gateway.paysera.net\/transfer-surveillance\/rest\/v1&quot;,&quot;authentication_base_path&quot;:&quot;\/authentication\/rest\/v1&quot;,&quot;public_auth_api_authentication_url&quot;:&quot;https:\/\/auth-api.paysera.com\/authentication\/rest\/v1\/&quot;,&quot;public_app_challenge_api_base_url&quot;:&quot;https:\/\/challenge.paysera.com\/challenge\/rest\/v1&quot;,&quot;public_savings_base_url&quot;:&quot;https:\/\/savings.paysera.com\/savings\/rest\/v1&quot;,&quot;public_card_gateway_base_url&quot;:&quot;https:\/\/card-gateway-api.paysera.com&quot;,&quot;public_status_api_base_url&quot;:&quot;https:\/\/status-api.paysera.com\/status\/rest\/v1\/&quot;,&quot;public_checkout_payment_history_base_url&quot;:&quot;https:\/\/checkout-payment-history.paysera.com\/checkout-payment-history\/rest\/v1&quot;,&quot;public_business_base_url&quot;:&quot;https:\/\/business.paysera.com\/business\/rest\/v1&quot;,&quot;public_business_api_base_url&quot;:&quot;https:\/\/business.paysera.com\/api-client\/rest\/v1&quot;,&quot;public_transfer_aml_base_url&quot;:&quot;https:\/\/gateway.paysera.net\/public\/transfer-aml\/rest\/v1&quot;,&quot;google_geocoding_key&quot;:&quot;AIzaSyBK0EGHcU2xooN1S9UFA4ZRG1Z6GaU3Bz0&quot;,&quot;prod_environment&quot;:true,&quot;public_issued_payment_card_base_url&quot;:&quot;https:\/\/accounts.paysera.com\/public\/issued-payment-card\/v1&quot;,&quot;user_restriction_endpoint&quot;:&quot;https:\/\/blacklist.paysera.com&quot;}" data-user-settings="{&quot;user_id&quot;:null,&quot;administer_user_id&quot;:null,&quot;time_zone&quot;:&quot;Europe\/Vilnius&quot;,&quot;time_format&quot;:&quot;H:i:s&quot;,&quot;date_format&quot;:&quot;YYYY-MM-DD&quot;,&quot;user_identifier&quot;:&quot;&quot;,&quot;administered_user_identifier&quot;:&quot;&quot;,&quot;user_type&quot;:null,&quot;administered_user_type&quot;:null,&quot;impersonator_user_id&quot;:null,&quot;preferred_currency&quot;:null}" class="layout-authentication csstransitions localstorage sessionstorage filereader ng-scope" lang="ro"><head><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; media-src 'self' data:; style-src 'self' data: 'unsafe-inline'; font-src 'self' data:; frame-src 'self' data:"><meta http-equiv="Memento-Datetime" content="Tue, 25 Feb 2020 13:37:52 GMT"><link rel="original" href="https://bank.paysera.com/ro/registration#/">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deschiderea contului - Paysera</title>
+    <meta name="description" content="Cel mai rapid mod de a trimite și de a primi bani în întreaga lume, de a schimba moneda și de a colecta plăți online sau prin mesaje scurte.">
+    <meta property="og:url" content="https://www.paysera.com">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Deschiderea contului">
+    <meta property="og:image" content="/assets/image/simple-payments-v1.jpg">
+    <meta property="og:description" content="Cel mai rapid mod de a trimite și de a primi bani în întreaga lume, de a schimba moneda și de a colecta plăți online sau prin mesaje scurte.">
+    <meta name="google-site-verification" content="wMEJp_52_bQbRxY0gc6sVBaigtfeVK6MC9XHVoBPdoo">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://bank.paysera.com/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="resources/RO_548/1.png" data-original-href="https://bank.paysera.com/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="194x194" href="resources/RO_548/2.png" data-original-href="https://bank.paysera.com/favicon-194x194.png">
+<link rel="icon" type="image/png" sizes="192x192" href="resources/RO_548/3.png" data-original-href="https://bank.paysera.com/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="16x16" href="resources/RO_548/4.png" data-original-href="https://bank.paysera.com/favicon-16x16.png">
+<link rel="manifest" href="https://bank.paysera.com/manifest.json">
+<link rel="mask-icon" href="https://bank.paysera.com/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">
+    
+
+            <link rel="stylesheet" href="resources/RO_548/5.css" data-original-href="https://bank.paysera.com/js/compiled/user_common.b10af90e9c471ab4ffe20b580c07dfc1.css">
+    
+                <link rel="stylesheet" href="resources/RO_548/6.css" data-original-href="https://bank.paysera.com/js/compiled/theme-eed7cb41026210d5e76aad89e30083d331675824.4a5148a23eba9e1c3afe06292ed1397f.css">
+    
+    <!--[if lte IE 9]>
+    <script src="/assets/js/json2.min.js"></script>
+    <script src="/assets/bower/es5-shim/es5-shim.min.js"></script>
+    <script src="/assets/bower/respond/src/respond.js"></script>
+    <![endif]-->
+
+    </head>
+<body class="ro">
+    
+            
+<div class="legacy-browser-disclaimer-wrapper">
+    <div class="legacy-browser-disclaimer">
+        <div class="outdated-browser">
+            Browserul dvs. este invechit și nu este sigur, unele funcții ale site-ului pot să nu funcționeze.
+            <div class="pull-right">
+                <a href="https://browsehappy.com/" target="_blank" class="btn btn-primary" rel="noopener noreferrer">
+                    Actualizați browserul acum
+                </a>
+            </div>
+        </div>
+        <div class="storage-disabled">
+            Cookie-urile sunt dezactivate în browserul dvs. Pentru a putea utiliza serviciile Paysera, activați modulele cookie în setările browserului.
+        </div>
+    </div>
+</div>
+
+    
+    <div class="authentication-content">
+        <header class="authentication-content-header">
+                <div class="logo-nav-container">
+        <div class="logo-nav-link left hidden-xs">
+            <a href="https://www.paysera.ro/v2/ro-RO/index">
+                <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                <span>Înapoi la pagina principală</span>
+            </a>
+        </div>
+
+        <div class="logo-nav-link right">
+            <a href="https://bank.paysera.com/ro/login" class="text-capitalize">
+                <i class="fa fa-lock" aria-hidden="true"></i>
+                <span>conectare</span>
+            </a>
+        </div>
+
+                        <div class="logo-container">
+                    <a href="https://www.paysera.ro/v2/ro-RO/index">
+            <img src="resources/RO_548/7.svg" alt="Paysera" data-original-src="https://bank.paysera.com/assets/image/logo/logo.svg">
+        </a>
+                </div>
+            
+    </div>
+        </header>
+
+        <main>
+                            <div class="auth-app-container">
+                    <div class="auth-app-content">
+                        
+
+                            
+    
+    
+
+    <!-- ngView:  --><div data-ng-view="" class="ng-scope">
+        <div data-ng-init="locale = &quot;ro&quot;" class="ng-scope">
+
+    <div class="alert alert-info splash">
+        Se încarcă
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading panel-heading-narrow text-center">
+            <span id="registration-h1">Deschiderea contului</span>
+        </div>
+
+        <div class="panel-body">
+            <form name="registrationForm" data-ng-submit="submitForm(registrationForm)" novalidate="" data-ng-init="userIsManager = false" class="ng-pristine ng-invalid ng-invalid-required ng-valid-server-validation ng-valid-pattern ng-valid-minlength ng-valid-match">
+
+                <div class="m-b-30">
+                    <div class="sttabs tabs-style-paysera">
+                        <nav>
+                            <ul>
+                                <li data-ng-class="{'tab-current': accountType === 'private'}" class="tab-current">
+                                    <a data-ng-click="setAccountType('private')" role="button">
+                                        Cont personal
+                                    </a>
+                                </li>
+                                <li data-ng-class="{'tab-current': accountType === 'business'}">
+                                    <a data-ng-click="setAccountType('business')" role="button">
+                                        Contul companiei
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+
+                <div class="alert alert-warning ng-hide" data-ng-show=" accountType === 'business' ">
+                    Pentru a deschide un cont de companie, urmați acești pași:
+
+1. Deschideți un cont personal și finalizați procedura de identificare.
+2. Conectați-vă la contul dvs. și trimiteți documentele necesare.
+
+După ce ați finalizat acești pași, se va deschide automat un cont de companie.
+
+Instrucțiuni privind deschiderea unui cont de companie pot fi găsite aici <a href="https://www.paysera.ro/v2/ro-RO/deschidere-cont-companie" class="alert-link">found here</a>.
+
+Vă rugăm să rețineți: Un cont de companie poate fi deschis de catre Administratorul companiei sau de catre o Persoana Autorizata de catre Administrator, și poate fi utilizat numai în scopuri de afaceri.
+                </div>
+
+                <div class="text-center ng-hide" data-ng-show="accountType === 'business' &amp;&amp; !userIsManager">
+                    <a class="btn btn-primary btn-block text-uppercase" data-ng-click="userIsManager = true">
+                        Deschide un cont de companie
+                    </a>
+                </div>
+
+                <div data-ng-show="accountType === 'private' || (accountType === 'business' &amp;&amp; userIsManager)" class="">
+                    <div class="form-group ng-isolate-scope" data-paysera-form-helper-field-has-errors="" data-field="registrationForm.countryCode">
+
+                        <label>Țara de rezidență:</label>
+
+                        <select name="countryCode" class="form-control ng-pristine ng-untouched ng-valid ng-valid-required" data-ng-model="countryCode" data-ng-required="true" data-ng-change="updatePhoneCode(countryCode)" required="required" style="">
+                                                            <option value="za">Africa de Sud</option>
+                                                            <option value="al">Albania</option>
+                                                            <option value="dz">Algeria</option>
+                                                            <option value="ad">Andorra</option>
+                                                            <option value="ao">Angola</option>
+                                                            <option value="ai">Anguilla</option>
+                                                            <option value="ag">Antigua și Barbuda</option>
+                                                            <option value="ar">Argentina</option>
+                                                            <option value="am">Armenia</option>
+                                                            <option value="aw">Aruba</option>
+                                                            <option value="au">Australia</option>
+                                                            <option value="at">Austria</option>
+                                                            <option value="az">Azerbaidjan</option>
+                                                            <option value="bh">Bahrain</option>
+                                                            <option value="bd">Bangladesh</option>
+                                                            <option value="bb">Barbados</option>
+                                                            <option value="by">Belarus</option>
+                                                            <option value="be">Belgia</option>
+                                                            <option value="bz">Belize</option>
+                                                            <option value="bj">Benin</option>
+                                                            <option value="bm">Bermuda</option>
+                                                            <option value="bt">Bhutan</option>
+                                                            <option value="bo">Bolivia</option>
+                                                            <option value="ba">Bosnia și Herțegovina</option>
+                                                            <option value="br">Brazilia</option>
+                                                            <option value="bn">Brunei</option>
+                                                            <option value="bg">Bulgaria</option>
+                                                            <option value="bf">Burkina Faso</option>
+                                                            <option value="bi">Burundi</option>
+                                                            <option value="kh">Cambodgia</option>
+                                                            <option value="cm">Camerun</option>
+                                                            <option value="ca">Canada</option>
+                                                            <option value="cv">Capul Verde</option>
+                                                            <option value="cz">Cehia</option>
+                                                            <option value="cl">Chile</option>
+                                                            <option value="cn">China</option>
+                                                            <option value="td">Ciad</option>
+                                                            <option value="cy">Cipru</option>
+                                                            <option value="co">Columbia</option>
+                                                            <option value="km">Comore</option>
+                                                            <option value="cg">Congo - Brazzaville</option>
+                                                            <option value="cd">Congo - Kinshasa</option>
+                                                            <option value="kr">Coreea de Sud</option>
+                                                            <option value="cr">Costa Rica</option>
+                                                            <option value="ci">Côte d’Ivoire</option>
+                                                            <option value="hr">Croația</option>
+                                                            <option value="cw">Curaçao</option>
+                                                            <option value="dk">Danemarca</option>
+                                                            <option value="dj">Djibouti</option>
+                                                            <option value="dm">Dominica</option>
+                                                            <option value="ec">Ecuador</option>
+                                                            <option value="eg">Egipt</option>
+                                                            <option value="sv">El Salvador</option>
+                                                            <option value="ch">Elveția</option>
+                                                            <option value="ae">Emiratele Arabe Unite</option>
+                                                            <option value="er">Eritreea</option>
+                                                            <option value="ee">Estonia</option>
+                                                            <option value="sz">eSwatini</option>
+                                                            <option value="fj">Fiji</option>
+                                                            <option value="ph">Filipine</option>
+                                                            <option value="fi">Finlanda</option>
+                                                            <option value="fr">Franța</option>
+                                                            <option value="ga">Gabon</option>
+                                                            <option value="gm">Gambia</option>
+                                                            <option value="ge">Georgia</option>
+                                                            <option value="gs">Georgia de Sud și Insulele Sandwich de Sud</option>
+                                                            <option value="de">Germania</option>
+                                                            <option value="gi">Gibraltar</option>
+                                                            <option value="gr">Grecia</option>
+                                                            <option value="gd">Grenada</option>
+                                                            <option value="gl">Groenlanda</option>
+                                                            <option value="gp">Guadelupa</option>
+                                                            <option value="gt">Guatemala</option>
+                                                            <option value="gg">Guernsey</option>
+                                                            <option value="gq">Guineea Ecuatorială</option>
+                                                            <option value="gy">Guyana</option>
+                                                            <option value="gf">Guyana Franceză</option>
+                                                            <option value="ht">Haiti</option>
+                                                            <option value="hn">Honduras</option>
+                                                            <option value="in">India</option>
+                                                            <option value="id">Indonezia</option>
+                                                            <option value="cx">Insula Christmas</option>
+                                                            <option value="im">Insula Man</option>
+                                                            <option value="nf">Insula Norfolk</option>
+                                                            <option value="ax">Insulele Åland</option>
+                                                            <option value="bq">Insulele Caraibe Olandeze</option>
+                                                            <option value="ky">Insulele Cayman</option>
+                                                            <option value="cc">Insulele Cocos (Keeling)</option>
+                                                            <option value="ck">Insulele Cook</option>
+                                                            <option value="fk">Insulele Falkland</option>
+                                                            <option value="fo">Insulele Feroe</option>
+                                                            <option value="um">Insulele Îndepărtate ale S.U.A.</option>
+                                                            <option value="mp">Insulele Mariane de Nord</option>
+                                                            <option value="mh">Insulele Marshall</option>
+                                                            <option value="pn">Insulele Pitcairn</option>
+                                                            <option value="sb">Insulele Solomon</option>
+                                                            <option value="tc">Insulele Turks și Caicos</option>
+                                                            <option value="vg">Insulele Virgine Britanice</option>
+                                                            <option value="jo">Iordania</option>
+                                                            <option value="ie">Irlanda</option>
+                                                            <option value="is">Islanda</option>
+                                                            <option value="il">Israel</option>
+                                                            <option value="it">Italia</option>
+                                                            <option value="jm">Jamaica</option>
+                                                            <option value="jp">Japonia</option>
+                                                            <option value="je">Jersey</option>
+                                                            <option value="kz">Kazahstan</option>
+                                                            <option value="kg">Kârgâzstan</option>
+                                                            <option value="ke">Kenya</option>
+                                                            <option value="ki">Kiribati</option>
+                                                            <option value="xk">Kosovo</option>
+                                                            <option value="kw">Kuweit</option>
+                                                            <option value="la">Laos</option>
+                                                            <option value="ls">Lesotho</option>
+                                                            <option value="lv">Letonia</option>
+                                                            <option value="lr">Liberia</option>
+                                                            <option value="li">Liechtenstein</option>
+                                                            <option value="lt">Lituania</option>
+                                                            <option value="lu">Luxemburg</option>
+                                                            <option value="mk">Macedonia de Nord</option>
+                                                            <option value="mg">Madagascar</option>
+                                                            <option value="mw">Malawi</option>
+                                                            <option value="my">Malaysia</option>
+                                                            <option value="mv">Maldive</option>
+                                                            <option value="ml">Mali</option>
+                                                            <option value="mt">Malta</option>
+                                                            <option value="ma">Maroc</option>
+                                                            <option value="mq">Martinica</option>
+                                                            <option value="mr">Mauritania</option>
+                                                            <option value="mu">Mauritius</option>
+                                                            <option value="yt">Mayotte</option>
+                                                            <option value="mx">Mexic</option>
+                                                            <option value="fm">Micronezia</option>
+                                                            <option value="mc">Monaco</option>
+                                                            <option value="mn">Mongolia</option>
+                                                            <option value="ms">Montserrat</option>
+                                                            <option value="mz">Mozambic</option>
+                                                            <option value="me">Muntenegru</option>
+                                                            <option value="na">Namibia</option>
+                                                            <option value="nr">Nauru</option>
+                                                            <option value="np">Nepal</option>
+                                                            <option value="ni">Nicaragua</option>
+                                                            <option value="ne">Niger</option>
+                                                            <option value="nu">Niue</option>
+                                                            <option value="no">Norvegia</option>
+                                                            <option value="nc">Noua Caledonie</option>
+                                                            <option value="nz">Noua Zeelandă</option>
+                                                            <option value="om">Oman</option>
+                                                            <option value="pw">Palau</option>
+                                                            <option value="pg">Papua-Noua Guinee</option>
+                                                            <option value="py">Paraguay</option>
+                                                            <option value="pe">Peru</option>
+                                                            <option value="pf">Polinezia Franceză</option>
+                                                            <option value="pl">Polonia</option>
+                                                            <option value="pt">Portugalia</option>
+                                                            <option value="qa">Qatar</option>
+                                                            <option value="hk">R.A.S. Hong Kong a Chinei</option>
+                                                            <option value="mo">R.A.S. Macao, China</option>
+                                                            <option value="gb">Regatul Unit</option>
+                                                            <option value="do">Republica Dominicană</option>
+                                                            <option value="md">Republica Moldova</option>
+                                                            <option value="re">Réunion</option>
+                                                            <option value="ro">România</option>
+                                                            <option value="ru">Rusia</option>
+                                                            <option value="rw">Rwanda</option>
+                                                            <option value="eh">Sahara Occidentală</option>
+                                                            <option value="kn">Saint Kitts și Nevis</option>
+                                                            <option value="vc">Saint Vincent și Grenadinele</option>
+                                                            <option value="bl">Saint-Barthélemy</option>
+                                                            <option value="pm">Saint-Pierre și Miquelon</option>
+                                                            <option value="sm">San Marino</option>
+                                                            <option value="st">São Tomé și Príncipe</option>
+                                                            <option value="sn">Senegal</option>
+                                                            <option value="rs">Serbia</option>
+                                                            <option value="sc">Seychelles</option>
+                                                            <option value="sh">Sfânta Elena</option>
+                                                            <option value="lc">Sfânta Lucia</option>
+                                                            <option value="mf">Sfântul Martin</option>
+                                                            <option value="sl">Sierra Leone</option>
+                                                            <option value="sg">Singapore</option>
+                                                            <option value="sx">Sint-Maarten</option>
+                                                            <option value="sk">Slovacia</option>
+                                                            <option value="si">Slovenia</option>
+                                                            <option value="es">Spania</option>
+                                                            <option value="us">Statele Unite ale Americii</option>
+                                                            <option value="va">Statul Cetății Vaticanului</option>
+                                                            <option value="se">Suedia</option>
+                                                            <option value="sr">Suriname</option>
+                                                            <option value="sj">Svalbard și Jan Mayen</option>
+                                                            <option value="tj">Tadjikistan</option>
+                                                            <option value="tw">Taiwan</option>
+                                                            <option value="tz">Tanzania</option>
+                                                            <option value="tf">Teritoriile Australe și Antarctice Franceze</option>
+                                                            <option value="ps">Teritoriile Palestiniene</option>
+                                                            <option value="io">Teritoriul Britanic din Oceanul Indian</option>
+                                                            <option value="th">Thailanda</option>
+                                                            <option value="tl">Timor-Leste</option>
+                                                            <option value="tg">Togo</option>
+                                                            <option value="tk">Tokelau</option>
+                                                            <option value="to">Tonga</option>
+                                                            <option value="tr">Turcia</option>
+                                                            <option value="tm">Turkmenistan</option>
+                                                            <option value="tv">Tuvalu</option>
+                                                            <option value="nl">Țările de Jos</option>
+                                                            <option value="ua">Ucraina</option>
+                                                            <option value="ug">Uganda</option>
+                                                            <option value="hu">Ungaria</option>
+                                                            <option value="uy">Uruguay</option>
+                                                            <option value="uz">Uzbekistan</option>
+                                                            <option value="vu">Vanuatu</option>
+                                                            <option value="ve">Venezuela</option>
+                                                            <option value="vn">Vietnam</option>
+                                                            <option value="wf">Wallis și Futuna</option>
+                                                            <option value="zm">Zambia</option>
+                                                    </select>
+
+                        <div data-paysera-form-helper-field-error-messages="" data-field="registrationForm.countryCode" class="ng-isolate-scope"><!-- ngIf: vm.showErrors() -->
+</div>
+                    </div>
+
+                    <div class="form-group has-feedback ng-isolate-scope" data-paysera-form-helper-field-has-errors="" data-field="registrationForm.email">
+
+                        <label class="control-label">Adresa de e-mail personală:</label>
+
+                        <input type="text" name="email" class="form-control ng-pristine ng-untouched ng-valid-server-validation ng-invalid ng-invalid-required ng-valid-pattern" data-ng-model="email" data-ng-pattern="/^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/" data-ng-required="true" data-paysera-form-helper-server-validation="" data-server-response="serverResponse" data-property-name="'email'" data-ng-blur="visitedEmail = true" required="required">
+
+                        <span class="form-control-feedback ng-hide" data-ng-show="!registrationForm.email.$error.required &amp;&amp; visitedEmail">
+                            <i class="fa fa-check text-success" data-ng-class="{true: 'fa-check text-success', false: 'fa-times text-danger'}[!registrationForm.email.$error.pattern]"></i>
+                        </span>
+
+                        <div data-paysera-form-helper-field-error-messages="" data-field="registrationForm.email" data-template-url="paysera/form-helper/contact-error-messages.html" class="ng-isolate-scope">
+        <!-- ngIf: vm.showErrors() -->
+    </div>
+                    </div>
+
+                    <div personal-email-checker="" data-email="email" data-message="Trebuie să vă înregistrați utilizând adresa de e-mail personală, deoarece contul dvs. va fi deschis în numele dvs. Este această adresă e-mail personală?" class="ng-isolate-scope">
+        <div class="form-group ng-hide" data-ng-show="vm.isValid()">
+    <div class="col-sm-16 pull-right">
+        <div class="alert alert-danger">
+            <span class="ng-binding">Trebuie să vă înregistrați utilizând adresa de e-mail personală, deoarece contul dvs. va fi deschis în numele dvs. Este această adresă e-mail personală?</span>
+        </div>
+    </div>
+</div>
+    </div>
+
+                    <div class="form-group ng-isolate-scope" data-paysera-form-helper-field-has-errors="" data-field="registrationForm.password">
+
+                        <label>
+                            Parola
+                            <span class="small">(min. 8 simboluri)</span>:
+                        </label>
+
+                        <input type="password" name="password" class="form-control ng-pristine ng-valid-server-validation ng-invalid ng-invalid-required ng-valid-minlength ng-touched" data-ng-model="password" data-ng-required="true" data-ng-blur="visitedPassword = true" data-ng-minlength="8" data-paysera-form-helper-server-validation="" data-server-response="serverResponse" data-property-name="'password'" data-password-validation="" required="required" style="" data-fathom="new">
+
+                        <div data-password-strength-meter="" data-field="password" class="ng-isolate-scope"><div class="password-strength-wrapper hidden"><div class="progress-bar" style="width: 100%;"></div></div></div>
+
+                        <div data-paysera-form-helper-field-error-messages="" data-field="registrationForm.password" class="ng-isolate-scope"><!-- ngIf: vm.showErrors() -->
+</div>
+                    </div>
+
+                    <div class="form-group has-feedback ng-isolate-scope" data-paysera-form-helper-field-has-errors="" data-field="registrationForm.verification">
+
+                        <label>Repetaţi parola:</label>
+
+                        <input type="password" name="verification" class="form-control ng-pristine ng-isolate-scope ng-invalid ng-invalid-required ng-valid-match ng-touched" data-ng-model="verification" data-ng-required="true" data-ng-blur="visitedVerification = true" data-match="password" required="required" style="" data-fathom="confirm">
+
+                        <span class="form-control-feedback ng-hide" data-ng-show="!registrationForm.verification.$error.required &amp;&amp; visitedVerification">
+                            <i class="fa fa-check text-success" data-ng-class="{true: 'fa-check text-success', false: 'fa-times text-danger'}[!registrationForm.verification.$error.match]"></i>
+                        </span>
+
+                        <div data-paysera-form-helper-field-error-messages="" data-field="registrationForm.verification" class="ng-isolate-scope"><!-- ngIf: vm.showErrors() -->
+</div>
+                    </div>
+
+                    <div class="form-group ng-isolate-scope" data-paysera-form-helper-field-has-errors="" data-field="registrationForm.name">
+
+                        <label>Prenume:</label>
+
+                        <input type="text" name="name" class="form-control ng-pristine ng-untouched ng-valid-server-validation ng-invalid ng-invalid-required ng-valid-pattern" data-ng-model="name" data-ng-pattern="/^.*$/" data-ng-required="true" data-paysera-form-helper-server-validation="" data-server-response="serverResponse" data-property-name="'name'" data-title-case="" required="required">
+
+                        <div data-paysera-form-helper-field-error-messages="" data-field="registrationForm.name" class="ng-isolate-scope"><!-- ngIf: vm.showErrors() -->
+</div>
+                    </div>
+
+                    <div class="form-group ng-isolate-scope" data-paysera-form-helper-field-has-errors="" data-field="registrationForm.surname">
+
+                        <label class="control-label">Nume de familie:</label>
+
+                        <input type="text" name="surname" class="form-control ng-pristine ng-untouched ng-valid-server-validation ng-invalid ng-invalid-required ng-valid-pattern" data-ng-model="surname" data-ng-pattern="/^.*$/" data-ng-required="true" data-paysera-form-helper-server-validation="" data-server-response="serverResponse" data-property-name="'surname'" data-title-case="" required="required">
+
+                        <div data-paysera-form-helper-field-error-messages="" data-field="registrationForm.surname" class="ng-isolate-scope"><!-- ngIf: vm.showErrors() -->
+</div>
+                    </div>
+
+                    <div class="form-group ng-isolate-scope" data-paysera-form-helper-field-has-errors="" data-field="registrationForm.phone">
+
+                        <label>Numar de telefon de contact:</label>
+
+                        <input type="text" name="phone" class="form-control ng-pristine ng-untouched ng-valid-server-validation ng-valid-pattern ng-valid ng-valid-required" data-ng-model="phone" data-ng-model-options="{ allowInvalid: true}" data-ng-required="true" data-ng-pattern="/^\+\d+$/" data-paysera-form-helper-server-validation="" data-server-response="serverResponse" data-property-name="'phone'" required="required" style="">
+
+                        <div data-paysera-form-helper-field-error-messages="" data-field="registrationForm.phone" data-template-url="paysera/form-helper/contact-error-messages.html" class="ng-isolate-scope">
+        <!-- ngIf: vm.showErrors() -->
+    </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" data-ng-model="agree" class="ng-pristine ng-untouched ng-valid">Sunt de acord cu <a href="https://www.paysera.com/v2/en/legal/general-payment-service-agreement-for-private" target="_blank">Acord General privind Serviciile de Plată</a>, <a href="https://www.paysera.com/v2/en/legal/privacy-policy" target="_blank">Politica de confidentialitate</a> și <a href="https://www.paysera.com/v2/en/legal/safety-recommendations" target="_blank">Recomandări pentru utilizarea în siguranță</a> Paysera
+                            </label>
+                        </div>
+                    </div>
+
+                    <div data-ng-class="{'form-group': serverError}">
+                        <button type="submit" class="btn btn-primary btn-block btn-rounded text-uppercase" data-ng-disabled="
+                            !agree
+                            || isClicked
+                            || !registrationForm.$valid
+                            || (serverValidationErrorsExist() &amp;&amp; !registrationForm.$dirty)
+                            || !supportDataSubmitted
+                        " disabled="disabled">
+                            Deschideți un cont 
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ngIf: serverError -->
+            </form>
+        </div>
+    </div>
+</div>
+    </div>
+                    </div>
+                </div>
+                    </main>
+    </div>
+
+    <footer>
+        
+<div class="kayako-wrapper">
+    <p class="kayako-container">
+        <a href="https://support.paysera.com/visitor/index.php?/payseraron/LiveChat/Chat/Request/_sessionID=/_promptType=chat/_proactive=0/_filterDepartmentID=91/_randomNumber=4wnqycw8egatucycfytrud0hkgf73d2k/_fullName=/_email=/" class="livechatlink">
+            <span class="kayako-label">
+                Helpdesk
+            </span><span class="img-container"><img src="resources/RO_548/8.gif" alt="helpdesk" data-original-src="https://support.paysera.com/visitor/index.php?/payseraron/LiveChat/HTML/NoJSImage/cHJvbXB0dHlwZT1jaGF0JnVuaXF1ZWlkPXFrbnlyMDd2azMmdmVyc2lvbj00LjcwLjImcHJvZHVjdD1mdXNpb24mZmlsdGVyZGVwYXJ0bWVudGlkPTkxJmN1c3RvbW9ubGluZT1odHRwcyUzQSUyRiUyRnN1cHBvcnQucGF5c2VyYS5jb20lMkZfX3N3aWZ0JTJGZmlsZXMlMkZmaWxlXzhta2VqMHQ5NnFnaHUwdi5wbmcmY3VzdG9tb2ZmbGluZT1odHRwcyUzQSUyRiUyRnN1cHBvcnQucGF5c2VyYS5jb20lMkZfX3N3aWZ0JTJGZmlsZXMlMkZmaWxlXzkybDc4NGFucjE4dXQ0Yy5wbmcmY3VzdG9tYXdheT1odHRwcyUzQSUyRiUyRnN1cHBvcnQucGF5c2VyYS5jb20lMkZfX3N3aWZ0JTJGZmlsZXMlMkZmaWxlX2doNTJnNzlrM3ltbWI3Yi5wbmcmY3VzdG9tYmFja3Nob3J0bHk9aHR0cHMlM0ElMkYlMkZzdXBwb3J0LnBheXNlcmEuY29tJTJGX19zd2lmdCUyRmZpbGVzJTJGZmlsZV9oM29kYWEyNnRtZ3Z1YTQucG5nCmRlNTFiZmJhYTk1MzZmMDZiNTExN2M2NzY0MmQ0MzQ5ZjBhY2M5NDY="></span>        </a>
+    </p>
+</div>
+        <div class="footer-info-holder">
+            <div class="language-list-container" id="react-language-list-container"><ul class="list-inline text-capitalize"><li><a href="https://bank.paysera.com/en/registration#/">English</a></li><li><a href="https://bank.paysera.com/ru/registration#/">русский</a></li><li><a href="https://bank.paysera.com/lv/registration#/">latviešu</a></li><li><a href="https://bank.paysera.com/bg/registration#/">български</a></li><li><a href="https://bank.paysera.com/es/registration#/">español</a></li><li><span role="button" class="text-link-color" tabindex="0"><i class="fa fa-plus" aria-hidden="true"></i></span></li></ul></div>
+            <div><p>Toate drepturile rezervate de Paysera LT, UAB. Instituția de monedă electronică este supravegheată de <a href="https://www.lb.lt/en/sfi-financial-market-participants/paysera-lt-uab" target="_blank" rel="noopener noreferrer">Banca Centrală a Lituaniei</a>.</p>
+            </div>
+            <div>
+                <ul class="list-inline">
+                    <li>
+                        <a href="https://www.paysera.com/v2/en/legal/privacy-policy">Politica de confidențialitate</a>
+                    </li>
+                    <li>
+                        <a href="https://www.paysera.com/v2/en/legal/general-payment-service-agreement-for-private">Acordurile serviciilor</a>
+                    </li>
+                    <li>
+                        <a href="https://www.paysera.com/v2/en/legal/safety-recommendations">Recomandări pentru utilizarea în siguranță</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    
+            
+    
+            
+    
+            
+    
+                    
+    
+            
+    
+    
+
+            
+    
+
+            
+    
+            
+    
+    
+
+            
+    
+    <iframe src="resources/RO_548/9.htm" class="hidden" data-original-src="https://tracking.paysera.com/ro/registration"></iframe>
+
+            
+    
+            
+    
+</body></html>

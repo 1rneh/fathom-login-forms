@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html class="a-ws a-js a-audio a-video a-canvas a-svg a-drag-drop a-geolocation a-history a-webworker a-autofocus a-input-placeholder a-textarea-placeholder a-local-storage a-gradients a-transform3d a-touch-scrolling a-text-shadow a-text-stroke a-box-shadow a-border-radius a-border-image a-opacity a-transform a-transition" data-aui-build-date="3.17.16.3-2017-10-11" lang="en"><head><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; media-src 'self' data:; style-src 'self' data: 'unsafe-inline'; font-src 'self' data:; frame-src 'self' data:"><meta http-equiv="Memento-Datetime" content="Fri, 13 Mar 2020 13:28:03 GMT"><link rel="original" href="https://signin.aws.amazon.com/oauth?redirect_uri=https%3A%2F%2Fconsole.aws.amazon.com%2Fconsole%2Fhome%3Fstate%3DhashArgs%2523%26isauthcode%3Dtrue&amp;client_id=arn%3Aaws%3Aiam%3A%3A015428540659%3Auser%2Fhomepage&amp;response_type=code&amp;iam_user=true&amp;account=ccformfafasfa"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+    <title>Amazon Web Services Sign-In</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+     
+    
+    
+
+    <link rel="stylesheet" type="text/css" href="resources/EN_141624n/1.css" data-original-href="https://signin.aws.amazon.com/vendor/aws-ui/AWS-UI-Components/components.min.css">
+    <link rel="stylesheet" type="text/css" href="resources/EN_141624n/2.css" data-original-href="https://signin.aws.amazon.com/vendor/aws-ui/AWS-UI-Components/base-styles/utilities.min.css">
+    <link rel="stylesheet" type="text/css" href="resources/EN_141624n/3.css" data-original-href="https://signin.aws.amazon.com/vendor/aws-ui/AWS-UI-Components/base-styles/grid.min.css">
+
+    <style>
+        #container>h1.background{background-repeat:no-repeat;background-size:contain;color:rgba(0,0,0,0);height:50px;padding:0;width:84px;border-bottom:0;margin-bottom:40px;margin-top:30px;background-image:url("resources/EN_141624n/4.png")}
+body{font-size:75%;font-family:Helvetica,Arial,sans-serif;padding:0;margin:0}
+a{color:black}
+a#logo_link{color:transparent;width:84px;height:50px;display:block;font-size:12px}
+input{font:16px / 18px sans-serif}
+fieldset{margin:0;padding:0;border:0}
+a.more{text-decoration:none;font-size:.8em}
+.textaslabel{border:0;background-color:#fff;font:16px / 18px sans-serif}
+.buttoninput{margin-top:20px;clear:both}
+.checkboxinput{clear:both;padding-top:10px;padding-left:240px}
+.textinput{padding-top:20px;clear:both}
+.textinput label{display:block;clear:left;padding-right:10px;line-height:21px;font-weight:bold;font-size:14px;margin-bottom:7px;color:#444;font-family:"Helvetica Neue",Roboto,Arial,sans-serif}
+form div{padding:0}
+.textinput input{border:1px solid #ccc;border-radius:4px;box-sizing:border-box;font-size:14px;padding:7px 10px;width:310px}
+.textinput input:focus{border-color:#38d;box-shadow:0 0 8px rgba(51,136,221,0.5);outline:0 none}
+#accountFields{padding-right:60px}
+#input_account{padding-top:0}
+.error input{border-color:red}
+.error label{color:red}
+.error div{color:red}
+.link{font-size:.8em}
+.mainError{padding-left:20px;color:red}
+.mainInfo{padding-left:20px;color:blue}
+.mainWarningWithBorderMobile{background-color:#fffcec;border:.05rem solid #e07700;border-radius:4px;padding:10px 15px;padding-left:20px}
+.mainWarningWithBorder{background-color:#fffcec;border:.05rem solid #e07700;border-radius:.3rem;padding-top:.75rem;padding-left:1rem}
+.signin-tabs{margin:1.67em 1.67em 0}
+.signin-tabs ul{margin:0;padding:0;width:100%;list-style:none}
+.signin-tabs ul:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+.signin-tabs ul li{margin:0;padding:0;float:left;width:50%}
+.signin-tabs ul li a,.signin-tabs ul li a:visited{display:block;text-align:center;text-decoration:none;margin:0;padding:.93em 0;border:1px solid #BBB;font-weight:bold;color:#000;background:0;background-color:#f1f1f1;background-image:url(resources/EN_141624n/5.png);background-repeat:no-repeat;background-size:100% 100%;-webkit-touch-callout:none}
+.signin-tabs ul li:first-child a{border-radius:.5em 0 0 .5em;-webkit-border-radius:.5em 0 0 .5em;border-right-width:0}
+.signin-tabs ul li:last-child a{border-right:solid 1px #ccc;border-radius:0 .5em .5em 0;-webkit-border-radius:0 .5em .5em 0}
+.signin-tabs ul li a.signin-active{background-color:#dfdfdf;background-image:url(resources/EN_141624n/6.png)}
+.amzn_button{background:-webkit-linear-gradient(top,#fd8 15%,#f49d00 85%);background:-moz-linear-gradient(top,#fd8 15%,#f49d00 85%);background:-webkit-gradient(linear,left top,left bottom,color-stop(0.15,#fd8),color-stop(1.0,#f49d00));background:-webkit-linear-gradient(top,#fd8 15%,#f49d00 85%);border:1px solid #2164a6;margin-right:20px;padding:5px 15px 4px 15px;text-decoration:none;border-radius:4px;-moz-border-radius:4px;-webkit-border-radius:4px;box-shadow:inset 0 0 2px #fff;-webkit-box-shadow:inset 0 0 2px #fff;-moz-box-shadow:inset 0 0 2px #fff;color:#000;font-size:13px}
+.css3button{-moz-border-bottom-colors:none;-moz-border-left-colors:none;-moz-border-right-colors:none;-moz-border-top-colors:none;background-color:#16b;background-image:linear-gradient(#2d8cec,#16b);border-color:#16b #0b4075 #0b4075;border-image:none;border-style:solid;border-width:1px;color:white;text-shadow:0 1px 1px rgba(0,0,0,0.75);font-size:14px;line-height:21px;padding:4px 14px;-moz-appearance:none;border-radius:4px;cursor:pointer;display:inline-block;font-size:14px;font-weight:bold;line-height:21px;padding:4px 14px;text-align:center;font-weight:bold;text-decoration:none;text-transform:none;overflow:visible;white-space:nowrap;width:310px;box-sizing:border-box;margin-bottom:20px}
+#content{width:940px}
+#center-2{margin-top:10px}
+#mfaMovedText{display:none}
+#root_account_signin{font-size:14px;font-family:"Helvetica Neue",Roboto,Arial,sans-serif;line-height:21px;color:#16b;text-decoration:none}
+.iam_forgotpassword{font-size:14px;font-family:"Helvetica Neue",Roboto,Arial,sans-serif;line-height:21px;margin-top:10px;padding-right:30px}
+.iam_forgotpassword_link{color:#16b}
+a.iam_forgotpassword_link:link{color:#16b;text-decoration:none}
+a.iam_forgotpassword_link:visited{color:#16b;text-decoration:none}
+a.iam_forgotpassword_link:hover{color:#16b;text-decoration:none}
+a.iam_forgotpassword_link:active{color:#16b;text-decoration:none}
+a.iam_forgotpassword_link.iam_forgotpassword_title{font-weight:bold;color:#000}
+#input_password{padding-bottom:20px}
+#mfaFields{padding-right:60px}
+#input_mfacode{padding-top:0;padding-bottom:20px}
+#next_mfacode{margin-bottom:20px}
+#input_resync_button{padding-right:60px}
+#login_head{margin-bottom:30px}
+#login_head b{font-size:22px;line-height:28px;color:#444;font-family:"Helvetica Neue",Roboto,Arial,sans-serif;overflow-wrap:break-word}
+.signin_form{float:left;width:370px}
+.mfa_form{float:left;width:370px}
+a:focus{color:#ccc}
+#container{margin:0 auto;padding:0;width:940px}
+#smallprint br{display:none}
+.saml-role{display:block;margin:20px}
+.saml-role-description{margin:0;font-weight:bold;font-size:16px;color:#000;vertical-align:middle}
+.saml-role-invalid{color:#bbb}
+.saml-account{padding-left:20px;margin-bottom:20px}
+.saml-account-name{font-size:18px;display:inline;vertical-align:middle}
+.saml-error{display:inline;color:red;vertical-align:middle;float:right}
+.saml-radio{width:18px;height:18px;vertical-align:middle}
+.warningbox{border:thin solid #000;width:50%;margin-left:auto;margin-right:auto}
+.awsc-classification-notice{font-family:Arial,sans-serif;font-size:14px;text-decoration:none;padding:5px;spacing:0;margin:0;background-color:#ff0}
+.awsc-classification-notice-footer{font-family:Arial,sans-serif;font-size:14px;text-decoration:none;padding:5px;spacing:0;margin:0;background-color:#ff0;bottom:0;position:fixed;width:100%}
+.awsc-notice-link{position:absolute;left:10px}
+.awsc-notice{text-align:center}
+a.awsc-notice-link:link{color:#6e6f1b;text-decoration:none}
+a.awsc-notice-link:visited{color:#6e6f1b;text-decoration:none}
+a.awsc-notice-link:hover{color:#6e6f1b;text-decoration:underline}
+a.awsc-notice-link:active{color:#6e6f1b;text-decoration:none}
+.mfaMovedText{padding-top:10px}
+p#mfaHeaderMessage{margin-bottom:0;font-size:28px;border-bottom:1px solid #CCC;width:200%}
+.resendButton{font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:700;color:#444;padding:4px 14px;line-height:21px;display:inline-block;margin-left:0;text-decoration:none;background:-moz-linear-gradient(top,#fff 0,#dedede);background:-webkit-gradient(linear,left top,left bottom,from(#fff),to(#dedede));-moz-border-radius:4px;-webkit-border-radius:4px;border-radius:4px;border:1px solid #b8b8b8;-moz-box-shadow:0 0 0 rgba(000,000,000,0),inset 0 0 2px rgba(255,255,255,1);-webkit-box-shadow:0 0 0 rgba(000,000,000,0),inset 0 0 2px rgba(255,255,255,1);box-shadow:0 0 0 rgba(000,000,000,0),inset 0 0 2px rgba(255,255,255,1);text-shadow:0 1px 1px rgba(255,255,255,.75);border-top-color:#dedede;background-color:#dedede;margin-bottom:20px;text-align:center;box-sizing:border-box;width:310px}
+.resendButtonDisable{font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:700;color:#444;opacity:.5;padding:4px 14px;line-height:21px;display:inline-block;margin-left:0;text-decoration:none;background:-moz-linear-gradient(top,#fff 0,#dedede);background:-webkit-gradient(linear,left top,left bottom,from(#fff),to(#dedede));-moz-border-radius:4px;-webkit-border-radius:4px;border-radius:4px;border:1px solid #b8b8b8;-moz-box-shadow:0 0 0 rgba(000,000,000,0),inset 0 0 2px rgba(255,255,255,1);-webkit-box-shadow:0 0 0 rgba(000,000,000,0),inset 0 0 2px rgba(255,255,255,1);box-shadow:0 0 0 rgba(000,000,000,0),inset 0 0 2px rgba(255,255,255,1);text-shadow:0 1px 1px rgba(255,255,255,.75);border-top-color:#dedede;background-color:#dedede;pointer-events:none;cursor:default;margin-bottom:20px;text-align:center;box-sizing:border-box;width:310px}
+.resendButton:visited{color:#444}
+a#cancel_button{font-size:14px;font-weight:bold;font-style:normal;color:#16b;display:block}
+a#lost_device{font-size:14px;font-weight:400;font-style:normal;color:#444;line-height:27px}
+.mfaFields{padding-bottom:100px}
+.u2fFields{padding-right:1rem}
+.u2f_container{padding-right:2rem}
+.ui-dialog.feedback-dialog .ui-dialog-titlebar-close:hover,.ui-dialog .ui-dialog-titlebar-close:focus{padding:1px}
+.no-close .ui-dialog-titlebar-close{display:none}
+.awsc-nav-dialog-modal{font-size:12px;line-height:1.5em}
+.awsc-nav-dialog-modal .ui-dialog-title{font-size:13px}
+.awsc-nav-dialog-modal .btn{display:inline-block;padding:4px 14px;margin-bottom:0;font-size:14px;font-weight:bold;line-height:1.5em;color:#444;text-align:center;text-decoration:none;text-shadow:0 1px 1px rgba(255,255,255,0.75);vertical-align:middle;cursor:pointer;background-color:#f2f2f2;background-image:-webkit-linear-gradient(top,#fff,#dedede);background-image:linear-gradient(to bottom,#fff,#dedede);background-repeat:repeat-x;border:1px solid #bbb;border-top-color:#ccc;border-radius:.3em;box-shadow:"0 1px 0 rgba(0, 0, 0, 0.1)"}
+.awsc-nav-dialog-modal .btn.focus,.awsc-nav-dialog-modal .btn:focus,.awsc-nav-dialog-modal .btn.hover,.awsc-nav-dialog-modal .btn:hover{color:#444;text-decoration:none;text-shadow:0 1px 1px rgba(255,255,255,0.75);background-color:#ebebeb;background-image:-webkit-linear-gradient(top,#fff,#ccc);background-image:linear-gradient(to bottom,#fff,#ccc);background-position:0 0;background-repeat:repeat-x}
+.awsc-nav-dialog-modal .btn::-moz-focus-inner{border:0}
+.awsc-nav-dialog-modal .btn.active,.awsc-nav-dialog-modal .btn:active{color:#444;text-shadow:0 -1px 1px rgba(255,255,255,0.75);background-color:#ebebeb;background-image:-webkit-linear-gradient(top,#dedede,#fff);background-image:linear-gradient(to bottom,#dedede,#fff);background-position:0 0;background-repeat:repeat-x;outline:0;box-shadow:"inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05)"}
+.awsc-nav-dialog-modal .btn-primary.active{color:rgba(255,255,255,0.75)}
+.awsc-nav-dialog-modal .btn-primary{color:#fff;text-shadow:0 1px 1px rgba(0,0,0,0.75);background-color:#257acf;background-image:-webkit-linear-gradient(top,#38d,#16b);background-image:linear-gradient(to bottom,#38d,#16b);background-repeat:repeat-x;border:1px solid #16b;border-top-color:#05a}
+.awsc-nav-dialog-modal .btn-primary.focus,.awsc-nav-dialog-modal .btn-primary:focus,.awsc-nav-dialog-modal .btn-primary.hover,.awsc-nav-dialog-modal .btn-primary:hover{color:#fff;text-shadow:0 1px 1px rgba(0,0,0,0.75);background-color:#1f74c9;background-image:-webkit-linear-gradient(top,#38d,#05a);background-image:linear-gradient(to bottom,#38d,#05a);background-repeat:repeat-x}
+.awsc-nav-dialog-modal .btn-primary.active,.awsc-nav-dialog-modal .btn-primary:active{color:#fff;text-shadow:0 -1px 1px rgba(0,0,0,0.75);background-color:#1f74c9;background-image:-webkit-linear-gradient(top,#16b,#38d);background-image:linear-gradient(to bottom,#16b,#38d);background-repeat:repeat-x}
+.awsc-nav-dialog-modal.ui-widget,.awsc-nav-dialog-modal.ui-widget button{font-family:Verdana,Arial,sans-serif}
+.awsc-nav-dialog-modal .ui-widget-header{background-color:#f2f2f2;background-image:-webkit-linear-gradient(top,#fff,#dedede);background-image:linear-gradient(to bottom,#fff,#dedede);background-repeat:repeat-x;border:0;padding:1em 1em}
+.awsc-nav-dialog-modal.ui-dialog{padding:0}
+.awsc-nav-dialog-modal .ui-dialog-buttonpane{margin-top:1em;padding:.5em 1em .5em .4em;border-top:1px solid #ddd;background-color:#f5f5f5}
+.awsc-nav-dialog-modal .ui-dialog-buttonpane button{margin:.5em .4em}
+.messageDiv{padding-left:20px;width:45%}
+.alert{padding:8px 25px 8px 14px;margin:.5em 0 1em 0;text-shadow:0 1px 0 rgba(255,255,255,0.5);background-color:#fffcec;border:1px solid #e07700;border-radius:.3em}
+.alert.alert-info{color:#444;background-color:#f0f9ff;border-color:#16b}
+.alert .imgclass{float:left;margin-left:10px;margin-right:14px;width:20px;height:20px;background-image:url('resources/EN_141624n/7.png')}
+.alert .header{font-size:18px;display:inline;color:#16b;padding:4px 0}
+.alert .message{color:#444;margin-left:45px;padding:4px 0;margin-top:0;margin-bottom:0}
+.half-opacity{filter:Alpha(opacity=60);opacity:.6;position:fixed;left:0;right:0;top:0;bottom:0;background-color:#fff;z-index:100000}
+.loading-image{position:fixed;left:48%;top:40%}
+.hide-page{display:none!important}
+.show-page{display:block!important}
+.error-warning-width{width:19rem}
+.awsui-alert-type-error{border:1px solid #c00;background-color:#fef9f9}
+.aws-signin-alert{border-radius:4px;padding:10px 15px;margin:0 auto 10px}
+.awsui-alert-header{color:#c00}
+.error-message-bold{color:#444;font-family:"Helvetica Neue",Roboto,Arial,sans-serif;font-size:14px;line-height:19px;font-weight:bold}
+.error-message{color:#444;font-family:"Helvetica Neue",Roboto,Arial,sans-serif;font-size:14px;line-height:19px}
+.error-message-link a{color:#16b;text-decoration:none}
+#password_recovery_form{margin-top:-20px}
+#password_recovery_container .awsui-modal-size-medium{max-width:400px}
+#password_recovery_container .awsui-modal-body{max-width:320px;margin:0 auto}
+#password_recovery_container .awsui-modal-header{font-size:22px;color:#444;font-family:"Helvetica Neue",Roboto,Arial,sans-serif;font-weight:bold}
+#password_recovery_container img{height:70px;width:200px}
+.aws-signin-captcha-box{display:inline-block;height:70px;width:200px;margin-right:5px}
+.aws-signin-iam-login-header-box{margin-bottom:20px;font-size:22px;line-height:28px;color:#444}
+        .ui-dialog{position:absolute;padding:.2em;width:300px;overflow:hidden}
+.ui-dialog .ui-dialog-titlebar{padding:.4em 1em;position:relative}
+.ui-dialog .ui-dialog-title{float:left;margin:.1em 16px .1em 0}
+.ui-dialog .ui-dialog-titlebar-close{position:absolute;right:.3em;top:50%;width:19px;margin:-10px 0 0 0;padding:1px;height:18px}
+.ui-dialog .ui-dialog-titlebar-close span{display:block;margin:1px}
+.ui-dialog .ui-dialog-titlebar-close:hover,.ui-dialog .ui-dialog-titlebar-close:focus{padding:0}
+.ui-dialog .ui-dialog-content{position:relative;border:0;padding:.5em 1em;background:0;overflow:auto;zoom:1}
+.ui-dialog .ui-dialog-buttonpane{text-align:left;border-width:1px 0 0 0;background-image:none;margin:.5em 0 0 0;padding:.3em 1em .5em .4em}
+.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset{float:right}
+.ui-dialog .ui-dialog-buttonpane button{margin:.5em .4em .5em 0;cursor:pointer}
+.ui-dialog .ui-resizable-se{width:14px;height:14px;right:3px;bottom:3px}
+.ui-draggable .ui-dialog-titlebar{cursor:move}
+        .ui-helper-hidden{display:none}
+.ui-helper-hidden-accessible{position:absolute!important;clip:rect(1px 1px 1px 1px);clip:rect(1px,1px,1px,1px)}
+.ui-helper-reset{margin:0;padding:0;border:0;outline:0;line-height:1.3;text-decoration:none;font-size:100%;list-style:none}
+.ui-helper-clearfix:before,.ui-helper-clearfix:after{content:"";display:table}
+.ui-helper-clearfix:after{clear:both}
+.ui-helper-clearfix{zoom:1}
+.ui-helper-zfix{width:100%;height:100%;top:0;left:0;position:absolute;opacity:0;filter:Alpha(Opacity=0)}
+.ui-state-disabled{cursor:default!important}
+.ui-icon{display:block;text-indent:-99999px;overflow:hidden;background-repeat:no-repeat}
+.ui-widget-overlay{position:absolute;top:0;left:0;width:100%;height:100%}
+        .ui-widget{font-family:Verdana,Arial,sans-serif;font-size:1.1em}
+.ui-widget .ui-widget{font-size:1em}
+.ui-widget input,.ui-widget select,.ui-widget textarea,.ui-widget button{font-family:Verdana,Arial,sans-serif;font-size:1em}
+.ui-widget-content{border:1px solid #aaaaaa;background:#ffffff url(resources/EN_141624n/8.htm) 50% 50% repeat-x;color:#222}
+.ui-widget-content a{color:#222}
+.ui-widget-header{border:1px solid #aaaaaa;background:#cccccc url(resources/EN_141624n/8.htm) 50% 50% repeat-x;color:#222;font-weight:bold}
+.ui-widget-header a{color:#222}
+.ui-icon{width:16px;height:16px;background-image:url(resources/EN_141624n/8.htm)}
+.ui-state-hover .ui-icon,.ui-state-focus .ui-icon{background-image:url(resources/EN_141624n/8.htm)}
+.ui-icon-close{background-position:-80px -128px}
+.ui-icon-closethick{background-position:-96px -128px}
+.ui-corner-all,.ui-corner-top,.ui-corner-left,.ui-corner-tl{-moz-border-radius-topleft:4px;-webkit-border-top-left-radius:4px;-khtml-border-top-left-radius:4px;border-top-left-radius:4px}
+.ui-corner-all,.ui-corner-top,.ui-corner-right,.ui-corner-tr{-moz-border-radius-topright:4px;-webkit-border-top-right-radius:4px;-khtml-border-top-right-radius:4px;border-top-right-radius:4px}
+.ui-corner-all,.ui-corner-bottom,.ui-corner-left,.ui-corner-bl{-moz-border-radius-bottomleft:4px;-webkit-border-bottom-left-radius:4px;-khtml-border-bottom-left-radius:4px;border-bottom-left-radius:4px}
+.ui-corner-all,.ui-corner-bottom,.ui-corner-right,.ui-corner-br{-moz-border-radius-bottomright:4px;-webkit-border-bottom-right-radius:4px;-khtml-border-bottom-right-radius:4px;border-bottom-right-radius:4px}
+.ui-widget-overlay{background:#aaaaaa url(resources/EN_141624n/8.htm) 50% 50% repeat-x;opacity:.3;filter:Alpha(Opacity=30)}
+.ui-widget-shadow{margin:-8px 0 0 -8px;padding:8px;background:#aaaaaa url(resources/EN_141624n/8.htm) 50% 50% repeat-x;opacity:.3;filter:Alpha(Opacity=30);-moz-border-radius:8px;-khtml-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}
+        .u2f-container{width:22rem}
+.u2fWarning{background-color:#fffcec;border:.09rem solid #e07700;border-radius:.4rem;padding:.8rem .9rem .09rem .9rem}
+.u2f-header-text{font-size:14px;line-height:19px}
+.u2f-text-padding{margin-bottom:.9rem}
+.u2f-image-padding{margin-bottom:.3rem}
+.u2f-header{margin-bottom:.3rem}
+.u2f-padding{margin-top:1rem;margin-bottom:1rem}
+.u2f-border{border-bottom:.09rem dotted #DDDD;border-top:.09rem dotted #DDDD;width:21rem}
+.u2f-incompatible-border{padding-bottom:.5rem;padding-top:.2rem}
+.u2f-text{line-height:.5rem}
+.buttoninput{margin-top:1rem;clear:both}
+.u2f-button{margin-top:1rem;font-size:.9rem;font-style:normal;color:#16b;display:block;line-height:.5rem;cursor:pointer}
+.u2f-mobile-link,.u2f-mobile-link:hover{font-size:.9rem}
+.mainWarningWithBorderMobile{background-color:#fffcec;border:.05rem solid #e07700;border-radius:4px;padding-top:13px;padding-left:20px}
+.mainWarningWithBorder{background-color:#fffcec;border:.05rem solid #e07700;border-radius:.3rem;padding-top:.75rem;padding-left:1rem}
+.u2f_loading:after{overflow:hidden;display:inline-block;vertical-align:bottom;-webkit-animation:ellipsis steps(4,end) 900ms infinite;animation:ellipsis steps(4,end) 900ms infinite;content:"\2026";width:0rem}
+@keyframes ellipsis{to{width:1.25rem}
+}
+@-webkit-keyframes ellipsis{to{width:1.25rem}
+}
+
+        
+    </style>
+
+</head>
+<body ng-app="IamLoginApp" ng-controller="IamController as vm" style="margin-right:40px; margin-left:40px" class="ng-scope">
+    
+
+
+<!-- ngIf: vm.inprogress && vm.mfaType != 'U2F' -->
+<div id="container">
+    
+<h1 class="background">
+    
+    <a id="logo_link" href="https://aws.amazon.com/">Amazon Web Services Login</a>
+    
+</h1>
+
+    <div id="content">
+
+        <div ng-show="vm.hasError" id="main_message" class="hide-page show-page ng-hide" ng-class="{'show-page':vm.loaded}">
+            <!-- ngIf: vm.hasError -->
+        </div>
+
+        <!-- ngIf: vm.form == 'LOGIN' --><form id="signin_form" name="vm.signin_form" class="signin_form ng-pristine ng-scope ng-invalid ng-invalid-required fwcim-form" method="post" action="https://signin.aws.amazon.com/authenticate" ng-if="vm.form == 'LOGIN'" ng-init="vm.updateFocus()" ng-submit="vm.authenticate()" data-fwcim-id="undefinedf9a01422">
+
+            <div ng-show="vm.hasOptInError" class="hide-page error-warning-width ng-hide show-page" ng-class="{'show-page':vm.loaded}">
+                <div class="awsui-alert-type-error aws-signin-alert">
+                    <div class="awsui-alert-header">
+                        <!-- ngIf: vm.hasOptInError -->
+                    </div>
+                </div>
+            </div>
+
+            <div id="signin_head_box" class="aws-signin-iam-login-header-box">
+                <b id="signin_head">Sign in as IAM user</b>
+            </div>
+
+            <div id="accountFields">
+                <fieldset>
+                    <div class="textinput" id="input_account" ng-class="{'error':!vm.signin_form.account.$valid &amp;&amp; vm.signin_form.submitted}">
+                        <label for="account">Account ID (12 digits) or account alias</label>
+                        <input id="account" name="account" type="text" required="" autocapitalize="off" autocorrect="off" value="ccformfafasfa" ng-model="vm.account" class="ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required">
+                    </div>
+                    <div class="textinput" ng-class="{'error':!vm.signin_form.username.$valid &amp;&amp; vm.signin_form.submitted}">
+                        <label for="username">IAM user name</label>
+                        <input id="username" name="username" type="text" required="" autocapitalize="off" autocorrect="off" value="" ng-model="vm.username" class="ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched">
+                    </div>
+                    <div class="textinput" ng-class="{'error':!vm.signin_form.password.$valid &amp;&amp; vm.signin_form.submitted}">
+                        <label for="password">Password</label>
+                        <input id="password" name="password" type="password" required="" autocapitalize="off" autocorrect="off" ng-model="vm.password" class="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required">
+                    </div>
+                </fieldset>
+                <div id="mfaMovedText" class="mfaMovedText">MFA users, enter your code on the next screen.</div>
+                <div class="buttoninput" id="input_signin_button">
+                    <a id="signin_button" class="css3button" href="https://signin.aws.amazon.com/oauth?redirect_uri=https%3A%2F%2Fconsole.aws.amazon.com%2Fconsole%2Fhome%3Fstate%3DhashArgs%2523%26isauthcode%3Dtrue&amp;client_id=arn%3Aaws%3Aiam%3A%3A015428540659%3Auser%2Fhomepage&amp;response_type=code&amp;iam_user=true&amp;account=ccformfafasfa#" alt="Continue" value="Continue" ng-click="vm.authenticate()">
+                        Sign in
+                    </a>
+                </div>
+            </div>
+
+            
+                <div class="link" id="link_root_account_signin">
+                    <a id="root_account_signin" ng-click="vm.rootLogin('https://signin.aws.amazon.com/oauth?response_type=code&amp;client_id=arn%3Aaws%3Aiam%3A%3A015428540659%3Auser%2Fhomepage&amp;redirect_uri=https%3A%2F%2Fconsole.aws.amazon.com%2Fconsole%2Fhome%3Fstate%3DhashArgs%2523%26isauthcode%3Dtrue')" href="https://signin.aws.amazon.com/oauth?redirect_uri=https%3A%2F%2Fconsole.aws.amazon.com%2Fconsole%2Fhome%3Fstate%3DhashArgs%2523%26isauthcode%3Dtrue&amp;client_id=arn%3Aaws%3Aiam%3A%3A015428540659%3Auser%2Fhomepage&amp;response_type=code&amp;iam_user=true&amp;account=ccformfafasfa#">Sign in using root user email</a>
+                </div>
+            
+
+            
+                
+                
+                    <div class="iam_forgotpassword">
+                        <a class="iam_forgotpassword_link" ng-class="{'iam_forgotpassword_title': vm.showDetails}" ng-click="vm.showDetails = ! vm.showDetails" href="https://signin.aws.amazon.com/oauth?redirect_uri=https%3A%2F%2Fconsole.aws.amazon.com%2Fconsole%2Fhome%3Fstate%3DhashArgs%2523%26isauthcode%3Dtrue&amp;client_id=arn%3Aaws%3Aiam%3A%3A015428540659%3Auser%2Fhomepage&amp;response_type=code&amp;iam_user=true&amp;account=ccformfafasfa#">Forgot password?</a>
+                        <div class="hide-page ng-hide" ng-show="vm.showDetails" ng-class="{'show-page': vm.showDetails}">
+                            <p>
+                                Account owners, return to the main sign-in page and sign in using your email address. IAM users, only your administrator can reset your password. For help, contact the administrator that provided you with your user name.
+                                <span>
+                            <a class="iam_forgotpassword_link" href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys_retrieve.html" target="_blank">Learn more</a>
+                        </span>
+                            </p>
+                        </div>
+                    </div>
+                
+            
+        </form><!-- end ngIf: vm.form == 'LOGIN' -->
+
+        <div class="hide-page show-page" ng-class="{'show-page':vm.loaded}">
+            <!-- ngIf: vm.form == 'MFA' -->
+
+            <!-- ngIf: vm.form == 'RESYNC_MFA' -->
+
+            <!-- ngIf: vm.form == 'PASSWORD_EXPIRING' -->
+        </div>
+
+        <div id="center-2" ng-hide="vm.form == 'MFA' &amp;&amp; vm.mfaType != 'U2F'">
+            <a id="marketingimagelink" href="https://aws.amazon.com/iq/?sc_icampaign=Adoption_Campaign_pm-sm-w9y20-aiq-adoption-console-signin&amp;sc_ichannel=ha&amp;sc_icontent=awssm-3847&amp;sc_ioutcome=Enterprise_Digital_Marketing&amp;sc_iplace=signin&amp;trk=ha_a131L0000084TT0QAM~ha_awssm-3847&amp;trkCampaign=pac-ce-2019-aiq-customer_page" target="_blank"><img src="resources/EN_141624n/9.png" alt="AWS Marketing" data-original-src="https://d1.awsstatic.com/Digital%20Marketing/sitemerch/sign-in/en/Site-Merch_AWS-IQ_ConsoleSign-In.fe6e2805be67a8366c09932959f46551f9cd6576.png" width="570" height="450"></a>
+            <br>
+        </div>
+    </div>
+
+    <div id="password_recovery_container" class="hide-page show-page" ng-class="{'show-page':vm.loaded}">
+        <div class="awsui">
+            <awsui-modal header="Password recovery" visible="vm.showForgotPasswordPopup" dismiss="vm.dismissForgotPasswordPopup()" initialized="true"><div class="awsui-modal-tabtrap" tabindex="-1"></div><div class="awsui-modal-__state-hidden awsui-modal-container"><div class="awsui-modal-dialog awsui-modal-size-medium" tabindex="-1"><div class="awsui-modal-content"><div class="awsui-modal-header"><button class="awsui-modal-dismiss-control awsui-button-as-link awsui-icon times"></button>Password recovery</div><div class="awsui-modal-body"><div region-container="content"><span dom-region="content" class="ng-scope">
+                    <awsui-alert id="error_message" header="" content="" type="error" visible="vm.hasForgotPasswordError" initialized="true" awsui-alert-hidden="awsui-alert-hidden"><div class="awsui-alert-inside awsui-alert-type-error" aria-hidden="true" role="alert"></div></awsui-alert>
+                    <div ng-show="vm.emailSuccessfullySent" class="ng-hide">
+                        <b class="awsui-icon awsui-icon-big alert-check-circle" style="margin-left:-27px; !important">Password email sent</b>
+                        <br>
+                        <span id="email_success_message">Instructions have been sent to the email address associated with this AWS account. Check that email and follow the instructions to reset your password.</span>
+                    </div>
+                    <form id="password_recovery_form" name="vm.password_recovery_form" class="signin_form ng-pristine ng-invalid ng-invalid-required" novalidate="" method="post" ng-hide="vm.emailSuccessfullySent">
+                        <div class="textinput" ng-class="{'error':!vm.password_recovery_form.account2.$valid &amp;&amp; vm.password_recovery_form.submitted}">
+                            <label for="account2">Account ID (12 digits) or account alias</label>
+                            <input id="account2" name="account2" type="text" required="" autocapitalize="off" autocorrect="off" value="" ng-model="vm.account" class="ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-required">
+                        </div>
+                        <div class="textinput" ng-class="{'error':!vm.password_recovery_form.username2.$valid &amp;&amp; vm.pasword_recovery_form.submitted}">
+                            <label for="username2">IAM user name</label>
+                            <input id="username2" name="username2" type="text" required="" autocapitalize="off" autocorrect="off" value="" ng-model="vm.username" class="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required">
+                        </div>
+                        <div class="textinput">
+                            <b>Type the characters seen in the image below</b>
+                        </div>
+                        <div class="awsui-util-mt-s">
+                            <div class="aws-signin-captcha-box">
+                                <img id="password_recovery_captcha_image">
+                            </div>
+                            <button id="password_recovery_refresh_captcha" type="button" ng-click="vm.refreshForgotPasswordCaptcha()" class="awsui-button awsui-button-no-text awsui-button-size-normal awsui-button-variant-normal awsui-hover-child-icons" style="position: relative; bottom:10px; !important">
+                                <span class="awsui-button-icon awsui-button-icon-left awsui-icon refresh"></span>
+                            </button>
+                        </div>
+                        <div class="textinput" ng-class="{'error':!vm.password_recovery_form.enter_captcha.$valid &amp;&amp; vm.password_recovery_form.submitted}">
+                            <input id="captcha_token" ng-value="vm.ces" type="hidden">
+                            <input id="enter_captcha" name="enter_captcha" ng-model="vm.captchaGuess" type="text" required="" autocapitalize="off" autocorrect="off" placeholder="Enter characters here" class="ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required">
+                            <div ng-show="!vm.password_recovery_form.enter_captcha.$valid &amp;&amp; vm.password_recovery_form.submitted" class="awsui-text-small ng-hide">Enter the characters shown above</div>
+                        </div>
+                    </form>
+                </span></div></div><div class="awsui-modal-footer"><div region-container="footer"><span dom-region="footer" class="ng-scope">
+                    <span class="awsui-util-f-r">
+                        <awsui-button ng-hide="vm.emailSuccessfullySent" variant="link" text="Cancel" ng-click="vm.dismissForgotPasswordPopup()" initialized="true"><button class="awsui-button awsui-button-size-normal awsui-button-variant-link awsui-hover-child-icons" type="submit"><span region-container="text">Cancel</span></button></awsui-button>
+                        <awsui-button id="send_email_button" ng-hide="vm.emailSuccessfullySent" variant="primary" text="Send email" ng-click="vm.submitForgotPasswordPopup()" initialized="true"><button class="awsui-button awsui-button-size-normal awsui-button-variant-primary awsui-hover-child-icons" type="submit"><span region-container="text">Send email</span></button></awsui-button>
+                        <awsui-button ng-show="vm.emailSuccessfullySent" variant="primary" text="Done" ng-click="vm.dismissForgotPasswordPopup()" initialized="true" class="ng-hide"><button class="awsui-button awsui-button-size-normal awsui-button-variant-primary awsui-hover-child-icons" type="submit"><span region-container="text">Done</span></button></awsui-button>
+                    </span>
+                </span></div></div></div></div></div><div class="awsui-modal-__state-hidden awsui-modal-overlay"></div><div class="awsui-modal-tabtrap" tabindex="-1"></div></awsui-modal>
+        </div>
+    </div>
+
+    
+    <br>
+
+    <div id="smallprint" style="text-align: center;">
+  <div class="textinput" style="text-align: center; font-size: x-small;">
+    
+
+    <div class="language-dropdown" style="border-top: 1px solid #ccc; margin-bottom: 12px; padding-top: 1em; text-align: center;">
+        <select id="languageSelector" ng-model="language" ng-change="languageUpdate(language, '.amazon.com')" class="ng-pristine ng-untouched ng-valid ng-empty"><option value="? undefined:undefined ?"></option>
+        
+            <option value="en_US" ng-selected="true" selected="selected">English</option>
+        
+            <option value="de_DE">Deutsch</option>
+        
+            <option value="es_ES">Español</option>
+        
+            <option value="fr_FR">Français</option>
+        
+            <option value="ja">日本語</option>
+        
+            <option value="pt_BR">Português</option>
+        
+            <option value="ko_KR">한국어</option>
+        
+            <option value="zh_CN">中文(简体)</option>
+        
+        </select>
+        
+        
+    </div>
+    
+    <a href="https://aws.amazon.com/terms/">Terms of Use</a>
+    <a href="https://aws.amazon.com/privacy/">Privacy Policy</a><br>
+    
+
+    
+        © 1996-2020, Amazon Web Services, Inc. or its affiliates.
+    
+
+  </div>
+</div>
+
+
+</div>
+
+    
+
+
+
+    <div id="lostDeviceHeader"></div>
+
+    
+
+    
+
+
+<div class="fwcim-container"></div></body></html>
