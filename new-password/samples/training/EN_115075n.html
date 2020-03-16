@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; media-src 'self' data:; style-src 'self' data: 'unsafe-inline'; font-src 'self' data:; frame-src 'self' data:"><meta http-equiv="Memento-Datetime" content="Fri, 13 Mar 2020 14:00:21 GMT"><link rel="original" href="https://www.buzzfeed.com/auth/signin?redirect=https%3A%2F%2Fcommunity.buzzfeed.com">
+<link rel="stylesheet" type="text/css" href="resources/EN_115075n/1.css" data-original-href="https://www.buzzfeed.com/static-assets/solid/solid.2.10.6.min.css">
+<style>
+.grecaptcha-badge { visibility: hidden; }
+</style>
+<title>BuzzFeed</title>
+
+
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<div class="xs-col-12 sm-col-6 lg-col-4 sm-offset-3 lg-offset-4 card xs-my4 xs-p3">
+<div class="xs-text-center">
+<h1 class="bold xs-mb1 xs-text-2">Sign in</h1>
+<p class="xs-mb2">Or <a href="https://www.buzzfeed.com/auth/signup?redirect=https://community.buzzfeed.com">sign up</a> to make your own posts</p>
+<a href="https://www.buzzfeed.com/auth/csrf?provider=facebook&amp;redirect=https://community.buzzfeed.com" class="button button--social button--icon button--facebook xs-col-12 xs-mb1">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38 38" aria-hidden="true">
+<title>Facebook</title>
+<path d="M36.5 0h-35C.3 0 0 .3 0 1.5v34.9C0 37.7.3 38 1.5 38h18.9V23.4h-5.8v-5.8h5.8v-4.4c0-5.1 2.8-7.8 7.4-7.8 2.2 0 4.3.2 4.3.2v4.7h-2.8c-2.5 0-3.1 1.8-3.1 3.5v3.8h6l-.8 5.8h-5.3V38h10.2c1.2 0 1.5-.3 1.5-1.5v-35C38 .3 37.7 0 36.5 0z"></path>
+</svg>
+Sign in with Facebook
+</a>
+<a href="https://www.buzzfeed.com/auth/csrf?provider=google&amp;redirect=https://community.buzzfeed.com" class="button button--social button--icon button--google xs-col-12 xs-mb1">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38 38" aria-hidden="true">
+<title>Google</title>
+<path d="M23.5 17.3c.1.6.2 1.2.2 2 0 6.8-4.6 11.6-11.6 11.6C5.4 30.9 0 25.6 0 19 0 12.4 5.4 7.1 12.1 7.1c3.3 0 6 1.2 8.1 3.1l-3.3 3.1c-.9-.8-2.5-1.8-4.8-1.8-4.1 0-7.5 3.4-7.5 7.5s3.4 7.5 7.5 7.5c4.8 0 6.6-3.4 6.9-5.1h-6.9v-4.1h11.4zm11 0v-3.4H31v3.4h-3.5v3.4H31v3.4h3.5v-3.4H38v-3.4h-3.5z"></path>
+</svg>
+Sign in with Google
+</a>
+
+<div class="xs-mb3">
+<div class="xs-col-4 xs-border-bottom xs-inline-block xs-mr1"></div>
+<div class="xs-text-4 xs-align-middle text-gray-lightest xs-inline-block">or</div>
+<div class="xs-col-4 xs-border-bottom xs-inline-block xs-ml1"></div>
+</div>
+</div>
+<div id="signin_error" class="fill-red-lighter xs-border rounded xs-p2 xs-my3 xs-flex-align-center xs-hide">
+<div class="xs-pr2">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38 38" class="svg-red svg-4">
+<path d="M19 0C8.5 0 0 8.5 0 19s8.5 19 19 19 19-8.5 19-19S29.5 0 19 0zm-2 7h4v14h-4V7zm2 24c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3z"></path>
+</svg>
+</div>
+<p class="text-red">
+<span id="signin_error_message">We don't recognize that username or password.</span>
+<span id="forgot_your_password" class="xs-hide"><br>Forgot your password? <u><a class="text-red" href="https://www.buzzfeed.com/auth/password/reset?redirect=https://community.buzzfeed.com">Reset it here</a></u></span>
+</p>
+</div>
+<div id="account_unverified" class="fill-red-lighter xs-border rounded xs-p2 xs-my3 xs-flex-align-center xs-hide">
+<div class="xs-pr2">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38 38" class="svg-red svg-4">
+<path d="M19 0C8.5 0 0 8.5 0 19s8.5 19 19 19 19-8.5 19-19S29.5 0 19 0zm-2 7h4v14h-4V7zm2 24c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3z"></path>
+</svg>
+</div>
+<p class="text-red">Your account is currently unverified. We've sent you an email with a new temporary password and further instructions to follow</p>
+</div>
+<form id="signin_form" method="post">
+<input type="hidden" name="_xsrf" value="2|ecfabc96|08bc36a0dda0c5961527a5c1a943bbbb|1583850753">
+<input type="hidden" name="recaptcha_token" id="recaptcha_token" value="03AERD8XoJYnegXw-K3iVsVMcSsUtgWwjha4dM4nIsuMjqEnEK__SYRfKVWJIox952vyD4vQ93LyzjA98gvpjm6NlLjObptcuh94CImgcNEUrrWRd9uC_7FZMw1nHCmbDJDS5Yw8u6hkeu_441W6JUvX8-RxA8-8pWeXBUqnhXkUQw2PcjH9HAqLDW-ToIw0N8YstKCtzt3bn5-Uv6AHkF1MiZhbLfzhCGuUR1i2Zi57p_xRBZ2bSp2aqwKU4Bnc4oMrop1JmXa-ha5B0l6MN6sq6kk9rLTBWDOkSS33XO-w4XKb7NmqRIwEPi4goqJGIUtkiFHyPJJgc2pw2HRO-nap-PXuoUYeAHHUmn_AY9IaEoUOGC9Eb41nJaGOAnAY1VhVuWYaA9ALRw">
+<label class="form-label">Username or email</label>
+<input class="text-input xs-col-12 xs-mb2" type="text" name="user" id="input_identifier" autocorrect="off" autocapitalize="off">
+<label class="form-label">Password</label>
+<input class="text-input xs-col-12 xs-mb2" type="password" name="pass" id="input_password">
+<input class="button xs-col-12" type="submit" value="Sign in" id="signin">
+<label class="form-helper">
+This site is protected by reCAPTCHA and the Google
+<a href="https://policies.google.com/privacy">Privacy Policy</a> and
+<a href="https://policies.google.com/terms">Terms of Service</a> apply.
+</label>
+</form>
+<p class="xs-my2 xs-text-center"><a href="https://www.buzzfeed.com/auth/password/reset?redirect=https://community.buzzfeed.com">I forgot my password</a></p>
+</div>
+
+
+
+<div><div class="grecaptcha-badge" data-style="bottomright" style="width: 256px; height: 60px; display: block; transition: right 0.3s ease 0s; position: fixed; bottom: 14px; right: -186px; box-shadow: gray 0px 0px 5px; border-radius: 2px; overflow: hidden;"><div class="grecaptcha-logo"><iframe src="resources/EN_115075n/2.htm" role="presentation" name="a-m8uj2fjk18qo" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" data-original-src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LeMqMAUAAAAADLgrLKQrapEkPvnj4NbeqIllU6H&amp;co=aHR0cHM6Ly93d3cuYnV6emZlZWQuY29tOjQ0Mw..&amp;hl=en&amp;v=f1wAZV34wmOO4-wA3kszbUcM&amp;size=invisible&amp;cb=xx8f5mr12yl6" width="256" height="60" frameborder="0"></iframe></div><div class="grecaptcha-error"></div><textarea id="g-recaptcha-response-100000" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div><iframe style="display: none;"></iframe></div></body></html>

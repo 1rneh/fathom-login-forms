@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html class="no-js"><head><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; media-src 'self' data:; style-src 'self' data: 'unsafe-inline'; font-src 'self' data:; frame-src 'self' data:"><meta http-equiv="Memento-Datetime" content="Thu, 27 Feb 2020 13:53:32 GMT"><link rel="original" href="https://dashboard.narrativ.com/#/login"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style><meta name="description" content="Narrativ partners with premium publishers to deliver the best experience on shopping content."><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/png" href="resources/EN_292n/1.png" sizes="16x16" data-original-href="https://dashboard.narrativ.com/images/favicons/favicon-16x16.png"><link rel="icon" type="image/png" href="resources/EN_292n/2.png" sizes="32x32" data-original-href="https://dashboard.narrativ.com/images/favicons/favicon-32x32.png"><link rel="icon" type="image/png" href="resources/EN_292n/3.png" sizes="96x96" data-original-href="https://dashboard.narrativ.com/images/favicons/favicon-96x96.png"><!-- Place favicon.ico and apple-touch-icon.png in the root directory --><link rel="stylesheet" href="resources/EN_292n/4.css" data-original-href="https://dashboard.narrativ.com/styles/vendor.css"><link rel="stylesheet" href="resources/EN_292n/5.css" data-original-href="https://dashboard.narrativ.com/styles/main.css"><title>Narrativ | Better Products, Great Recommendations</title><style type="text/css">iframe#_hjRemoteVarsFrame {display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;}</style></head><body ng-controller="MainHelperCtrl" class="main-login-route login-route"><!--[if lt IE 7]>
+	<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+	<![endif]--><main-body class="ng-isolate-scope"><!-- New Relic tag is not compatible with ng-include -->
+<div ng-bind-html="$ctrl.newRelicScript" class="ng-binding"></div>
+
+<!-- Google Analytics -->
+
+
+<nav-header ng-hide="$ctrl.invalidNavRoute()" current-user="$ctrl.currentUser" user-role="" hide-nav-bar="$ctrl.hideNavBar" class="ng-isolate-scope ng-hide"><!-- ngIf: $ctrl.revealNavBarOverlay() -->
+
+<div ng-class="{'hide-left': $ctrl.hideNavBar}" class="nav-bar">
+	<div class="nav-main">
+		<div class="hamburger-container">
+			<div ng-click="$ctrl.hideNavBar = !$ctrl.hideNavBar" class="nav-hamburger">
+				<img src="resources/EN_292n/6.svg" data-original-src="https://dashboard.narrativ.com/images/icons/hamburger.svg">
+			</div>
+		</div>
+		<a class="nav-logo" href="#/">
+			<img src="resources/EN_292n/7.png" data-original-src="https://dashboard.narrativ.com/images/logos/narrativ_logo2.png">
+		</a>
+		<div class="nav-main-links">
+			<!-- ngRepeat: navItem in $ctrl.navMenu --><!-- ngIf: $ctrl.showNav(navItem) --><!-- end ngRepeat: navItem in $ctrl.navMenu --><!-- ngIf: $ctrl.showNav(navItem) --><!-- end ngRepeat: navItem in $ctrl.navMenu --><!-- ngIf: $ctrl.showNav(navItem) --><!-- end ngRepeat: navItem in $ctrl.navMenu --><!-- ngIf: $ctrl.showNav(navItem) --><!-- end ngRepeat: navItem in $ctrl.navMenu --><!-- ngIf: $ctrl.showNav(navItem) --><!-- end ngRepeat: navItem in $ctrl.navMenu --><!-- ngIf: $ctrl.showNav(navItem) --><!-- end ngRepeat: navItem in $ctrl.navMenu --><!-- ngIf: $ctrl.showNav(navItem) --><!-- end ngRepeat: navItem in $ctrl.navMenu --><!-- ngIf: $ctrl.showNav(navItem) --><!-- end ngRepeat: navItem in $ctrl.navMenu --><!-- ngIf: $ctrl.showNav(navItem) --><!-- end ngRepeat: navItem in $ctrl.navMenu --><!-- ngIf: $ctrl.showNav(navItem) --><!-- end ngRepeat: navItem in $ctrl.navMenu --><!-- ngIf: $ctrl.showNav(navItem) --><!-- end ngRepeat: navItem in $ctrl.navMenu --><!-- ngIf: $ctrl.showNav(navItem) --><!-- end ngRepeat: navItem in $ctrl.navMenu --><!-- ngIf: $ctrl.showNav(navItem) --><!-- end ngRepeat: navItem in $ctrl.navMenu -->
+		</div>
+	</div>
+</div>
+
+<ul class="top-nav-header">
+	<div ng-click="$ctrl.hideNavBar = !$ctrl.hideNavBar" class="nav-hamburger">
+		<img src="resources/EN_292n/6.svg" data-original-src="https://dashboard.narrativ.com/images/icons/hamburger.svg">
+	</div>
+	<a class="nav-logo" href="#/">
+		<img src="resources/EN_292n/7.png" data-original-src="https://dashboard.narrativ.com/images/logos/narrativ_logo2.png">
+	</a>
+	<!-- ngIf: $ctrl.displaySearch() -->
+	<li class="nav-item">
+		<div class="account-dropdown dropdown" uib-dropdown="">
+			<div uib-dropdown-toggle="" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+				<span class="ng-binding"></span>
+				<span class="icon bamx-icon-m-down"></span>
+			</div>
+			<ul class="pull-right dropdown-menu" uib-dropdown-menu="">
+				<!-- ngRepeat: item in $ctrl.menu() -->
+				<li>
+					<a href="" ng-click="$ctrl.logout()">Sign out</a>
+				</li>
+			</ul>
+		</div>
+	</li>
+
+	<!-- ngIf: $ctrl.currentUser.isAdmin || $ctrl.currentUser.accessList.length > 1 -->
+</ul>
+
+<!-- This is only shown when we want to notify publishers of changes to our T&C -->
+<!-- ngIf: $ctrl.showNotice && $ctrl.currentUser.userRole == 'publishers' -->
+</nav-header>
+
+<!-- ngView: --><div class="page-container-fixed ng-scope" ng-class="{'move-right': $ctrl.moveContentRight()}" ng-view=""><bx-login class="ng-scope ng-isolate-scope"><!--
+<div class="motd">
+	<p>
+		<span class="motd-header">
+			Scheduled Maintenance: Saturday Jan. 18, 10am - 12pm EST
+		</span>
+	</p>
+	<p>
+		Portions of the Narrativ dashboard will be unavailable while we perform routine server upgrades.
+		We apologize for any inconvenience.
+	</p>
+</div>
+-->
+
+<div class="content-container">
+	<div class="logo">
+		<img src="resources/EN_292n/8.png" title="Narrativ" alt="Narrativ is the first real-time exchange for premium Publisher content." data-original-src="https://dashboard.narrativ.com/images/logos/narrativ_logo.png">
+	</div>
+
+	<!-- ngIf: !$ctrl.termsConditionsFailed --><form novalidate="" ng-submit="$ctrl.loginUser()" ng-if="!$ctrl.termsConditionsFailed" class="login-form ng-pristine ng-valid ng-scope ng-valid-pattern" style="">
+		<div class="clearfix"></div>
+
+		<woosh-input label="Email" type="text" model="$ctrl.credentials.username" condition="$ctrl.credentials.username" input-class="username" class="ng-isolate-scope"><div class="woosh-input-container ng-pristine ng-valid ng-valid-pattern" ng-form="wooshInput" style="">
+	<label class="woosh-text ng-binding" ng-class="{'is-filled': condition || focused}">
+		Email
+	</label>
+	<!-- ngIf: datatype === 'currency' && !this.wooshInput[name].$isEmpty(this.wooshInput[name].$viewValue) -->
+	<input class="username ng-empty ng-valid-pattern" id="username" ng-model="model" ng-model-options="modelOptions || {}" ng-focus="inputFocus($event)" ng-blur="inputBlur($event)" type="text" name="" ng-disabled="" rendered="" max="" min="" format="" ng-pattern="" suppress-rendered-warning="true" style="">
+    
+    <!-- ngIf: error -->
+</div>
+</woosh-input>
+		<woosh-input label="Password" type="password" model="$ctrl.credentials.password" condition="$ctrl.credentials.password" input-class="password" class="ng-isolate-scope"><div class="woosh-input-container ng-pristine ng-valid ng-valid-pattern" ng-form="wooshInput" style="">
+	<label class="woosh-text ng-binding" ng-class="{'is-filled': condition || focused}">
+		Password
+	</label>
+	<!-- ngIf: datatype === 'currency' && !this.wooshInput[name].$isEmpty(this.wooshInput[name].$viewValue) -->
+	<input class="password ng-empty ng-valid-pattern" id="password" ng-model="model" ng-model-options="modelOptions || {}" ng-focus="inputFocus($event)" ng-blur="inputBlur($event)" type="password" name="" ng-disabled="" rendered="" max="" min="" format="" ng-pattern="" suppress-rendered-warning="true" style="">
+    
+    <!-- ngIf: error -->
+</div>
+</woosh-input>
+
+		<!-- ngIf: $ctrl.message -->
+
+		<button class="submit-btn">Sign in</button>
+
+		<a href="#/reset-password-request" class="forgot-password">
+			Forgot password?
+		</a>
+	</form><!-- end ngIf: !$ctrl.termsConditionsFailed -->
+
+	<!-- Terms failure -->
+	<!-- ngIf: $ctrl.termsConditionsFailed -->
+</div>
+</bx-login></div>
+
+<footer ng-hide="!$ctrl.showFooter()" class="">
+	<div class="credentials-links">
+		<a href="https://narrativ.com/">About</a>
+		<a href="#/privacy-policy">Privacy</a>
+	</div>
+</footer>
+</main-body><!--[if lt IE 9]><script src="/scripts/oldieshim.js"></script><![endif]--><!-- Bundled application code --><iframe style="display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;" name="_hjRemoteVarsFrame" title="_hjRemoteVarsFrame" id="_hjRemoteVarsFrame" src="resources/EN_292n/9.htm" data-original-src="https://vars.hotjar.com/box-469cf41adb11dc78be68c1ae7f9457a4.html"></iframe></body></html>

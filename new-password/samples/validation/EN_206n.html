@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; media-src 'self' data:; style-src 'self' data: 'unsafe-inline'; font-src 'self' data:; frame-src 'self' data:"><meta http-equiv="Memento-Datetime" content="Wed, 26 Feb 2020 13:31:12 GMT"><link rel="original" href="https://login.newscorpaustralia.com/login?state=g6Fo2SBFSjM0aU85N0VwSzhvMFhNMXV1aEE2cC1CRl9UbGFJYaN0aWTZIGM3WGtOSnM0dkxBaWZoRmpqU3FMeFZtQmJMRFBhQW9Co2NpZNkgNTJ0cTg5VEJmS1dzMjBqVUhCZXU4aXFhYUNuZU1jNWE&amp;client=52tq89TBfKWs20jUHBeu8iqaaCneMc5a&amp;protocol=samlp&amp;prevent_sign_up=true&amp;prompt=none&amp;site=themercury">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Log in</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" id="favicon-holder" href="resources/EN_206n/1.htm" data-original-href="https://www.themercurysit.com.au/wp-content/themes/vip/newscorpau-tangram-ui/src/elements/tge-favicons/processed/mercury/favicon.ico?v=1582723841434">
+<style type="text/css">/* These are UI customizations done overriding Lock v11.5.2 CSS */
+/* It is recommended that a specific patch version of Lock is used. */
+/* With new releases of Lock, some styling may change, leading to unintended problems
+   if you are overriding the CSS. If Lock version is upgraded, regression needs to be done
+   to find unexpected behavior in UI due to the changes. */
+
+
+#r-login-container{
+	background: white;
+	 /* overflow: auto; */
+}
+
+/* Fonts */
+@font-face {
+font-family: Times Classic Bold;
+src: url('resources/EN_206n/2.jpeg');
+src: url('resources/EN_206n/2.jpeg') format("eot"),
+url('resources/EN_206n/3.jpeg') format("woff2"),
+url('resources/EN_206n/4.woff') format("woff"),
+url('resources/EN_206n/5.jpeg') format("truetype")
+}
+@font-face {
+	font-family: Times Classic Medium;
+	src: url('resources/EN_206n/6.jpeg');
+	src: url('resources/EN_206n/6.jpeg') format("eot"),
+	url('resources/EN_206n/7.jpeg') format("woff2"),
+	url('resources/EN_206n/8.woff') format("woff"),
+	url('resources/EN_206n/9.jpeg') format("truetype")
+}
+@font-face {
+	font-family: Times Classic Display;
+	src: url('resources/EN_206n/10.jpeg');
+	src: url('resources/EN_206n/10.jpeg') format("eot"),
+	url('resources/EN_206n/11.jpeg') format("woff2"),
+	url('resources/EN_206n/12.woff') format("woff"),
+	url('resources/EN_206n/13.jpeg') format("truetype")
+}
+@font-face {
+	font-family: Times Classic Italic;
+	src: url('resources/EN_206n/14.jpeg');
+	src: url('resources/EN_206n/14.jpeg') format("eot"),
+	url('resources/EN_206n/15.jpeg') format("woff2"),
+	url('resources/EN_206n/16.woff') format("woff"),
+	url('resources/EN_206n/17.jpeg') format("truetype")
+}
+@font-face {
+	font-family: Times Classic Bold Italic;
+	src: url('resources/EN_206n/18.jpeg');
+	src: url('resources/EN_206n/18.jpeg') format("eot"),
+	url('resources/EN_206n/19.jpeg') format("woff2"),
+	url('resources/EN_206n/20.woff') format("woff"),
+	url('resources/EN_206n/21.jpeg') format("truetype")
+}
+
+select, textarea, input[type="text"], input[type="password"], input[type="datetime"], 
+input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], 
+input[type="week"], input[type="number"], input[type="email"], input[type="url"], 
+input[type="search"], input[type="tel"], input[type="color"] { font-size: 16px; }
+
+#r-login-container .auth0-lock.auth0-lock input[type='checkbox']:focus,
+#r-login-container .auth0-lock.auth0-lock a:focus,
+#r-login-container .auth0-lock.auth0-lock button:focus {
+	outline: 1px solid #ccc;
+}
+#r-login-container .auth0-lock.auth0-lock .auth0-lock-header-logo {
+	height: auto;
+	max-width: calc(100% - 60px);
+}
+#r-login-container.nca .auth0-lock.auth0-lock .auth0-lock-header-logo,
+#r-login-container.myprofile .auth0-lock.auth0-lock .auth0-lock-header-logo {
+	height: 58px;
+}
+
+#r-login-container .auth0-lock.auth0-lock .auth0-loading-container {
+	display: none;
+	position:relative
+}
+#r-login-container .auth0-lock .auth0-loading-screen .auth0-loading-container {
+	display: block;
+}
+#r-login-container.login-page.warn .auth0-lock .auth0-global-message.auth0-global-message-error {
+	background-color: #7ac142;
+}
+#r-login-container .auth0-lock.auth0-lock .auth0-lock-tabs, #r-login-container .auth0-lock.auth0-lock .auth0-lock-form .auth0-lock-alternative .auth0-lock-alternative-link {
+	font-size: 14px;
+} 
+
+#r-login-container .auth-lock-social-buttons-pane {
+	width: 80%;
+	margin: 0 auto;
+}
+
+
+#r-login-container .auth-lock-social-buttons-pane .auth0-lock-social-button.auth0-lock-social-big-button .auth0-lock-social-button-icon {
+	background-color: rgba(0,0,0,0);
+}
+#r-login-container .auth-lock-social-buttons-pane .auth0-lock-social-button[data-provider^="facebook"] {
+	background-color: #3b5998;
+}
+#r-login-container .auth-lock-social-buttons-pane .auth0-lock-social-button[data-provider^="google"] {
+	background-color: #db3236;
+}
+#r-login-container .auth-lock-social-buttons-pane .auth0-lock-social-button[data-provider^="twitter"] {
+	background-color: #38A1F3;
+}
+
+#r-login-container .auth0-lock .auth0-lock-name {
+	display: none;
+}
+
+#r-login-container #change-password-widget-container .auth0-lock .auth0-lock-name {
+	display: block;
+	margin-top: 10px;
+}
+
+#r-login-container .auth0-lock.auth0-lock .auth0-lock-header,
+#r-login-container .auth0-lock.auth0-lock .auth0-lock-submit {
+	border-radius: 0;
+}
+
+#r-login-container .auth0-lock.auth0-lock .auth0-lock-submit:focus{
+	outline: 1px dotted #999;
+}
+
+#r-login-container .auth0-lock.auth0-lock .auth0-lock-header {
+	height: auto;
+	paddint-bottom: 0;
+}
+
+#r-login-container .auth0-lock-view-content {
+	margin-top:10px;
+}
+
+/* removing Lock icons */
+#r-login-container .auth0-lock.auth0-lock .auth0-lock-input-wrap.auth0-lock-input-wrap-with-icon,
+#r-login-container .auth0-lock.auth0-lock .auth0-lock-input-wrap {
+    padding-left: 0;
+    border-color: #ccc;
+    background: none;
+}
+
+#r-login-container .auth0-lock.auth0-lock .auth0-lock-input-wrap.auth0-lock-input-wrap-with-icon.auth0-lock-focused,
+#r-login-container .auth0-lock.auth0-lock .auth0-lock-input-wrap.auth0-lock-focused {
+	border-color: #777;
+}
+
+#r-login-container .auth0-lock.auth0-lock .auth0-lock-error .auth0-lock-input-wrap {
+	border-color: #f00 !important;
+}
+/** For Why Sign Up Link in NCA **/
+#r-login-container .auth0-lock-opened-in-frame .why-sign-up-link {
+	text-align: center;
+	font-size: 16px;
+	padding: 10px;
+}
+#r-login-container .auth0-lock-opened-in-frame .why-sign-up-link a {
+	color: #0000FF;
+}
+
+#r-login-container .auth0-lock.auth0-lock .auth0-lock-terms {
+	text-align: left;
+	margin-bottom: 10px;
+	background: none;
+	padding: 0;
+}
+
+#r-login-container .auth0-lock.auth0-lock .auth0-lock-terms span {
+	margin-bottom: 10px;
+	line-height: 20px;
+	padding: 10px;
+	display: block;
+}
+
+#r-login-container .auth0-lock.auth0-lock .auth0-lock-terms span.auth0-lock-sign-up-terms-agreement {
+	display: block;
+}
+
+#r-login-container .auth0-lock.auth0-lock .auth0-lock-terms span p {
+	margin: 0; 
+}
+
+#r-login-container .auth0-lock.auth0-lock .auth0-lock-terms span p.terms-intro {
+	margin-bottom: 10px;
+}
+
+#r-login-container .auth0-lock.auth0-lock .auth0-lock-terms span, 
+#r-login-container .auth0-lock.auth0-lock .auth0-lock-terms .accordion-wrapper {
+	background: #f4f4f4;
+}
+
+#r-login-container .auth0-lock.auth0-lock .auth0-lock-terms .accordion-wrapper,
+#r-login-container .auth0-lock.auth0-lock .auth0-lock-terms span.auth0-lock-sign-up-terms-agreement {
+	padding:10px;
+}
+
+/* About privacy accordion */
+#r-login-container .auth0-lock.auth0-lock .auth0-lock-terms .accordion-item-heading {
+  cursor:pointer;
+  background-image: url("resources/EN_206n/22.png");
+  background-repeat: no-repeat;
+  padding-left: 25px;
+}
+
+#r-login-container .auth0-lock.auth0-lock .auth0-lock-terms .accordion-item-heading h2 {
+	margin: 0;
+	font-weight: normal;
+	font-size: 1.1em;
+}
+
+#r-login-container .auth0-lock.auth0-lock .auth0-lock-terms .accordion-item-heading h2 span.arrow {
+	display: block;
+  width: 20px;
+  padding: 0;
+  height: 20px;
+	margin: 0;
+	float: right;
+	background: no-repeat right url("resources/EN_206n/23.png");
+}
+
+#r-login-container .auth0-lock.auth0-lock .auth0-lock-terms .open-acc .accordion-item-heading h2 span {
+	transform: scaleY(-1);
+}
+
+#r-login-container .accordion-item {
+  display:block;   
+  box-sizing: border-box;
+}
+
+#r-login-container .auth0-lock.auth0-lock .auth0-lock-terms .close-acc .accordion-item-content {
+  height:0px;
+  transition:height 0.5s ease-out;
+  -webkit-transform: scaleY(0);
+	-o-transform: scaleY(0);
+	-ms-transform: scaleY(0);
+	transform: scaleY(0);
+}
+
+#r-login-container .auth0-lock.auth0-lock .auth0-lock-terms .open-acc .accordion-item-content {      
+  -webkit-transform: scaleY(1);
+	-o-transform: scaleY(1);
+	-ms-transform: scaleY(1);
+	transform: scaleY(1);
+  -webkit-transform-origin: top;
+	-o-transform-origin: top;
+	-ms-transform-origin: top;
+	transform-origin: top;
+	-webkit-transition: -webkit-transform 0.2s ease-out;
+	-o-transition: -o-transform 0.2s ease;
+	-ms-transition: -ms-transform 0.2s ease;
+	transition: transform 0.2s ease;
+  box-sizing: border-box;
+  padding-top: 10px;
+}
+
+#r-login-container .auth0-lock.auth0-lock .auth0-lock-header-bg .auth0-lock-header-bg-solid,
+#r-login-container .auth0-lock.auth0-lock.auth0-lock-opened-in-frame .auth0-lock-header-bg .auth0-lock-header-bg-blur {
+	display: none;
+}
+
+#r-login-container .auth0-lock.auth0-lock .auth0-lock-tabs {
+	box-shadow: none;
+}
+
+#r-login-container .auth0-lock.auth0-lock .auth0-lock-tabs li {
+	box-shadow: none;
+}
+
+#r-login-container .auth0-lock.auth0-lock .auth0-lock-tabs li a{
+	border: 1px solid transparent;
+	border-bottom-color: #5c666f;
+}
+
+#r-login-container .auth0-lock.auth0-lock .auth0-lock-tabs li.auth0-lock-tabs-current {
+	box-shadow: none;
+}
+
+#r-login-container .auth0-lock.auth0-lock .auth0-lock-tabs li.auth0-lock-tabs-current a{
+	border: 1px solid #5c666f;
+	border-bottom-color: transparent;
+}
+
+#r-login-container .auth0-lock.auth0-lock .auth0-lock-tabs-container {
+	margin-left: 0;
+	margin-right: 0;
+	margin-bottom: 30px;
+}
+
+#r-login-container .auth0-lock.auth0-lock.auth0-lock-opened-in-frame .auth0-lock-widget {
+	width: 100%;
+}
+
+#r-login-container .auth0-lock.auth0-lock .auth0-lock-terms a, 
+#r-login-container .auth0-lock.auth0-lock .auth0-lock-form .auth0-lock-alternative .auth0-lock-alternative-link {
+	color: #0000FF;
+}
+
+#r-login-container .auth0-lock.auth0-lock .auth0-lock-form .auth0-lock-alternative {
+	text-align: right;
+	padding: 0;
+	margin: 0;
+}
+
+#r-login-container .auth0-lock.auth0-lock .auth0-lock-terms a {
+	text-decoration: underline;
+}
+
+#r-login-container .auth0-lock.auth0-lock .auth0-lock-input-wrap .auth0-lock-input{
+	font-size: 16px;
+}
+
+#r-login-container .auth0-lock.auth0-lock .auth0-lock-submit {
+	height: 60px;
+}
+
+#r-login-container #change-password-widget-container .auth0-lock.auth0-lock .auth0-lock-submit {
+	height: auto;
+}
+
+#r-login-container .auth0-lock-password-strength.fadeOut {
+	display: none;
+}
+
+#r-login-container .private-mode-message {
+	border: 1px solid #C75054;
+	padding: 7px;
+	background: #fff;
+	font-size: 12px;
+	color: #C75054;
+	display: none;
+}
+
+#r-login-container.login-page .private-mode-message {
+	display: block;
+}
+
+#r-login-container #change-password-widget-container .auth0-lock.auth0-lock .auth0-lock-content {
+	padding: 10px 30px 30px;
+}
+
+#r-login-container .auth0-lock.auth0-lock .auth0-lock-body-content .auth0-lock-content {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+#r-login-container .auth0-lock.auth0-lock .auth0-lock-submit .auth0-label-submit {
+	line-height: 36px;
+}
+
+#r-login-container .auth0-lock.auth0-lock .auth0-lock-widget {
+	max-height: inherit;
+}
+
+#r-login-container .auth0-lock.auth0-lock input[name='postcode']:read-only {
+	background-color: #eee;
+}
+
+#r-login-container .auth0-lock.auth0-lock input:focus {
+	background: #fdfdfd;
+}
+
+#r-login-container .auth0-lock.auth0-lock .auth0-lock-confirmation {
+	top: 90px;
+}
+
+#r-login-container .auth0-lock.auth0-lock .auth0-lock-confirmation .auth0-lock-confirmation-content {
+	top: 40%;
+}
+
+#r-login-container .auth0-lock .auth0-lock-cred-pane .auth0-lock-confirmation a {
+	display: inline;
+}
+
+/* adjustments for height of "Almost there" overlay */
+
+#r-login-container .auth0-lock-auxiliary .auth0-lock-cred-pane {
+	min-height: 600px;
+}
+
+/* hide form content when "Almost there" overlay is open */
+#r-login-container .auth0-lock-auxiliary .auth0-lock-content {
+	display: none;
+}
+
+/* Footer outside container */  
+.r-footer {
+	display: none !important;
+	text-align: center;
+	font-family: -apple-system, BlinkMacSystemFont, Roboto, Helvetica, sans-serif;
+	padding: 10px 0;
+	font-size: 90%;
+	display: flex;
+	justify-content: center;
+  align-items: center;
+}
+
+.r-nca-logo {
+	width: 160px;
+	margin: 5px 0 0 8px;
+}
+
+.auth0-lock-badge-bottom {
+	display: none;
+}
+
+/* Auth lock form */
+#r-login-container .auth0-lock-form > div {
+	display:flex;
+	flex-direction: column
+}
+
+#r-login-container .auth0-lock-form .auth0-lock-tabs-container {
+	order: 1;
+}
+#r-login-container .auth0-lock-form .auth-lock-social-buttons-pane {
+	order: 2;
+}
+#r-login-container .auth0-lock-form .auth-lock-social-buttons-pane .auth0-lock-social-buttons-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+#r-login-container .auth0-lock-form .auth-lock-social-buttons-pane .auth0-lock-social-button.auth0-lock-social-big-button {
+	margin: 0;
+	width: 40px;
+}
+
+#r-login-container .auth0-lock-form > div div:nth-child(3),
+#r-login-container .auth0-lock-form > div div:nth-child(4) {
+	display: flex;
+	flex-direction: column;
+	order: 3;
+}
+#r-login-container .auth0-lock-form > div div:nth-child(3) .auth0-lock-input-block,
+#r-login-container .auth0-lock-form > div div:nth-child(4) .auth0-lock-input-block {
+	order: 4;
+}
+
+#r-login-container .auth0-lock-form > div div:nth-child(3) > p,
+#r-login-container .auth0-lock-form > div div:nth-child(4) > p {
+	order: 1;
+	padding: 18px 0;
+	margin: 0;
+}
+
+#r-login-container .auth0-lock-form > div div:nth-child(3) .auth0-lock-input-block.auth0-lock-input-email,
+#r-login-container .auth0-lock-form > div div:nth-child(4) .auth0-lock-input-block.auth0-lock-input-email {
+	order: 2;
+}
+#r-login-container .auth0-lock-form > div div:nth-child(3) .auth0-lock-input-block.auth0-lock-input-show-password,
+#r-login-container .auth0-lock-form > div div:nth-child(4) .auth0-lock-input-block.auth0-lock-input-show-password {
+	margin-bottom: 0px;
+	order: 3;
+}
+#r-login-container .auth0-lock-form > div div:nth-child(3) .auth0-lock-alternative,
+#r-login-container .auth0-lock-form > div div:nth-child(4) .auth0-lock-alternative {
+	margin-top: 0;
+	order: 3;
+}
+#r-login-container .auth0-lock.auth0-lock .auth0-lock-form .auth0-lock-pane-separator {
+	display: none
+}
+
+#r-login-container .auth0-lock.auth0-lock .auth0-lock-submit {
+	/*position: absolute;*/
+	/*bottom: 113px;*/
+}
+#r-login-container .auth0-lock.auth0-lock .auth0-lock-submit .auth0-label-submit span {
+	display: none;
+}
+#r-login-container .auth0-lock.auth0-lock .auth0-lock-form .private-mode-message {
+	border: 1px solid #C75054;
+	padding: 7px;
+	background: #fff;
+	font-size: 12px;
+	color: #C75054;
+}
+#r-login-container .auth0-lock-opened-in-frame .subscription-link,
+#r-login-container .auth0-lock-opened-in-frame .support-questions,
+#r-login-container .auth0-lock-opened-in-frame .legal {
+	max-width: 350px;
+	margin: 1em 0;
+}
+#r-login-container .auth0-lock-opened-in-frame .subscription-link {
+	text-align: center;
+	font-size: 16px;
+}
+#r-login-container .auth0-lock-opened-in-frame .subscription-link a {
+	color: #0000FF;
+}
+
+#r-login-container .auth0-lock-opened-in-frame .support-questions {
+	font-size: 14px;
+	text-align: center;
+}
+#r-login-container .auth0-lock-opened-in-frame .support-questions em {
+	font-weight: bold;
+	font-style: normal;
+}
+#r-login-container .auth0-lock-opened-in-frame .support-questions p {
+	margin-top: 4px;
+}
+#r-login-container .support-message {
+	display: none;
+}
+#r-login-container.login-page .support-message {
+	display: block;
+	background: #f4f4f6;
+	border-radius: 5px;
+	padding: 10px;
+	font-size: 14px;
+	text-align: justify;
+}
+#r-login-container .auth0-lock-opened-in-frame .legal {
+	display: flex;
+	justify-content: space-between;
+	padding: 0 10px;
+}
+#r-login-container .auth0-lock-opened-in-frame .legal a {
+	color: #000;
+	font-size: 14px;
+	font-weight: normal;
+}
+#r-login-container.theaustralian .auth0-lock.auth0-lock {
+	font-family: "Times Classic Display", Arial, "Avenir Next", Avenir, -apple-system, BlinkMacSystemFont, Roboto, Helvetica, sans-serif;
+	font-weight: 400;
+}
+#r-login-container.theaustralian .auth0-lock.auth0-lock .auth0-lock-submit {
+	font-family: "Times Classic Bold", Arial, "Avenir Next", Avenir, -apple-system, BlinkMacSystemFont, Roboto, Helvetica, sans-serif;
+	font-weight: 400;
+	font-size: 14px;
+	text-transform: none;
+	color: #ffffff;
+}
+#r-login-container.theaustralian .auth0-lock-opened-in-frame .subscription-link,
+#r-login-container.theaustralian .auth0-lock-opened-in-frame .support-questions {
+	font-family: "Times Classic Display", Arial, "Avenir Next", Avenir, -apple-system, BlinkMacSystemFont, Roboto, Helvetica, sans-serif;
+	font-weight: 400;
+	font-size: 14px;
+}
+
+#r-login-container.theaustralian .auth0-lock-opened-in-frame .support-questions {
+	line-height: 18px;
+}
+#re-captcha {
+	margin: 10px auto 0 auto;
+	width: 304px;
+}
+
+/* Password reset css*/
+#r-login-container .auth0-lock.auth0-lock.auth0-lock-auxiliary .auth0-lock-confirmation {
+	top: 120px;
+	position:relative;
+}
+#r-login-container .auth0-lock.auth0-lock.auth0-lock-auxiliary .auth0-lock-cred-pane {
+	min-height: 450px;
+}
+#r-login-container #change-password-widget-container .auth0-lock.auth0-lock.auth0-lock-auxiliary .auth0-lock-submit {
+	display: none;
+}
+#r-login-container #home-page-link {
+	text-align: center;
+	padding: 20px
+}
+
+#r-login-container #home-page-link a {
+	text-decoration: none;
+	color: #0000ff;
+	font-family: "Avenir Next", Avenir, -apple-system, BlinkMacSystemFont, Roboto, Hevetica, sans-serif;
+}
+
+[id^="g-recaptcha-response"] {
+    display: block !important;
+    position: absolute;
+    margin: -78px 0 0 0 !important;
+    width: 302px !important;
+    height: 76px !important;
+    z-index: -999999;
+	opacity: 0;
+}
+
+/* larger screens */
+
+@media (min-width: 481px) {
+	#r-login-container  .auth0-lock.auth0-lock .auth0-lock-header-bg {
+		background: none;
+	}
+	#r-login-container .auth0-lock.auth0-lock.auth0-lock-opened-in-frame .auth0-lock-widget {
+	    width: 350px; 
+	}
+	#r-login-container .auth0-lock.auth0-lock .auth0-lock-input-wrap .auth0-lock-input, 
+	#r-login-container .auth0-lock.auth0-lock .auth0-lock-input-checkbox {
+		font-size: 14px;
+	}
+
+	#r-login-container .auth0-lock.auth0-lock .auth0-lock-center {
+		display: block;
+	}
+
+	/* error message */
+
+	#r-login-container .auth0-lock-error-msg {
+		box-shadow: none;
+		left: 0;
+		color: #f00;
+		top: 0;
+		position: inherit;
+	}
+
+	#r-login-container .auth0-lock-error-msg:after {
+		display: none;
+	}
+
+	#r-login-container .auth0-lock-error-msg span {
+		padding: 0;
+	}
+}</style><style type="text/css" id="auth0-lock-style">/* normalize.css v3.0.2 | MIT License | git.io/normalize */ .auth0-lock html {   font-family: sans-serif; /* 1 */   -ms-text-size-adjust: 100%; /* 2 */   -webkit-text-size-adjust: 100%; /* 2 */ } .auth0-lock body {   margin: 0; } .auth0-lock article, .auth0-lock aside, .auth0-lock details, .auth0-lock figcaption, .auth0-lock figure, .auth0-lock footer, .auth0-lock header, .auth0-lock hgroup, .auth0-lock main, .auth0-lock menu, .auth0-lock nav, .auth0-lock section, .auth0-lock summary {   display: block; } .auth0-lock audio, .auth0-lock canvas, .auth0-lock progress, .auth0-lock video {   display: inline-block; /* 1 */   vertical-align: baseline; /* 2 */ } .auth0-lock audio:not([controls]) {   display: none;   height: 0; } .auth0-lock [hidden], .auth0-lock template {   display: none; } .auth0-lock a {   background-color: transparent; } .auth0-lock a:active, .auth0-lock a:hover {   outline: 0; } .auth0-lock abbr[title] {   border-bottom: 1px dotted; } .auth0-lock b, .auth0-lock strong {   font-weight: bold; } .auth0-lock dfn {   font-style: italic; } .auth0-lock h1 {   font-size: 2em;   margin: 0.67em 0; } .auth0-lock mark {   background: #ff0;   color: #000; } .auth0-lock small {   font-size: 80%; } .auth0-lock sub, .auth0-lock sup {   font-size: 75%;   line-height: 0;   position: relative;   vertical-align: baseline; } .auth0-lock sup {   top: -0.5em; } .auth0-lock sub {   bottom: -0.25em; } .auth0-lock img {   border: 0; } .auth0-lock svg:not(:root) {   overflow: hidden; } .auth0-lock figure {   margin: 1em 40px; } .auth0-lock hr {   box-sizing: content-box;   height: 0; } .auth0-lock pre {   overflow: auto; } .auth0-lock code, .auth0-lock kbd, .auth0-lock pre, .auth0-lock samp {   font-family: monospace, monospace;   font-size: 1em; } .auth0-lock button, .auth0-lock input, .auth0-lock optgroup, .auth0-lock select, .auth0-lock textarea {   color: inherit; /* 1 */   font: inherit; /* 2 */   margin: 0; /* 3 */ } .auth0-lock button {   overflow: visible; } .auth0-lock button, .auth0-lock select {   text-transform: none; } .auth0-lock button, .auth0-lock html input[type="button"], .auth0-lock input[type="reset"], .auth0-lock input[type="submit"] {   -webkit-appearance: button; /* 2 */   cursor: pointer; /* 3 */ } .auth0-lock button[disabled], .auth0-lock html input[disabled] {   cursor: default; } .auth0-lock button::-moz-focus-inner, .auth0-lock input::-moz-focus-inner {   border: 0;   padding: 0; } .auth0-lock input {   line-height: normal; } .auth0-lock input[type="checkbox"], .auth0-lock input[type="radio"] {   box-sizing: border-box; /* 1 */   padding: 0; /* 2 */ } .auth0-lock input[type="number"]::-webkit-inner-spin-button, .auth0-lock input[type="number"]::-webkit-outer-spin-button {   height: auto; } .auth0-lock input[type="search"] {   -webkit-appearance: textfield; /* 1 */ /* 2 */   box-sizing: content-box; } .auth0-lock input[type="search"]::-webkit-search-cancel-button, .auth0-lock input[type="search"]::-webkit-search-decoration {   -webkit-appearance: none; } .auth0-lock fieldset {   border: 1px solid #c0c0c0;   margin: 0 2px;   padding: 0.35em 0.625em 0.75em; } .auth0-lock legend {   border: 0; /* 1 */   padding: 0; /* 2 */ } .auth0-lock textarea {   overflow: auto; } .auth0-lock optgroup {   font-weight: bold; } .auth0-lock table {   border-collapse: collapse;   border-spacing: 0; } .auth0-lock td, .auth0-lock th {   padding: 0; } .auth0-lock-social-button-icon {   background-repeat: no-repeat;   background-size: 50%;   background-position: center center; } .auth0-lock-social-button[data-provider="amazon"] {   background-color: #f90; } .auth0-lock-social-button[data-provider="aol"] {   background-color: #ff0b00; } .auth0-lock-social-button[data-provider="baidu"] {   background-color: #2529d8; } .auth0-lock-social-button[data-provider="bitbucket"] {   background-color: #205081; } .auth0-lock-social-button[data-provider="dropbox"] {   background-color: #007ee5; } .auth0-lock-social-button[data-provider="ebay"] {   background-color: #0064d2; } .auth0-lock-social-button[data-provider="facebook"] {   background-color: #3b5998; } .auth0-lock-social-button[data-provider^="google"] {   background-color: #4285f4; } .auth0-lock-social-button[data-provider="instagram"] {   background-color: #3f729b; } .auth0-lock-social-button[data-provider="linkedin"] {   background-color: #0077b5; } .auth0-lock-social-button[data-provider="github"] {   background-color: #333; } .auth0-lock-social-button[data-provider="oauth2"] {   background-color: #eb5424; } .auth0-lock-social-button[data-provider="paypal"] {   background-color: #009cde; } .auth0-lock-social-button[data-provider="paypal-sandbox"] {   background-color: #009cde; } .auth0-lock-social-button[data-provider^="salesforce"] {   background-color: #1798c1; } .auth0-lock-social-button[data-provider="shopify"] {   background-color: #96bf48; } .auth0-lock-social-button[data-provider="soundcloud"] {   background-color: #f80; } .auth0-lock-social-button[data-provider="renren"] {   background-color: #0056b5; } .auth0-lock-social-button[data-provider="exact"] {   background-color: #ed1c24; } .auth0-lock-social-button[data-provider="twitter"] {   background-color: #55acee; } .auth0-lock-social-button[data-provider=""] {   background-color: #c7eaff; } .auth0-lock-social-button[data-provider="yandex"] {   background-color: #fc0; } .auth0-lock-social-button[data-provider^="thecity"] {   background-color: #767571; } .auth0-lock-social-button[data-provider="planningcenter"] {   background-color: #4e4e4e; } .auth0-lock-social-button[data-provider="thirtysevensignals"] {   background-color: #6ac071; } .auth0-lock-social-button[data-provider="fitbit"] {   background-color: #4cc2c4; } .auth0-lock-social-button[data-provider="wordpress"] {   background-color: #21759b; } .auth0-lock-social-button[data-provider="yahoo"] {   background-color: #410093; } .auth0-lock-social-button[data-provider="box"] {   background-color: #267bb6; } .auth0-lock-social-button[data-provider="vkontakte"] {   background-color: #45668e; } .auth0-lock-social-button[data-provider="dwolla"] {   background-color: #f5891f; } .auth0-lock-social-button[data-provider="miicard"] {   background-color: #3fb7ff; } .auth0-lock-social-button[data-provider="yammer"] {   background-color: #0072c6; } .auth0-lock-social-button[data-provider="weibo"] {   background-color: #dd4b39; } .auth0-lock-social-button[data-provider^="evernote"] {   background-color: #2dbe60; } .auth0-lock-social-button[data-provider^="windows"], .auth0-lock-social-button[data-provider^="microsoft"] {   background-color: #00a1f1; } .auth0-lock-social-button[data-provider^=amazon] .auth0-lock-social-button-icon {   background-image: url("resources/EN_206n/24.svg"); } .auth0-lock-social-button[data-provider^=aol] .auth0-lock-social-button-icon {   background-image: url("resources/EN_206n/25.svg"); } .auth0-lock-social-button[data-provider^=baidu] .auth0-lock-social-button-icon {   background-image: url("resources/EN_206n/26.svg"); } .auth0-lock-social-button[data-provider^=bitbucket] .auth0-lock-social-button-icon {   background-image: url("resources/EN_206n/27.svg");   background-size: 45%; } .auth0-lock-social-button[data-provider^=box] .auth0-lock-social-button-icon {   background-image: url("resources/EN_206n/28.svg"); } .auth0-lock-social-button[data-provider^=dropbox] .auth0-lock-social-button-icon {   background-image: url("resources/EN_206n/29.svg"); } .auth0-lock-social-button[data-provider^=dwolla] .auth0-lock-social-button-icon {   background-image: url("resources/EN_206n/30.svg");   background-size: 30%; } .auth0-lock-social-button[data-provider^=ebay] .auth0-lock-social-button-icon {   background-image: url("resources/EN_206n/31.svg");   background-size: 70%; } .auth0-lock-social-button[data-provider^=exact] .auth0-lock-social-button-icon {   background-image: url("resources/EN_206n/32.svg");   background-size: 30%; } .auth0-lock-social-button[data-provider^=facebook] .auth0-lock-social-button-icon {   background-image: url("resources/EN_206n/33.svg");   background-size: 25%; } .auth0-lock-social-button[data-provider^=fitbit] .auth0-lock-social-button-icon {   background-image: url("resources/EN_206n/34.svg"); } .auth0-lock-social-button[data-provider^=github] .auth0-lock-social-button-icon {   background-image: url("resources/EN_206n/35.svg"); } .auth0-lock-social-button[data-provider^=google] .auth0-lock-social-button-icon {   background-image: url("resources/EN_206n/36.svg"); } .auth0-lock-social-button[data-provider^=instagram] .auth0-lock-social-button-icon {   background-image: url("resources/EN_206n/37.svg"); } .auth0-lock-social-button[data-provider^=linkedin] .auth0-lock-social-button-icon {   background-image: url("resources/EN_206n/38.svg"); } .auth0-lock-social-button[data-provider^=miicard] .auth0-lock-social-button-icon {   background-image: url("resources/EN_206n/39.svg"); } .auth0-lock-social-button[data-provider^=oauth2] .auth0-lock-social-button-icon {   background-image: url("resources/EN_206n/40.svg"); } .auth0-lock-social-button[data-provider^=paypal] .auth0-lock-social-button-icon {   background-image: url("resources/EN_206n/41.svg"); } .auth0-lock-social-button[data-provider^=paypal-sandbox] .auth0-lock-social-button-icon {   background-image: url("resources/EN_206n/41.svg"); } .auth0-lock-social-button[data-provider^=planningcenter] .auth0-lock-social-button-icon {   background-image: url("resources/EN_206n/42.svg"); } .auth0-lock-social-button[data-provider^=renren] .auth0-lock-social-button-icon {   background-image: url("resources/EN_206n/43.svg"); } .auth0-lock-social-button[data-provider^=salesforce] .auth0-lock-social-button-icon {   background-image: url("resources/EN_206n/44.svg"); } .auth0-lock-social-button[data-provider^=shopify] .auth0-lock-social-button-icon {   background-image: url("resources/EN_206n/45.svg"); } .auth0-lock-social-button[data-provider^=soundcloud] .auth0-lock-social-button-icon {   background-image: url("resources/EN_206n/46.svg");   background-size: 60%; } .auth0-lock-social-button[data-provider^=thecity] .auth0-lock-social-button-icon {   background-image: url("resources/EN_206n/47.svg"); } .auth0-lock-social-button[data-provider^=thirtysevensignals] .auth0-lock-social-button-icon {   background-image: url("resources/EN_206n/48.svg"); } .auth0-lock-social-button[data-provider^=twitter] .auth0-lock-social-button-icon {   background-image: url("resources/EN_206n/49.svg"); } .auth0-lock-social-button[data-provider^=vkontakte] .auth0-lock-social-button-icon {   background-image: url("resources/EN_206n/50.svg"); } .auth0-lock-social-button[data-provider^=windowslive] .auth0-lock-social-button-icon {   background-image: url("resources/EN_206n/51.svg"); } .auth0-lock-social-button[data-provider^=windows] .auth0-lock-social-button-icon {   background-image: url("resources/EN_206n/52.svg"); } .auth0-lock-social-button[data-provider^=wordpress] .auth0-lock-social-button-icon {   background-image: url("resources/EN_206n/53.svg"); } .auth0-lock-social-button[data-provider^=yahoo] .auth0-lock-social-button-icon {   background-image: url("resources/EN_206n/54.svg"); } .auth0-lock-social-button[data-provider^=yammer] .auth0-lock-social-button-icon {   background-image: url("resources/EN_206n/55.svg"); } .auth0-lock-social-button[data-provider^=yandex] .auth0-lock-social-button-icon {   background-image: url("resources/EN_206n/56.svg");   background-size: 30%; } .auth0-lock-social-button[data-provider^=weibo] .auth0-lock-social-button-icon {   background-image: url("resources/EN_206n/57.svg"); } .auth0-lock-social-button[data-provider^=evernote] .auth0-lock-social-button-icon {   background-image: url("resources/EN_206n/58.svg"); } @charset "UTF-8"; /* Animate.css - http://daneden.me/animate Licensed under the MIT license - http://opensource.org/licenses/MIT  Copyright (c) 2015 Daniel Eden */ .animated {   -webkit-animation-duration: 1s;   animation-duration: 1s;   -webkit-animation-fill-mode: both;   animation-fill-mode: both; } @-webkit-keyframes fadeIn {   0% {     opacity: 0;   }   100% {     opacity: 1;   } } .fadeIn {   -webkit-animation-name: fadeIn;   animation-name: fadeIn; } @-webkit-keyframes fadeInDown {   0% {     opacity: 0;     -webkit-transform: translate3d(0, -100%, 0);     transform: translate3d(0, -100%, 0);   }   100% {     opacity: 1;     -webkit-transform: none;     transform: none;   } } .fadeInDown {   -webkit-animation-name: fadeInDown;   animation-name: fadeInDown; } @-webkit-keyframes fadeInDownBig {   0% {     opacity: 0;     -webkit-transform: translate3d(0, -2000px, 0);     transform: translate3d(0, -2000px, 0);   }   100% {     opacity: 1;     -webkit-transform: none;     transform: none;   } } .fadeInDownBig {   -webkit-animation-name: fadeInDownBig;   animation-name: fadeInDownBig; } @-webkit-keyframes fadeInUp {   0% {     opacity: 0;     -webkit-transform: translate3d(0, 100%, 0);     transform: translate3d(0, 100%, 0);   }   100% {     opacity: 1;     -webkit-transform: none;     transform: none;   } } .fadeInUp {   -webkit-animation-name: fadeInUp;   animation-name: fadeInUp; } @-webkit-keyframes fadeOut {   0% {     opacity: 1;   }   100% {     opacity: 0;   } } .fadeOut {   -webkit-animation-name: fadeOut;   animation-name: fadeOut; } @-webkit-keyframes fadeOutDownBig {   0% {     opacity: 1;   }   100% {     opacity: 0;     -webkit-transform: translate3d(0, 2000px, 0);     transform: translate3d(0, 2000px, 0);   } } .fadeOutDownBig {   -webkit-animation-name: fadeOutDownBig;   animation-name: fadeOutDownBig; } @-webkit-keyframes fadeIn {   0% {     opacity: 0;   }   100% {     opacity: 1;   } } @keyframes fadeIn {   0% {     opacity: 0;   }   100% {     opacity: 1;   } } @-webkit-keyframes fadeInDown {   0% {     opacity: 0;     -webkit-transform: translate3d(0, -100%, 0);     transform: translate3d(0, -100%, 0);   }   100% {     opacity: 1;     -webkit-transform: none;     transform: none;   } } @keyframes fadeInDown {   0% {     opacity: 0;     -webkit-transform: translate3d(0, -100%, 0);     transform: translate3d(0, -100%, 0);   }   100% {     opacity: 1;     -webkit-transform: none;     transform: none;   } } @-webkit-keyframes fadeInDownBig {   0% {     opacity: 0;     -webkit-transform: translate3d(0, -2000px, 0);     transform: translate3d(0, -2000px, 0);   }   100% {     opacity: 1;     -webkit-transform: none;     transform: none;   } } @keyframes fadeInDownBig {   0% {     opacity: 0;     -webkit-transform: translate3d(0, -2000px, 0);     transform: translate3d(0, -2000px, 0);   }   100% {     opacity: 1;     -webkit-transform: none;     transform: none;   } } @-webkit-keyframes fadeInUp {   0% {     opacity: 0;     -webkit-transform: translate3d(0, 100%, 0);     transform: translate3d(0, 100%, 0);   }   100% {     opacity: 1;     -webkit-transform: none;     transform: none;   } } @keyframes fadeInUp {   0% {     opacity: 0;     -webkit-transform: translate3d(0, 100%, 0);     transform: translate3d(0, 100%, 0);   }   100% {     opacity: 1;     -webkit-transform: none;     transform: none;   } } @-webkit-keyframes fadeOut {   0% {     opacity: 1;   }   100% {     opacity: 0;   } } @keyframes fadeOut {   0% {     opacity: 1;   }   100% {     opacity: 0;   } } @-webkit-keyframes fadeOutDownBig {   0% {     opacity: 1;   }   100% {     opacity: 0;     -webkit-transform: translate3d(0, 2000px, 0);     transform: translate3d(0, 2000px, 0);   } } @keyframes fadeOutDownBig {   0% {     opacity: 1;   }   100% {     opacity: 0;     -webkit-transform: translate3d(0, 2000px, 0);     transform: translate3d(0, 2000px, 0);   } } .slide-enter {   -webkit-transform: translate3d(100%, 0, 0);   transform: translate3d(100%, 0, 0); } .slide-enter.slide-enter-active {   -webkit-transform: translate3d(0, 0, 0);   transform: translate3d(0, 0, 0);   -webkit-transition: -webkit-transform 0.3s ease-out;   transition: -webkit-transform 0.3s ease-out;   transition: transform 0.3s ease-out;   transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out; } .slide-exit {   -webkit-transform: translate3d(0, 0, 0);   transform: translate3d(0, 0, 0); } .slide-exit.slide-exit-active {   -webkit-transform: translate3d(100%, 0, 0);   transform: translate3d(100%, 0, 0);   -webkit-transition: -webkit-transform 0.3s ease-in;   transition: -webkit-transform 0.3s ease-in;   transition: transform 0.3s ease-in;   transition: transform 0.3s ease-in, -webkit-transform 0.3s ease-in; } .vslide-enter {   -webkit-transform: translate3d(0, 100%, 0);   transform: translate3d(0, 100%, 0); } .vslide-enter.vslide-enter-active {   -webkit-transform: translate3d(0, 0, 0);   transform: translate3d(0, 0, 0);   -webkit-transition: -webkit-transform 0.35s;   transition: -webkit-transform 0.35s;   transition: transform 0.35s;   transition: transform 0.35s, -webkit-transform 0.35s; } .reverse-vslide-enter {   opacity: 0;   -webkit-transform: translate3d(0, -100%, 0);   transform: translate3d(0, -100%, 0); } .reverse-vslide-enter.reverse-vslide-enter-active {   opacity: 1;   -webkit-transform: translate3d(0, 0, 0);   transform: translate3d(0, 0, 0);   -webkit-transition: -webkit-transform 0.35s;   transition: -webkit-transform 0.35s;   transition: transform 0.35s;   transition: transform 0.35s, -webkit-transform 0.35s; } .vslide-exit {   -webkit-transform: translate3d(0, 0, 0);   transform: translate3d(0, 0, 0); } .vslide-exit.vslide-exit-active {   -webkit-transform: translate3d(0, 100%, 0);   transform: translate3d(0, 100%, 0);   -webkit-transition: -webkit-transform 0.35s;   transition: -webkit-transform 0.35s;   transition: transform 0.35s;   transition: transform 0.35s, -webkit-transform 0.35s; } .horizontal-fade-enter {   position: relative;   top: 0;   left: 0;   z-index: 1;   -webkit-transform: translate3d(100%, 0, 0);   transform: translate3d(100%, 0, 0); } .horizontal-fade-enter.horizontal-fade-enter-active {   -webkit-transform: none;   transform: none;   -webkit-transition: -webkit-transform 0.5s;   transition: -webkit-transform 0.5s;   transition: transform 0.5s;   transition: transform 0.5s, -webkit-transform 0.5s; } .horizontal-fade-exit {   opacity: 1;   position: absolute;   width: 100%;   top: 0;   left: 0; } .horizontal-fade-exit.horizontal-fade-exit-active {   opacity: 0;   -webkit-transform: translate3d(-100%, 0, 0);   transform: translate3d(-100%, 0, 0);   -webkit-transition: -webkit-transform 0.5s, opacity 1s linear;   -webkit-transition: opacity 1s linear, -webkit-transform 0.5s;   transition: opacity 1s linear, -webkit-transform 0.5s;   transition: transform 0.5s, opacity 1s linear;   transition: transform 0.5s, opacity 1s linear, -webkit-transform 0.5s; } .reverse-horizontal-fade-enter {   position: relative;   top: 0;   left: 0;   z-index: 1;   -webkit-transform: translate3d(-100%, 0, 0);   transform: translate3d(-100%, 0, 0); } .reverse-horizontal-fade-enter.reverse-horizontal-fade-enter-active {   -webkit-transform: none;   transform: none;   -webkit-transition: -webkit-transform 0.5s;   transition: -webkit-transform 0.5s;   transition: transform 0.5s;   transition: transform 0.5s, -webkit-transform 0.5s; } .reverse-horizontal-fade-exit {   opacity: 1;   position: absolute;   width: 100%;   top: 0;   left: 0; } .reverse-horizontal-fade-exit.reverse-horizontal-fade-exit-active {   opacity: 0;   -webkit-transform: translate3d(100%, 0, 0);   transform: translate3d(100%, 0, 0);   -webkit-transition: -webkit-transform 0.5s, opacity 1s linear;   -webkit-transition: opacity 1s linear, -webkit-transform 0.5s;   transition: opacity 1s linear, -webkit-transform 0.5s;   transition: transform 0.5s, opacity 1s linear;   transition: transform 0.5s, opacity 1s linear, -webkit-transform 0.5s; } .fade-enter {   position: relative;   top: 0;   left: 0;   z-index: 1; } .fade-exit {   opacity: 1;   position: absolute;   width: 100%;   top: 0;   left: 0;   opacity: 1; } .fade-exit.fade-exit-active {   opacity: 0;   -webkit-transition: opacity 0.5s linear;   transition: opacity 0.5s linear; } @-webkit-keyframes stroke {   100% {     stroke-dashoffset: 0;   } } @-webkit-keyframes scale {   0%, 100% {     -webkit-transform: none;   }   50% {     -webkit-transform: scale3d(1.1, 1.1, 1);   } } @-webkit-keyframes fill {   100% {     box-shadow: inset 0px 0px 0px 30px #7ac142;   } } @-webkit-keyframes rotate {   0% {     -webkit-transform: rotate(0deg);   }   100% {     -webkit-transform: rotate(360deg);   } } @-webkit-keyframes stroke {   100% {     stroke-dashoffset: 0;   } } @keyframes stroke {   100% {     stroke-dashoffset: 0;   } } @-webkit-keyframes scale {   0%, 100% {     -webkit-transform: none;             transform: none;   }   50% {     -webkit-transform: scale3d(1.1, 1.1, 1);             transform: scale3d(1.1, 1.1, 1);   } } @keyframes scale {   0%, 100% {     -webkit-transform: none;             transform: none;   }   50% {     -webkit-transform: scale3d(1.1, 1.1, 1);             transform: scale3d(1.1, 1.1, 1);   } } @-webkit-keyframes fill {   100% {     box-shadow: inset 0px 0px 0px 30px #7ac142;   } } @keyframes fill {   100% {     box-shadow: inset 0px 0px 0px 30px #7ac142;   } } @-webkit-keyframes rotate {   0% {     -webkit-transform: rotate(0deg);             transform: rotate(0deg);   }   100% {     -webkit-transform: rotate(360deg);             transform: rotate(360deg);   } } @keyframes rotate {   0% {     -webkit-transform: rotate(0deg);             transform: rotate(0deg);   }   100% {     -webkit-transform: rotate(360deg);             transform: rotate(360deg);   } } @media screen and (max-width: 480px) {   html.auth0-lock-html body > * {     display: none;   }   html.auth0-lock-html body .auth0-lock-container {     background: #fff;     display: block !important;   } } .auth0-lock.auth0-lock, .auth0-lock.auth0-lock * {   box-sizing: initial; } .auth0-lock.auth0-lock svg {   background-color: transparent; } .auth0-lock.auth0-lock .auth0-global-message {   color: #fff;   text-align: center;   padding: 10px;   line-height: 1.8;   font-size: 11px;   font-weight: 600;   text-transform: uppercase; } .auth0-lock.auth0-lock .auth0-global-message.auth0-global-message-error {   background: #ff3e00; } .auth0-lock.auth0-lock .auth0-global-message.auth0-global-message-success {   background: #7ed321; } .auth0-lock.auth0-lock .auth0-global-message.auth0-global-message-info {   background: #44c7f4; } .auth0-lock.auth0-lock .auth0-global-message.global-message-enter {   height: 0;   paddingTop: 0;   paddingBottom: 0; } .auth0-lock.auth0-lock .auth0-global-message.global-message-enter.global-message-enter-active {   -webkit-transition: all 0.2s;   transition: all 0.2s;   height: auto;   paddingTop: 10px;   paddingBottom: 10px; } .auth0-lock.auth0-lock .auth0-global-message.global-message-exit {   -webkit-transition: all 0.2s;   transition: all 0.2s;   height: 0;   paddingTop: 0;   paddingBottom: 0; } .auth0-lock.auth0-lock .auth0-global-message span {   -webkit-animation-delay: 0.2s;   animation-delay: 0.2s; } .auth0-lock.auth0-lock {   font-family: "Avenir Next", Avenir, -apple-system, BlinkMacSystemFont, Roboto, Helvetica, sans-serif;   text-rendering: optimizeLegibility;   pointer-events: none;   position: fixed;   bottom: 0;   left: 0;   width: 100%;   height: 100%;   right: 0;   z-index: 1000000; } @media (min-width: 481px) {   .auth0-lock.auth0-lock {     display: table;   } } .auth0-lock.auth0-lock a {   text-decoration: none; } .auth0-lock.auth0-lock a:active, .auth0-lock.auth0-lock a:focus {   outline: none; } .auth0-lock.auth0-lock input:focus, .auth0-lock.auth0-lock button:focus {   outline: none; } .auth0-lock.auth0-lock .auth0-lock-overlay {   background: -webkit-radial-gradient(#40404b, #111118) rgba(34,34,40,0.94);   background: radial-gradient(#40404b, #111118) rgba(34,34,40,0.94);   position: fixed;   top: 0;   bottom: 0;   right: 0;   left: 0;   z-index: -1;   opacity: 0;   -webkit-transition: opacity 0.2s ease-in 0.4s;   transition: opacity 0.2s ease-in 0.4s; } @media (min-width: 481px) {   .auth0-lock.auth0-lock .auth0-lock-center {     vertical-align: middle;     display: table-cell;     margin: auto;   } } .auth0-lock.auth0-lock .auth0-lock-widget {   width: 300px;   opacity: 0;   -webkit-transform: translateY(100%) scale(0.8);   transform: translateY(100%) scale(0.8);   -webkit-transition-timing-function: cubic-bezier(0.3, 0, 0, 1.4);   transition-timing-function: cubic-bezier(0.3, 0, 0, 1.4);   margin: 0 auto;   border-radius: 5px;   max-height: 100vh; } @media (min-width: 481px) {   .auth0-lock.auth0-lock .auth0-lock-widget {     -webkit-transition: -webkit-transform 0.4s, opacity 0.3s;     -webkit-transition: opacity 0.3s, -webkit-transform 0.4s;     transition: opacity 0.3s, -webkit-transform 0.4s;     transition: transform 0.4s, opacity 0.3s;     transition: transform 0.4s, opacity 0.3s, -webkit-transform 0.4s;   } } .auth0-lock.auth0-lock .auth0-lock-widget-container {   position: relative; } .auth0-lock.auth0-lock .auth0-lock-cred-pane {   height: 100%;   border-radius: 6px;   background: #fff;   position: relative; } .auth0-lock.auth0-lock .auth0-lock-cred-pane.horizontal-fade-exit .auth0-lock-content, .auth0-lock.auth0-lock .auth0-lock-cred-pane.horizontal-fade-exit .auth0-lock-terms {   opacity: 0.3;   pointer-events: none; } .auth0-lock.auth0-lock .auth0-lock-cred-pane.auth0-lock-moving {   overflow: hidden; } .auth0-lock.auth0-lock .auth0-lock-header {   text-align: center;   padding: 11px;   height: 118px;   color: #333;   position: relative;   background: #fff;   border-radius: 5px 5px 0 0;   overflow: hidden;   box-sizing: border-box; } .auth0-lock.auth0-lock .auth0-lock-close-button, .auth0-lock.auth0-lock .auth0-lock-back-button {   box-sizing: content-box !important;   background: #fff;   border-radius: 100px;   height: 10px;   width: 10px;   position: absolute;   top: 14px;   right: 14px;   box-shadow: 0 1px 3px rgba(0,0,0,0.1);   color: #333;   z-index: 100;   border: 6px solid #fff;   cursor: pointer;   line-height: 0; } .auth0-lock.auth0-lock .auth0-lock-close-button svg, .auth0-lock.auth0-lock .auth0-lock-back-button svg {   box-sizing: content-box; } .auth0-lock.auth0-lock .auth0-lock-close-button polygon, .auth0-lock.auth0-lock .auth0-lock-back-button polygon {   fill: #373737; } .auth0-lock.auth0-lock .auth0-lock-back-button {   left: 14px; } .auth0-lock.auth0-lock .auth0-lock-header-avatar {   height: 80px;   width: 80px;   display: block;   border-radius: 100px;   margin: -16px auto 0;   position: absolute;   left: 0;   right: 0;   z-index: 1000;   box-shadow: 0 1px 2px rgba(0,0,0,0.4);   -webkit-animation: fadeIn 0.75s both;   animation: fadeIn 0.75s both; } @media (min-width: 768px) {   .auth0-lock.auth0-lock .auth0-lock-header-avatar {     -webkit-animation: fadeInDown 0.75s both;     animation: fadeInDown 0.75s both;   } } .auth0-lock.auth0-lock .auth0-lock-header-bg {   position: absolute;   height: 118px;   width: 100%;   overflow: hidden;   top: 0;   left: 0;   pointer-events: none; } @media (min-width: 481px) {   .auth0-lock.auth0-lock .auth0-lock-header-bg {     background: rgba(241,241,241,0.8);   } } .auth0-lock.auth0-lock .auth0-lock-header-bg .auth0-lock-header-bg-blur {   display: none;   height: 100%;   width: 100%;   border-top-left-radius: 5px;   border-top-right-radius: 5px;   -webkit-filter: blur(40px) grayscale(1);   -ms-filter: blur(40px) grayscale(1);   filter: blur(40px) grayscale(1);   -webkit-backdrop-filter: blur(0);   background-color: #fff;   background-position: center;   background-repeat: no-repeat;   background-size: 300px;   opacity: 0;   -webkit-transition: 0s ease 0s;   transition: 0s ease 0s; } .auth0-lock.auth0-lock .auth0-lock-header-bg .auth0-lock-header-bg-blur.auth0-lock-no-grayscale {   -webkit-filter: blur(30px);   -ms-filter: blur(30px);   filter: blur(30px);   -webkit-backdrop-filter: blur(0);   background-position: center;   background-size: 800px; } @media (min-width: 481px) {   .auth0-lock.auth0-lock .auth0-lock-header-bg.auth0-lock-blur-support .auth0-lock-header-bg-blur {     display: block;   } } .auth0-lock.auth0-lock .auth0-lock-header-bg .auth0-lock-header-bg-solid {   height: 100%;   opacity: 0.08; } .auth0-lock.auth0-lock .auth0-lock-header-welcome {   font-size: 18px;   position: relative; } .auth0-lock.auth0-lock .auth0-lock-header-logo {   width: auto;   height: 58px;   display: inline-block;   margin: 0 0 11px;   vertical-align: middle;   -webkit-transition: margin-top 0.4s;   transition: margin-top 0.4s; } .auth0-lock.auth0-lock .auth0-lock-header-logo.centered {   margin-top: 20px; } .auth0-lock.auth0-lock .auth0-lock-firstname {   font-size: 18px;   margin-top: 64px;   text-overflow: ellipsis;   white-space: nowrap;   overflow: hidden;   padding: 0 10px; } .auth0-lock.auth0-lock .auth0-lock-name {   font-size: 22px;   text-overflow: ellipsis;   white-space: nowrap;   overflow: hidden;   padding: 0 10px;   line-height: 30px; } .auth0-lock.auth0-lock .auth0-lock-content {   padding: 20px;   box-sizing: border-box; } .auth0-lock.auth0-lock .auth0-lock-form {   display: block;   -webkit-animation: fadeIn 0.2s;   animation: fadeIn 0.2s; } .auth0-lock.auth0-lock .auth0-lock-form h2 {   font-size: 22px;   font-weight: normal;   text-align: center;   margin: 0 0 15px;   color: #000; } .auth0-lock.auth0-lock .auth0-lock-form p {   font-size: 13px;   line-height: 1.8;   text-align: center;   margin-top: 0;   margin-bottom: 15px;   color: rgba(0,0,0,0.54); } .auth0-lock.auth0-lock .auth0-lock-form .auth0-lock-alternative {   margin-top: 20px;   margin-bottom: 0; } .auth0-lock.auth0-lock .auth0-lock-form .auth0-lock-alternative .auth0-lock-alternative-link {   font-size: 13px;   color: rgba(0,0,0,0.87);   cursor: pointer;   margin-bottom: 0; } .auth0-lock.auth0-lock .auth0-lock-input-block {   position: relative;   margin-bottom: 15px; } @media (min-width: 481px) {   .auth0-lock.auth0-lock .auth0-lock-input-block {     margin-bottom: 10px;   } } .auth0-lock.auth0-lock .auth0-lock-input-block:last-child {   margin-bottom: 0; } .auth0-lock.auth0-lock .auth0-lock-input-wrap {   border-radius: 3px;   border: 1px solid #f1f1f1;   position: relative;   background: #f1f1f1;   -webkit-transition: border-color 0.8s;   transition: border-color 0.8s; } .auth0-lock.auth0-lock .auth0-lock-input-wrap.auth0-lock-input-wrap-with-icon {   padding-left: 40px; } .auth0-lock.auth0-lock .auth0-lock-input-wrap .auth0-lock-icon-arrow {   position: absolute;   top: 14px;   width: 12px;   height: 14px;   right: 14px; } .auth0-lock.auth0-lock .auth0-lock-input-wrap .auth0-lock-icon, .auth0-lock.auth0-lock .auth0-lock-input-wrap .auth0-lock-custom-icon {   position: absolute;   font-size: 12px;   top: 13px;   left: 14px; } .auth0-lock.auth0-lock .auth0-lock-input-wrap .auth0-lock-icon path, .auth0-lock.auth0-lock .auth0-lock-input-wrap .auth0-lock-custom-icon path {   fill: #888; } .auth0-lock.auth0-lock .auth0-lock-input-wrap .auth0-lock-icon.auth0-lock-icon-mobile, .auth0-lock.auth0-lock .auth0-lock-input-wrap .auth0-lock-custom-icon.auth0-lock-icon-mobile {   width: 9px;   height: 14px;   top: 14px;   left: 16px; } .auth0-lock.auth0-lock .auth0-lock-input-wrap .auth0-lock-icon.auth0-lock-icon-box, .auth0-lock.auth0-lock .auth0-lock-input-wrap .auth0-lock-custom-icon.auth0-lock-icon-box {   width: 12px;   height: 14px;   top: auto;   bottom: 14px;   left: 14px; } .auth0-lock.auth0-lock .auth0-lock-input-wrap.auth0-lock-focused {   border-color: #a0a0a0; } .auth0-lock.auth0-lock .auth0-lock-input-wrap .auth0-lock-input {   border: 0;   padding: 0 14px;   right: 0;   height: 40px;   font-size: 13px;   width: 100%;   border-radius: 0 2px 2px 0;   box-sizing: border-box;   position: relative;   color: rgba(0,0,0,0.87); } .auth0-lock.auth0-lock .auth0-lock-input-wrap .auth0-lock-input.animated {   -webkit-animation-duration: 0.5s;   animation-duration: 0.5s; } .auth0-lock.auth0-lock .auth0-lock-input-wrap .auth0-lock-input.auth0-lock-input-location {   background-color: #f9f9f9;   text-align: left; } .auth0-lock.auth0-lock .auth0-lock-input-wrap .auth0-lock-input.auth0-lock-input-location.auth0-lock-input-with-placeholder {   color: rgba(0,0,0,0.54); } .auth0-lock.auth0-lock .auth0-lock-error .auth0-lock-input-wrap {   border-color: #f00;   -webkit-transition: 0.3s ease-in-out;   transition: 0.3s ease-in-out; } .auth0-lock.auth0-lock .auth0-lock-input-checkbox {   text-align: left;   display: block;   font-size: 12px;   color: rgba(0,0,0,0.54);   line-height: 22px;   position: relative; } .auth0-lock.auth0-lock .auth0-lock-input-checkbox label input {   float: left;   margin-top: 5px; } .auth0-lock.auth0-lock .auth0-lock-input-checkbox span {   display: block;   margin-left: 20px; } .auth0-lock.auth0-lock .auth-lock-social-buttons-pane, .auth0-lock.auth0-lock .auth0-lock-last-login-pane {   position: relative; } .auth0-lock.auth0-lock .auth-lock-social-buttons-pane .auth0-loading-container, .auth0-lock.auth0-lock .auth0-lock-last-login-pane .auth0-loading-container {   -webkit-animation: fadeIn 0.75s ease-in-out !important;   animation: fadeIn 0.75s ease-in-out !important;   position: absolute;   width: 54px;   height: 54px;   top: 50%;   left: 50%;   -webkit-transform: translate(-50%, -50%);   transform: translate(-50%, -50%); } .auth0-lock.auth0-lock .auth-lock-social-buttons-pane .auth0-loading-container .auth0-loading, .auth0-lock.auth0-lock .auth0-lock-last-login-pane .auth0-loading-container .auth0-loading {   width: 50px;   height: 50px;   border-radius: 50%;   top: 0;   left: 0;   opacity: 1; } .auth0-lock.auth0-lock .auth0-lock-social-buttons-container {   text-align: center; } .auth0-lock.auth0-lock .auth0-lock-social-button {   border: 0;   padding: 0;   display: inline-block;   box-sizing: border-box;   overflow: hidden;   border-radius: 3px;   margin: 4px;   position: relative;   width: 40px;   height: 40px;   -webkit-transition: background-color 0.2s ease-in-out;   transition: background-color 0.2s ease-in-out; } .auth0-lock.auth0-lock .auth0-lock-social-button .auth0-lock-social-button-icon {   width: 40px;   height: 40px;   position: absolute;   top: 0;   left: 0;   transition: background-color 0.3s;   -webkit-transition: background-color 0.3s; } .auth0-lock.auth0-lock .auth0-lock-social-button:hover .auth0-lock-social-button-icon, .auth0-lock.auth0-lock .auth0-lock-social-button:focus .auth0-lock-social-button-icon {   background-color: rgba(0,0,0,0.3); } .auth0-lock.auth0-lock .auth0-lock-social-button .auth0-lock-social-button-text {   display: none; } .auth0-lock.auth0-lock .auth0-lock-social-button.auth0-lock-social-big-button {   display: block;   margin: 10px 0 0;   width: 100%; } .auth0-lock.auth0-lock .auth0-lock-social-button.auth0-lock-social-big-button:first-child {   margin-top: 0; } .auth0-lock.auth0-lock .auth0-lock-social-button.auth0-lock-social-big-button[data-provider=""], .auth0-lock.auth0-lock .auth0-lock-social-button.auth0-lock-social-big-button[data-provider="auth0"] {   background-color: #c0c0c0; } .auth0-lock.auth0-lock .auth0-lock-social-button.auth0-lock-social-big-button[data-provider=""] .auth0-lock-social-button-icon, .auth0-lock.auth0-lock .auth0-lock-social-button.auth0-lock-social-big-button[data-provider="auth0"] .auth0-lock-social-button-icon {   background-image: url("resources/EN_206n/59.svg");   background-size: 38%; } .auth0-lock.auth0-lock .auth0-lock-social-button.auth0-lock-social-big-button .auth0-lock-social-button-icon {   background-color: rgba(0,0,0,0.3); } .auth0-lock.auth0-lock .auth0-lock-social-button.auth0-lock-social-big-button .auth0-lock-social-button-text {   box-sizing: border-box;   display: block;   overflow: hidden;   width: 100%;   padding-left: 54px;   padding-right: 15px;   line-height: 40px;   text-align: left;   text-transform: uppercase;   text-overflow: ellipsis;   font-size: 10px;   font-weight: 600;   letter-spacing: 0.7px;   color: #fff;   white-space: nowrap;   transition: background 0.3s;   -webkit-transition: background 0.3s; } .auth0-lock.auth0-lock .auth0-lock-social-button.auth0-lock-social-big-button:hover:not([disabled]) .auth0-lock-social-button-icon, .auth0-lock.auth0-lock .auth0-lock-social-button.auth0-lock-social-big-button:focus:not([disabled]) .auth0-lock-social-button-icon {   background-color: rgba(0,0,0,0.3); } .auth0-lock.auth0-lock .auth0-lock-social-button.auth0-lock-social-big-button:hover:not([disabled]) .auth0-lock-social-button-text, .auth0-lock.auth0-lock .auth0-lock-social-button.auth0-lock-social-big-button:focus:not([disabled]) .auth0-lock-social-button-text {   background-color: rgba(0,0,0,0.3); } .auth0-lock.auth0-lock .auth0-lock-social-button[disabled] {   background-color: #9b9b9b !important; } .auth0-lock.auth0-lock .auth0-lock-terms {   background: #eee;   text-align: center;   display: block;   font-size: 12px;   color: rgba(0,0,0,0.54);   line-height: 22px;   padding: 10px;   position: relative; } .auth0-lock.auth0-lock .auth0-lock-terms a {   color: rgba(0,0,0,0.87); } .auth0-lock.auth0-lock .auth0-lock-submit {   border: 0;   padding: 14px;   display: block;   box-sizing: border-box;   width: 100%;   height: 70px;   overflow: hidden;   border-radius: 0 0 5px 5px;   -webkit-transition: 0.2s ease-in-out;   transition: 0.2s ease-in-out;   color: #fff;   letter-spacing: 1px;   font-size: 14px;   text-transform: uppercase; /*submit button animation*/ } .auth0-lock.auth0-lock .auth0-lock-submit span {   display: inline-block;   -webkit-transition: 0.2s ease-in-out;   transition: 0.2s ease-in-out; } .auth0-lock.auth0-lock .auth0-lock-submit span svg {   vertical-align: middle;   display: inline; } .auth0-lock.auth0-lock .auth0-lock-submit span svg.icon-text {   margin: -4px 0 0 5px; } .auth0-lock.auth0-lock .auth0-lock-submit .auth0-label-submit {   height: 42px;   line-height: 42px; } @media (min-width: 481px) {   .auth0-lock.auth0-lock .auth0-lock-submit:hover:not([disabled]) span {     -webkit-transform: scale(1.05);     transform: scale(1.05);   } } .auth0-lock.auth0-lock .auth0-lock-submit:focus {   box-shadow: inset 0 0 100px 20px rgba(0,0,0,0.2); } .auth0-lock.auth0-lock .auth0-lock-submit[disabled] {   background-color: #9b9b9b !important; } .auth0-lock.auth0-lock .auth0-lock-submit[disabled] span svg circle, .auth0-lock.auth0-lock .auth0-lock-submit[disabled] span svg path {   stroke: rgba(255,255,255,0.6);   -webkit-transition: 0.2s ease-in-out;   transition: 0.2s ease-in-out; } .auth0-lock.auth0-lock .auth0-lock-submit[disabled] span svg path {   fill: rgba(255,255,255,0.6); } .auth0-lock.auth0-lock .auth0-lock-submit.vslide-enter {   opacity: 0; } .auth0-lock.auth0-lock .auth0-lock-submit.vslide-enter.vslide-enter-active {   opacity: 1;   -webkit-transition-duration: 0.5s;           transition-duration: 0.5s; } .auth0-lock.auth0-lock .auth0-loading-container {   position: relative;   display: none; } .auth0-lock.auth0-lock .auth0-loading-container .auth0-loading {   position: absolute;   top: 4px;   left: 44%;   width: 30px;   height: 30px;   border-width: 2px;   border-style: solid;   border-color: rgba(0,0,0,0.4) rgba(0,0,0,0.4) rgba(0,0,0,0.2) rgba(0,0,0,0.2);   opacity: 0.9;   border-radius: 20px;   -webkit-animation: rotate 1s linear infinite;   animation: rotate 1s linear infinite; } .auth0-lock.auth0-lock.auth0-lock-mode-loading .auth0-lock-content, .auth0-lock.auth0-lock.auth0-lock-mode-loading .auth0-lock-terms {   opacity: 0.3;   pointer-events: none; } .auth0-lock.auth0-lock.auth0-lock-mode-loading .auth0-lock-submit {   background-color: #eee !important;   -webkit-transition: background 0.5s ease;   transition: background 0.5s ease;   cursor: initial;   pointer-events: none; } .auth0-lock.auth0-lock.auth0-lock-mode-loading .auth0-lock-submit span {   -webkit-animation: fadeOutDownBig 1s both;   animation: fadeOutDownBig 1s both; } .auth0-lock.auth0-lock.auth0-lock-mode-loading .auth0-loading-container {   -webkit-animation: fadeInDownBig 1s both;   animation: fadeInDownBig 1s both;   display: block; } .auth0-lock.auth0-lock.auth0-lock-mode-loading .auth0-lock-back-button {   opacity: 0;   visibility: hidden;   -webkit-transition: 0.25s;   transition: 0.25s; } .auth0-lock.auth0-lock.auth0-lock-auxiliary .auth0-lock-header-avatar {   -webkit-animation: fadeOut 0.3s both;   animation: fadeOut 0.3s both; } .auth0-lock.auth0-lock.auth0-lock-auxiliary .auth0-lock-content, .auth0-lock.auth0-lock.auth0-lock-auxiliary .auth0-lock-terms, .auth0-lock.auth0-lock.auth0-lock-auxiliary .auth0-lock-submit {   opacity: 0.3;   pointer-events: none; } .auth0-lock.auth0-lock.auth0-lock-auxiliary .auth0-lock-back-button {   opacity: 0;   visibility: hidden;   -webkit-transition: 0.25s;   transition: 0.25s; } .auth0-lock.auth0-lock .auth0-lock-select-country {   background-color: #fff;   position: absolute;   padding: 0;   font-size: 14px;   color: #666;   bottom: 0;   top: 0;   right: 0;   left: 0;   border-radius: 5px;   overflow: hidden;   z-index: 200; } .auth0-lock.auth0-lock .auth0-lock-select-country .auth0-lock-back-button {   opacity: 1;   visibility: visible;   top: 19px; } .auth0-lock.auth0-lock .auth0-lock-select-country .auth0-lock-search {   background-color: #e3e5e9;   padding: 10px; } .auth0-lock.auth0-lock .auth0-lock-select-country .auth0-lock-input-wrap {   margin: 0;   border: none;   margin-left: 40px;   overflow: hidden; } .auth0-lock.auth0-lock .auth0-lock-select-country .auth0-lock-icon {   width: 16px;   height: 16px;   top: 12px;   left: 9px;   z-index: 1; } .auth0-lock.auth0-lock .auth0-lock-select-country .auth0-lock-input-search {   border: none; } .auth0-lock.auth0-lock .auth0-lock-select-country .auth0-lock-list-code {   position: relative;   height: calc(100% - 60px);   overflow-y: scroll; } .auth0-lock.auth0-lock .auth0-lock-select-country .auth0-lock-list-code ul {   margin: 0;   padding: 0; } .auth0-lock.auth0-lock .auth0-lock-select-country .auth0-lock-list-code li {   list-style: none;   text-align: left;   border-bottom: 1px solid #eee;   cursor: pointer;   color: #000;   font-size: 14px;   padding: 15px 20px;   margin: 0;   text-overflow: ellipsis;   width: 100%;   white-space: nowrap;   overflow: hidden;   box-sizing: border-box; } @media (min-width: 481px) {   .auth0-lock.auth0-lock .auth0-lock-select-country .auth0-lock-list-code li {     padding: 10px 20px;   } } .auth0-lock.auth0-lock .auth0-lock-select-country .auth0-lock-list-code li.auth0-lock-list-code-highlighted {   background-color: #2eb5ff;   color: #fff; } .auth0-lock.auth0-lock .auth0-lock-confirmation {   background-color: #fff;   position: absolute;   text-align: center;   line-height: 2;   font-size: 14px;   color: #666;   width: 100%;   height: 100%;   top: 0;   left: 0;   z-index: 200;   border-radius: 5px; } .auth0-lock.auth0-lock .auth0-lock-confirmation .auth0-lock-confirmation-content {   width: 100%;   top: 50%;   left: 50%;   -webkit-transform: translate(-50%, -50%);   transform: translate(-50%, -50%);   position: absolute; } .auth0-lock.auth0-lock .auth0-lock-confirmation p {   padding: 0 14px;   margin-bottom: 6px; } .auth0-lock.auth0-lock .auth0-lock-confirmation a {   display: block;   font-weight: 500;   color: #09c; } .auth0-lock.auth0-lock .auth0-lock-confirmation a svg {   width: 15px;   height: 16px;   margin-bottom: -4px;   margin-left: 0px;   display: inline-block;   -webkit-transition: -webkit-transform 1s ease;   transition: -webkit-transform 1s ease;   transition: transform 1s ease;   transition: transform 1s ease, -webkit-transform 1s ease;   -webkit-transform: rotate(120deg);   transform: rotate(120deg); } .auth0-lock.auth0-lock .auth0-lock-confirmation a svg path {   fill: #09c; } .auth0-lock.auth0-lock .auth0-lock-confirmation a:hover svg {   -webkit-transform: rotate(490deg);   transform: rotate(490deg); } .auth0-lock.auth0-lock .auth0-lock-confirmation .auth0-lock-sent-label {   color: #008000;   -webkit-animation: fadeIn 1s both;   animation: fadeIn 1s both;   font-weight: 600; } .auth0-lock.auth0-lock .auth0-lock-confirmation .auth0-lock-sent-failed-label {   color: #f00;   -webkit-animation: fadeIn 1s both;   animation: fadeIn 1s both;   font-weight: 600; } .auth0-lock.auth0-lock .auth0-lock-confirmation .checkmark__circle {   stroke-dasharray: 166;   stroke-dashoffset: 166;   stroke-width: 2;   stroke-miterlimit: 10;   stroke: #7ac142;   fill: none;   -webkit-animation: stroke 0.6s 0.4s cubic-bezier(0.65, 0, 0.45, 1) forwards;   animation: stroke 0.6s 0.4s cubic-bezier(0.65, 0, 0.45, 1) forwards; } .auth0-lock.auth0-lock .auth0-lock-confirmation .checkmark {   width: 56px;   height: 56px;   border-radius: 50%;   display: block;   stroke-width: 2;   stroke: #fff;   stroke-miterlimit: 10;   margin: 0 auto;   box-shadow: inset 0px 0px 0px #7ac142;   -webkit-animation: fill 0.4s ease-in-out 0.7s forwards, scale 0.3s ease-in-out 1.1s both;   animation: fill 0.4s ease-in-out 0.7s forwards, scale 0.3s ease-in-out 1.1s both; } .auth0-lock.auth0-lock .auth0-lock-confirmation .checkmark__check {   -webkit-transform-origin: 50% 50%;           transform-origin: 50% 50%; } .auth0-lock.auth0-lock .auth0-lock-confirmation .auth0-lock-back-button {   opacity: 1;   visibility: visible; } .auth0-lock.auth0-lock .auth0-lock-forgot-link {   font-size: 12px;   display: block;   text-align: center;   margin: 30px 0 0 0;   color: #5c666f; } .auth0-lock.auth0-lock .auth0-lock-badge-bottom {   position: absolute;   bottom: 15px;   left: 15px;   z-index: -1;   text-align: center;   padding: 6px 10px;   border-radius: 3px;   background: rgba(255,255,255,0.1); } .auth0-lock.auth0-lock .auth0-lock-badge-bottom .auth0-lock-badge {   display: inline-block;   color: rgba(255,255,255,0.7);   font-size: 14px; } .auth0-lock.auth0-lock .auth0-lock-badge-bottom .auth0-lock-badge svg {   vertical-align: middle;   margin: 0 4px; } .auth0-lock.auth0-lock .auth0-lock-badge-bottom .auth0-lock-badge:hover svg g#LogoBadge {   fill: #eb5424;   fill-opacity: 1; } .auth0-lock.auth0-lock.auth0-lock-opened {   opacity: 1;   pointer-events: auto; } @media (min-width: 481px) {   .auth0-lock.auth0-lock.auth0-lock-opened .auth0-lock-center {     overflow-y: auto;   } } @media screen and (max-width: 480px) {   .auth0-lock.auth0-lock.auth0-lock-opened {     position: absolute;   } } .auth0-lock.auth0-lock.auth0-lock-opened .auth0-lock-overlay {   opacity: 0.9;   -webkit-transition: opacity 0.3s ease-in 0s;   transition: opacity 0.3s ease-in 0s; } @media screen and (max-width: 480px) {   .auth0-lock.auth0-lock.auth0-lock-opened .auth0-lock-overlay {     display: none;   } } @media screen and (max-width: 480px) {   .auth0-lock.auth0-lock.auth0-lock-opened .auth0-lock-header {     border-radius: 0;   } } .auth0-lock.auth0-lock.auth0-lock-opened .auth0-lock-header-bg .auth0-lock-header-bg-blur {   opacity: 0.4;   -webkit-transition: 1s ease 1s;   transition: 1s ease 1s; } @media screen and (max-width: 480px) {   .auth0-lock.auth0-lock.auth0-lock-opened .auth0-lock-header-avatar {     width: 70px;     height: 70px;     margin: 10px auto 0;   } } @media screen and (max-width: 480px) {   .auth0-lock.auth0-lock.auth0-lock-opened .auth0-lock-firstname {     margin-top: 72px;   } } .auth0-lock.auth0-lock.auth0-lock-opened .auth0-lock-widget {   opacity: 1;   -webkit-transform: translateY(0%) scale(1);   transform: translateY(0%) scale(1); } @media (min-width: 481px) {   .auth0-lock.auth0-lock.auth0-lock-opened .auth0-lock-widget {     -webkit-transition: -webkit-transform 0.6s, opacity 0.6s;     -webkit-transition: opacity 0.6s, -webkit-transform 0.6s;     transition: opacity 0.6s, -webkit-transform 0.6s;     transition: transform 0.6s, opacity 0.6s;     transition: transform 0.6s, opacity 0.6s, -webkit-transform 0.6s;     -webkit-transition-delay: 0.5s;     transition-delay: 0.5s;     box-shadow: 0 0 40px 4px #111118;   } } @media screen and (max-width: 480px) {   .auth0-lock.auth0-lock.auth0-lock-opened .auth0-lock-widget {     width: 100%;     height: 100%;     position: absolute;     top: 0;     bottom: 0;     border-radius: 0;   } } @media screen and (max-width: 480px) {   .auth0-lock.auth0-lock.auth0-lock-opened .auth0-lock-widget-container {     height: 100%;   } } @media screen and (max-width: 480px) {   .auth0-lock.auth0-lock.auth0-lock-opened .auth0-lock-cred-pane {     border-radius: 0;   } } @media screen and (max-width: 480px) {   .auth0-lock.auth0-lock.auth0-lock-opened .auth0-lock-body-content {     background: #fff;     min-height: calc(100vh - 188px);     display: table;     width: 100%;   } } @media screen and (max-width: 480px) {   .auth0-lock.auth0-lock.auth0-lock-opened .auth0-lock-content {     width: 100%;     display: table-cell;     vertical-align: middle;   } } @media screen and (max-width: 480px) {   .auth0-lock.auth0-lock.auth0-lock-opened .auth0-lock-content .auth0-lock-form p {     font-size: 14px;   } } @media screen and (max-width: 480px) {   .auth0-lock.auth0-lock.auth0-lock-opened .auth0-lock-tabs-container {     position: absolute;     top: 0;     left: 0;     width: 100%;     margin: 0;   } } @media screen and (max-width: 480px) {   .auth0-lock.auth0-lock.auth0-lock-opened .auth0-lock-terms {     position: absolute;     bottom: -42px;     width: 100%;     left: 0;     box-sizing: border-box;   } } @media screen and (max-width: 480px) {   .auth0-lock.auth0-lock.auth0-lock-opened .auth0-lock-sign-up-terms-agreement label input {     top: 2px;   } } @media screen and (max-width: 480px) {   .auth0-lock.auth0-lock.auth0-lock-opened .auth0-lock-submit {     border-radius: 0;   } } @media screen and (max-width: 480px) {   .auth0-lock.auth0-lock.auth0-lock-opened .auth0-lock-badge-bottom {     display: none;   } } @media screen and (max-width: 480px) {   .auth0-lock.auth0-lock.auth0-lock-opened .auth0-lock-confirmation {     border-radius: 0;   } } @media screen and (max-width: 480px) {   .auth0-lock.auth0-lock.auth0-lock-opened.auth0-lock-iphone .auth0-lock-body-content {     min-height: calc(100vh - 256px);   } } @media screen and (max-width: 480px) {   .auth0-lock.auth0-lock.auth0-lock-opened.auth0-lock-no-submit .auth0-lock-body-content {     min-height: calc(100vh - 118px);   } } @media screen and (max-width: 480px) {   .auth0-lock.auth0-lock.auth0-lock-opened.auth0-lock-no-submit.auth0-lock-iphone .auth0-lock-body-content {     min-height: calc(100vh - 186px);   } } @media screen and (max-width: 480px) {   .auth0-lock.auth0-lock.auth0-lock-opened.auth0-lock-with-terms .auth0-lock-body-content {     margin-bottom: 42px;   } } @media screen and (max-width: 480px) {   .auth0-lock.auth0-lock.auth0-lock-opened.auth0-lock-with-tabs .auth0-lock-body-content {     min-height: calc(100vh - 228px);     padding-top: 40px;   } } @media screen and (max-width: 480px) {   .auth0-lock.auth0-lock.auth0-lock-opened.auth0-lock-with-tabs.auth0-lock-with-terms .auth0-lock-body-content {     min-height: calc(100vh - 228px - 42px);   } } @media screen and (max-width: 480px) {   .auth0-lock.auth0-lock.auth0-lock-opened.auth0-lock-with-tabs.auth0-lock-iphone .auth0-lock-body-content {     min-height: calc(100vh - 296px);   } } .auth0-lock.auth0-lock.auth0-lock-opened-in-frame {   opacity: 1;   pointer-events: auto;   position: relative;   width: auto;   margin-left: auto;   margin-right: auto; } .auth0-lock.auth0-lock.auth0-lock-opened-in-frame .auth0-lock-header-bg .auth0-lock-header-bg-blur {   opacity: 0.4;   -webkit-transition: 1s ease 1s;   transition: 1s ease 1s; } .auth0-lock.auth0-lock.auth0-lock-opened-in-frame .auth0-lock-header-bg .auth0-lock-header-bg-blur.auth0-lock-no-grayscale {   opacity: 0.5; } .auth0-lock.auth0-lock.auth0-lock-opened-in-frame .auth0-lock-widget {   opacity: 1;   -webkit-transform: translateY(0%) scale(1);   transform: translateY(0%) scale(1);   -webkit-transition: -webkit-transform 0.6s, opacity 0.6s;   -webkit-transition: opacity 0.6s, -webkit-transform 0.6s;   transition: opacity 0.6s, -webkit-transform 0.6s;   transition: transform 0.6s, opacity 0.6s;   transition: transform 0.6s, opacity 0.6s, -webkit-transform 0.6s;   -webkit-transition-delay: 0.5s;   transition-delay: 0.5s;   margin: auto; } .auth0-lock.auth0-lock.auth0-lock-opened-in-frame .global-error {   position: absolute;   display: none; } .auth0-lock .auth0-lock-form div.auth0-lock-pane-separator {   padding-top: 15px; } #social-container.lock-container .auth0-lock-mode-loading .auth0-lock-content {   opacity: 1; } #social-container.lock-container .auth0-lock-mode-loading .auth0-lock-content .auth0-lock-social-buttons-container {   opacity: 0.3; } .auth0-lock.auth0-lock .auth0-lock-tabs-container {   margin: -20px -20px 20px;   height: 40px; } .auth0-lock.auth0-lock .auth0-lock-tabs {   background: #fff;   padding: 0;   margin: 0;   font-size: 13px;   letter-spacing: 0.7px;   box-shadow: 0 1px 0 0 rgba(92,102,111,0.2);   display: -webkit-box;   display: -ms-flexbox;   display: flex;   -webkit-box-orient: horizontal;   -webkit-box-direction: normal;       -ms-flex-direction: row;           flex-direction: row;   -ms-flex-wrap: wrap;       flex-wrap: wrap;   -webkit-box-pack: center;       -ms-flex-pack: center;           justify-content: center;   -ms-flex-line-pack: center;       align-content: center;   -webkit-box-align: stretch;       -ms-flex-align: stretch;           align-items: stretch; } .auth0-lock.auth0-lock .auth0-lock-tabs:after {   content: "";   display: table;   clear: both; } .auth0-lock.auth0-lock .auth0-lock-tabs li {   width: 50%;   display: block;   list-style: none;   float: left;   padding: 0;   margin: 0;   text-align: center;   cursor: pointer; } .auth0-lock.auth0-lock .auth0-lock-tabs li a {   padding: 11px 10px;   display: block;   text-decoration: none;   color: rgba(92,102,111,0.6);   font-weight: 500; } .auth0-lock.auth0-lock .auth0-lock-tabs li.auth0-lock-tabs-current {   box-shadow: 0 1px 0 0 #5c666f;   cursor: default; } .auth0-lock.auth0-lock .auth0-lock-tabs li.auth0-lock-tabs-current a {   color: #5c666f; } .auth0-lock-password-strength {   width: 100%;   bottom: 41px;   display: block;   text-align: left;   padding-top: 0;   -webkit-animation-duration: 0.3s;   animation-duration: 0.3s;   -webkit-transition: height 0.3s ease;   transition: height 0.3s ease; } @media (min-width: 481px) {   .auth0-lock-password-strength {     position: absolute;     background: #1f242e;     box-shadow: 0 0 20px 0 rgba(0,0,0,0.5);     -webkit-transition: none;     transition: none;     width: 100%;     border-radius: 3px;     z-index: 1000;   }   .auth0-lock-password-strength:after {     top: 100%;     left: 21px;     border: solid transparent;     content: " ";     height: 0;     width: 0;     position: absolute;     pointer-events: none;     border-top-color: #1f242e;     border-width: 9px;     margin-left: -9px;   } } .auth0-lock-password-strength.fadeOut {   opacity: 0;   -webkit-transition: 0.3s 0.3s ease;   transition: 0.3s 0.3s ease;   visibility: hidden; } .auth0-lock-password-strength.fadeIn ul {   -webkit-animation: fadeIn 0.3s 0.1s both;           animation: fadeIn 0.3s 0.1s both; } .auth0-lock-password-strength li, .auth0-lock-password-strength ul {   margin: 0;   padding: 0;   list-style: none;   color: #dd4b39; } .auth0-lock-password-strength > ul {   padding: 15px;   padding-top: 0; } @media (min-width: 481px) {   .auth0-lock-password-strength > ul {     padding-top: 12px;   } } .auth0-lock-password-strength li span {   background-image: url("resources/EN_206n/60.svg");   background-position: left center;   background-repeat: no-repeat;   padding-left: 20px; } .auth0-lock-password-strength ul li ul {   margin-left: 20px; } .auth0-lock-password-strength ul li ul li {   color: #000; } @media (min-width: 481px) {   .auth0-lock-password-strength ul li ul li {     color: #fff;   } } .auth0-lock-password-strength ul li ul li span {   background-image: url("resources/EN_206n/61.svg"); } .auth0-lock-password-strength li {   line-height: 1.5;   margin-top: 5px;   font-size: 13px;   -webkit-transition: color 0.3s ease-in;   transition: color 0.3s ease-in;   position: relative; } .auth0-lock-password-strength li.auth0-lock-checked {   color: #7ed321; } .auth0-lock-password-strength li.auth0-lock-checked span {   background-image: url("resources/EN_206n/62.svg"); } .auth0-lock-error-msg {   color: #f00;   font-size: 12px;   margin-top: 5px; } @media (min-width: 481px) {   .auth0-lock-error-msg {     color: #000;     background: #fff;     box-shadow: 0 0 5px 0 rgba(0,0,0,0.6);     margin: 0;     border-radius: 3px;     position: absolute;     left: calc(100% + 7px);     top: 1px;     display: inline-table;   }   .auth0-lock-error-msg span {     background: #fff;     padding: 12px 15px;     display: block;     position: relative;     border-radius: 3px;     z-index: 1;   }   .auth0-lock-error-msg:after {     content: "";     background: #fff;     height: 6px;     width: 6px;     position: absolute;     pointer-events: none;     box-shadow: 0 0 5px 0 rgba(0,0,0,0.6);     right: calc(100% - 3px);     top: 50%;     -webkit-transform: translateY(-50%) rotate(45deg);             transform: translateY(-50%) rotate(45deg);   } } .auth0-lock .auth0-loading-screen {   min-height: 42px; } .auth0-lock .auth0-loading-screen .auth0-loading-container {   display: block; } .auth0-lock .auth0-sso-notice-container {   background: rgba(0,0,0,0.03);   color: rgba(0,0,0,0.54);   padding: 10px 0;   margin: -20px -20px 20px;   text-align: center;   font-size: 10px;   text-transform: uppercase;   letter-spacing: 1px; } .auth0-lock .auth0-sso-notice-container .auth0-lock-icon {   width: 12px;   height: 14px;   position: relative;   top: 2px;   right: 2px; } .auth0-lock .auth0-lock-last-login-pane .auth0-lock-social-button.auth0-lock-social-big-button {   margin-top: 0; } .auth0-lock .auth0-lock-last-login-pane .auth0-lock-social-button[data-provider="auth0"] .auth0-lock-social-button-text {   text-transform: none;   font-size: 12px;   font-weight: normal; } .auth0-lock .auth0-lock-sign-up-terms-agreement label input {   margin-right: 5px;   position: relative; } .auth0-lock-input-show-password {   position: relative; } .auth0-lock-input-show-password .auth0-lock-show-password {   position: absolute;   top: 14px;   right: 12px;   width: 20px;   height: 14px; } .auth0-lock-input-show-password .auth0-lock-show-password input[type=checkbox] {   display: none; } .auth0-lock-input-show-password .auth0-lock-show-password input[type=checkbox] + label {   background-image: url("resources/EN_206n/63.svg");   width: 20px;   height: 14px;   display: inline-block;   cursor: pointer;   vertical-align: top; } .auth0-lock-input-show-password .auth0-lock-show-password input[type=checkbox]:checked + label {   background-image: url("resources/EN_206n/64.svg"); } input[type="button"] {   cursor: pointer; } </style></head>
+<body>
+  <!--[if IE 8]>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/ie8/0.2.5/ie8.js"></script>
+  <![endif]-->
+
+  <!--[if lte IE 9]>
+  <script src="https://cdn.auth0.com/js/base64.js"></script>
+  <script src="https://cdn.auth0.com/js/es5-shim.min.js"></script>
+  <![endif]-->
+
+<div id="r-login-container" class="metro themercury login-page "><div data-reactroot="" class="auth0-lock auth0-lock-opened-in-frame"><div class="auth0-lock-center"><form class="auth0-lock-widget" method="post"><div class="auth0-lock-widget-container"><div class="auth0-lock-cred-pane auth0-lock-quiet"><div class="auth0-lock-header"><div class="auth0-lock-header-bg auth0-lock-blur-support"><div class="auth0-lock-header-bg-blur" style="background-image: url(&quot;resources/EN_206n/65.png&quot;);" data-original-style="background-image: url(&quot;https://resourcesssl.newscdn.com.au/cs/auth0/images/themercury/logo.png&quot;);"></div><div class="auth0-lock-header-bg-solid" style="background-color: rgb(230, 0, 125);"></div></div><div class="auth0-lock-header-welcome"><img class="auth0-lock-header-logo" src="resources/EN_206n/65.png" data-original-src="https://resourcesssl.newscdn.com.au/cs/auth0/images/themercury/logo.png"><div class="auth0-lock-name" title="Auth0">Auth0</div></div></div><div><div></div></div><div style="position: relative;"><span><div class="" style=""><div style="visibility: inherit;"><div class="auth0-lock-view-content"><div style="position: relative;"><div class="auth0-lock-body-content"><div class="auth0-lock-content"><div class="auth0-lock-form"><div><div class="auth-lock-social-buttons-pane"><div class="auth0-lock-social-buttons-container"><button class="auth0-lock-social-button auth0-lock-social-big-button" data-provider="facebook" type="button"><div class="auth0-lock-social-button-icon"></div><div class="auth0-lock-social-button-text">Log in with Facebook</div></button><button class="auth0-lock-social-button auth0-lock-social-big-button" data-provider="google-oauth2" type="button"><div class="auth0-lock-social-button-icon"></div><div class="auth0-lock-social-button-text">Log in with Google</div></button><button class="auth0-lock-social-button auth0-lock-social-big-button" data-provider="twitter" type="button"><div class="auth0-lock-social-button-icon"></div><div class="auth0-lock-social-button-text">Log in with Twitter</div></button></div></div><div class="auth0-lock-pane-separator"></div><div><p><span>or</span></p><div class="auth0-lock-input-block auth0-lock-input-email"><div class="auth0-lock-input-wrap auth0-lock-input-wrap-with-icon"><span><svg focusable="false" width="14px" height="13px" viewBox="0 0 32 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" class="auth0-lock-icon auth0-lock-icon-box"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"><g id="32px" sketch:type="MSLayerGroup" transform="translate(-2155.000000, -2317.000000)" fill="#373A39"><g id="Group-856" transform="translate(1.000000, 1.000000)" sketch:type="MSShapeGroup"><path id="Fill-419" d="M2184,2339 C2184,2339.55 2183.55,2340 2183,2340 L2157,2340 C2156.45,2340 2156,2339.55 2156,2339 L2156,2319 C2156,2318.45 2156.45,2318 2157,2318 L2183,2318 C2183.55,2318 2184,2318.45 2184,2319 L2184,2339 L2184,2339 Z M2184,2316 L2156,2316 C2154.89,2316 2154,2316.89 2154,2318 L2154,2340 C2154,2341.1 2154.89,2342 2156,2342 L2184,2342 C2185.1,2342 2186,2341.1 2186,2340 L2186,2318 C2186,2316.89 2185.1,2316 2184,2316 L2184,2316 Z M2176,2322 L2180,2322 L2180,2326 L2176,2326 L2176,2322 Z M2174,2328 L2182,2328 L2182,2320 L2174,2320 L2174,2328 Z M2158,2332 L2172,2332 L2172,2330 L2158,2330 L2158,2332 Z M2158,2336 L2172,2336 L2172,2334 L2158,2334 L2158,2336 Z"></path></g></g></g></svg></span><input type="email" name="email" class="auth0-lock-input" placeholder="Email" autocomplete="on" autocapitalize="off" value=""></div></div><div class="auth0-lock-input-block auth0-lock-input-show-password"><div class="auth0-lock-input-block auth0-lock-input-password"><div class="auth0-lock-input-wrap auth0-lock-input-wrap-with-icon"><span><svg focusable="false" width="11px" height="14px" viewBox="0 0 13 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="auth0-lock-icon auth0-lock-icon-box"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-288.000000, -1508.000000)" fill="#888888"><path d="M299,1523.998 L290,1523.998 C288.896,1523.998 288,1523.102 288,1521.999 L288,1515.999 C288,1514.895 288.896,1513.998 290,1513.998 L290,1513.998 L290,1512.499 C290,1510.015 292.015,1507.999 294.5,1507.999 C296.985,1507.999 299,1510.015 299,1512.499 L299,1513.999 C300.104,1513.999 301,1514.895 301,1515.999 L301,1521.999 C301,1523.103 300.104,1523.998 299,1523.998 L299,1523.998 Z M298,1512.499 C298,1510.566 296.433,1508.999 294.5,1508.999 C292.567,1508.999 291,1510.566 291,1512.499 L291,1513.998 L298,1513.998 L298,1512.499 L298,1512.499 Z M300,1515.999 C300,1515.446 299.552,1514.998 299,1514.998 L290,1514.998 C289.447,1514.998 289,1515.446 289,1515.999 L289,1521.999 C289,1522.551 289.447,1522.998 290,1522.998 L299,1522.998 C299.552,1522.998 300,1522.551 300,1521.999 L300,1515.999 L300,1515.999 Z M294.5,1520.998 C294.224,1520.998 294,1520.774 294,1520.498 L294,1517.498 C294,1517.223 294.224,1516.999 294.5,1516.999 C294.776,1516.999 295,1517.223 295,1517.498 L295,1520.498 C295,1520.774 294.776,1520.998 294.5,1520.998 L294.5,1520.998 Z"></path></g></g></svg></span><input type="password" name="password" class="auth0-lock-input" autocomplete="off" autocapitalize="off" value="" placeholder="Password"></div></div><div class="auth0-lock-show-password"><input type="checkbox" id="slideOne" value="on"><label for="slideOne" title="Show password"></label></div></div><p class="auth0-lock-alternative"><a class="auth0-lock-alternative-link" href="javascript:">Forgot your password?</a></p></div></div></div></div></div></div></div></div></div></span></div><button class="auth0-lock-submit" type="submit" style="background-color: rgb(230, 0, 125);"><div class="auth0-loading-container"><div class="auth0-loading"></div></div><span class="auth0-label-submit"><!-- react-text: 68 -->Log In<!-- /react-text --><span><svg focusable="false" class="icon-text" width="8px" height="12px" viewBox="0 0 8 12" version="1.1" xmlns="http://www.w3.org/2000/svg"><g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="Web/Submit/Active" transform="translate(-148.000000, -32.000000)" fill="#FFFFFF"><polygon id="Shape" points="148 33.4 149.4 32 155.4 38 149.4 44 148 42.6 152.6 38"></polygon></g></g></svg></span></span></button></div></div></form></div><div class="subscription-link">Not a subscriber? 
+            <a href="https://www.themercury.com.au/subscribe/news/1/?offerset=tm_default&amp;sourceCode=TMWEB_ONS596">Subscribe now</a></div><div class="support-questions"><em>Need help?</em>
+            <p>Please call 1300 696 397. Monday to Friday 7.00am - 6.00pm, Saturday 
+            &amp; Sunday 7.00am - 11.30am (AEST).</p></div></div></div>
+
+<!-- Auth0 recommendation is that the version should be locked down and only manually updated -->
+
+
+
+
+<iframe sandbox="allow-scripts allow-same-origin" title="Adobe ID Syncing iFrame" id="destination_publishing_iframe_newscorpau_0" name="destination_publishing_iframe_newscorpau_0_name" style="display: none; width: 0px; height: 0px;" src="resources/EN_206n/66.htm" class="aamIframeLoaded" data-original-src="https://newscorpau.demdex.net/dest5.html?d_nsid=0#https%3A%2F%2Flogin.newscorpaustralia.com"></iframe></body></html>

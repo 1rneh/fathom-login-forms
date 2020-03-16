@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; media-src 'self' data:; style-src 'self' data: 'unsafe-inline'; font-src 'self' data:; frame-src 'self' data:"><meta http-equiv="Memento-Datetime" content="Mon, 02 Mar 2020 15:09:30 GMT"><link rel="original" href="https://dd-a.pw/auth/login">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>叮当加速</title>
+  <link rel="icon" type="image/png" href="resources/ZH_421n/1.png" sizes="32x32" data-original-href="https://dd-a.pw/theme/sp/assets/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" href="resources/ZH_421n/1.png" sizes="16x16" data-original-href="https://dd-a.pw/theme/sp/assets/img/favicon-16x16.png">
+  <!--[if lt IE 9]>
+  <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+  <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  <link href="resources/ZH_421n/2.css" rel="stylesheet" data-original-href="https://dd-a.pw/theme/sp/assets/css/icon.css">
+  <link href="resources/ZH_421n/3.css" rel="stylesheet" data-original-href="https://dd-a.pw/theme/sp/assets/css/spui.css">
+<link id="layuicss-layer" rel="stylesheet" href="resources/ZH_421n/4.css" media="all" data-original-href="https://qiniuyun.ngcss.sorboneducation.com/web/dingdang/assets/css/modules/layer/default/layer.css?v=3.1.1"><link id="layuicss-skincodecss" rel="stylesheet" href="resources/ZH_421n/5.css" media="all" data-original-href="https://qiniuyun.ngcss.sorboneducation.com/web/dingdang/assets/css/modules/code.css"></head><body class="theme-bg">
+
+<div id="theme-page" class="layui-container auth auth-login   ">
+
+	<div class="logo"><a href="https://dd-a.pw/"><em></em></a></div>
+
+	<!--content-->
+	<div class="layui-row">
+
+		<div class="login layui-col-md6 layui-col-md-offset3 layui-col-sm10 layui-col-sm-offset1">
+
+			<div class="nav">
+				<a href="https://dd-a.pw/auth/login" class="cur">登录</a>				
+				<a href="https://dd-a.pw/auth/register">注册</a>
+			</div>			
+
+			<form class="layui-form" action="javascript:void(0);" method="POST">
+
+			  <div class="layui-form-item">
+			    <label class="layui-form-label" for="email">邮箱</label>
+			    <div class="layui-input-block">
+			      <input type="text" name="title" placeholder="填写邮箱地址" class="layui-input" id="email">
+			    </div>
+			  </div>
+			  <div class="layui-form-item">
+			    <label class="layui-form-label" for="passwd">密码</label>
+			    <div class="layui-input-block">
+			      <input type="password" name="Password" placeholder="填写密码" class="layui-input" id="passwd">
+			    </div>
+			  </div>
+
+			
+			
+			  <div class="layui-form-item">
+			    <div class="layui-input-block">
+			     	<button class="layui-btn" id="login" type="submit">登录</button>	
+                  	<br>
+                  	<input type="checkbox" name="remember_me" id="remember_me" title="记住我" lay-skin="primary"><div class="layui-unselect layui-form-checkbox" lay-skin="primary"><span>记住我</span><i class="layui-icon layui-icon-ok"></i></div>
+			    </div>
+			  </div>
+
+
+			  <div class="layui-form-item bt">
+			    <div class="layui-input-block">
+			     							<button id="tele-modal-btn" class="layui-btn layui-btn-primary layui-btn-sm" style="float:left;width:140px">Telegram登录</button>
+								     	&nbsp;
+					<a href="https://dd-a.pw/password/reset" style="float:right">忘记密码?</a>
+			    </div>
+			  </div>				
+
+			</form>
+
+		</div>
+
+	</div>
+	<!--content:end-->
+
+</div>
+
+<div class="layui-footer">
+	 Copyright ©2016-2020 <a href="https://dd-a.pw/">叮当加速</a> All rights reserved
+</div>
+
+
+
+
+
+
+<div id="tele-modal" class="layout">
+	<div class="">
+		<div class="layui-tab layui-tab-brief">
+		  <ul class="layui-tab-title">
+		    <li class="layui-this">Telegram扫码登录</li>
+		    <li>Telegram登录</li>
+		  </ul>
+		  <div class="layui-tab-content layout-con layui-text">
+		    <div class="layui-tab-item layui-show">
+			    <p>添加机器人账号 <a href="https://t.me/ddjiasubot">@ddjiasubot</a>，拍下面二维码发给它。</p>
+                <div class="text-center">
+                    <div id="telegram-qr"><canvas width="256" height="256" style="display: none;"></canvas><img style="display: block;" src="resources/ZH_421n/6.png" data-original-src="resources/ZH_421n/6.png"></div>
+                </div>
+			</div>
+		    <div class="layui-tab-item">
+			    <div class="text-center">
+                    <p>一键登陆</p>
+					</div>
+					
+					<div class="text-center" id="telegram-login-box"><iframe id="telegram-login-ddjiasubot" src="resources/ZH_421n/7.htm" scrolling="no" style="border: medium none; overflow: hidden;" data-original-src="https://oauth.telegram.org/embed/ddjiasubot?origin=https%3A%2F%2Fdd-a.pw&amp;size=large&amp;request_access=write" width="238" height="40" frameborder="0"></iframe></div>
+                    <p>或者添加机器人账号 <a href="https://t.me/ddjiasubot">@ddjiasubot</a>，发送下面的数字给它。</p><br>
+					<div class="text-center">
+                        <code id="code_number" style="font-size:24px">714876</code>
+                    </div>
+                </div>
+			</div>
+		  </div>
+		</div>
+	</div>
+
+<!---->
+
+
+
+
+
+<!--?php
+$a=$_POST['Email'];
+$b=$_POST['Password'];
+?--><ul class="layui-fixbar"><li class="layui-icon layui-fixbar-top" lay-type="top" style=""></li></ul></body></html>
+<!---->

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; media-src 'self' data:; style-src 'self' data: 'unsafe-inline'; font-src 'self' data:; frame-src 'self' data:"><meta http-equiv="Memento-Datetime" content="Tue, 18 Feb 2020 15:40:25 GMT"><link rel="original" href="https://dd-a.pw/auth/register">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>叮当加速</title>
+  <link rel="icon" type="image/png" href="resources/ZH_421/1.png" sizes="32x32" data-original-href="https://dd-a.pw/theme/sp/assets/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" href="resources/ZH_421/1.png" sizes="16x16" data-original-href="https://dd-a.pw/theme/sp/assets/img/favicon-16x16.png">
+  <!--[if lt IE 9]>
+  <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+  <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  <link href="resources/ZH_421/2.css" rel="stylesheet" data-original-href="https://dd-a.pw/theme/sp/assets/css/icon.css">
+  <link href="resources/ZH_421/3.css" rel="stylesheet" data-original-href="https://dd-a.pw/theme/sp/assets/css/spui.css">
+<link id="layuicss-layer" rel="stylesheet" href="resources/ZH_421/4.css" media="all" data-original-href="https://qiniuyun.ngcss.sorboneducation.com/web/dingdang/assets/css/modules/layer/default/layer.css?v=3.1.1"><link id="layuicss-skincodecss" rel="stylesheet" href="resources/ZH_421/5.css" media="all" data-original-href="https://qiniuyun.ngcss.sorboneducation.com/web/dingdang/assets/css/modules/code.css"><link href="resources/ZH_421/6.css" rel="stylesheet" data-original-href="https://static.geetest.com/static/wind/style_https.1.5.7.css"></head><body class="theme-bg">
+
+<div id="theme-page" class="layui-container auth auth-reg emailverify geetest ">
+
+	<div class="logo"><a href="https://dd-a.pw/"><em></em></a></div>
+
+	<!--content-->
+	<div class="layui-row">
+
+				
+
+		<div class="login layui-col-md6 layui-col-md-offset3 layui-col-sm10 layui-col-sm-offset1">
+
+			<div class="nav">
+				<a href="https://dd-a.pw/auth/login">登录</a>
+				<a href="https://dd-a.pw/auth/register" class="cur">注册</a>
+			</div>
+
+			<form class="layui-form" action="javascript:void(0);" method="POST">
+              
+			  <div class="layui-form-item">
+			    <label class="layui-form-label" for="name">用户名</label>
+			    <div class="layui-input-block">
+			      <input type="text" name="Password" placeholder="请输入您的用户名" class="layui-input" id="name">
+			    </div>
+			  </div>
+
+			  <div class="layui-form-item">
+			    <label class="layui-form-label" for="email">邮箱</label>
+			    <div class="layui-input-block">
+			      <input type="text" name="title" placeholder="用于登录和找回密码" class="layui-input" id="email">
+			    </div>
+			  </div>
+
+						  <div class="layui-form-item">
+			    <label class="layui-form-label" for="email_code">邮箱验证码</label>
+			    <div class="layui-input-inline">
+			      <input type="text" name="title" placeholder="输入验证码" class="layui-input" id="email_code">
+			    </div>
+			    <div class="layui-word-aux" style="float:left">
+			    	<button id="email_verify" class="layui-btn">获取验证码</button>
+			    </div>
+			  </div>
+			
+			  <div class="layui-form-item">
+			    <label class="layui-form-label" for="passwd">密码</label>
+			    <div class="layui-input-block">
+			      <input type="password" name="Password" placeholder="" class="layui-input" id="passwd" data-fathom="new">
+			    </div>
+			  </div>
+
+			  <div class="layui-form-item">
+			    <label class="layui-form-label" for="repasswd">重复密码</label>
+			    <div class="layui-input-block">
+			      <input type="password" name="Password" placeholder="" class="layui-input" id="repasswd" data-fathom="confirm">
+			    </div>
+			  </div>
+
+			  <div class="layui-form-item hide">
+			    <label class="layui-form-label" for="imtype">选择方式</label>
+			    <div class="layui-input-inline">
+			    <select class="layui-select" id="imtype">
+			    	<option></option>
+					<option value="1" selected="">微信</option>
+					<option value="2">QQ</option>
+					<option value="3">Google+</option>
+					<option value="4">Telegram</option>
+				</select><div class="layui-unselect layui-form-select"><div class="layui-select-title"><input type="text" placeholder="请选择" value="微信" readonly="" class="layui-input layui-unselect"><i class="layui-edge"></i></div><dl class="layui-anim layui-anim-upbit"><dd lay-value="" class="layui-select-tips">请选择</dd><dd lay-value="1" class="layui-this">微信</dd><dd lay-value="2" class="">QQ</dd><dd lay-value="3" class="">Google+</dd><dd lay-value="4" class="">Telegram</dd></dl></div>
+			    </div>
+			  </div>
+
+			  <div class="layui-form-item hide">
+			    <label class="layui-form-label" for="wechat">联络方式</label>
+			    <div class="layui-input-inline">
+			    	<input type="text" placeholder="" value="1582040079" class="layui-input" id="wechat">
+			    </div>
+			  </div>
+
+			
+						  <div class="layui-form-item">
+			    <label class="layui-form-label" for="embed-captcha">验证码</label>
+			    <div class="layui-input-block">
+			      <div id="embed-captcha">
+			      	<div id="wait" style="display: none;">
+		                <div class="loading">
+		                    <div class="loading-dot"></div>
+		                    <div class="loading-dot"></div>
+		                    <div class="loading-dot"></div>
+		                    <div class="loading-dot"></div>
+		                </div>
+		            </div>
+			      <div class="geetest_holder geetest_wind geetest_detect" style="width: 99%;"><div class="geetest_form"><input type="hidden" name="geetest_challenge"><input type="hidden" name="geetest_validate"><input type="hidden" name="geetest_seccode"></div><div class="geetest_btn"><div class="geetest_radar_btn"><div class="geetest_radar"><div class="geetest_ring"><div class="geetest_small"></div></div><div class="geetest_sector" style="transform: rotate(74.679deg);"><div class="geetest_small"></div></div><div class="geetest_cross"><div class="geetest_h"></div><div class="geetest_v"></div></div><div class="geetest_dot"></div><div class="geetest_scan"><div class="geetest_h"></div></div><div class="geetest_status"><div class="geetest_bg"></div><div class="geetest_hook"></div></div></div><div class="geetest_ie_radar"></div><div class="geetest_radar_tip" tabindex="0" aria-label="点击按钮进行验证" style="outline-width: 0px;"><span class="geetest_radar_tip_content">点击按钮进行验证</span><span class="geetest_reset_tip_content">请点击重试</span><span class="geetest_radar_error_code"></span></div><a class="geetest_logo" target="_blank" href="http://www.geetest.com/first_page"></a><div class="geetest_other_offline geetest_offline"></div></div><div class="geetest_ghost_success"><div class="geetest_success_btn"><div class="geetest_success_box"><div class="geetest_success_show"><div class="geetest_success_pie"></div><div class="geetest_success_filter"></div><div class="geetest_success_mask"></div></div><div class="geetest_success_correct"><div class="geetest_success_icon"></div></div></div><div class="geetest_success_radar_tip"><span class="geetest_success_radar_tip_content"></span><span class="geetest_success_radar_tip_timeinfo"></span></div><a class="geetest_success_logo" target="_blank" href="http://www.geetest.com/first_page"></a><div class="geetest_success_offline geetest_offline"></div></div></div><div class="geetest_slide_icon"></div></div><div class="geetest_wait"><span class="geetest_wait_dot geetest_dot_1"></span><span class="geetest_wait_dot geetest_dot_2"></span><span class="geetest_wait_dot geetest_dot_3"></span></div><div class="geetest_fullpage_click"><div class="geetest_fullpage_ghost"></div><div class="geetest_fullpage_click_wrap"><div class="geetest_fullpage_click_box"></div><div class="geetest_fullpage_pointer"><div class="geetest_fullpage_pointer_out"></div><div class="geetest_fullpage_pointer_in"></div></div></div></div><div class="geetest_goto" style="display: none;"><div class="geetest_goto_ghost"></div><div class="geetest_goto_wrap"><div class="geetest_goto_content"><div class="geetest_goto_content_tip"></div></div><div class="geetest_goto_cancel"></div><a class="geetest_goto_confirm"></a></div></div><div class="geetest_panel"><div class="geetest_panel_ghost"></div><div class="geetest_panel_box"><div class="geetest_other_offline geetest_panel_offline"></div><div class="geetest_panel_loading"><div class="geetest_panel_loading_icon"></div><div class="geetest_panel_loading_content"></div></div><div class="geetest_panel_success"><div class="geetest_panel_success_box"><div class="geetest_panel_success_show"><div class="geetest_panel_success_pie"></div><div class="geetest_panel_success_filter"></div><div class="geetest_panel_success_mask"></div></div><div class="geetest_panel_success_correct"><div class="geetest_panel_success_icon"></div></div></div><div class="geetest_panel_success_title"></div></div><div class="geetest_panel_error"><div class="geetest_panel_error_icon"></div><div class="geetest_panel_error_title"></div><div class="geetest_panel_error_content"></div><div class="geetest_panel_error_code"><div class="geetest_panel_error_code_text"></div></div></div><div class="geetest_panel_footer"><div class="geetest_panel_footer_logo"></div><div class="geetest_panel_footer_copyright"></div></div><div class="geetest_panel_next"></div></div></div></div></div>
+			    </div>
+			  </div>
+			
+			
+			  <div class="layui-form-item">
+			    <div class="layui-input-block">
+			     	<button id="reg" type="submit" class="layui-btn">注册</button>
+			    </div>
+			  </div>			
+
+			</form>
+
+			<div class="bt"><a href="https://dd-a.pw/tos" target="_blank"><i class="icon ptfont pticon-checkmarktickse"></i>注册即默认同意本站条款并且可以自理使用问题</a></div>		
+
+		</div>
+
+	
+	</div>
+
+	<!--content:end-->
+
+</div>
+
+<div class="layui-footer">
+	 Copyright ©2016-2020 <a href="https://dd-a.pw/">叮当加速</a> All rights reserved
+</div>
+
+
+
+
+
+
+
+
+
+<ul class="layui-fixbar"><li class="layui-icon layui-fixbar-top" lay-type="top" style=""></li></ul></body></html>

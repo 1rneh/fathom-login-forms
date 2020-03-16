@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; media-src 'self' data:; style-src 'self' data: 'unsafe-inline'; font-src 'self' data:; frame-src 'self' data:"><meta http-equiv="Memento-Datetime" content="Wed, 26 Feb 2020 15:15:07 GMT"><link rel="original" href="http://sx95113.com/"><style type="text/css" title="audiojs">        .audiojs audio { position: absolute; left: -1px; }         .audiojs { position:absolute; top: 134px; width: 260px; height: 36px; overflow: hidden; font-family: monospace; font-size: 12px; }         .audiojs .play-pause {width: 19px; height: 40px; padding: 8px 6px; margin: 0px; float: left; overflow: hidden;}         .audiojs p { display: none; width: 25px; height: 40px; margin: 0px; cursor: pointer; }         .audiojs .play { display: block; }         .audiojs .scrubber { display:none; position: relative; float: left; width: 256px; background: #5a5a5a; height: 2px; margin: 32px 3px 10px -30px; border-left: 0px; border-bottom: 0px; overflow: hidden; }         .audiojs .progress { position: absolute; top: 0px; left: 0px; height: 2px; width: 0px; background: #ccc; z-index: 1;           background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #ccc), color-stop(0.5, #ddd), color-stop(0.51, #ccc), color-stop(1, #ccc));           background-image: -moz-linear-gradient(center top, #ccc 0%, #ddd 50%, #ccc 51%, #ccc 100%); }         .audiojs .loaded { position: absolute; top: 0px; left: 0px; height: 2px; width: 0px; background: #000;           background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #222), color-stop(0.5, #333), color-stop(0.51, #222), color-stop(1, #222));           background-image: -moz-linear-gradient(center top, #222 0%, #333 50%, #222 51%, #222 100%); }         .audiojs .time {display:none; float: left; height: 36px; line-height: 36px; margin: -40px 2px 0px 0px; padding: 0px 3px 0px 3px; color: #fff; }         .audiojs .time em { padding: 0px 2px 0px 0px; color: #ffffff; font-style: normal; }         .audiojs .time strong { padding: 0px 0px 0px 2px; font-weight: normal; }   .audiojs .error-message { display:none;float: left; display: none; margin: 0px 10px; height: 36px; width: 400px; overflow: hidden; line-height: 36px; white-space: nowrap; color: #fff;           text-overflow: ellipsis; -o-text-overflow: ellipsis; -icab-text-overflow: ellipsis; -khtml-text-overflow: ellipsis; -moz-text-overflow: ellipsis; -webkit-text-overflow: ellipsis; }         .audiojs .error-message a { color: #eee; text-decoration: none; padding-bottom: 1px; border-bottom: 1px solid #999; white-space: wrap; }                 .audiojs .play { background: url("resources/ZH_260n/1.gif") -5px 0px no-repeat; }         .audiojs .loading { background: url("resources/ZH_260n/1.gif") -5px -30px no-repeat; }         .audiojs .error { background: url("resources/ZH_260n/1.gif") -5px -60px no-repeat; }         .audiojs .pause { background: url("resources/ZH_260n/1.gif") -5px -90px no-repeat; }                 .playing .play, .playing .loading, .playing .error { display: none; }         .playing .pause { display: block; }                 .loading .play, .loading .pause, .loading .error { display: none; }         .loading .loading { display: block; }                 .error .time, .error .play, .error .pause, .error .scrubber, .error .loading { display: none; }         .error .error { display: block; }         .error .play-pause p { cursor: auto; }         .error .error-message { display: none; }</style><style media="screen"></style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="renderer" content="webkit">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="keywords" content="95113服务网,95113,山西航信,山西航信95113,航天信息,山西航天信息服务助手,95113服务助手">
+<link type="text/css" rel="stylesheet" href="resources/ZH_260n/2.css" data-original-href="http://sx95113.com/static/css/jquery.alerts.css?t=1535161430000">
+<link type="text/css" rel="stylesheet" href="resources/ZH_260n/3.css" data-original-href="http://sx95113.com/static/css/dialog.css?t=1535161423000">
+<link type="text/css" rel="stylesheet" href="resources/ZH_260n/4.css" data-original-href="http://sx95113.com/static/css/base.css?t=1567574490000">
+<link type="text/css" rel="stylesheet" href="resources/ZH_260n/5.css" data-original-href="http://sx95113.com/static/css/index.css?t=1572406988000">
+<link type="text/css" rel="stylesheet" href="resources/ZH_260n/6.css" data-original-href="http://sx95113.com/static/css/yhlogin.css?t=1568252523000">
+
+<link type="text/css" rel="stylesheet" href="resources/ZH_260n/7.css" data-original-href="http://sx95113.com/static/css/jquery-ui.css?t=1539251488000">
+ 
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+	
+	
+<title>山西航信95113</title>
+<style>
+.ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br {
+    border-bottom-right-radius: 0px;
+}
+.ui-corner-all, .ui-corner-bottom, .ui-corner-left, .ui-corner-bl {
+    border-bottom-left-radius: 0px;
+}
+.ui-corner-all, .ui-corner-top, .ui-corner-right, .ui-corner-tr {
+    border-top-right-radius: 0px;
+}
+.ui-corner-all, .ui-corner-top, .ui-corner-left, .ui-corner-tl {
+    border-top-left-radius: 0px;
+}
+</style>
+</head>
+<body style="overflow-x:hidden;">
+<!-------------------------------顶部------------------------------->
+
+<!-------------------------------头部------------------------------->
+<div class="header clearfix">
+    <div class="header_top">
+        <div class="top">
+            
+       		<div class="top_left">
+                <h6><a href="javascript:" class="top_dl">【登录】</a><a href="http://sx95113.com/register" class="top_zc">【注册】</a></h6>
+            </div>
+       
+            <div class="top_right">
+          		<a href="https://www.sobot.com/chat/pc/index.html?sysNum=79f43fe7ebd049898175758d0b00d986" target="_blank" class="top_zxkf"> 
+            	在线客服 </a> 
+            	<a id="download_a" href="http://fwzsfile.sx95113.com/update/fwzsV2.0.20180901.exe" class="top_fwzs">服务助手</a>
+            	
+ 				<a href="http://fwzsfile.sx95113.com/nuoyan1.5.9.exe" class="top_jskp">诺言</a>
+ 				<a href="http://igo.sx95113.com/" target="_blank" class="top_igo">产品</a>
+            </div>
+        </div>
+    </div>
+<!--------------------导航----------------------->
+	<div class="header_nav_main">
+    <div class="header_nav">
+        <div class="nav clearfix" id="navigation">
+            <h1><a href="http://www.sx95113.com/"></a></h1>
+            <ul id="nav">
+                <li id="one" class="nav_li nav_active"><a href="http://www.sx95113.com/" class="nav_home nav_active">首页</a></li>
+                <li name="two" class="nav_li">
+                	<div id="one5" class="mainmenu"><a href="http://sx.sx95113.com/" class="nav_csfw one5">税信</a>
+                    	
+                	</div>
+                </li>
+                <li name="two" class="nav_li">
+                	<div id="one8" class="mainmenu"><a href="http://wb.sx95113.com/" class="nav_cswb one8">问吧</a>
+                		
+                	</div>
+                </li>
+                <li name="two" class="nav_li">
+                	<div id="one4" class="mainmenu"><a href="http://xt.sx95113.com/" class="nav_hxjt one4">学堂</a>
+                    	
+                	</div>
+                </li>
+    <li name="two" class="nav_li">
+
+                	<div id="one6" class="mainmenu" style="width:51px;margin-left:-4px;"><a href="http://sx95113.com/fww/MLinfo" target="_blank" class="nav_cscp one6">融信贷</a>
+
+                    	
+                	</div>
+                </li>             
+                <li name="two" class="nav_li">
+                	<div id="one7" class="mainmenu"><a href="http://dh.sx95113.com/?viewType=pc" class="nav_csdh one7">导航</a>
+                    	
+                	</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
+<!--------------------banner----------------------->
+<div class="banner" id="banner">
+    <ul style="left: 0px;">
+
+    	
+    		<li id="banner_00">
+    			
+    				<a href="https://www.sx95113.com/fww/detail?WZID=62846&amp;type=ssrc" target="_blank">
+    			
+    			<img src="resources/ZH_260n/8.jpg" data-original-src="http://sx95113.com/upload/pic/7880f1c3-34e8-4c25-845c-7434dc234392.jpg" border="0">
+    			
+    			
+    				</a>
+    			
+    			</li>
+    	
+    		<li id="banner_01">
+    			
+    				<a href="http://www.sx95113.com/fww/detail?WZID=62164&amp;type=ssrc" target="_blank">
+    			
+    			<img src="resources/ZH_260n/9.jpg" data-original-src="http://sx95113.com/upload/pic/f846ab83-bf3a-4834-a37b-c0722988a4b9.jpg" border="0">
+    			
+    			
+    				</a>
+    			
+    			</li>
+    	
+    		<li id="banner_02">
+    			
+    			<img src="resources/ZH_260n/10.jpg" data-original-src="http://sx95113.com/upload/pic/98cd7bea-73a4-4dba-8d01-bb9efcb45312.jpg" border="0">
+    			
+    			
+    			</li>
+    	
+	</ul>
+	
+	<div class="d2" id="banner_id">	
+<!-- 		<span class='nuw'></span> -->
+		
+<!-- 		<span></span> -->
+		<span class="nuw"></span>
+		
+<!-- 		<span></span> -->
+		<span class=""></span>
+		
+<!-- 		<span></span> -->
+		<span class=""></span>
+			
+	</div>
+</div>
+<!-- 情人节宣传图 -->
+<!-- <div class="play-box play-log" id="box_tpbf" style="margin-top: -350px;left: 50%;"> -->
+
+<!--   			<div class="play-tit"> -->
+<!--   				<i class="play-close" id="btn-closed" onclick="javascript:Imgqx()"></i>  -->
+<!--  			</div>  -->
+<!-- 		</div> -->
+<!--------------------左侧浮窗----------------------->
+<div class="index_fcall">
+<div class="index_lfc"> 
+	<ul> 
+
+     	<li><a href="http://sx95113.com/fww/wssbfwpt" class="index_lfc_1" target="_blank">电子税务局</a></li>
+     	<li><a href="http://kp.sx95113.com/" class="index_lfc_2" target="_blank">税控开票</a></li>
+     	<li><a href="http://sx95113.com/fww/rzgx" target="_blank" class="index_lfc_3">综合服务平台</a></li>
+<!--      	<li><a href="http://dzfp.sx95113.com/" target=_blank class="index_lfc_6">电子发票</a></li> -->
+     	<li><a href="http://sx95113.com/fww/hxjtlist?kcfl=zzsfp" target="_blank" class="index_lfc_7">增值税填报</a></li>
+     	<li><a href="http://sx95113.com/fwwzzjf" target="_blank" class="index_lfc_5">网上缴费</a></li>
+     </ul> 
+</div>
+<!--------------------搜索浮窗----------------------->
+<div class="searchfc">
+	<div class="searchfc_con">
+		<span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span><input type="text" name="wbsearch" id="fwwsearch" placeholder="请描述您的问题 " class="ui-autocomplete-input" autocomplete="off">
+		<div class="searchfc_rc">
+		
+		
+		<a href="http://sx95113.com/fww/detail?WZID=62846&amp;type=ssrc" target="_blank"> 征期热点</a>
+		
+		<a href="http://sx.sx95113.com/fww/detail?XWID=26779&amp;type=sx" target="_blank"> 抄税清卡</a>
+		
+		
+		<a href="http://www.sx95113.com/fww/cswbdetail?WZID=21340&amp;type=cswb" target="_blank"> 发票读入</a>
+		
+		
+		</div>
+	</div>
+	<div class="searchfc_btn"><a href="javascript:">我要问</a></div>
+</div>
+</div>
+<!--------------------中间部分----------------------->
+<div class="content clearfix">
+    <div class="index_t clearfix">
+<!--------------------今日税信----------------------->
+    	<div class="index_l">
+        	<div class="index_jrsx">
+            	<div class="index_jrsx_tit">
+                	<h2>热点播报</h2>
+               
+               	
+               		
+               		
+               			<marquee>【温馨提醒】尊敬的客户：您好！申报纳税期限延长后，为确保税控设备能够正常使用，本月都可进行远程清卡。纳税申报、发票勾选延长至2月28日，请大家合理安排时间！</marquee>
+               		
+                
+               
+                </div>
+                <div class="index_jrsx_con1">
+                    <div class="jrsx_con_l" id="rdbb_0">
+                      	
+                    	
+                    		
+                    		
+                    			<img src="resources/ZH_260n/11.jpg" alt="" data-original-src="http://sx95113.com/upload/pic/247e1647-8636-432d-b3aa-0cee2ba87d4d.jpg" width="260" height="170">
+                    			<h4 class="ypbb" title="增加开票员、收款和复核人操作指南">增加开票员、收款和复核人操作指南</h4>
+                    			<div id="rdbb_start"><a class="play"><img id="rdbb_ctrl" src="resources/ZH_260n/12.png" data-original-src="http://sx95113.com/static/images/fww/btn_play.png"></a></div>
+								
+									
+										<div class="audiojs  error" classname="audiojs" id="audiojs_wrapper0"><audio src="http://sx95113.com/upload/file/http://hxjtfile.sx95113.com/e7db05e3-6da7-4474-9e0d-d56f482fdde9.wav" preload="auto"></audio>          <div class="play-pause">             <p class="play"></p>             <p class="pause"></p>             <p class="loading"></p>             <p class="error"></p>           </div>           <div class="scrubber">             <div class="progress"></div>             <div class="loaded"></div>           </div>           <div class="time">             <em class="played">00:00</em>/<strong class="duration">00:00</strong>           </div>   <div class="error-message">Error loading: "/upload/file/http://hxjtfile.sx95113.com/e7db05e3-6da7-4474-9e0d-d56f482fdde9.wav"</div></div>
+									
+									
+								
+								
+								
+                    		
+                    	
+                    </div>
+                    
+                    <div class="jrsx_con_r">
+                    	<ul>
+                    	
+                    		
+                    		
+                    		
+                    		
+                    		
+                    			<li>
+                    		<span><a>&nbsp;&nbsp;</a></span><p title="不是专票也可以抵扣进项税额，快来">
+                    		
+                    		<a href="http://sx95113.com/fww/detail?type=sx&amp;XWID=53006" target="_blank">
+                    		 不是专票也可以抵扣进项税额，快来
+                    		<em>10-30</em></a></p>
+                    		</li>
+                    		
+                    	
+                    		
+                    		
+                    		
+                    		
+                    		
+                    			<li>
+                    		<span><a>&nbsp;&nbsp;</a></span><p title="停机前未勾选完的发票，升完级后这样操作！">
+                    		
+                    		<a href="http://sx95113.com/fww/detail?type=sx&amp;XWID=62057" target="_blank">
+                    		 停机前未勾选完的发票，升完级后这样操作
+                    		<em>10-30</em></a></p>
+                    		</li>
+                    		
+                    	
+                    		
+                    		
+                    		
+                    		
+                    		
+                    			<li>
+                    		<span><a>&nbsp;&nbsp;</a></span><p title="职场这5个贵人，助你成长得妥妥的">
+                    		
+                    		<a href="http://sx95113.com/fww/detail?type=sx&amp;XWID=49406" target="_blank">
+                    		 职场这5个贵人，助你成长得妥妥的
+                    		<em>10-30</em></a></p>
+                    		</li>
+                    		
+                    	
+                    		
+                    		
+                    		
+                    		<li>
+                    		<span><a href="http://sx95113.com/fww/fwwlist?type=shuos" target="_blank">【说税】</a></span><p title="重磅！国家税务总局取消发票丢失登报作废声明">
+                    		
+                    		<a href="http://sx95113.com/fww/detail?type=shuos&amp;WZID=60924" target="_blank">
+                    		 重磅！国家税务总局取消发票丢失登报
+                    		<img src="resources/ZH_260n/13.png" alt="" data-original-src="http://sx95113.com/static/images/fww/cswb_wbtj_yp.png"><em>08-05</em></a></p>
+                    		</li>
+                    		
+                    		
+                    		
+                    	
+                    		
+                    		
+                    		
+                    		
+                    		<li>
+                    		<span><a href="http://sx95113.com/fww/fwwlist?type=hjyp" target="_blank">【95113】</a></span><p title="电子发票开具、交付，一定要看！">
+                    		
+                    		<a href="http://sx95113.com/fww/detail?type=hjyp&amp;WZID=34338" target="_blank">
+                    		 电子发票开具、交付，一定要看！
+                    		<img src="resources/ZH_260n/13.png" alt="" data-original-src="http://sx95113.com/static/images/fww/cswb_wbtj_yp.png"><em>01-21</em></a></p>
+                    		</li>
+                    		
+                    		
+                    	
+                    	</ul>
+                    </div>
+                
+                </div>
+            </div>
+        </div>
+    	<div class="index_r">
+<!--------------------航信学堂----------------------->
+			<div class="index_fwdh">
+            	<div class="index_fwdh_tit">
+            		<h4>记账助手</h4>
+            		
+            		<div class="search_flmore">
+            			<input type="text" name="flsearch" id="flsearch" placeholder="请输入关键字" autocomplete="off">
+						<button></button>
+            		</div>
+            	</div>
+                <div class="index_fwdh_con">
+
+                <div class="hxxt_video">
+                		
+                	<ul>
+                	
+                		<li><a href="http://sx95113.com/cloud/flDetail?FLID=85" target="_blank"><p title="视同买断方式委托代销商品时账务处理怎么做？">
+                		<em>•</em>
+                		 视同买断方式委托代销商品时账...
+                		<span>4771人浏览</span></p></a></li>
+                	
+                	
+                		<li><a href="http://sx95113.com/cloud/flDetail?FLID=177" target="_blank"><p title="住宿费抵扣3％税的会计分录怎么做？">
+                		<em>•</em>
+                		 住宿费抵扣3％税的会计分录怎...
+                		<span>5121人浏览</span></p></a></li>
+                	
+                	
+                		<li><a href="http://sx95113.com/cloud/flDetail?FLID=171" target="_blank"><p title="经营性租入的房屋会计分录如何处理?">
+                		<em>•</em>
+                		 经营性租入的房屋会计分录如何...
+                		<span>5542人浏览</span></p></a></li>
+                	
+                	
+<!--                 		<li><a href="#" target="_blank"><p title="#"><em>•</em>网上税务局如何打印报表?<span>38人浏览</span></p></a></li> -->
+                	</ul>
+                </div>
+                <div class="hxxt_fl">
+                	<ul>
+                		<li title="通用账务处理"><a href="http://csy.sx95113.com/cloud/flIndex?fllxDm=1546&amp;fllxLx=fl_ywlx&amp;level=2" target="_blank">通用账务处理</a></li>
+                		<li title="行业账务处理"><a href="http://csy.sx95113.com/cloud/flIndex?fllxDm=1706&amp;fllxLx=fl_ywlx&amp;level=2" target="_blank">行业账务处理</a></li>
+                		<li title="涉税会计处理"><a href="http://csy.sx95113.com/cloud/flIndex?fllxDm=1547&amp;fllxLx=fl_ywlx&amp;level=2" target="_blank">涉税会计处理</a></li>
+                		<li title="特殊业务处理"><a href="http://csy.sx95113.com/cloud/flIndex?fllxDm=1548&amp;fllxLx=fl_ywlx&amp;level=2" target="_blank">特殊业务处理</a></li>
+                	</ul>
+                </div>
+                </div>
+            </div>
+        </div><!--index_r-->
+    </div><!--index_t-->
+    <div class="index_b clearfix">
+	<!--------------------大家都在问----------------------->
+    <div class="index_allwb">
+    	<div class="index_allwb_tit"><h2>大家都在问</h2><a href="http://wb.sx95113.com/" target="_blank">更多&gt;</a></div>
+        <div class="index_allwb_con">
+        	<div class="index_allwb_fl">
+        	
+        		<div class="index_allwb_part1">
+        		
+            	
+        			<a title="申领电子发票下载步骤" href="http://sx95113.com/fww/detail?type=djdzw&amp;WZID=34258" target="_blank"><h6> 申领电子发票下载步骤</h6></a>
+            		<a title="电子普通发票软件无法自动生成" href="http://www.sx95113.com/fww/cswbdetail?WZID=24501&amp;type=cswb" target="_blank"><p> 电子普通发票软件无法自动生成</p></a>
+        		
+            	</div>
+        	
+        		<div class="index_allwb_part2">
+        		
+        			<a title="综合服务平台勾选流程" href="http://sx.sx95113.com/fww/detail?XWID=62057&amp;type=sx" target="_blank"><h6> 综合服务平台勾选流程</h6></a>
+            		<a title="登录综合服务平台显示空白" href="http://www.sx95113.com/fww/cswbdetail?WZID=62047&amp;type=cswb" target="_blank"><p> 登录综合服务平台显示空白</p></a>
+        		
+            	
+            	</div>
+        	
+        	<div class="index_allwb_part3">
+        	
+        		
+            	
+            		
+        			<a title="商品编码" href="http://sx95113.com/fww/detail?type=djdzw&amp;WZID=41442" target="_blank">
+        			
+            		
+        			 商品编码</a>
+        		
+        	
+        		
+        			
+        			
+        			<a title="填表答疑" href="http://sx.sx95113.com/fww/detail?XWID=52904&amp;type=sx" target="_blank" style="margin-left:4px;">
+        			
+        			 填表答疑</a>
+        		
+            	
+        	
+        	</div>
+            </div>
+            <div class="index_allwb_nr">
+            	 <div class="index_allwb_nr_t">
+					
+					<div class="index_allwb_img"><img src="resources/ZH_260n/14.jpg" data-original-src="http://sx95113.com/upload/pic/e5a593d8-5172-49d6-95fb-915242849151.jpg"></div>
+					<div class="index_allwb_nr_con">
+						
+							<a href="http://sx95113.com/fww/cswbdetail?WZID=42644&amp;type=cswb" target="_blank">
+							
+						
+						
+						
+						<h4 title="如何备案财务会计制度？"> 如何备案财务会计制度？</h4>
+						</a>
+						<p>点击【我要办税】--【综合信息报告】--【财务会...</p>
+					</div>
+					
+                 </div>
+            	 <div class="index_allwb_nr_b">
+                 	<ul id="djdzw_ul">
+                 	
+                    	
+                    	<li>
+                    	
+        					<a href="http://sx95113.com/fww/cswbdetail?type=cswb&amp;WZID=47928" target="_blank">
+        						</a><a href="http://sx95113.com/fww/cswbdetail?type=cswb&amp;WZID=47928" target="_blank">
+        						
+        				
+        				
+        				
+                    	
+                    	<p title="电子税务局如何领购发票？"><em>•</em>电子税务局如何领购发票？
+                    	
+                    	<span>01-21</span></p>
+                    	</a></li>
+                    	
+                    
+                 	
+                    	<li>
+                    	
+        					<a href="http://sx95113.com/fww/cswbdetail?type=cswb&amp;WZID=62760" target="_blank">
+        						</a><a href="http://sx95113.com/fww/cswbdetail?type=cswb&amp;WZID=62760" target="_blank">
+        						
+        				
+        				
+        				
+                    	<p title="专票抵扣认证取消是从什么开始的？"><em>•</em>专票抵扣认证取消是从什么开始的？
+                    	
+                    	
+                    	<span>01-08</span></p>
+                    	</a></li>
+                    
+                    
+                    	<li>
+                    	
+        					<a href="http://sx95113.com/fww/cswbdetail?type=cswb&amp;WZID=61265" target="_blank">
+        						</a><a href="http://sx95113.com/fww/cswbdetail?type=cswb&amp;WZID=61265" target="_blank">
+        						
+        				
+        				
+        				
+                    	<p title="企业和企业签订贷款合同需要缴纳印花税吗？"><em>•</em>企业和企业签订贷款合同需要缴纳印花税吗？
+                    	
+                    	
+                    	<span>10-28</span></p>
+                    	</a></li>
+                    
+                    </ul>
+                 </div>
+            </div>
+        </div>
+    </div>
+	<!--------------------财税导航----------------------->
+    <div class="index_csdh">
+    	<div class="index_csdh_tit"><h2>课程速递</h2><a href="http://xt.sx95113.com/" target="_blank">更多&gt;</a></div>
+    	<div class="index_csdh_con1">
+			<div class="index_kcsd_tit">
+				<ul>
+					<li class="active"><p>新课上线</p></li>
+					<li><p>套餐包</p></li>
+					<li><p>增值税申报</p></li>
+				</ul>
+			</div>
+			<div class="index_kcsd_con">
+				<div class="index_kcsd_con1" id="kcsd1" style="width: 288px; height: 90px;">
+					<ul class="items" style="width: 864px; left: -576px;">
+					
+    					<li style="width: 288px; height: 90px;" class=""><a href="http://sx95113.com/fww/pxkcnr?KCID=61344" target="_blank"><img src="resources/ZH_260n/15.jpg" alt="课程速递" data-original-src="http://www.sx95113.com/upload/pic/81a3558f-5b28-436f-9a77-ea8703aa5f0d.jpg"></a></li>
+					
+    					<li style="width: 288px; height: 90px;" class="active"><a href="http://sx95113.com/fww/pxkcnr?KCID=61324" target="_blank"><img src="resources/ZH_260n/16.jpg" alt="课程速递" data-original-src="http://www.sx95113.com/upload/pic/17452aa3-274b-482d-8ac6-cebd8ab0d7ae.jpg"></a></li>
+					
+    					<li style="width: 288px; height: 90px;" class=""><a href="http://sx95113.com/fww/pxkcnr?KCID=60991" target="_blank"><img src="resources/ZH_260n/17.jpg" alt="课程速递" data-original-src="http://www.sx95113.com/upload/pic/fe472888-5088-4aa4-bf48-0cb1af90ecfd.jpg"></a></li>
+					
+
+
+  					</ul>
+				</div>
+    	</div>
+    </div>
+    <div class="index_csdh_con2">
+    		<h4>财税导航</h4>
+    		<a href="https://etax.shanxi.chinatax.gov.cn/login" target="_blank" class="index_csdh_gds">国家税务总局<br>山西省电子税务局</a>
+    		<span></span>
+    		<a href="https://fpdk.shanxi.chinatax.gov.cn/index.html" target="_blank" class="index_csdh_ds">增值税发票综合<br>服务平台</a>
+    		<span></span>
+    		<a href="http://dh.sx95113.com/" target="_blank" class="index_csdh_gd">更多导航</a>
+    	</div>
+    </div><!--index_b-->
+    <div class="index_cszt clearfix">
+    	<div class="index_cszt_tit"><h2>为您推荐</h2></div>
+    	<div class="index_cszt_con">
+    	
+    	
+    		<ul>
+    		
+    			<li><a href="http://sx.sx95113.com/fww/detail?XWID=61124&amp;type=sx" target="_blank"><img src="resources/ZH_260n/18.jpg" alt="230x120-812.jpg" data-original-src="http://sx95113.com/upload/file/6e42a900-6057-43d1-b2e3-452d0aa1c949.jpg"></a></li>
+    		
+    			<li><a href="http://sx.sx95113.com/fww/detail?XWID=52891&amp;type=sx" target="_blank"><img src="resources/ZH_260n/19.jpg" alt="2(1).jpg" data-original-src="http://sx95113.com/upload/file/ccd9093d-0c3b-4852-9186-063bcc054895.jpg"></a></li>
+    		
+    			<li><a href="http://csy.sx95113.com/fww/detail?XWID=56707&amp;type=sx" target="_blank"><img src="resources/ZH_260n/20.jpg" alt="3(1).jpg" data-original-src="http://sx95113.com/upload/file/50708597-26eb-4c95-8392-b6d2975d35b0.jpg"></a></li>
+    		
+    			<li><a href="http://xt.sx95113.com/fww/hxjtlist?kcfl=zhibo" target="_blank"><img src="resources/ZH_260n/21.jpg" alt="直播区.jpg" data-original-src="http://sx95113.com/upload/file/e0cbdbeb-9a04-459d-8fc2-4b429c9a283f.jpg"></a></li>
+    		
+    		</ul>
+    	
+    	</div>
+    </div>
+</div>
+
+<!--------------------底部----------------------->
+<span style="display:block;left:5px;position:absolute;" id="cnzz_stat_icon_1260291671"><a href="https://www.cnzz.com/stat/website.php?web_id=1260291671" target="_blank" title="站长统计"><img src="resources/ZH_260n/22.gif" data-original-src="http://icon.cnzz.com/img/pic1.gif" vspace="0" hspace="0" border="0"></a></span>
+<div class="footer clearfix">
+	<h2></h2>
+<!-- 	<div style="width:300px;margin:0 auto; padding:20px 0;"> -->
+
+<!-- 	</div> -->
+	
+    <p>版权所有：山西航天信息有限公司&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;航天信息全国统一客户服务热线：95113&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本省服务监督电话：18535121987或95113-9
+    <br>航天信息全国统一投诉电话：4008106116&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=14010702070467">晋公网安备 14010702070467号</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;晋ICP备05004346号
+    </p>
+<!--     p>版权所有：山西航天信息有限公司&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;地址：太原市西羊市街43号&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />航天信息全国统一客户服务热线：95113&nbsp;&nbsp;&nbsp;本省服务监督电话：13835178518或95113-9&nbsp;&nbsp;&nbsp;&nbsp;航天信息全国统一投诉电话：4008106116</p -->
+</div>
+<div id="over" style="display: block;"></div>
+<div class="dialog-box dialog-log" id="login" style="display: block;">
+    <div class="dialog-box-con">
+        <div class="dialog-close" id="btn-close"></div>
+        <div class="dialog-con">
+            <div class="dialog-tit">
+            	<h2>欢迎登录95113服务网</h2>
+            	<ul>
+            		<li class="active"><p>账户密码登录</p></li>
+					<li><p>手机账户登录</p></li>
+            	</ul>
+            </div>
+            <div class="dialog_main">
+			<!--------------账户密码登录------------------->
+            <div class="dialog_main1">
+  
+            <form id="loginForm">
+                <div class="dialog-form">
+                    <ul>
+                        <li class="dialog-user">
+                            <input type="text" class="dialog-txt" id="username_login" name="username" value="" placeholder="请输入账号">
+                        </li>
+                        <li class="dialog-pwd">
+                            <input type="password" class="dialog-txt" id="password" name="password" value="" placeholder="请输入密码">
+                        </li>
+                        <li class="dialog-yzm clearfix">
+                        <input type="text" id="code" name="code" value="" placeholder="请输入验证码">
+                        <a href="javascript:"><img id="yzmNumber" src="data:;base64,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" alt="验证码" data-original-src="http://sx95113.com/client/verif_code.jsp" width="80" height="30"></a>
+                        <span style="float:right;"><a href="http://sx95113.com/forgotpass" id="a_find">忘记密码？</a></span>
+                        </li>
+                         <li class="prompt clearfix"><p id="error_login"> </p></li>
+                        <li class="dialog-tx">
+                        	<h5>初次登录：账号为税号，密码为税号后六位</h5>
+                        </li>
+                        <li class="dialog-btn">
+                            <input type="button" value="登 录" class="dialog-btn bg-color-00a0ea">
+                        </li>
+                        <li class="dialog-function">
+                            <p>还没有账号？<a href="http://sx95113.com/register" class="reg-now">马上注册</a></p>
+                        </li>
+                    </ul>
+                    <input type="hidden" id="successurl" name="successurl" value="fww">
+	  				<input type="hidden" id="falseurl" name="falseurl" value="fww">
+	  				<input type="hidden" id="type" name="type">
+	  				<input type="hidden" id="WZID" name="WZID">
+	  				<input type="hidden" id="KCID" name="KCID">
+                </div>
+            </form>
+
+          
+
+
+            </div>
+			<!--------------手机账户登录------------------->
+            <div class="dialog_main2">
+                                  <form id="grRegist">
+                    <input type="hidden" name="usertype" id="usertypegr" value="0">
+        <input type="hidden" name="send" id="send" value="one">
+        <input id="checkspam" name="checkspam" type="hidden" value="detail">
+                <div class="dialog-form">
+                    <ul>
+                        <li class="dialog-sjh">
+                            <input type="text" class="dialog-txt" name="sjhm" id="sjhm" value="" placeholder="请输入手机号">
+                        </li>
+                        <li class="dialog-tpyzm">
+                            <input type="tpyzm" class="dialog-txt" id="sjcode" name="code" value="" placeholder="请输入图片验证码">
+                            <a href="javascript:" class="tpyzm"><img id="yzmNumber2" src="data:;base64,/9j/4AAQSkZJRgABAgAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAAyAIwDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD0GitcjTLwDkQt/wB8/wD1qwfGEF3o3hq8v7S4UPFsw20ZGXUdDkdDVe3il72hrGom7PRk9FU/CSahrHhyzvZ2DvLvzIcKDh2HQfTHStDWNPu7LQ9Qu45Y1eC2kkUjnBVSRwR7U/bQte5TnFPluR0VleBHv/EGgzXd1crJMl00Q3IF+UKp/hHqfSujm0uWCCSaWWBY41LMzPgAAZJJPApRrwavcHOKdmyjVv8A1lt3zj+VcPceMZbu7a00Gwa9cKp80hgoyQCSuAccgZJHJ/OyNT8b2UAuJtAge3DKWEeS7A/3cOT+ODjrWOIkpJOO6Zz4lcyTjumdJTkG6RRjOTWXoerPrEV75tjPZXFo6CSGQZwrglTkgHseCO455rcgixh269hWtStFU+ZF1a0Y03IfLGZNozhc5PrSbYYcZxn35Nclf+PB9rlt9F0y51PyTtlmhzsHpggHI688dOM9asaD4msvEEbeTuiuUAMkLnn3IPcZ4z+YGRXLRpSlG0nZGFLCVnD39I/1udIblBnAJpv2rnlP1qtWHqnimz0fVILG9t7qMTkCO4IXyjkgE7i3AGeeOPxGej6rSS1RrHBUtrXOnFxGwIOR9RR5UUoJTg+3+FVKp6pq9rodg99dy7I14AH3nbsoHcn/APXwKl4ZR1g7E/VOXWm2maEkLR9eR6io6ksL/wC3WkU0lvNbtIM+VMoDAdsgE4Pt+eOlSPbHd8hGPc04V3H3aujCGIcXy1tGSWenyXRDEFYe7ev0rL+IF1bR+Cb+0txuH7vkHIH7xT1710WosYYY7S2Ugtn5U64+nv8A0Ncf40srhPBt/M8ZRB5f3uD/AKxR0qZvng5SfojWD55KUn10DwN4o0vTvCVjaXd3bxPH5mQ06huZGPIJGODWn4h1rQ7zw9qn2bXrcyNayqsQuh852ngKTk56cVg+D/B3h3UPCtlqOpwb5pfMJzMyghXZegPsOlT674X8J2ujX8tnpbefHbyNHJ58mFYKSDgtzg9iKwipNe6huMHU9297kHwytbmXw/PJA+wfa3UsGxj5ENTfEm9utK0W3s1vbjzb1mD7T8pjUfMpOc8ll+oBzVb4aXs9r4fnWMjb9rYlSOCdiVX+Kd017FpUghZVjaVWbqATsxz68H8q0Sn7NPoFVT5/I7Dw0LXw/wCGrOyjhYz+WJJ+gzK3LZI646A88ADNbbzw31qTG+GX5tp4PFU4rG01C0ju7C43RSqHQkcEEZHuOD35qtJZ3dq2/Y4xn50Pb146VXs6U1ZPUxdOnNWT1HvHvlVm5UDGD/n3rn/HWoCx8JXm2XZLPiBPlzu3feHTj5N3P9a6It+63gfw5rh/iSMeFbUnqbxSc/7j1zRTlbm6aHNhoudSHP0aX6l3wdpwsPDNoMLvnHnuVJOd3I6/7O0fhXP+KUGi+NNL1gOsUcxAlblj8uFc4wf4GA49D3rrtBB/4R3TOf8Al0i/9AFcf8Tv+YVz/wA9f/ZK7Ofpc9elNyrWb3ud/tPpWB4u8OjxBozRoMXcGZICAMlsfcyegP1HIB7V0PPc0fjQ6kmrafic6qSWqOM+H/iBdT0kadKcXVkgUZI+ePopAHpwD+BzzUMbN4y8VEmNn0LTWIw2GjuJhxng8jnPcYHON+KwfiDp50fX01KzZY1v4pFdQBw23a/GMYKsOeTksfSvSNF0m30PSobG3VcIo3uFwZHxyx68n68cDoKHVdkrGsp2XMupdwfSrMdwuwBzgj9ahzRWdWSqK0kclVRqK0kdC1yz2hntk8zrgHjOOM//AFq4bx5e3M/hO/jkO1cx5QDGCHX8a27W6ktJd6cg/eXsRWk4sdS+YP5cx454J9OO9U6ahdNaPr2LjFUpXaujifBv/Ip2X/bT/wBDar2t/wDIA1H/AK9Zf/QTW/NpFwh/dlZB9cH9arvYXUeN0DnP935v5VtGUORRTNlUi3dM4v4e/wDIAn/6+m/9BStrXdJj1rSpLVuJB88TbsBXAOCfbnB9jWx9luP+feX/AL4NSjTbtgCITg88sB/WnHkjDlbHKcXuzzjQvE134dkGm6zHcRqnEUmPmQZx/wACTrgjPTAyMY6sfEzSrWEk3DXW3+BYmDntwSAPfmuibQbeWB01ExvCeqEAqeRjO4Y6+1QfZtE01w+m6ZZx3KZCzJAoK5yDhsZ6fzrB+97sdTBtS0SuZuh6xd659puJtPktbM7fs7S/fmByS30wV6ZHJ5PZPFOnyal4Yu7GE/vXQbPcqQwHJ77ce2a2c9Mcg96guj90VyUVzVFHoefh7utG3e/3HD+D9etY9FFjqN1Ha3Nm5iK3Mu1iM8fex05XHbaOmRVB5j4r8c2kti7tp9hscy4O3IO7ODjBJwvr8ueQK6y/8O6PqsolvbGN5R1dSUZug5KkZ6DrVyz0+00+3EFnBHDEP4UHU4xk+p4HJ5ruba0loj2nVim3rd/cWPloyPSjaaTaapKD+1+Jh7r6nnPxWOf7I/7bf+yV6PuNYfiDwvZeI/s/2yS4j+z7tvksBndjOcg+graqo043fY1ai4pdhdxo3H1pKKr2cexPKuwUUUVZRsaK7FZlLEqu3AJ4HWtWiivMrfGzz6vxsKKKKzMzmbx2e8l3MThyBk9BnpUFFFepT+FHow+FF+P/AFafQVDdfwfjRRXm0P4/3nl4f/ePvK1FFFeqeuGT61JRRXHW3MJ7hRRRWJmFGB6UUVvD4TSOx//Z" alt="图片验证码" data-original-src="http://sx95113.com/client/verif_code.jsp" width="80" height="36"></a>
+                        </li>
+                        <li class="dialog-dxyzm">
+                            <input type="dxyzm" class="dialog-txt" id="yzm_input" name="yzm_input" value="" placeholder="请输入短信验证码">
+                            <a href="javascript:" id="resend" class="dxyzm">获取验证码</a>
+                        </li>
+                        <li style="display:none;" class="prompt clearfix"><p><span id="grtips"></span></p></li>
+
+                        <li class="dialog-tx">
+                        	<h5></h5>
+                        </li>
+                        <li class="dialog-btn">
+                            <input type="button" value="登 录" class="dialog-btn bg-color-00a0ea">
+                        </li>
+                        <li class="dialog-function">
+                            <p></p>
+                        </li>
+                    </ul>
+
+                </div>
+            </form>
+            </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!--------------------用户指引----------------------->
+<div id="yhzyover"></div>
+<div id="yhzy">
+	<img class="yhzy_l" src="resources/ZH_260n/23.png" alt="" data-original-src="http://sx95113.com/static/images/fww/yhzy_ll.png">
+	<img class="yhzy_t" src="resources/ZH_260n/24.png" alt="" data-original-src="http://sx95113.com/static/images/fww/yhzy_t.png">
+	<a href="javascript:"></a>
+</div>
+<!--------------------税保通推荐指引----------------------->
+<!-- <div id="sbtover" onclick="sbt_qx();"></div> -->
+<!-- <div id="sbttj"> -->
+
+<!-- 	<a href="javascript:sbt_qx()"></a> -->
+<!-- </div> -->
+<!--------------------右侧浮窗----------------------->
+
+
+<span style="display:block;left:5px;position:absolute;" id="cnzz_stat_icon_1260291671"></span>
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--     <div id="floatDiv" class="floatAd"  style="position:absolute; top:100px; left:30px; filter:alpha(opacity=95); -moz-opacity:0.95; opacity:0.95; display:block; z-index:999;">  -->
+<!-- 	<div class="close"> -->
+<!-- 		<div class="opacity"></div> -->
+<!-- 		<div class="text"> -->
+<!-- 			<div class="title"></div> -->
+<!-- 			<div class="button" id="close_button_ad"></div> -->
+<!-- 		</div> -->
+<!-- 	</div> -->
+
+<!-- </div> -->
+
+
+
+</div><ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content ui-corner-all" id="ui-id-1" tabindex="0" style="display: none;"></ul></body></html>

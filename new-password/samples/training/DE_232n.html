@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="de"><head><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; media-src 'self' data:; style-src 'self' data: 'unsafe-inline'; font-src 'self' data:; frame-src 'self' data:"><meta http-equiv="Memento-Datetime" content="Wed, 26 Feb 2020 13:58:41 GMT"><link rel="original" href="https://app.bfv.de/oauth/oauth/index.html?redirect_uri=https%3A%2F%2Fwww.bfv.de%2Flogin&amp;client_id=tech_oauth_bfv_web&amp;response_type=code">
+    <!-- Required meta tags -->
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" type="image/x-icon" href="resources/DE_232n/1.a" data-original-href="https://app.bfv.de/oauth/oauth/assets/img/icons/favicon-bfv.ico">
+    <link rel="shortcut icon" href="resources/DE_232n/1.a" data-original-href="https://app.bfv.de/oauth/oauth/assets/img/icons/favicon-bfv.ico">
+    <!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="resources/DE_232n/2.css" data-original-href="https://app.bfv.de/oauth/oauth/assets/libs/bootstrap-4.1.3-dist/css/bootstrap.min.css">
+	<!-- custom css -->
+	<link rel="stylesheet" href="resources/DE_232n/3.css" data-original-href="https://app.bfv.de/oauth/oauth/assets/css/styles.min.css">
+	<!-- title will be set dynamically -->
+    <title>Bayerischer Fußball-Verband</title>
+</head>
+
+<body class="web-bfv support-bfv">
+    <div class="container">
+        <div class="wrapper">
+
+            <div id="logo" class="form-signin">
+                <img src="resources/DE_232n/4.svg" alt="logo" class="logo-graphic" data-original-src="https://app.bfv.de/oauth/oauth/assets/img/logo_fbde.svg" width="24" height="16">
+                <span class="logo-letters">fussball.de</span>
+            </div>
+
+            <form class="form-signin" id="direct-login" action="https://app.bfv.de/authorize4fbde" method="POST">
+                <h6 class="login-with-headline" data-translate="loginWithHeadline01">Login mit BFV.de - Kennung</h6>
+                <p class="e-football-hide" data-translate="loginIntrotext">Bitte verwende hier die Zugangsdaten deines BFV-App-Kontos – sofern vorhanden. Alternativ kannst du auch weiter unten deine SpielPLUS-Kennung verwenden!</p>
+                <div class="form-group">
+                    <label for="username" data-translate="usernameSlashEmailLabel">Nutzername/Email-Adresse</label>
+                    <input type="text" id="username" name="username" class="form-control" placeholder="Dein Nutzername oder Email-Adresse" required="" autofocus="">
+                    <div id="usernamevalid" class="valid-feedback"></div>
+                    <div id="usernameinvalid" class="invalid-feedback"></div>
+                </div>
+                <div class="form-group">
+                    <label for="password">Passwort</label>
+                    <input type="password" name="password" id="password" class="form-control" placeholder="Passwort" required="">
+                    <div id="pwdvalid" class="valid-feedback"></div>
+                    <div id="pwdinvalid" class="invalid-feedback"></div>
+                </div>
+                <div id="loginError" class="alert alert-danger d-none"></div>
+                <div class="row">
+                    <div class="col-md-12 flexible-sorting">
+                        <input type="hidden" id="redirect_uri" name="redirect_uri" value="https://www.bfv.de/login">
+                        <input type="hidden" id="client_id" name="client_id" value="tech_oauth_bfv_web">
+                        <input type="hidden" id="response_type" name="response_type" value="code">
+                        <input type="hidden" id="state" name="state" value="">
+                        <a href="https://app.bfv.de/oauth/oauth/forgot.password.html" class="btn-password-forgotten btn-secondary float-left" data-translate="loginForgotPasswordLabel" title="Du hast dein Passwort vergessen und möchtest dir ein neues Passwort zusenden lassen? Kein Problem.">Passwort vergessen</a>
+                        <button class="btn btn-secondary btn-login disabled float-right" id="loginUser" type="submit">
+                            Login
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+            <div class="form-signin">
+                <div class="row mt-2">
+                    <div class="col-12">
+                        <div id="login-error-message" class="alert alert-danger d-none"></div>
+                    </div>
+				</div>
+
+                <div class="row login-btn-block">
+                    <div class="col-12">
+                        <h6 class="login-with-headline mb-17" data-translate="loginWithHeadline02">Login mit SpielPLUS- / DFBnet-Kennung</h6>
+                        <div class="login-btn login-btn-main">
+                            <button id="DFBnetSigninButton" data-client="dfbnet" class="btn-signin-with-client btn" title="Mit DFBnet-Konto anmelden">
+                                <span class="fa-stack"></span>
+                                <span class="login-btn-text login-btn-text-dfb login-btn-text-bfv"><strong data-translate="loginWithCompany">SpielPLUS</strong><span class="e-football-hide">-Login</span></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row login-btn-block">
+                    <div class="col-12">
+                        <h6 class="e-football-hide">Login mit sozialem Netzwerk</h6>
+                        <div class="login-btn login-btn-fb">
+                            <button id="facebookSigninButton" data-client="facebook" class="btn-signin-with-client btn" title="Mit Facebook Konto anmelden">
+                                <span class="fa-stack">
+                                    <i class="fab fa-facebook fa-stack-2x"></i>
+                                </span>
+                                <span class="login-btn-text" data-translate="loginWithFacebook">Weiter mit <strong>Facebook</strong></span>
+                            </button>
+                        </div>
+
+                        <div class="login-btn login-btn-gg">
+                            <button id="googleSigninButton" data-client="google" class="btn-signin-with-client btn" title="Mit Google Konto anmelden">
+                                <span class="google-logo">
+                                    <img src="resources/DE_232n/5.png" alt="" data-original-src="https://app.bfv.de/oauth/oauth/assets/img/logo-google.png">
+                                </span>
+                                <span class="login-btn-text" data-translate="loginWithGoogle">Anmelden mit <strong>Google</strong></span>
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <form class="form-signin">
+                <h6 class="login-register-headline" data-translate="loginRegisterHeadline">Neu Anmelden</h6>
+                <p class="e-football-hide" data-translate="registerIntrotext">Du bist neu bei BFV.de und möchtest dich anmelden? Registriere dich hier und genieße sofort alle Vorteile.</p>
+                <div class="row">
+                    <div class="col-md-12">
+                        <button class="btn btn-secondary login-register-button float-right" id="registerAsNewUser" data-translate="loginRegisterButton" type="button">
+                            Neu anmelden
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+	</div>
+
+    <div id="cover-spin" class="cover-spin-autoload">
+        <div class="cover-spin-text">
+            Du wirst angemeldet ...
+        </div>
+        <div class="cover-spin-close">
+            ×
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="modalCenter" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <span id="loading" class="fa fa-spinner fa-spin fa-3x"></span>
+                    <div id="message"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Schließen</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    
+	
+    
+
+
+
+
+</body></html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; media-src 'self' data:; style-src 'self' data: 'unsafe-inline'; font-src 'self' data:; frame-src 'self' data:"><meta http-equiv="Memento-Datetime" content="Wed, 26 Feb 2020 15:28:15 GMT"><link rel="original" href="https://dashboard.tinypass.com/">
+    <title>Login</title>
+
+    <meta property="og:title" content="Login">
+    <meta name="description" content="http://www.tinypass.com/wp-content/themes/tinypass/images/logo-tinypass-header.png">
+    <meta property="og:image" content="">
+    <meta property="og:site_name" content="Piano.io">
+    <meta property="og:type" content="website">
+    
+
+    <link href="resources/EN_266n/1.css" rel="stylesheet" type="text/css" data-original-href="https://dashboard.tinypass.com/css/public-style.css?v=1.0.0">
+<link href="resources/EN_266n/2.css" rel="stylesheet" type="text/css" data-original-href="https://fonts.tinypass.com/css/webtype/fonts.css">
+
+
+    
+    
+    
+    
+
+    
+
+    
+
+</head>
+
+<body class="login-registration-page">
+
+
+    <div id="flash-message"></div>
+
+    <div id="popup-content" style="display: none"></div>
+
+    <div id="page" class="page">
+
+        <div class="clear"></div>
+        <div id="main">
+            <div id="primary">
+                <div id="content" role="main" class="container">
+                    <div id="login-panel">
+
+    <div class="lang-selector">
+    
+</div>
+
+    <h1 class="piano-logo">Piano</h1>
+
+    <div class="onboarding-card">
+        <div class="form-panel">
+            <div class="main">
+                <form id="login-form" name="login-form">
+                    <input type="hidden" name="orig" value="">
+                    <input type="hidden" name="response_type" value="">
+                    <input type="hidden" name="redirect_uri" value="">
+                    <input type="hidden" name="client_id" value="">
+                    <input type="hidden" name="state" value="">
+                    <input type="hidden" name="device_id" value="">
+
+                    <div class="field-row has-icon has-icon-user">
+                        <input id="email" name="email" type="text" value="" autocapitalize="off" autocorrect="off" placeholder="Email">
+                    </div>
+                    <div id="label_email" class="error"></div>
+
+                    <div class="field-row has-icon has-icon-lock">
+                        <input id="password" name="password" type="password" value="" autocomplete="off" placeholder="Password">
+                    </div>
+                    <div id="label_password" class="error"></div>
+
+                    <div id="login-captcha" style="display: none">
+                        <div class="field-row field-row-security-check">
+                            <label for="recaptcha">Security check</label>
+                            <div id="recaptcha" class="field-recaptcha"><div style="width: 304px; height: 78px;"><div><iframe src="resources/EN_266n/3.htm" role="presentation" name="a-e5ff6zqb8ho4" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" data-original-src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LfIeRMUAAAAAALhNbNCg1hfkVOjl9o_S24b1OPo&amp;co=aHR0cHM6Ly9kYXNoYm9hcmQudGlueXBhc3MuY29tOjQ0Mw..&amp;hl=en&amp;v=61bII03-TtCmSUR7dw9MJF9q&amp;size=normal&amp;cb=9id35rn6a00l" width="304" height="78" frameborder="0"></iframe></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div><iframe style="display: none;"></iframe></div>
+                        </div>
+                        <div id="label_captchaLoginHandler" class="error"></div>
+                    </div>
+
+                    <div id="login-twofactor" style="display: none">
+                        <div class="field-row">
+                            <label for="twofactorCode">Security code</label>
+                            <input id="twofactorCode" name="twofactorCode" type="text" autocapitalize="off" autocorrect="off">
+                            <div class="small">Having trouble generating security codes? Enter any of your recovery codes to login.</div>
+                            <div><label class="remember"><input type="checkbox" value="true" name="remember"> Remember this browser for 30 days</label></div>
+                        </div>
+                        <div id="label_twofactorCode" class="error"></div>
+                    </div>
+
+                    <a id="login-button" href="https://dashboard.tinypass.com/#" class="tpButtonL single">Login</a>
+                </form>
+                <p><a id="forget-password-link" href="https://dashboard.tinypass.com/login/showResetPassword" class="forget-password-link">I forgot my password</a></p>
+                <div class="social-buttons-wrapper">
+                    <div class="socials-alignment">
+                        <div class="social-cell left-side-text">
+                            <div class="text">
+                                Or login with...
+                            </div>
+                        </div>
+                        <div class="social-cell">
+                            <button class="social-button google-login-btn">
+                                Google
+                            </button>
+                        </div>
+                        <div class="social-cell">
+                            <button class="social-button facebook-login-btn">
+                                Facebook
+                            </button>
+                        </div>
+                        <div class="social-cell">
+                            <button class="social-button twitter-login-btn">
+                                Twitter
+                            </button>
+                        </div>
+                        <div class="social-cell">
+                            <button class="social-button linkedin-login-btn">
+                                LinkedIn
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+</div>
+
+                </div>
+            </div>
+            <div style="clear: both"></div>
+        </div>
+    </div>
+
+    
+
+    
+    
+
+    
+
+
+
+<div id="popup" class="modal hide fade" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;"><div id="popup-title" class="modal-header"></div><div id="popup-content" class="modal-body"></div><div id="popup-controls" class="modal-footer"></div></div><div style="background-color: rgb(255, 255, 255); border: 1px solid rgb(204, 204, 204); box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 3px; position: absolute; transition: visibility 0s linear 0.3s, opacity 0.3s linear 0s; opacity: 0; visibility: hidden; z-index: 2000000000; left: 0px; top: -10000px;"><div style="width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; z-index: 2000000000; background-color: rgb(255, 255, 255); opacity: 0.05;"></div><div style="border: 11px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -11px; z-index: 2000000000;" class="g-recaptcha-bubble-arrow"></div><div style="border: 10px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -10px; z-index: 2000000000;" class="g-recaptcha-bubble-arrow"></div><div style="z-index: 2000000000; position: relative;"><iframe title="recaptcha challenge" src="resources/EN_266n/4.htm" style="width: 100%; height: 100%;" name="c-e5ff6zqb8ho4" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" data-original-src="https://www.google.com/recaptcha/api2/bframe?hl=en&amp;v=61bII03-TtCmSUR7dw9MJF9q&amp;k=6LfIeRMUAAAAAALhNbNCg1hfkVOjl9o_S24b1OPo&amp;cb=wji8dp6h0hvv" frameborder="0"></iframe></div></div></body></html>
