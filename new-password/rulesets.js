@@ -13,55 +13,56 @@ const DEVELOPMENT = true;
 
 const coefficients = {
   "new": [
-    ["hasPasswordLabel", 2.658712148666382],
-    ["hasNewLabel", 0.9059168696403503],
-    ["hasConfirmLabel", 2.5675621032714844],
-    ["hasConfirmEmailLabel", -3.128072500228882],
-    ["closestLabelMatchesPassword", 1.229400873184204],
-    ["closestLabelMatchesNew", -0.5675995945930481],
-    ["closestLabelMatchesConfirm", 2.3405520915985107],
-    ["closestLabelMatchesConfirmEmail", -2.681044578552246],
-    ["hasPasswordAriaLabel", 2.69982647895813],
-    ["hasNewAriaLabel", 0.27284952998161316],
-    ["hasConfirmAriaLabel", 3.8466973304748535],
-    ["hasPasswordPlaceholder", 1.4342596530914307],
-    ["hasNewPlaceholder", 0.2897484004497528],
-    ["hasConfirmPlaceholder", 2.1277449131011963],
-    ["hasConfirmEmailPlaceholder", 0.04360179603099823],
-    ["forgotPasswordLinkInnerText", -2.263014316558838],
-    ["forgotPasswordLinkHref", -2.5445263385772705],
-    ["forgotPasswordLinkTitle", -3.0060479640960693],
-    ["idIsPassword1Or2", 1.4564266204833984],
-    ["nameIsPassword1Or2", 2.437614917755127],
-    ["idMatchesPassword", 1.0064318180084229],
-    ["nameMatchesPassword", 3.031534194946289],
-    ["idMatchesPasswordy", 2.41359806060791],
-    ["nameMatchesPasswordy", 2.100046396255493],
-    ["classMatchesPasswordy", 3.9564614295959473],
-    ["idMatchesLogin", -2.754720449447632],
-    ["nameMatchesLogin", 1.0782098770141602],
-    ["classMatchesLogin", -0.8215594291687012],
-    ["containingFormHasLoginAction", -1.5550920963287354],
-    ["containingFormHasLoginId", -1.8611561059951782],
-    ["formButtonIsRegistery", -0.12398993968963623],
-    ["formButtonIsLoginy", -3.1547279357910156],
-    ["hasAutocompleteCurrentPassword", -3.3668830394744873],
+    ["hasPasswordLabel", 2.5506033897399902],
+    ["hasNewLabel", 1.0949941873550415],
+    ["hasConfirmLabel", 2.4447619915008545],
+    ["hasConfirmEmailLabel", -3.2058374881744385],
+    ["closestLabelMatchesPassword", 1.5071300268173218],
+    ["closestLabelMatchesNew", -0.7601165771484375],
+    ["closestLabelMatchesConfirm", 2.2647175788879395],
+    ["closestLabelMatchesConfirmEmail", -2.5410797595977783],
+    ["hasPasswordAriaLabel", 3.115347385406494],
+    ["hasNewAriaLabel", 0.08063375949859619],
+    ["hasConfirmAriaLabel", 3.529078245162964],
+    ["hasPasswordPlaceholder", 1.628896951675415],
+    ["hasNewPlaceholder", -0.10267007350921631],
+    ["hasConfirmPlaceholder", 2.0540969371795654],
+    ["hasConfirmEmailPlaceholder", 0.06464074552059174],
+    ["forgotPasswordLinkInnerText", -2.4644687175750732],
+    ["forgotPasswordLinkHref", -2.5352818965911865],
+    ["forgotPasswordLinkTitle", -3.086684226989746],
+    ["forgotPasswordButtonInnerText", -3.8111824989318848],
+    ["idIsPassword1Or2", 1.3828973770141602],
+    ["nameIsPassword1Or2", 2.524070978164673],
+    ["idMatchesPassword", 1.4951251745224],
+    ["nameMatchesPassword", 2.8402161598205566],
+    ["idMatchesPasswordy", 2.1752445697784424],
+    ["nameMatchesPasswordy", 2.5259203910827637],
+    ["classMatchesPasswordy", 3.6355655193328857],
+    ["idMatchesLogin", -2.767428398132324],
+    ["nameMatchesLogin", 1.2000486850738525],
+    ["classMatchesLogin", -0.6176851391792297],
+    ["containingFormHasLoginAction", -1.5940608978271484],
+    ["containingFormHasLoginId", -1.68414306640625],
+    ["formButtonIsRegistery", -0.10548293590545654],
+    ["formButtonIsLoginy", -3.3303449153900146],
+    ["hasAutocompleteCurrentPassword", -4.084885597229004]
   ]
 };
 
 const biases = [
-  ["new", -2.820972442626953]
+  ["new", -2.922889232635498]
 ];
 
 const passwordRegex = /password|passwort|رمز عبور|mot de passe|パスワード|신규 비밀번호|wachtwoord|senha|Пароль|parol|密码|contraseña|heslo/i;
 const newRegex = /erstellen|create|choose|設定/i;
 const confirmRegex = /wiederholen|wiederholung|confirm|repeat|confirmation|verify|retype|repite|確認|の確認|تکرار|re-enter|확인|bevestigen|confirme|Повторите|tassyklamak|再次输入/i;
 const emailRegex = /e-mail|email|ایمیل|メールアドレス|이메일|邮箱/i;
-const forgotPasswordInnerTextRegex = /vergessen|forgot|oublié|dimenticata|Esqueceu|Забыли|忘记|找回|Zapomenuté|lost/i;
+const forgotPasswordInnerTextRegex = /vergessen|forgot|oublié|dimenticata|Esqueceu|esqueci|Забыли|忘记|找回|Zapomenuté|lost/i;
 const forgotPasswordHrefRegex = /forgot|reset|recovery|change|lost/i;
 const password1Or2Regex = /password1|password2/i;
 const passwordyRegex = /pw|pwd|passwd/i;
-const loginRegex = /login|Войти|sign in|ورود|登录|Přihlásit se|Авторизоваться|signin|log in|sign\/in|sign-in/i;
+const loginRegex = /login|Войти|sign in|ورود|登录|Přihlásit se|Авторизоваться|signin|log in|sign\/in|sign-in|entrar/i;
 const registerButtonRegex = /create account|Zugang anlegen|Angaben prüfen|Konto erstellen|register|sign up|create an account|create my account|ثبت نام|登録|Cadastrar|Зарегистрироваться|Bellige alynmak/i;
 
 
@@ -196,6 +197,17 @@ function makeRuleset(coeffs, biases) {
     });
   }
 
+  function forgotPasswordButtonInnerText(fnode) {
+    const form = fnode.element.form;
+    if (form !== null) {
+      const buttons = Array.from(form.querySelectorAll('button'));
+      return buttons.some(button => {
+        return passwordRegex.test(button.innerText) && forgotPasswordInnerTextRegex.test(button.innerText);
+      })
+    }
+    return false;
+  }
+
   function containingFormHasLoginAction(fnode) {
     const form = fnode.element.form;
     return containsRegex(loginRegex, form, form => form.action);
@@ -249,6 +261,7 @@ function makeRuleset(coeffs, biases) {
       rule(type("new"), score(forgotPasswordLinkInnerText), {name: "forgotPasswordLinkInnerText"}),
       rule(type("new"), score(forgotPasswordLinkHref), {name: "forgotPasswordLinkHref"}),
       rule(type("new"), score(forgotPasswordLinkTitle), {name: "forgotPasswordLinkTitle"}),
+      rule(type("new"), score(forgotPasswordButtonInnerText), {name: "forgotPasswordButtonInnerText"}),
       rule(type("new"), score(fnode => password1Or2Regex.test(fnode.element.id)), {name: "idIsPassword1Or2"}),
       rule(type("new"), score(fnode => password1Or2Regex.test(fnode.element.name)), {name: "nameIsPassword1Or2"}),
       rule(type("new"), score(fnode => passwordRegex.test(fnode.element.id)), {name: "idMatchesPassword"}),
