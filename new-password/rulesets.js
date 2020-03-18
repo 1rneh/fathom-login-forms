@@ -13,60 +13,60 @@ const DEVELOPMENT = true;
 
 const coefficients = {
   "new": [
-    ["hasPasswordLabel", 2.968064546585083],
-    ["hasNewLabel", 0.7594536542892456],
-    ["hasConfirmLabel", 2.439701795578003],
-    ["hasConfirmEmailLabel", -3.029898166656494],
-    ["closestLabelMatchesPassword", 1.5179104804992676],
-    ["closestLabelMatchesNew", -0.30970335006713867],
-    ["closestLabelMatchesConfirm", 2.0037176609039307],
-    ["closestLabelMatchesConfirmEmail", -2.5331287384033203],
-    ["hasPasswordAriaLabel", 2.799894094467163],
-    ["hasNewAriaLabel", 0.038915783166885376],
-    ["hasConfirmAriaLabel", 3.2614080905914307],
-    ["hasPasswordPlaceholder", 2.027423620223999],
-    ["hasNewPlaceholder", -0.37510690093040466],
-    ["hasConfirmPlaceholder", 2.3059158325195312],
-    ["hasConfirmEmailPlaceholder", 0.036079466342926025],
-    ["forgotPasswordInFormLinkInnerText", -2.156588077545166],
-    ["forgotPasswordInFormLinkHref", -2.3104331493377686],
-    ["forgotPasswordInFormLinkTitle", -2.577613592147827],
-    ["forgotPasswordInFormButtonInnerText", -3.7721314430236816],
-    ["forgotPasswordOnPageLinkInnerText", -0.9971450567245483],
-    ["forgotPasswordOnPageLinkHref", -0.6044663190841675],
-    ["forgotPasswordOnPageLinkTitle", -1.694409966468811],
-    ["forgotPasswordOnPageButtonInnerText", -1.322546124458313],
-    ["idIsPassword1Or2", 1.5874159336090088],
-    ["nameIsPassword1Or2", 2.462693929672241],
-    ["idMatchesPassword", 1.6404777765274048],
-    ["nameMatchesPassword", 2.8984739780426025],
-    ["idMatchesPasswordy", 2.0726428031921387],
-    ["nameMatchesPasswordy", 3.2324259281158447],
-    ["classMatchesPasswordy", 3.9044747352600098],
-    ["idMatchesLogin", -3.210477352142334],
-    ["nameMatchesLogin", 1.357595682144165],
-    ["classMatchesLogin", -0.8762584924697876],
-    ["containingFormHasLoginAction", -1.654552936553955],
-    ["containingFormHasLoginId", -1.8303053379058838],
-    ["formButtonIsRegistery", -0.21326696872711182],
-    ["formButtonIsLoginy", -3.465413808822632],
-    ["hasAutocompleteCurrentPassword", -4.1665520668029785],
+    ["hasPasswordLabel", 2.9183719158172607],
+    ["hasNewLabel", 0.6150888800621033],
+    ["hasConfirmLabel", 2.808669328689575],
+    ["hasConfirmEmailLabel", -2.981346607208252],
+    ["closestLabelMatchesPassword", 0.8486418128013611],
+    ["closestLabelMatchesNew", 0.42194581031799316],
+    ["closestLabelMatchesConfirm", 1.8658995628356934],
+    ["closestLabelMatchesConfirmEmail", -2.8981268405914307],
+    ["hasPasswordAriaLabel", 3.3796801567077637],
+    ["hasNewAriaLabel", 0.5124161839485168],
+    ["hasConfirmAriaLabel", 3.8725030422210693],
+    ["hasPasswordPlaceholder", 1.5083531141281128],
+    ["hasNewPlaceholder", -0.4429008364677429],
+    ["hasConfirmPlaceholder", 2.9611363410949707],
+    ["hasConfirmEmailPlaceholder", 0.037077516317367554],
+    ["forgotPasswordInFormLinkInnerText", -1.7754011154174805],
+    ["forgotPasswordInFormLinkHref", -2.3083131313323975],
+    ["forgotPasswordInFormLinkTitle", -3.072542667388916],
+    ["forgotPasswordInFormButtonInnerText", -4.120485782623291],
+    ["forgotPasswordOnPageLinkInnerText", -1.0720207691192627],
+    ["forgotPasswordOnPageLinkHref", -0.9761485457420349],
+    ["forgotPasswordOnPageLinkTitle", -2.0347630977630615],
+    ["forgotPasswordOnPageButtonInnerText", 0.012258431874215603],
+    ["idIsPassword1Or2", 1.5835304260253906],
+    ["nameIsPassword1Or2", 2.62609601020813],
+    ["idMatchesPassword", -0.3930097222328186],
+    ["nameMatchesPassword", 1.0837440490722656],
+    ["idMatchesPasswordy", 1.8807053565979004],
+    ["nameMatchesPasswordy", 3.1303131580352783],
+    ["classMatchesPasswordy", 0.7587248086929321],
+    ["idMatchesLogin", -3.6833739280700684],
+    ["nameMatchesLogin", 1.6447720527648926],
+    ["classMatchesLogin", -3.4122109413146973],
+    ["containingFormHasLoginAction", -1.3966490030288696],
+    ["containingFormHasLoginId", -2.580232858657837],
+    ["formButtonIsRegistery", -0.17331665754318237],
+    ["formButtonIsLoginy", -3.766822099685669],
+    ["hasAutocompleteCurrentPassword", -4.4371657371521],
   ]
 };
 
 const biases = [
-  ["new", -2.7679519653320312]
+  ["new", -3.127392292022705]
 ];
 
-const passwordRegex = /password|passwort|رمز عبور|mot de passe|パスワード|신규 비밀번호|wachtwoord|senha|Пароль|parol|密码|contraseña|heslo/i;
-const newRegex = /erstellen|create|choose|設定/i;
+const passwordRegex = /password|passwort|رمز عبور|mot de passe|パスワード|비밀번호|암호|wachtwoord|senha|Пароль|parol|密码|contraseña|heslo/i;
+const newRegex = /erstellen|create|choose|設定|신규/i;
 const confirmRegex = /wiederholen|wiederholung|confirm|repeat|confirmation|verify|retype|repite|確認|の確認|تکرار|re-enter|확인|bevestigen|confirme|Повторите|tassyklamak|再次输入/i;
 const emailRegex = /e-mail|email|ایمیل|メールアドレス|이메일|邮箱/i;
-const forgotPasswordInnerTextRegex = /vergessen|forgot|oublié|dimenticata|Esqueceu|esqueci|Забыли|忘记|找回|Zapomenuté|lost|忘れた|忘れられた|忘れの方/i;
-const forgotPasswordHrefRegex = /forgot|reset|recovery|change|lost|reminder/i;
+const forgotPasswordInnerTextRegex = /vergessen|forgot|oublié|dimenticata|Esqueceu|esqueci|Забыли|忘记|找回|Zapomenuté|lost|忘れた|忘れられた|忘れの方|재설정|찾기/i;
+const forgotPasswordHrefRegex = /forgot|reset|recovery|change|lost|reminder|find/i;
 const password1Or2Regex = /password1|password2/i;
-const passwordyRegex = /pw|pwd|passwd/i;
-const loginRegex = /login|Войти|sign in|ورود|登录|Přihlásit se|Авторизоваться|signin|log in|sign\/in|sign-in|entrar|ログインする/i;
+const passwordyRegex = /pw|pwd|passwd|pass/i;
+const loginRegex = /login|Войти|sign in|ورود|登录|Přihlásit se|Авторизоваться|signin|log in|sign\/in|sign-in|entrar|ログインする|로그인/i;
 const registerButtonRegex = /create account|Zugang anlegen|Angaben prüfen|Konto erstellen|register|sign up|create an account|create my account|ثبت نام|登録|Cadastrar|Зарегистрироваться|Bellige alynmak/i;
 
 
@@ -190,7 +190,7 @@ function makeRuleset(coeffs, biases) {
 
   function forgotPasswordInFormLinkHref(fnode) {
     return hasAnchorMatchingPredicateWithinElement(fnode.element.form, anchor => {
-      return passwordRegex.test(anchor.href) && forgotPasswordHrefRegex.test(anchor.href);
+      return (passwordRegex.test(anchor.href) || passwordyRegex.test(anchor.href)) && forgotPasswordHrefRegex.test(anchor.href);
     });
   }
 
@@ -219,7 +219,7 @@ function makeRuleset(coeffs, biases) {
 
   function forgotPasswordOnPageLinkHref(fnode) {
     return hasAnchorMatchingPredicateWithinElement(fnode.element.ownerDocument, anchor => {
-      return passwordRegex.test(anchor.href) && forgotPasswordHrefRegex.test(anchor.href);
+      return (passwordRegex.test(anchor.href) || passwordyRegex.test(anchor.href)) && forgotPasswordHrefRegex.test(anchor.href);
     });
   }
 
