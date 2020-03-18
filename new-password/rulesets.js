@@ -25,12 +25,15 @@ const coefficients = {
     ["hasNewAriaLabel", 0.5124161839485168],
     ["hasConfirmAriaLabel", 3.8725030422210693],
     ["hasPasswordPlaceholder", 1.5083531141281128],
+    ["hasPasswordyPlaceholder", 1.5083531141281128],
     ["hasNewPlaceholder", -0.4429008364677429],
     ["hasConfirmPlaceholder", 2.9611363410949707],
     ["hasConfirmEmailPlaceholder", 0.037077516317367554],
     ["forgotPasswordInFormLinkInnerText", -1.7754011154174805],
     ["forgotPasswordInFormLinkHref", -2.3083131313323975],
     ["forgotPasswordInFormLinkTitle", -3.072542667388916],
+    ["forgotInFormLinkInnerText", -1.7754011154174805],
+    ["forgotInFormLinkHref", -2.3083131313323975],
     ["forgotPasswordInFormButtonInnerText", -4.120485782623291],
     ["forgotPasswordOnPageLinkInnerText", -1.0720207691192627],
     ["forgotPasswordOnPageLinkHref", -0.9761485457420349],
@@ -48,6 +51,7 @@ const coefficients = {
     ["classMatchesLogin", -3.4122109413146973],
     ["containingFormHasLoginAction", -1.3966490030288696],
     ["containingFormHasLoginId", -2.580232858657837],
+    ["containingFormHasRegisterAction", -1.3966490030288696],
     ["formButtonIsRegistery", -0.17331665754318237],
     ["formButtonIsLoginy", -3.766822099685669],
     ["hasAutocompleteCurrentPassword", -4.4371657371521],
@@ -58,16 +62,17 @@ const biases = [
   ["new", -3.127392292022705]
 ];
 
-const passwordRegex = /password|passwort|رمز عبور|mot de passe|パスワード|비밀번호|암호|wachtwoord|senha|Пароль|parol|密码|contraseña|heslo/i;
+const passwordRegex = /password|passwort|رمز عبور|mot de passe|パスワード|비밀번호|암호|wachtwoord|senha|Пароль|parol|密码|contraseña|heslo|كلمة السر|kodeord|Κωδικός|pass code|Kata sandi|hasło|รหัสผ่าน|Şifre/i;
 const newRegex = /erstellen|create|choose|設定|신규/i;
-const confirmRegex = /wiederholen|wiederholung|confirm|repeat|confirmation|verify|retype|repite|確認|の確認|تکرار|re-enter|확인|bevestigen|confirme|Повторите|tassyklamak|再次输入/i;
-const emailRegex = /e-mail|email|ایمیل|メールアドレス|이메일|邮箱/i;
-const forgotPasswordInnerTextRegex = /vergessen|forgot|oublié|dimenticata|Esqueceu|esqueci|Забыли|忘记|找回|Zapomenuté|lost|忘れた|忘れられた|忘れの方|재설정|찾기/i;
-const forgotPasswordHrefRegex = /forgot|reset|recovery|change|lost|reminder|find/i;
+const confirmRegex = /wiederholen|wiederholung|confirm|repeat|confirmation|verify|retype|repite|確認|の確認|تکرار|re-enter|확인|bevestigen|confirme|Повторите|tassyklamak|再次输入|ještě jednou|gentag|re-type|confirmar|Répéter|conferma|Repetaţi/i;
+const emailRegex = /e-mail|email|ایمیل|メールアドレス|이메일|邮箱|البريد الإلكتروني|correo electrónico/i;
+const forgotInnerTextRegex = /vergessen|vergeten|forgot|oublié|dimenticata|Esqueceu|esqueci|Забыли|忘记|找回|Zapomenuté|lost|忘れた|忘れられた|忘れの方|재설정|찾기|help|فراموشی| را فراموش کرده اید|Восстановить|Unuttu|perdus|重新設定|reset|recover|change|remind|find|request|restore|trouble/i;
+const forgotHrefRegex = /forgot|reset|recover|change|lost|remind|find|request|restore/i;
 const password1Or2Regex = /password1|password2/i;
 const passwordyRegex = /pw|pwd|passwd|pass/i;
-const loginRegex = /login|Войти|sign in|ورود|登录|Přihlásit se|Авторизоваться|signin|log in|sign\/in|sign-in|entrar|ログインする|로그인/i;
-const registerButtonRegex = /create account|Zugang anlegen|Angaben prüfen|Konto erstellen|register|sign up|create an account|create my account|ثبت نام|登録|Cadastrar|Зарегистрироваться|Bellige alynmak/i;
+const loginRegex = /login|Войти|sign in|ورود|登录|Přihlásit se|Авторизоваться|signin|log in|sign\/in|sign-in|entrar|ログイン|로그인|Anmelden|inloggen|Συνδέσου|accedi|ログオン|Giriş Yap|登入|connecter/i;
+const registerButtonRegex = /create account|Zugang anlegen|Angaben prüfen|Konto erstellen|register|sign up|create an account|create my account|ثبت نام|登録|注册|Cadastrar|Зарегистрироваться|Bellige alynmak|تسجيل|Registrovat|ΕΓΓΡΑΦΗΣ|Εγγραφή|REGISTRARME|Registrarse|Créer mon compte|Mendaftar|Registrazione|Registrati|가입하기|inschrijving|Zarejestruj się|Deschideți un cont|Создать аккаунт|ร่วม|Üye Ol|create new account/i;
+const registerActionRegex = /register|signup|sign-up|create-account|account\/create|join|new_account|user\/create|sign\/up|membership\/create/i;
 
 
 function makeRuleset(coeffs, biases) {
@@ -176,7 +181,7 @@ function makeRuleset(coeffs, biases) {
 
   function forgotPasswordInFormLinkInnerText(fnode) {
     return hasAnchorMatchingPredicateWithinElement(fnode.element.form, anchor => {
-      return passwordRegex.test(anchor.innerText) && forgotPasswordInnerTextRegex.test(anchor.innerText);
+      return passwordRegex.test(anchor.innerText) && forgotInnerTextRegex.test(anchor.innerText);
     });
   }
 
@@ -190,14 +195,26 @@ function makeRuleset(coeffs, biases) {
 
   function forgotPasswordInFormLinkHref(fnode) {
     return hasAnchorMatchingPredicateWithinElement(fnode.element.form, anchor => {
-      return (passwordRegex.test(anchor.href) || passwordyRegex.test(anchor.href)) && forgotPasswordHrefRegex.test(anchor.href);
+      return (passwordRegex.test(anchor.href) || passwordyRegex.test(anchor.href)) && forgotHrefRegex.test(anchor.href);
     });
   }
 
   function forgotPasswordInFormLinkTitle(fnode) {
     return hasAnchorMatchingPredicateWithinElement(fnode.element.form, anchor => {
-      return passwordRegex.test(anchor.title) && forgotPasswordInnerTextRegex.test(anchor.title);
+      return passwordRegex.test(anchor.title) && forgotInnerTextRegex.test(anchor.title);
     });
+  }
+
+  function forgotInFormLinkInnerText(fnode) {
+    return hasAnchorMatchingPredicateWithinElement(fnode.element.form, anchor => {
+      return forgotInnerTextRegex.test(anchor.innerText);
+    })
+  }
+
+  function forgotInFormLinkHref(fnode) {
+    return hasAnchorMatchingPredicateWithinElement(fnode.element.form, anchor => {
+      return forgotHrefRegex.test(anchor.href);
+    })
   }
 
   function forgotPasswordInFormButtonInnerText(fnode) {
@@ -205,7 +222,7 @@ function makeRuleset(coeffs, biases) {
     if (form !== null) {
       const buttons = Array.from(form.querySelectorAll('button'));
       return buttons.some(button => {
-        return passwordRegex.test(button.innerText) && forgotPasswordInnerTextRegex.test(button.innerText);
+        return passwordRegex.test(button.innerText) && forgotInnerTextRegex.test(button.innerText);
       })
     }
     return false;
@@ -213,26 +230,26 @@ function makeRuleset(coeffs, biases) {
 
   function forgotPasswordOnPageLinkInnerText(fnode) {
     return hasAnchorMatchingPredicateWithinElement(fnode.element.ownerDocument, anchor => {
-      return passwordRegex.test(anchor.innerText) && forgotPasswordInnerTextRegex.test(anchor.innerText);
+      return passwordRegex.test(anchor.innerText) && forgotInnerTextRegex.test(anchor.innerText);
     })
   }
 
   function forgotPasswordOnPageLinkHref(fnode) {
     return hasAnchorMatchingPredicateWithinElement(fnode.element.ownerDocument, anchor => {
-      return (passwordRegex.test(anchor.href) || passwordyRegex.test(anchor.href)) && forgotPasswordHrefRegex.test(anchor.href);
+      return (passwordRegex.test(anchor.href) || passwordyRegex.test(anchor.href)) && forgotHrefRegex.test(anchor.href);
     });
   }
 
   function forgotPasswordOnPageLinkTitle(fnode) {
     return hasAnchorMatchingPredicateWithinElement(fnode.element.ownerDocument, anchor => {
-      return passwordRegex.test(anchor.title) && forgotPasswordInnerTextRegex.test(anchor.title);
+      return passwordRegex.test(anchor.title) && forgotInnerTextRegex.test(anchor.title);
     });
   }
 
   function forgotPasswordOnPageButtonInnerText(fnode) {
     const buttons = Array.from(fnode.element.ownerDocument.querySelectorAll('button'));
     return buttons.some(button => {
-      return passwordRegex.test(button.innerText) && forgotPasswordInnerTextRegex.test(button.innerText);
+      return passwordRegex.test(button.innerText) && forgotInnerTextRegex.test(button.innerText);
     });
   }
 
@@ -244,6 +261,11 @@ function makeRuleset(coeffs, biases) {
   function containingFormHasLoginId(fnode) {
     const form = fnode.element.form;
     return containsRegex(loginRegex, form, form => form.id);
+  }
+
+  function containingFormHasRegisterAction(fnode) {
+    const form = fnode.element.form;
+    return containsRegex(registerActionRegex, form, form => form.action);
   }
 
   function testFormButtonsAgainst(element, stringRegex) {
@@ -259,7 +281,7 @@ function makeRuleset(coeffs, biases) {
 
       let buttons = Array.from(form.querySelectorAll("button"));
       return buttons.some(button => {
-        return stringRegex.test(button.value) || stringRegex.test(button.innerText) || stringRegex.test(button.id);
+        return stringRegex.test(button.value) || stringRegex.test(button.innerText) || stringRegex.test(button.id) || stringRegex.test(button.title);
       })
     }
     return false;
@@ -283,12 +305,15 @@ function makeRuleset(coeffs, biases) {
       rule(type("new"), score(fnode => hasAriaLabelMatchingRegex(fnode.element, newRegex)), {name: "hasNewAriaLabel"}),
       rule(type("new"), score(fnode => hasAriaLabelMatchingRegex(fnode.element, confirmRegex)), {name: "hasConfirmAriaLabel"}),
       rule(type("new"), score(fnode => hasPlaceholderMatchingRegex(fnode.element, passwordRegex)), {name: "hasPasswordPlaceholder"}),
+      rule(type("new"), score(fnode => hasPlaceholderMatchingRegex(fnode.element, passwordyRegex)), {name: "hasPasswordyPlaceholder"}),
       rule(type("new"), score(fnode => hasPlaceholderMatchingRegex(fnode.element, newRegex)), {name: "hasNewPlaceholder"}),
       rule(type("new"), score(hasConfirmPlaceholder), {name: "hasConfirmPlaceholder"}),
       rule(type("new"), score(hasConfirmEmailPlaceholder), {name: "hasConfirmEmailPlaceholder"}),
       rule(type("new"), score(forgotPasswordInFormLinkInnerText), {name: "forgotPasswordInFormLinkInnerText"}),
       rule(type("new"), score(forgotPasswordInFormLinkHref), {name: "forgotPasswordInFormLinkHref"}),
       rule(type("new"), score(forgotPasswordInFormLinkTitle), {name: "forgotPasswordInFormLinkTitle"}),
+      rule(type("new"), score(forgotInFormLinkInnerText), {name: "forgotInFormLinkInnerText"}),
+      rule(type("new"), score(forgotInFormLinkHref), {name: "forgotInFormLinkHref"}),
       rule(type("new"), score(forgotPasswordInFormButtonInnerText), {name: "forgotPasswordInFormButtonInnerText"}),
       rule(type("new"), score(forgotPasswordOnPageLinkInnerText), {name: "forgotPasswordOnPageLinkInnerText"}),
       rule(type("new"), score(forgotPasswordOnPageLinkHref), {name: "forgotPasswordOnPageLinkHref"}),
@@ -306,6 +331,7 @@ function makeRuleset(coeffs, biases) {
       rule(type("new"), score(fnode => loginRegex.test(fnode.element.className)), {name: "classMatchesLogin"}),
       rule(type("new"), score(containingFormHasLoginAction), {name: "containingFormHasLoginAction"}),
       rule(type("new"), score(containingFormHasLoginId), {name: "containingFormHasLoginId"}),
+      rule(type("new"), score(containingFormHasRegisterAction), {name: "containingFormHasRegisterAction"}),
       rule(type("new"), score(fnode => testFormButtonsAgainst(fnode.element, registerButtonRegex)), {name: "formButtonIsRegistery"}),
       rule(type("new"), score(fnode => testFormButtonsAgainst(fnode.element, loginRegex)), {name: "formButtonIsLoginy"}),
       rule(type("new"), score(hasAutocompleteCurrentPassword), {name: "hasAutocompleteCurrentPassword"}),
