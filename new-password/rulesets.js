@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 /* eslint-disable import/no-unresolved */
-import {dom, out, rule, ruleset, score, type} from "fathom-web";
+import {dom, element, out, rule, ruleset, score, type} from "fathom-web";
 import {euclidean} from "fathom-web/clusters";
 import {identity, isVisible, min} from "fathom-web/utilsForFrontend";
 
@@ -179,10 +179,11 @@ function makeRuleset(coeffs, biases) {
     return containsRegex(regex, element.getAttribute("placeholder"));
   }
 
-  function forgotPasswordInFormLinkInnerText(fnode) {
-    return hasAnchorMatchingPredicateWithinElement(fnode.element.form, anchor => {
-      return passwordRegex.test(anchor.innerText) && forgotInnerTextRegex.test(anchor.innerText);
-    });
+  function testRegexesAgainstAnchorPropertyWithinElement(property, element, ...regexes) {
+    return hasAnchorMatchingPredicateWithinElement(element, anchor => {
+      const propertyValue = anchor[property];
+      return regexes.every(regex => regex.test(propertyValue));
+    })
   }
 
   function hasAnchorMatchingPredicateWithinElement(element, matchingPredicate) {
@@ -193,64 +194,15 @@ function makeRuleset(coeffs, biases) {
     return false;
   }
 
-  function forgotPasswordInFormLinkHref(fnode) {
-    return hasAnchorMatchingPredicateWithinElement(fnode.element.form, anchor => {
-      return (passwordRegex.test(anchor.href) || passwordyRegex.test(anchor.href)) && forgotHrefRegex.test(anchor.href);
-    });
-  }
-
-  function forgotPasswordInFormLinkTitle(fnode) {
-    return hasAnchorMatchingPredicateWithinElement(fnode.element.form, anchor => {
-      return passwordRegex.test(anchor.title) && forgotInnerTextRegex.test(anchor.title);
-    });
-  }
-
-  function forgotInFormLinkInnerText(fnode) {
-    return hasAnchorMatchingPredicateWithinElement(fnode.element.form, anchor => {
-      return forgotInnerTextRegex.test(anchor.innerText);
-    })
-  }
-
-  function forgotInFormLinkHref(fnode) {
-    return hasAnchorMatchingPredicateWithinElement(fnode.element.form, anchor => {
-      return forgotHrefRegex.test(anchor.href);
-    })
-  }
-
-  function forgotPasswordInFormButtonInnerText(fnode) {
-    const form = fnode.element.form;
-    if (form !== null) {
-      const buttons = Array.from(form.querySelectorAll('button'));
+  function forgotPasswordButtonWithinElement(element) {
+    if (element !== null) {
+      const buttons = Array.from(element.querySelectorAll('button'));
       return buttons.some(button => {
-        return passwordRegex.test(button.innerText) && forgotInnerTextRegex.test(button.innerText);
-      })
+        const innerText = button.innerText;
+        return passwordRegex.test(innerText) && forgotInnerTextRegex.test(innerText);
+      });
     }
     return false;
-  }
-
-  function forgotPasswordOnPageLinkInnerText(fnode) {
-    return hasAnchorMatchingPredicateWithinElement(fnode.element.ownerDocument, anchor => {
-      return passwordRegex.test(anchor.innerText) && forgotInnerTextRegex.test(anchor.innerText);
-    })
-  }
-
-  function forgotPasswordOnPageLinkHref(fnode) {
-    return hasAnchorMatchingPredicateWithinElement(fnode.element.ownerDocument, anchor => {
-      return (passwordRegex.test(anchor.href) || passwordyRegex.test(anchor.href)) && forgotHrefRegex.test(anchor.href);
-    });
-  }
-
-  function forgotPasswordOnPageLinkTitle(fnode) {
-    return hasAnchorMatchingPredicateWithinElement(fnode.element.ownerDocument, anchor => {
-      return passwordRegex.test(anchor.title) && forgotInnerTextRegex.test(anchor.title);
-    });
-  }
-
-  function forgotPasswordOnPageButtonInnerText(fnode) {
-    const buttons = Array.from(fnode.element.ownerDocument.querySelectorAll('button'));
-    return buttons.some(button => {
-      return passwordRegex.test(button.innerText) && forgotInnerTextRegex.test(button.innerText);
-    });
   }
 
   function containingFormHasLoginAction(fnode) {
@@ -292,7 +244,7 @@ function makeRuleset(coeffs, biases) {
   }
 
   return ruleset([
-      rule(dom("input[type=text],input[type=password],input[type=\"\"],input:not([type])").when(isVisibleInDev), type("new")),
+      rule((DEVELOPMENT ? dom : element)("input[type=text],input[type=password],input[type=\"\"],input:not([type])").when(isVisibleInDev), type("new")),
       rule(type("new"), score(fnode => hasLabelMatchingRegex(fnode.element, passwordRegex)), {name: "hasPasswordLabel"}),
       rule(type("new"), score(fnode => hasLabelMatchingRegex(fnode.element, newRegex)), {name: "hasNewLabel"}),
       rule(type("new"), score(hasConfirmLabel), {name: "hasConfirmLabel"}),
@@ -309,16 +261,16 @@ function makeRuleset(coeffs, biases) {
       rule(type("new"), score(fnode => hasPlaceholderMatchingRegex(fnode.element, newRegex)), {name: "hasNewPlaceholder"}),
       rule(type("new"), score(hasConfirmPlaceholder), {name: "hasConfirmPlaceholder"}),
       rule(type("new"), score(hasConfirmEmailPlaceholder), {name: "hasConfirmEmailPlaceholder"}),
-      rule(type("new"), score(forgotPasswordInFormLinkInnerText), {name: "forgotPasswordInFormLinkInnerText"}),
-      rule(type("new"), score(forgotPasswordInFormLinkHref), {name: "forgotPasswordInFormLinkHref"}),
-      rule(type("new"), score(forgotPasswordInFormLinkTitle), {name: "forgotPasswordInFormLinkTitle"}),
-      rule(type("new"), score(forgotInFormLinkInnerText), {name: "forgotInFormLinkInnerText"}),
-      rule(type("new"), score(forgotInFormLinkHref), {name: "forgotInFormLinkHref"}),
-      rule(type("new"), score(forgotPasswordInFormButtonInnerText), {name: "forgotPasswordInFormButtonInnerText"}),
-      rule(type("new"), score(forgotPasswordOnPageLinkInnerText), {name: "forgotPasswordOnPageLinkInnerText"}),
-      rule(type("new"), score(forgotPasswordOnPageLinkHref), {name: "forgotPasswordOnPageLinkHref"}),
-      rule(type("new"), score(forgotPasswordOnPageLinkTitle), {name: "forgotPasswordOnPageLinkTitle"}),
-      rule(type("new"), score(forgotPasswordOnPageButtonInnerText), {name: "forgotPasswordOnPageButtonInnerText"}),
+      rule(type("new"), score(fnode => testRegexesAgainstAnchorPropertyWithinElement("innerText", fnode.element.form, passwordRegex, forgotInnerTextRegex)), {name: "forgotPasswordInFormLinkInnerText"}),
+      rule(type("new"), score(fnode => testRegexesAgainstAnchorPropertyWithinElement("href", fnode.element.form, (new RegExp(passwordRegex.source + "|" + passwordyRegex.source, "i")), forgotHrefRegex)), {name: "forgotPasswordInFormLinkHref"}),
+      rule(type("new"), score(fnode => testRegexesAgainstAnchorPropertyWithinElement("title", fnode.element.form, passwordRegex, forgotInnerTextRegex)), {name: "forgotPasswordInFormLinkTitle"}),
+      rule(type("new"), score(fnode => testRegexesAgainstAnchorPropertyWithinElement("innerText", fnode.element.form, forgotInnerTextRegex)), {name: "forgotInFormLinkInnerText"}),
+      rule(type("new"), score(fnode => testRegexesAgainstAnchorPropertyWithinElement("href", fnode.element.form, forgotHrefRegex)), {name: "forgotInFormLinkHref"}),
+      rule(type("new"), score(fnode => forgotPasswordButtonWithinElement(fnode.element.form)), {name: "forgotPasswordInFormButtonInnerText"}),
+      rule(type("new"), score(fnode => testRegexesAgainstAnchorPropertyWithinElement("innerText", fnode.element.ownerDocument, passwordRegex, forgotInnerTextRegex)), {name: "forgotPasswordOnPageLinkInnerText"}),
+      rule(type("new"), score(fnode => testRegexesAgainstAnchorPropertyWithinElement("href", fnode.element.ownerDocument, (new RegExp(passwordRegex.source + "|" + passwordyRegex.source, "i")), forgotHrefRegex)), {name: "forgotPasswordOnPageLinkHref"}),
+      rule(type("new"), score(fnode => testRegexesAgainstAnchorPropertyWithinElement("title", fnode.element.ownerDocument, passwordRegex, forgotInnerTextRegex)), {name: "forgotPasswordOnPageLinkTitle"}),
+      rule(type("new"), score(fnode => forgotPasswordButtonWithinElement(fnode.element.ownerDocument)), {name: "forgotPasswordOnPageButtonInnerText"}),
       rule(type("new"), score(fnode => password1Or2Regex.test(fnode.element.id)), {name: "idIsPassword1Or2"}),
       rule(type("new"), score(fnode => password1Or2Regex.test(fnode.element.name)), {name: "nameIsPassword1Or2"}),
       rule(type("new"), score(fnode => passwordRegex.test(fnode.element.id)), {name: "idMatchesPassword"}),
