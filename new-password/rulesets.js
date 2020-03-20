@@ -172,7 +172,8 @@ function makeRuleset(coeffs, biases) {
 
   function forgotPasswordLinkInnerText(fnode) {
     return hasFormAnchorMatchingPredicate(fnode.element, anchor => {
-      return passwordRegex.test(anchor.innerText) && forgotPasswordInnerTextRegex.test(anchor.innerText);
+      const innerText = anchor.innerText;
+      return passwordRegex.test(innerText) && forgotPasswordInnerTextRegex.test(innerText);
     });
   }
 
@@ -202,7 +203,8 @@ function makeRuleset(coeffs, biases) {
     if (form !== null) {
       const buttons = Array.from(form.querySelectorAll('button'));
       return buttons.some(button => {
-        return passwordRegex.test(button.innerText) && forgotPasswordInnerTextRegex.test(button.innerText);
+        const innerText = button.innerText;
+        return passwordRegex.test(innerText) && forgotPasswordInnerTextRegex.test(innerText);
       })
     }
     return false;
