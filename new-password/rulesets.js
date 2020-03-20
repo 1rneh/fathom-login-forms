@@ -45,6 +45,7 @@ const coefficients = {
     ["containingFormHasLoginId", -1.6281628608703613],
     ["formButtonIsRegistery", -0.09392820298671722],
     ["formButtonIsLoginy", -2.907094955444336],
+    ["hasAutocompleteCurrentPassword", -2.907094955444336],
   ]
 };
 
@@ -224,6 +225,10 @@ function makeRuleset(coeffs, biases) {
     return false;
   }
 
+  function hasAutocompleteCurrentPassword(fnode) {
+    return fnode.element.autocomplete === "current-password";
+  }
+
   return ruleset([
       rule(dom("input[type=text],input[type=password],input[type=\"\"],input:not([type])").when(isVisibleInDev), type("new")),
       rule(type("new"), score(fnode => hasLabelMatchingRegex(fnode.element, passwordRegex)), {name: "hasPasswordLabel"}),
@@ -258,6 +263,7 @@ function makeRuleset(coeffs, biases) {
       rule(type("new"), score(containingFormHasLoginId), {name: "containingFormHasLoginId"}),
       rule(type("new"), score(fnode => testFormButtonsAgainst(fnode.element, registerButtonRegex)), {name: "formButtonIsRegistery"}),
       rule(type("new"), score(fnode => testFormButtonsAgainst(fnode.element, loginRegex)), {name: "formButtonIsLoginy"}),
+      rule(type("new"), score(hasAutocompleteCurrentPassword), {name: "hasAutocompleteCurrentPassword"}),
       rule(type("new"), out("new"))
     ],
     coeffs,
