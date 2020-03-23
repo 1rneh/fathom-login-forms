@@ -49,7 +49,6 @@ const coefficients = {
     ["idMatchesLogin", -3.8472776412963867],
     ["nameMatchesLogin", 1.9643051624298096],
     ["classMatchesLogin", -3.5098226070404053],
-    ["containingFormHasLoginAction", -1.0450583696365356],
     ["containingFormHasLoginId", -1.6335563659667969],
     ["containingFormHasRegisterAction", -0.08809099346399307],
     ["formButtonIsRegistery", -0.059100907295942307],
@@ -205,11 +204,6 @@ function makeRuleset(coeffs, biases) {
     return false;
   }
 
-  function containingFormHasLoginAction(fnode) {
-    const form = fnode.element.form;
-    return containsRegex(loginRegex, form, form => form.action);
-  }
-
   function containingFormHasLoginId(fnode) {
     const form = fnode.element.form;
     return containsRegex(loginRegex, form, form => form.id);
@@ -281,7 +275,6 @@ function makeRuleset(coeffs, biases) {
       rule(type("new"), score(fnode => loginRegex.test(fnode.element.id)), {name: "idMatchesLogin"}),
       rule(type("new"), score(fnode => loginRegex.test(fnode.element.name)), {name: "nameMatchesLogin"}),
       rule(type("new"), score(fnode => loginRegex.test(fnode.element.className)), {name: "classMatchesLogin"}),
-      rule(type("new"), score(containingFormHasLoginAction), {name: "containingFormHasLoginAction"}),
       rule(type("new"), score(containingFormHasLoginId), {name: "containingFormHasLoginId"}),
       rule(type("new"), score(containingFormHasRegisterAction), {name: "containingFormHasRegisterAction"}),
       rule(type("new"), score(fnode => testFormButtonsAgainst(fnode.element, registerButtonRegex)), {name: "formButtonIsRegistery"}),
