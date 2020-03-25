@@ -13,47 +13,49 @@ const DEVELOPMENT = true;
 
 const coefficients = {
   "new": [
-    ["hasNewLabel", 1.1942468881607056],
-    ["hasConfirmLabel", 0.9937359690666199],
-    ["closestLabelMatchesNew", 1.3515702486038208],
-    ["closestLabelMatchesConfirm", 0.8852084279060364],
-    ["hasNewAriaLabel", 1.3503614664077759],
-    ["hasConfirmAriaLabel", 1.2281066179275513],
-    ["hasNewPlaceholder", 0.8927968740463257],
-    ["hasConfirmPlaceholder", 0.890028715133667],
-    ["forgotPasswordInFormLinkTextContent", -0.669173538684845],
-    ["forgotPasswordInFormLinkHref", -0.8630418181419373],
-    ["forgotPasswordInFormLinkTitle", -1.9473755359649658],
-    ["forgotInFormLinkTextContent", -0.7050339579582214],
-    ["forgotInFormLinkHref", -0.3079386055469513],
-    ["forgotPasswordInFormButtonTextContent", -1.7638190984725952],
-    ["forgotPasswordOnPageLinkTextContent", -1.2573195695877075],
-    ["forgotPasswordOnPageLinkHref", 0.07979681342840195],
-    ["forgotPasswordOnPageLinkTitle", 0.40498408675193787],
-    ["forgotPasswordOnPageButtonTextContent", 0.4187963008880615],
-    ["idIsPassword1Or2", 0.7992267608642578],
-    ["nameIsPassword1Or2", 0.8524115085601807],
-    ["idMatchesLogin", -1.2690664529800415],
-    ["nameMatchesLogin", 2.206836223602295],
-    ["classMatchesLogin", -1.7070351839065552],
-    ["formHasRegisteryId", 1.1303024291992188],
-    ["formHasRegisteryName", 0.9509162902832031],
-    ["formHasRegisteryClass", 0.8713040947914124],
-    ["formHasRegisteryAction", 1.2915749549865723],
-    ["formHasLoginyId", -0.705916166305542],
-    ["formHasLoginyName", -1.4249167442321777],
-    ["formHasLoginyClass", -0.44033369421958923],
-    ["formHasLoginyAction", -0.4136027693748474],
-    ["formButtonIsRegistery", 1.1742640733718872],
-    ["formButtonIsLoginy", -1.5532525777816772],
-    ["hasAutocompleteCurrentPassword", -1.7242628335952759],
-    ["formHasRememberMeCheckbox", 0.014359604567289352],
-    ["formHasRememberMeLabel", -0.4455518126487732],
+    ["hasNewLabel", 1.2168711423873901],
+    ["hasConfirmLabel", 1.0401371717453003],
+    ["closestLabelMatchesNew", 1.4538081884384155],
+    ["closestLabelMatchesConfirm", 1.2728875875473022],
+    ["hasNewAriaLabel", 1.1542013883590698],
+    ["hasConfirmAriaLabel", 1.5784785747528076],
+    ["hasNewPlaceholder", 1.0550048351287842],
+    ["hasConfirmPlaceholder", 1.0138846635818481],
+    ["forgotPasswordInFormLinkTextContent", -0.058422669768333435],
+    ["forgotPasswordInFormLinkHref", -1.1307156085968018],
+    ["forgotPasswordInFormLinkTitle", -1.9100302457809448],
+    ["forgotInFormLinkTextContent", -0.4900195002555847],
+    ["forgotInFormLinkHref", -0.29569709300994873],
+    ["forgotPasswordInFormButtonTextContent", -0.9136202335357666],
+    ["forgotPasswordOnPageLinkTextContent", -1.0804691314697266],
+    ["forgotPasswordOnPageLinkHref", -0.42872896790504456],
+    ["forgotPasswordOnPageLinkTitle", -0.2683066129684448],
+    ["forgotPasswordOnPageButtonTextContent", 0.682801365852356],
+    ["idIsPassword1Or2", 0.9561398029327393],
+    ["nameIsPassword1Or2", 1.0753421783447266],
+    ["idMatchesLogin", -1.4756159782409668],
+    ["nameMatchesLogin", 2.0283663272857666],
+    ["classMatchesLogin", -1.8413914442062378],
+    ["formHasRegisteryId", 1.3311432600021362],
+    ["formHasRegisteryName", 1.2851436138153076],
+    ["formHasRegisteryClass", 0.8525357842445374],
+    ["formHasRegisteryAction", 1.2705190181732178],
+    ["formHasLoginyId", -0.9415794610977173],
+    ["formHasLoginyName", -1.2512881755828857],
+    ["formHasLoginyClass", -0.5077950358390808],
+    ["formHasLoginyAction", -0.5923270583152771],
+    ["formButtonIsRegistery", 1.3336671590805054],
+    ["formButtonIsLoginy", -1.5967063903808594],
+    ["hasAutocompleteCurrentPassword", -2.0405995845794678],
+    ["formHasRememberMeCheckbox", -0.14044533669948578],
+    ["formHasRememberMeLabel", -0.5033175349235535],
+    ["formHasNewsletterCheckbox", 0.9388435482978821],
+    ["formHasNewsletterLabel", 1.1354864835739136],
   ]
 };
 
 const biases = [
-  ["new", 1.3079558610916138]
+  ["new", 1.2901159524917603]
 ];
 
 const passwordRegex = /password|passwort|رمز عبور|mot de passe|パスワード|비밀번호|암호|wachtwoord|senha|Пароль|parol|密码|contraseña|heslo|كلمة السر|kodeord|Κωδικός|pass code|Kata sandi|hasło|รหัสผ่าน|Şifre/i;
@@ -70,6 +72,7 @@ const loginFormAttrRegex = /login|signin|sign-in/i;
 const registerFormAttrRegex = /signup|join|register|regform|registration|new_user|AccountCreate|create_customer|CreateAccount|CreateAcct|create-account|reg-form|newuser|new-reg|new-form|new_membership/i;
 const rememberMeAttrRegex = /remember|auto_login|auto-login|save_mail|save-mail|ricordami|manter|mantenha|savelogin|auto login/i;
 const rememberMeStringRegex = /remember me|keep me logged in|keep me signed in|save email address|save id|stay signed in|ricordami|次回からログオンIDの入力を省略する|メールアドレスを保存する|を保存|아이디저장|아이디 저장|로그인 상태 유지|lembrar|manter conectado|mantenha-me conectado|Запомни меня|запомнить меня|Запомните меня|Не спрашивать в следующий раз|下次自动登录|记住我/i;
+const newsletterStringRegex = /newsletter|ニュースレター/i;
 
 function makeRuleset(coeffs, biases) {
   function hasLabelMatchingRegex(element, regex) {
@@ -222,6 +225,8 @@ function makeRuleset(coeffs, biases) {
       rule(type("new"), score(hasAutocompleteCurrentPassword), {name: "hasAutocompleteCurrentPassword"}),
       rule(type("new"), score(fnode => hasSomeMatchingPredicateForSelectorWithinElement(fnode.element.form, "input[type=checkbox]", checkbox => rememberMeAttrRegex.test(checkbox.id) || rememberMeAttrRegex.test(checkbox.name))), {name: "formHasRememberMeCheckbox"}),
       rule(type("new"), score(fnode => hasSomeMatchingPredicateForSelectorWithinElement(fnode.element.form, "label", label => rememberMeStringRegex.test(label.textContent))), {name: "formHasRememberMeLabel"}),
+      rule(type("new"), score(fnode => hasSomeMatchingPredicateForSelectorWithinElement(fnode.element.form, "input[type=checkbox]", checkbox => checkbox.id.includes("newsletter") || checkbox.name.includes("newsletter"))), {name: "formHasNewsletterCheckbox"}),
+      rule(type("new"), score(fnode => hasSomeMatchingPredicateForSelectorWithinElement(fnode.element.form, "label", label => newsletterStringRegex.test(label.textContent))), {name: "formHasNewsletterLabel"}),
       rule(type("new"), out("new"))
     ],
     coeffs,
