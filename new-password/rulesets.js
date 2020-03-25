@@ -13,58 +13,60 @@ const DEVELOPMENT = true;
 
 const coefficients = {
   "new": [
-    ["hasPasswordLabel", 2.621917247772217],
-    ["hasNewLabel", 0.5026055574417114],
-    ["hasConfirmLabel", 2.7426979541778564],
-    ["hasConfirmEmailLabel", -2.76962947845459],
-    ["closestLabelMatchesPassword", 0.9991055727005005],
-    ["closestLabelMatchesNew", 0.2867026627063751],
-    ["closestLabelMatchesConfirm", 2.2645602226257324],
-    ["closestLabelMatchesConfirmEmail", -2.5424318313598633],
-    ["hasPasswordAriaLabel", 3.24025821685791],
-    ["hasNewAriaLabel", -0.24705158174037933],
-    ["hasConfirmAriaLabel", 3.5569283962249756],
-    ["hasPasswordPlaceholder", 0.18956409394741058],
-    ["hasPasswordyPlaceholder", 2.1116344928741455],
-    ["hasNewPlaceholder", -0.7253401279449463],
-    ["hasConfirmPlaceholder", 3.1421258449554443],
-    ["hasConfirmEmailPlaceholder", -0.0865769237279892],
-    ["forgotPasswordInFormLinkInnerText", -0.5140935182571411],
-    ["forgotPasswordInFormLinkHref", -0.7814330458641052],
-    ["forgotPasswordInFormLinkTitle", -2.4741508960723877],
-    ["forgotInFormLinkInnerText", -1.950645923614502],
-    ["forgotInFormLinkHref", 0.03927994519472122],
-    ["forgotPasswordInFormButtonInnerText", -3.8825478553771973],
-    ["forgotPasswordOnPageLinkInnerText", -1.0194272994995117],
-    ["forgotPasswordOnPageLinkHref", -1.1636592149734497],
-    ["forgotPasswordOnPageLinkTitle", -1.9960534572601318],
-    ["forgotPasswordOnPageButtonInnerText", -0.5149111151695251],
-    ["idIsPassword1Or2", 1.3176568746566772],
-    ["nameIsPassword1Or2", 2.920762777328491],
-    ["idMatchesPassword", -0.3857136368751526],
-    ["nameMatchesPassword", 1.0957869291305542],
-    ["idMatchesPasswordy", 2.4407007694244385],
-    ["nameMatchesPasswordy", 3.177992343902588],
-    ["classMatchesPasswordy", 1.6899998188018799],
-    ["idMatchesLogin", -2.897006034851074],
-    ["nameMatchesLogin", 1.7689114809036255],
-    ["classMatchesLogin", -3.519543170928955],
-    ["formHasRegisteryId", -0.23081831634044647],
-    ["formHasRegisteryName", 0.17822079360485077],
-    ["formHasRegisteryClass", -0.5079963803291321],
-    ["formHasRegisteryAction", -0.109561987221241],
-    ["formHasLoginyId", -1.9601320028305054],
-    ["formHasLoginyName", -3.1679556369781494],
-    ["formHasLoginyClass", -1.6998120546340942],
-    ["formHasLoginyAction", -0.9724709391593933],
-    ["formButtonIsRegistery", 0.02965886890888214],
-    ["formButtonIsLoginy", -3.654585123062134],
-    ["hasAutocompleteCurrentPassword", -4.2811713218688965],
+    ["hasPasswordLabel", 2.594843864440918],
+    ["hasNewLabel", -0.846024751663208],
+    ["hasConfirmLabel", 2.7432868480682373],
+    ["hasConfirmEmailLabel", -2.917133092880249],
+    ["closestLabelMatchesPassword", 0.9984597563743591],
+    ["closestLabelMatchesNew", 2.2854645252227783],
+    ["closestLabelMatchesConfirm", 2.2937068939208984],
+    ["closestLabelMatchesConfirmEmail", -2.507796049118042],
+    ["hasPasswordAriaLabel", 3.3413126468658447],
+    ["hasNewAriaLabel", -0.08169660717248917],
+    ["hasConfirmAriaLabel", 3.5755884647369385],
+    ["hasPasswordPlaceholder", 0.2881195545196533],
+    ["hasPasswordyPlaceholder", 2.170159339904785],
+    ["hasNewPlaceholder", -1.1741358041763306],
+    ["hasConfirmPlaceholder", 3.175865650177002],
+    ["hasConfirmEmailPlaceholder", -0.004481077194213867],
+    ["forgotPasswordInFormLinkInnerText", -0.6159859895706177],
+    ["forgotPasswordInFormLinkHref", -0.6841901540756226],
+    ["forgotPasswordInFormLinkTitle", -2.5829925537109375],
+    ["forgotInFormLinkInnerText", -1.942207932472229],
+    ["forgotInFormLinkHref", 0.3141438364982605],
+    ["forgotPasswordInFormButtonInnerText", -3.817464590072632],
+    ["forgotPasswordOnPageLinkInnerText", -1.0779309272766113],
+    ["forgotPasswordOnPageLinkHref", -1.1917191743850708],
+    ["forgotPasswordOnPageLinkTitle", -2.1190404891967773],
+    ["forgotPasswordOnPageButtonInnerText", -0.9084112048149109],
+    ["idIsPassword1Or2", 1.398266077041626],
+    ["nameIsPassword1Or2", 2.954010248184204],
+    ["idMatchesPassword", -0.432506263256073],
+    ["nameMatchesPassword", 1.1994942426681519],
+    ["idMatchesPasswordy", 2.3967247009277344],
+    ["nameMatchesPasswordy", 3.196186065673828],
+    ["classMatchesPasswordy", 2.21396803855896],
+    ["idMatchesLogin", -2.88918137550354],
+    ["nameMatchesLogin", 2.0731430053710938],
+    ["classMatchesLogin", -3.5357019901275635],
+    ["formHasRegisteryId", -0.20351913571357727],
+    ["formHasRegisteryName", 0.2329884171485901],
+    ["formHasRegisteryClass", -0.6895425915718079],
+    ["formHasRegisteryAction", -0.10919852554798126],
+    ["formHasLoginyId", -1.5200645923614502],
+    ["formHasLoginyName", -3.0589663982391357],
+    ["formHasLoginyClass", -1.9659345149993896],
+    ["formHasLoginyAction", -0.8985607624053955],
+    ["formButtonIsRegistery", 0.040490373969078064],
+    ["formButtonIsLoginy", -3.712240219116211],
+    ["hasAutocompleteCurrentPassword", -4.807760715484619],
+    ["formHasRememberMeCheckbox", -0.39118412137031555],
+    ["formHasRememberMeLabel", -1.0628185272216797],
   ]
 };
 
 const biases = [
-  ["new", -3.1301488876342773]
+  ["new", -3.1447670459747314]
 ];
 
 const passwordRegex = /password|passwort|رمز عبور|mot de passe|パスワード|비밀번호|암호|wachtwoord|senha|Пароль|parol|密码|contraseña|heslo|كلمة السر|kodeord|Κωδικός|pass code|Kata sandi|hasło|รหัสผ่าน|Şifre/i;
@@ -80,6 +82,8 @@ const registerButtonRegex = /create account|Zugang anlegen|Angaben prüfen|Konto
 const registerActionRegex = /register|signup|sign-up|create-account|account\/create|join|new_account|user\/create|sign\/up|membership\/create/i;
 const loginFormAttrRegex = /login|signin|sign-in/i;
 const registerFormAttrRegex = /signup|join|register|regform|registration|new_user|AccountCreate|create_customer|CreateAccount|CreateAcct|create-account|reg-form|newuser|new-reg|new-form|new_membership/i;
+const rememberMeAttrRegex = /remember|auto_login|auto-login|memory|save_mail|save-mail|idsave|idRmb|id_save|id-save|save_id|save-id|ricordami|manter|mantenha|savelogin|auto login/i;
+const rememberMeStringRegex = /remember me|keep me logged in|keep me signed in|save email address|save id|stay signed in|ricordami|次回からログオンIDの入力を省略する|メールアドレスを保存する|を保存|아이디저장|아이디 저장|로그인 상태 유지|lembrar|manter conectado|mantenha-me conectado|Запомни меня|запомнить меня|Запомните меня|Не спрашивать в следующий раз|下次自动登录|记住我/i;
 
 function makeRuleset(coeffs, biases) {
   /**
@@ -234,6 +238,28 @@ function makeRuleset(coeffs, biases) {
     return fnode.element.autocomplete === "current-password";
   }
 
+  function formHasRememberMeCheckbox(fnode) {
+    const form = fnode.element.form;
+    if (form !== null) {
+      const checkboxes = Array.from(form.querySelectorAll("input[type=checkbox]"));
+      return checkboxes.some(checkbox => {
+        return rememberMeAttrRegex.test(checkbox.id) || rememberMeAttrRegex.test(checkbox.name);
+      })
+    }
+    return false;
+  }
+
+  function formHasRememberMeLabel(fnode) {
+    const form = fnode.element.form;
+    if (form !== null) {
+      const labels = Array.from(form.querySelectorAll("label"));
+      return labels.some(label => {
+        return rememberMeStringRegex.test(label.textContent);
+      })
+    }
+    return false;
+  }
+
   return ruleset([
       rule((DEVELOPMENT ? dom : element)("input[type=text],input[type=password],input[type=\"\"],input:not([type])").when(isVisibleInDev), type("new")),
       rule(type("new"), score(fnode => hasLabelMatchingRegex(fnode.element, passwordRegex)), {name: "hasPasswordLabel"}),
@@ -283,6 +309,8 @@ function makeRuleset(coeffs, biases) {
       rule(type("new"), score(fnode => testFormButtonsAgainst(fnode.element, registerButtonRegex)), {name: "formButtonIsRegistery"}),
       rule(type("new"), score(fnode => testFormButtonsAgainst(fnode.element, loginRegex)), {name: "formButtonIsLoginy"}),
       rule(type("new"), score(hasAutocompleteCurrentPassword), {name: "hasAutocompleteCurrentPassword"}),
+      rule(type("new"), score(formHasRememberMeCheckbox), {name: "formHasRememberMeCheckbox"}),
+      rule(type("new"), score(formHasRememberMeLabel), {name: "formHasRememberMeLabel"}),
       rule(type("new"), out("new"))
     ],
     coeffs,
