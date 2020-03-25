@@ -190,29 +190,10 @@ function makeRuleset(coeffs, biases) {
   }
 
   function testRegexesAgainstAnchorPropertyWithinElement(property, element, ...regexes) {
-    return hasAnchorMatchingPredicateWithinElement(element, anchor => {
+    return hasSomeMatchingPredicateForSelectorWithinElement(element, "a", anchor => {
       const propertyValue = anchor[property];
       return regexes.every(regex => regex.test(propertyValue));
     })
-  }
-
-  function hasAnchorMatchingPredicateWithinElement(element, matchingPredicate) {
-    if (element !== null) {
-      const anchors = Array.from(element.querySelectorAll('a'));
-      return anchors.some(matchingPredicate);
-    }
-    return false;
-  }
-
-  function forgotPasswordButtonWithinElement(element) {
-    if (element !== null) {
-      const buttons = Array.from(element.querySelectorAll('button'));
-      return buttons.some(button => {
-        const innerText = button.innerText;
-        return passwordRegex.test(innerText) && forgotInnerTextRegex.test(innerText);
-      });
-    }
-    return false;
   }
 
   function testFormButtonsAgainst(element, stringRegex) {
@@ -226,10 +207,9 @@ function makeRuleset(coeffs, biases) {
         return true;
       }
 
-      let buttons = Array.from(form.querySelectorAll("button"));
-      return buttons.some(button => {
+      return hasSomeMatchingPredicateForSelectorWithinElement(form, "button", button => {
         return stringRegex.test(button.value) || stringRegex.test(button.innerText) || stringRegex.test(button.id) || stringRegex.test(button.title);
-      })
+      });
     }
     return false;
   }
@@ -238,24 +218,10 @@ function makeRuleset(coeffs, biases) {
     return fnode.element.autocomplete === "current-password";
   }
 
-  function formHasRememberMeCheckbox(fnode) {
-    const form = fnode.element.form;
-    if (form !== null) {
-      const checkboxes = Array.from(form.querySelectorAll("input[type=checkbox]"));
-      return checkboxes.some(checkbox => {
-        return rememberMeAttrRegex.test(checkbox.id) || rememberMeAttrRegex.test(checkbox.name);
-      })
-    }
-    return false;
-  }
-
-  function formHasRememberMeLabel(fnode) {
-    const form = fnode.element.form;
-    if (form !== null) {
-      const labels = Array.from(form.querySelectorAll("label"));
-      return labels.some(label => {
-        return rememberMeStringRegex.test(label.textContent);
-      })
+  function hasSomeMatchingPredicateForSelectorWithinElement(element, selector, matchingPredicate) {
+    if (element !== null) {
+      const selectorArray = Array.from(element.querySelectorAll(selector));
+      return selectorArray.some(matchingPredicate);
     }
     return false;
   }
@@ -283,11 +249,11 @@ function makeRuleset(coeffs, biases) {
       rule(type("new"), score(fnode => testRegexesAgainstAnchorPropertyWithinElement("title", fnode.element.form, passwordRegex, forgotInnerTextRegex)), {name: "forgotPasswordInFormLinkTitle"}),
       rule(type("new"), score(fnode => testRegexesAgainstAnchorPropertyWithinElement("innerText", fnode.element.form, forgotInnerTextRegex)), {name: "forgotInFormLinkInnerText"}),
       rule(type("new"), score(fnode => testRegexesAgainstAnchorPropertyWithinElement("href", fnode.element.form, forgotHrefRegex)), {name: "forgotInFormLinkHref"}),
-      rule(type("new"), score(fnode => forgotPasswordButtonWithinElement(fnode.element.form)), {name: "forgotPasswordInFormButtonInnerText"}),
+      rule(type("new"), score(fnode => hasSomeMatchingPredicateForSelectorWithinElement(fnode.element.form, "button", button => {const innerText = button.innerText; return passwordRegex.test(innerText) && forgotInnerTextRegex.test(innerText)})), {name: "forgotPasswordInFormButtonInnerText"}),
       rule(type("new"), score(fnode => testRegexesAgainstAnchorPropertyWithinElement("innerText", fnode.element.ownerDocument, passwordRegex, forgotInnerTextRegex)), {name: "forgotPasswordOnPageLinkInnerText"}),
       rule(type("new"), score(fnode => testRegexesAgainstAnchorPropertyWithinElement("href", fnode.element.ownerDocument, (new RegExp(passwordRegex.source + "|" + passwordyRegex.source, "i")), forgotHrefRegex)), {name: "forgotPasswordOnPageLinkHref"}),
       rule(type("new"), score(fnode => testRegexesAgainstAnchorPropertyWithinElement("title", fnode.element.ownerDocument, passwordRegex, forgotInnerTextRegex)), {name: "forgotPasswordOnPageLinkTitle"}),
-      rule(type("new"), score(fnode => forgotPasswordButtonWithinElement(fnode.element.ownerDocument)), {name: "forgotPasswordOnPageButtonInnerText"}),
+      rule(type("new"), score(fnode => hasSomeMatchingPredicateForSelectorWithinElement(fnode.element.ownerDocument, "button", button => {const innerText = button.innerText; return passwordRegex.test(innerText) && forgotInnerTextRegex.test(innerText)})), {name: "forgotPasswordOnPageButtonInnerText"}),
       rule(type("new"), score(fnode => password1Or2Regex.test(fnode.element.id)), {name: "idIsPassword1Or2"}),
       rule(type("new"), score(fnode => password1Or2Regex.test(fnode.element.name)), {name: "nameIsPassword1Or2"}),
       rule(type("new"), score(fnode => passwordRegex.test(fnode.element.id)), {name: "idMatchesPassword"}),
@@ -309,8 +275,8 @@ function makeRuleset(coeffs, biases) {
       rule(type("new"), score(fnode => testFormButtonsAgainst(fnode.element, registerButtonRegex)), {name: "formButtonIsRegistery"}),
       rule(type("new"), score(fnode => testFormButtonsAgainst(fnode.element, loginRegex)), {name: "formButtonIsLoginy"}),
       rule(type("new"), score(hasAutocompleteCurrentPassword), {name: "hasAutocompleteCurrentPassword"}),
-      rule(type("new"), score(formHasRememberMeCheckbox), {name: "formHasRememberMeCheckbox"}),
-      rule(type("new"), score(formHasRememberMeLabel), {name: "formHasRememberMeLabel"}),
+      rule(type("new"), score(fnode => hasSomeMatchingPredicateForSelectorWithinElement(fnode.element.form, "input[type=checkbox]", checkbox => {return rememberMeAttrRegex.test(checkbox.id) || rememberMeAttrRegex.test(checkbox.name)})), {name: "formHasRememberMeCheckbox"}),
+      rule(type("new"), score(fnode => hasSomeMatchingPredicateForSelectorWithinElement(fnode.element.form, "label", label => {return rememberMeStringRegex.test(label.textContent)})), {name: "formHasRememberMeLabel"}),
       rule(type("new"), out("new"))
     ],
     coeffs,
