@@ -28,9 +28,9 @@ def main(num_domains: int, assignee: str, shuffled: bool):
     row_values = domains[sort_column].isin(next_n[sort_column].values)
     domains.loc[row_values, 'assigned for change-password forms'] = assignee.upper()
 
-    # Print the list of trexa number and domain
+    # Print the list of shuffled number and domain
     print(f'Next {num_domains} {sort_column.split(" ")[0]} domains have been assigned to {assignee.upper()}')
-    print(next_n[['Trexa # ', 'domain']].to_string(index=False))
+    print(next_n[['shuffled #', 'domain']].to_string(index=False))
 
     # Save the new assignments
     domains.to_csv('tranco_100k_alexa_100k_union_shuffled_2019-12-14.csv', sep='\t', index=False)
