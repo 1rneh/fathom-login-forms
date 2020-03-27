@@ -34,11 +34,11 @@ const coefficients = {
     ["forgotPasswordInFormLinkTitle", -2.5829925537109375],
     ["forgotInFormLinkInnerText", -1.942207932472229],
     ["forgotInFormLinkHref", 0.3141438364982605],
-    ["forgotPasswordInFormButtonInnerText", -3.817464590072632],
+    ["forgotPasswordInFormButtonTextContent", -3.817464590072632],
     ["forgotPasswordOnPageLinkInnerText", -1.0779309272766113],
     ["forgotPasswordOnPageLinkHref", -1.1917191743850708],
     ["forgotPasswordOnPageLinkTitle", -2.1190404891967773],
-    ["forgotPasswordOnPageButtonInnerText", -0.9084112048149109],
+    ["forgotPasswordOnPageButtonTextContent", -0.9084112048149109],
     ["idIsPassword1Or2", 1.398266077041626],
     ["nameIsPassword1Or2", 2.954010248184204],
     ["idMatchesPassword", -0.432506263256073],
@@ -226,6 +226,11 @@ function makeRuleset(coeffs, biases) {
     return false;
   }
 
+  function textContentMatchesRegexes(element, ...regexes) {
+    const textContent = element.textContent;
+    return regexes.every(regex => regex.test(textContent));
+  }
+
   return ruleset([
       rule((DEVELOPMENT ? dom : element)("input[type=text],input[type=password],input[type=\"\"],input:not([type])").when(isVisibleInDev), type("new")),
       rule(type("new"), score(fnode => hasLabelMatchingRegex(fnode.element, passwordRegex)), {name: "hasPasswordLabel"}),
@@ -249,11 +254,11 @@ function makeRuleset(coeffs, biases) {
       rule(type("new"), score(fnode => testRegexesAgainstAnchorPropertyWithinElement("title", fnode.element.form, passwordRegex, forgotInnerTextRegex)), {name: "forgotPasswordInFormLinkTitle"}),
       rule(type("new"), score(fnode => testRegexesAgainstAnchorPropertyWithinElement("innerText", fnode.element.form, forgotInnerTextRegex)), {name: "forgotInFormLinkInnerText"}),
       rule(type("new"), score(fnode => testRegexesAgainstAnchorPropertyWithinElement("href", fnode.element.form, forgotHrefRegex)), {name: "forgotInFormLinkHref"}),
-      rule(type("new"), score(fnode => hasSomeMatchingPredicateForSelectorWithinElement(fnode.element.form, "button", button => {const innerText = button.innerText; return passwordRegex.test(innerText) && forgotInnerTextRegex.test(innerText)})), {name: "forgotPasswordInFormButtonInnerText"}),
+      rule(type("new"), score(fnode => hasSomeMatchingPredicateForSelectorWithinElement(fnode.element.form, "button", button => textContentMatchesRegexes(button, passwordRegex, forgotInnerTextRegex))), {name: "forgotPasswordInFormButtonTextContent"}),
       rule(type("new"), score(fnode => testRegexesAgainstAnchorPropertyWithinElement("innerText", fnode.element.ownerDocument, passwordRegex, forgotInnerTextRegex)), {name: "forgotPasswordOnPageLinkInnerText"}),
       rule(type("new"), score(fnode => testRegexesAgainstAnchorPropertyWithinElement("href", fnode.element.ownerDocument, (new RegExp(passwordRegex.source + "|" + passwordyRegex.source, "i")), forgotHrefRegex)), {name: "forgotPasswordOnPageLinkHref"}),
       rule(type("new"), score(fnode => testRegexesAgainstAnchorPropertyWithinElement("title", fnode.element.ownerDocument, passwordRegex, forgotInnerTextRegex)), {name: "forgotPasswordOnPageLinkTitle"}),
-      rule(type("new"), score(fnode => hasSomeMatchingPredicateForSelectorWithinElement(fnode.element.ownerDocument, "button", button => {const innerText = button.innerText; return passwordRegex.test(innerText) && forgotInnerTextRegex.test(innerText)})), {name: "forgotPasswordOnPageButtonInnerText"}),
+      rule(type("new"), score(fnode => hasSomeMatchingPredicateForSelectorWithinElement(fnode.element.ownerDocument, "button", button => textContentMatchesRegexes(button, passwordRegex, forgotInnerTextRegex))), {name: "forgotPasswordOnPageButtonTextContent"}),
       rule(type("new"), score(fnode => password1Or2Regex.test(fnode.element.id)), {name: "idIsPassword1Or2"}),
       rule(type("new"), score(fnode => password1Or2Regex.test(fnode.element.name)), {name: "nameIsPassword1Or2"}),
       rule(type("new"), score(fnode => passwordRegex.test(fnode.element.id)), {name: "idMatchesPassword"}),
@@ -275,8 +280,8 @@ function makeRuleset(coeffs, biases) {
       rule(type("new"), score(fnode => testFormButtonsAgainst(fnode.element, registerButtonRegex)), {name: "formButtonIsRegistery"}),
       rule(type("new"), score(fnode => testFormButtonsAgainst(fnode.element, loginRegex)), {name: "formButtonIsLoginy"}),
       rule(type("new"), score(hasAutocompleteCurrentPassword), {name: "hasAutocompleteCurrentPassword"}),
-      rule(type("new"), score(fnode => hasSomeMatchingPredicateForSelectorWithinElement(fnode.element.form, "input[type=checkbox]", checkbox => {return rememberMeAttrRegex.test(checkbox.id) || rememberMeAttrRegex.test(checkbox.name)})), {name: "formHasRememberMeCheckbox"}),
-      rule(type("new"), score(fnode => hasSomeMatchingPredicateForSelectorWithinElement(fnode.element.form, "label", label => {return rememberMeStringRegex.test(label.textContent)})), {name: "formHasRememberMeLabel"}),
+      rule(type("new"), score(fnode => hasSomeMatchingPredicateForSelectorWithinElement(fnode.element.form, "input[type=checkbox]", checkbox => rememberMeAttrRegex.test(checkbox.id) || rememberMeAttrRegex.test(checkbox.name))), {name: "formHasRememberMeCheckbox"}),
+      rule(type("new"), score(fnode => hasSomeMatchingPredicateForSelectorWithinElement(fnode.element.form, "label", label => rememberMeStringRegex.test(label.textContent))), {name: "formHasRememberMeLabel"}),
       rule(type("new"), out("new"))
     ],
     coeffs,
