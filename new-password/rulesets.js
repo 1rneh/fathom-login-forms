@@ -13,58 +13,58 @@ const DEVELOPMENT = true;
 
 const coefficients = {
   "new": [
-    ["hasPasswordLabel", 2.621917247772217],
-    ["hasNewLabel", 0.5026055574417114],
-    ["hasConfirmLabel", 2.7426979541778564],
-    ["hasConfirmEmailLabel", -2.76962947845459],
-    ["closestLabelMatchesPassword", 0.9991055727005005],
-    ["closestLabelMatchesNew", 0.2867026627063751],
-    ["closestLabelMatchesConfirm", 2.2645602226257324],
-    ["closestLabelMatchesConfirmEmail", -2.5424318313598633],
-    ["hasPasswordAriaLabel", 3.24025821685791],
-    ["hasNewAriaLabel", -0.24705158174037933],
-    ["hasConfirmAriaLabel", 3.5569283962249756],
-    ["hasPasswordPlaceholder", 0.18956409394741058],
-    ["hasPasswordyPlaceholder", 2.1116344928741455],
-    ["hasNewPlaceholder", -0.7253401279449463],
-    ["hasConfirmPlaceholder", 3.1421258449554443],
-    ["hasConfirmEmailPlaceholder", -0.0865769237279892],
-    ["forgotPasswordInFormLinkInnerText", -0.5140935182571411],
-    ["forgotPasswordInFormLinkHref", -0.7814330458641052],
-    ["forgotPasswordInFormLinkTitle", -2.4741508960723877],
-    ["forgotInFormLinkInnerText", -1.950645923614502],
-    ["forgotInFormLinkHref", 0.03927994519472122],
-    ["forgotPasswordInFormButtonInnerText", -3.8825478553771973],
-    ["forgotPasswordOnPageLinkInnerText", -1.0194272994995117],
-    ["forgotPasswordOnPageLinkHref", -1.1636592149734497],
-    ["forgotPasswordOnPageLinkTitle", -1.9960534572601318],
-    ["forgotPasswordOnPageButtonInnerText", -0.5149111151695251],
-    ["idIsPassword1Or2", 1.3176568746566772],
-    ["nameIsPassword1Or2", 2.920762777328491],
-    ["idMatchesPassword", -0.3857136368751526],
-    ["nameMatchesPassword", 1.0957869291305542],
-    ["idMatchesPasswordy", 2.4407007694244385],
-    ["nameMatchesPasswordy", 3.177992343902588],
-    ["classMatchesPasswordy", 1.6899998188018799],
-    ["idMatchesLogin", -2.897006034851074],
-    ["nameMatchesLogin", 1.7689114809036255],
-    ["classMatchesLogin", -3.519543170928955],
-    ["formHasRegisteryId", -0.23081831634044647],
-    ["formHasRegisteryName", 0.17822079360485077],
-    ["formHasRegisteryClass", -0.5079963803291321],
-    ["formHasRegisteryAction", -0.109561987221241],
-    ["formHasLoginyId", -1.9601320028305054],
-    ["formHasLoginyName", -3.1679556369781494],
-    ["formHasLoginyClass", -1.6998120546340942],
-    ["formHasLoginyAction", -0.9724709391593933],
-    ["formButtonIsRegistery", 0.02965886890888214],
-    ["formButtonIsLoginy", -3.654585123062134],
-    ["hasAutocompleteCurrentPassword", -4.2811713218688965],
+    ["hasPasswordLabel", 1.0985866785049438],
+    ["hasNewLabel", 0.9273591637611389],
+    ["hasConfirmLabel", 1.086989164352417],
+    ["hasConfirmEmailLabel", -0.12190379947423935],
+    ["closestLabelMatchesPassword", -0.2772328555583954],
+    ["closestLabelMatchesNew", 1.7784420251846313],
+    ["closestLabelMatchesConfirm", 1.2339365482330322],
+    ["closestLabelMatchesConfirmEmail", -0.1413688212633133],
+    ["hasPasswordAriaLabel", 0.6720771193504333],
+    ["hasNewAriaLabel", 1.0814332962036133],
+    ["hasConfirmAriaLabel", 1.7570946216583252],
+    ["hasPasswordPlaceholder", -0.4892941117286682],
+    ["hasPasswordyPlaceholder", 0.5795322060585022],
+    ["hasNewPlaceholder", 0.7305639386177063],
+    ["hasConfirmPlaceholder", 1.1500259637832642],
+    ["hasConfirmEmailPlaceholder", 0.050044864416122437],
+    ["forgotPasswordInFormLinkInnerText", -0.5280212163925171],
+    ["forgotPasswordInFormLinkHref", -0.9819831252098083],
+    ["forgotPasswordInFormLinkTitle", -1.9003418684005737],
+    ["forgotInFormLinkInnerText", -0.9961503148078918],
+    ["forgotInFormLinkHref", -0.3672705888748169],
+    ["forgotPasswordInFormButtonInnerText", -2.4289133548736572],
+    ["forgotPasswordOnPageLinkInnerText", -1.7818138599395752],
+    ["forgotPasswordOnPageLinkHref", -0.28228893876075745],
+    ["forgotPasswordOnPageLinkTitle", -0.4804317057132721],
+    ["forgotPasswordOnPageButtonInnerText", 0.2526053488254547],
+    ["idIsPassword1Or2", 0.923284113407135],
+    ["nameIsPassword1Or2", 1.2420216798782349],
+    ["idMatchesPassword", 0.18741662800312042],
+    ["nameMatchesPassword", 0.22075015306472778],
+    ["idMatchesPasswordy", 0.7931162118911743],
+    ["nameMatchesPasswordy", 0.28531232476234436],
+    ["classMatchesPasswordy", 0.10903151333332062],
+    ["idMatchesLogin", -1.9892640113830566],
+    ["nameMatchesLogin", 2.6391682624816895],
+    ["classMatchesLogin", -2.4361987113952637],
+    ["formHasRegisteryId", 1.3075635433197021],
+    ["formHasRegisteryName", 1.1743563413619995],
+    ["formHasRegisteryClass", 0.9476977586746216],
+    ["formHasRegisteryAction", 1.2585731744766235],
+    ["formHasLoginyId", -1.1602251529693604],
+    ["formHasLoginyName", -1.5926202535629272],
+    ["formHasLoginyClass", -0.6650331616401672],
+    ["formHasLoginyAction", -0.9993541836738586],
+    ["formButtonIsRegistery", 1.3665903806686401],
+    ["formButtonIsLoginy", -1.9622060060501099],
+    ["hasAutocompleteCurrentPassword", -2.6097922325134277],
   ]
 };
 
 const biases = [
-  ["new", -3.1301488876342773]
+  ["new", 0.9508486986160278]
 ];
 
 const passwordRegex = /password|passwort|رمز عبور|mot de passe|パスワード|비밀번호|암호|wachtwoord|senha|Пароль|parol|密码|contraseña|heslo|كلمة السر|kodeord|Κωδικός|pass code|Kata sandi|hasło|รหัสผ่าน|Şifre/i;
@@ -82,15 +82,6 @@ const loginFormAttrRegex = /login|signin|sign-in/i;
 const registerFormAttrRegex = /signup|join|register|regform|registration|new_user|AccountCreate|create_customer|CreateAccount|CreateAcct|create-account|reg-form|newuser|new-reg|new-form|new_membership/i;
 
 function makeRuleset(coeffs, biases) {
-  /**
-   * Don't bother with the fairly expensive isVisible() call when we're in
-   * production. We fire only when the user clicks an <input> field. They can't
-   * very well click an invisible one.
-   */
-  function isVisibleInDev(fnodeOrElement) {
-    return DEVELOPMENT ? isVisible(fnodeOrElement) : true;
-  }
-
   function hasConfirmLabel(fnode) {
     return hasLabelMatchingRegex(fnode.element, confirmRegex);
   }
@@ -235,7 +226,7 @@ function makeRuleset(coeffs, biases) {
   }
 
   return ruleset([
-      rule((DEVELOPMENT ? dom : element)("input[type=text],input[type=password],input[type=\"\"],input:not([type])").when(isVisibleInDev), type("new")),
+      rule((DEVELOPMENT ? dom("input[type=password]").when(isVisible) : element("input")), type("new")),
       rule(type("new"), score(fnode => hasLabelMatchingRegex(fnode.element, passwordRegex)), {name: "hasPasswordLabel"}),
       rule(type("new"), score(fnode => hasLabelMatchingRegex(fnode.element, newRegex)), {name: "hasNewLabel"}),
       rule(type("new"), score(hasConfirmLabel), {name: "hasConfirmLabel"}),
