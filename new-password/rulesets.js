@@ -13,64 +13,50 @@ const DEVELOPMENT = true;
 
 const coefficients = {
   "new": [
-    ["hasPasswordLabel", 1.0985866785049438],
-    ["hasNewLabel", 0.9273591637611389],
-    ["hasConfirmLabel", 1.086989164352417],
-    ["hasConfirmEmailLabel", -0.12190379947423935],
-    ["closestLabelMatchesPassword", -0.2772328555583954],
-    ["closestLabelMatchesNew", 1.7784420251846313],
-    ["closestLabelMatchesConfirm", 1.2339365482330322],
-    ["closestLabelMatchesConfirmEmail", -0.1413688212633133],
-    ["hasPasswordAriaLabel", 0.6720771193504333],
-    ["hasNewAriaLabel", 1.0814332962036133],
-    ["hasConfirmAriaLabel", 1.7570946216583252],
-    ["hasPasswordPlaceholder", -0.4892941117286682],
-    ["hasPasswordyPlaceholder", 0.5795322060585022],
-    ["hasNewPlaceholder", 0.7305639386177063],
-    ["hasConfirmPlaceholder", 1.1500259637832642],
-    ["hasConfirmEmailPlaceholder", 0.050044864416122437],
-    ["forgotPasswordInFormLinkInnerText", -0.5280212163925171],
-    ["forgotPasswordInFormLinkHref", -0.9819831252098083],
-    ["forgotPasswordInFormLinkTitle", -1.9003418684005737],
-    ["forgotInFormLinkInnerText", -0.9961503148078918],
-    ["forgotInFormLinkHref", -0.3672705888748169],
-    ["forgotPasswordInFormButtonInnerText", -2.4289133548736572],
-    ["forgotPasswordOnPageLinkInnerText", -1.7818138599395752],
-    ["forgotPasswordOnPageLinkHref", -0.28228893876075745],
-    ["forgotPasswordOnPageLinkTitle", -0.4804317057132721],
-    ["forgotPasswordOnPageButtonInnerText", 0.2526053488254547],
-    ["idIsPassword1Or2", 0.923284113407135],
-    ["nameIsPassword1Or2", 1.2420216798782349],
-    ["idMatchesPassword", 0.18741662800312042],
-    ["nameMatchesPassword", 0.22075015306472778],
-    ["idMatchesPasswordy", 0.7931162118911743],
-    ["nameMatchesPasswordy", 0.28531232476234436],
-    ["classMatchesPasswordy", 0.10903151333332062],
-    ["idMatchesLogin", -1.9892640113830566],
-    ["nameMatchesLogin", 2.6391682624816895],
-    ["classMatchesLogin", -2.4361987113952637],
-    ["formHasRegisteryId", 1.3075635433197021],
-    ["formHasRegisteryName", 1.1743563413619995],
-    ["formHasRegisteryClass", 0.9476977586746216],
-    ["formHasRegisteryAction", 1.2585731744766235],
-    ["formHasLoginyId", -1.1602251529693604],
-    ["formHasLoginyName", -1.5926202535629272],
-    ["formHasLoginyClass", -0.6650331616401672],
-    ["formHasLoginyAction", -0.9993541836738586],
-    ["formButtonIsRegistery", 1.3665903806686401],
-    ["formButtonIsLoginy", -1.9622060060501099],
-    ["hasAutocompleteCurrentPassword", -2.6097922325134277],
+    ["hasNewLabel", 1.1475578546524048],
+    ["hasConfirmLabel", 1.1088526248931885],
+    ["closestLabelMatchesNew", 1.498863935470581],
+    ["closestLabelMatchesConfirm", 0.9556789994239807],
+    ["hasNewAriaLabel", 1.2129756212234497],
+    ["hasConfirmAriaLabel", 1.2947739362716675],
+    ["hasNewPlaceholder", 0.8625594973564148],
+    ["hasConfirmPlaceholder", 0.8333195447921753],
+    ["forgotPasswordInFormLinkInnerText", -0.5628496408462524],
+    ["forgotPasswordInFormLinkHref", -1.0719348192214966],
+    ["forgotPasswordInFormLinkTitle", -2.0197055339813232],
+    ["forgotInFormLinkInnerText", -0.8784432411193848],
+    ["forgotInFormLinkHref", -0.29903921484947205],
+    ["forgotPasswordInFormButtonInnerText", -1.7987523078918457],
+    ["forgotPasswordOnPageLinkInnerText", -1.4977914094924927],
+    ["forgotPasswordOnPageLinkHref", 0.19559451937675476],
+    ["forgotPasswordOnPageLinkTitle", 0.3964155614376068],
+    ["forgotPasswordOnPageButtonInnerText", 0.28442490100860596],
+    ["idIsPassword1Or2", 0.9458191990852356],
+    ["nameIsPassword1Or2", 0.9060004949569702],
+    ["idMatchesLogin", -1.4721583127975464],
+    ["nameMatchesLogin", 2.4809982776641846],
+    ["classMatchesLogin", -1.891852855682373],
+    ["formHasRegisteryId", 1.226690649986267],
+    ["formHasRegisteryName", 1.2698602676391602],
+    ["formHasRegisteryClass", 0.7578275203704834],
+    ["formHasRegisteryAction", 1.3507407903671265],
+    ["formHasLoginyId", -0.9361934661865234],
+    ["formHasLoginyName", -1.4802566766738892],
+    ["formHasLoginyClass", -0.38017258048057556],
+    ["formHasLoginyAction", -0.5359786748886108],
+    ["formButtonIsRegistery", 1.449123740196228],
+    ["formButtonIsLoginy", -1.7515889406204224],
+    ["hasAutocompleteCurrentPassword", -1.8347175121307373],
   ]
 };
 
 const biases = [
-  ["new", 0.9508486986160278]
+  ["new", 1.4772255420684814]
 ];
 
 const passwordRegex = /password|passwort|رمز عبور|mot de passe|パスワード|비밀번호|암호|wachtwoord|senha|Пароль|parol|密码|contraseña|heslo|كلمة السر|kodeord|Κωδικός|pass code|Kata sandi|hasło|รหัสผ่าน|Şifre/i;
 const newRegex = /erstellen|create|choose|設定|신규/i;
 const confirmRegex = /wiederholen|wiederholung|confirm|repeat|confirmation|verify|retype|repite|確認|の確認|تکرار|re-enter|확인|bevestigen|confirme|Повторите|tassyklamak|再次输入|ještě jednou|gentag|re-type|confirmar|Répéter|conferma|Repetaţi/i;
-const emailRegex = /e-mail|email|ایمیل|メールアドレス|이메일|邮箱|البريد الإلكتروني|correo electrónico/i;
 const forgotInnerTextRegex = /vergessen|vergeten|forgot|oublié|dimenticata|Esqueceu|esqueci|Забыли|忘记|找回|Zapomenuté|lost|忘れた|忘れられた|忘れの方|재설정|찾기|help|فراموشی| را فراموش کرده اید|Восстановить|Unuttu|perdus|重新設定|reset|recover|change|remind|find|request|restore|trouble/i;
 const forgotHrefRegex = /forgot|reset|recover|change|lost|remind|find|request|restore/i;
 const password1Or2Regex = /password1|password2/i;
@@ -82,14 +68,6 @@ const loginFormAttrRegex = /login|signin|sign-in/i;
 const registerFormAttrRegex = /signup|join|register|regform|registration|new_user|AccountCreate|create_customer|CreateAccount|CreateAcct|create-account|reg-form|newuser|new-reg|new-form|new_membership/i;
 
 function makeRuleset(coeffs, biases) {
-  function hasConfirmLabel(fnode) {
-    return hasLabelMatchingRegex(fnode.element, confirmRegex);
-  }
-
-  function hasConfirmEmailLabel(fnode) {
-    return hasConfirmLabel(fnode) && hasLabelMatchingRegex(fnode.element, emailRegex);
-  }
-
   function hasLabelMatchingRegex(element, regex) {
     // Check element.labels
     const labels = element.labels;
@@ -123,14 +101,6 @@ function makeRuleset(coeffs, biases) {
     return false;
   }
 
-  function closestLabelMatchesConfirm(fnode) {
-    return closestLabelMatchesRegex(fnode.element, confirmRegex);
-  }
-
-  function closestLabelMatchesConfirmEmail(fnode) {
-    return closestLabelMatchesConfirm(fnode) && closestLabelMatchesRegex(fnode.element, emailRegex);
-  }
-
   function closestLabelMatchesRegex(element, regex) {
     const previousElementSibling = element.previousElementSibling;
     if (previousElementSibling !== null && previousElementSibling.tagName === "LABEL") {
@@ -162,14 +132,6 @@ function makeRuleset(coeffs, biases) {
 
   function hasAriaLabelMatchingRegex(element, regex) {
     return containsRegex(regex, element.getAttribute("aria-label"));
-  }
-
-  function hasConfirmPlaceholder(fnode) {
-    return hasPlaceholderMatchingRegex(fnode.element, confirmRegex);
-  }
-
-  function hasConfirmEmailPlaceholder(fnode) {
-    return hasConfirmPlaceholder(fnode) && hasPlaceholderMatchingRegex(fnode.element, emailRegex);
   }
 
   function hasPlaceholderMatchingRegex(element, regex) {
@@ -227,22 +189,14 @@ function makeRuleset(coeffs, biases) {
 
   return ruleset([
       rule((DEVELOPMENT ? dom("input[type=password]").when(isVisible) : element("input")), type("new")),
-      rule(type("new"), score(fnode => hasLabelMatchingRegex(fnode.element, passwordRegex)), {name: "hasPasswordLabel"}),
       rule(type("new"), score(fnode => hasLabelMatchingRegex(fnode.element, newRegex)), {name: "hasNewLabel"}),
-      rule(type("new"), score(hasConfirmLabel), {name: "hasConfirmLabel"}),
-      rule(type("new"), score(hasConfirmEmailLabel), {name: "hasConfirmEmailLabel"}),
-      rule(type("new"), score(fnode => closestLabelMatchesRegex(fnode.element, passwordRegex)), {name: "closestLabelMatchesPassword"}),
+      rule(type("new"), score(fnode => hasLabelMatchingRegex(fnode.element, confirmRegex)), {name: "hasConfirmLabel"}),
       rule(type("new"), score(fnode => closestLabelMatchesRegex(fnode.element, newRegex)), {name: "closestLabelMatchesNew"}),
-      rule(type("new"), score(closestLabelMatchesConfirm), {name: "closestLabelMatchesConfirm"}),
-      rule(type("new"), score(closestLabelMatchesConfirmEmail), {name: "closestLabelMatchesConfirmEmail"}),
-      rule(type("new"), score(fnode => hasAriaLabelMatchingRegex(fnode.element, passwordRegex)), {name: "hasPasswordAriaLabel"}),
+      rule(type("new"), score(fnode => closestLabelMatchesRegex(fnode.element, confirmRegex)), {name: "closestLabelMatchesConfirm"}),
       rule(type("new"), score(fnode => hasAriaLabelMatchingRegex(fnode.element, newRegex)), {name: "hasNewAriaLabel"}),
       rule(type("new"), score(fnode => hasAriaLabelMatchingRegex(fnode.element, confirmRegex)), {name: "hasConfirmAriaLabel"}),
-      rule(type("new"), score(fnode => hasPlaceholderMatchingRegex(fnode.element, passwordRegex)), {name: "hasPasswordPlaceholder"}),
-      rule(type("new"), score(fnode => hasPlaceholderMatchingRegex(fnode.element, passwordyRegex)), {name: "hasPasswordyPlaceholder"}),
       rule(type("new"), score(fnode => hasPlaceholderMatchingRegex(fnode.element, newRegex)), {name: "hasNewPlaceholder"}),
-      rule(type("new"), score(hasConfirmPlaceholder), {name: "hasConfirmPlaceholder"}),
-      rule(type("new"), score(hasConfirmEmailPlaceholder), {name: "hasConfirmEmailPlaceholder"}),
+      rule(type("new"), score(fnode => hasPlaceholderMatchingRegex(fnode.element, confirmRegex)), {name: "hasConfirmPlaceholder"}),
       rule(type("new"), score(fnode => testRegexesAgainstAnchorPropertyWithinElement("innerText", fnode.element.form, passwordRegex, forgotInnerTextRegex)), {name: "forgotPasswordInFormLinkInnerText"}),
       rule(type("new"), score(fnode => testRegexesAgainstAnchorPropertyWithinElement("href", fnode.element.form, (new RegExp(passwordRegex.source + "|" + passwordyRegex.source, "i")), forgotHrefRegex)), {name: "forgotPasswordInFormLinkHref"}),
       rule(type("new"), score(fnode => testRegexesAgainstAnchorPropertyWithinElement("title", fnode.element.form, passwordRegex, forgotInnerTextRegex)), {name: "forgotPasswordInFormLinkTitle"}),
@@ -255,11 +209,6 @@ function makeRuleset(coeffs, biases) {
       rule(type("new"), score(fnode => forgotPasswordButtonWithinElement(fnode.element.ownerDocument)), {name: "forgotPasswordOnPageButtonInnerText"}),
       rule(type("new"), score(fnode => password1Or2Regex.test(fnode.element.id)), {name: "idIsPassword1Or2"}),
       rule(type("new"), score(fnode => password1Or2Regex.test(fnode.element.name)), {name: "nameIsPassword1Or2"}),
-      rule(type("new"), score(fnode => passwordRegex.test(fnode.element.id)), {name: "idMatchesPassword"}),
-      rule(type("new"), score(fnode => passwordRegex.test(fnode.element.name)), {name: "nameMatchesPassword"}),
-      rule(type("new"), score(fnode => passwordyRegex.test(fnode.element.id)), {name: "idMatchesPasswordy"}),
-      rule(type("new"), score(fnode => passwordyRegex.test(fnode.element.name)), {name: "nameMatchesPasswordy"}),
-      rule(type("new"), score(fnode => passwordyRegex.test(fnode.element.className)), {name: "classMatchesPasswordy"}),
       rule(type("new"), score(fnode => loginRegex.test(fnode.element.id)), {name: "idMatchesLogin"}),
       rule(type("new"), score(fnode => loginRegex.test(fnode.element.name)), {name: "nameMatchesLogin"}),
       rule(type("new"), score(fnode => loginRegex.test(fnode.element.className)), {name: "classMatchesLogin"}),
