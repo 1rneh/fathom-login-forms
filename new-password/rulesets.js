@@ -21,16 +21,16 @@ const coefficients = {
     ["hasConfirmAriaLabel", 1.2947739362716675],
     ["hasNewPlaceholder", 0.8625594973564148],
     ["hasConfirmPlaceholder", 0.8333195447921753],
-    ["forgotPasswordInFormLinkInnerText", -0.5628496408462524],
+    ["forgotPasswordInFormLinkTextContent", -0.5628496408462524],
     ["forgotPasswordInFormLinkHref", -1.0719348192214966],
     ["forgotPasswordInFormLinkTitle", -2.0197055339813232],
-    ["forgotInFormLinkInnerText", -0.8784432411193848],
+    ["forgotInFormLinkTextContent", -0.8784432411193848],
     ["forgotInFormLinkHref", -0.29903921484947205],
-    ["forgotPasswordInFormButtonInnerText", -1.7987523078918457],
-    ["forgotPasswordOnPageLinkInnerText", -1.4977914094924927],
+    ["forgotPasswordInFormButtonTextContent", -1.7987523078918457],
+    ["forgotPasswordOnPageLinkTextContent", -1.4977914094924927],
     ["forgotPasswordOnPageLinkHref", 0.19559451937675476],
     ["forgotPasswordOnPageLinkTitle", 0.3964155614376068],
-    ["forgotPasswordOnPageButtonInnerText", 0.28442490100860596],
+    ["forgotPasswordOnPageButtonTextContent", 0.28442490100860596],
     ["idIsPassword1Or2", 0.9458191990852356],
     ["nameIsPassword1Or2", 0.9060004949569702],
     ["idMatchesLogin", -1.4721583127975464],
@@ -57,7 +57,7 @@ const biases = [
 const passwordRegex = /password|passwort|رمز عبور|mot de passe|パスワード|비밀번호|암호|wachtwoord|senha|Пароль|parol|密码|contraseña|heslo|كلمة السر|kodeord|Κωδικός|pass code|Kata sandi|hasło|รหัสผ่าน|Şifre/i;
 const newRegex = /erstellen|create|choose|設定|신규/i;
 const confirmRegex = /wiederholen|wiederholung|confirm|repeat|confirmation|verify|retype|repite|確認|の確認|تکرار|re-enter|확인|bevestigen|confirme|Повторите|tassyklamak|再次输入|ještě jednou|gentag|re-type|confirmar|Répéter|conferma|Repetaţi/i;
-const forgotInnerTextRegex = /vergessen|vergeten|forgot|oublié|dimenticata|Esqueceu|esqueci|Забыли|忘记|找回|Zapomenuté|lost|忘れた|忘れられた|忘れの方|재설정|찾기|help|فراموشی| را فراموش کرده اید|Восстановить|Unuttu|perdus|重新設定|reset|recover|change|remind|find|request|restore|trouble/i;
+const forgotStringRegex = /vergessen|vergeten|forgot|oublié|dimenticata|Esqueceu|esqueci|Забыли|忘记|找回|Zapomenuté|lost|忘れた|忘れられた|忘れの方|재설정|찾기|help|فراموشی| را فراموش کرده اید|Восстановить|Unuttu|perdus|重新設定|reset|recover|change|remind|find|request|restore|trouble/i;
 const forgotHrefRegex = /forgot|reset|recover|change|lost|remind|find|request|restore/i;
 const password1Or2Regex = /password1|password2/i;
 const passwordyRegex = /pw|pwd|passwd|pass/i;
@@ -73,7 +73,7 @@ function makeRuleset(coeffs, biases) {
     const labels = element.labels;
     // TODO: Should I be concerned with multiple labels?
     if (labels !== null && labels.length > 0) {
-      return regex.test(labels[0].innerText);
+      return regex.test(labels[0].textContent);
     }
 
     // Check element.aria-labelledby
@@ -81,22 +81,22 @@ function makeRuleset(coeffs, biases) {
     if (labelledBy !== null) {
       labelledBy = labelledBy.split(" ").map(id => element.ownerDocument.getElementById(id));
       if (labelledBy.length === 1) {
-        return regex.test(labelledBy[0].innerText);
+        return regex.test(labelledBy[0].textContent);
       } else if (labelledBy.length > 1) {
-        return regex.test(min(labelledBy, node => euclidean(node, element)).innerText);
+        return regex.test(min(labelledBy, node => euclidean(node, element)).textContent);
       }
     }
 
     const parentElement = element.parentElement;
-    // Check if the input is in a <td>, and, if so, check the innerText of the containing <tr>
+    // Check if the input is in a <td>, and, if so, check the textContent of the containing <tr>
     if (parentElement.tagName === "TD") {
       // TODO: How bad is the assumption that the <tr> won't be the parent of the <td>?
-      return regex.test(parentElement.parentElement.innerText);
+      return regex.test(parentElement.parentElement.textContent);
     }
 
-    // Check if the input is in a <dd>, and, if so, check the innerText of the preceding <dt>
+    // Check if the input is in a <dd>, and, if so, check the textContent of the preceding <dt>
     if (parentElement.tagName === "DD") {
-      return regex.test(parentElement.previousElementSibling.innerText);
+      return regex.test(parentElement.previousElementSibling.textContent);
     }
     return false;
   }
@@ -104,16 +104,16 @@ function makeRuleset(coeffs, biases) {
   function closestLabelMatchesRegex(element, regex) {
     const previousElementSibling = element.previousElementSibling;
     if (previousElementSibling !== null && previousElementSibling.tagName === "LABEL") {
-      return regex.test(previousElementSibling.innerText);
+      return regex.test(previousElementSibling.textContent);
     }
 
     const nextElementSibling = element.nextElementSibling;
     if (nextElementSibling !== null && nextElementSibling.tagName === "LABEL") {
-      return regex.test(nextElementSibling.innerText);
+      return regex.test(nextElementSibling.textContent);
     }
 
     const closestLabelWithinForm = closestSelectorElementWithinElement(element, element.form, "label");
-    return containsRegex(regex, closestLabelWithinForm, closestLabelWithinForm => closestLabelWithinForm.innerText);
+    return containsRegex(regex, closestLabelWithinForm, closestLabelWithinForm => closestLabelWithinForm.textContent);
   }
 
   function containsRegex(regex, thingOrNull, thingToString=identity) {
@@ -157,8 +157,8 @@ function makeRuleset(coeffs, biases) {
     if (element !== null) {
       const buttons = Array.from(element.querySelectorAll('button'));
       return buttons.some(button => {
-        const innerText = button.innerText;
-        return passwordRegex.test(innerText) && forgotInnerTextRegex.test(innerText);
+        const textContent = button.textContent;
+        return passwordRegex.test(textContent) && forgotStringRegex.test(textContent);
       });
     }
     return false;
@@ -177,7 +177,7 @@ function makeRuleset(coeffs, biases) {
 
       let buttons = Array.from(form.querySelectorAll("button"));
       return buttons.some(button => {
-        return stringRegex.test(button.value) || stringRegex.test(button.innerText) || stringRegex.test(button.id) || stringRegex.test(button.title);
+        return stringRegex.test(button.value) || stringRegex.test(button.textContent) || stringRegex.test(button.id) || stringRegex.test(button.title);
       })
     }
     return false;
@@ -197,16 +197,16 @@ function makeRuleset(coeffs, biases) {
       rule(type("new"), score(fnode => hasAriaLabelMatchingRegex(fnode.element, confirmRegex)), {name: "hasConfirmAriaLabel"}),
       rule(type("new"), score(fnode => hasPlaceholderMatchingRegex(fnode.element, newRegex)), {name: "hasNewPlaceholder"}),
       rule(type("new"), score(fnode => hasPlaceholderMatchingRegex(fnode.element, confirmRegex)), {name: "hasConfirmPlaceholder"}),
-      rule(type("new"), score(fnode => testRegexesAgainstAnchorPropertyWithinElement("innerText", fnode.element.form, passwordRegex, forgotInnerTextRegex)), {name: "forgotPasswordInFormLinkInnerText"}),
+      rule(type("new"), score(fnode => testRegexesAgainstAnchorPropertyWithinElement("textContent", fnode.element.form, passwordRegex, forgotStringRegex)), {name: "forgotPasswordInFormLinkTextContent"}),
       rule(type("new"), score(fnode => testRegexesAgainstAnchorPropertyWithinElement("href", fnode.element.form, (new RegExp(passwordRegex.source + "|" + passwordyRegex.source, "i")), forgotHrefRegex)), {name: "forgotPasswordInFormLinkHref"}),
-      rule(type("new"), score(fnode => testRegexesAgainstAnchorPropertyWithinElement("title", fnode.element.form, passwordRegex, forgotInnerTextRegex)), {name: "forgotPasswordInFormLinkTitle"}),
-      rule(type("new"), score(fnode => testRegexesAgainstAnchorPropertyWithinElement("innerText", fnode.element.form, forgotInnerTextRegex)), {name: "forgotInFormLinkInnerText"}),
+      rule(type("new"), score(fnode => testRegexesAgainstAnchorPropertyWithinElement("title", fnode.element.form, passwordRegex, forgotStringRegex)), {name: "forgotPasswordInFormLinkTitle"}),
+      rule(type("new"), score(fnode => testRegexesAgainstAnchorPropertyWithinElement("textContent", fnode.element.form, forgotStringRegex)), {name: "forgotInFormLinkTextContent"}),
       rule(type("new"), score(fnode => testRegexesAgainstAnchorPropertyWithinElement("href", fnode.element.form, forgotHrefRegex)), {name: "forgotInFormLinkHref"}),
-      rule(type("new"), score(fnode => forgotPasswordButtonWithinElement(fnode.element.form)), {name: "forgotPasswordInFormButtonInnerText"}),
-      rule(type("new"), score(fnode => testRegexesAgainstAnchorPropertyWithinElement("innerText", fnode.element.ownerDocument, passwordRegex, forgotInnerTextRegex)), {name: "forgotPasswordOnPageLinkInnerText"}),
+      rule(type("new"), score(fnode => forgotPasswordButtonWithinElement(fnode.element.form)), {name: "forgotPasswordInFormButtonTextContent"}),
+      rule(type("new"), score(fnode => testRegexesAgainstAnchorPropertyWithinElement("textContent", fnode.element.ownerDocument, passwordRegex, forgotStringRegex)), {name: "forgotPasswordOnPageLinkTextContent"}),
       rule(type("new"), score(fnode => testRegexesAgainstAnchorPropertyWithinElement("href", fnode.element.ownerDocument, (new RegExp(passwordRegex.source + "|" + passwordyRegex.source, "i")), forgotHrefRegex)), {name: "forgotPasswordOnPageLinkHref"}),
-      rule(type("new"), score(fnode => testRegexesAgainstAnchorPropertyWithinElement("title", fnode.element.ownerDocument, passwordRegex, forgotInnerTextRegex)), {name: "forgotPasswordOnPageLinkTitle"}),
-      rule(type("new"), score(fnode => forgotPasswordButtonWithinElement(fnode.element.ownerDocument)), {name: "forgotPasswordOnPageButtonInnerText"}),
+      rule(type("new"), score(fnode => testRegexesAgainstAnchorPropertyWithinElement("title", fnode.element.ownerDocument, passwordRegex, forgotStringRegex)), {name: "forgotPasswordOnPageLinkTitle"}),
+      rule(type("new"), score(fnode => forgotPasswordButtonWithinElement(fnode.element.ownerDocument)), {name: "forgotPasswordOnPageButtonTextContent"}),
       rule(type("new"), score(fnode => password1Or2Regex.test(fnode.element.id)), {name: "idIsPassword1Or2"}),
       rule(type("new"), score(fnode => password1Or2Regex.test(fnode.element.name)), {name: "nameIsPassword1Or2"}),
       rule(type("new"), score(fnode => loginRegex.test(fnode.element.id)), {name: "idMatchesLogin"}),
