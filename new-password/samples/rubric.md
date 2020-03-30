@@ -22,7 +22,7 @@ If it turns out there are pages that don't use <input> elements, let's talk.
 
 # Sample Naming
 
-Samples are named `{language}_{"X" if non-Trexa}{line number in tranco_100k_alexa_100k_union_shuffled_2019-12-14.tsv}{"n" if negative}.html`.
+Samples are named `{language}_{"X" if non-Trexa}{line number in tranco_100k_alexa_100k_union_shuffled_2019-12-14.tsv}{"a", "b", "c", etc., in case there is more than one sample from a domain}{"n" if negative}{"_change" if it's a change-password form}.html`.
 
 The language prefix helps us make sure each set gets some of each language, which might not happen by random chance in a small corpus.
 
