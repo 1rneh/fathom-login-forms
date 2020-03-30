@@ -67,6 +67,7 @@ const forgotStringRegex = /vergessen|vergeten|forgot|oublié|dimenticata|Esquece
 const forgotHrefRegex = /forgot|reset|recover|change|lost|remind|find|request|restore/i;
 const password1Or2Regex = /password1|password2/i;
 const passwordyRegex = /pw|pwd|passwd|pass/i;
+const passwordAndPasswordyRegex = new RegExp(passwordRegex.source + "|" + passwordyRegex.source, "i");
 const loginRegex = /login|Войти|sign in|ورود|登录|Přihlásit se|Přihlaste|Авторизоваться|Авторизация|signin|log in|sign\/in|sign-in|entrar|ログイン|로그인|inloggen|Συνδέσου|accedi|ログオン|Giriş Yap|登入|connecter|sign on|sign-on|connectez-vous|Connexion|Вход/i;
 const registerStringRegex = /create[a-zA-Z\s]+account|Zugang anlegen|Angaben prüfen|Konto erstellen|register|sign up|ثبت نام|登録|注册|cadastr|Зарегистрироваться|Регистрация|Bellige alynmak|تسجيل|ΕΓΓΡΑΦΗΣ|Εγγραφή|Créer mon compte|Mendaftar|가입하기|inschrijving|Zarejestruj się|Deschideți un cont|Создать аккаунт|ร่วม|Üye Ol|registr|new account|ساخت حساب کاربری|Schrijf je/i;
 const registerActionRegex = /register|signup|sign-up|create-account|account\/create|join|new_account|user\/create|sign\/up|membership\/create/i;
@@ -219,13 +220,13 @@ function makeRuleset(coeffs, biases) {
       rule(type("new"), score(fnode => hasPlaceholderMatchingRegex(fnode.element, newRegex)), {name: "hasNewPlaceholder"}),
       rule(type("new"), score(fnode => hasPlaceholderMatchingRegex(fnode.element, confirmRegex)), {name: "hasConfirmPlaceholder"}),
       rule(type("new"), score(fnode => testRegexesAgainstAnchorPropertyWithinElement("textContent", fnode.element.form, passwordRegex, forgotStringRegex)), {name: "forgotPasswordInFormLinkTextContent"}),
-      rule(type("new"), score(fnode => testRegexesAgainstAnchorPropertyWithinElement("href", fnode.element.form, (new RegExp(passwordRegex.source + "|" + passwordyRegex.source, "i")), forgotHrefRegex)), {name: "forgotPasswordInFormLinkHref"}),
+      rule(type("new"), score(fnode => testRegexesAgainstAnchorPropertyWithinElement("href", fnode.element.form, passwordAndPasswordyRegex, forgotHrefRegex)), {name: "forgotPasswordInFormLinkHref"}),
       rule(type("new"), score(fnode => testRegexesAgainstAnchorPropertyWithinElement("title", fnode.element.form, passwordRegex, forgotStringRegex)), {name: "forgotPasswordInFormLinkTitle"}),
       rule(type("new"), score(fnode => testRegexesAgainstAnchorPropertyWithinElement("textContent", fnode.element.form, forgotStringRegex)), {name: "forgotInFormLinkTextContent"}),
       rule(type("new"), score(fnode => testRegexesAgainstAnchorPropertyWithinElement("href", fnode.element.form, forgotHrefRegex)), {name: "forgotInFormLinkHref"}),
       rule(type("new"), score(fnode => hasSomeMatchingPredicateForSelectorWithinElement(fnode.element.form, "button", button => textContentMatchesRegexes(button, passwordRegex, forgotStringRegex))), {name: "forgotPasswordInFormButtonTextContent"}),
       rule(type("new"), score(fnode => testRegexesAgainstAnchorPropertyWithinElement("textContent", fnode.element.ownerDocument, passwordRegex, forgotStringRegex)), {name: "forgotPasswordOnPageLinkTextContent"}),
-      rule(type("new"), score(fnode => testRegexesAgainstAnchorPropertyWithinElement("href", fnode.element.ownerDocument, (new RegExp(passwordRegex.source + "|" + passwordyRegex.source, "i")), forgotHrefRegex)), {name: "forgotPasswordOnPageLinkHref"}),
+      rule(type("new"), score(fnode => testRegexesAgainstAnchorPropertyWithinElement("href", fnode.element.ownerDocument, passwordAndPasswordyRegex, forgotHrefRegex)), {name: "forgotPasswordOnPageLinkHref"}),
       rule(type("new"), score(fnode => testRegexesAgainstAnchorPropertyWithinElement("title", fnode.element.ownerDocument, passwordRegex, forgotStringRegex)), {name: "forgotPasswordOnPageLinkTitle"}),
       rule(type("new"), score(fnode => hasSomeMatchingPredicateForSelectorWithinElement(fnode.element.ownerDocument, "button", button => textContentMatchesRegexes(button, passwordRegex, forgotStringRegex))), {name: "forgotPasswordOnPageButtonTextContent"}),
       rule(type("new"), score(fnode => password1Or2Regex.test(fnode.element.id)), {name: "idIsPassword1Or2"}),
