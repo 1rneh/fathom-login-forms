@@ -221,7 +221,7 @@ function makeRuleset(coeffs, biases) {
   }
 
   return ruleset([
-      rule((DEVELOPMENT ? dom("input[type=password]:not([disabled])").when(isVisible) : element("input")), type("new")),
+      rule((DEVELOPMENT ? dom("input[type=password]:not([disabled]):not([aria-hidden=true]").when(isVisible) : element("input")), type("new")),
       rule(type("new"), score(fnode => hasLabelMatchingRegex(fnode.element, newStringRegex)), {name: "hasNewLabel"}),
       rule(type("new"), score(fnode => hasLabelMatchingRegex(fnode.element, confirmStringRegex)), {name: "hasConfirmLabel"}),
       rule(type("new"), score(fnode => hasLabelMatchingRegex(fnode.element, currentAttrAndStringRegex)), {name: "hasCurrentLabel"}),
