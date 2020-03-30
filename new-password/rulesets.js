@@ -51,6 +51,8 @@ const coefficients = {
     ["formHasRememberMeLabel", -0.5033175349235535],
     ["formHasNewsletterCheckbox", 0.9388435482978821],
     ["formHasNewsletterLabel", 1.1354864835739136],
+    ["closestHeaderAboveIsLoginy", -1.4562782049179077],
+    ["closestHeaderAboveIsRegistery", 1.107210636138916],
   ]
 };
 
@@ -65,8 +67,8 @@ const forgotStringRegex = /vergessen|vergeten|forgot|oublié|dimenticata|Esquece
 const forgotHrefRegex = /forgot|reset|recover|change|lost|remind|find|request|restore/i;
 const password1Or2Regex = /password1|password2/i;
 const passwordyRegex = /pw|pwd|passwd|pass/i;
-const loginRegex = /login|Войти|sign in|ورود|登录|Přihlásit se|Авторизоваться|signin|log in|sign\/in|sign-in|entrar|ログイン|로그인|Anmelden|inloggen|Συνδέσου|accedi|ログオン|Giriş Yap|登入|connecter/i;
-const registerButtonRegex = /create account|Zugang anlegen|Angaben prüfen|Konto erstellen|register|sign up|create an account|create my account|ثبت نام|登録|注册|Cadastrar|Зарегистрироваться|Bellige alynmak|تسجيل|Registrovat|ΕΓΓΡΑΦΗΣ|Εγγραφή|REGISTRARME|Registrarse|Créer mon compte|Mendaftar|Registrazione|Registrati|가입하기|inschrijving|Zarejestruj się|Deschideți un cont|Создать аккаунт|ร่วม|Üye Ol|create new account/i;
+const loginRegex = /login|Войти|sign in|ورود|登录|Přihlásit se|Přihlaste|Авторизоваться|Авторизация|signin|log in|sign\/in|sign-in|entrar|ログイン|로그인|inloggen|Συνδέσου|accedi|ログオン|Giriş Yap|登入|connecter|sign on|sign-on|connectez-vous|Connexion|Вход/i;
+const registerStringRegex = /create[a-zA-Z\s]+account|Zugang anlegen|Angaben prüfen|Konto erstellen|register|sign up|ثبت نام|登録|注册|cadastr|Зарегистрироваться|Регистрация|Bellige alynmak|تسجيل|ΕΓΓΡΑΦΗΣ|Εγγραφή|Créer mon compte|Mendaftar|가입하기|inschrijving|Zarejestruj się|Deschideți un cont|Создать аккаунт|ร่วม|Üye Ol|registr|new account|ساخت حساب کاربری|Schrijf je/i;
 const registerActionRegex = /register|signup|sign-up|create-account|account\/create|join|new_account|user\/create|sign\/up|membership\/create/i;
 const loginFormAttrRegex = /login|signin|sign-in/i;
 const registerFormAttrRegex = /signup|join|register|regform|registration|new_user|AccountCreate|create_customer|CreateAccount|CreateAcct|create-account|reg-form|newuser|new-reg|new-form|new_membership/i;
@@ -187,6 +189,25 @@ function makeRuleset(coeffs, biases) {
     return regexes.every(regex => regex.test(textContent));
   }
 
+  function closestHeaderAboveMatchesRegex(element, regex) {
+    const closestHeader = closestHeaderAbove(element);
+    if (closestHeader !== null) {
+      return regex.test(closestHeader.textContent);
+    }
+    return false;
+  }
+
+  function closestHeaderAbove(element) {
+    let headers = Array.from(element.ownerDocument.querySelectorAll("h1,h2,h3,h4,h5,h6,div[class*=heading],div[class*=header],div[class*=title],legend"));
+    for (let i = headers.length - 1; i >= 0; --i) {
+      const header = headers[i];
+      if (element.compareDocumentPosition(header) & Node.DOCUMENT_POSITION_PRECEDING) {
+        return header;
+      }
+    }
+    return null;
+  }
+
   return ruleset([
       rule((DEVELOPMENT ? dom("input[type=password]").when(isVisible) : element("input")), type("new")),
       rule(type("new"), score(fnode => hasLabelMatchingRegex(fnode.element, newRegex)), {name: "hasNewLabel"}),
@@ -220,13 +241,15 @@ function makeRuleset(coeffs, biases) {
       rule(type("new"), score(fnode => containsRegex(loginFormAttrRegex, fnode.element.form, form => form.name)), {name: "formHasLoginyName"}),
       rule(type("new"), score(fnode => containsRegex(loginFormAttrRegex, fnode.element.form, form => form.className)), {name: "formHasLoginyClass"}),
       rule(type("new"), score(fnode => containsRegex(loginRegex, fnode.element.form, form => form.action)), {name: "formHasLoginyAction"}),
-      rule(type("new"), score(fnode => testFormButtonsAgainst(fnode.element, registerButtonRegex)), {name: "formButtonIsRegistery"}),
+      rule(type("new"), score(fnode => testFormButtonsAgainst(fnode.element, registerStringRegex)), {name: "formButtonIsRegistery"}),
       rule(type("new"), score(fnode => testFormButtonsAgainst(fnode.element, loginRegex)), {name: "formButtonIsLoginy"}),
       rule(type("new"), score(hasAutocompleteCurrentPassword), {name: "hasAutocompleteCurrentPassword"}),
       rule(type("new"), score(fnode => hasSomeMatchingPredicateForSelectorWithinElement(fnode.element.form, "input[type=checkbox]", checkbox => rememberMeAttrRegex.test(checkbox.id) || rememberMeAttrRegex.test(checkbox.name))), {name: "formHasRememberMeCheckbox"}),
       rule(type("new"), score(fnode => hasSomeMatchingPredicateForSelectorWithinElement(fnode.element.form, "label", label => rememberMeStringRegex.test(label.textContent))), {name: "formHasRememberMeLabel"}),
       rule(type("new"), score(fnode => hasSomeMatchingPredicateForSelectorWithinElement(fnode.element.form, "input[type=checkbox]", checkbox => checkbox.id.includes("newsletter") || checkbox.name.includes("newsletter"))), {name: "formHasNewsletterCheckbox"}),
       rule(type("new"), score(fnode => hasSomeMatchingPredicateForSelectorWithinElement(fnode.element.form, "label", label => newsletterStringRegex.test(label.textContent))), {name: "formHasNewsletterLabel"}),
+      rule(type("new"), score(fnode => closestHeaderAboveMatchesRegex(fnode.element, loginRegex)), {name: "closestHeaderAboveIsLoginy"}),
+      rule(type("new"), score(fnode => closestHeaderAboveMatchesRegex(fnode.element, registerStringRegex)), {name: "closestHeaderAboveIsRegistery"}),
       rule(type("new"), out("new"))
     ],
     coeffs,
