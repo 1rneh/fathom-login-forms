@@ -215,7 +215,7 @@ function makeRuleset(coeffs, biases) {
 
   function elementAttrsMatchRegex(element, regex) {
     if (element !== null) {
-      return regex.test(element.id + element.name + element.className);
+      return regex.test(element.id) || regex.test(element.name) || regex.test(element.className);
     }
     return false;
   }
