@@ -13,64 +13,48 @@ const DEVELOPMENT = true;
 
 const coefficients = {
   "new": [
-    ["hasNewLabel", 1.0912284851074219],
-    ["hasConfirmLabel", 0.949703574180603],
-    ["hasCurrentLabel", -1.2386627197265625],
-    ["closestLabelMatchesNew", 1.2303366661071777],
-    ["closestLabelMatchesConfirm", 0.8884114027023315],
-    ["closestLabelMatchesCurrent", -1.502377986907959],
-    ["hasNewAriaLabel", 1.213594913482666],
-    ["hasConfirmAriaLabel", 1.0266947746276855],
-    ["hasCurrentAriaLabel", -0.5412404537200928],
-    ["hasNewPlaceholder", 1.0097733736038208],
-    ["hasConfirmPlaceholder", 0.8488461971282959],
-    ["hasCurrentPlaceholder", -1.347542643547058],
-    ["forgotPasswordInFormLinkTextContent", -0.5887588858604431],
-    ["forgotPasswordInFormLinkHref", -0.7897790670394897],
-    ["forgotPasswordInFormLinkTitle", -1.582519769668579],
-    ["forgotInFormLinkTextContent", -0.8725351095199585],
-    ["forgotInFormLinkHref", -0.15872822701931],
-    ["forgotPasswordInFormButtonTextContent", -1.5995596647262573],
-    ["forgotPasswordOnPageLinkTextContent", -1.1192532777786255],
-    ["forgotPasswordOnPageLinkHref", -0.18509335815906525],
-    ["forgotPasswordOnPageLinkTitle", 0.2235572636127472],
-    ["forgotPasswordOnPageButtonTextContent", 0.6364014744758606],
-    ["idMatchesNew", 1.0698245763778687],
-    ["nameMatchesNew", 0.9785923957824707],
-    ["classMatchesNew", 1.3311240673065186],
-    ["idMatchesConfirm", 0.7148358225822449],
-    ["nameMatchesConfirm", 0.8018974661827087],
-    ["classMatchesConfirm", 0.8568037152290344],
-    ["idMatchesCurrent", -1.3470752239227295],
-    ["nameMatchesCurrent", -0.8864232301712036],
-    ["classMatchesCurrent", 0.05023294687271118],
-    ["idMatchesOne", 0.7743728160858154],
-    ["nameMatchesOne", 0.6904774308204651],
-    ["classMatchesOne", 0.7976001501083374],
-    ["idMatchesTwo", 0.39248180389404297],
-    ["nameMatchesTwo", 0.738287627696991],
-    ["classMatchesTwo", -0.06596855074167252],
-    ["idMatchesLogin", -1.3631227016448975],
-    ["nameMatchesLogin", 1.9583814144134521],
-    ["classMatchesLogin", -1.5002772808074951],
-    ["formHasRegisteryId", 1.1450074911117554],
-    ["formHasRegisteryName", 1.0973204374313354],
-    ["formHasRegisteryClass", 0.7995884418487549],
-    ["formHasRegisteryAction", 1.0817958116531372],
-    ["formHasLoginyId", -0.7420071959495544],
-    ["formHasLoginyName", -1.1559255123138428],
-    ["formHasLoginyClass", -0.37638425827026367],
-    ["formHasLoginyAction", -0.46626168489456177],
-    ["formButtonIsRegistery", 1.2065483331680298],
-    ["formButtonIsLoginy", -1.491477370262146],
-    ["hasAutocompleteCurrentPassword", -1.8561248779296875],
-    ["formHasRememberMeCheckbox", -0.14150239527225494],
-    ["formHasRememberMeLabel", -0.35947301983833313],
+    ["hasNewLabel", 1.3816412687301636],
+    ["hasConfirmLabel", 1.1436946392059326],
+    ["hasCurrentLabel", -1.3180546760559082],
+    ["closestLabelMatchesNew", 1.5507557392120361],
+    ["closestLabelMatchesConfirm", 1.2106654644012451],
+    ["closestLabelMatchesCurrent", -1.7796934843063354],
+    ["hasNewAriaLabel", 1.4078633785247803],
+    ["hasConfirmAriaLabel", 1.349835753440857],
+    ["hasCurrentAriaLabel", -0.620401918888092],
+    ["hasNewPlaceholder", 1.0071479082107544],
+    ["hasConfirmPlaceholder", 0.7976134419441223],
+    ["hasCurrentPlaceholder", -1.9497040510177612],
+    ["forgotPasswordInFormLinkTextContent", -0.2332521677017212],
+    ["forgotPasswordInFormLinkHref", -1.208927035331726],
+    ["forgotPasswordInFormLinkTitle", -2.0100128650665283],
+    ["forgotInFormLinkTextContent", -0.7911128997802734],
+    ["forgotInFormLinkHref", 0.25129908323287964],
+    ["forgotPasswordInFormButtonTextContent", -1.6447609663009644],
+    ["forgotPasswordOnPageLinkTextContent", -1.164784550666809],
+    ["forgotPasswordOnPageLinkHref", -0.41453713178634644],
+    ["forgotPasswordOnPageLinkTitle", 0.36515694856643677],
+    ["forgotPasswordOnPageButtonTextContent", 0.3749140202999115],
+    ["elementAttrsMatchNew", 1.3417401313781738],
+    ["elementAttrsMatchConfirm", 1.1670483350753784],
+    ["elementAttrsMatchCurrent", -1.5021218061447144],
+    ["elementAttrsMatchPassword1", 1.7184115648269653],
+    ["elementAttrsMatchPassword2", 1.4368674755096436],
+    ["elementAttrsMatchLogin", -0.04229061305522919],
+    ["formAttrsMatchRegister", 1.4265739917755127],
+    ["formHasRegisterAction", 1.2860506772994995],
+    ["formButtonIsRegister", 1.4837253093719482],
+    ["formAttrsMatchLogin", -0.9309451580047607],
+    ["formHasLoginAction", -0.3899683654308319],
+    ["formButtonIsLogin", -1.860422968864441],
+    ["hasAutocompleteCurrentPassword", -2.0540637969970703],
+    ["formHasRememberMeCheckbox", 0.4620612561702728],
+    ["formHasRememberMeLabel", -0.4858175218105316],
   ]
 };
 
 const biases = [
-  ["new", 1.1701308488845825]
+  ["new", 1.3061610460281372]
 ];
 
 const passwordStringRegex = /password|passwort|رمز عبور|mot de passe|パスワード|비밀번호|암호|wachtwoord|senha|Пароль|parol|密码|contraseña|heslo|كلمة السر|kodeord|Κωδικός|pass code|Kata sandi|hasło|รหัสผ่าน|Şifre/i;
@@ -82,8 +66,8 @@ const confirmAttrRegex = /confirm|retype/i;
 const currentAttrAndStringRegex = /current|old/i;
 const forgotStringRegex = /vergessen|vergeten|forgot|oublié|dimenticata|Esqueceu|esqueci|Забыли|忘记|找回|Zapomenuté|lost|忘れた|忘れられた|忘れの方|재설정|찾기|help|فراموشی| را فراموش کرده اید|Восстановить|Unuttu|perdus|重新設定|reset|recover|change|remind|find|request|restore|trouble/i;
 const forgotHrefRegex = /forgot|reset|recover|change|lost|remind|find|request|restore/i;
-const oneAttrRegex = /1|one|first/i;
-const twoAttrRegex = /2|two|second/i;
+const password1Regex = /pw1|pwd1|pass1|passwd1|password1|pwone|pwdone|passone|passwdone|passwordone|pwfirst|pwdfirst|passfirst|passwdfirst|passwordfirst/i;
+const password2Regex = /pw2|pwd2|pass2|passwd2|password2|pwtwo|pwdtwo|passtwo|passwdtwo|passwordtwo|pwsecond|pwdsecond|passsecond|passwdsecond|passwordsecond/i;
 const loginRegex = /login|Войти|sign in|ورود|登录|Přihlásit se|Авторизоваться|signin|log in|sign\/in|sign-in|entrar|ログイン|로그인|Anmelden|inloggen|Συνδέσου|accedi|ログオン|Giriş Yap|登入|connecter/i;
 const loginFormAttrRegex = /login|signin|sign-in/i;
 const registerButtonRegex = /create account|Zugang anlegen|Angaben prüfen|Konto erstellen|register|sign up|create an account|create my account|ثبت نام|登録|注册|Cadastrar|Зарегистрироваться|Bellige alynmak|تسجيل|Registrovat|ΕΓΓΡΑΦΗΣ|Εγγραφή|REGISTRARME|Registrarse|Créer mon compte|Mendaftar|Registrazione|Registrati|가입하기|inschrijving|Zarejestruj się|Deschideți un cont|Создать аккаунт|ร่วม|Üye Ol|create new account/i;
@@ -205,6 +189,13 @@ function makeRuleset(coeffs, biases) {
     return regexes.every(regex => regex.test(textContent));
   }
 
+  function elementAttrsMatchRegex(element, regex) {
+    if (element !== null) {
+      return regex.test(element.id + element.name + element.className);
+    }
+    return false;
+  }
+
   return ruleset([
       rule((DEVELOPMENT ? dom("input[type=password]").when(isVisible) : element("input")), type("new")),
       rule(type("new"), score(fnode => hasLabelMatchingRegex(fnode.element, newStringRegex)), {name: "hasNewLabel"}),
@@ -229,34 +220,18 @@ function makeRuleset(coeffs, biases) {
       rule(type("new"), score(fnode => testRegexesAgainstAnchorPropertyWithinElement("href", fnode.element.ownerDocument, (new RegExp(passwordStringRegex.source + "|" + passwordAttrRegex.source, "i")), forgotHrefRegex)), {name: "forgotPasswordOnPageLinkHref"}),
       rule(type("new"), score(fnode => testRegexesAgainstAnchorPropertyWithinElement("title", fnode.element.ownerDocument, passwordStringRegex, forgotStringRegex)), {name: "forgotPasswordOnPageLinkTitle"}),
       rule(type("new"), score(fnode => hasSomeMatchingPredicateForSelectorWithinElement(fnode.element.ownerDocument, "button", button => textContentMatchesRegexes(button, passwordStringRegex, forgotStringRegex))), {name: "forgotPasswordOnPageButtonTextContent"}),
-      rule(type("new"), score(fnode => newAttrRegex.test(fnode.element.id)), {name: "idMatchesNew"}),
-      rule(type("new"), score(fnode => newAttrRegex.test(fnode.element.name)), {name: "nameMatchesNew"}),
-      rule(type("new"), score(fnode => newAttrRegex.test(fnode.element.className)), {name: "classMatchesNew"}),
-      rule(type("new"), score(fnode => confirmAttrRegex.test(fnode.element.id)), {name: "idMatchesConfirm"}),
-      rule(type("new"), score(fnode => confirmAttrRegex.test(fnode.element.name)), {name: "nameMatchesConfirm"}),
-      rule(type("new"), score(fnode => confirmAttrRegex.test(fnode.element.className)), {name: "classMatchesConfirm"}),
-      rule(type("new"), score(fnode => currentAttrAndStringRegex.test(fnode.element.id)), {name: "idMatchesCurrent"}),
-      rule(type("new"), score(fnode => currentAttrAndStringRegex.test(fnode.element.name)), {name: "nameMatchesCurrent"}),
-      rule(type("new"), score(fnode => currentAttrAndStringRegex.test(fnode.element.className)), {name: "classMatchesCurrent"}),
-      rule(type("new"), score(fnode => oneAttrRegex.test(fnode.element.id)), {name: "idMatchesOne"}),
-      rule(type("new"), score(fnode => oneAttrRegex.test(fnode.element.name)), {name: "nameMatchesOne"}),
-      rule(type("new"), score(fnode => oneAttrRegex.test(fnode.element.className)), {name: "classMatchesOne"}),
-      rule(type("new"), score(fnode => twoAttrRegex.test(fnode.element.id)), {name: "idMatchesTwo"}),
-      rule(type("new"), score(fnode => twoAttrRegex.test(fnode.element.name)), {name: "nameMatchesTwo"}),
-      rule(type("new"), score(fnode => twoAttrRegex.test(fnode.element.className)), {name: "classMatchesTwo"}),
-      rule(type("new"), score(fnode => loginRegex.test(fnode.element.id)), {name: "idMatchesLogin"}),
-      rule(type("new"), score(fnode => loginRegex.test(fnode.element.name)), {name: "nameMatchesLogin"}),
-      rule(type("new"), score(fnode => loginRegex.test(fnode.element.className)), {name: "classMatchesLogin"}),
-      rule(type("new"), score(fnode => containsRegex(registerFormAttrRegex, fnode.element.form, form => form.id)), {name: "formHasRegisteryId"}),
-      rule(type("new"), score(fnode => containsRegex(registerFormAttrRegex, fnode.element.form, form => form.name)), {name: "formHasRegisteryName"}),
-      rule(type("new"), score(fnode => containsRegex(registerFormAttrRegex, fnode.element.form, form => form.className)), {name: "formHasRegisteryClass"}),
-      rule(type("new"), score(fnode => containsRegex(registerActionRegex, fnode.element.form, form => form.action)), {name: "formHasRegisteryAction"}),
-      rule(type("new"), score(fnode => containsRegex(loginFormAttrRegex, fnode.element.form, form => form.id)), {name: "formHasLoginyId"}),
-      rule(type("new"), score(fnode => containsRegex(loginFormAttrRegex, fnode.element.form, form => form.name)), {name: "formHasLoginyName"}),
-      rule(type("new"), score(fnode => containsRegex(loginFormAttrRegex, fnode.element.form, form => form.className)), {name: "formHasLoginyClass"}),
-      rule(type("new"), score(fnode => containsRegex(loginRegex, fnode.element.form, form => form.action)), {name: "formHasLoginyAction"}),
-      rule(type("new"), score(fnode => testFormButtonsAgainst(fnode.element, registerButtonRegex)), {name: "formButtonIsRegistery"}),
-      rule(type("new"), score(fnode => testFormButtonsAgainst(fnode.element, loginRegex)), {name: "formButtonIsLoginy"}),
+      rule(type("new"), score(fnode => elementAttrsMatchRegex(fnode.element, newAttrRegex)), {name: "elementAttrsMatchNew"}),
+      rule(type("new"), score(fnode => elementAttrsMatchRegex(fnode.element, confirmAttrRegex)), {name: "elementAttrsMatchConfirm"}),
+      rule(type("new"), score(fnode => elementAttrsMatchRegex(fnode.element, currentAttrAndStringRegex)), {name: "elementAttrsMatchCurrent"}),
+      rule(type("new"), score(fnode => elementAttrsMatchRegex(fnode.element, password1Regex)), {name: "elementAttrsMatchPassword1"}),
+      rule(type("new"), score(fnode => elementAttrsMatchRegex(fnode.element, password2Regex)), {name: "elementAttrsMatchPassword2"}),
+      rule(type("new"), score(fnode => elementAttrsMatchRegex(fnode.element, loginRegex)), {name: "elementAttrsMatchLogin"}),
+      rule(type("new"), score(fnode => elementAttrsMatchRegex(fnode.element.form, registerFormAttrRegex)), {name: "formAttrsMatchRegister"}),
+      rule(type("new"), score(fnode => containsRegex(registerActionRegex, fnode.element.form, form => form.action)), {name: "formHasRegisterAction"}),
+      rule(type("new"), score(fnode => testFormButtonsAgainst(fnode.element, registerButtonRegex)), {name: "formButtonIsRegister"}),
+      rule(type("new"), score(fnode => elementAttrsMatchRegex(fnode.element.form, loginFormAttrRegex)), {name: "formAttrsMatchLogin"}),
+      rule(type("new"), score(fnode => containsRegex(loginRegex, fnode.element.form, form => form.action)), {name: "formHasLoginAction"}),
+      rule(type("new"), score(fnode => testFormButtonsAgainst(fnode.element, loginRegex)), {name: "formButtonIsLogin"}),
       rule(type("new"), score(hasAutocompleteCurrentPassword), {name: "hasAutocompleteCurrentPassword"}),
       rule(type("new"), score(fnode => hasSomeMatchingPredicateForSelectorWithinElement(fnode.element.form, "input[type=checkbox]", checkbox => rememberMeAttrRegex.test(checkbox.id) || rememberMeAttrRegex.test(checkbox.name))), {name: "formHasRememberMeCheckbox"}),
       rule(type("new"), score(fnode => hasSomeMatchingPredicateForSelectorWithinElement(fnode.element.form, "label", label => rememberMeStringRegex.test(label.textContent))), {name: "formHasRememberMeLabel"}),
