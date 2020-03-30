@@ -195,13 +195,12 @@ function makeRuleset(coeffs, biases) {
   }
 
   function closestHeaderAbove(element) {
-    let headers = Array.from(element.ownerDocument.querySelectorAll("h1,h2,h3,h4,h5,h6,div[class*=heading],div[class*=header],div[class*=title],legend")).filter(header => {
-      const relativePosition = element.compareDocumentPosition(header);
-      // 10 is the combination of Node.DOCUMENT_POSITION_PRECEDING and Node.DOCUMENT_POSITION_CONTAINS
-      return (relativePosition === Node.DOCUMENT_POSITION_PRECEDING) || (relativePosition === 10)
-    });
-    if (headers.length) {
-      return headers[headers.length - 1];
+    let headers = Array.from(element.ownerDocument.querySelectorAll("h1,h2,h3,h4,h5,h6,div[class*=heading],div[class*=header],div[class*=title],legend"));
+    for (let i = headers.length - 1; i >= 0; --i) {
+      const header = headers[i];
+      if (element.compareDocumentPosition(header) & Node.DOCUMENT_POSITION_PRECEDING) {
+        return header;
+      }
     }
     return null;
   }
