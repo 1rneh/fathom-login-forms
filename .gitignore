@@ -1,3 +1,5 @@
 /lockwise-proof-of-concept/runs
 /new-password/runs
 .~lock.*
+node_modules
+package-lock.json

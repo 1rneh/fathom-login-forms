@@ -1,0 +1,9 @@
+{
+  "plugins": [
+      "mozilla"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module"
+  }
+}
