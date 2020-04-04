@@ -1,5 +1,5 @@
 /lockwise-proof-of-concept/runs
 /new-password/runs
+/new-password/.prettierrc
 .~lock.*
 node_modules
-package-lock.json

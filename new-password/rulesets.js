@@ -2,9 +2,9 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-import {dom, element, out, rule, ruleset, score, type} from "fathom-web";
-import {euclidean} from "fathom-web/clusters";
-import {identity, isVisible, min} from "fathom-web/utilsForFrontend";
+import { dom, element, out, rule, ruleset, score, type } from "fathom-web";
+import { euclidean } from "fathom-web/clusters";
+import { identity, isVisible, min } from "fathom-web/utilsForFrontend";
 
 // Whether this is running in the Vectorizer, rather than in-application, in a
 // privileged Chrome context
@@ -642,7 +642,10 @@ function makeRuleset(coeffs, biases) {
 }
 
 const trainees = new Map();
-const VIEWPORT_SIZE = {width: 1366, height: 768};
+const VIEWPORT_SIZE = {
+  width: 1366,
+  height: 768,
+};
 
 const FEATURES = ["new"];
 for (const feature of FEATURES) {
@@ -650,12 +653,10 @@ for (const feature of FEATURES) {
     coeffs: new Map(coefficients[feature]),
     viewportSize: VIEWPORT_SIZE,
     vectorType: feature,
-    rulesetMaker: () => makeRuleset([
-        ...coefficients.new,
-      ],
-      biases),
-    isTarget: fnode => (fnode.element.dataset.fathom === "new" ||
-                        fnode.element.dataset.fathom === "confirm")
+    rulesetMaker: () => makeRuleset([...coefficients.new], biases),
+    isTarget: fnode =>
+      fnode.element.dataset.fathom === "new" ||
+      fnode.element.dataset.fathom === "confirm",
   };
   trainees.set(feature, trainee);
 }

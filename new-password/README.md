@@ -2,4 +2,12 @@
 
 ## How to use Mozilla Firefox eslint rules
 
-See instructions at [eslint-plugin-mozilla](https://www.npmjs.com/package/eslint-plugin-mozilla#outside-mozilla-central).
+1. Install `eslint-mozilla-plugin`, its peer dependencies, and get the latest `.prettierrc` from `mozilla-central`:
+```
+npm run install-eslint-plugin
+```
+
+2. Run eslint:
+``
+npm run lint
+```
