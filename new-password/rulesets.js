@@ -78,6 +78,10 @@ const registerFormAttrRegex = /signup|join|register|regform|registration|new_use
 const rememberMeAttrRegex = /remember|auto_login|auto-login|save_mail|save-mail|ricordami|manter|mantenha|savelogin|auto login/i;
 const rememberMeStringRegex = /remember me|keep me logged in|keep me signed in|save email address|save id|stay signed in|ricordami|次回からログオンIDの入力を省略する|メールアドレスを保存する|を保存|아이디저장|아이디 저장|로그인 상태 유지|lembrar|manter conectado|mantenha-me conectado|Запомни меня|запомнить меня|Запомните меня|Не спрашивать в следующий раз|下次自动登录|记住我/i;
 const newsletterStringRegex = /newsletter|ニュースレター/i;
+const passwordStringAndAttrRegex = new RegExp(
+  passwordStringRegex.source + "|" + passwordAttrRegex.source,
+  "i"
+);
 
 function makeRuleset(coeffs, biases) {
   function hasLabelMatchingRegex(element, regex) {
@@ -328,10 +332,7 @@ function makeRuleset(coeffs, biases) {
           testRegexesAgainstAnchorPropertyWithinElement(
             "href",
             fnode.element.form,
-            new RegExp(
-              passwordStringRegex.source + "|" + passwordAttrRegex.source,
-              "i"
-            ),
+            passwordStringAndAttrRegex,
             forgotHrefRegex
           ),
         forgotPasswordInFormLinkTitle: fnode =>
@@ -375,10 +376,7 @@ function makeRuleset(coeffs, biases) {
           testRegexesAgainstAnchorPropertyWithinElement(
             "href",
             fnode.element.ownerDocument,
-            new RegExp(
-              passwordStringRegex.source + "|" + passwordAttrRegex.source,
-              "i"
-            ),
+            passwordStringAndAttrRegex,
             forgotHrefRegex
           ),
         forgotPasswordOnPageLinkTitle: fnode =>
