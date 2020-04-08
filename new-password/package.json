@@ -1,0 +1,32 @@
+{
+  "name": "new-password",
+  "version": "2.0.0",
+  "description": "v2.0.0 is the new password model shipped in Bug 1625601.",
+  "main": "rulesets.js",
+  "scripts": {
+    "install-eslint-plugin": "npm i eslint-plugin-mozilla install-peerdeps --save-dev && npm run install-plugin-peerdeps && npm run get-prettier-config",
+    "install-plugin-peerdeps": "install-peerdeps --dev eslint-plugin-mozilla && npm install eslint-plugin-html@^6.0.0 --save-dev",
+    "get-prettier-config": "curl https://hg.mozilla.org/mozilla-central/raw-file/tip/.prettierrc > .prettierrc",
+    "lint": "eslint rulesets.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mozilla-services/fathom-login-forms/new-password"
+  },
+  "keywords": [
+    "mozilla"
+  ],
+  "author": "Erik Rose, Daniel Hertenstein",
+  "license": "MPL-2.0",
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-fetch-options": "0.0.5",
+    "eslint-plugin-html": "^6.0.1",
+    "eslint-plugin-mozilla": "^2.4.0",
+    "eslint-plugin-no-unsanitized": "^3.1.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "install-peerdeps": "^2.0.1",
+    "prettier": "^1.19.1"
+  }
+}
