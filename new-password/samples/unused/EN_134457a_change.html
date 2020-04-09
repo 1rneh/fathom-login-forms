@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<!--[if IE 7]><html class="lt-ie10 lt-ie9 lt-ie8"><![endif]-->
+<!--[if IE 8]><html class="lt-ie10 lt-ie9"> <![endif]-->
+<!--[if IE 9]><html class="lt-ie10"><![endif]-->
+<!--[if gt IE 9]><html><![endif]-->
+<!--[if !IE]><!-->
+<html><!--<![endif]--><head><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; media-src 'self' data:; style-src 'self' data: 'unsafe-inline'; font-src 'self' data:; frame-src 'self' data:"><meta http-equiv="Memento-Datetime" content="Fri, 27 Mar 2020 13:48:29 GMT"><link rel="original" href="https://my.okta.com/signin/password-reset">
+
+    
+
+    <title>myokta - Sign In</title>
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="none">
+
+    <link href="resources/EN_134457a_change/1.css" type="text/css" rel="stylesheet" data-original-href="https://ok6static.oktacdn.com/assets/loginpage/css/okta-login-page.min.d5c2c4971d4f710a2d5bdcff5d1c7d88.css">
+    
+
+</head>
+<body class="auth okta-container">
+
+<!--[if gte IE 8]>
+  <![if lte IE 9]>
+
+    <style>
+    .unsupported-browser-banner-wrap {
+      padding: 20px;
+      border: 1px solid #ddd;
+      background-color: #f3fbff;
+    }
+    .unsupported-browser-banner-inner {
+      position: relative;
+      width: 735px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    .unsupported-browser-banner-inner .icon {
+      vertical-align: top;
+      margin-right: 20px;
+      display: inline-block;
+      position: static !important;
+    }
+    .unsupported-browser-banner-inner a {
+      text-decoration: underline;
+    }
+    </style>
+
+    <div class="unsupported-browser-banner-wrap">
+      <div class="unsupported-browser-banner-inner">
+        <span class="icon icon-16 icon-only warning-16-yellow"></span>You are using an unsupported browser. For the best experience, update to <a href="https://support.okta.com/help/articles/Knowledge_Article/24532952-Platforms---Browser-and-OS-Support">a supported browser</a>.</div>
+    </div>
+
+  <![endif]>
+<![endif]-->
+<!--[if IE 8]> <div id="login-bg-image-ie8" class="login-bg-image" data-se="login-bg-image"></div> <![endif]-->
+<!--[if (gt IE 8)|!(IE)]><!--> <div id="login-bg-image" class="login-bg-image" data-se="login-bg-image" style="background-image: none"></div> <!--<![endif]-->
+
+<!-- hidden form for reposting fromURI for X509 auth -->
+<form action="https://my.okta.com/login/cert" method="post" id="x509_login" name="x509_login" style="display:none;">
+    <input type="hidden" class="hide" name="_xsrfToken" value="null"><input type="hidden" id="fromURI" name="fromURI" class="hidden" value="/user/notifications">
+</form>
+
+<div class="content">
+  <style type="text/css">
+    .noscript-msg {
+        background-color: #fff;
+        border-color: #ddd #ddd #d8d8d8;
+        box-shadow:0 2px 0 rgba(175, 175, 175, 0.12);
+        text-align: center;
+        width: 398px;
+        min-width: 300px;
+        margin: 200px auto;
+        border-radius: 3px;
+        border-width: 1px;
+        border-style: solid;
+    }
+
+    .noscript-content {
+        padding: 42px;
+    }
+
+    .noscript-content h2 {
+        padding-bottom: 20px;
+    }
+
+    .noscript-content h1 {
+        padding-bottom: 25px;
+    }
+
+    .noscript-content a {
+        background: transparent;
+        box-shadow: none;
+        display: table-cell;
+        vertical-align: middle;
+        width: 314px;
+        height: 50px;
+        line-height: 36px;
+        color: #fff;
+        background: linear-gradient(#007dc1, #0073b2), #007dc1;
+        border: 1px solid;
+        border-color: #004b75;
+        border-bottom-color: #00456a;
+        box-shadow: rgba(0, 0, 0, 0.15) 0 1px 0, rgba(255, 255, 255, 0.1) 0 1px 0 0 inset;
+        -webkit-border-radius: 3px;
+        border-radius: 3px;
+    }
+
+    .noscript-content a:hover {
+        background: #007dc1;
+        cursor: hand;
+        text-decoration: none;
+    }
+</style>
+
+<div id="signin-container"><div data-se="auth-container" id="okta-sign-in" class="auth-container main-container no-beacon">      <div class="okta-sign-in-header auth-header">                <img src="resources/EN_134457a_change/2.png" class="auth-org-logo" alt="myokta logo" data-original-src="https://ok6static.oktacdn.com/fs/bco/1/fs04923dd2MsG4fWy2p7">                <div data-type="beacon-container" class="beacon-container" style="transform: scale(0); text-indent: 0px;"></div>      </div>      <div class="auth-content"><div class="auth-content-inner"><div class="password-reset"><form method="POST" action="https://my.okta.com/signin/reset-password/dfpEHDNNpQJLfEQucdiJ" data-se="o-form" slot="content" id="form2" class="o-form o-form-edit-mode">        <div data-se="o-form-content" class="o-form-content o-form-theme clearfix">                        <h2 data-se="o-form-head" class="okta-form-title o-form-head">Reset your Okta password</h2>                            <p class="okta-form-subtitle o-form-explain" data-se="o-form-explain">Password requirements: at least 8 characters, a lowercase letter, an uppercase letter, a number, no parts of your username.</p>            <div class="o-form-error-container" data-se="o-form-error-container"></div>      <div class="o-form-fieldset-container" data-se="o-form-fieldset-container"><div data-se="o-form-fieldset" class="o-form-fieldset o-form-label-top margin-btm-5"><div data-se="o-form-label" class="okta-form-label o-form-label"><label for="input4">New password&nbsp;</label></div><div data-se="o-form-input-container" class="o-form-input"><span data-se="o-form-input-newPassword" class="o-form-input-name-newPassword o-form-control okta-form-input-field input-fix">                  <input type="password" placeholder="" name="newPassword" id="input4" value="" aria-label="" autocomplete="off" data-fathom="new">            </span></div></div><div data-se="o-form-fieldset" class="o-form-fieldset o-form-label-top"><div data-se="o-form-label" class="okta-form-label o-form-label"><label for="input6">Repeat password&nbsp;</label></div><div data-se="o-form-input-container" class="o-form-input o-form-has-errors" aria-describedby="input-container-error8"><span data-se="o-form-input-confirmPassword" class="o-form-input-name-confirmPassword o-form-control okta-form-input-field input-fix o-form-has-errors">                  <input type="password" placeholder="" name="confirmPassword" id="input6" value="" aria-label="" autocomplete="off" data-fathom="confirm">            </span><p id="input-container-error8" class="okta-form-input-error o-form-input-error o-form-explain" role="alert"><span class="icon icon-16 error-16-small" role="img" aria-label="Error"></span>This field cannot be left blank</p></div></div></div>    </div>  <div class="o-form-button-bar"><input class="button button-primary" type="submit" value="Reset Password" data-type="save"></div></form><div class="auth-footer clearfix">      <a href="https://my.okta.com/signin/password-reset#" class="link goto" data-se="signout-link">        Sign Out      </a>    </div></div></div></div>    </div></div>
+  
+</div>
+
+<div class="footer">
+  <div class="footer-container clearfix">
+    <p class="copyright">Powered by <a href="http://www.okta.com/" class="inline-block notranslate">Okta</a></p>
+        <p class="privacy-policy"><a href="https://my.okta.com/privacy" target="_blank" class="inline-block margin-l-10">Privacy Policy</a></p>
+    </div>
+</div>
+
+
+
+
+
+
+
+<iframe data-se="account-chooser" src="resources/EN_134457a_change/3.htm" style="display:none" data-original-src="https://login.okta.com/discovery/iframe.html"></iframe></body></html>
