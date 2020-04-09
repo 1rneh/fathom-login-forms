@@ -84,6 +84,14 @@ const passwordStringAndAttrRegex = new RegExp(
 );
 
 function makeRuleset(coeffs, biases) {
+  // HTMLElement => (selector => Array<HTMLElement>) nested map to cache querySelectorAll calls.
+  const elementToAllElementDescendants = new Map();
+  // We want to clear the cache each time the model is executed to get the latest DOM snapshot
+  // for each classification.
+  function clearCache() {
+    elementToAllElementDescendants.clear();
+  }
+
   function hasLabelMatchingRegex(element, regex) {
     // Check element.labels
     const labels = element.labels;
@@ -221,16 +229,35 @@ function makeRuleset(coeffs, biases) {
     return fnode.element.autocomplete === "current-password";
   }
 
+  // Check cache before calling querySelectorAll on element
+  function getElementDescendants(element, selector) {
+    let selectorToElementsArray = elementToAllElementDescendants.get(element);
+    if (!selectorToElementsArray) {
+      selectorToElementsArray = new Map();
+      selectorToElementsArray.set(
+        selector,
+        Array.from(element.querySelectorAll(selector))
+      );
+      elementToAllElementDescendants.set(element, selectorToElementsArray);
+    }
+    let selectorArray = selectorToElementsArray.get(selector);
+    if (!selectorArray) {
+      selectorArray = Array.from(element.querySelectorAll(selector));
+      selectorToElementsArray.set(selector, selectorArray);
+    }
+    return selectorArray;
+  }
+
   function hasSomeMatchingPredicateForSelectorWithinElement(
     element,
     selector,
     matchingPredicate
   ) {
-    if (element !== null) {
-      const selectorArray = Array.from(element.querySelectorAll(selector));
-      return selectorArray.some(matchingPredicate);
+    if (element === null) {
+      return false;
     }
-    return false;
+    const selectorArray = getElementDescendants(element, selector);
+    return selectorArray.some(matchingPredicate);
   }
 
   function textContentMatchesRegexes(element, ...regexes) {
@@ -294,7 +321,7 @@ function makeRuleset(coeffs, biases) {
               "input[type=password]:not([disabled]):not([aria-hidden=true]"
             ).when(isVisible)
           : element("input"),
-        type("new")
+        type("new").note(clearCache)
       ),
       ...simpleScoringRulesTakingType("new", {
         hasNewLabel: fnode =>
