@@ -34,7 +34,6 @@ const coefficients = {
     ["forgotPasswordOnPageLinkTextContent", -0.9497349262237549],
     ["forgotPasswordOnPageLinkHref", -0.4683777689933777],
     ["forgotPasswordOnPageLinkTitle", 0.9323362112045288],
-    ["forgotPasswordOnPageButtonTextContent", -0.036500222980976105],
     ["elementAttrsMatchNew", 2.3482909202575684],
     ["elementAttrsMatchConfirm", 1.4599562883377075],
     ["elementAttrsMatchCurrent", -1.8001548051834106],
@@ -412,17 +411,6 @@ function makeRuleset(coeffs, biases) {
             fnode.element.ownerDocument,
             passwordStringRegex,
             forgotStringRegex
-          ),
-        forgotPasswordOnPageButtonTextContent: fnode =>
-          hasSomeMatchingPredicateForSelectorWithinElement(
-            fnode.element.ownerDocument,
-            "button",
-            button =>
-              textContentMatchesRegexes(
-                button,
-                passwordStringRegex,
-                forgotStringRegex
-              )
           ),
         elementAttrsMatchNew: fnode =>
           elementAttrsMatchRegex(fnode.element, newAttrRegex),
