@@ -4,7 +4,12 @@
 
 import { dom, element, out, rule, ruleset, score, type } from "fathom-web";
 import { euclidean } from "fathom-web/clusters";
-import { identity, isVisible, min } from "fathom-web/utilsForFrontend";
+import {
+  identity,
+  isVisible,
+  min,
+  setDefault,
+} from "fathom-web/utilsForFrontend";
 
 // Whether this is running in the Vectorizer, rather than in-application, in a
 // privileged Chrome context
@@ -84,11 +89,12 @@ const passwordStringAndAttrRegex = new RegExp(
 
 function makeRuleset(coeffs, biases) {
   // HTMLElement => (selector => Array<HTMLElement>) nested map to cache querySelectorAll calls.
-  const elementToAllElementDescendants = new Map();
+  let elementToSelectors;
   // We want to clear the cache each time the model is executed to get the latest DOM snapshot
   // for each classification.
   function clearCache() {
-    elementToAllElementDescendants.clear();
+    // WeakMaps do not have a clear method
+    elementToSelectors = new WeakMap();
   }
 
   function hasLabelMatchingRegex(element, regex) {
@@ -230,21 +236,17 @@ function makeRuleset(coeffs, biases) {
 
   // Check cache before calling querySelectorAll on element
   function getElementDescendants(element, selector) {
-    let selectorToElementsArray = elementToAllElementDescendants.get(element);
-    if (!selectorToElementsArray) {
-      selectorToElementsArray = new Map();
-      selectorToElementsArray.set(
-        selector,
-        Array.from(element.querySelectorAll(selector))
-      );
-      elementToAllElementDescendants.set(element, selectorToElementsArray);
-    }
-    let selectorArray = selectorToElementsArray.get(selector);
-    if (!selectorArray) {
-      selectorArray = Array.from(element.querySelectorAll(selector));
-      selectorToElementsArray.set(selector, selectorArray);
-    }
-    return selectorArray;
+    // Use the element to look up the selector map:
+    const selectorToElements = setDefault(
+      elementToSelectors,
+      element,
+      () => new Map()
+    );
+
+    // Use the selector to grab the descendants:
+    return setDefault(selectorToElements, selector, () =>
+      Array.from(element.querySelectorAll(selector))
+    );
   }
 
   function hasSomeMatchingPredicateForSelectorWithinElement(
@@ -255,8 +257,8 @@ function makeRuleset(coeffs, biases) {
     if (element === null) {
       return false;
     }
-    const selectorArray = getElementDescendants(element, selector);
-    return selectorArray.some(matchingPredicate);
+    const elements = getElementDescendants(element, selector);
+    return elements.some(matchingPredicate);
   }
 
   function textContentMatchesRegexes(element, ...regexes) {
