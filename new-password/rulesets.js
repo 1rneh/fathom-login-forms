@@ -4,7 +4,12 @@
 
 import { dom, element, out, rule, ruleset, score, type } from "fathom-web";
 import { euclidean } from "fathom-web/clusters";
-import { identity, isVisible, min } from "fathom-web/utilsForFrontend";
+import {
+  identity,
+  isVisible,
+  min,
+  setDefault,
+} from "fathom-web/utilsForFrontend";
 
 // Whether this is running in the Vectorizer, rather than in-application, in a
 // privileged Chrome context
@@ -78,8 +83,21 @@ const registerFormAttrRegex = /signup|join|register|regform|registration|new_use
 const rememberMeAttrRegex = /remember|auto_login|auto-login|save_mail|save-mail|ricordami|manter|mantenha|savelogin|auto login/i;
 const rememberMeStringRegex = /remember me|keep me logged in|keep me signed in|save email address|save id|stay signed in|ricordami|次回からログオンIDの入力を省略する|メールアドレスを保存する|を保存|아이디저장|아이디 저장|로그인 상태 유지|lembrar|manter conectado|mantenha-me conectado|Запомни меня|запомнить меня|Запомните меня|Не спрашивать в следующий раз|下次自动登录|记住我/i;
 const newsletterStringRegex = /newsletter|ニュースレター/i;
+const passwordStringAndAttrRegex = new RegExp(
+  passwordStringRegex.source + "|" + passwordAttrRegex.source,
+  "i"
+);
 
 function makeRuleset(coeffs, biases) {
+  // HTMLElement => (selector => Array<HTMLElement>) nested map to cache querySelectorAll calls.
+  let elementToSelectors;
+  // We want to clear the cache each time the model is executed to get the latest DOM snapshot
+  // for each classification.
+  function clearCache() {
+    // WeakMaps do not have a clear method
+    elementToSelectors = new WeakMap();
+  }
+
   function hasLabelMatchingRegex(element, regex) {
     // Check element.labels
     const labels = element.labels;
@@ -217,16 +235,33 @@ function makeRuleset(coeffs, biases) {
     return fnode.element.autocomplete === "current-password";
   }
 
+  // Check cache before calling querySelectorAll on element
+  function getElementDescendants(element, selector) {
+    // Use the element to look up the selector map:
+    const selectorToDescendants = setDefault(
+      elementToSelectors,
+      element,
+      () => new Map()
+    );
+
+    // Use the selector to grab the descendants:
+    return setDefault(
+      selectorToDescendants, // eslint-disable-line prettier/prettier
+      selector,
+      () => Array.from(element.querySelectorAll(selector))
+    );
+  }
+
   function hasSomeMatchingPredicateForSelectorWithinElement(
     element,
     selector,
     matchingPredicate
   ) {
-    if (element !== null) {
-      const selectorArray = Array.from(element.querySelectorAll(selector));
-      return selectorArray.some(matchingPredicate);
+    if (element === null) {
+      return false;
     }
-    return false;
+    const elements = getElementDescendants(element, selector);
+    return elements.some(matchingPredicate);
   }
 
   function textContentMatchesRegexes(element, ...regexes) {
@@ -290,7 +325,7 @@ function makeRuleset(coeffs, biases) {
               "input[type=password]:not([disabled]):not([aria-hidden=true]"
             ).when(isVisible)
           : element("input"),
-        type("new")
+        type("new").note(clearCache)
       ),
       ...simpleScoringRulesTakingType("new", {
         hasNewLabel: fnode =>
@@ -328,10 +363,7 @@ function makeRuleset(coeffs, biases) {
           testRegexesAgainstAnchorPropertyWithinElement(
             "href",
             fnode.element.form,
-            new RegExp(
-              passwordStringRegex.source + "|" + passwordAttrRegex.source,
-              "i"
-            ),
+            passwordStringAndAttrRegex,
             forgotHrefRegex
           ),
         forgotPasswordInFormLinkTitle: fnode =>
@@ -375,10 +407,7 @@ function makeRuleset(coeffs, biases) {
           testRegexesAgainstAnchorPropertyWithinElement(
             "href",
             fnode.element.ownerDocument,
-            new RegExp(
-              passwordStringRegex.source + "|" + passwordAttrRegex.source,
-              "i"
-            ),
+            passwordStringAndAttrRegex,
             forgotHrefRegex
           ),
         forgotPasswordOnPageLinkTitle: fnode =>
