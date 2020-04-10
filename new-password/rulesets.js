@@ -237,15 +237,17 @@ function makeRuleset(coeffs, biases) {
   // Check cache before calling querySelectorAll on element
   function getElementDescendants(element, selector) {
     // Use the element to look up the selector map:
-    const selectorToElements = setDefault(
+    const selectorToDescendants = setDefault(
       elementToSelectors,
       element,
       () => new Map()
     );
 
     // Use the selector to grab the descendants:
-    return setDefault(selectorToElements, selector, () =>
-      Array.from(element.querySelectorAll(selector))
+    return setDefault(
+      selectorToDescendants, // eslint-disable-line prettier/prettier
+      selector,
+      () => Array.from(element.querySelectorAll(selector))
     );
   }
 
