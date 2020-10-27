@@ -112,7 +112,8 @@ function makeRuleset(coeffs, biases) {
     if (labelledBy !== null) {
       labelledBy = labelledBy
         .split(" ")
-        .map(id => element.ownerDocument.getElementById(id));
+        .map(id => element.getRootNode().getElementById(id))
+        .filter(el => el);
       if (labelledBy.length === 1) {
         return regex.test(labelledBy[0].textContent);
       } else if (labelledBy.length > 1) {
