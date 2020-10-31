@@ -18,52 +18,52 @@ const DEVELOPMENT = true;
 // Run me with confidence cutoff = 0.75.
 const coefficients = {
   new: [
-    ["hasNewLabel", 2.531618356704712],
-    ["hasConfirmLabel", 1.9212454557418823],
-    ["hasCurrentLabel", -1.5062531232833862],
-    ["closestLabelMatchesNew", 2.4905529022216797],
-    ["closestLabelMatchesConfirm", 2.188796281814575],
-    ["closestLabelMatchesCurrent", -2.5512311458587646],
-    ["hasNewAriaLabel", 1.9324924945831299],
-    ["hasConfirmAriaLabel", 1.7427018880844116],
-    ["hasCurrentAriaLabel", -0.45434775948524475],
-    ["hasNewPlaceholder", 1.3900811672210693],
-    ["hasConfirmPlaceholder", 2.120662212371826],
-    ["hasCurrentPlaceholder", -2.464745283126831],
-    ["forgotPasswordInFormLinkTextContent", -0.34269317984580994],
-    ["forgotPasswordInFormLinkHref", -1.100291132926941],
-    ["forgotPasswordInFormLinkTitle", -2.5948476791381836],
-    ["forgotInFormLinkTextContent", -1.104567050933838],
-    ["forgotInFormLinkHref", 0.43580958247184753],
-    ["forgotPasswordInFormButtonTextContent", -2.2410218715667725],
-    ["forgotPasswordOnPageLinkTextContent", -0.7233141660690308],
-    ["forgotPasswordOnPageLinkHref", -0.3587746322154999],
-    ["forgotPasswordOnPageLinkTitle", 0.5892723798751831],
-    ["forgotPasswordOnPageButtonTextContent", -0.0006637098849751055],
-    ["elementAttrsMatchNew", 2.36958646774292],
-    ["elementAttrsMatchConfirm", 1.79710853099823],
-    ["elementAttrsMatchCurrent", -2.0240602493286133],
-    ["elementAttrsMatchPassword1", 1.9658048152923584],
-    ["elementAttrsMatchPassword2", 1.6933585405349731],
-    ["elementAttrsMatchLogin", 1.1432386636734009],
-    ["formAttrsMatchRegister", 1.8227713108062744],
-    ["formHasRegisterAction", 1.9209907054901123],
-    ["formButtonIsRegister", 2.889024496078491],
-    ["formAttrsMatchLogin", -1.166875958442688],
-    ["formHasLoginAction", -0.4696630537509918],
-    ["formButtonIsLogin", -2.284656524658203],
-    ["hasAutocompleteCurrentPassword", -0.04689808934926987],
-    ["formHasRememberMeCheckbox", 0.5008370280265808],
-    ["formHasRememberMeLabel", -0.022740153595805168],
-    ["formHasNewsletterCheckbox", 1.5111156702041626],
-    ["formHasNewsletterLabel", 2.277301549911499],
-    ["closestHeaderAboveIsLoginy", -2.2182235717773438],
-    ["closestHeaderAboveIsRegistery", 1.930107593536377],
-    ["nextInputIsConfirmy", 2.5108766555786133],
+    ["hasNewLabel", 2.4876835346221924],
+    ["hasConfirmLabel", 1.7334164381027222],
+    ["hasCurrentLabel", -1.3712491989135742],
+    ["closestLabelMatchesNew", 2.552809238433838],
+    ["closestLabelMatchesConfirm", 2.2010068893432617],
+    ["closestLabelMatchesCurrent", -2.3329427242279053],
+    ["hasNewAriaLabel", 1.754004716873169],
+    ["hasConfirmAriaLabel", 1.6411428451538086],
+    ["hasCurrentAriaLabel", -0.29839131236076355],
+    ["hasNewPlaceholder", 1.3635673522949219],
+    ["hasConfirmPlaceholder", 2.1022207736968994],
+    ["hasCurrentPlaceholder", -2.451216459274292],
+    ["forgotPasswordInFormLinkTextContent", -0.4173929691314697],
+    ["forgotPasswordInFormLinkHref", -1.167292594909668],
+    ["forgotPasswordInFormLinkTitle", -2.5563302040100098],
+    ["forgotInFormLinkTextContent", -0.9437578916549683],
+    ["forgotInFormLinkHref", 0.4061301648616791],
+    ["forgotPasswordInFormButtonTextContent", -2.12579345703125],
+    ["forgotPasswordOnPageLinkTextContent", -0.850437343120575],
+    ["forgotPasswordOnPageLinkHref", -0.3416007161140442],
+    ["forgotPasswordOnPageLinkTitle", 0.3850109279155731],
+    ["forgotPasswordOnPageButtonTextContent", -0.054073579609394073],
+    ["elementAttrsMatchNew", 2.394620180130005],
+    ["elementAttrsMatchConfirm", 1.9136061668395996],
+    ["elementAttrsMatchCurrent", -2.0956358909606934],
+    ["elementAttrsMatchPassword1", 2.098376989364624],
+    ["elementAttrsMatchPassword2", 1.648352026939392],
+    ["elementAttrsMatchLogin", 0.942763090133667],
+    ["formAttrsMatchRegister", 1.7757514715194702],
+    ["formHasRegisterAction", 1.992130160331726],
+    ["formButtonIsRegister", 2.756829023361206],
+    ["formAttrsMatchLogin", -1.1014139652252197],
+    ["formHasLoginAction", -0.5136075615882874],
+    ["formButtonIsLogin", -2.2998790740966797],
+    ["hasAutocompleteCurrentPassword", 0.11556465923786163],
+    ["formHasRememberMeCheckbox", 0.5406131148338318],
+    ["formHasRememberMeLabel", -0.13506275415420532],
+    ["formHasNewsletterCheckbox", 1.562806487083435],
+    ["formHasNewsletterLabel", 2.363374948501587],
+    ["closestHeaderAboveIsLoginy", -2.0442676544189453],
+    ["closestHeaderAboveIsRegistery", 1.8225610256195068],
+    ["nextInputIsConfirmy", 2.491363763809204]
   ],
 };
 
-const biases = [["new", 0.08310158550739288]];
+const biases = [["new", 0.18261024355888367]];
 
 const passwordStringRegex = /password|passwort|رمز عبور|mot de passe|パスワード|비밀번호|암호|wachtwoord|senha|Пароль|parol|密码|contraseña|heslo|كلمة السر|kodeord|Κωδικός|pass code|Kata sandi|hasło|รหัสผ่าน|Şifre/i;
 const passwordAttrRegex = /pw|pwd|passwd|pass/i;
@@ -78,7 +78,7 @@ const password1Regex = /pw1|pwd1|pass1|passwd1|password1|pwone|pwdone|passone|pa
 const password2Regex = /pw2|pwd2|pass2|passwd2|password2|pwtwo|pwdtwo|passtwo|passwdtwo|passwordtwo|pwsecond|pwdsecond|passsecond|passwdsecond|passwordsecond/i;
 const loginRegex = /login|log in|log on|log-on|Войти|sign in|sigin|sign\/in|sign-in|sign on|sign-on|ورود|登录|Přihlásit se|Přihlaste|Авторизоваться|Авторизация|entrar|ログイン|로그인|inloggen|Συνδέσου|accedi|ログオン|Giriş Yap|登入|connecter|connectez-vous|Connexion|Вход/i;
 const loginFormAttrRegex = /login|log in|log on|log-on|sign in|sigin|sign\/in|sign-in|sign on|sign-on/i;
-const registerStringRegex = /create[a-zA-Z\s]+account|Zugang anlegen|Angaben prüfen|Konto erstellen|register|sign up|ثبت نام|登録|注册|cadastr|Зарегистрироваться|Регистрация|Bellige alynmak|تسجيل|ΕΓΓΡΑΦΗΣ|Εγγραφή|Créer mon compte|Mendaftar|가입하기|inschrijving|Zarejestruj się|Deschideți un cont|Создать аккаунт|ร่วม|Üye Ol|registr|new account|ساخت حساب کاربری|Schrijf je/i;
+const registerStringRegex = /create[a-zA-Z\s]+account|activate[a-zA-Z\s]+account|Zugang anlegen|Angaben prüfen|Konto erstellen|register|sign up|ثبت نام|登録|注册|cadastr|Зарегистрироваться|Регистрация|Bellige alynmak|تسجيل|ΕΓΓΡΑΦΗΣ|Εγγραφή|Créer mon compte|Mendaftar|가입하기|inschrijving|Zarejestruj się|Deschideți un cont|Создать аккаунт|ร่วม|Üye Ol|registr|new account|ساخت حساب کاربری|Schrijf je/i;
 const registerActionRegex = /register|signup|sign-up|create-account|account\/create|join|new_account|user\/create|sign\/up|membership\/create/i;
 const registerFormAttrRegex = /signup|join|register|regform|registration|new_user|AccountCreate|create_customer|CreateAccount|CreateAcct|create-account|reg-form|newuser|new-reg|new-form|new_membership/i;
 const rememberMeAttrRegex = /remember|auto_login|auto-login|save_mail|save-mail|ricordami|manter|mantenha|savelogin|auto login/i;
