@@ -18,53 +18,53 @@ const DEVELOPMENT = true;
 // Run me with confidence cutoff = 0.75.
 const coefficients = {
   new: [
-    ["hasNewLabel", 2.331922769546509],
-    ["hasConfirmLabel", 1.8096566200256348],
-    ["hasCurrentLabel", -1.9448015689849854],
-    ["closestLabelMatchesNew", 2.5167243480682373],
-    ["closestLabelMatchesConfirm", 2.1070404052734375],
-    ["closestLabelMatchesCurrent", -2.4459433555603027],
-    ["hasNewAriaLabel", 2.2120070457458496],
-    ["hasConfirmAriaLabel", 1.38164222240448],
-    ["hasCurrentAriaLabel", -0.4654194712638855],
-    ["hasNewPlaceholder", 1.4005366563796997],
-    ["hasConfirmPlaceholder", 2.310284376144409],
-    ["hasCurrentPlaceholder", -2.709613084793091],
-    ["forgotPasswordInFormLinkTextContent", -0.5083492994308472],
-    ["forgotPasswordInFormLinkHref", -1.006461501121521],
-    ["forgotPasswordInFormLinkTitle", -1.9449164867401123],
-    ["forgotInFormLinkTextContent", -0.914273202419281],
-    ["forgotInFormLinkHref", -0.03680045157670975],
-    ["forgotPasswordInFormButtonTextContent", -1.9575374126434326],
-    ["forgotPasswordOnPageLinkTextContent", -0.7669109106063843],
-    ["forgotPasswordOnPageLinkHref", -0.07401009649038315],
-    ["forgotPasswordOnPageLinkTitle", -0.37492579221725464],
-    ["forgotPasswordOnPageButtonTextContent", -0.062231965363025665],
-    ["elementAttrsMatchNew", 2.129204034805298],
-    ["elementAttrsMatchConfirm", 1.5928300619125366],
-    ["elementAttrsMatchCurrent", -2.768566608428955],
-    ["elementAttrsMatchPassword1", 1.4802486896514893],
-    ["elementAttrsMatchPassword2", 1.4248613119125366],
-    ["elementAttrsMatchLogin", 1.0164512395858765],
-    ["formAttrsMatchRegister", 1.407518982887268],
-    ["formHasRegisterAction", 1.6568901538848877],
-    ["formButtonIsRegister", 2.531555652618408],
-    ["formAttrsMatchLogin", -0.9221364855766296],
-    ["formHasLoginAction", -0.5735783576965332],
-    ["formButtonIsLogin", -1.879767656326294],
-    ["hasAutocompleteCurrentPassword", 0.06306539475917816],
-    ["formHasRememberMeCheckbox", 0.33183011412620544],
-    ["formHasRememberMeLabel", -0.09933401644229889],
-    ["formHasNewsletterCheckbox", 1.339613914489746],
-    ["formHasNewsletterLabel", 1.7927500009536743],
-    ["closestHeaderAboveIsLoginy", -1.7928643226623535],
-    ["closestHeaderAboveIsRegistery", 1.7079520225524902],
-    ["nextInputIsConfirmy", 1.9542810916900635],
-    ["formHasMultipleVisibleInput", 2.1196277141571045],
+    ["hasNewLabel", 2.5705015659332275],
+    ["hasConfirmLabel", 1.968616247177124],
+    ["hasCurrentLabel", -2.0171477794647217],
+    ["closestLabelMatchesNew", 2.5639004707336426],
+    ["closestLabelMatchesConfirm", 2.0995113849639893],
+    ["closestLabelMatchesCurrent", -2.6844682693481445],
+    ["hasNewAriaLabel", 2.6036999225616455],
+    ["hasConfirmAriaLabel", 1.6274890899658203],
+    ["hasCurrentAriaLabel", -0.5365085005760193],
+    ["hasNewPlaceholder", 1.2246830463409424],
+    ["hasConfirmPlaceholder", 1.7248882055282593],
+    ["hasCurrentPlaceholder", -2.9133150577545166],
+    ["forgotPasswordInFormLinkTextContent", -0.5529725551605225],
+    ["forgotPasswordInFormLinkHref", -1.314806342124939],
+    ["forgotPasswordInFormLinkTitle", -2.088702917098999],
+    ["forgotInFormLinkTextContent", -0.9314834475517273],
+    ["forgotInFormLinkHref", 0.2886754274368286],
+    ["forgotPasswordInFormButtonTextContent", -1.3742481470108032],
+    ["forgotPasswordOnPageLinkTextContent", -0.8459364175796509],
+    ["forgotPasswordOnPageLinkHref", 0.11753738671541214],
+    ["forgotPasswordOnPageLinkTitle", -0.6204848289489746],
+    ["forgotPasswordOnPageButtonTextContent", -0.7494243383407593],
+    ["elementAttrsMatchNew", 2.5985605716705322],
+    ["elementAttrsMatchConfirm", 1.632151484489441],
+    ["elementAttrsMatchCurrent", -3.041818857192993],
+    ["elementAttrsMatchPassword1", 1.6156086921691895],
+    ["elementAttrsMatchPassword2", 1.3372191190719604],
+    ["elementAttrsMatchLogin", 1.423768401145935],
+    ["formAttrsMatchRegister", 1.827048420906067],
+    ["formHasRegisterAction", 1.8044408559799194],
+    ["formButtonIsRegister", 3.0288844108581543],
+    ["formAttrsMatchLogin", -0.7580564022064209],
+    ["formHasLoginAction", -0.47973933815956116],
+    ["formButtonIsLogin", -2.0724077224731445],
+    ["hasAutocompleteCurrentPassword", -0.06478194147348404],
+    ["formHasRememberMeCheckbox", 0.7470659613609314],
+    ["formHasRememberMeLabel", 0.05482526868581772],
+    ["formHasNewsletterCheckbox", 1.4263468980789185],
+    ["formHasNewsletterLabel", 1.7910864353179932],
+    ["closestHeaderAboveIsLoginy", -1.9214844703674316],
+    ["closestHeaderAboveIsRegistery", 1.7715871334075928],
+    ["nextInputIsConfirmy", 2.340878486633301],
+    ["formHasMultipleVisibleInput", 2.9857382774353027],
   ],
 };
 
-const biases = [["new", -0.32134872674942017]];
+const biases = [["new", -0.9879590272903442]];
 
 const passwordStringRegex = /password|passwort|رمز عبور|mot de passe|パスワード|비밀번호|암호|wachtwoord|senha|Пароль|parol|密码|contraseña|heslo|كلمة السر|kodeord|Κωδικός|pass code|Kata sandi|hasło|รหัสผ่าน|Şifre/i;
 const passwordAttrRegex = /pw|pwd|passwd|pass/i;
@@ -308,7 +308,20 @@ function makeRuleset(coeffs, biases) {
   function formHasMultipleVisibleInput(element, selector, threshold) {
     let form = element.form;
     if (!form) {
-      return false;
+      // For password fields don't have an associated form, we apply an heuristic
+      // to find a "form" for it. The heuristic works as follow:
+      // 1. Locate the closest preceding input.
+      // 2. Find the lowest common ancestor of the password field and the closet
+      //    preceding input.
+      // 3. Assume the common ancestor is the "form" of the password input.
+      const previous = closestElementAbove(element, selector);
+      if (!previous) {
+        return false;
+      }
+      form = findLowestCommonAncestor(previous, element);
+      if (!form) {
+        return false;
+      }
     }
     const inputs = Array.from(form.querySelectorAll(selector));
     for (const input of inputs) {
@@ -341,26 +354,50 @@ function makeRuleset(coeffs, biases) {
   }
 
   function closestHeaderAboveMatchesRegex(element, regex) {
-    const closestHeader = closestHeaderAbove(element);
+    const closestHeader = closestElementAbove(
+      element,
+      "h1,h2,h3,h4,h5,h6,div[class*=heading],div[class*=header],div[class*=title],legend"
+    );
     if (closestHeader !== null) {
       return regex.test(closestHeader.textContent);
     }
     return false;
   }
 
-  function closestHeaderAbove(element) {
-    let headers = Array.from(
-      element.ownerDocument.querySelectorAll(
-        "h1,h2,h3,h4,h5,h6,div[class*=heading],div[class*=header],div[class*=title],legend"
-      )
-    );
-    for (let i = headers.length - 1; i >= 0; --i) {
-      const header = headers[i];
+  function closestElementAbove(element, selector) {
+    let elements = Array.from(element.ownerDocument.querySelectorAll(selector));
+    for (let i = elements.length - 1; i >= 0; --i) {
       if (
-        element.compareDocumentPosition(header) &
+        element.compareDocumentPosition(elements[i]) &
         Node.DOCUMENT_POSITION_PRECEDING
       ) {
-        return header;
+        return elements[i];
+      }
+    }
+    return null;
+  }
+
+  function findLowestCommonAncestor(elementA, elementB) {
+    // Walk down the ancestor chain of both elements and compare whether the
+    // ancestors in the depth are the same. If they are not the same, the
+    // ancestor in the previous run is the lowest common ancestor.
+    function getAncestorChain(element) {
+      let ancestors = [];
+      let p = element.parentNode;
+      while (p) {
+        ancestors.push(p);
+        p = p.parentNode;
+      }
+      return ancestors;
+    }
+
+    let aAncestors = getAncestorChain(elementA);
+    let bAncestors = getAncestorChain(elementB);
+    let posA = aAncestors.length - 1;
+    let posB = bAncestors.length - 1;
+    for (; posA >= 0 && posB >= 0; posA--, posB--) {
+      if (aAncestors[posA] != bAncestors[posB]) {
+        return aAncestors[posA + 1];
       }
     }
     return null;
