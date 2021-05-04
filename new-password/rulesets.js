@@ -18,61 +18,61 @@ const DEVELOPMENT = true;
 // Run me with confidence cutoff = 0.75.
 const coefficients = {
   new: [
-    ["hasNewLabel", 2.5705015659332275],
-    ["hasConfirmLabel", 1.968616247177124],
-    ["hasCurrentLabel", -2.0171477794647217],
-    ["closestLabelMatchesNew", 2.5639004707336426],
-    ["closestLabelMatchesConfirm", 2.0995113849639893],
-    ["closestLabelMatchesCurrent", -2.6844682693481445],
-    ["hasNewAriaLabel", 2.6036999225616455],
-    ["hasConfirmAriaLabel", 1.6274890899658203],
-    ["hasCurrentAriaLabel", -0.5365085005760193],
-    ["hasNewPlaceholder", 1.2246830463409424],
-    ["hasConfirmPlaceholder", 1.7248882055282593],
-    ["hasCurrentPlaceholder", -2.9133150577545166],
-    ["forgotPasswordInFormLinkTextContent", -0.5529725551605225],
-    ["forgotPasswordInFormLinkHref", -1.314806342124939],
-    ["forgotPasswordInFormLinkTitle", -2.088702917098999],
-    ["forgotInFormLinkTextContent", -0.9314834475517273],
-    ["forgotInFormLinkHref", 0.2886754274368286],
-    ["forgotPasswordInFormButtonTextContent", -1.3742481470108032],
-    ["forgotPasswordOnPageLinkTextContent", -0.8459364175796509],
-    ["forgotPasswordOnPageLinkHref", 0.11753738671541214],
-    ["forgotPasswordOnPageLinkTitle", -0.6204848289489746],
-    ["forgotPasswordOnPageButtonTextContent", -0.7494243383407593],
-    ["elementAttrsMatchNew", 2.5985605716705322],
-    ["elementAttrsMatchConfirm", 1.632151484489441],
-    ["elementAttrsMatchCurrent", -3.041818857192993],
-    ["elementAttrsMatchPassword1", 1.6156086921691895],
-    ["elementAttrsMatchPassword2", 1.3372191190719604],
-    ["elementAttrsMatchLogin", 1.423768401145935],
-    ["formAttrsMatchRegister", 1.827048420906067],
-    ["formHasRegisterAction", 1.8044408559799194],
-    ["formButtonIsRegister", 3.0288844108581543],
-    ["formAttrsMatchLogin", -0.7580564022064209],
-    ["formHasLoginAction", -0.47973933815956116],
-    ["formButtonIsLogin", -2.0724077224731445],
-    ["hasAutocompleteCurrentPassword", -0.06478194147348404],
-    ["formHasRememberMeCheckbox", 0.7470659613609314],
-    ["formHasRememberMeLabel", 0.05482526868581772],
-    ["formHasNewsletterCheckbox", 1.4263468980789185],
-    ["formHasNewsletterLabel", 1.7910864353179932],
-    ["closestHeaderAboveIsLoginy", -1.9214844703674316],
-    ["closestHeaderAboveIsRegistery", 1.7715871334075928],
-    ["nextInputIsConfirmy", 2.340878486633301],
-    ["formHasMultipleVisibleInput", 2.9857382774353027],
+    ["hasNewLabel", 3.1103127002716064],
+    ["hasConfirmLabel", 2.3734982013702393],
+    ["hasCurrentLabel", -3.445319175720215],
+    ["closestLabelMatchesNew", 2.8759281635284424],
+    ["closestLabelMatchesConfirm", 2.908583402633667],
+    ["closestLabelMatchesCurrent", -2.430129289627075],
+    ["hasNewAriaLabel", 2.954394578933716],
+    ["hasConfirmAriaLabel", 1.5517809391021729],
+    ["hasCurrentAriaLabel", -4.6262431144714355],
+    ["hasNewPlaceholder", 1.4818434715270996],
+    ["hasConfirmPlaceholder", 1.7417945861816406],
+    ["hasCurrentPlaceholder", -3.026402711868286],
+    ["forgotPasswordInFormLinkTextContent", -0.7732959985733032],
+    ["forgotPasswordInFormLinkHref", -1.6669096946716309],
+    ["forgotPasswordInFormLinkTitle", -3.3497214317321777],
+    ["forgotInFormLinkTextContent", -1.428188443183899],
+    ["forgotInFormLinkHref", 0.9340177178382874],
+    ["forgotPasswordInFormButtonTextContent", -0.9265687465667725],
+    ["forgotPasswordOnPageLinkTextContent", 0.12387517094612122],
+    ["forgotPasswordOnPageLinkHref", -1.0338190793991089],
+    ["forgotPasswordOnPageLinkTitle", 0.4462055265903473],
+    ["forgotPasswordOnPageButtonTextContent", -1.5104655027389526],
+    ["elementAttrsMatchNew", 3.2223780155181885],
+    ["elementAttrsMatchConfirm", 2.144514799118042],
+    ["elementAttrsMatchCurrent", -3.4067792892456055],
+    ["elementAttrsMatchPassword1", 1.5735949277877808],
+    ["elementAttrsMatchPassword2", 1.6881710290908813],
+    ["elementAttrsMatchLogin", 1.939837098121643],
+    ["formAttrsMatchRegister", 2.1733479499816895],
+    ["formHasRegisterAction", 2.1259098052978516],
+    ["formButtonIsRegister", 3.236405849456787],
+    ["formAttrsMatchLogin", -0.5660004019737244],
+    ["formHasLoginAction", -0.2049526870250702],
+    ["formButtonIsLogin", -2.488363027572632],
+    ["hasAutocompleteCurrentPassword", 0.0008297860622406006],
+    ["formHasRememberMeCheckbox", 0.9904793500900269],
+    ["formHasRememberMeLabel", 0.05848348140716553],
+    ["formHasNewsletterCheckbox", -2.2146103382110596],
+    ["formHasNewsletterLabel", 2.649700164794922],
+    ["closestHeaderAboveIsLoginy", -2.261821985244751],
+    ["closestHeaderAboveIsRegistery", 2.334836721420288],
+    ["nextInputIsConfirmy", 2.5055363178253174],
+    ["formHasMultipleVisibleInput", 2.765655755996704]
   ],
 };
 
-const biases = [["new", -0.9879590272903442]];
+const biases = [["new", -1.4035983085632324]];
 
 const passwordStringRegex = /password|passwort|رمز عبور|mot de passe|パスワード|비밀번호|암호|wachtwoord|senha|Пароль|parol|密码|contraseña|heslo|كلمة السر|kodeord|Κωδικός|pass code|Kata sandi|hasło|รหัสผ่าน|Şifre/i;
 const passwordAttrRegex = /pw|pwd|passwd|pass/i;
-const newStringRegex = /new|erstellen|create|choose|設定|신규|Créer/i;
+const newStringRegex = /new|erstellen|create|choose|設定|신규|Créer|Nouveau|baru|nouă/i;
 const newAttrRegex = /new/i;
-const confirmStringRegex = /wiederholen|wiederholung|confirm|repeat|confirmation|verify|retype|repite|確認|の確認|تکرار|re-enter|확인|bevestigen|confirme|Повторите|tassyklamak|再次输入|ještě jednou|gentag|re-type|confirmar|Répéter|conferma|Repetaţi|again|reenter/i;
+const confirmStringRegex = /wiederholen|wiederholung|confirm|repeat|confirmation|verify|retype|repite|確認|の確認|تکرار|re-enter|확인|bevestigen|confirme|Повторите|tassyklamak|再次输入|ještě jednou|gentag|re-type|confirmar|Répéter|conferma|Repetaţi|again|reenter|再入力|재입력|Ulangi|Bekræft/i;
 const confirmAttrRegex = /confirm|retype/i;
-const currentAttrAndStringRegex = /current|old/i;
+const currentAttrAndStringRegex = /current|old|aktuelles|derzeitiges|当前|Atual|actuel|curentă|sekarang/i;
 const forgotStringRegex = /vergessen|vergeten|forgot|oublié|dimenticata|Esqueceu|esqueci|Забыли|忘记|找回|Zapomenuté|lost|忘れた|忘れられた|忘れの方|재설정|찾기|help|فراموشی| را فراموش کرده اید|Восстановить|Unuttu|perdus|重新設定|reset|recover|change|remind|find|request|restore|trouble/i;
 const forgotHrefRegex = /forgot|reset|recover|change|lost|remind|find|request|restore/i;
 const password1Regex = /pw1|pwd1|pass1|passwd1|password1|pwone|pwdone|passone|passwdone|passwordone|pwfirst|pwdfirst|passfirst|passwdfirst|passwordfirst/i;
