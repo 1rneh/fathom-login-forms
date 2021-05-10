@@ -18,53 +18,54 @@ const DEVELOPMENT = true;
 // Run me with confidence cutoff = 0.75.
 const coefficients = {
   new: [
-    ["hasNewLabel", 3.1103127002716064],
-    ["hasConfirmLabel", 2.3734982013702393],
-    ["hasCurrentLabel", -3.445319175720215],
-    ["closestLabelMatchesNew", 2.8759281635284424],
-    ["closestLabelMatchesConfirm", 2.908583402633667],
-    ["closestLabelMatchesCurrent", -2.430129289627075],
-    ["hasNewAriaLabel", 2.954394578933716],
-    ["hasConfirmAriaLabel", 1.5517809391021729],
-    ["hasCurrentAriaLabel", -4.6262431144714355],
-    ["hasNewPlaceholder", 1.4818434715270996],
-    ["hasConfirmPlaceholder", 1.7417945861816406],
-    ["hasCurrentPlaceholder", -3.026402711868286],
-    ["forgotPasswordInFormLinkTextContent", -0.7732959985733032],
-    ["forgotPasswordInFormLinkHref", -1.6669096946716309],
-    ["forgotPasswordInFormLinkTitle", -3.3497214317321777],
-    ["forgotInFormLinkTextContent", -1.428188443183899],
-    ["forgotInFormLinkHref", 0.9340177178382874],
-    ["forgotPasswordInFormButtonTextContent", -0.9265687465667725],
-    ["forgotPasswordOnPageLinkTextContent", 0.12387517094612122],
-    ["forgotPasswordOnPageLinkHref", -1.0338190793991089],
-    ["forgotPasswordOnPageLinkTitle", 0.4462055265903473],
-    ["forgotPasswordOnPageButtonTextContent", -1.5104655027389526],
-    ["elementAttrsMatchNew", 3.2223780155181885],
-    ["elementAttrsMatchConfirm", 2.144514799118042],
-    ["elementAttrsMatchCurrent", -3.4067792892456055],
-    ["elementAttrsMatchPassword1", 1.5735949277877808],
-    ["elementAttrsMatchPassword2", 1.6881710290908813],
-    ["elementAttrsMatchLogin", 1.939837098121643],
-    ["formAttrsMatchRegister", 2.1733479499816895],
-    ["formHasRegisterAction", 2.1259098052978516],
-    ["formButtonIsRegister", 3.236405849456787],
-    ["formAttrsMatchLogin", -0.5660004019737244],
-    ["formHasLoginAction", -0.2049526870250702],
-    ["formButtonIsLogin", -2.488363027572632],
-    ["hasAutocompleteCurrentPassword", 0.0008297860622406006],
-    ["formHasRememberMeCheckbox", 0.9904793500900269],
-    ["formHasRememberMeLabel", 0.05848348140716553],
-    ["formHasNewsletterCheckbox", -2.2146103382110596],
-    ["formHasNewsletterLabel", 2.649700164794922],
-    ["closestHeaderAboveIsLoginy", -2.261821985244751],
-    ["closestHeaderAboveIsRegistery", 2.334836721420288],
-    ["nextInputIsConfirmy", 2.5055363178253174],
-    ["formHasMultipleVisibleInput", 2.765655755996704]
+    ["hasNewLabel", 2.8933305740356445],
+    ["hasConfirmLabel", 2.2523245811462402],
+    ["hasCurrentLabel", -2.08807635307312],
+    ["closestLabelMatchesNew", 2.849792242050171],
+    ["closestLabelMatchesConfirm", 2.684239149093628],
+    ["closestLabelMatchesCurrent", -2.060974597930908],
+    ["hasNewAriaLabel", 2.68821120262146],
+    ["hasConfirmAriaLabel", 1.5982069969177246],
+    ["hasCurrentAriaLabel", -4.350891590118408],
+    ["hasNewPlaceholder", 1.5568645000457764],
+    ["hasConfirmPlaceholder", 1.7477933168411255],
+    ["hasCurrentPlaceholder", -1.8710709810256958],
+    ["forgotPasswordInFormLinkTextContent", -0.7074229121208191],
+    ["forgotPasswordInFormLinkHref", -1.3733186721801758],
+    ["forgotPasswordInFormLinkTitle", -2.818237066268921],
+    ["forgotInFormLinkTextContent", -1.2046741247177124],
+    ["forgotInFormLinkHref", 0.49122247099876404],
+    ["forgotPasswordInFormButtonTextContent", -0.7202502489089966],
+    ["forgotPasswordOnPageLinkTextContent", 0.08068230748176575],
+    ["forgotPasswordOnPageLinkHref", -1.0442094802856445],
+    ["forgotPasswordOnPageLinkTitle", -0.15383055806159973],
+    ["forgotPasswordOnPageButtonTextContent", -1.5646175146102905],
+    ["elementAttrsMatchNew", 3.0270659923553467],
+    ["elementAttrsMatchConfirm", 1.8866746425628662],
+    ["elementAttrsMatchCurrent", -2.079951763153076],
+    ["elementAttrsMatchPassword1", 1.557279109954834],
+    ["elementAttrsMatchPassword2", 1.304094910621643],
+    ["elementAttrsMatchLogin", 1.8217418193817139],
+    ["formAttrsMatchRegister", 2.1682863235473633],
+    ["formHasRegisterAction", 1.9685839414596558],
+    ["formButtonIsRegister", 3.081216812133789],
+    ["formAttrsMatchLogin", -0.5824539065361023],
+    ["formHasLoginAction", -0.21154648065567017],
+    ["formButtonIsLogin", -2.310913562774658],
+    ["hasAutocompleteCurrentPassword", 0.14810317754745483],
+    ["formHasRememberMeCheckbox", 0.8111697435379028],
+    ["formHasRememberMeLabel", 0.08731051534414291],
+    ["formHasNewsletterCheckbox", -1.29103684425354],
+    ["formHasNewsletterLabel", 2.279517889022827],
+    ["closestHeaderAboveIsLoginy", -2.0741889476776123],
+    ["closestHeaderAboveIsRegistery", 2.229383707046509],
+    ["nextInputIsConfirmy", 2.5517852306365967],
+    ["formHasMultipleVisibleInput", 2.8625552654266357],
+    ["firstFieldInFormWithThreePasswordFields", -3.0517637729644775],
   ],
 };
 
-const biases = [["new", -1.4035983085632324]];
+const biases = [["new", -1.382971167564392]];
 
 const passwordStringRegex = /password|passwort|رمز عبور|mot de passe|パスワード|비밀번호|암호|wachtwoord|senha|Пароль|parol|密码|contraseña|heslo|كلمة السر|kodeord|Κωδικός|pass code|Kata sandi|hasło|รหัสผ่าน|Şifre/i;
 const passwordAttrRegex = /pw|pwd|passwd|pass/i;
@@ -331,6 +332,29 @@ function makeRuleset(coeffs, biases) {
         if (threshold === 0) {
           return true;
         }
+      }
+    }
+    return false;
+  }
+
+  /**
+   * Returns true when there are three password fields in the form and the passed
+   * element is the first one.
+   *
+   * The signal is based on that change-password forms with 3 password fields often
+   * have the "current password", "new password", and "confirm password" pattern.
+   */
+  function firstFieldInFormWithThreePasswordFields(fnode) {
+    const element = fnode.element;
+    const form = element.form;
+    if (form) {
+      let elements = form.querySelectorAll(
+        "input[type=password]:not([disabled], [aria-hidden=true])"
+      );
+      // Only care forms with three password fields. If there are more than three password
+      // fields found, probably we include some hidden fields, so just ignore it.
+      if (elements.length == 3 && elements[0] == element) {
+        return true;
       }
     }
     return false;
@@ -604,6 +628,7 @@ function makeRuleset(coeffs, biases) {
             "input[type=email],input[type=password],input[type=text],input[type=tel]",
             3
           ),
+        firstFieldInFormWithThreePasswordFields,
       }),
       rule(type("new"), out("new")),
     ],
