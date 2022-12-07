@@ -22,16 +22,6 @@ const loginRegex =
   /login|log-in|log_in|signon|sign-on|sign_on|signin|sign-in|sign_in/gi;
 const registerRegex = /create|register|reg|sign up|signup|join|new/gi;
 
-function formMethodPost(fnode) {
-  return fnode.element.method == "post";
-}
-function formActionSignUpLike(fnode) {
-  return registerRegex.test(fnode.element.action);
-}
-
-function formActionNotLogin(fnode) {
-  return !loginRegex.test(fnode.element.action);
-}
 //  function hasEmailField();
 //  function hasUsernameField();
 //  function hasEmailAndUsernameField();
@@ -50,33 +40,46 @@ const coefficients = {
 
 const biases = [["signup", 1]];
 
-const rules = ruleset([
-  rule(dom("form").when(isVisible), type("signup")),
+function createRuleset() {
+  function formMethodPost(fnode) {
+    return fnode.element.method === "post";
+  }
+  function formActionSignUpLike(fnode) {
+    return checkValueAgainstRegex(fnode.element.action, registerRegex);
+  }
 
-  rule(type("signup"), score(formMethodPost), { name: "formMethodIsPost" }),
-  rule(type("signup"), score(formActionSignUpLike), {
-    name: "formActionIsSignUpLike",
-  }),
-  rule(type("signup"), score(formActionNotLogin), {
-    name: "formMethodNotLoginLike",
-  }),
-  coefficients,
-  biases,
-]);
+  function formActionNotLogin(fnode) {
+    return !checkValueAgainstRegex(fnode.element.action, loginRegex);
+  }
+  // helper functions
+  function checkValueAgainstRegex(value, regexExp) {
+    return regexExp.test(value);
+  }
+  const rules = ruleset(
+    [
+      rule(dom("form").when(isVisible), type("signup")),
+
+      rule(type("signup"), score(formMethodPost), { name: "formMethodIsPost" }),
+      rule(type("signup"), score(formActionSignUpLike), {
+        name: "formActionIsSignUpLike",
+      }),
+      rule(type("signup"), score(formActionNotLogin), {
+        name: "formMethodNotLoginLike",
+      }),
+      rule(type("signup"), out("signup")),
+    ],
+    coefficients.signup,
+    biases
+  );
+  return rules;
+}
 
 const trainees = new Map();
-const VIEWPORT_SIZE = {
-  width: 1366,
-  height: 768,
-};
 
 const signupTrainee = {
   coeffs: new Map([coefficients["signup"]]),
-  viewportSize: VIEWPORT_SIZE,
   vectorType: "signup",
-  rulesetMaker: () => {
-    return rules;
-  },
+  rulesetMaker: createRuleset(),
 };
 
 trainees.set("signup", signupTrainee);

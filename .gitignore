@@ -1,5 +1,6 @@
 /lockwise-proof-of-concept/runs
 /new-password/runs
+/sign-up-scenario/runs
 /new-password/.prettierrc
 .~lock.*
 node_modules
