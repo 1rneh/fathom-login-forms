@@ -16,8 +16,6 @@ import {
   setDefault,
 } from "fathom-web/utilsForFrontend";
 
-// const DEVELOPMENT = true;
-
 const loginRegex =
   /login|log-in|log_in|signon|sign-on|sign_on|signin|sign-in|sign_in/gi;
 const registerRegex = /create|register|reg|sign up|signup|join|new/gi;
@@ -31,11 +29,11 @@ const registerRegex = /create|register|reg|sign up|signup|join|new/gi;
 //  function nextInputIsConfirm();
 
 const coefficients = {
-  signup: [
+  signup: new Map([
     ["formMethodIsPost", 1],
     ["formActionIsSignUpLike", 1],
     ["formMethodNotLoginLike", 1],
-  ],
+  ]),
 };
 
 const biases = [["signup", 1]];
@@ -55,31 +53,28 @@ function createRuleset() {
   function checkValueAgainstRegex(value, regexExp) {
     return regexExp.test(value);
   }
-  const rules = ruleset(
-    [
-      rule(dom("form").when(isVisible), type("signup")),
+  const rules = ruleset([
+    rule(dom("form").when(isVisible), type("signup")),
 
-      rule(type("signup"), score(formMethodPost), { name: "formMethodIsPost" }),
-      rule(type("signup"), score(formActionSignUpLike), {
-        name: "formActionIsSignUpLike",
-      }),
-      rule(type("signup"), score(formActionNotLogin), {
-        name: "formMethodNotLoginLike",
-      }),
-      rule(type("signup"), out("signup")),
-    ],
-    coefficients.signup,
-    biases
-  );
+    rule(type("signup"), score(formMethodPost), { name: "formMethodIsPost" }),
+    rule(type("signup"), score(formActionSignUpLike), {
+      name: "formActionIsSignUpLike",
+    }),
+    rule(type("signup"), score(formActionNotLogin), {
+      name: "formMethodNotLoginLike",
+    }),
+    rule(type("signup"), out("signup")),
+  ]);
   return rules;
 }
 
 const trainees = new Map();
 
 const signupTrainee = {
-  coeffs: new Map([coefficients["signup"]]),
-  vectorType: "signup",
-  rulesetMaker: createRuleset(),
+  coeffs: coefficients.signup,
+  viewportSize: { width: 1024, height: 768 },
+  // vectorType: "signup",
+  rulesetMaker: () => createRuleset(),
 };
 
 trainees.set("signup", signupTrainee);
