@@ -20,48 +20,93 @@ const loginRegex =
   /login|log-in|log_in|signon|sign-on|sign_on|signin|sign-in|sign_in/gi;
 const registerRegex = /create|register|reg|sign up|signup|join|new/gi;
 
-//  function hasEmailField();
-//  function hasUsernameField();
-//  function hasEmailAndUsernameField();
-//  function hasPasswordField(); // type=password
-//  function hasConfirmPasswordField();
-//  function passwordFieldHasACFieldnameNewPassword(); // autocomplete=new-password
-//  function nextInputIsConfirm();
-
 const coefficients = {
   signup: new Map([
-    ["formMethodIsPost", 1],
-    ["formActionIsSignUpLike", 1],
-    ["formMethodNotLoginLike", 1],
+    ["formMethodPost", 1],
+    ["formActionSignUpLike", 1],
+    ["formActionNotLoginLike", 1],
+    ["formHasInputChildren", 1],
+    ["formAttributesSignupLike", 1],
+    ["formHasChildrenWithAutocompleteNewPassword", 1],
+    ["hasTwoChildrenWithAutocompleteNewPassword", 1],
+    ["formHasNoCurrentPassword", 1],
   ]),
 };
 
 const biases = [["signup", 1]];
 
 function createRuleset() {
-  function formMethodPost(fnode) {
-    return fnode.element.method === "post";
+  function formHasNoCurrentPassword(fnode) {
+    return !atLeastOne(
+      fnode.element.querySelectorAll("input[autocomplete='current-password']")
+    );
+  }
+  function formHasTwoChildrenWithAutocompleteNewPassword(fnode) {
+    return atLeastOne(
+      fnode.element.querySelectorAll(
+        "input[type='password'][autocomplete='new-password']"
+      )
+    );
+  }
+  function formHasChildrenWithAutocompleteNewPassword(fnode) {
+    return atLeastOne(
+      fnode.element.querySelectorAll(
+        "input[type='password'][autocomplete='new-password']"
+      )
+    );
+  }
+  function formAttributesSignupLike(fnode) {
+    const formAttr = fnode.element.attributes;
+    return (
+      checkValueAgainstRegex(formAttr.name, registerRegex) ||
+      checkValueAgainstRegex(formAttr.id, registerRegex)
+    );
+  }
+  function formHasInputChildren(fnode) {
+    return atLeastOne(fnode.element.querySelectorAll("input"));
   }
   function formActionSignUpLike(fnode) {
     return checkValueAgainstRegex(fnode.element.action, registerRegex);
   }
 
-  function formActionNotLogin(fnode) {
+  function formActionNotLoginLike(fnode) {
     return !checkValueAgainstRegex(fnode.element.action, loginRegex);
   }
+  function formMethodPost(fnode) {
+    return fnode.element.method === "post";
+  }
+
   // helper functions
   function checkValueAgainstRegex(value, regexExp) {
     return regexExp.test(value);
   }
+  function atLeastOne(iter) {
+    return iter.length >= 1;
+  }
+
   const rules = ruleset([
     rule(dom("form").when(isVisible), type("signup")),
-
-    rule(type("signup"), score(formMethodPost), { name: "formMethodIsPost" }),
-    rule(type("signup"), score(formActionSignUpLike), {
-      name: "formActionIsSignUpLike",
+    rule(type("signup"), score(formHasNoCurrentPassword), {
+      name: "formHasNoCurrentPassword",
     }),
-    rule(type("signup"), score(formActionNotLogin), {
-      name: "formMethodNotLoginLike",
+    rule(type("signup"), score(formHasTwoChildrenWithAutocompleteNewPassword), {
+      name: "hasTwoChildrenWithAutocompleteNewPassword",
+    }),
+    rule(type("signup"), score(formHasChildrenWithAutocompleteNewPassword), {
+      name: "formHasChildrenWithAutocompleteNewPassword",
+    }),
+    rule(type("signup"), score(formAttributesSignupLike), {
+      name: "formAttributesSignupLike",
+    }),
+    rule(type("signup"), score(formHasInputChildren), {
+      name: "formHasInputChildren",
+    }),
+    rule(type("signup"), score(formMethodPost), { name: "formMethodPost" }),
+    rule(type("signup"), score(formActionSignUpLike), {
+      name: "formActionSignUpLike",
+    }),
+    rule(type("signup"), score(formActionNotLoginLike), {
+      name: "formActionNotLoginLike",
     }),
     rule(type("signup"), out("signup")),
   ]);
