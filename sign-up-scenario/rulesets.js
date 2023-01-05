@@ -14,63 +14,147 @@ import {
   isVisible,
   min,
   setDefault,
+  attributesMatch,
+  ancestors,
 } from "fathom-web/utilsForFrontend";
 
 const loginRegex =
   /login|log-in|log_in|signon|sign-on|sign_on|signin|sign-in|sign_in/gi;
-const registerRegex = /create|register|reg|sign up|signup|join|new/gi;
+const registerRegex =
+  /create|register|reg|sign up|signup|sign-up|sign_up|join|new/gi; // When using RegExp.prototype.test() 'reg" also covers register, right?
+const emailRegex = /email|e-mail|mail/gi; // When using RegExp.prototype.test() 'mail" also covers email and e-mail, right?
+const usernameRegex = /user/gi;
+const passwordRegex = /new|create|/gi;
+const newPasswordRegex = /new|create|confirm/gi;
+const currentPasswordRegex = /current/gi;
 
 const coefficients = {
   signup: new Map([
     ["formMethodPost", 1],
-    ["formActionSignUpLike", 1],
-    ["formActionNotLoginLike", 1],
-    ["formHasInputChildren", 1],
-    ["formAttributesSignupLike", 1],
-    ["formHasChildrenWithAutocompleteNewPassword", 1],
-    ["hasTwoChildrenWithAutocompleteNewPassword", 1],
+    ["formAttributesSignUpLike", 1],
+    ["formAttributesNotLoginLike", 1],
     ["formHasNoCurrentPassword", 1],
+    ["formHasAcNewPassword", 1],
+    ["formHasEmailField", 1],
+    ["formHasUsernameAndEmailInputField", 1],
+    ["formIsNotChangePassword", 1],
+    // ["buttonLikeSignUpRank", 1],
   ]),
 };
 
 const biases = [["signup", 1]];
 
 function createRuleset() {
-  function formHasNoCurrentPassword(fnode) {
-    return !atLeastOne(
-      fnode.element.querySelectorAll("input[autocomplete='current-password']")
+  function formHasUsernameAndEmailInputField(fnode) {
+    const possibleFields = fnode.element.querySelectorAll(
+      "input[type='email'], input[type='text'], input:not([type])"
     );
+    let containsEmail = false;
+    let containsUsername = false;
+
+    for (const field of possibleFields) {
+      if (
+        attributesMatch(field, (attr) =>
+          checkValueAgainstRegex(attr, emailRegex)
+        )
+      ) {
+        if (containsUsername) {
+          return true;
+        } else if (!containsEmail) {
+          containsEmail = true;
+        }
+      } else if (
+        attributesMatch(field, (attr) =>
+          checkValueAgainstRegex(attr, usernameRegex)
+        )
+      ) {
+        if (containsEmail) {
+          return true;
+        } else if (!containsUsername) {
+          containsUsername = true;
+        }
+      }
+    }
+    return false;
   }
-  function formHasTwoChildrenWithAutocompleteNewPassword(fnode) {
+  function formHasEmailField(fnode) {
+    const possibleEmailFields = fnode.element.querySelectorAll(
+      "input[type='email'], input[type='text'],input:not([type])"
+    );
+
     return atLeastOne(
-      fnode.element.querySelectorAll(
-        "input[type='password'][autocomplete='new-password']"
-      )
+      filter(possibleEmailFields, (pwField) => {
+        attributesMatch(pwField, (attr) =>
+          checkValueAgainstRegex(attr, emailRegex)
+        );
+      })
     );
-  }
-  function formHasChildrenWithAutocompleteNewPassword(fnode) {
-    return atLeastOne(
-      fnode.element.querySelectorAll(
-        "input[type='password'][autocomplete='new-password']"
-      )
-    );
-  }
-  function formAttributesSignupLike(fnode) {
-    const formAttr = fnode.element.attributes;
-    return (
-      checkValueAgainstRegex(formAttr.name, registerRegex) ||
-      checkValueAgainstRegex(formAttr.id, registerRegex)
-    );
-  }
-  function formHasInputChildren(fnode) {
-    return atLeastOne(fnode.element.querySelectorAll("input"));
-  }
-  function formActionSignUpLike(fnode) {
-    return checkValueAgainstRegex(fnode.element.action, registerRegex);
   }
 
-  function formActionNotLoginLike(fnode) {
-    return !checkValueAgainstRegex(fnode.element.action, loginRegex);
+  function formHasNoCurrentPassword(fnode) {
+    return !atLeastOne(
+      fnode.element.querySelectorAll(
+        "[input-type='password'][input-autocomplete='new-password']"
+      )
+    );
+  }
+  function formHasAcNewPassword(fnode) {
+    return atLeastOne(
+      fnode.element.querySelectorAll(
+        "[input-type='password'][input-autocomplete='new-password']"
+      )
+    );
+  }
+  function formIsNotChangePassword(fnode) {
+    return formHasAcNewPassword(fnode) && formHasNoCurrentPassword(fnode);
+  }
+
+  // function buttonLikeSignUpRank(fnode) {
+  //   const RegisterLike = 1;
+  //   const LoginLike = 0;
+  //   const NoMatch = 0;
+
+  //   const buttonsInForm = fnode.element.querySelectorAll(
+  //     "button, input[type='button'], input[type='submit']"
+  //   );
+  //   let buttonCases = Array.from(buttonsInForm).map((button) => {
+  //     if (
+  //       attributesMatch(
+  //         button,
+  //         (attr) => checkValueAgainstRegex(attr, registerRegex),
+  //         ["id", "name", "innerHTML"]
+  //       )
+  //     ) {
+  //       return RegisterLike;
+  //     } else if (
+  //       attributesMatch(
+  //         button,
+  //         (attr) => checkValueAgainstRegex(attr, loginRegex),
+  //         ["id", "name", "innerHTML"]
+  //       )
+  //     ) {
+  //       return LoginLike;
+  //     } else {
+  //       return NoMatch;
+  //     }
+  //   });
+  //   // count by case
+  // }
+
+  function formAttributesSignUpLike(fnode) {
+    return attributesMatch(
+      fnode.element,
+      (attr) => checkValueAgainstRegex(attr, registerRegex),
+      ["action", "id", "name"]
+    );
+  }
+
+  function formAttributesNotLoginLike(fnode) {
+    return !attributesMatch(
+      fnode.element,
+      (attr) => checkValueAgainstRegex(attr, registerRegex),
+      ["action", "id", "name"]
+    );
   }
   function formMethodPost(fnode) {
     return fnode.element.method === "post";
@@ -78,37 +162,44 @@ function createRuleset() {
 
   // helper functions
   function checkValueAgainstRegex(value, regexExp) {
-    return regexExp.test(value);
+    return regexExp.test(value.toLowerCase());
   }
   function atLeastOne(iter) {
     return iter.length >= 1;
   }
+  function* filter(iterable, predicate) {
+    for (const i of iterable) {
+      if (predicate(i)) {
+        yield i;
+      }
+    }
+  }
 
   const rules = ruleset([
-    rule(dom("form").when(isVisible), type("signup")),
-    rule(type("signup"), score(formHasNoCurrentPassword), {
+    rule(dom("form").when(isVisible), type("form")),
+    rule(type("form"), score(formHasNoCurrentPassword), {
       name: "formHasNoCurrentPassword",
     }),
-    rule(type("signup"), score(formHasTwoChildrenWithAutocompleteNewPassword), {
-      name: "hasTwoChildrenWithAutocompleteNewPassword",
+    rule(type("form"), score(formHasAcNewPassword), {
+      name: "formHasAcNewPassword",
     }),
-    rule(type("signup"), score(formHasChildrenWithAutocompleteNewPassword), {
-      name: "formHasChildrenWithAutocompleteNewPassword",
+    rule(type("form"), score(formAttributesSignUpLike), {
+      name: "formAttributesSignUpLike",
     }),
-    rule(type("signup"), score(formAttributesSignupLike), {
-      name: "formAttributesSignupLike",
+    rule(type("form"), score(formIsNotChangePassword), {
+      name: "formIsNotChangePassword",
     }),
-    rule(type("signup"), score(formHasInputChildren), {
-      name: "formHasInputChildren",
+    rule(type("form"), score(formMethodPost), { name: "formMethodPost" }),
+    rule(type("form"), score(formAttributesNotLoginLike), {
+      name: "formAttributesNotLoginLike",
     }),
-    rule(type("signup"), score(formMethodPost), { name: "formMethodPost" }),
-    rule(type("signup"), score(formActionSignUpLike), {
-      name: "formActionSignUpLike",
+    rule(type("form"), score(formHasEmailField), {
+      name: "formHasEmailField",
     }),
-    rule(type("signup"), score(formActionNotLoginLike), {
-      name: "formActionNotLoginLike",
+    rule(type("form"), score(formHasUsernameAndEmailInputField), {
+      name: "formHasUsernameAndEmailInputField",
     }),
-    rule(type("signup"), out("signup")),
+    rule(type("form"), out("form")),
   ]);
   return rules;
 }
@@ -122,6 +213,6 @@ const signupTrainee = {
   rulesetMaker: () => createRuleset(),
 };
 
-trainees.set("signup", signupTrainee);
+trainees.set("form", signupTrainee);
 
 export default trainees;
